@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Founder Story — A2Z Accounting Solutions</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;700;800&family=Barlow:wght@300;400;500&family=DM+Serif+Display:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg:         #F8F6F2;
+        --surface:    #FFFFFF;
+        --gold:       #C47A0C;
+        --gold-vivid: #E8960E;
+        --gold-deep:  #A3620A;
+        --gold-tint:  #FEF4DF;
+        --gold-tint2: #FDE8BB;
+        --dark:       #1C1917;
+        --text:       #44403C;
+        --muted:      #79746E;
+        --border:     #E4DFD6;
+        --ease:       cubic-bezier(0.22, 1, 0.36, 1);
+      }
+
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+      html, body { min-height: 100%; }
+      body {
+        background: var(--bg);
+        font-family: "Barlow", sans-serif;
+        color: var(--text);
+        overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      .story-inner { max-width: 1440px; margin: 0 auto; }
+
+      /* ─── SECTION STRIP ─── */
+      .section-strip {
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 clamp(24px, 4vw, 56px);
+        background: var(--surface);
+        border-bottom: 1px solid var(--border);
+      }
+      .ss-label {
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: 0.6rem;
+        font-weight: 600;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--muted);
+      }
+      .ss-label em { font-style: normal; color: var(--gold); margin-right: 14px; }
+      .ss-num {
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: 0.6rem;
+        font-weight: 300;
+        letter-spacing: 0.18em;
+        color: var(--muted);
+        opacity: 0.5;
+      }
+
+      /* ─── HEADER ─── */
+      .story-header {
+        display: grid;
+        grid-template-columns: 1fr 280px;
+        align-items: end;
+        gap: clamp(40px, 6vw, 80px);
+        padding: clamp(64px, 9vw, 120px) clamp(24px, 4vw, 56px) clamp(52px, 6.5vw, 80px);
+        background: var(--surface);
+        border-bottom: 1px solid var(--border);
+      }
+
+      .story-heading {
+        font-family: "Barlow Condensed", sans-serif;
+        font-weight: 800;
+        font-size: clamp(3.5rem, 11vw, 10rem);
+        line-height: 0.87;
+        letter-spacing: -0.025em;
+        text-transform: uppercase;
+      }
+      .sh-solid   { display: block; color: var(--dark); }
+      .sh-outline {
+        display: block;
+        -webkit-text-stroke: 2px var(--gold-vivid);
+        color: transparent;
+      }
+      .sh-serif {
+        display: block;
+        font-family: "DM Serif Display", serif;
+        font-style: italic;
+        font-weight: 400;
+        text-transform: none;
+        -webkit-text-stroke: 0;
+        color: var(--muted);
+        font-size: 0.48em;
+        letter-spacing: 0.01em;
+        margin-top: 0.38em;
+      }
+
+      .founder-block { padding-bottom: 4px; }
+      .founder-name {
+        font-family: "Barlow Condensed", sans-serif;
+        font-weight: 700;
+        font-size: clamp(1.1rem, 1.6vw, 1.4rem);
+        color: var(--dark);
+        letter-spacing: -0.01em;
+        margin-bottom: 4px;
+      }
+      .founder-role {
+        font-size: 0.85rem;
+        color: var(--gold-deep);
+        font-weight: 400;
+        margin-bottom: 18px;
+      }
+      .founder-cred {
+        font-size: 0.78rem;
+        color: var(--muted);
+        font-weight: 300;
+        line-height: 1.85;
+      }
+
+      /* ─── NARRATIVE ─── */
+      .story-narrative {
+        background: var(--surface);
+        border-bottom: 1px solid var(--border);
+        padding: clamp(56px, 7vw, 100px) clamp(24px, 4vw, 56px);
+      }
+      .narrative-inner {
+        max-width: 66ch;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: clamp(28px, 3.5vw, 42px);
+      }
+      .story-p {
+        font-size: clamp(0.96rem, 1.15vw, 1.08rem);
+        line-height: 1.95;
+        color: var(--text);
+        font-weight: 300;
+      }
+      .story-p strong { color: var(--dark); font-weight: 500; }
+      .story-p em     { font-style: normal; color: var(--gold-deep); }
+
+      /* ─── QUOTE ─── */
+      .feature-quote {
+        border-top: 2px solid var(--gold-vivid);
+        background: linear-gradient(135deg, var(--gold-tint) 0%, var(--gold-tint2) 100%);
+        padding: clamp(64px, 9vw, 120px) clamp(24px, 4vw, 56px);
+      }
+      .fq-inner {
+        max-width: 780px;
+        margin: 0 auto;
+        text-align: center;
+      }
+      .fq-text {
+        font-family: "DM Serif Display", serif;
+        font-style: italic;
+        font-size: clamp(1.5rem, 3.2vw, 2.6rem);
+        line-height: 1.42;
+        color: var(--dark);
+        margin-bottom: 36px;
+      }
+      .fq-rule {
+        width: 36px;
+        height: 2px;
+        background: var(--gold-vivid);
+        border-radius: 1px;
+        margin: 0 auto 16px;
+      }
+      .fq-attr {
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: 0.68rem;
+        font-weight: 600;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--gold-deep);
+      }
+
+      /* ─── FACTS BAR ─── */
+      .facts-bar {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        background: var(--bg);
+        border-bottom: 1px solid var(--border);
+      }
+      .fact {
+        padding: clamp(28px, 4vw, 48px) clamp(20px, 3vw, 40px);
+        border-right: 1px solid var(--border);
+        border-top: 2px solid transparent;
+        transition: border-top-color 0.25s;
+      }
+      .fact:hover { border-top-color: var(--gold-vivid); }
+      .fact:last-child { border-right: none; }
+      .fact-value {
+        font-family: "Barlow Condensed", sans-serif;
+        font-weight: 800;
+        font-size: clamp(1.6rem, 3vw, 2.4rem);
+        color: var(--dark);
+        line-height: 1;
+        letter-spacing: -0.02em;
+        margin-bottom: 10px;
+      }
+      .fact-label {
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: 0.6rem;
+        font-weight: 600;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 6px;
+      }
+      .fact-desc {
+        font-size: 0.78rem;
+        color: var(--muted);
+        font-weight: 300;
+        line-height: 1.5;
+      }
+
+      /* ─── REVEAL ─── */
+      .reveal {
+        opacity: 0;
+        transform: translateY(14px);
+        transition: opacity 0.85s var(--ease), transform 0.85s var(--ease);
+      }
+      .reveal.in { opacity: 1; transform: none; }
+      .rd1 { transition-delay: 0.08s; }
+      .rd2 { transition-delay: 0.18s; }
+      .rd3 { transition-delay: 0.28s; }
+      .rd4 { transition-delay: 0.38s; }
+
+      /* ─── RESPONSIVE ─── */
+      @media (max-width: 860px) {
+        .story-header { grid-template-columns: 1fr; }
+        .founder-block { display: none; }
+        .facts-bar { grid-template-columns: repeat(2, 1fr); }
+        .fact:nth-child(2) { border-right: none; }
+        .fact:nth-child(3) { border-top: 1px solid var(--border); }
+        .fact:nth-child(4) { border-right: none; border-top: 1px solid var(--border); }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .reveal { opacity: 1; transform: none; }
+      }
+    </style>
+  </head>
+  <body>
+    <section class="story">
+      <div class="story-inner">
+
+        <!-- Strip -->
+        <div class="section-strip">
+          <p class="ss-label"><em>002</em>Founder Story</p>
+          <p class="ss-num">002 / 006</p>
+        </div>
+
+        <!-- Header -->
+        <header class="story-header reveal">
+          <h2 class="story-heading">
+            <span class="sh-solid">A discipline</span>
+            <span class="sh-outline">learned</span>
+            <span class="sh-serif">somewhere different.</span>
+          </h2>
+          <div class="founder-block">
+            <div class="founder-name">Shabbir Rahman FCCA</div>
+            <div class="founder-role">Founder &amp; CEO — A2Z Accounting Solutions</div>
+            <div class="founder-cred">
+              Fellow · Association of Chartered Certified Accountants<br />
+              Group Accountant · Subsea 7, North Sea<br />
+              MSc Economics · University of Aberdeen
+            </div>
+          </div>
+        </header>
+
+        <!-- Narrative -->
+        <div class="story-narrative">
+          <div class="narrative-inner">
+            <p class="story-p reveal rd1">
+              It began <em>deep beneath the North Sea</em> at Subsea&nbsp;7, where
+              Shabbir managed complex group accounts and operated to the full rigour
+              of <strong>Big&nbsp;4 audit standards</strong> — Deloitte and EY
+              scrutinising every number, every quarter, without exception.
+            </p>
+            <p class="story-p reveal rd2">
+              Those years demanded <strong>bulletproof processes</strong>, precise
+              systems, and zero tolerance for error. Every reconciliation, every
+              group consolidation, every audit deliverable had to hold under scrutiny
+              from the most rigorous reviewers in the profession.
+            </p>
+            <p class="story-p reveal rd3">
+              When A2Z was founded in <em>2018</em>, that discipline became the
+              foundation — not aspirational, but <strong>operational from the first
+              engagement letter</strong>. Specialist departments, multiple
+              independent quality-control layers, and FCCA director-level oversight
+              on every single engagement.
+            </p>
+            <p class="story-p reveal rd4">
+              100% paperless, proactively managed, delivered to the standards applied
+              at corporate level — <strong>only now to the clients who had previously
+              been priced out of them</strong>. Every engagement carries three written
+              guarantees — contractual commitments, because you deserve to know
+              exactly what you are buying.
+            </p>
+          </div>
+        </div>
+
+        <!-- Quote -->
+        <div class="feature-quote reveal rd2">
+          <div class="fq-inner">
+            <p class="fq-text">
+              &ldquo;We didn&rsquo;t build another accounting firm. We built the
+              finance function that growing businesses deserved — and never had
+              access to.&rdquo;
+            </p>
+            <div class="fq-rule"></div>
+            <p class="fq-attr">Shabbir Rahman FCCA &nbsp;·&nbsp; Founder &amp; CEO</p>
+          </div>
+        </div>
+
+        <!-- Facts -->
+        <div class="facts-bar reveal rd3">
+          <div class="fact">
+            <div class="fact-value">FCCA</div>
+            <div class="fact-label">Qualification</div>
+            <div class="fact-desc">Fellow, Chartered Certified Accountants</div>
+          </div>
+          <div class="fact">
+            <div class="fact-value">Subsea&nbsp;7</div>
+            <div class="fact-label">Background</div>
+            <div class="fact-desc">Group Accountant · North Sea energy</div>
+          </div>
+          <div class="fact">
+            <div class="fact-value">Big&nbsp;4</div>
+            <div class="fact-label">Audit standard</div>
+            <div class="fact-desc">Deloitte &amp; EY quarterly reviews</div>
+          </div>
+          <div class="fact">
+            <div class="fact-value">2018</div>
+            <div class="fact-label">Founded</div>
+            <div class="fact-desc">A2Z Accounting Solutions · Aberdeen</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <script>
+      const io = new IntersectionObserver(
+        (entries) => entries.forEach((e) => {
+          if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
+        }),
+        { threshold: 0.1, rootMargin: "0px 0px -40px 0px" }
+      );
+      document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+    </script>
+  </body>
+</html>

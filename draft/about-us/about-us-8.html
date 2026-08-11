@@ -1,0 +1,1451 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      About — A2Z Accounting Solutions | FCCA Chartered Accountants, Aberdeen
+    </title>
+    <meta
+      name="description"
+      content="A2Z Accounting Solutions is an FCCA-led chartered accountancy firm in Aberdeen, founded by Shabbir Rahman. Specialist departments, four-layer quality control, three written guarantees."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Outfit:wght@300;400;500&family=DM+Mono:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --navy: #0f1e30;
+        --navy-lt: #162840;
+        --ink: #09090a;
+        --ink-mid: #111111;
+        --cream: #f5f1eb;
+        --white: #ffffff;
+        --gold: #b08a52;
+        --gold-lt: #c9a46b;
+        --gold-dim: rgba(176, 138, 82, 0.13);
+        --gold-line: rgba(176, 138, 82, 0.22);
+        --on-dark: rgba(255, 255, 255, 0.5);
+        --on-light: rgba(9, 9, 10, 0.52);
+        --serif: "Cormorant Garamond", Georgia, serif;
+        --sans: "Outfit", system-ui, sans-serif;
+        --mono: "DM Mono", monospace;
+        --ease: cubic-bezier(0.22, 1, 0.36, 1);
+        --max: 1200px;
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: var(--sans);
+        font-weight: 300;
+        background: var(--white);
+        color: var(--ink);
+        -webkit-font-smoothing: antialiased;
+        overflow-x: hidden;
+      }
+      img {
+        display: block;
+        max-width: 100%;
+        height: auto;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      /* noise on dark bg */
+      .with-noise {
+        position: relative;
+      }
+      .with-noise::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+        pointer-events: none;
+        z-index: 0;
+      }
+      .with-noise > * {
+        position: relative;
+        z-index: 1;
+      }
+
+      /* ── SHARED LAYOUT ── */
+      .wrap {
+        max-width: var(--max);
+        margin: 0 auto;
+        padding: 0 clamp(24px, 5vw, 64px);
+      }
+      .section-py {
+        padding: clamp(80px, 11vw, 130px) 0;
+      }
+
+      /* ── LABEL ── */
+      .tag {
+        font-family: var(--mono);
+        font-size: 0.66rem;
+        font-weight: 300;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--gold);
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .tag::before {
+        content: "";
+        width: 16px;
+        height: 1px;
+        background: var(--gold);
+        flex-shrink: 0;
+      }
+
+      /* ── BUTTONS ── */
+      .btn {
+        font-family: var(--mono);
+        font-size: 0.68rem;
+        font-weight: 300;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        padding: 13px 28px;
+        border: 1px solid transparent;
+        display: inline-flex;
+        align-items: center;
+        gap: 9px;
+        transition: all 0.3s var(--ease);
+        cursor: pointer;
+      }
+      .btn-primary {
+        background: var(--gold);
+        color: var(--ink);
+        border-color: var(--gold);
+      }
+      .btn-primary:hover {
+        background: var(--gold-lt);
+        border-color: var(--gold-lt);
+      }
+      .btn-ghost {
+        background: transparent;
+        color: rgba(255, 255, 255, 0.6);
+        border-color: rgba(255, 255, 255, 0.18);
+      }
+      .btn-ghost:hover {
+        color: #fff;
+        border-color: rgba(255, 255, 255, 0.45);
+      }
+      .btn-ghost-gold {
+        background: transparent;
+        color: var(--gold);
+        border-color: var(--gold-line);
+      }
+      .btn-ghost-gold:hover {
+        background: var(--gold-dim);
+        border-color: var(--gold);
+      }
+
+      /* ══════════════════════════════════════════════
+       HERO
+    ══════════════════════════════════════════════ */
+      .hero {
+        background: var(--navy);
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* subtle warm glow right side */
+      .hero-glow {
+        position: absolute;
+        top: -10%;
+        right: -5%;
+        width: 60%;
+        height: 110%;
+        background: radial-gradient(
+          ellipse at 75% 38%,
+          rgba(176, 138, 82, 0.065) 0%,
+          transparent 65%
+        );
+        pointer-events: none;
+      }
+
+      .hero-body-wrap {
+        position: relative;
+        flex: 1;
+        display: flex;
+        align-items: center;
+      }
+      .hero-inner {
+        max-width: var(--max);
+        margin: 0 auto;
+        padding: clamp(110px, 13vw, 170px) clamp(24px, 5vw, 64px)
+          clamp(70px, 7vw, 90px);
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 380px;
+        gap: clamp(60px, 8vw, 110px);
+        align-items: center;
+      }
+
+      /* LEFT */
+      .hero-left {
+        display: flex;
+        flex-direction: column;
+      }
+      .hero-eyebrow {
+        margin-bottom: 48px;
+      }
+
+      .hero-h1 {
+        font-family: var(--serif);
+        font-weight: 300;
+        font-size: clamp(4.2rem, 8vw, 8rem);
+        line-height: 0.9;
+        letter-spacing: -0.028em;
+        color: var(--white);
+        margin-bottom: 40px;
+      }
+      .hero-h1 em {
+        font-style: italic;
+        color: var(--gold);
+        display: block;
+      }
+
+      .hero-divider {
+        width: 48px;
+        height: 1px;
+        background: var(--gold-line);
+        margin-bottom: 32px;
+      }
+
+      .hero-desc {
+        font-size: clamp(0.9rem, 1vw, 1rem);
+        line-height: 1.9;
+        color: var(--on-dark);
+        font-weight: 300;
+        max-width: 50ch;
+        margin-bottom: 48px;
+      }
+      .hero-ctas {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+
+      /* RIGHT */
+      .hero-right {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .portrait-frame {
+        width: 100%;
+        border: 1px solid var(--gold-line);
+        padding: 8px;
+      }
+      .portrait-frame img {
+        width: 100%;
+        aspect-ratio: 3/4;
+        object-fit: cover;
+        object-position: top center;
+        display: block;
+        filter: contrast(1.04) saturate(0.88);
+      }
+      .portrait-credit {
+        margin-top: 18px;
+        text-align: center;
+      }
+      .portrait-credit strong {
+        display: block;
+        font-family: var(--serif);
+        font-style: italic;
+        font-weight: 300;
+        font-size: 1.05rem;
+        color: rgba(255, 255, 255, 0.72);
+        margin-bottom: 5px;
+      }
+      .portrait-credit span {
+        font-family: var(--mono);
+        font-size: 0.62rem;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.26);
+      }
+
+      /* BOTTOM STATS BAR */
+      .hero-bar {
+        border-top: 1px solid rgba(255, 255, 255, 0.07);
+      }
+      .hero-bar-inner {
+        max-width: var(--max);
+        margin: 0 auto;
+        padding: 0 clamp(24px, 5vw, 64px);
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+      }
+      .hstat {
+        padding: 30px 0;
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        border-right: 1px solid rgba(255, 255, 255, 0.07);
+      }
+      .hstat:first-child {
+        padding-left: 0;
+      }
+      .hstat:not(:first-child) {
+        padding-left: 36px;
+      }
+      .hstat:last-child {
+        border-right: 0;
+      }
+      .hstat-val {
+        font-family: var(--serif);
+        font-style: italic;
+        font-size: 2rem;
+        color: var(--gold);
+        line-height: 1;
+        flex-shrink: 0;
+      }
+      .hstat-lbl {
+        font-family: var(--mono);
+        font-size: 0.63rem;
+        letter-spacing: 0.13em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.26);
+        line-height: 1.5;
+      }
+
+      @media (max-width: 860px) {
+        .hero-inner {
+          grid-template-columns: 1fr;
+        }
+        .hero-right {
+          display: none;
+        }
+        .hero-bar-inner {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+      @media (max-width: 520px) {
+        .hero-bar-inner {
+          grid-template-columns: 1fr;
+        }
+        .hstat {
+          border-right: 0;
+          border-top: 1px solid rgba(255, 255, 255, 0.07);
+        }
+        .hstat:first-child {
+          border-top: 0;
+        }
+      }
+
+      /* ══════════════════════════════════════════════
+       STORY  (white)
+    ══════════════════════════════════════════════ */
+      .story {
+        background: var(--white);
+      }
+      .story .wrap {
+        display: grid;
+        grid-template-columns: 280px 1fr;
+        gap: clamp(60px, 9vw, 130px);
+        align-items: start;
+      }
+      .story-sidebar {
+        position: sticky;
+        top: 80px;
+      }
+      .story-sidebar .tag {
+        margin-bottom: 22px;
+      }
+      .story-title {
+        font-family: var(--serif);
+        font-weight: 300;
+        font-size: clamp(1.9rem, 3vw, 2.8rem);
+        line-height: 1.1;
+        letter-spacing: -0.018em;
+        color: var(--ink);
+      }
+      .story-title em {
+        font-style: italic;
+        color: var(--gold);
+      }
+      .story-text p {
+        font-size: clamp(0.97rem, 1.1vw, 1.07rem);
+        line-height: 1.95;
+        color: var(--on-light);
+        font-weight: 300;
+        margin-bottom: 1.75rem;
+      }
+      .story-text p:last-child {
+        margin-bottom: 0;
+      }
+      .story-quote {
+        border-left: 2px solid var(--gold);
+        padding: 26px 0 26px 28px;
+        margin: 40px 0;
+      }
+      .story-quote blockquote {
+        font-family: var(--serif);
+        font-style: italic;
+        font-weight: 300;
+        font-size: clamp(1.2rem, 1.8vw, 1.6rem);
+        line-height: 1.6;
+        color: var(--ink);
+        margin-bottom: 14px;
+      }
+      .story-quote cite {
+        font-family: var(--mono);
+        font-style: normal;
+        font-size: 0.62rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--gold);
+      }
+      @media (max-width: 800px) {
+        .story .wrap {
+          grid-template-columns: 1fr;
+        }
+        .story-sidebar {
+          position: static;
+        }
+      }
+
+      /* ══════════════════════════════════════════════
+       PRINCIPLES  (ink-mid, near black)
+    ══════════════════════════════════════════════ */
+      .principles {
+        background: var(--ink-mid);
+      }
+      .principles-head {
+        text-align: center;
+        max-width: 58ch;
+        margin: 0 auto clamp(60px, 9vw, 90px);
+      }
+      .principles-head .tag {
+        justify-content: center;
+        margin-bottom: 22px;
+      }
+      .principles-head .tag::before {
+        display: none;
+      }
+      .principles-head h2 {
+        font-family: var(--serif);
+        font-weight: 300;
+        font-size: clamp(2.4rem, 4.5vw, 4rem);
+        line-height: 1.05;
+        letter-spacing: -0.02em;
+        color: var(--white);
+        margin-bottom: 18px;
+      }
+      .principles-head h2 em {
+        font-style: italic;
+        color: var(--gold);
+      }
+      .principles-head p {
+        font-size: 0.95rem;
+        line-height: 1.85;
+        color: var(--on-dark);
+        font-weight: 300;
+      }
+
+      .principles-row {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        border-top: 1px solid rgba(255, 255, 255, 0.07);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+      }
+      .p-card {
+        padding: clamp(36px, 5vw, 56px) clamp(28px, 3.5vw, 44px);
+        border-right: 1px solid rgba(255, 255, 255, 0.07);
+        transition: background 0.4s var(--ease);
+      }
+      .p-card:last-child {
+        border-right: 0;
+      }
+      .p-card:hover {
+        background: rgba(255, 255, 255, 0.025);
+      }
+      .p-num {
+        font-family: var(--serif);
+        font-style: italic;
+        font-size: 3rem;
+        color: rgba(176, 138, 82, 0.18);
+        line-height: 1;
+        margin-bottom: 24px;
+        display: block;
+        transition: color 0.4s var(--ease);
+      }
+      .p-card:hover .p-num {
+        color: rgba(176, 138, 82, 0.42);
+      }
+      .p-card h3 {
+        font-family: var(--serif);
+        font-weight: 300;
+        font-size: clamp(1.1rem, 1.5vw, 1.4rem);
+        line-height: 1.3;
+        color: var(--white);
+        margin-bottom: 14px;
+      }
+      .p-card p {
+        font-size: 0.87rem;
+        line-height: 1.85;
+        color: rgba(255, 255, 255, 0.34);
+        font-weight: 300;
+      }
+      @media (max-width: 800px) {
+        .principles-row {
+          grid-template-columns: 1fr;
+        }
+        .p-card {
+          border-right: 0;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+        }
+        .p-card:last-child {
+          border-bottom: 0;
+        }
+      }
+
+      /* ══════════════════════════════════════════════
+       LAYERS  (cream)
+    ══════════════════════════════════════════════ */
+      .layers {
+        background: var(--cream);
+      }
+      .layers-head {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: clamp(40px, 7vw, 100px);
+        align-items: end;
+        margin-bottom: clamp(56px, 8vw, 84px);
+      }
+      .layers-head h2 {
+        font-family: var(--serif);
+        font-weight: 300;
+        font-size: clamp(2.4rem, 4.5vw, 4rem);
+        line-height: 1.05;
+        letter-spacing: -0.02em;
+        color: var(--ink);
+      }
+      .layers-head h2 em {
+        font-style: italic;
+        color: var(--gold);
+      }
+      .layers-head p {
+        font-size: 0.95rem;
+        line-height: 1.85;
+        color: var(--on-light);
+        font-weight: 300;
+      }
+
+      .layers-tbl {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      .layers-tbl thead th {
+        font-family: var(--mono);
+        font-size: 0.6rem;
+        font-weight: 300;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--gold);
+        padding-bottom: 14px;
+        text-align: left;
+        border-bottom: 1px solid var(--gold-line);
+      }
+      .layers-tbl thead th:first-child {
+        width: 48px;
+      }
+      .layers-tbl thead th:nth-child(2) {
+        width: 30%;
+      }
+      .layers-tbl thead th:last-child {
+        text-align: right;
+        width: 130px;
+      }
+
+      .l-tr {
+        border-bottom: 1px solid rgba(9, 9, 10, 0.08);
+        transition: background 0.3s var(--ease);
+      }
+      .l-tr:last-child {
+        border-bottom: 0;
+      }
+      .l-tr:hover {
+        background: rgba(176, 138, 82, 0.04);
+      }
+      .l-tr td {
+        padding: 26px 16px 26px 0;
+        vertical-align: middle;
+      }
+      .l-tr td:first-child {
+        font-family: var(--serif);
+        font-style: italic;
+        font-size: 1.15rem;
+        color: var(--gold);
+        width: 48px;
+      }
+      .l-name {
+        font-family: var(--sans);
+        font-size: 0.86rem;
+        font-weight: 500;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        color: var(--ink);
+      }
+      .l-desc {
+        font-size: 0.86rem;
+        line-height: 1.7;
+        color: var(--on-light);
+        font-weight: 300;
+      }
+      .l-stage {
+        font-family: var(--mono);
+        font-size: 0.6rem;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--gold);
+        opacity: 0.5;
+        text-align: right;
+      }
+      @media (max-width: 800px) {
+        .layers-head {
+          grid-template-columns: 1fr;
+        }
+        .l-stage {
+          display: none;
+        }
+      }
+
+      /* ══════════════════════════════════════════════
+       DEPARTMENTS  (#0F1E30 navy)
+    ══════════════════════════════════════════════ */
+      .depts {
+        background: var(--navy);
+      }
+      .depts-head {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: clamp(40px, 7vw, 100px);
+        align-items: end;
+        margin-bottom: clamp(56px, 8vw, 84px);
+      }
+      .depts-head h2 {
+        font-family: var(--serif);
+        font-weight: 300;
+        font-size: clamp(2.4rem, 4.5vw, 4rem);
+        line-height: 1.05;
+        letter-spacing: -0.02em;
+        color: var(--white);
+      }
+      .depts-head h2 em {
+        font-style: italic;
+        color: var(--gold);
+      }
+      .depts-head p {
+        font-size: 0.95rem;
+        line-height: 1.85;
+        color: var(--on-dark);
+        font-weight: 300;
+      }
+
+      .depts-cols {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        border: 1px solid rgba(255, 255, 255, 0.07);
+        gap: 1px;
+        background: rgba(255, 255, 255, 0.07);
+      }
+      .d-card {
+        background: var(--navy);
+        padding: clamp(36px, 4vw, 52px) clamp(26px, 3.5vw, 40px);
+        transition: background 0.4s var(--ease);
+      }
+      .d-card:hover {
+        background: var(--navy-lt);
+      }
+      .d-idx {
+        font-family: var(--mono);
+        font-size: 0.63rem;
+        letter-spacing: 0.18em;
+        color: var(--gold);
+        opacity: 0.6;
+        margin-bottom: 26px;
+        display: block;
+      }
+      .d-card h3 {
+        font-family: var(--serif);
+        font-weight: 300;
+        font-size: clamp(1.15rem, 1.7vw, 1.5rem);
+        color: var(--white);
+        line-height: 1.25;
+        margin-bottom: 12px;
+      }
+      .d-desc {
+        font-size: 0.85rem;
+        line-height: 1.75;
+        color: rgba(255, 255, 255, 0.36);
+        font-weight: 300;
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+      }
+      .d-list {
+        list-style: none;
+      }
+      .d-list li {
+        font-size: 0.82rem;
+        line-height: 1.55;
+        color: rgba(255, 255, 255, 0.28);
+        font-weight: 300;
+        padding: 8px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+        display: flex;
+        align-items: flex-start;
+        gap: 11px;
+      }
+      .d-list li:last-child {
+        border-bottom: 0;
+      }
+      .d-list li::before {
+        content: "";
+        width: 3px;
+        height: 3px;
+        border-radius: 50%;
+        background: var(--gold);
+        opacity: 0.45;
+        flex-shrink: 0;
+        margin-top: 7px;
+      }
+      @media (max-width: 880px) {
+        .depts-head {
+          grid-template-columns: 1fr;
+        }
+        .depts-cols {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* ══════════════════════════════════════════════
+       GUARANTEES  (white, symmetric two-col)
+    ══════════════════════════════════════════════ */
+      .guarantees {
+        background: var(--white);
+      }
+      .guarantees .wrap {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: clamp(60px, 9vw, 130px);
+        align-items: center;
+      }
+      .g-left .tag {
+        margin-bottom: 22px;
+      }
+      .g-left h2 {
+        font-family: var(--serif);
+        font-weight: 300;
+        font-size: clamp(2.4rem, 4.5vw, 4rem);
+        line-height: 1.05;
+        letter-spacing: -0.02em;
+        color: var(--ink);
+        margin-bottom: 20px;
+      }
+      .g-left h2 em {
+        font-style: italic;
+        color: var(--gold);
+      }
+      .g-left p {
+        font-size: 0.95rem;
+        line-height: 1.85;
+        color: var(--on-light);
+        font-weight: 300;
+      }
+      .g-stack {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+      }
+      .g-row {
+        display: grid;
+        grid-template-columns: 50px 1fr;
+        border: 1px solid rgba(9, 9, 10, 0.09);
+        transition: border-color 0.35s var(--ease);
+      }
+      .g-row:hover {
+        border-color: rgba(176, 138, 82, 0.42);
+      }
+      .g-row-n {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-right: 1px solid rgba(9, 9, 10, 0.09);
+        font-family: var(--serif);
+        font-style: italic;
+        font-size: 1.1rem;
+        color: var(--gold);
+      }
+      .g-row-b {
+        padding: 22px 24px;
+      }
+      .g-row-b h3 {
+        font-family: var(--sans);
+        font-size: 0.8rem;
+        font-weight: 500;
+        letter-spacing: 0.07em;
+        text-transform: uppercase;
+        color: var(--ink);
+        margin-bottom: 5px;
+      }
+      .g-row-b p {
+        font-size: 0.83rem;
+        line-height: 1.7;
+        color: var(--on-light);
+        font-weight: 300;
+      }
+      @media (max-width: 800px) {
+        .guarantees .wrap {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* ══════════════════════════════════════════════
+       CONTACT  (#0F1E30 navy)
+    ══════════════════════════════════════════════ */
+      .contact {
+        background: var(--navy);
+      }
+      .contact-split {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: clamp(60px, 8vw, 120px);
+        align-items: end;
+        padding-bottom: clamp(60px, 8vw, 88px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+        margin-bottom: clamp(60px, 8vw, 88px);
+      }
+      .contact-h {
+        font-family: var(--serif);
+        font-weight: 300;
+        font-size: clamp(2.8rem, 5.5vw, 5.2rem);
+        line-height: 0.95;
+        letter-spacing: -0.025em;
+        color: var(--white);
+      }
+      .contact-h em {
+        font-style: italic;
+        color: var(--gold);
+      }
+      .contact-right .tag {
+        margin-bottom: 18px;
+      }
+      .contact-right p {
+        font-size: 0.95rem;
+        line-height: 1.85;
+        color: var(--on-dark);
+        font-weight: 300;
+        margin-bottom: 30px;
+      }
+      .contact-btns {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+
+      .c-cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        border: 1px solid rgba(255, 255, 255, 0.07);
+      }
+      .c-card {
+        padding: clamp(30px, 4vw, 44px) clamp(24px, 3.5vw, 38px);
+        text-align: center;
+        border-right: 1px solid rgba(255, 255, 255, 0.07);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transition: background 0.35s var(--ease);
+      }
+      .c-card:last-child {
+        border-right: 0;
+      }
+      .c-card:hover {
+        background: rgba(255, 255, 255, 0.03);
+      }
+      .c-ico {
+        width: 38px;
+        height: 38px;
+        border: 1px solid var(--gold-line);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 18px;
+      }
+      .c-ico svg {
+        width: 14px;
+        height: 14px;
+        stroke: var(--gold);
+        fill: none;
+        stroke-width: 1.5;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+      .c-lbl {
+        font-family: var(--mono);
+        font-size: 0.6rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--gold);
+        opacity: 0.5;
+        margin-bottom: 9px;
+      }
+      .c-val {
+        font-family: var(--serif);
+        font-style: italic;
+        font-weight: 300;
+        font-size: clamp(0.92rem, 1.2vw, 1.05rem);
+        color: rgba(255, 255, 255, 0.68);
+        line-height: 1.6;
+      }
+      .c-val a {
+        transition: color 0.3s;
+      }
+      .c-val a:hover {
+        color: var(--gold-lt);
+      }
+      @media (max-width: 800px) {
+        .contact-split {
+          grid-template-columns: 1fr;
+        }
+        .c-cards {
+          grid-template-columns: 1fr;
+        }
+        .c-card {
+          border-right: 0;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+        }
+        .c-card:last-child {
+          border-bottom: 0;
+        }
+      }
+
+      /* ══════════════════════════════════════════════
+       REVEALS
+    ══════════════════════════════════════════════ */
+      .reveal {
+        opacity: 0;
+        transform: translateY(20px);
+        transition:
+          opacity 0.85s var(--ease),
+          transform 0.85s var(--ease);
+      }
+      .reveal.in {
+        opacity: 1;
+        transform: none;
+      }
+      .d1 {
+        transition-delay: 0.1s;
+      }
+      .d2 {
+        transition-delay: 0.22s;
+      }
+      .d3 {
+        transition-delay: 0.34s;
+      }
+      .d4 {
+        transition-delay: 0.46s;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .reveal {
+          opacity: 1;
+          transform: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ════════════════════════════════
+     HERO
+════════════════════════════════ -->
+    <section class="hero with-noise">
+      <div class="hero-glow"></div>
+      <div class="hero-body-wrap">
+        <div class="hero-inner">
+          <!-- LEFT -->
+          <div class="hero-left">
+            <div class="hero-eyebrow reveal">
+              <span class="tag" style="color: rgba(255, 255, 255, 0.28)"
+                >FCCA Chartered Accountants · Aberdeen</span
+              >
+            </div>
+            <h1 class="hero-h1 reveal d1">
+              The<br />standard<br /><em>begins here.</em>
+            </h1>
+            <div class="hero-divider reveal d2"></div>
+            <p class="hero-desc reveal d2">
+              A fully managed finance function for growing UK businesses — built
+              on Big&nbsp;4 discipline, delivered through specialist departments
+              and a four-layer quality structure, with FCCA-qualified
+              accountability at every stage.
+            </p>
+            <div class="hero-ctas reveal d3">
+              <a href="/contact/" class="btn btn-primary"
+                >Book a Conversation &rarr;</a
+              >
+              <a href="/what-we-do-well/" class="btn btn-ghost"
+                >Our Approach &rarr;</a
+              >
+            </div>
+          </div>
+
+          <!-- RIGHT -->
+          <div class="hero-right reveal d2">
+            <div class="portrait-frame">
+              <img
+                src="https://a2zaccounting.co.uk/wp-content/uploads/2026/04/srahman.png"
+                alt="Shabbir Rahman FCCA, Founder and Chief Executive of A2Z Accounting Solutions"
+                width="380"
+                height="507"
+              />
+            </div>
+            <div class="portrait-credit">
+              <strong>Shabbir Rahman, FCCA</strong>
+              <span>Founder &amp; Chief Executive</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- STATS BAR -->
+      <div class="hero-bar reveal d4">
+        <div class="hero-bar-inner">
+          <div class="hstat">
+            <div class="hstat-val">FCCA</div>
+            <div class="hstat-lbl">Director<br />Qualification</div>
+          </div>
+          <div class="hstat">
+            <div class="hstat-val">Four</div>
+            <div class="hstat-lbl">Independent<br />Review Layers</div>
+          </div>
+          <div class="hstat">
+            <div class="hstat-val">Three</div>
+            <div class="hstat-lbl">Written<br />Guarantees</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════
+     STORY
+════════════════════════════════ -->
+    <section class="story section-py">
+      <div class="wrap">
+        <div class="story-sidebar reveal">
+          <span class="tag">The Founder's Story</span>
+          <h2 class="story-title" style="margin-top: 22px">
+            A discipline<br />learned
+            <em>somewhere<br />different.</em>
+          </h2>
+        </div>
+        <div class="story-text">
+          <p class="reveal">
+            It began deep beneath the North Sea at Subsea&nbsp;7, where Shabbir
+            Rahman managed complex group accounts and operated to the full
+            rigour of Big&nbsp;4 audit standards — Deloitte and EY scrutinising
+            every number, every quarter, without exception.
+          </p>
+          <p class="reveal">
+            Those years demanded bulletproof processes, precise systems, and
+            zero tolerance for error. When A2Z was founded in 2018, that
+            discipline was not aspirational — it was operational from the first
+            engagement letter.
+          </p>
+          <div class="story-quote reveal">
+            <blockquote>
+              We did not build another accounting firm. We built the finance
+              function that growing businesses deserved — and never had access
+              to.
+            </blockquote>
+            <cite
+              >Shabbir Rahman, FCCA &mdash; Founder &amp; Chief Executive</cite
+            >
+          </div>
+          <p class="reveal">
+            A2Z was built on an entirely different model: specialist departments
+            rather than generalists, multiple independent quality-control layers
+            rather than a single reviewer, and FCCA director-level oversight on
+            every single client engagement.
+          </p>
+          <p class="reveal">
+            One hundred per cent paperless, proactively managed, and delivered
+            to the standards Shabbir applied at corporate level — only now to
+            the clients who had previously been priced out of them.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════
+     PRINCIPLES
+════════════════════════════════ -->
+    <section class="principles section-py with-noise">
+      <div class="wrap">
+        <div class="principles-head reveal">
+          <span class="tag" style="justify-content: center"
+            >Our Non-Negotiables</span
+          >
+          <h2 style="margin-top: 22px">
+            Three things we will<br /><em>not compromise.</em>
+          </h2>
+          <p>
+            Every engagement is built on three non-negotiable positions. They
+            are not marketing — they define how the firm works, and what every
+            client may expect.
+          </p>
+        </div>
+        <div class="principles-row reveal">
+          <article class="p-card">
+            <span class="p-num">i</span>
+            <h3>We do not compete on price.</h3>
+            <p>
+              Cheap accounting creates expensive problems. We price for the
+              value delivered — certainty, accuracy, and measurable strategic
+              advantage.
+            </p>
+          </article>
+          <article class="p-card">
+            <span class="p-num">ii</span>
+            <h3>We do not sell hours.</h3>
+            <p>
+              Every engagement is for specific, guaranteed outcomes — fixed-fee,
+              fully scoped, and confirmed in writing before any work begins.
+            </p>
+          </article>
+          <article class="p-card">
+            <span class="p-num">iii</span>
+            <h3>We do not react to problems.</h3>
+            <p>
+              We prevent them. The four-layer quality structure identifies and
+              resolves issues long before they reach you — or HMRC.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════
+     LAYERS
+════════════════════════════════ -->
+    <section class="layers section-py">
+      <div class="wrap">
+        <div class="layers-head reveal">
+          <div>
+            <span class="tag">Quality Control</span>
+            <h2 style="margin-top: 20px">
+              Four layers of review.<br /><em>Every single time.</em>
+            </h2>
+          </div>
+          <div>
+            <p>
+              No output leaves A2Z without passing through every layer. Not a
+              checklist — a structural guarantee, built into how the firm
+              operates at every client tier.
+            </p>
+          </div>
+        </div>
+        <div class="reveal">
+          <table class="layers-tbl">
+            <thead>
+              <tr>
+                <th></th>
+                <th>Layer</th>
+                <th>Description</th>
+                <th style="text-align: right">Stage</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="l-tr">
+                <td>i</td>
+                <td><div class="l-name">Specialist Completes</div></td>
+                <td>
+                  <div class="l-desc">
+                    Work completed by a department specialist with focused, deep
+                    expertise in their discipline.
+                  </div>
+                </td>
+                <td><div class="l-stage">Origination</div></td>
+              </tr>
+              <tr class="l-tr">
+                <td>ii</td>
+                <td><div class="l-name">Department Review</div></td>
+                <td>
+                  <div class="l-desc">
+                    The department head independently reviews for technical
+                    accuracy, compliance, and completeness.
+                  </div>
+                </td>
+                <td><div class="l-stage">Technical Check</div></td>
+              </tr>
+              <tr class="l-tr">
+                <td>iii</td>
+                <td><div class="l-name">Senior Verification</div></td>
+                <td>
+                  <div class="l-desc">
+                    A senior accountant verifies regulatory compliance and
+                    identifies proactive planning opportunities.
+                  </div>
+                </td>
+                <td><div class="l-stage">Compliance Gate</div></td>
+              </tr>
+              <tr class="l-tr">
+                <td>iv</td>
+                <td><div class="l-name">Director Approval</div></td>
+                <td>
+                  <div class="l-desc">
+                    The FCCA director personally approves every output before
+                    release. Without exception.
+                  </div>
+                </td>
+                <td><div class="l-stage">Final Release</div></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════
+     DEPARTMENTS
+════════════════════════════════ -->
+    <section class="depts section-py with-noise">
+      <div class="wrap">
+        <div class="depts-head reveal">
+          <div>
+            <span class="tag" style="color: rgba(255, 255, 255, 0.3)"
+              >Specialist Departments</span
+            >
+            <h2 style="margin-top: 20px">
+              Three specialists.<br /><em>One point of contact.</em>
+            </h2>
+          </div>
+          <div>
+            <p>
+              Generalist firms ask one accountant to do everything. We separate
+              the disciplines — so each is handled by someone whose entire focus
+              is that work.
+            </p>
+          </div>
+        </div>
+        <div class="depts-cols reveal">
+          <article class="d-card">
+            <span class="d-idx">01</span>
+            <h3>Payroll &amp; Billing</h3>
+            <p class="d-desc">
+              Full-service payroll and credit control — RTI, PAYE, pension
+              auto-enrolment, and accounts receivable.
+            </p>
+            <ul class="d-list">
+              <li>RTI submissions and PAYE management</li>
+              <li>Pension auto-enrolment administration</li>
+              <li>Credit control and aged-debtor reporting</li>
+              <li>P11D benefits-in-kind processing</li>
+              <li>Statutory sick pay and maternity calculations</li>
+              <li>HMRC correspondence and resolution</li>
+            </ul>
+          </article>
+          <article class="d-card">
+            <span class="d-idx">02</span>
+            <h3>VAT &amp; Management Accounts</h3>
+            <p class="d-desc">
+              MTD-compliant bookkeeping, quarterly VAT returns, and regular
+              management reporting in real time.
+            </p>
+            <ul class="d-list">
+              <li>Monthly bookkeeping and reconciliation</li>
+              <li>Quarterly VAT returns (MTD-compliant)</li>
+              <li>Management accounts with commentary</li>
+              <li>Cash-flow forecasting and reporting</li>
+              <li>VAT scheme selection and optimisation</li>
+              <li>Making Tax Digital compliance</li>
+            </ul>
+          </article>
+          <article class="d-card">
+            <span class="d-idx">03</span>
+            <h3>Year-End &amp; Tax</h3>
+            <p class="d-desc">
+              Annual accounts, Corporation Tax, self-assessment, and year-round
+              strategic planning.
+            </p>
+            <ul class="d-list">
+              <li>Statutory annual accounts preparation</li>
+              <li>CT600 Corporation Tax returns</li>
+              <li>Self-assessment personal tax returns</li>
+              <li>Proactive tax planning and structuring</li>
+              <li>Companies House filing and compliance</li>
+              <li>Research &amp; Development tax credit claims</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════
+     GUARANTEES
+════════════════════════════════ -->
+    <section class="guarantees section-py">
+      <div class="wrap">
+        <div class="g-left reveal">
+          <span class="tag">Contractual Commitments</span>
+          <h2 style="margin-top: 22px">
+            Three commitments.<br /><em>All in writing.</em>
+          </h2>
+          <p>
+            Not aspirational promises — contractual obligations, included in
+            every engagement letter and enforceable from day one.
+          </p>
+        </div>
+        <div class="g-stack reveal d1">
+          <div class="g-row">
+            <div class="g-row-n">i</div>
+            <div class="g-row-b">
+              <h3>Same-day Response</h3>
+              <p>
+                Any query submitted before midday on a working day receives a
+                substantive response the same day. Not an acknowledgement — a
+                real answer.
+              </p>
+            </div>
+          </div>
+          <div class="g-row">
+            <div class="g-row-n">ii</div>
+            <div class="g-row-b">
+              <h3>Zero Missed Deadlines</h3>
+              <p>
+                Every HMRC and Companies House deadline is met proactively, well
+                in advance. No last-minute rushes, no penalty exposure.
+              </p>
+            </div>
+          </div>
+          <div class="g-row">
+            <div class="g-row-n">iii</div>
+            <div class="g-row-b">
+              <h3>Transparent Fixed Fees</h3>
+              <p>
+                Your monthly fee is agreed, confirmed in writing, and never
+                changes without your prior approval. No hourly billing, no
+                surprise invoices.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════
+     CONTACT
+════════════════════════════════ -->
+    <section class="contact section-py with-noise">
+      <div class="wrap">
+        <div class="contact-split">
+          <h2 class="contact-h reveal">
+            If this is the standard,
+            <em>let us speak.</em>
+          </h2>
+          <div class="reveal d1">
+            <span
+              class="tag"
+              style="
+                color: rgba(255, 255, 255, 0.28);
+                margin-bottom: 18px;
+                display: inline-flex;
+              "
+              >Get in Touch</span
+            >
+            <p>
+              No obligation — a straightforward conversation about your
+              business, where it stands, and what a properly managed finance
+              function would look like for you.
+            </p>
+            <div class="contact-btns">
+              <a href="/contact/" class="btn btn-primary"
+                >Book a Conversation &rarr;</a
+              >
+              <a href="/what-we-do-well/" class="btn btn-ghost-gold"
+                >Explore Our Services &rarr;</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="c-cards reveal d2">
+          <div class="c-card">
+            <div class="c-ico">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 5.19 12.9 19.79 19.79 0 0 1 2.12 4.27 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+                />
+              </svg>
+            </div>
+            <div class="c-lbl">By Phone</div>
+            <div class="c-val"><a href="tel:01224042961">01224 042 961</a></div>
+          </div>
+          <div class="c-card">
+            <div class="c-ico">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                />
+                <polyline points="22,6 12,13 2,6" />
+              </svg>
+            </div>
+            <div class="c-lbl">By Email</div>
+            <div class="c-val">
+              <a href="mailto:info@a2zaccounting.co.uk"
+                >info@a2zaccounting.co.uk</a
+              >
+            </div>
+          </div>
+          <div class="c-card">
+            <div class="c-ico">
+              <svg viewBox="0 0 24 24">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                <circle cx="12" cy="10" r="3" />
+              </svg>
+            </div>
+            <div class="c-lbl">In Person</div>
+            <address class="c-val" style="font-style: normal">
+              1st Floor, 499 Union Street<br />Aberdeen, AB11 6DB
+            </address>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      const io = new IntersectionObserver(
+        (entries) =>
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              e.target.classList.add("in");
+              io.unobserve(e.target);
+            }
+          }),
+        { threshold: 0.07, rootMargin: "0px 0px -20px 0px" },
+      );
+      document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+    </script>
+  </body>
+</html>

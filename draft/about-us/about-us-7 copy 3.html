@@ -1,0 +1,1819 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      About — A2Z Accounting Solutions | FCCA Chartered Accountants, Aberdeen
+    </title>
+    <meta
+      name="description"
+      content="A2Z Accounting Solutions is an FCCA-led chartered accountancy firm in Aberdeen, founded by Shabbir Rahman. Specialist departments, four-layer quality control, three written guarantees."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --bg: #f8f6f2;
+        --bg-dark: #0c0c0a;
+        --bg-mid: #141410;
+        --ink: #0c0c0a;
+        --ink-60: rgba(12, 12, 10, 0.6);
+        --ink-30: rgba(12, 12, 10, 0.3);
+        --ink-10: rgba(12, 12, 10, 0.08);
+        --gold: #b08d57;
+        --gold-lt: #c9a96e;
+        --gold-10: rgba(176, 141, 87, 0.12);
+        --white: #ffffff;
+        --serif: "Cormorant Garamond", Georgia, serif;
+        --sans: "DM Sans", system-ui, sans-serif;
+        --mono: "DM Mono", monospace;
+        --ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        scroll-behavior: smooth;
+        font-size: 16px;
+      }
+      body {
+        font-family: var(--sans);
+        font-weight: 300;
+        color: var(--ink);
+        background: var(--bg);
+        -webkit-font-smoothing: antialiased;
+        overflow-x: hidden;
+      }
+      img {
+        display: block;
+        max-width: 100%;
+        height: auto;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      /* ─── TYPOGRAPHY SCALE ─── */
+      .label {
+        font-family: var(--mono);
+        font-size: 0.7rem;
+        font-weight: 400;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--gold);
+      }
+      .display-xl {
+        font-family: var(--serif);
+        font-weight: 300;
+        font-size: clamp(3.5rem, 7vw, 7rem);
+        line-height: 0.95;
+        letter-spacing: -0.02em;
+        color: var(--white);
+      }
+      .display-xl em {
+        font-style: italic;
+        font-weight: 300;
+      }
+      .display-lg {
+        font-family: var(--serif);
+        font-weight: 300;
+        font-size: clamp(2.4rem, 4.5vw, 4.2rem);
+        line-height: 1.05;
+        letter-spacing: -0.02em;
+        color: var(--ink);
+      }
+      .display-lg em {
+        font-style: italic;
+        color: var(--gold);
+      }
+      .display-md {
+        font-family: var(--serif);
+        font-weight: 300;
+        font-size: clamp(1.8rem, 3vw, 2.8rem);
+        line-height: 1.15;
+        letter-spacing: -0.015em;
+        color: var(--ink);
+      }
+      .display-md em {
+        font-style: italic;
+        color: var(--gold);
+      }
+      .body-text {
+        font-size: 1rem;
+        line-height: 1.85;
+        color: var(--ink-60);
+        font-weight: 300;
+      }
+
+      /* ─── LAYOUT UTILITIES ─── */
+      .container {
+        max-width: 1160px;
+        margin: 0 auto;
+        padding: 0 clamp(24px, 5vw, 72px);
+      }
+      .section-pad {
+        padding: clamp(80px, 11vw, 130px) clamp(24px, 5vw, 72px);
+      }
+      .divider {
+        width: 32px;
+        height: 1px;
+        background: var(--gold);
+        margin: 24px 0;
+      }
+
+      /* ─── BUTTONS ─── */
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        font-family: var(--mono);
+        font-size: 0.72rem;
+        font-weight: 400;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        padding: 14px 28px;
+        transition: all 0.3s var(--ease);
+        cursor: pointer;
+        border: 1px solid transparent;
+      }
+      .btn-gold {
+        background: var(--gold);
+        color: var(--bg-dark);
+        border-color: var(--gold);
+      }
+      .btn-gold:hover {
+        background: var(--gold-lt);
+        border-color: var(--gold-lt);
+      }
+      .btn-ghost-light {
+        background: transparent;
+        color: rgba(255, 255, 255, 0.75);
+        border-color: rgba(255, 255, 255, 0.2);
+      }
+      .btn-ghost-light:hover {
+        color: var(--white);
+        border-color: rgba(255, 255, 255, 0.5);
+      }
+      .btn-ghost-dark {
+        background: transparent;
+        color: var(--gold);
+        border-color: rgba(176, 141, 87, 0.35);
+      }
+      .btn-ghost-dark:hover {
+        border-color: var(--gold);
+        background: var(--gold-10);
+      }
+
+      /* ══════════════════════════════════════════
+       HERO
+    ══════════════════════════════════════════ */
+      .hero {
+        background: var(--bg-dark);
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        position: relative;
+      }
+      .hero-inner {
+        max-width: 1560px;
+        margin: 0 auto;
+        padding: clamp(100px, 13vw, 160px) clamp(24px, 5vw, 72px);
+        display: grid;
+        grid-template-columns: 1fr 420px;
+        gap: clamp(60px, 8vw, 120px);
+        align-items: center;
+        width: 100%;
+      }
+      .hero-kicker {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        margin-bottom: 40px;
+      }
+      .hero-kicker-dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--gold);
+        flex-shrink: 0;
+      }
+      .hero-heading {
+        font-family: var(--serif);
+        font-weight: 300;
+        font-size: clamp(3.8rem, 7.5vw, 7.5rem);
+        line-height: 0.93;
+        letter-spacing: -0.025em;
+        color: var(--white);
+        margin-bottom: 40px;
+      }
+      .hero-heading em {
+        font-style: italic;
+        color: var(--gold);
+      }
+      .hero-sub {
+        font-size: clamp(0.95rem, 1.1vw, 1.05rem);
+        line-height: 1.85;
+        color: rgba(255, 255, 255, 0.45);
+        font-weight: 300;
+        max-width: 48ch;
+        margin-bottom: 48px;
+      }
+      .hero-meta {
+        display: grid;
+        grid-template-columns: repeat(3, auto);
+        gap: 40px;
+        margin-bottom: 52px;
+        width: fit-content;
+      }
+      .hero-meta-item {
+      }
+      .hero-meta-val {
+        font-family: var(--serif);
+        font-style: italic;
+        font-size: 2rem;
+        color: var(--gold);
+        line-height: 1;
+        margin-bottom: 6px;
+      }
+      .hero-meta-lbl {
+        font-family: var(--mono);
+        font-size: 0.68rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.3);
+      }
+      .hero-ctas {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+      /* Portrait */
+      .hero-portrait-col {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+      }
+      .hero-portrait-frame {
+        width: 100%;
+        aspect-ratio: 3/4;
+        overflow: hidden;
+        position: relative;
+      }
+      .hero-portrait-frame img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top center;
+        filter: grayscale(15%) contrast(1.05);
+        display: block;
+      }
+      .hero-portrait-caption {
+        margin-top: 20px;
+        text-align: center;
+      }
+      .hero-portrait-caption strong {
+        display: block;
+        font-family: var(--serif);
+        font-style: italic;
+        font-size: 1.1rem;
+        color: rgba(255, 255, 255, 0.8);
+        font-weight: 300;
+        margin-bottom: 4px;
+      }
+      .hero-portrait-caption span {
+        font-family: var(--mono);
+        font-size: 0.68rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.3);
+      }
+      @media (max-width: 900px) {
+        .hero-inner {
+          grid-template-columns: 1fr;
+        }
+        .hero-portrait-col {
+          display: none;
+        }
+      }
+
+      /* ══════════════════════════════════════════
+       STORY
+    ══════════════════════════════════════════ */
+      .story {
+        background: var(--white);
+        padding: clamp(80px, 11vw, 130px) clamp(24px, 5vw, 72px);
+      }
+      .story-inner {
+        max-width: 1160px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 320px 1fr;
+        gap: clamp(60px, 8vw, 120px);
+        align-items: start;
+      }
+      .story-sidebar {
+        position: sticky;
+        top: 80px;
+      }
+      .story-sidebar .label {
+        margin-bottom: 20px;
+        display: block;
+      }
+      .story-sidebar .display-md {
+        margin-bottom: 0;
+      }
+      .story-content p {
+        font-size: clamp(1rem, 1.15vw, 1.1rem);
+        line-height: 1.9;
+        color: var(--ink-60);
+        font-weight: 300;
+        margin-bottom: 1.75rem;
+      }
+      .story-content p:last-child {
+        margin-bottom: 0;
+      }
+      .story-quote {
+        padding: 36px 0 36px 28px;
+        border-left: 2px solid var(--gold);
+        margin: 40px 0;
+      }
+      .story-quote blockquote {
+        font-family: var(--serif);
+        font-style: italic;
+        font-size: clamp(1.25rem, 1.8vw, 1.65rem);
+        line-height: 1.55;
+        color: var(--ink);
+        font-weight: 300;
+        margin-bottom: 16px;
+      }
+      .story-quote cite {
+        font-style: normal;
+        font-family: var(--mono);
+        font-size: 0.68rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--gold);
+      }
+      @media (max-width: 820px) {
+        .story-inner {
+          grid-template-columns: 1fr;
+        }
+        .story-sidebar {
+          position: static;
+        }
+      }
+
+      /* ══════════════════════════════════════════
+       PRINCIPLES
+    ══════════════════════════════════════════ */
+      .principles {
+        background: var(--bg-dark);
+        padding: clamp(80px, 11vw, 130px) clamp(24px, 5vw, 72px);
+        overflow: hidden;
+        position: relative;
+      }
+      .principles-inner {
+        max-width: 1160px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+      }
+
+      /* ── Header ── */
+      .principles-head {
+        display: grid;
+        grid-template-columns: 1fr max-content;
+        gap: clamp(40px, 6vw, 100px);
+        align-items: end;
+        margin-bottom: clamp(64px, 9vw, 108px);
+        padding-bottom: clamp(40px, 5vw, 64px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+      }
+      .principles-head-left .label {
+        display: block;
+        margin-bottom: 20px;
+      }
+      .principles-head-left .display-lg {
+        color: var(--white);
+      }
+      .principles-head-left .display-lg em {
+        color: var(--gold);
+      }
+      .principles-head-right {
+        max-width: 36ch;
+        text-align: right;
+        align-self: end;
+      }
+      .principles-head-right p {
+        font-size: 1.05rem;
+        line-height: 1.85;
+        color: rgba(255, 255, 255, 0.58);
+        font-weight: 300;
+      }
+
+      /* ── Cards ── */
+      .principles-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1px;
+        background: rgba(255, 255, 255, 0.06);
+      }
+      .principle-item {
+        position: relative;
+        background: var(--bg-dark);
+        padding: clamp(48px, 5.5vw, 72px) clamp(36px, 4vw, 56px)
+          clamp(56px, 6.5vw, 84px);
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        transition: background 0.65s var(--ease);
+      }
+      /* Animated gold left-bar — sweeps down from top on hover */
+      .principle-item::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 2px;
+        height: 100%;
+        background: linear-gradient(
+          to bottom,
+          var(--gold) 0%,
+          rgba(176, 141, 87, 0.25) 65%,
+          transparent 100%
+        );
+        transform: scaleY(0);
+        transform-origin: top;
+        transition: transform 0.65s var(--ease);
+      }
+      /* Warm radial glow from top-left */
+      .principle-item::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(
+          ellipse at 0% 0%,
+          rgba(176, 141, 87, 0.07) 0%,
+          transparent 55%
+        );
+        opacity: 0;
+        transition: opacity 0.65s var(--ease);
+        pointer-events: none;
+      }
+      .principle-item:hover {
+        background: #100f0c;
+      }
+      .principle-item:hover::before {
+        transform: scaleY(1);
+      }
+      .principle-item:hover::after {
+        opacity: 1;
+      }
+
+      /* Outlined watermark numeral — bottom-right of each card */
+      .principle-watermark {
+        position: absolute;
+        bottom: -28px;
+        right: -4px;
+        font-family: var(--serif);
+        font-style: italic;
+        font-weight: 300;
+        font-size: clamp(9rem, 14vw, 16rem);
+        line-height: 1;
+        color: transparent;
+        -webkit-text-stroke: 1px rgba(255, 255, 255, 0.045);
+        pointer-events: none;
+        user-select: none;
+        transition: -webkit-text-stroke-color 0.65s var(--ease);
+      }
+      .principle-item:hover .principle-watermark {
+        -webkit-text-stroke-color: rgba(176, 141, 87, 0.13);
+      }
+
+      /* Title — italic serif, dominant size */
+      .principle-item h3 {
+        font-family: var(--serif);
+        font-weight: 300;
+        font-style: italic;
+        font-size: clamp(1.7rem, 2.5vw, 2.4rem);
+        color: var(--white);
+        line-height: 1.18;
+        letter-spacing: -0.015em;
+        margin-bottom: clamp(20px, 2.5vw, 28px);
+        flex-grow: 1;
+      }
+      .principle-item p {
+        font-size: 1rem;
+        line-height: 1.9;
+        color: rgba(255, 255, 255, 0.42);
+        font-weight: 300;
+      }
+
+      /* ── Closing manifesto statement ── */
+      .principles-manifesto {
+        margin-top: clamp(60px, 7vw, 92px);
+        padding-top: clamp(32px, 4vw, 48px);
+        border-top: 1px solid rgba(255, 255, 255, 0.07);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: clamp(24px, 4vw, 48px);
+        flex-wrap: wrap;
+      }
+      .principles-manifesto p {
+        font-family: var(--serif);
+        font-style: italic;
+        font-size: clamp(1.1rem, 1.6vw, 1.45rem);
+        font-weight: 300;
+        letter-spacing: 0.04em;
+        background: linear-gradient(
+          105deg,
+          #ffffff 0%,
+          var(--gold-lt) 28%,
+          var(--gold) 55%,
+          #ffffff 100%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      @media (max-width: 820px) {
+        .principles-head {
+          grid-template-columns: 1fr;
+        }
+        .principles-head-right {
+          text-align: left;
+          max-width: 100%;
+        }
+        .principles-grid {
+          grid-template-columns: 1fr;
+        }
+        .principles-manifesto {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      }
+
+      /* ══════════════════════════════════════════
+       QUALITY LAYERS
+    ══════════════════════════════════════════ */
+      .layers {
+        background: var(--bg);
+        padding: clamp(80px, 11vw, 130px) clamp(24px, 5vw, 72px);
+      }
+      .layers-inner {
+        max-width: 1160px;
+        margin: 0 auto;
+      }
+
+      /* Header */
+      .layers-head {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: clamp(40px, 6vw, 100px);
+        align-items: end;
+        margin-bottom: clamp(64px, 9vw, 100px);
+      }
+      .layers-head-left .label {
+        display: block;
+        margin-bottom: 20px;
+      }
+      .layers-head-right p {
+        font-size: 1rem;
+        line-height: 1.88;
+        color: rgba(12, 12, 10, 0.72);
+        font-weight: 300;
+      }
+
+      /* Pipeline stack */
+      .layers-stack {
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* Thin gold thread connecting nodes */
+      .layer-connector {
+        display: flex;
+        padding-left: calc(clamp(52px, 6vw, 68px) / 2 - 0.5px);
+        height: 28px;
+      }
+      .layer-connector-line {
+        width: 1px;
+        height: 100%;
+        background: linear-gradient(
+          to bottom,
+          rgba(176, 141, 87, 0.55),
+          rgba(176, 141, 87, 0.15)
+        );
+      }
+
+      /* Panel row */
+      .layer-panel {
+        position: relative;
+        display: grid;
+        grid-template-columns: clamp(52px, 6vw, 68px) 1fr;
+        gap: 0 clamp(28px, 4vw, 56px);
+        align-items: center;
+        padding: clamp(36px, 4.5vw, 56px) 0;
+        border-bottom: 1px solid var(--ink-10);
+        transition: background 0.55s var(--ease);
+        overflow: hidden;
+      }
+      .layer-panel:first-child {
+        border-top: 1px solid var(--ink-10);
+      }
+      /* Stage-name watermark — blooms on hover via data-watermark attr */
+      .layer-panel::before {
+        content: attr(data-watermark);
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-family: var(--serif);
+        font-style: italic;
+        font-weight: 500;
+        font-size: clamp(1.9rem, 3vw, 3.6rem);
+        line-height: 1;
+        white-space: nowrap;
+        color: transparent;
+        -webkit-text-stroke: 1.5px rgba(105, 112, 122, 0);
+        pointer-events: none;
+        user-select: none;
+        opacity: 0;
+        z-index: 0;
+        transition:
+          opacity 0.65s var(--ease),
+          -webkit-text-stroke-color 0.65s var(--ease);
+      }
+      .layer-panel:hover::before {
+        opacity: 1;
+        -webkit-text-stroke-color: rgba(105, 112, 122, 0.72);
+      }
+
+      /* Gold sweep bar — stays above watermark */
+      .layer-panel::after {
+        content: "";
+        position: absolute;
+        bottom: -1px;
+        left: 0;
+        height: 1px;
+        width: 0;
+        background: var(--gold);
+        z-index: 2;
+        transition: width 0.65s var(--ease);
+      }
+      .layer-panel:hover {
+        background: rgba(176, 141, 87, 0.028);
+      }
+      .layer-panel:hover::after {
+        width: 100%;
+      }
+
+      /* Gold ring node */
+      .layer-ring {
+        width: clamp(52px, 6vw, 68px);
+        height: clamp(52px, 6vw, 68px);
+        border-radius: 50%;
+        border: 1px solid rgba(176, 141, 87, 0.38);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        position: relative;
+        z-index: 1;
+        transition:
+          background 0.55s var(--ease),
+          border-color 0.55s var(--ease);
+      }
+      .layer-panel:hover .layer-ring {
+        background: var(--gold);
+        border-color: var(--gold);
+      }
+      .layer-ring-num {
+        font-family: var(--serif);
+        font-style: italic;
+        font-weight: 300;
+        font-size: clamp(1.1rem, 1.6vw, 1.45rem);
+        color: var(--gold);
+        line-height: 1;
+        transition: color 0.55s var(--ease);
+      }
+      .layer-panel:hover .layer-ring-num {
+        color: var(--bg-dark);
+      }
+
+      /* Body — stage chip + title + description */
+      .layer-body {
+        min-width: 0;
+        position: relative;
+        z-index: 1;
+      }
+      .layer-body-stage {
+        font-family: var(--mono);
+        font-size: 0.61rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--gold);
+        display: block;
+        margin-bottom: 10px;
+      }
+      .layer-body h4 {
+        font-family: var(--serif);
+        font-weight: 300;
+        font-size: clamp(1.35rem, 2.1vw, 2rem);
+        color: var(--ink);
+        line-height: 1.15;
+        letter-spacing: -0.012em;
+        margin-bottom: 14px;
+      }
+      .layer-body p {
+        font-size: 0.95rem;
+        line-height: 1.82;
+        color: rgba(12, 12, 10, 0.72);
+        font-weight: 300;
+        max-width: 52ch;
+      }
+
+      @media (max-width: 820px) {
+        .layers-head {
+          grid-template-columns: 1fr;
+        }
+        .layer-panel {
+          grid-template-columns: clamp(48px, 8vw, 60px) 1fr;
+          gap: 0 18px;
+        }
+        .layer-connector {
+          padding-left: calc(clamp(48px, 8vw, 60px) / 2 - 0.5px);
+        }
+      }
+
+      /* ══════════════════════════════════════════
+       DEPARTMENTS
+    ══════════════════════════════════════════ */
+      .opt-c {
+        background: var(--bg-dark);
+        padding: clamp(80px, 11vw, 120px) clamp(24px, 5vw, 72px);
+      }
+      .opt-c-inner {
+        max-width: 1160px;
+        margin: 0 auto;
+      }
+
+      /* Section header — two-column label / h2 + description */
+      .sect-head {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: clamp(40px, 6vw, 80px);
+        align-items: start;
+        margin-bottom: clamp(48px, 6vw, 72px);
+      }
+      .sect-head-eyebrow {
+        font-family: var(--mono);
+        font-size: 0.68rem;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--gold);
+        display: block;
+        margin-bottom: 20px;
+      }
+      .sect-head h2 {
+        font-family: var(--serif);
+        font-weight: 300;
+        font-size: clamp(2.4rem, 4.5vw, 4.2rem);
+        line-height: 1.05;
+        letter-spacing: -0.02em;
+        color: var(--white);
+      }
+      .sect-head h2 em {
+        font-style: italic;
+        color: var(--gold);
+      }
+      .sect-head-right {
+        padding-top: clamp(20px, 3vw, 52px);
+      }
+      .sect-head-right p {
+        font-size: 1.05rem;
+        line-height: 1.9;
+        color: rgba(255, 255, 255, 0.62);
+        font-weight: 300;
+      }
+      @media (max-width: 720px) {
+        .sect-head {
+          grid-template-columns: 1fr;
+          gap: 24px;
+        }
+        .sect-head-right {
+          padding-top: 0;
+        }
+      }
+
+      .c-grid {
+        display: flex;
+        align-items: stretch;
+        border: 1px solid rgba(255, 255, 255, 0.07);
+        min-height: 680px;
+        overflow: hidden;
+      }
+      .c-col {
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+        border-right: 1px solid rgba(255, 255, 255, 0.07);
+        transition:
+          flex 0.72s var(--ease),
+          background 0.55s var(--ease);
+        flex: 1;
+        min-width: 0;
+      }
+      .c-col:last-child {
+        border-right: 0;
+      }
+      /* Compress non-hovered columns */
+      .c-grid.has-hover .c-col:not(.expanded) {
+        flex: 0.62;
+      }
+      /* Expand the active column */
+      .c-col.expanded {
+        flex: 1.76;
+      }
+      @media (max-width: 900px) {
+        .c-grid {
+          flex-direction: column;
+          min-height: unset;
+        }
+        .c-grid.has-hover .c-col:not(.expanded),
+        .c-col.expanded {
+          flex: 1;
+        }
+        .c-col {
+          min-height: 80px;
+        }
+        .c-col.expanded {
+          min-height: 480px;
+        }
+      }
+
+      /* Gold top crown — dim at rest, vivid on expand */
+      .c-col::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: linear-gradient(
+          to right,
+          transparent 0%,
+          var(--gold) 50%,
+          transparent 100%
+        );
+        opacity: 0.22;
+        transition:
+          opacity 0.5s var(--ease),
+          background 0.5s var(--ease);
+        z-index: 3;
+      }
+      .c-col.expanded::before {
+        opacity: 1;
+        background: linear-gradient(
+          to right,
+          var(--gold) 0%,
+          rgba(176, 141, 87, 0.3) 60%,
+          transparent 100%
+        );
+      }
+
+      /* Warm glow */
+      .c-col::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(
+          ellipse at 0% 35%,
+          rgba(176, 141, 87, 0.065) 0%,
+          transparent 58%
+        );
+        opacity: 0;
+        transition: opacity 0.6s var(--ease);
+        pointer-events: none;
+        z-index: 0;
+      }
+      .c-col.expanded::after {
+        opacity: 1;
+      }
+
+      /* Rest label: rotated name + number */
+      .c-rest {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 28px;
+        opacity: 1;
+        transition: opacity 0.28s var(--ease);
+        pointer-events: none;
+        z-index: 2;
+        overflow: hidden;
+      }
+      .c-col.expanded .c-rest {
+        opacity: 0;
+      }
+      /* Number as a watermark anchored to top-left */
+      .c-rest-num {
+        position: absolute;
+        top: -8px;
+        left: 40px;
+        font-family: var(--serif);
+        font-style: italic;
+        font-weight: 300;
+        font-size: clamp(4rem, 7vw, 8rem);
+        line-height: 1;
+        color: transparent;
+        -webkit-text-stroke: 1.5px rgba(176, 141, 87, 0.28);
+        white-space: nowrap;
+        pointer-events: none;
+        user-select: none;
+      }
+      .c-rest-name {
+        font-family: var(--serif);
+        font-style: italic;
+        font-weight: 300;
+        font-size: clamp(1.6rem, 2.2vw, 2.2rem);
+        color: rgba(255, 255, 255, 0.82);
+        white-space: nowrap;
+        writing-mode: vertical-rl;
+        text-orientation: mixed;
+        transform: rotate(180deg);
+        line-height: 1;
+        position: relative;
+        z-index: 1;
+      }
+
+      /* Expanded content */
+      .c-content {
+        position: absolute;
+        inset: 0;
+        padding: clamp(44px, 5vw, 60px) clamp(36px, 4vw, 52px);
+        opacity: 0;
+        transition: opacity 0.42s 0.18s var(--ease);
+        pointer-events: none;
+        overflow: hidden;
+        z-index: 1;
+      }
+      .c-col.expanded .c-content {
+        opacity: 1;
+        pointer-events: auto;
+        overflow-y: auto;
+        scrollbar-width: thin;
+        scrollbar-color: rgba(176, 141, 87, 0.3) transparent;
+      }
+      .c-col.expanded .c-content::-webkit-scrollbar {
+        width: 4px;
+      }
+      .c-col.expanded .c-content::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      .c-col.expanded .c-content::-webkit-scrollbar-thumb {
+        background: rgba(176, 141, 87, 0.3);
+        border-radius: 2px;
+      }
+      .c-col.expanded .c-content::-webkit-scrollbar-thumb:hover {
+        background: rgba(176, 141, 87, 0.55);
+      }
+
+      .c-wm {
+        position: absolute;
+        bottom: -60px;
+        right: -16px;
+        font-family: var(--serif);
+        font-style: italic;
+        font-weight: 300;
+        font-size: clamp(14rem, 20vw, 28rem);
+        line-height: 1;
+        color: transparent;
+        -webkit-text-stroke: 1.5px rgba(176, 141, 87, 0.18);
+        pointer-events: none;
+        user-select: none;
+        z-index: 0;
+      }
+      .c-col.expanded .c-wm {
+        -webkit-text-stroke-color: rgba(176, 141, 87, 0.28);
+      }
+      .c-idx {
+        font-family: var(--mono);
+        font-size: 0.68rem;
+        letter-spacing: 0.24em;
+        text-transform: uppercase;
+        color: var(--gold);
+        opacity: 0.8;
+        display: block;
+        margin-bottom: 20px;
+        position: relative;
+        z-index: 1;
+      }
+      .c-content h3 {
+        font-family: var(--serif);
+        font-weight: 300;
+        font-style: italic;
+        font-size: clamp(2.2rem, 3.4vw, 3.2rem);
+        color: var(--white);
+        line-height: 1.08;
+        letter-spacing: -0.02em;
+        margin-bottom: 18px;
+        position: relative;
+        z-index: 1;
+      }
+      .c-desc {
+        font-size: 1rem;
+        line-height: 1.85;
+        color: rgba(255, 255, 255, 0.58);
+        font-weight: 300;
+        margin-bottom: 32px;
+        padding-bottom: 28px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        max-width: 50ch;
+        position: relative;
+        z-index: 1;
+      }
+      .c-services {
+        list-style: none;
+        counter-reset: cs;
+        position: relative;
+        z-index: 1;
+      }
+      .c-services li {
+        counter-increment: cs;
+        display: grid;
+        grid-template-columns: 30px 1fr;
+        gap: 0 10px;
+        align-items: baseline;
+        padding: 11px 0;
+        font-size: 0.92rem;
+        line-height: 1.55;
+        color: rgba(255, 255, 255, 0.52);
+        font-weight: 300;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      }
+      .c-services li:last-child {
+        border-bottom: 0;
+      }
+      .c-services li::before {
+        content: "0" counter(cs);
+        font-family: var(--mono);
+        font-size: 0.6rem;
+        letter-spacing: 0.08em;
+        color: var(--gold);
+        opacity: 0.65;
+        display: block;
+        padding-top: 2px;
+      }
+
+      /* ══════════════════════════════════════════
+       GUARANTEES
+    ══════════════════════════════════════════ */
+      .guarantees {
+        background: var(--white);
+        padding: clamp(80px, 11vw, 130px) clamp(24px, 5vw, 72px);
+      }
+      .guarantees-inner {
+        max-width: 1160px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: clamp(60px, 8vw, 120px);
+        align-items: center;
+      }
+      .guarantees-left .label {
+        display: block;
+        margin-bottom: 20px;
+      }
+      .guarantees-left .display-lg {
+        margin-bottom: 20px;
+      }
+      .guarantees-left p {
+        font-size: 0.95rem;
+        line-height: 1.85;
+        color: var(--ink-60);
+        font-weight: 300;
+      }
+      .guarantee-list {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+      }
+      .guarantee-card {
+        display: grid;
+        grid-template-columns: 56px 1fr;
+        border: 1px solid var(--ink-10);
+        transition: border-color 0.35s var(--ease);
+      }
+      .guarantee-card:hover {
+        border-color: rgba(176, 141, 87, 0.4);
+      }
+      .guarantee-card-num {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-right: 1px solid var(--ink-10);
+        font-family: var(--serif);
+        font-style: italic;
+        font-size: 1.15rem;
+        color: var(--gold);
+      }
+      .guarantee-card-body {
+        padding: 24px 28px;
+      }
+      .guarantee-card-body h3 {
+        font-family: var(--sans);
+        font-size: 0.88rem;
+        font-weight: 500;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        color: var(--ink);
+        margin-bottom: 6px;
+      }
+      .guarantee-card-body p {
+        font-size: 0.85rem;
+        line-height: 1.7;
+        color: var(--ink-60);
+        font-weight: 300;
+      }
+      @media (max-width: 820px) {
+        .guarantees-inner {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* ══════════════════════════════════════════
+       CONTACT
+    ══════════════════════════════════════════ */
+      .contact {
+        background: var(--bg-dark);
+        padding: clamp(80px, 11vw, 130px) clamp(24px, 5vw, 72px);
+      }
+      .contact-inner {
+        max-width: 1160px;
+        margin: 0 auto;
+      }
+      .contact-top {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: clamp(60px, 8vw, 120px);
+        align-items: end;
+        margin-bottom: clamp(60px, 8vw, 90px);
+        padding-bottom: clamp(60px, 8vw, 90px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+      }
+      .contact-heading {
+        font-family: var(--serif);
+        font-weight: 300;
+        font-size: clamp(2.8rem, 5.5vw, 5rem);
+        line-height: 0.97;
+        letter-spacing: -0.025em;
+        color: var(--white);
+      }
+      .contact-heading em {
+        font-style: italic;
+        color: var(--gold);
+      }
+      .contact-right p {
+        font-size: 0.95rem;
+        line-height: 1.85;
+        color: rgba(255, 255, 255, 0.4);
+        font-weight: 300;
+        margin-bottom: 32px;
+      }
+      .contact-ctas {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+      .contact-cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        border: 1px solid rgba(255, 255, 255, 0.07);
+      }
+      .cnt-card {
+        padding: clamp(32px, 4vw, 48px) clamp(24px, 3vw, 36px);
+        text-align: center;
+        border-right: 1px solid rgba(255, 255, 255, 0.07);
+        transition: background 0.35s var(--ease);
+      }
+      .cnt-card:last-child {
+        border-right: 0;
+      }
+      .cnt-card:hover {
+        background: rgba(255, 255, 255, 0.03);
+      }
+      .cnt-icon {
+        width: 36px;
+        height: 36px;
+        margin: 0 auto 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .cnt-icon svg {
+        width: 16px;
+        height: 16px;
+        stroke: var(--gold);
+        fill: none;
+        stroke-width: 1.5;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+      .cnt-label {
+        font-family: var(--mono);
+        font-size: 0.65rem;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--gold);
+        opacity: 0.6;
+        margin-bottom: 10px;
+      }
+      .cnt-value {
+        font-family: var(--serif);
+        font-style: italic;
+        font-size: clamp(0.95rem, 1.2vw, 1.1rem);
+        color: rgba(255, 255, 255, 0.75);
+        line-height: 1.55;
+      }
+      .cnt-value a {
+        transition: color 0.3s;
+      }
+      .cnt-value a:hover {
+        color: var(--gold-lt);
+      }
+      @media (max-width: 820px) {
+        .contact-top {
+          grid-template-columns: 1fr;
+        }
+        .contact-cards {
+          grid-template-columns: 1fr;
+        }
+        .cnt-card {
+          border-right: 0;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+        }
+        .cnt-card:last-child {
+          border-bottom: 0;
+        }
+      }
+
+      /* ══════════════════════════════════════════
+       REVEAL ANIMATIONS
+    ══════════════════════════════════════════ */
+      .reveal {
+        opacity: 0;
+        transform: translateY(20px);
+        transition:
+          opacity 0.9s var(--ease),
+          transform 0.9s var(--ease);
+      }
+      .reveal.visible {
+        opacity: 1;
+        transform: none;
+      }
+      .d1 {
+        transition-delay: 0.1s;
+      }
+      .d2 {
+        transition-delay: 0.2s;
+      }
+      .d3 {
+        transition-delay: 0.3s;
+      }
+      .d4 {
+        transition-delay: 0.45s;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .reveal {
+          opacity: 1;
+          transform: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ═══════════════════════════════════════
+       HERO
+  ═══════════════════════════════════════ -->
+    <section class="hero">
+      <div class="hero-inner">
+        <div class="hero-left">
+          <div class="hero-kicker reveal">
+            <span class="hero-kicker-dot"></span>
+            <span class="label" style="color: rgba(255, 255, 255, 0.35)"
+              >FCCA Chartered Accountants · Aberdeen</span
+            >
+          </div>
+          <h1 class="hero-heading reveal d1">
+            The standard<br />
+            <em>begins here.</em>
+          </h1>
+          <p class="hero-sub reveal d2">
+            A fully managed finance function for growing UK businesses — built
+            on Big&nbsp;4 discipline, delivered through specialist departments
+            and a four-layer quality structure, with FCCA-qualified
+            accountability at every stage.
+          </p>
+          <div class="hero-meta reveal d3">
+            <div class="hero-meta-item">
+              <div class="hero-meta-val">FCCA</div>
+              <div class="hero-meta-lbl">Director qualification</div>
+            </div>
+            <div class="hero-meta-item">
+              <div class="hero-meta-val">Four</div>
+              <div class="hero-meta-lbl">Review layers</div>
+            </div>
+            <div class="hero-meta-item">
+              <div class="hero-meta-val">Three</div>
+              <div class="hero-meta-lbl">Written guarantees</div>
+            </div>
+          </div>
+          <div class="hero-ctas reveal d4">
+            <a href="/contact/" class="btn btn-gold"
+              >Book a Conversation &rarr;</a
+            >
+            <a href="/what-we-do-well/" class="btn btn-ghost-light"
+              >Our Approach &rarr;</a
+            >
+          </div>
+        </div>
+
+        <div class="hero-portrait-col reveal d2">
+          <figure class="hero-portrait-frame">
+            <img
+              src="https://a2zaccounting.co.uk/wp-content/uploads/2026/04/srahman.png"
+              alt="Shabbir Rahman FCCA, Founder and Chief Executive of A2Z Accounting Solutions"
+              width="420"
+              height="560"
+            />
+          </figure>
+          <div class="hero-portrait-caption">
+            <strong>Shabbir Rahman, FCCA</strong>
+            <span>Founder &amp; Chief Executive</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+       STORY
+  ═══════════════════════════════════════ -->
+    <section class="story">
+      <div class="story-inner">
+        <div class="story-sidebar reveal">
+          <span class="label">The Founder's Story</span>
+          <h2 class="display-md" style="margin-top: 20px">
+            A discipline<br />learned
+            <em>somewhere<br />different.</em>
+          </h2>
+        </div>
+        <div class="story-content">
+          <p class="reveal">
+            It began deep beneath the North Sea at Subsea&nbsp;7, where Shabbir
+            Rahman managed complex group accounts and operated to the full
+            rigour of Big&nbsp;4 audit standards — Deloitte and EY scrutinising
+            every number, every quarter, without exception.
+          </p>
+          <p class="reveal">
+            Those years demanded bulletproof processes, precise systems, and
+            zero tolerance for error. When A2Z was founded in 2018, that
+            discipline was not aspirational — it was operational from the first
+            engagement letter.
+          </p>
+          <div class="story-quote reveal">
+            <blockquote>
+              We did not build another accounting firm. We built the finance
+              function that growing businesses deserved — and never had access
+              to.
+            </blockquote>
+            <cite>Shabbir Rahman, FCCA — Founder &amp; Chief Executive</cite>
+          </div>
+          <p class="reveal">
+            A2Z was built on an entirely different model: specialist departments
+            rather than generalists, multiple independent quality-control layers
+            rather than a single reviewer, and FCCA director-level oversight on
+            every single client engagement.
+          </p>
+          <p class="reveal">
+            One hundred per cent paperless, proactively managed, and delivered
+            to the standards Shabbir applied at corporate level — only now to
+            the clients who had previously been priced out of them.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+       PRINCIPLES
+  ═══════════════════════════════════════ -->
+    <section class="principles">
+      <div class="principles-inner">
+        <div class="principles-head">
+          <div class="principles-head-left">
+            <span class="label reveal">Non-Negotiable Positions</span>
+            <h2 class="display-lg reveal d1">
+              Three things we will<br />
+              <em>not compromise.</em>
+            </h2>
+          </div>
+          <div class="principles-head-right reveal d2">
+            <p>
+              Every engagement is built on three non-negotiable positions. They
+              are not marketing, they define how the firm works, and what every
+              client may expect.
+            </p>
+          </div>
+        </div>
+
+        <div class="principles-grid">
+          <article class="principle-item reveal">
+            <div class="principle-watermark">i</div>
+            <h3>We do not compete on price.</h3>
+            <p>
+              Cheap accounting creates expensive problems. We price for the
+              value delivered — certainty, accuracy, and measurable strategic
+              advantage.
+            </p>
+          </article>
+          <article class="principle-item reveal d1">
+            <div class="principle-watermark">ii</div>
+            <h3>We do not sell hours.</h3>
+            <p>
+              Every engagement is for specific, guaranteed outcomes — fixed-fee,
+              fully scoped, and confirmed in writing before any work begins.
+            </p>
+          </article>
+          <article class="principle-item reveal d2">
+            <div class="principle-watermark">iii</div>
+            <h3>We do not react to problems.</h3>
+            <p>
+              We prevent them. The four-layer quality structure identifies and
+              resolves issues long before they reach you — or HMRC.
+            </p>
+          </article>
+        </div>
+
+        <div class="principles-manifesto reveal">
+          <p>These positions have not changed since 2018 — and will not.</p>
+          <a href="/contact/" class="btn btn-ghost-light"
+            >Book a Conversation &rarr;</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+       QUALITY LAYERS
+  ═══════════════════════════════════════ -->
+    <section class="layers">
+      <div class="layers-inner">
+        <div class="layers-head">
+          <div class="layers-head-left">
+            <span class="label reveal">Quality Structure</span>
+            <h2 class="display-lg reveal d1">
+              Four layers of review.<br />
+              <em>Every single time.</em>
+            </h2>
+          </div>
+          <div class="layers-head-right reveal d2">
+            <p>
+              No output leaves A2Z without passing through every layer. Not a
+              checklist — a structural guarantee, built into how the firm
+              operates at every client tier.
+            </p>
+          </div>
+        </div>
+
+        <div class="layers-stack">
+          <div class="layer-panel reveal" data-watermark="Origination">
+            <div class="layer-ring">
+              <span class="layer-ring-num">i</span>
+            </div>
+            <div class="layer-body">
+              <h4>Specialist Completes</h4>
+              <p>
+                Work completed by a department specialist with focused, deep
+                expertise in their discipline.
+              </p>
+            </div>
+          </div>
+
+          <div class="layer-connector">
+            <div class="layer-connector-line"></div>
+          </div>
+
+          <div class="layer-panel reveal d1" data-watermark="Technical Check">
+            <div class="layer-ring">
+              <span class="layer-ring-num">ii</span>
+            </div>
+            <div class="layer-body">
+              <h4>Department Review</h4>
+              <p>
+                The department head independently reviews for technical
+                accuracy, compliance, and completeness.
+              </p>
+            </div>
+          </div>
+
+          <div class="layer-connector">
+            <div class="layer-connector-line"></div>
+          </div>
+
+          <div class="layer-panel reveal d2" data-watermark="Compliance Gate">
+            <div class="layer-ring">
+              <span class="layer-ring-num">iii</span>
+            </div>
+            <div class="layer-body">
+              <h4>Senior Verification</h4>
+              <p>
+                A senior accountant verifies regulatory compliance and
+                identifies proactive planning opportunities.
+              </p>
+            </div>
+          </div>
+
+          <div class="layer-connector">
+            <div class="layer-connector-line"></div>
+          </div>
+
+          <div class="layer-panel reveal d3" data-watermark="Final Release">
+            <div class="layer-ring">
+              <span class="layer-ring-num">iv</span>
+            </div>
+            <div class="layer-body">
+              <h4>Director Approval</h4>
+              <p>
+                The FCCA director personally approves every output before
+                release. Without exception.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+       DEPARTMENTS
+  ═══════════════════════════════════════ -->
+    <section class="opt-c">
+      <div class="opt-c-inner">
+        <div class="sect-head on-dark">
+          <div>
+            <span class="sect-head-eyebrow">Specialist Departments</span>
+            <h2>Three specialists.<br /><em>One point of contact.</em></h2>
+          </div>
+          <div class="sect-head-right">
+            <p>
+              Generalist firms ask one accountant to do everything. We separate
+              the disciplines — so each is handled by someone whose entire focus
+              is that work.
+            </p>
+          </div>
+        </div>
+
+        <div class="c-grid">
+          <div class="c-col">
+            <div class="c-rest">
+              <span class="c-rest-num">1</span>
+              <span class="c-rest-name">Payroll &amp; Billing</span>
+            </div>
+            <div class="c-content">
+              <h3>Payroll &amp;<br />Billing</h3>
+              <p class="c-desc">
+                Full-service payroll and credit control — RTI, PAYE, pension
+                auto-enrolment, and accounts receivable.
+              </p>
+              <ul class="c-services">
+                <li>RTI submissions and PAYE management</li>
+                <li>Pension auto-enrolment administration</li>
+                <li>Credit control and aged-debtor reporting</li>
+                <li>P11D benefits-in-kind processing</li>
+                <li>Statutory sick pay and maternity calculations</li>
+                <li>HMRC correspondence and resolution</li>
+              </ul>
+            </div>
+          </div>
+          <div class="c-col">
+            <div class="c-rest">
+              <span class="c-rest-num">2</span>
+              <span class="c-rest-name">VAT &amp; Management Accounts</span>
+            </div>
+            <div class="c-content">
+              <h3>VAT &amp; Management<br />Accounts</h3>
+              <p class="c-desc">
+                MTD-compliant bookkeeping, quarterly VAT returns, and regular
+                management reporting in real time.
+              </p>
+              <ul class="c-services">
+                <li>Monthly bookkeeping and reconciliation</li>
+                <li>Quarterly VAT returns (MTD-compliant)</li>
+                <li>Management accounts with commentary</li>
+                <li>Cash-flow forecasting and reporting</li>
+                <li>VAT scheme selection and optimisation</li>
+                <li>Making Tax Digital compliance</li>
+              </ul>
+            </div>
+          </div>
+          <div class="c-col">
+            <div class="c-rest">
+              <span class="c-rest-num">3</span>
+              <span class="c-rest-name">Year-End &amp; Tax</span>
+            </div>
+            <div class="c-content">
+              <h3>Year-End<br />&amp; Tax</h3>
+              <p class="c-desc">
+                Annual accounts, Corporation Tax, self-assessment, and
+                year-round strategic planning.
+              </p>
+              <ul class="c-services">
+                <li>Statutory annual accounts preparation</li>
+                <li>CT600 Corporation Tax returns</li>
+                <li>Self-assessment personal tax returns</li>
+                <li>Proactive tax planning and structuring</li>
+                <li>Companies House filing and compliance</li>
+                <li>Research &amp; Development tax credit claims</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+       GUARANTEES
+  ═══════════════════════════════════════ -->
+    <section class="guarantees">
+      <div class="guarantees-inner">
+        <div class="guarantees-left">
+          <span class="label">Contractual Commitments</span>
+          <h2 class="display-lg reveal" style="margin-top: 20px">
+            Three commitments.
+            <em>All in writing.</em>
+          </h2>
+          <p class="reveal">
+            Not aspirational promises — contractual obligations, included in
+            every engagement letter and enforceable from day one.
+          </p>
+        </div>
+        <div class="guarantee-list reveal d1">
+          <div class="guarantee-card">
+            <div class="guarantee-card-num">i</div>
+            <div class="guarantee-card-body">
+              <h3>Same-day Response</h3>
+              <p>
+                Any query submitted before midday on a working day receives a
+                substantive response the same day. Not an acknowledgement — a
+                real answer.
+              </p>
+            </div>
+          </div>
+          <div class="guarantee-card">
+            <div class="guarantee-card-num">ii</div>
+            <div class="guarantee-card-body">
+              <h3>Zero Missed Deadlines</h3>
+              <p>
+                Every HMRC and Companies House deadline is met proactively, well
+                in advance. No last-minute rushes, no penalty exposure.
+              </p>
+            </div>
+          </div>
+          <div class="guarantee-card">
+            <div class="guarantee-card-num">iii</div>
+            <div class="guarantee-card-body">
+              <h3>Transparent Fixed Fees</h3>
+              <p>
+                Your monthly fee is agreed, confirmed in writing, and never
+                changes without your prior approval. No hourly billing, no
+                surprise invoices.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+       CONTACT
+  ═══════════════════════════════════════ -->
+    <section class="contact">
+      <div class="contact-inner">
+        <div class="contact-top">
+          <h2 class="contact-heading reveal">
+            If this is the standard,
+            <em>let us speak.</em>
+          </h2>
+          <div class="contact-right">
+            <p class="reveal">
+              No obligation — a straightforward conversation about your
+              business, where it stands, and what a properly managed finance
+              function would look like for you.
+            </p>
+            <div class="contact-ctas reveal d1">
+              <a href="/contact/" class="btn btn-gold"
+                >Book a Conversation &rarr;</a
+              >
+              <a href="/what-we-do-well/" class="btn btn-ghost-dark"
+                >Explore Our Services &rarr;</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="contact-cards reveal">
+          <div class="cnt-card">
+            <div class="cnt-icon">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 5.19 12.9 19.79 19.79 0 0 1 2.12 4.27 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+                />
+              </svg>
+            </div>
+            <div class="cnt-label">By Phone</div>
+            <div class="cnt-value">
+              <a href="tel:01224042961">01224 042 961</a>
+            </div>
+          </div>
+          <div class="cnt-card">
+            <div class="cnt-icon">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                />
+                <polyline points="22,6 12,13 2,6" />
+              </svg>
+            </div>
+            <div class="cnt-label">By Email</div>
+            <div class="cnt-value">
+              <a href="mailto:info@a2zaccounting.co.uk"
+                >info@a2zaccounting.co.uk</a
+              >
+            </div>
+          </div>
+          <div class="cnt-card">
+            <div class="cnt-icon">
+              <svg viewBox="0 0 24 24">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                <circle cx="12" cy="10" r="3" />
+              </svg>
+            </div>
+            <div class="cnt-label">In Person</div>
+            <address class="cnt-value" style="font-style: normal">
+              1st Floor, 499 Union Street<br />Aberdeen, AB11 6DB
+            </address>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      const observer = new IntersectionObserver(
+        (entries) =>
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              e.target.classList.add("visible");
+              observer.unobserve(e.target);
+            }
+          }),
+        { threshold: 0.08, rootMargin: "0px 0px -24px 0px" },
+      );
+      document
+        .querySelectorAll(".reveal")
+        .forEach((el) => observer.observe(el));
+
+      // Dept pillars — hover expand/compress
+      const cGrid = document.querySelector(".c-grid");
+      const cCols = document.querySelectorAll(".c-col");
+      if (cGrid && cCols.length) {
+        cCols.forEach((col) => {
+          col.addEventListener("mouseenter", () => {
+            cGrid.classList.add("has-hover");
+            cCols.forEach((c) => c.classList.remove("expanded"));
+            col.classList.add("expanded");
+          });
+        });
+        cGrid.addEventListener("mouseleave", () => {
+          cGrid.classList.remove("has-hover");
+          cCols.forEach((c) => c.classList.remove("expanded"));
+        });
+      }
+    </script>
+  </body>
+</html>

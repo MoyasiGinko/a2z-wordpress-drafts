@@ -1,0 +1,1627 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      About — A2Z Accounting Solutions | FCCA Chartered Accountants, Aberdeen
+    </title>
+    <meta
+      name="description"
+      content="A2Z Accounting Solutions is an FCCA-led chartered accountancy firm in Aberdeen, founded by Shabbir Rahman. Specialist departments, four-layer quality control, three written guarantees."
+    />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://a2zaccounting.co.uk/about-us/" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      /* ═══════════════════════════════════════
+   COLOUR SYSTEM
+   Three palette colours — cream, navy,
+   bronze-gold — re-shuffled per section.
+═══════════════════════════════════════ */
+      :root {
+        /* surfaces */
+        --paper: #f1e8d4; /* primary cream */
+        --paper-soft: #ebe1ca; /* warmer cream */
+        --paper-warm: #e3d6b6; /* tan / aged paper */
+        --ink: #15253e; /* primary navy */
+        --ink-deep: #0e1a2e; /* deeper navy */
+        --ink-soft: #243652; /* lighter navy */
+
+        /* text on light */
+        --slate: #525d75;
+        --muted: rgba(21, 37, 62, 0.55);
+
+        /* text on dark */
+        --paper-dim: rgba(241, 232, 212, 0.72);
+        --paper-faint: rgba(241, 232, 212, 0.45);
+
+        /* accent */
+        --gold: #a3743f;
+        --gold-warm: #b8895c;
+        --gold-soft: rgba(163, 116, 63, 0.34);
+        --gold-faint: rgba(163, 116, 63, 0.1);
+
+        /* hairlines on light */
+        --rule: rgba(21, 37, 62, 0.13);
+        --rule-soft: rgba(21, 37, 62, 0.07);
+        /* hairlines on dark */
+        --rule-d: rgba(241, 232, 212, 0.18);
+        --rule-d-soft: rgba(241, 232, 212, 0.08);
+
+        /* type */
+        --display: "Fraunces", Georgia, "Times New Roman", serif;
+        --sans: "DM Sans", system-ui, -apple-system, sans-serif;
+
+        --ease: cubic-bezier(0.22, 1, 0.36, 1);
+      }
+
+      /* ─── RESET ─── */
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        scroll-behavior: smooth;
+        -webkit-text-size-adjust: 100%;
+      }
+      body {
+        background: var(--paper);
+        color: var(--ink);
+        font-family: var(--sans);
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 1.6;
+        overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
+        text-rendering: optimizeLegibility;
+      }
+      img {
+        display: block;
+        max-width: 100%;
+        height: auto;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      button {
+        font: inherit;
+        color: inherit;
+        background: none;
+        border: 0;
+        cursor: pointer;
+      }
+
+      /* ─── CONTAINER ─── */
+      .container {
+        max-width: 1240px;
+        margin: 0 auto;
+        padding: 0 clamp(20px, 5vw, 64px);
+        position: relative;
+        z-index: 2;
+      }
+
+      /* ─── BUTTONS ─── */
+      .btn {
+        font-family: var(--sans);
+        font-size: 0.9rem;
+        font-weight: 500;
+        letter-spacing: 0.02em;
+        padding: 16px 32px;
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        transition: all 0.35s var(--ease);
+        border-radius: 1px;
+        border: 1px solid transparent;
+        cursor: pointer;
+      }
+      .btn .arrow {
+        width: 14px;
+        height: 14px;
+        transition: transform 0.35s var(--ease);
+      }
+      .btn:hover .arrow {
+        transform: translateX(4px);
+      }
+
+      /* on light */
+      .btn-primary {
+        background: var(--ink);
+        color: var(--paper);
+        border-color: var(--ink);
+      }
+      .btn-primary:hover {
+        background: var(--gold);
+        border-color: var(--gold);
+        color: var(--ink);
+      }
+      .btn-ghost {
+        background: transparent;
+        color: var(--ink);
+        border-color: var(--ink);
+      }
+      .btn-ghost:hover {
+        background: var(--ink);
+        color: var(--paper);
+      }
+
+      /* on dark */
+      .btn-primary-d {
+        background: var(--paper);
+        color: var(--ink);
+        border-color: var(--paper);
+      }
+      .btn-primary-d:hover {
+        background: var(--gold);
+        border-color: var(--gold);
+        color: var(--ink);
+      }
+      .btn-ghost-d {
+        background: transparent;
+        color: var(--paper);
+        border-color: var(--paper);
+      }
+      .btn-ghost-d:hover {
+        background: var(--paper);
+        color: var(--ink);
+      }
+
+      .btn-row {
+        display: flex;
+        gap: 14px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      /* ─── REVEALS ─── */
+      .reveal {
+        opacity: 0;
+        transform: translateY(20px);
+        transition:
+          opacity 0.9s var(--ease),
+          transform 0.9s var(--ease);
+      }
+      .reveal.in {
+        opacity: 1;
+        transform: none;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.01ms !important;
+          transition-duration: 0.01ms !important;
+        }
+        .reveal {
+          opacity: 1;
+          transform: none;
+        }
+      }
+
+      /* paper grain (only on light sections) */
+      .section--light::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        z-index: 1;
+        opacity: 0.35;
+        mix-blend-mode: multiply;
+        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.06 0 0 0 0 0.11 0 0 0 0 0.18 0 0 0 0.05 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+      }
+
+      /* base section setup */
+      section[class*="sec-"] {
+        position: relative;
+      }
+
+      /* ═══════════════════════════════════════
+   SECTION 01 · HERO
+   Cream paper · centred magazine cover
+═══════════════════════════════════════ */
+      .sec-hero {
+        background: var(--paper);
+        padding: clamp(80px, 14vw, 160px) 0 clamp(80px, 12vw, 130px);
+        text-align: center;
+      }
+      .sec-hero h1 {
+        font-family: var(--display);
+        font-weight: 300;
+        font-size: clamp(3rem, 9vw, 7rem);
+        line-height: 0.96;
+        letter-spacing: -0.025em;
+        color: var(--ink);
+        max-width: 14ch;
+        margin: 0 auto;
+      }
+      .sec-hero h1 em {
+        display: block;
+        font-style: italic;
+        font-weight: 300;
+        color: var(--gold);
+      }
+      .hero-sub {
+        margin: clamp(24px, 3vw, 36px) auto 0;
+        max-width: 60ch;
+        font-size: clamp(1rem, 1.2vw, 1.1rem);
+        line-height: 1.7;
+        color: var(--slate);
+        font-weight: 300;
+      }
+
+      .portrait {
+        margin: clamp(56px, 8vw, 80px) auto clamp(24px, 3vw, 32px);
+        width: clamp(220px, 26vw, 280px);
+        position: relative;
+      }
+      .portrait-frame {
+        position: relative;
+        aspect-ratio: 1 / 1.18;
+        border-radius: 50% 50% 6px 6px;
+        overflow: hidden;
+        background: var(--paper-warm);
+        box-shadow: 0 28px 60px -34px rgba(21, 37, 62, 0.45);
+      }
+      .portrait-frame img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: contrast(1.04) saturate(0.88);
+      }
+      .portrait-frame::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+        box-shadow: inset 0 0 0 1px rgba(21, 37, 62, 0.18);
+        pointer-events: none;
+      }
+      .portrait::before {
+        content: "";
+        position: absolute;
+        inset: -12px;
+        border: 1px solid var(--gold-soft);
+        border-radius: 50% 50% 10px 10px;
+        pointer-events: none;
+      }
+      .portrait-caption {
+        font-family: var(--display);
+        font-style: italic;
+        font-weight: 400;
+        font-size: 1.05rem;
+        color: var(--ink);
+        text-align: center;
+      }
+      .portrait-caption span {
+        display: block;
+        margin-top: 6px;
+        font-family: var(--sans);
+        font-style: normal;
+        font-size: 0.92rem;
+        color: var(--slate);
+      }
+
+      .hero-stats {
+        margin: clamp(56px, 8vw, 80px) auto clamp(40px, 5vw, 56px);
+        max-width: 880px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        border-top: 1px solid var(--rule);
+        border-bottom: 1px solid var(--rule);
+        padding: clamp(24px, 3vw, 32px) 0;
+      }
+      .hero-stat {
+        text-align: center;
+        padding: 0 clamp(8px, 2vw, 24px);
+        position: relative;
+      }
+      .hero-stat + .hero-stat::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 18%;
+        bottom: 18%;
+        width: 1px;
+        background: var(--rule);
+      }
+      .hero-stat-num {
+        font-family: var(--display);
+        font-weight: 300;
+        font-size: clamp(2rem, 4vw, 3rem);
+        line-height: 1;
+        color: var(--ink);
+        letter-spacing: -0.005em;
+        margin-bottom: 10px;
+      }
+      .hero-stat-num em {
+        color: var(--gold);
+        font-style: italic;
+        font-weight: 400;
+      }
+      .hero-stat-lbl {
+        font-size: 0.85rem;
+        color: var(--slate);
+      }
+      @media (max-width: 720px) {
+        .hero-stats {
+          grid-template-columns: 1fr;
+          padding: 0;
+        }
+        .hero-stat {
+          padding: 22px 0;
+          border-bottom: 1px solid var(--rule-soft);
+        }
+        .hero-stat:last-child {
+          border-bottom: 0;
+        }
+        .hero-stat + .hero-stat::before {
+          display: none;
+        }
+      }
+
+      /* ═══════════════════════════════════════
+   SECTION 02 · FOUNDER STORY
+   Deep navy · cream text · feature article
+═══════════════════════════════════════ */
+      .sec-founder {
+        background: var(--ink);
+        color: var(--paper);
+        padding: clamp(90px, 14vw, 160px) 0;
+        position: relative;
+        overflow: hidden;
+      }
+      /* large decorative quote mark */
+      .sec-founder::before {
+        content: "\201C";
+        position: absolute;
+        top: clamp(40px, 7vw, 90px);
+        left: 50%;
+        transform: translateX(-50%);
+        font-family: var(--display);
+        font-weight: 400;
+        font-style: italic;
+        font-size: clamp(14rem, 24vw, 24rem);
+        line-height: 0.8;
+        color: var(--gold);
+        opacity: 0.12;
+        pointer-events: none;
+        z-index: 1;
+      }
+      .founder-quote {
+        position: relative;
+        z-index: 2;
+        max-width: 880px;
+        margin: 0 auto clamp(60px, 9vw, 100px);
+        text-align: center;
+      }
+      .founder-quote blockquote {
+        font-family: var(--display);
+        font-style: italic;
+        font-weight: 300;
+        font-size: clamp(1.5rem, 3.4vw, 2.6rem);
+        line-height: 1.32;
+        color: var(--paper);
+        letter-spacing: -0.01em;
+      }
+      .founder-quote blockquote em {
+        color: var(--gold-warm);
+        font-style: italic;
+      }
+      .founder-quote cite {
+        display: block;
+        margin-top: 28px;
+        font-style: normal;
+        font-size: 0.95rem;
+        color: var(--gold-warm);
+        font-family: var(--display);
+      }
+      .founder-quote cite::before {
+        content: "";
+        display: inline-block;
+        width: 28px;
+        height: 1px;
+        background: var(--gold-warm);
+        margin-right: 14px;
+        vertical-align: middle;
+        transform: translateY(-3px);
+      }
+
+      .founder-story {
+        position: relative;
+        z-index: 2;
+        max-width: 1080px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1px 1fr;
+        gap: clamp(32px, 5vw, 72px);
+      }
+      .founder-divider {
+        background: linear-gradient(
+          to bottom,
+          transparent,
+          var(--rule-d) 14%,
+          var(--rule-d) 86%,
+          transparent
+        );
+      }
+      .founder-col p {
+        font-size: 1rem;
+        line-height: 1.8;
+        color: var(--paper-dim);
+        margin-bottom: 1.2rem;
+        font-weight: 300;
+      }
+      .founder-col p:last-child {
+        margin-bottom: 0;
+      }
+      .founder-col p strong {
+        color: var(--paper);
+        font-weight: 500;
+        font-style: italic;
+        font-family: var(--display);
+      }
+      @media (max-width: 880px) {
+        .founder-story {
+          grid-template-columns: 1fr;
+          gap: 32px;
+        }
+        .founder-divider {
+          height: 1px;
+          background: linear-gradient(
+            to right,
+            transparent,
+            var(--rule-d) 20%,
+            var(--rule-d) 80%,
+            transparent
+          );
+        }
+      }
+
+      /* ═══════════════════════════════════════
+   SECTION 03 · PRINCIPLES — manifesto
+   Cream · big italic numerals · alternating
+═══════════════════════════════════════ */
+      .sec-principles {
+        background: var(--paper);
+        padding: clamp(80px, 12vw, 140px) 0;
+      }
+      .principles-head {
+        text-align: center;
+        max-width: 760px;
+        margin: 0 auto clamp(48px, 7vw, 80px);
+      }
+      .principles-title {
+        font-family: var(--display);
+        font-weight: 300;
+        font-size: clamp(2rem, 5vw, 3.6rem);
+        line-height: 1.05;
+        letter-spacing: -0.022em;
+        color: var(--ink);
+      }
+      .principles-title em {
+        font-style: italic;
+        font-weight: 300;
+        color: var(--gold);
+      }
+      .principles-lede {
+        margin-top: clamp(18px, 2.5vw, 28px);
+        font-size: clamp(0.97rem, 1.1vw, 1.05rem);
+        line-height: 1.7;
+        color: var(--slate);
+        max-width: 60ch;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .manifesto {
+        max-width: 1080px;
+        margin: 0 auto;
+      }
+      .man-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        gap: clamp(28px, 5vw, 60px);
+        padding: clamp(40px, 6vw, 64px) 0;
+        border-bottom: 1px solid var(--rule);
+      }
+      .man-row:first-child {
+        border-top: 1px solid var(--rule);
+      }
+      .man-numeral {
+        font-family: var(--display);
+        font-style: italic;
+        font-weight: 300;
+        font-size: clamp(5rem, 12vw, 9rem);
+        line-height: 0.85;
+        color: var(--gold);
+        letter-spacing: -0.03em;
+      }
+      .man-text h3 {
+        font-family: var(--display);
+        font-weight: 400;
+        font-size: clamp(1.4rem, 2.4vw, 2rem);
+        line-height: 1.2;
+        color: var(--ink);
+        margin-bottom: 18px;
+        letter-spacing: -0.01em;
+      }
+      .man-text p {
+        font-size: 1rem;
+        line-height: 1.7;
+        color: var(--slate);
+        max-width: 38ch;
+      }
+
+      /* alternating sides */
+      .man-row:nth-child(even) .man-numeral {
+        order: 2;
+        text-align: right;
+      }
+      .man-row:nth-child(even) .man-text {
+        order: 1;
+        text-align: right;
+      }
+      .man-row:nth-child(even) .man-text p {
+        margin-left: auto;
+      }
+
+      @media (max-width: 720px) {
+        .man-row {
+          grid-template-columns: auto 1fr;
+          gap: 24px;
+          padding: 32px 0;
+        }
+        .man-numeral {
+          font-size: 4rem !important;
+          text-align: left !important;
+          order: 0 !important;
+        }
+        .man-text {
+          text-align: left !important;
+          order: 0 !important;
+        }
+        .man-text p {
+          margin-left: 0 !important;
+        }
+        .man-row:nth-child(even) .man-numeral,
+        .man-row:nth-child(even) .man-text {
+          text-align: left;
+        }
+      }
+
+      /* ═══════════════════════════════════════
+   SECTION 04 · FOUR LAYERS — timeline
+   Warm tan paper · horizontal connected
+═══════════════════════════════════════ */
+      .sec-layers {
+        background: var(--paper-warm);
+        padding: clamp(80px, 12vw, 140px) 0;
+      }
+      .layers-head {
+        text-align: center;
+        max-width: 760px;
+        margin: 0 auto clamp(50px, 8vw, 90px);
+      }
+      .layers-title {
+        font-family: var(--display);
+        font-weight: 300;
+        font-size: clamp(2rem, 5vw, 3.6rem);
+        line-height: 1.05;
+        letter-spacing: -0.022em;
+        color: var(--ink);
+      }
+      .layers-title em {
+        font-style: italic;
+        font-weight: 300;
+        color: var(--gold);
+      }
+      .layers-lede {
+        margin-top: clamp(18px, 2.5vw, 28px);
+        font-size: clamp(0.97rem, 1.1vw, 1.05rem);
+        line-height: 1.7;
+        color: var(--slate);
+        max-width: 60ch;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .timeline {
+        max-width: 1180px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        position: relative;
+      }
+      /* connecting line */
+      .timeline::before {
+        content: "";
+        position: absolute;
+        left: 12.5%;
+        right: 12.5%;
+        top: 36px;
+        height: 1px;
+        background: repeating-linear-gradient(
+          to right,
+          var(--gold-soft) 0,
+          var(--gold-soft) 4px,
+          transparent 4px,
+          transparent 10px
+        );
+      }
+      .timeline-step {
+        text-align: center;
+        position: relative;
+        z-index: 1;
+        padding: 0 clamp(10px, 1.6vw, 18px);
+      }
+      .timeline-node {
+        width: 72px;
+        height: 72px;
+        background: var(--paper-warm);
+        border: 1px solid var(--ink);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: var(--display);
+        font-style: italic;
+        font-weight: 400;
+        font-size: 1.4rem;
+        color: var(--ink);
+        margin: 0 auto clamp(24px, 3vw, 32px);
+        position: relative;
+        transition: all 0.4s var(--ease);
+      }
+      .timeline-node::after {
+        content: "";
+        position: absolute;
+        inset: -7px;
+        border: 1px solid var(--gold-soft);
+        border-radius: 50%;
+        opacity: 0;
+        transition: opacity 0.4s var(--ease);
+      }
+      .timeline-step:hover .timeline-node {
+        background: var(--ink);
+        color: var(--paper);
+      }
+      .timeline-step:hover .timeline-node::after {
+        opacity: 1;
+      }
+      .timeline-step h4 {
+        font-family: var(--display);
+        font-weight: 400;
+        font-size: clamp(1.05rem, 1.5vw, 1.25rem);
+        line-height: 1.25;
+        color: var(--ink);
+        margin-bottom: 12px;
+        letter-spacing: -0.005em;
+      }
+      .timeline-step p {
+        font-size: 0.9rem;
+        line-height: 1.65;
+        color: var(--slate);
+      }
+
+      @media (max-width: 880px) {
+        .timeline {
+          grid-template-columns: 1fr;
+          gap: 40px;
+        }
+        .timeline::before {
+          left: 36px;
+          right: auto;
+          top: 36px;
+          bottom: 36px;
+          width: 1px;
+          height: auto;
+          background: repeating-linear-gradient(
+            to bottom,
+            var(--gold-soft) 0,
+            var(--gold-soft) 4px,
+            transparent 4px,
+            transparent 10px
+          );
+        }
+        .timeline-step {
+          display: grid;
+          grid-template-columns: 72px 1fr;
+          gap: 24px;
+          text-align: left;
+          align-items: start;
+          padding: 0;
+        }
+        .timeline-node {
+          margin: 0;
+        }
+        .timeline-step h4 {
+          margin-top: 22px;
+        }
+      }
+
+      /* ═══════════════════════════════════════
+   SECTION 05 · DEPARTMENTS
+   Deep navy · cream floating cards
+═══════════════════════════════════════ */
+      .sec-departments {
+        background: var(--ink-deep);
+        color: var(--paper);
+        padding: clamp(80px, 12vw, 140px) 0;
+        position: relative;
+      }
+      /* subtle radial gold glow */
+      .sec-departments::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, -30%);
+        width: 80%;
+        aspect-ratio: 2/1;
+        background: radial-gradient(
+          ellipse,
+          rgba(163, 116, 63, 0.08) 0%,
+          transparent 65%
+        );
+        pointer-events: none;
+      }
+      .dept-head {
+        position: relative;
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto clamp(50px, 8vw, 90px);
+      }
+      .dept-title {
+        font-family: var(--display);
+        font-weight: 300;
+        font-size: clamp(2rem, 5vw, 3.6rem);
+        line-height: 1.05;
+        letter-spacing: -0.022em;
+        color: var(--paper);
+      }
+      .dept-title em {
+        font-style: italic;
+        font-weight: 300;
+        color: var(--gold-warm);
+      }
+      .dept-lede {
+        margin-top: clamp(18px, 2.5vw, 28px);
+        font-size: clamp(0.97rem, 1.1vw, 1.05rem);
+        line-height: 1.7;
+        color: var(--paper-dim);
+        max-width: 60ch;
+        margin-left: auto;
+        margin-right: auto;
+        font-weight: 300;
+      }
+
+      .depts {
+        position: relative;
+        max-width: 1180px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: clamp(20px, 2.5vw, 28px);
+      }
+      .dept-card {
+        background: var(--paper);
+        color: var(--ink);
+        padding: clamp(36px, 4vw, 52px) clamp(28px, 3vw, 40px);
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        transition: transform 0.5s var(--ease);
+      }
+      .dept-card:hover {
+        transform: translateY(-6px);
+      }
+      /* corner ornaments */
+      .dept-card::before,
+      .dept-card::after {
+        content: "";
+        position: absolute;
+        width: 14px;
+        height: 14px;
+        border-color: var(--gold);
+        border-style: solid;
+        pointer-events: none;
+      }
+      .dept-card::before {
+        top: 8px;
+        left: 8px;
+        border-width: 1px 0 0 1px;
+      }
+      .dept-card::after {
+        bottom: 8px;
+        right: 8px;
+        border-width: 0 1px 1px 0;
+      }
+
+      .dept-card h3 {
+        font-family: var(--display);
+        font-weight: 400;
+        font-size: clamp(1.25rem, 1.8vw, 1.55rem);
+        line-height: 1.2;
+        color: var(--ink);
+        letter-spacing: -0.005em;
+        text-align: center;
+        padding-bottom: clamp(20px, 2.5vw, 28px);
+        border-bottom: 1px solid var(--rule);
+        margin-bottom: clamp(22px, 3vw, 30px);
+      }
+      .dept-desc {
+        font-size: 0.95rem;
+        line-height: 1.7;
+        color: var(--slate);
+        text-align: center;
+        margin-bottom: clamp(24px, 3vw, 32px);
+      }
+      .dept-list {
+        list-style: none;
+        margin-top: auto;
+      }
+      .dept-list li {
+        padding: 12px 0;
+        font-size: 0.92rem;
+        color: var(--ink-soft);
+        border-bottom: 1px solid var(--rule-soft);
+        display: flex;
+        align-items: flex-start;
+        gap: 14px;
+        line-height: 1.5;
+      }
+      .dept-list li:last-child {
+        border-bottom: 0;
+      }
+      .dept-list li::before {
+        content: "";
+        flex-shrink: 0;
+        width: 5px;
+        height: 5px;
+        background: var(--gold);
+        border-radius: 50%;
+        margin-top: 8px;
+      }
+      @media (max-width: 880px) {
+        .depts {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* ═══════════════════════════════════════
+   SECTION 06 · GUARANTEES — certificate seals
+   Cream · circular gold seals · ceremonial
+═══════════════════════════════════════ */
+      .sec-guarantees {
+        background: var(--paper-soft);
+        padding: clamp(80px, 12vw, 140px) 0;
+        position: relative;
+      }
+      .gua-head {
+        text-align: center;
+        max-width: 760px;
+        margin: 0 auto clamp(60px, 9vw, 100px);
+      }
+      .gua-title {
+        font-family: var(--display);
+        font-weight: 300;
+        font-size: clamp(2rem, 5vw, 3.6rem);
+        line-height: 1.05;
+        letter-spacing: -0.022em;
+        color: var(--ink);
+      }
+      .gua-title em {
+        font-style: italic;
+        font-weight: 300;
+        color: var(--gold);
+      }
+      .gua-lede {
+        margin-top: clamp(18px, 2.5vw, 28px);
+        font-size: clamp(0.97rem, 1.1vw, 1.05rem);
+        line-height: 1.7;
+        color: var(--slate);
+        max-width: 60ch;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .guarantees {
+        max-width: 1180px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: clamp(24px, 3vw, 36px);
+      }
+      .guarantee {
+        background: var(--paper);
+        padding: clamp(48px, 5vw, 70px) clamp(28px, 3vw, 42px)
+          clamp(40px, 4vw, 56px);
+        text-align: center;
+        position: relative;
+        border: 1px solid var(--gold-soft);
+      }
+      /* outer ornamental frame */
+      .guarantee::before {
+        content: "";
+        position: absolute;
+        inset: 8px;
+        border: 1px solid var(--gold-faint);
+        pointer-events: none;
+      }
+      /* the seal */
+      .seal {
+        width: 96px;
+        height: 96px;
+        margin: 0 auto clamp(28px, 3.5vw, 38px);
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1.5px solid var(--gold);
+        border-radius: 50%;
+        background: var(--paper);
+      }
+      .seal::before {
+        content: "";
+        position: absolute;
+        inset: 5px;
+        border: 1px solid var(--gold-soft);
+        border-radius: 50%;
+      }
+      .seal::after {
+        content: "";
+        position: absolute;
+        inset: -10px;
+        border-radius: 50%;
+        border: 1px dashed var(--gold-soft);
+        opacity: 0;
+        transition: opacity 0.5s var(--ease);
+      }
+      .guarantee:hover .seal::after {
+        opacity: 1;
+      }
+      .seal-roman {
+        font-family: var(--display);
+        font-style: italic;
+        font-weight: 400;
+        font-size: 2.4rem;
+        line-height: 1;
+        color: var(--gold);
+      }
+      .guarantee h4 {
+        font-family: var(--display);
+        font-weight: 400;
+        font-size: clamp(1.2rem, 1.7vw, 1.45rem);
+        line-height: 1.25;
+        color: var(--ink);
+        margin-bottom: 18px;
+        letter-spacing: -0.005em;
+      }
+      .guarantee p {
+        font-size: 0.95rem;
+        line-height: 1.7;
+        color: var(--slate);
+        max-width: 30ch;
+        margin: 0 auto;
+      }
+      @media (max-width: 880px) {
+        .guarantees {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* ═══════════════════════════════════════
+   SECTION 07 · CONTACT — asymmetric closing
+   Cream · split layout
+═══════════════════════════════════════ */
+      .sec-contact {
+        background: var(--paper);
+        padding: clamp(90px, 14vw, 160px) 0 clamp(80px, 12vw, 140px);
+        position: relative;
+      }
+      .contact-grid {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1.05fr 1fr;
+        gap: clamp(48px, 8vw, 100px);
+        align-items: start;
+      }
+      .contact-left h2 {
+        font-family: var(--display);
+        font-weight: 300;
+        font-size: clamp(2.2rem, 5.4vw, 4.2rem);
+        line-height: 1.02;
+        letter-spacing: -0.025em;
+        color: var(--ink);
+      }
+      .contact-left h2 em {
+        font-style: italic;
+        font-weight: 300;
+        color: var(--gold);
+      }
+      .contact-left p {
+        margin-top: clamp(20px, 2.6vw, 28px);
+        font-size: clamp(1rem, 1.15vw, 1.08rem);
+        line-height: 1.7;
+        color: var(--slate);
+        max-width: 48ch;
+        margin-bottom: clamp(36px, 5vw, 48px);
+      }
+      .contact-left .btn-row {
+        justify-content: flex-start;
+      }
+
+      .contact-right {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+      }
+      .cnt-method {
+        display: grid;
+        grid-template-columns: 56px 1fr;
+        gap: 24px;
+        align-items: center;
+        padding: clamp(22px, 3vw, 30px) 0;
+        border-bottom: 1px solid var(--rule);
+      }
+      .cnt-method:first-child {
+        border-top: 1px solid var(--rule);
+      }
+      .cnt-icon {
+        width: 52px;
+        height: 52px;
+        border: 1px solid var(--gold-soft);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--paper-soft);
+        transition: all 0.4s var(--ease);
+      }
+      .cnt-method:hover .cnt-icon {
+        background: var(--ink);
+        border-color: var(--ink);
+      }
+      .cnt-method:hover .cnt-icon svg {
+        stroke: var(--gold-warm);
+      }
+      .cnt-icon svg {
+        width: 18px;
+        height: 18px;
+        stroke: var(--gold);
+        fill: none;
+        stroke-width: 1.5;
+        transition: stroke 0.4s var(--ease);
+      }
+      .cnt-key {
+        font-family: var(--display);
+        font-style: italic;
+        font-weight: 400;
+        font-size: 0.9rem;
+        color: var(--slate);
+        margin-bottom: 4px;
+      }
+      .cnt-val {
+        font-family: var(--display);
+        font-weight: 400;
+        font-size: clamp(1.05rem, 1.4vw, 1.25rem);
+        line-height: 1.4;
+        color: var(--ink);
+        font-style: normal;
+        transition: color 0.3s var(--ease);
+      }
+      .cnt-val a:hover {
+        color: var(--gold);
+      }
+
+      @media (max-width: 880px) {
+        .contact-grid {
+          grid-template-columns: 1fr;
+          gap: 40px;
+        }
+        .contact-left .btn-row {
+          justify-content: center;
+        }
+        .contact-left h2 {
+          text-align: center;
+        }
+        .contact-left p {
+          text-align: center;
+          margin-left: auto;
+          margin-right: auto;
+        }
+      }
+      @media (max-width: 480px) {
+        .cnt-method {
+          grid-template-columns: 1fr;
+          gap: 14px;
+          text-align: center;
+        }
+        .cnt-icon {
+          margin: 0 auto;
+        }
+      }
+
+      /* class hooks for grain layer */
+      .section--light {
+        position: relative;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ═════════ 01 · HERO ═════════ -->
+    <section class="sec-hero section--light">
+      <div class="container">
+        <h1 class="reveal">
+          The standard
+          <em>begins here.</em>
+        </h1>
+        <p class="hero-sub reveal">
+          A fully managed finance function for growing businesses across the
+          United Kingdom — built on Big&nbsp;4 discipline, run with personal
+          FCCA-qualified accountability, and delivered through specialist
+          departments and a four-layer quality structure.
+        </p>
+
+        <figure class="portrait reveal">
+          <div class="portrait-frame">
+            <img
+              src="https://a2zaccounting.co.uk/wp-content/uploads/2026/04/srahman.png"
+              alt="Shabbir Rahman FCCA, Founder and Chief Executive of A2Z Accounting Solutions"
+              width="600"
+              height="700"
+            />
+          </div>
+        </figure>
+        <figcaption class="portrait-caption reveal">
+          Shabbir Rahman, FCCA
+          <span>Founder &amp; Chief Executive</span>
+        </figcaption>
+
+        <div class="hero-stats reveal">
+          <div class="hero-stat">
+            <div class="hero-stat-num"><em>FCCA</em></div>
+            <div class="hero-stat-lbl">Director Qualification</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-num">Four</div>
+            <div class="hero-stat-lbl">Quality Review Layers</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-num">Three</div>
+            <div class="hero-stat-lbl">Written Guarantees</div>
+          </div>
+        </div>
+
+        <div class="btn-row reveal">
+          <a href="/contact/" class="btn btn-primary">
+            Book a Conversation
+            <svg
+              class="arrow"
+              viewBox="0 0 16 16"
+              fill="none"
+              aria-hidden="true"
+            >
+              <path
+                d="M3 8h10M9 4l4 4-4 4"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </a>
+          <a href="/what-we-do-well/" class="btn btn-ghost">
+            Our Approach
+            <svg
+              class="arrow"
+              viewBox="0 0 16 16"
+              fill="none"
+              aria-hidden="true"
+            >
+              <path
+                d="M3 8h10M9 4l4 4-4 4"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═════════ 02 · FOUNDER STORY (DARK) ═════════ -->
+    <section class="sec-founder">
+      <div class="container">
+        <div class="founder-quote reveal">
+          <blockquote>
+            We did not build another accounting firm. We built the
+            <em>finance function</em> that growing businesses deserved — and
+            never had access to.
+          </blockquote>
+          <cite>Shabbir Rahman, FCCA · Founder &amp; Chief Executive</cite>
+        </div>
+
+        <div class="founder-story reveal">
+          <div class="founder-col">
+            <p>
+              It began deep beneath the North Sea at
+              <strong>Subsea&nbsp;7</strong>, where Shabbir Rahman managed
+              complex group accounts and operated to the full rigour of
+              Big&nbsp;4 audit standards — Deloitte and EY scrutinising every
+              number, every quarter, without exception.
+            </p>
+            <p>
+              Those years demanded bulletproof processes, precise systems, and
+              zero tolerance for error. When A2Z was founded in 2018, that
+              discipline was not aspirational — it was operational from the
+              first engagement letter.
+            </p>
+          </div>
+          <span class="founder-divider" aria-hidden="true"></span>
+          <div class="founder-col">
+            <p>
+              A2Z was built on an entirely different model:
+              <strong>specialist departments</strong> rather than generalists,
+              multiple independent quality-control layers rather than a single
+              reviewer, and FCCA director-level oversight on every single client
+              engagement.
+            </p>
+            <p>
+              One hundred per cent paperless, proactively managed, and delivered
+              to the standards Shabbir applied at corporate level — only now to
+              the clients who had previously been priced out of them.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═════════ 03 · PRINCIPLES — manifesto ═════════ -->
+    <section class="sec-principles section--light">
+      <div class="container">
+        <header class="principles-head">
+          <h2 class="principles-title reveal">
+            Three things we will <em>not compromise.</em>
+          </h2>
+          <p class="principles-lede reveal">
+            Every engagement is built on three non-negotiable positions. They
+            are not marketing — they define how the firm works, and what every
+            client may expect.
+          </p>
+        </header>
+
+        <div class="manifesto reveal">
+          <div class="man-row">
+            <div class="man-numeral">i</div>
+            <div class="man-text">
+              <h3>We do not compete on price.</h3>
+              <p>
+                Cheap accounting creates expensive problems. We price for the
+                value delivered — certainty, accuracy, and measurable strategic
+                advantage.
+              </p>
+            </div>
+          </div>
+          <div class="man-row">
+            <div class="man-numeral">ii</div>
+            <div class="man-text">
+              <h3>We do not sell hours.</h3>
+              <p>
+                Every engagement is for specific, guaranteed outcomes —
+                fixed-fee, fully scoped, and confirmed in writing before any
+                work begins.
+              </p>
+            </div>
+          </div>
+          <div class="man-row">
+            <div class="man-numeral">iii</div>
+            <div class="man-text">
+              <h3>We do not react to problems.</h3>
+              <p>
+                We prevent them. The four-layer quality structure identifies and
+                resolves issues long before they reach you — or HMRC.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═════════ 04 · FOUR LAYERS — timeline ═════════ -->
+    <section class="sec-layers section--light">
+      <div class="container">
+        <header class="layers-head">
+          <h2 class="layers-title reveal">
+            Four layers of review. <em>Every single time.</em>
+          </h2>
+          <p class="layers-lede reveal">
+            No output leaves A2Z without passing through every layer. Not a
+            checklist — a structural guarantee, built into how the firm operates
+            at every client tier.
+          </p>
+        </header>
+
+        <div class="timeline reveal">
+          <div class="timeline-step">
+            <div class="timeline-node">i</div>
+            <h4>Specialist completes</h4>
+            <p>
+              Work completed by a department specialist with focused, deep
+              expertise in their discipline.
+            </p>
+          </div>
+          <div class="timeline-step">
+            <div class="timeline-node">ii</div>
+            <h4>Department review</h4>
+            <p>
+              The department head independently reviews for technical accuracy,
+              compliance, and completeness.
+            </p>
+          </div>
+          <div class="timeline-step">
+            <div class="timeline-node">iii</div>
+            <h4>Senior verification</h4>
+            <p>
+              A senior accountant verifies regulatory compliance and identifies
+              proactive planning opportunities.
+            </p>
+          </div>
+          <div class="timeline-step">
+            <div class="timeline-node">iv</div>
+            <h4>Director approval</h4>
+            <p>
+              The FCCA director personally approves every output before release.
+              Without exception.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═════════ 05 · DEPARTMENTS (DARK) ═════════ -->
+    <section class="sec-departments">
+      <div class="container">
+        <header class="dept-head">
+          <h2 class="dept-title reveal">
+            Three specialist departments. <em>One point of contact.</em>
+          </h2>
+          <p class="dept-lede reveal">
+            Generalist firms ask one accountant to do everything. We separate
+            the disciplines — so each is handled by someone whose entire focus
+            is that work.
+          </p>
+        </header>
+
+        <div class="depts reveal">
+          <article class="dept-card">
+            <h3>Payroll &amp; Billing</h3>
+            <p class="dept-desc">
+              Full-service payroll and credit control — RTI, PAYE, pension
+              auto-enrolment, and accounts receivable.
+            </p>
+            <ul class="dept-list">
+              <li>RTI submissions and PAYE management</li>
+              <li>Pension auto-enrolment administration</li>
+              <li>Credit control and aged-debtor reporting</li>
+              <li>P11D benefits-in-kind processing</li>
+              <li>Statutory sick pay and maternity calculations</li>
+              <li>HMRC correspondence and resolution</li>
+            </ul>
+          </article>
+          <article class="dept-card">
+            <h3>VAT &amp; Management Accounts</h3>
+            <p class="dept-desc">
+              MTD-compliant bookkeeping, quarterly VAT returns, and regular
+              management reporting in real time.
+            </p>
+            <ul class="dept-list">
+              <li>Monthly bookkeeping and reconciliation</li>
+              <li>Quarterly VAT returns (MTD-compliant)</li>
+              <li>Management accounts with commentary</li>
+              <li>Cash-flow forecasting and reporting</li>
+              <li>VAT scheme selection and optimisation</li>
+              <li>Making Tax Digital compliance</li>
+            </ul>
+          </article>
+          <article class="dept-card">
+            <h3>Year-End &amp; Tax</h3>
+            <p class="dept-desc">
+              Annual accounts, Corporation Tax, self-assessment, and year-round
+              strategic planning.
+            </p>
+            <ul class="dept-list">
+              <li>Statutory annual accounts preparation</li>
+              <li>CT600 Corporation Tax returns</li>
+              <li>Self-assessment personal tax returns</li>
+              <li>Proactive tax planning and structuring</li>
+              <li>Companies House filing and compliance</li>
+              <li>Research &amp; Development tax credit claims</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═════════ 06 · GUARANTEES — certificate seals ═════════ -->
+    <section class="sec-guarantees section--light">
+      <div class="container">
+        <header class="gua-head">
+          <h2 class="gua-title reveal">
+            Three commitments. <em>All in writing.</em>
+          </h2>
+          <p class="gua-lede reveal">
+            Not aspirational promises — contractual obligations, included in
+            every engagement letter and enforceable from day one.
+          </p>
+        </header>
+
+        <div class="guarantees reveal">
+          <article class="guarantee">
+            <div class="seal" aria-hidden="true">
+              <span class="seal-roman">I</span>
+            </div>
+            <h4>Same-day response.</h4>
+            <p>
+              Any query submitted before midday on a working day receives a
+              substantive response the same day. Not an acknowledgement — a real
+              answer.
+            </p>
+          </article>
+          <article class="guarantee">
+            <div class="seal" aria-hidden="true">
+              <span class="seal-roman">II</span>
+            </div>
+            <h4>Zero missed deadlines.</h4>
+            <p>
+              Every HMRC and Companies House deadline is met proactively, well
+              in advance. No last-minute rushes, no penalty exposure.
+            </p>
+          </article>
+          <article class="guarantee">
+            <div class="seal" aria-hidden="true">
+              <span class="seal-roman">III</span>
+            </div>
+            <h4>Transparent fixed fees.</h4>
+            <p>
+              Your monthly fee is agreed, confirmed in writing, and never
+              changes without your prior approval. No hourly billing, no
+              surprise invoices.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═════════ 07 · CONTACT — asymmetric ═════════ -->
+    <section class="sec-contact section--light">
+      <div class="container">
+        <div class="contact-grid">
+          <div class="contact-left">
+            <h2 class="reveal">
+              If this is the standard you have been looking for,
+              <em>let us speak.</em>
+            </h2>
+            <p class="reveal">
+              No obligation — a straightforward conversation about your
+              business, where it stands, and what a properly managed finance
+              function would look like for you.
+            </p>
+            <div class="btn-row reveal">
+              <a href="/contact/" class="btn btn-primary">
+                Book a Conversation
+                <svg
+                  class="arrow"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M3 8h10M9 4l4 4-4 4"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </a>
+              <a href="/what-we-do-well/" class="btn btn-ghost">
+                Our Services
+                <svg
+                  class="arrow"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M3 8h10M9 4l4 4-4 4"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="contact-right reveal">
+            <a href="tel:01224042961" class="cnt-method">
+              <div class="cnt-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+                  />
+                </svg>
+              </div>
+              <div>
+                <div class="cnt-key">By phone</div>
+                <div class="cnt-val">01224 042 961</div>
+              </div>
+            </a>
+            <a href="mailto:info@a2zaccounting.co.uk" class="cnt-method">
+              <div class="cnt-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                  />
+                  <polyline points="22,6 12,13 2,6" />
+                </svg>
+              </div>
+              <div>
+                <div class="cnt-key">By email</div>
+                <div class="cnt-val">info@a2zaccounting.co.uk</div>
+              </div>
+            </a>
+            <div class="cnt-method">
+              <div class="cnt-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
+              </div>
+              <div>
+                <div class="cnt-key">In person</div>
+                <address class="cnt-val">
+                  1st Floor, 499 Union Street, Aberdeen AB11 6DB
+                </address>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      const io = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              e.target.classList.add("in");
+              io.unobserve(e.target);
+            }
+          });
+        },
+        { threshold: 0.12, rootMargin: "0px 0px -40px 0px" },
+      );
+      document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+    </script>
+  </body>
+</html>

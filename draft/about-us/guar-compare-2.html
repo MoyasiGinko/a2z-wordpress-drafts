@@ -1,0 +1,883 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guarantees — Unconventional Options</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #f8f6f2;
+        --bg-dark: #0c0c0a;
+        --ink: #0c0c0a;
+        --ink-60: rgba(12,12,10,0.6);
+        --ink-30: rgba(12,12,10,0.3);
+        --ink-10: rgba(12,12,10,0.08);
+        --gold: #b08d57;
+        --gold-lt: #c9a96e;
+        --gold-10: rgba(176,141,87,0.12);
+        --white: #ffffff;
+        --serif: "Cormorant Garamond", Georgia, serif;
+        --sans: "DM Sans", system-ui, sans-serif;
+        --mono: "DM Mono", monospace;
+        --ease: cubic-bezier(0.25,0.46,0.45,0.94);
+      }
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+      html { font-size: 16px; scroll-behavior: smooth; }
+      body { font-family: var(--sans); font-weight: 300; background: #111; -webkit-font-smoothing: antialiased; }
+
+      /* ─── NAV ─── */
+      .nav {
+        position: sticky; top: 0; z-index: 100;
+        background: #0c0c0a; border-bottom: 1px solid rgba(255,255,255,0.06);
+        display: flex; align-items: center; gap: 0; padding: 0 32px; height: 52px;
+      }
+      .nav-label {
+        font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.22em;
+        text-transform: uppercase; color: rgba(255,255,255,0.22); margin-right: 28px;
+      }
+      .nav a {
+        font-family: var(--mono); font-size: 0.64rem; letter-spacing: 0.16em;
+        text-transform: uppercase; color: rgba(255,255,255,0.32);
+        text-decoration: none; padding: 0 18px; height: 52px;
+        display: flex; align-items: center;
+        border-right: 1px solid rgba(255,255,255,0.06);
+        transition: color 0.25s, background 0.25s;
+      }
+      .nav a:first-of-type { border-left: 1px solid rgba(255,255,255,0.06); }
+      .nav a:hover { color: var(--gold); background: rgba(176,141,87,0.06); }
+
+      .opt-bar {
+        background: #111110; border-top: 1px solid rgba(255,255,255,0.05);
+        border-bottom: 1px solid rgba(255,255,255,0.05);
+        padding: 14px 32px; display: flex; align-items: center; gap: 16px;
+      }
+      .opt-badge {
+        font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.2em;
+        text-transform: uppercase; color: var(--bg-dark);
+        background: var(--gold); padding: 4px 10px;
+      }
+      .opt-desc {
+        font-family: var(--mono); font-size: 0.63rem; letter-spacing: 0.1em;
+        color: rgba(255,255,255,0.25);
+      }
+
+
+      /* ══════════════════════════════════════════════════════════
+         OPTION D — EXCLUSIVE ACCORDION
+         Light bg. Three collapsed rows — only one open at a time.
+         Open state: dramatic black wash + gold left border +
+         oversized heading floods the expanded zone.
+      ══════════════════════════════════════════════════════════ */
+      .opt-d {
+        background: var(--bg);
+        padding: clamp(80px, 11vw, 120px) 0;
+      }
+
+      .d-head {
+        max-width: 1160px; margin: 0 auto clamp(52px, 7vw, 80px);
+        padding: 0 clamp(24px, 5vw, 72px);
+        display: grid; grid-template-columns: 1fr 1fr;
+        gap: clamp(40px, 6vw, 80px); align-items: end;
+      }
+      .d-eyebrow {
+        font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.22em;
+        text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 20px;
+      }
+      .d-head h2 {
+        font-family: var(--serif); font-weight: 300;
+        font-size: clamp(2.4rem, 4.5vw, 4.2rem);
+        line-height: 1.05; letter-spacing: -0.02em; color: var(--ink);
+      }
+      .d-head h2 em { font-style: italic; color: var(--gold); }
+      .d-head-right p {
+        font-size: 1rem; line-height: 1.88; color: var(--ink-60); font-weight: 300;
+      }
+
+      /* Accordion */
+      .d-accordion { border-top: 1px solid var(--ink-10); }
+
+      .d-item {
+        border-bottom: 1px solid var(--ink-10);
+        overflow: hidden;
+        position: relative;
+      }
+
+      /* Gold left stripe — slides down on open */
+      .d-item::before {
+        content: "";
+        position: absolute; top: 0; left: 0; bottom: 0; width: 3px;
+        background: var(--gold);
+        transform: scaleY(0); transform-origin: top;
+        transition: transform 0.55s var(--ease);
+        z-index: 2;
+      }
+      .d-item.open::before { transform: scaleY(1); }
+
+      /* Header row */
+      .d-header {
+        display: grid;
+        grid-template-columns: clamp(64px, 8vw, 100px) 1fr clamp(24px, 3vw, 40px);
+        gap: 0 clamp(24px, 4vw, 48px);
+        align-items: center;
+        padding: 0 clamp(24px, 5vw, 72px);
+        height: clamp(72px, 9vw, 96px);
+        cursor: pointer;
+        transition: background 0.3s var(--ease);
+        position: relative; z-index: 1;
+      }
+      .d-header:hover { background: rgba(176,141,87,0.04); }
+      .d-item.open .d-header { background: var(--bg-dark); }
+
+      .d-header-num {
+        font-family: var(--serif); font-style: italic; font-weight: 300;
+        font-size: clamp(2rem, 3.5vw, 3.5rem);
+        line-height: 1; color: transparent;
+        -webkit-text-stroke: 1px rgba(176,141,87,0.3);
+        transition: -webkit-text-stroke-color 0.35s var(--ease);
+        user-select: none;
+      }
+      .d-item.open .d-header-num { -webkit-text-stroke-color: rgba(176,141,87,0.8); }
+
+      .d-header-title {
+        font-family: var(--serif); font-weight: 300;
+        font-size: clamp(1.1rem, 1.8vw, 1.6rem);
+        letter-spacing: -0.01em; color: var(--ink);
+        transition: color 0.35s var(--ease);
+      }
+      .d-item.open .d-header-title { color: var(--white); }
+
+      /* Plus/minus icon */
+      .d-toggle {
+        width: clamp(24px, 3vw, 36px); height: clamp(24px, 3vw, 36px);
+        border-radius: 50%; border: 1px solid var(--ink-10);
+        display: flex; align-items: center; justify-content: center;
+        flex-shrink: 0;
+        transition: border-color 0.35s var(--ease), background 0.35s var(--ease), transform 0.45s var(--ease);
+      }
+      .d-item.open .d-toggle {
+        border-color: var(--gold);
+        background: var(--gold-10);
+        transform: rotate(45deg);
+      }
+      .d-toggle svg {
+        width: 12px; height: 12px;
+        stroke: var(--ink-30); fill: none; stroke-width: 1.5;
+        stroke-linecap: round;
+        transition: stroke 0.35s var(--ease);
+      }
+      .d-item.open .d-toggle svg { stroke: var(--gold); }
+
+      /* Body — height animated via JS */
+      .d-body {
+        max-height: 0; overflow: hidden;
+        transition: max-height 0.62s var(--ease);
+        background: var(--bg-dark);
+      }
+      .d-item.open .d-body { max-height: 480px; }
+
+      .d-body-inner {
+        display: grid;
+        grid-template-columns: clamp(64px, 8vw, 100px) 1fr auto;
+        gap: 0 clamp(24px, 4vw, 48px);
+        align-items: start;
+        padding: clamp(32px, 4vw, 52px) clamp(24px, 5vw, 72px) clamp(40px, 5vw, 60px);
+      }
+
+      /* Large background number in expanded area */
+      .d-body-num {
+        font-family: var(--serif); font-style: italic; font-weight: 300;
+        font-size: clamp(4rem, 7vw, 8rem);
+        line-height: 1; color: transparent;
+        -webkit-text-stroke: 1px rgba(176,141,87,0.25);
+        user-select: none; padding-top: 4px;
+      }
+
+      .d-body-content h3 {
+        font-family: var(--serif); font-weight: 300; font-style: italic;
+        font-size: clamp(1.8rem, 3vw, 3rem);
+        line-height: 1.08; letter-spacing: -0.02em; color: var(--white);
+        margin-bottom: 16px;
+      }
+      .d-body-content p {
+        font-size: 0.96rem; line-height: 1.88;
+        color: rgba(255,255,255,0.45); font-weight: 300; max-width: 52ch;
+      }
+
+      .d-body-badge {
+        display: flex; flex-direction: column; align-items: center; gap: 10px;
+        flex-shrink: 0; padding-top: 6px;
+      }
+      .d-body-badge-ring {
+        width: 52px; height: 52px; border-radius: 50%;
+        border: 1px solid rgba(176,141,87,0.3);
+        display: flex; align-items: center; justify-content: center;
+        background: rgba(176,141,87,0.06);
+      }
+      .d-body-badge-ring svg {
+        width: 20px; height: 20px; stroke: var(--gold); fill: none;
+        stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round;
+      }
+      .d-body-badge-lbl {
+        font-family: var(--mono); font-size: 0.56rem;
+        letter-spacing: 0.18em; text-transform: uppercase;
+        color: var(--gold); opacity: 0.55;
+      }
+
+
+      /* ══════════════════════════════════════════════════════════
+         OPTION E — THE LEDGER
+         Uses accounting's own visual language. Looks like a
+         formal audit verification register — column headers,
+         ruled rows, reference codes, "VERIFIED" status column.
+      ══════════════════════════════════════════════════════════ */
+      .opt-e {
+        background: #f4f1eb;
+        padding: clamp(80px, 11vw, 120px) clamp(24px, 5vw, 72px);
+        position: relative;
+        overflow: hidden;
+      }
+
+      /* Ledger line texture */
+      .opt-e::before {
+        content: "";
+        position: absolute; inset: 0;
+        background-image: repeating-linear-gradient(
+          to bottom,
+          transparent 0px,
+          transparent 35px,
+          rgba(12,12,10,0.04) 35px,
+          rgba(12,12,10,0.04) 36px
+        );
+        pointer-events: none; z-index: 0;
+      }
+
+      .e-inner {
+        max-width: 1160px; margin: 0 auto;
+        position: relative; z-index: 1;
+      }
+
+      /* Pre-ledger header */
+      .e-head {
+        display: grid; grid-template-columns: 1fr 1fr;
+        gap: clamp(40px, 6vw, 80px); margin-bottom: clamp(48px, 6vw, 72px);
+        align-items: end;
+      }
+      .e-eyebrow {
+        font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.22em;
+        text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 20px;
+      }
+      .e-head h2 {
+        font-family: var(--serif); font-weight: 300;
+        font-size: clamp(2.4rem, 4.5vw, 4.2rem);
+        line-height: 1.05; letter-spacing: -0.02em; color: var(--ink);
+      }
+      .e-head h2 em { font-style: italic; color: var(--gold); }
+      .e-head-right p {
+        font-size: 1rem; line-height: 1.88; color: var(--ink-60); font-weight: 300;
+      }
+
+      /* The ledger table */
+      .e-register {
+        width: 100%;
+        border: 1px solid rgba(12,12,10,0.15);
+        background: rgba(255,255,255,0.5);
+        backdrop-filter: blur(2px);
+      }
+
+      /* Column headers */
+      .e-col-heads {
+        display: grid;
+        grid-template-columns: 110px 220px 1fr 130px;
+        border-bottom: 2px solid rgba(12,12,10,0.18);
+        background: rgba(12,12,10,0.04);
+      }
+      .e-col-head {
+        font-family: var(--mono); font-size: 0.58rem;
+        letter-spacing: 0.2em; text-transform: uppercase;
+        color: var(--ink-30); padding: 14px 20px;
+        border-right: 1px solid rgba(12,12,10,0.08);
+      }
+      .e-col-head:last-child { border-right: 0; text-align: center; }
+
+      /* Rows */
+      .e-row {
+        display: grid;
+        grid-template-columns: 110px 220px 1fr 130px;
+        border-bottom: 1px solid rgba(12,12,10,0.07);
+        transition: background 0.3s var(--ease);
+        cursor: default;
+        position: relative;
+      }
+      .e-register .e-row:last-child { border-bottom: 0; }
+      .e-row:hover { background: rgba(176,141,87,0.05); }
+
+      /* Gold left rule on hover */
+      .e-row::before {
+        content: "";
+        position: absolute; left: 0; top: 0; bottom: 0; width: 2px;
+        background: var(--gold);
+        transform: scaleY(0); transform-origin: bottom;
+        transition: transform 0.4s var(--ease);
+      }
+      .e-row:hover::before { transform: scaleY(1); }
+
+      .e-cell {
+        padding: clamp(20px, 2.5vw, 28px) 20px;
+        border-right: 1px solid rgba(12,12,10,0.07);
+        display: flex; align-items: flex-start;
+      }
+      .e-cell:last-child { border-right: 0; justify-content: center; align-items: center; }
+
+      /* Ref cell */
+      .e-ref {
+        font-family: var(--mono); font-size: 0.7rem;
+        letter-spacing: 0.1em; color: var(--ink-30);
+        align-self: center;
+      }
+
+      /* Commitment cell */
+      .e-commitment {
+        flex-direction: column; gap: 6px;
+      }
+      .e-commitment-title {
+        font-family: var(--serif); font-weight: 300;
+        font-size: clamp(1.1rem, 1.6vw, 1.4rem);
+        line-height: 1.12; letter-spacing: -0.01em; color: var(--ink);
+      }
+      .e-commitment-sub {
+        font-family: var(--mono); font-size: 0.58rem;
+        letter-spacing: 0.12em; color: var(--ink-30); text-transform: uppercase;
+      }
+
+      /* Terms cell */
+      .e-terms {
+        font-size: 0.9rem; line-height: 1.8;
+        color: var(--ink-60); font-weight: 300;
+        align-self: center;
+      }
+
+      /* Status cell */
+      .e-status {
+        flex-direction: column; align-items: center; gap: 8px;
+      }
+      .e-status-icon {
+        width: 36px; height: 36px; border-radius: 50%;
+        border: 1px solid rgba(176,141,87,0.35);
+        background: rgba(176,141,87,0.06);
+        display: flex; align-items: center; justify-content: center;
+        transition: border-color 0.3s var(--ease), background 0.3s var(--ease);
+      }
+      .e-row:hover .e-status-icon {
+        border-color: var(--gold); background: rgba(176,141,87,0.14);
+      }
+      .e-status-icon svg {
+        width: 14px; height: 14px; stroke: var(--gold); fill: none;
+        stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round;
+        opacity: 0.55; transition: opacity 0.3s;
+      }
+      .e-row:hover .e-status-icon svg { opacity: 1; }
+      .e-status-text {
+        font-family: var(--mono); font-size: 0.52rem;
+        letter-spacing: 0.16em; text-transform: uppercase;
+        color: var(--gold); opacity: 0.45;
+        transition: opacity 0.3s;
+      }
+      .e-row:hover .e-status-text { opacity: 0.85; }
+
+      /* Register footer */
+      .e-register-foot {
+        background: rgba(12,12,10,0.03);
+        border-top: 1px solid rgba(12,12,10,0.1);
+        padding: 14px 20px;
+        display: flex; align-items: center; justify-content: space-between;
+      }
+      .e-register-foot-l {
+        font-family: var(--mono); font-size: 0.58rem;
+        letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-30);
+      }
+      .e-register-foot-r {
+        font-family: var(--serif); font-style: italic;
+        font-size: 1rem; color: rgba(12,12,10,0.25);
+      }
+
+
+      /* ══════════════════════════════════════════════════════════
+         OPTION F — CINEMATIC BANDS
+         Dark. Each guarantee is a full-width horizontal band
+         ~260px tall. Left: enormous outlined number. Thin
+         vertical gold rule. Right: heading + description.
+         Stack of three = a bold visual timeline.
+      ══════════════════════════════════════════════════════════ */
+      .opt-f {
+        background: var(--bg-dark);
+        padding: clamp(80px, 11vw, 120px) 0;
+      }
+
+      .f-head {
+        max-width: 1160px; margin: 0 auto clamp(56px, 8vw, 88px);
+        padding: 0 clamp(24px, 5vw, 72px);
+        display: grid; grid-template-columns: 1fr 1fr;
+        gap: clamp(40px, 6vw, 80px); align-items: end;
+      }
+      .f-eyebrow {
+        font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.22em;
+        text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 20px;
+      }
+      .f-head h2 {
+        font-family: var(--serif); font-weight: 300;
+        font-size: clamp(2.4rem, 4.5vw, 4.2rem);
+        line-height: 1.05; letter-spacing: -0.02em; color: var(--white);
+      }
+      .f-head h2 em { font-style: italic; color: var(--gold); }
+      .f-head-right p {
+        font-size: 1rem; line-height: 1.88;
+        color: rgba(255,255,255,0.38); font-weight: 300;
+      }
+
+      /* Bands */
+      .f-bands {
+        border-top: 1px solid rgba(255,255,255,0.06);
+      }
+
+      .f-band {
+        display: grid;
+        grid-template-columns: clamp(200px, 28vw, 360px) 1px 1fr;
+        border-bottom: 1px solid rgba(255,255,255,0.06);
+        min-height: clamp(180px, 22vw, 280px);
+        cursor: default;
+        position: relative;
+        transition: background 0.45s var(--ease);
+        overflow: hidden;
+      }
+      .f-band:hover { background: rgba(255,255,255,0.02); }
+
+      /* Subtle radial glow on hover */
+      .f-band::after {
+        content: "";
+        position: absolute; inset: 0;
+        background: radial-gradient(ellipse at 14% 50%, rgba(176,141,87,0.07) 0%, transparent 55%);
+        opacity: 0;
+        transition: opacity 0.55s var(--ease);
+        pointer-events: none;
+      }
+      .f-band:hover::after { opacity: 1; }
+
+      /* Left: enormous number */
+      .f-band-left {
+        display: flex; align-items: center;
+        padding: clamp(32px, 4vw, 52px) clamp(24px, 5vw, 72px);
+        position: relative;
+      }
+      .f-big-num {
+        font-family: var(--serif); font-style: italic; font-weight: 300;
+        font-size: clamp(8rem, 16vw, 20rem);
+        line-height: 0.85;
+        color: transparent;
+        -webkit-text-stroke: 1px rgba(176,141,87,0.2);
+        user-select: none;
+        transition: -webkit-text-stroke-color 0.45s var(--ease);
+        position: relative; z-index: 1;
+      }
+      .f-band:hover .f-big-num { -webkit-text-stroke-color: rgba(176,141,87,0.55); }
+
+      /* Vertical gold rule */
+      .f-rule {
+        background: rgba(176,141,87,0.2);
+        transition: background 0.45s var(--ease);
+        flex-shrink: 0;
+      }
+      .f-band:hover .f-rule { background: rgba(176,141,87,0.55); }
+
+      /* Right: content */
+      .f-band-right {
+        display: flex; flex-direction: column; justify-content: center;
+        padding: clamp(32px, 4vw, 52px) clamp(36px, 5vw, 64px);
+        position: relative; z-index: 1;
+      }
+
+      .f-idx {
+        font-family: var(--mono); font-size: 0.62rem;
+        letter-spacing: 0.22em; text-transform: uppercase;
+        color: var(--gold); opacity: 0.55;
+        display: block; margin-bottom: 16px;
+        transition: opacity 0.4s var(--ease);
+      }
+      .f-band:hover .f-idx { opacity: 0.9; }
+
+      .f-band-right h3 {
+        font-family: var(--serif); font-weight: 300;
+        font-size: clamp(1.7rem, 2.8vw, 2.8rem);
+        line-height: 1.08; letter-spacing: -0.018em;
+        color: var(--white); margin-bottom: 16px;
+        transition: color 0.4s var(--ease);
+      }
+      .f-band:hover .f-band-right h3 { color: var(--gold-lt); }
+
+      .f-band-right p {
+        font-size: 0.94rem; line-height: 1.85;
+        color: rgba(255,255,255,0.35); font-weight: 300;
+        max-width: 50ch;
+        transition: color 0.4s var(--ease);
+      }
+      .f-band:hover .f-band-right p { color: rgba(255,255,255,0.55); }
+
+      /* Contractual tag bottom-right of each band */
+      .f-band-tag {
+        position: absolute; bottom: clamp(18px, 2.5vw, 28px); right: clamp(24px, 4vw, 48px);
+        display: flex; align-items: center; gap: 8px;
+        opacity: 0; transition: opacity 0.4s 0.1s var(--ease);
+      }
+      .f-band:hover .f-band-tag { opacity: 1; }
+      .f-band-tag svg {
+        width: 14px; height: 14px; stroke: var(--gold); fill: none;
+        stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; opacity: 0.7;
+      }
+      .f-band-tag span {
+        font-family: var(--mono); font-size: 0.56rem;
+        letter-spacing: 0.18em; text-transform: uppercase;
+        color: var(--gold); opacity: 0.6;
+      }
+
+      /* Footer */
+      .f-footer {
+        max-width: 1160px; margin: clamp(48px, 6vw, 64px) auto 0;
+        padding: 0 clamp(24px, 5vw, 72px);
+      }
+      .f-footer-inner {
+        border-top: 1px solid rgba(255,255,255,0.07);
+        padding-top: 22px;
+        display: flex; align-items: center; justify-content: space-between; gap: 24px;
+      }
+      .f-footer-inner p {
+        font-family: var(--mono); font-size: 0.63rem;
+        letter-spacing: 0.14em; text-transform: uppercase;
+        color: rgba(255,255,255,0.18);
+      }
+      .f-footer-sig {
+        font-family: var(--serif); font-style: italic;
+        font-size: 1.1rem; color: rgba(255,255,255,0.15);
+      }
+
+    </style>
+  </head>
+  <body>
+
+    <nav class="nav">
+      <span class="nav-label">Guarantees — Unconventional</span>
+      <a href="#option-d">D · Accordion</a>
+      <a href="#option-e">E · Ledger</a>
+      <a href="#option-f">F · Cinematic Bands</a>
+    </nav>
+
+
+    <!-- ══════════════════════════════════════════════════════
+         OPTION D — EXCLUSIVE ACCORDION
+    ══════════════════════════════════════════════════════ -->
+    <div class="opt-bar" id="option-d">
+      <span class="opt-badge">Option D</span>
+      <span class="opt-desc">Accordion — collapsed rows reveal a dramatic black interior. One open at a time. Toggle rotates 45° into × to close.</span>
+    </div>
+
+    <section class="opt-d">
+      <div class="d-head">
+        <div>
+          <span class="d-eyebrow">Contractual Commitments</span>
+          <h2>Three commitments.<br /><em>All in writing.</em></h2>
+        </div>
+        <div class="d-head-right">
+          <p>Not aspirational promises — contractual obligations, included in every engagement letter and enforceable from day one.</p>
+        </div>
+      </div>
+
+      <div class="d-accordion">
+
+        <div class="d-item open">
+          <div class="d-header" data-toggle>
+            <div class="d-header-num">01</div>
+            <div class="d-header-title">Same-day Response</div>
+            <div class="d-toggle">
+              <svg viewBox="0 0 14 14">
+                <line x1="7" y1="1" x2="7" y2="13"/>
+                <line x1="1" y1="7" x2="13" y2="7"/>
+              </svg>
+            </div>
+          </div>
+          <div class="d-body">
+            <div class="d-body-inner">
+              <div class="d-body-num" aria-hidden="true">01</div>
+              <div class="d-body-content">
+                <h3>Same-day Response</h3>
+                <p>Any query submitted before midday on a working day receives a substantive response the same day. Not an acknowledgement — a real answer.</p>
+              </div>
+              <div class="d-body-badge">
+                <div class="d-body-badge-ring">
+                  <svg viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke="var(--gold)" fill="none">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                </div>
+                <span class="d-body-badge-lbl">Contractual</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="d-item">
+          <div class="d-header" data-toggle>
+            <div class="d-header-num">02</div>
+            <div class="d-header-title">Zero Missed Deadlines</div>
+            <div class="d-toggle">
+              <svg viewBox="0 0 14 14">
+                <line x1="7" y1="1" x2="7" y2="13"/>
+                <line x1="1" y1="7" x2="13" y2="7"/>
+              </svg>
+            </div>
+          </div>
+          <div class="d-body">
+            <div class="d-body-inner">
+              <div class="d-body-num" aria-hidden="true">02</div>
+              <div class="d-body-content">
+                <h3>Zero Missed Deadlines</h3>
+                <p>Every HMRC and Companies House deadline is met proactively, well in advance. No last-minute rushes, no penalty exposure.</p>
+              </div>
+              <div class="d-body-badge">
+                <div class="d-body-badge-ring">
+                  <svg viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke="var(--gold)" fill="none">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                </div>
+                <span class="d-body-badge-lbl">Contractual</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="d-item">
+          <div class="d-header" data-toggle>
+            <div class="d-header-num">03</div>
+            <div class="d-header-title">Transparent Fixed Fees</div>
+            <div class="d-toggle">
+              <svg viewBox="0 0 14 14">
+                <line x1="7" y1="1" x2="7" y2="13"/>
+                <line x1="1" y1="7" x2="13" y2="7"/>
+              </svg>
+            </div>
+          </div>
+          <div class="d-body">
+            <div class="d-body-inner">
+              <div class="d-body-num" aria-hidden="true">03</div>
+              <div class="d-body-content">
+                <h3>Transparent Fixed Fees</h3>
+                <p>Your monthly fee is agreed, confirmed in writing, and never changes without your prior approval. No hourly billing, no surprise invoices.</p>
+              </div>
+              <div class="d-body-badge">
+                <div class="d-body-badge-ring">
+                  <svg viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke="var(--gold)" fill="none">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                </div>
+                <span class="d-body-badge-lbl">Contractual</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ══════════════════════════════════════════════════════
+         OPTION E — THE LEDGER
+    ══════════════════════════════════════════════════════ -->
+    <div class="opt-bar" id="option-e">
+      <span class="opt-badge">Option E</span>
+      <span class="opt-desc">Ledger — uses accounting's own visual language. Looks like a formal audit verification register with column headers, reference codes and status column.</span>
+    </div>
+
+    <section class="opt-e">
+      <div class="e-inner">
+
+        <div class="e-head">
+          <div>
+            <span class="e-eyebrow">Contractual Commitments</span>
+            <h2>Three commitments.<br /><em>All in writing.</em></h2>
+          </div>
+          <div class="e-head-right">
+            <p>Not aspirational promises — contractual obligations, included in every engagement letter and enforceable from day one.</p>
+          </div>
+        </div>
+
+        <div class="e-register">
+          <div class="e-col-heads">
+            <span class="e-col-head">Reference</span>
+            <span class="e-col-head">Commitment</span>
+            <span class="e-col-head">Terms</span>
+            <span class="e-col-head">Status</span>
+          </div>
+
+          <div class="e-row">
+            <div class="e-cell">
+              <span class="e-ref">A2Z · 01</span>
+            </div>
+            <div class="e-cell e-commitment">
+              <span class="e-commitment-title">Same-day Response</span>
+              <span class="e-commitment-sub">Response · Communications</span>
+            </div>
+            <div class="e-cell">
+              <span class="e-terms">Any query submitted before midday on a working day receives a substantive response the same day. Not an acknowledgement — a real answer.</span>
+            </div>
+            <div class="e-cell e-status">
+              <div class="e-status-icon">
+                <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              </div>
+              <span class="e-status-text">Verified</span>
+            </div>
+          </div>
+
+          <div class="e-row">
+            <div class="e-cell">
+              <span class="e-ref">A2Z · 02</span>
+            </div>
+            <div class="e-cell e-commitment">
+              <span class="e-commitment-title">Zero Missed Deadlines</span>
+              <span class="e-commitment-sub">Compliance · Filing</span>
+            </div>
+            <div class="e-cell">
+              <span class="e-terms">Every HMRC and Companies House deadline is met proactively, well in advance. No last-minute rushes, no penalty exposure.</span>
+            </div>
+            <div class="e-cell e-status">
+              <div class="e-status-icon">
+                <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              </div>
+              <span class="e-status-text">Verified</span>
+            </div>
+          </div>
+
+          <div class="e-row">
+            <div class="e-cell">
+              <span class="e-ref">A2Z · 03</span>
+            </div>
+            <div class="e-cell e-commitment">
+              <span class="e-commitment-title">Transparent Fixed Fees</span>
+              <span class="e-commitment-sub">Billing · Transparency</span>
+            </div>
+            <div class="e-cell">
+              <span class="e-terms">Your monthly fee is agreed, confirmed in writing, and never changes without your prior approval. No hourly billing, no surprise invoices.</span>
+            </div>
+            <div class="e-cell e-status">
+              <div class="e-status-icon">
+                <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              </div>
+              <span class="e-status-text">Verified</span>
+            </div>
+          </div>
+
+          <div class="e-register-foot">
+            <span class="e-register-foot-l">All entries enforceable from day one of engagement · A2Z Accounting Solutions</span>
+            <span class="e-register-foot-r">Shabbir Rahman, FCCA</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ══════════════════════════════════════════════════════
+         OPTION F — CINEMATIC BANDS
+    ══════════════════════════════════════════════════════ -->
+    <div class="opt-bar" id="option-f">
+      <span class="opt-badge">Option F</span>
+      <span class="opt-desc">Cinematic Bands — each guarantee is a full-width horizontal band. Enormous outlined number on the left, thin gold rule, heading + text on the right.</span>
+    </div>
+
+    <section class="opt-f">
+      <div class="f-head">
+        <div>
+          <span class="f-eyebrow">Contractual Commitments</span>
+          <h2>Three commitments.<br /><em>All in writing.</em></h2>
+        </div>
+        <div class="f-head-right">
+          <p>Not aspirational promises — contractual obligations, included in every engagement letter and enforceable from day one.</p>
+        </div>
+      </div>
+
+      <div class="f-bands">
+
+        <div class="f-band">
+          <div class="f-band-left">
+            <span class="f-big-num" aria-hidden="true">01</span>
+          </div>
+          <div class="f-rule"></div>
+          <div class="f-band-right">
+            <span class="f-idx">Commitment · 01</span>
+            <h3>Same-day Response</h3>
+            <p>Any query submitted before midday on a working day receives a substantive response the same day. Not an acknowledgement — a real answer.</p>
+          </div>
+          <div class="f-band-tag">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>Contractual</span>
+          </div>
+        </div>
+
+        <div class="f-band">
+          <div class="f-band-left">
+            <span class="f-big-num" aria-hidden="true">02</span>
+          </div>
+          <div class="f-rule"></div>
+          <div class="f-band-right">
+            <span class="f-idx">Commitment · 02</span>
+            <h3>Zero Missed Deadlines</h3>
+            <p>Every HMRC and Companies House deadline is met proactively, well in advance. No last-minute rushes, no penalty exposure.</p>
+          </div>
+          <div class="f-band-tag">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>Contractual</span>
+          </div>
+        </div>
+
+        <div class="f-band">
+          <div class="f-band-left">
+            <span class="f-big-num" aria-hidden="true">03</span>
+          </div>
+          <div class="f-rule"></div>
+          <div class="f-band-right">
+            <span class="f-idx">Commitment · 03</span>
+            <h3>Transparent Fixed Fees</h3>
+            <p>Your monthly fee is agreed, confirmed in writing, and never changes without your prior approval. No hourly billing, no surprise invoices.</p>
+          </div>
+          <div class="f-band-tag">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>Contractual</span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="f-footer">
+        <div class="f-footer-inner">
+          <p>All three appear in your engagement letter, in plain English, before any work begins.</p>
+          <span class="f-footer-sig">A2Z Accounting Solutions</span>
+        </div>
+      </div>
+    </section>
+
+
+    <script>
+      // Option D — exclusive accordion
+      document.querySelectorAll(".d-header[data-toggle]").forEach((header) => {
+        header.addEventListener("click", () => {
+          const item = header.closest(".d-item");
+          const isOpen = item.classList.contains("open");
+          // Close all
+          document.querySelectorAll(".d-item.open").forEach((i) => i.classList.remove("open"));
+          // Open clicked if it was closed
+          if (!isOpen) item.classList.add("open");
+        });
+      });
+    </script>
+
+  </body>
+</html>

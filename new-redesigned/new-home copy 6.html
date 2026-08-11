@@ -1,0 +1,2655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A2Z Accounting | Chartered Certified Accountants</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <style>
+        /* ==========================================
+           1. RESET & VARIABLE TOKENS
+           ========================================== */
+        :root {
+            /* Brand Color Palette */
+            --color-navy-deepest: #03080f;
+            --color-navy-deep: #112B45;
+            --color-navy: #0a1d30;
+            --color-navy-light: #11253c;
+            --color-gold: #d4a84f;
+            --color-gold-hover: #b8862f;
+            --color-gold-light: #f4ead2;
+            --color-gold-rgb: 212, 168, 79;
+            
+            /* Slate Grays */
+            --color-slate-50: #f8fafc;
+            --color-slate-100: #f1f5f9;
+            --color-slate-200: #e2e8f0;
+            --color-slate-300: #cbd5e1;
+            --color-slate-400: #94a3b8;
+            --color-slate-600: #475569;
+            --color-slate-800: #1e293b;
+            
+            --color-white: #ffffff;
+            
+            /* Typography */
+            --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+            --font-serif: 'Playfair Display', Georgia, serif;
+            
+            /* Transitions */
+            --transition-smooth: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            
+            /* Layout Constraints */
+            --max-width: 1200px;
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            color: var(--color-slate-800);
+            background-color: var(--color-white);
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition-smooth);
+        }
+
+        button {
+            font-family: inherit;
+            border: none;
+            background: none;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .container {
+            width: 100%;
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Utility classes */
+        .text-center { text-align: center; }
+        .text-gold { color: var(--color-gold); }
+        .font-serif { font-family: var(--font-serif); }
+        .italic { font-style: italic; }
+        .weight-normal { font-weight: 400; }
+        .weight-bold { font-weight: 700; }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 28px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            border-radius: 7px;
+            transition: var(--transition-smooth);
+        }
+
+        .btn-solid {
+            background-color: var(--color-gold);
+            color: var(--color-navy-deepest);
+            box-shadow: 0 4px 14px rgba(212, 168, 79, 0.25);
+        }
+
+        .btn-solid:hover {
+            background-color: var(--color-gold-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(212, 168, 79, 0.35);
+        }
+
+        .btn-outline {
+            border: 1px solid var(--color-gold);
+            color: var(--color-gold);
+            gap: 8px;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--color-gold);
+            color: var(--color-navy-deepest);
+            transform: translateY(-2px);
+        }
+
+        /* Section structure */
+        section {
+            padding: 90px 0;
+            position: relative;
+        }
+
+        .section-dark {
+            background-color: var(--color-navy);
+            color: var(--color-white);
+        }
+
+        .section-light {
+            background-color: var(--color-slate-50);
+        }
+
+        .section-white {
+            background-color: var(--color-white);
+        }
+
+        .section-title {
+            font-family: var(--font-serif);
+            font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+            font-weight: 700;
+            line-height: 1.25;
+            margin-bottom: 20px;
+            color: var(--color-navy-deep);
+        }
+
+        .section-dark .section-title {
+            color: var(--color-white);
+        }
+
+        .section-subtitle {
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--color-gold);
+            margin-bottom: 12px;
+            display: inline-block;
+        }
+
+        /* ==========================================
+           2. HEADER & NAVIGATION
+           ========================================== */
+        header {
+            width: 100%;
+            position: relative;
+            background-color: var(--color-white);
+            z-index: 100;
+            border-bottom: 1px solid var(--color-slate-100);
+        }
+
+        .header-top {
+            background-color: var(--color-navy-deep);
+            color: var(--color-white);
+            font-size: 0.8rem;
+            font-weight: 500;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header-top::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 35%;
+            height: 100%;
+            background-color: var(--color-white);
+            transform: skewX(-30deg);
+            transform-origin: top left;
+            z-index: 1;
+        }
+
+        .header-top-wrap {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            height: 40px;
+            gap: 24px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .header-top-link {
+            color: var(--color-slate-300);
+            transition: var(--transition-smooth);
+        }
+
+        .header-top-link:hover {
+            color: var(--color-gold);
+        }
+
+        .header-main-wrap {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 85px;
+        }
+
+        /* Logo Area */
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-emblem {
+            width: 44px;
+            height: 44px;
+            background-color: var(--color-navy-deep);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid var(--color-gold);
+        }
+
+        .logo-text-title {
+            font-family: var(--font-sans);
+            font-weight: 800;
+            font-size: 1.25rem;
+            color: var(--color-navy-deep);
+            letter-spacing: 0.05em;
+            line-height: 1.1;
+        }
+
+        .logo-text-subtitle {
+            font-family: var(--font-sans);
+            font-size: 0.65rem;
+            font-weight: 600;
+            color: var(--color-gold-hover);
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        /* Nav links */
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+
+        .nav-link {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--color-navy-deep);
+            padding: 8px 0;
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--color-gold);
+            transition: var(--transition-smooth);
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .nav-link:hover {
+            color: var(--color-gold-hover);
+        }
+
+        .nav-btn {
+            margin-left: 12px;
+        }
+
+        /* Mobile menu toggle */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 6px;
+            width: 30px;
+            height: 20px;
+            justify-content: space-between;
+        }
+
+        .menu-toggle span {
+            display: block;
+            width: 100%;
+            height: 2px;
+            background-color: var(--color-navy-deep);
+            transition: var(--transition-smooth);
+        }
+
+        /* ==========================================
+           3. HERO SECTION
+           ========================================== */
+        .hero {
+            position: relative;
+            background: linear-gradient(rgba(0, 0, 0, 0.705), rgba(0, 0, 0, 0.705)), url('https://www.communitytax.com/wp-content/uploads/2023/09/File-or-Pay-Taxes.webp');
+            background-size: cover;
+            background-position: center;
+            color: var(--color-white);
+            padding: 100px 0 90px 0;
+            min-height: 95vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .hero-title {
+            font-family: var(--font-serif);
+            font-size: clamp(2.2rem, 5.5vw, 4rem);
+            font-weight: 700;
+            line-height: 1.15;
+            margin-bottom: 24px;
+            letter-spacing: -0.01em;
+        }
+
+        .hero-title span {
+            display: block;
+            color: var(--color-gold);
+            font-style: italic;
+            font-weight: 400;
+            margin-top: 8px;
+        }
+
+        .hero-actions {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin-bottom: 28px;
+            flex-wrap: wrap;
+        }
+
+        /* Gold Pill Badge under buttons */
+        .hero-badge-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 24px;
+            border-radius: 12px;
+            border: 1px solid #D4A84F80;
+            background: #D4A84F1A;
+            color: var(--color-white);
+            font-size: 0.95rem;
+            font-weight: 500;
+            margin-bottom: 28px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+        }
+
+        .hero-badge-icon {
+            color: var(--color-gold);
+            flex-shrink: 0;
+        }
+
+        /* Circular Checklist Items */
+        .hero-checklist {
+            display: flex;
+            justify-content: center;
+            gap: 36px;
+            margin-bottom: 44px;
+            flex-wrap: wrap;
+            font-size: 0.95rem;
+            color: var(--color-white);
+            font-weight: 600;
+        }
+
+        .hero-checklist-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .checklist-icon-circle {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: 1.5px solid var(--color-gold);
+            color: var(--color-gold);
+            flex-shrink: 0;
+        }
+
+        /* Success Story Testimonial Card Overlay */
+        .hero-card-container {
+            position: relative;
+            max-width: 920px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .hero-card-offset-border {
+            position: absolute;
+            right: -15px;
+            bottom: -15px;
+            width: 155px;
+            height: 143px;
+            border-bottom: 1px solid var(--color-gold);
+            border-right: 1px solid var(--color-gold);
+            border-bottom-right-radius: 8px;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .hero-card {
+            background: rgba(10, 26, 42, 0.92);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            display: grid;
+            grid-template-columns: 1.25fr 1.75fr;
+            text-align: left;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
+            position: relative;
+            z-index: 2;
+            overflow: hidden;
+        }
+
+        /* Left Side: Video Player Thumbnail */
+        .hero-card-video {
+            position: relative;
+            border-radius: 8px 0 0 8px;
+            overflow: hidden;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+            background-color: #03080f;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+        }
+
+        .hero-card-video img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-card-play {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            background-color: var(--color-gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-navy-deep);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            z-index: 10;
+        }
+
+        .hero-card-play svg {
+            margin-left: 3px;
+        }
+
+        .hero-card-play:hover {
+            transform: translate(-50%, -50%) scale(1.08);
+            background-color: var(--color-white);
+        }
+
+        /* Right Side: Quote and Metadata */
+        .hero-card-info {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 40px;
+        }
+
+        .hero-card-header-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+
+        .hero-card-eyebrow {
+            font-size: 0.7rem;
+            font-weight: 800;
+            color: var(--color-gold);
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+        }
+
+        .hero-card-stars {
+            display: flex;
+            gap: 2px;
+        }
+
+        .hero-card-stars svg {
+            color: var(--color-gold);
+            width: 14px;
+            height: 14px;
+        }
+
+        .hero-card-quote {
+            font-family: var(--font-serif);
+            font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+            line-height: 1.3;
+            color: var(--color-white);
+            margin-bottom: 20px;
+            font-weight: 400;
+            font-style: italic;
+            letter-spacing: 0.02em;
+        }
+
+        .hero-card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: auto;
+            border-top: 1px solid rgba(255,255,255,0.08);
+            padding-top: 16px;
+        }
+
+        .hero-card-profile {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .hero-card-avatar {
+            width: 38px;
+            height: 38px;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-slate-300);
+            flex-shrink: 0;
+        }
+
+        .hero-card-meta {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .hero-card-author-name {
+            font-size: 0.88rem;
+            font-weight: 700;
+            color: var(--color-white);
+            line-height: 1.2;
+        }
+
+        .hero-card-author-role {
+            font-size: 0.75rem;
+            color: var(--color-slate-400);
+            margin-top: 1px;
+        }
+
+        .hero-card-nav {
+            display: flex;
+            gap: 8px;
+        }
+
+        .hero-card-nav-btn {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-white);
+            cursor: pointer;
+            transition: var(--transition-smooth);
+        }
+
+        .hero-card-nav-btn:hover {
+            border-color: var(--color-gold);
+            color: var(--color-gold);
+            background: rgba(212, 168, 79, 0.1);
+        }
+
+        @media (max-width: 992px) {
+            .hero-card {
+                grid-template-columns: 1fr;
+                gap: 24px;
+                max-width: 550px;
+                padding: 24px;
+            }
+            .hero-card-video {
+                aspect-ratio: 16 / 9;
+            }
+            .hero-card-offset-border {
+                display: none;
+            }
+        }
+
+        /* ==========================================
+           4. SECTION 2: THREE THINGS
+           ========================================== */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .feature-card {
+            background-color: var(--color-white);
+            border: 1px solid #D4A84F4D;
+            border-radius: 16px;
+            padding: 38px 32px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.04);
+            transition: var(--transition-smooth);
+            position: relative;
+            width: 100%;
+            max-width: 380px;
+            height: 344px;
+            margin: 0 auto;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 45px rgba(7, 21, 36, 0.08);
+        }
+
+        .feature-icon-wrapper {
+            width: 46px;
+            height: 46px;
+            background-color: #D4A84F1A;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px;
+            color: var(--color-gold);
+        }
+
+        .feature-card-title {
+            font-family: var(--font-serif);
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--color-navy-deep);
+            margin-bottom: 16px;
+            line-height: 1.25;
+            letter-spacing: -0.01em;
+        }
+
+        .feature-card-desc {
+            font-size: 0.95rem;
+            color: var(--color-slate-600);
+            line-height: 1.6;
+        }
+
+        /* ==========================================
+           5. SECTION 3: THREE LEVELS
+           ========================================== */
+        .levels-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 120px;
+        }
+
+        .level-card {
+            background-color: var(--color-navy-deep);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 30px;
+            padding: 45px 32px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            transition: var(--transition-smooth);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+            width: 100%;
+            max-width: 380px;
+            height: 375px;
+            margin: 0 auto;
+        }
+
+        .level-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+        }
+
+        .level-card.highlighted {
+            transform: translateY(-56px);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.12);
+            z-index: 2;
+        }
+        
+        .level-card.highlighted:hover {
+            transform: translateY(-62px);
+        }
+
+        .level-eyebrow {
+            font-size: 0.7rem;
+            font-weight: 800;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--color-gold);
+            margin-bottom: 12px;
+        }
+
+        .level-card-title {
+            font-family: var(--font-serif);
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--color-white);
+            margin-bottom: 20px;
+            letter-spacing: -0.02em;
+        }
+
+        .level-card-desc {
+            font-size: 0.95rem;
+            color: var(--color-white);
+            line-height: 1.6;
+        }
+
+        .level-premium-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: var(--color-gold);
+            color: var(--color-navy-deepest);
+            font-size: 0.65rem;
+            font-weight: 800;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            padding: 6px 14px;
+            border-radius: 100px;
+            box-shadow: 0 4px 12px rgba(212, 168, 79, 0.3);
+        }
+
+        /* ==========================================
+           5.5. SECTION: OPTIONAL ADD-ON
+           ========================================== */
+        .section-eyebrow {
+            font-size: 0.75rem;
+            font-weight: 800;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--color-gold);
+            margin-bottom: 16px;
+            display: inline-block;
+        }
+
+        .addon-container {
+            background-color: var(--color-navy-deep);
+            border-radius: 17.81px;
+            border: 0.89px solid rgba(255, 255, 255, 0.05);
+            border-top: transparent;
+            margin-top: 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            width: 100%;
+            max-width: 1132.45px;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+        }
+        
+        .addon-container::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            max-width: 100%;
+            height: 5px;
+            top: -1px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(90deg, rgba(255, 195, 0, 0.97) 0.63%, rgba(255, 195, 0, 0.7) 30.44%, #FFFFFF 50.32%, rgba(255, 195, 0, 0.7) 70.19%, rgba(255, 195, 0, 0.7) 100.01%);
+            z-index: 10;
+        }
+        
+        @media (min-width: 993px) {
+            .addon-container {
+                height: 456.13px;
+            }
+        }
+
+        .addon-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .addon-col {
+            padding: 50px 40px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .addon-col-middle {
+            border-left: 1px solid rgba(255, 255, 255, 0.05);
+            border-right: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        @media (max-width: 992px) {
+            .addon-grid {
+                grid-template-columns: 1fr;
+            }
+            .addon-col-middle {
+                border-left: none;
+                border-right: none;
+                border-top: 1px solid rgba(255, 255, 255, 0.05);
+                border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            }
+        }
+
+        .addon-badge {
+            align-self: flex-start;
+            font-size: 0.65rem;
+            font-weight: 800;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--color-gold);
+            border: 1px solid rgba(212, 168, 79, 0.4);
+            padding: 6px 16px;
+            border-radius: 100px;
+            margin-bottom: 35px;
+        }
+
+        .addon-icon {
+            margin-bottom: 24px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+        }
+
+        .addon-title {
+            font-family: var(--font-serif);
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--color-white);
+            margin-bottom: 20px;
+            letter-spacing: -0.02em;
+            line-height: 1.15;
+        }
+
+        .addon-desc {
+            font-size: 0.95rem;
+            color: var(--color-white);
+            line-height: 1.6;
+        }
+
+        /* ==========================================
+           6. SECTION 4: REVIEWS STATS
+           ========================================== */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 10px 20px;
+        }
+
+        .stat-number {
+            font-family: var(--font-serif);
+            font-size: clamp(3.5rem, 6vw, 4.8rem);
+            font-weight: 700;
+            color: var(--color-gold);
+            line-height: 1.1;
+            margin-bottom: 8px;
+        }
+
+        .stat-subtitle {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--color-navy-deep);
+            margin-bottom: 12px;
+        }
+
+        .stat-desc {
+            font-size: 0.95rem;
+            color: var(--color-slate-600);
+            max-width: 280px;
+            margin: 0 auto;
+        }
+
+        /* ==========================================
+           7. SECTION 5: OFFICE RECEPTION BANNER
+           ========================================== */
+        .reception-banner {
+            height: 520px;
+            background: linear-gradient(rgba(7, 21, 36, 0.35), rgba(7, 21, 36, 0.35)), url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            display: flex;
+            align-items: flex-end;
+            padding-bottom: 60px;
+        }
+
+        .reception-card {
+            background: rgba(7, 21, 36, 0.85);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 32px;
+            max-width: 500px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+        }
+
+        .reception-card-text {
+            color: var(--color-white);
+            font-size: 1.1rem;
+            font-weight: 500;
+            line-height: 1.5;
+        }
+
+        .reception-card-text span {
+            color: var(--color-gold);
+        }
+
+        /* ==========================================
+           8. SECTION 6: HOW WE SERVE YOU (ACCORDION)
+           ========================================== */
+        .process-split {
+            display: grid;
+            grid-template-columns: 4fr 5fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .process-info {
+            padding-right: 20px;
+        }
+
+        .process-desc {
+            font-size: 1.05rem;
+            color: var(--color-slate-300);
+            line-height: 1.7;
+            margin-top: 15px;
+        }
+
+        .accordion-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .accordion-item {
+            background-color: var(--color-navy-light);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: var(--transition-smooth);
+        }
+
+        .accordion-item.active {
+            border-color: rgba(212, 168, 79, 0.3);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+        }
+
+        .accordion-header {
+            padding: 24px 28px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            width: 100%;
+            text-align: left;
+        }
+
+        .accordion-header-text {
+            font-size: 0.9rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            color: var(--color-slate-300);
+            text-transform: uppercase;
+        }
+
+        .accordion-item.active .accordion-header-text {
+            color: var(--color-gold);
+        }
+
+        .accordion-icon {
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-gold);
+            transition: var(--transition-smooth);
+        }
+
+        .accordion-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            padding: 0 28px;
+        }
+
+        .accordion-item.active .accordion-body {
+            max-height: 200px;
+            padding-bottom: 28px;
+        }
+
+        .accordion-body-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--color-white);
+            margin-bottom: 8px;
+        }
+
+        .accordion-body-desc {
+            font-size: 0.95rem;
+            color: var(--color-slate-300);
+            line-height: 1.6;
+        }
+
+        /* ==========================================
+           9. SECTION 7: DEEP SECTOR EXPERTISE
+           ========================================== */
+        .sectors-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 50px;
+        }
+
+        .sector-card {
+            height: 260px;
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            align-items: flex-end;
+            padding: 30px;
+            transition: var(--transition-smooth);
+        }
+
+        .sector-card::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(7, 21, 36, 0.9) 0%, rgba(7, 21, 36, 0.35) 100%);
+            z-index: 2;
+            transition: var(--transition-smooth);
+        }
+
+        .sector-img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+            z-index: 1;
+        }
+
+        .sector-content {
+            position: relative;
+            z-index: 3;
+            width: 100%;
+        }
+
+        .sector-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--color-white);
+            margin-bottom: 4px;
+            transition: var(--transition-smooth);
+        }
+
+        .sector-card:hover::before {
+            background: linear-gradient(to top, rgba(7, 21, 36, 0.95) 0%, rgba(7, 21, 36, 0.5) 100%);
+        }
+
+        .sector-card:hover .sector-img {
+            transform: scale(1.08);
+        }
+
+        .sector-card:hover .sector-title {
+            color: var(--color-gold);
+        }
+
+        /* ==========================================
+           10. SECTION 8: READY TO TAKE CONTROL
+           ========================================== */
+        .cta-bar {
+            padding: 60px 0;
+            background: linear-gradient(rgba(7, 21, 36, 0.95), rgba(7, 21, 36, 0.95)), url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            border-bottom: 2px solid var(--color-gold);
+        }
+
+        .cta-bar-wrap {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .cta-bar-info {
+            max-width: 500px;
+        }
+
+        .cta-bar-title {
+            font-family: var(--font-serif);
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--color-white);
+            margin-bottom: 12px;
+        }
+
+        .cta-bar-checklist {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            font-size: 0.85rem;
+            color: var(--color-slate-300);
+        }
+
+        .cta-bar-check {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .cta-bar-check svg {
+            color: var(--color-gold);
+        }
+
+        .cta-bar-actions {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        /* ==========================================
+           11. SECTION 9: SWITCHING STEP
+           ========================================== */
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .step-card {
+            display: flex;
+            flex-direction: column;
+            border-radius: 12px;
+            overflow: hidden;
+            background-color: var(--color-white);
+            position: relative;
+        }
+
+        .step-img-box {
+            height: 210px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .step-img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .step-number {
+            position: absolute;
+            bottom: -22px;
+            left: 24px;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background-color: var(--color-gold);
+            color: var(--color-navy-deepest);
+            font-weight: 800;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 4px solid var(--color-white);
+            z-index: 5;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .step-body {
+            padding: 40px 24px 30px 24px;
+            flex-grow: 1;
+        }
+
+        .step-card-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--color-navy-deep);
+            margin-bottom: 8px;
+        }
+
+        .step-card-desc {
+            font-size: 0.9rem;
+            color: var(--color-slate-600);
+            line-height: 1.6;
+        }
+
+        .steps-footer-btn {
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+        }
+
+        /* ==========================================
+           12. SECTION 10: FROM OUR RESOURCE CENTER
+           ========================================== */
+        .blogs-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .blog-card {
+            background-color: var(--color-white);
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(7, 21, 36, 0.04);
+            display: flex;
+            flex-direction: column;
+            transition: var(--transition-smooth);
+        }
+
+        .blog-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 15px 35px rgba(7, 21, 36, 0.08);
+        }
+
+        .blog-img-box {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .blog-img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .blog-card:hover .blog-img-box img {
+            transform: scale(1.05);
+        }
+
+        .blog-body {
+            padding: 24px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .blog-meta {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .blog-tag {
+            color: var(--color-gold-hover);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .blog-date {
+            color: var(--color-slate-400);
+        }
+
+        .blog-card-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--color-navy-deep);
+            margin-bottom: 12px;
+            line-height: 1.4;
+            transition: var(--transition-smooth);
+        }
+
+        .blog-card-title:hover {
+            color: var(--color-gold-hover);
+        }
+
+        .blog-card-desc {
+            font-size: 0.9rem;
+            color: var(--color-slate-600);
+            line-height: 1.6;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .blog-card-link {
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--color-navy-deep);
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .blog-card-link:hover {
+            color: var(--color-gold-hover);
+        }
+
+        /* ==========================================
+           13. SECTION 11: TRUSTED BY (REVIEWS)
+           ========================================== */
+        .reviews-summary {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 10px;
+            margin-bottom: 45px;
+        }
+
+        .reviews-stars-aggregate {
+            display: flex;
+            gap: 6px;
+            margin-bottom: 8px;
+        }
+
+        .reviews-stars-aggregate svg {
+            color: var(--color-gold);
+            width: 24px;
+            height: 24px;
+        }
+
+        .reviews-rating-text {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--color-slate-800);
+        }
+
+        .reviews-rating-text span {
+            color: var(--color-gold-hover);
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .review-card {
+            background-color: var(--color-navy-light);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+
+        .review-stars {
+            display: flex;
+            gap: 3px;
+            margin-bottom: 14px;
+        }
+
+        .review-stars svg {
+            color: var(--color-gold);
+            width: 14px;
+            height: 14px;
+        }
+
+        .review-text {
+            font-size: 0.85rem;
+            color: var(--color-slate-200);
+            line-height: 1.6;
+            font-style: italic;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .review-author-info {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-top: 1px solid rgba(255,255,255,0.08);
+            padding-top: 12px;
+        }
+
+        .review-author {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--color-white);
+        }
+
+        .review-verified {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 0.7rem;
+            color: #34d399; /* emerald green checkmark */
+            font-weight: 600;
+        }
+
+        /* ==========================================
+           14. FOOTER SECTION
+           ========================================== */
+        footer {
+            background-color: var(--color-navy-deepest);
+            color: var(--color-white);
+            padding: 80px 0 30px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 2fr 1.5fr 1.5fr 1.5fr;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .footer-logo-box {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .footer-logo-box .logo-text-title {
+            color: var(--color-white);
+        }
+
+        .footer-logo-desc {
+            font-size: 0.85rem;
+            color: var(--color-slate-400);
+            line-height: 1.6;
+            margin-top: 8px;
+        }
+
+        .footer-socials {
+            display: flex;
+            gap: 12px;
+            margin-top: 16px;
+        }
+
+        .footer-social-btn {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-slate-300);
+            transition: var(--transition-smooth);
+        }
+
+        .footer-social-btn:hover {
+            background-color: var(--color-gold);
+            color: var(--color-navy-deepest);
+            border-color: var(--color-gold);
+            transform: translateY(-2px);
+        }
+
+        .footer-title {
+            font-size: 0.95rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--color-gold);
+            margin-bottom: 24px;
+        }
+
+        .footer-contact-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .footer-contact-item {
+            display: flex;
+            gap: 12px;
+            font-size: 0.85rem;
+            color: var(--color-slate-300);
+            line-height: 1.5;
+        }
+
+        .footer-contact-item svg {
+            color: var(--color-gold);
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .footer-links-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            list-style: none;
+        }
+
+        .footer-links-list a {
+            font-size: 0.85rem;
+            color: var(--color-slate-300);
+            transition: var(--transition-smooth);
+        }
+
+        .footer-links-list a:hover {
+            color: var(--color-gold);
+            padding-left: 4px;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding-top: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            font-size: 0.8rem;
+            color: var(--color-slate-400);
+        }
+
+        .footer-bottom-links {
+            display: flex;
+            gap: 24px;
+        }
+
+        .footer-bottom-links a:hover {
+            color: var(--color-gold);
+        }
+
+        /* ==========================================
+           15. RESPONSIVE BREAKPOINTS
+           ========================================== */
+        @media (max-width: 1024px) {
+            .footer-grid {
+                grid-template-columns: 2fr 2fr 2fr;
+            }
+            .reviews-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 900px) {
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            .levels-grid {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            .process-split {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .process-info {
+                padding-right: 0;
+                text-align: center;
+            }
+            .sectors-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .steps-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            .blogs-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            .cta-bar-wrap {
+                justify-content: center;
+                text-align: center;
+            }
+            .cta-bar-checklist {
+                justify-content: center;
+            }
+            .cta-bar-actions {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            section {
+                padding: 60px 0;
+            }
+
+            .header-top {
+                display: none;
+            }
+
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 85px;
+                left: 0;
+                width: 100%;
+                background-color: var(--color-white);
+                flex-direction: column;
+                padding: 24px;
+                gap: 16px;
+                border-bottom: 2px solid var(--color-gold);
+                box-shadow: 0 10px 15px rgba(0,0,0,0.05);
+            }
+
+            .nav-menu.mobile-open {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+
+            .nav-btn {
+                margin-left: 0;
+                width: 100%;
+            }
+
+            .hero-card {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-card-info {
+                padding: 24px;
+            }
+
+            .hero-card-video {
+                height: 160px;
+            }
+
+            .hero-checklist {
+                flex-direction: column;
+                align-items: center;
+                gap: 12px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .reception-banner {
+                height: 400px;
+            }
+
+            .reception-card {
+                margin: 0 15px;
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 580px) {
+            .sectors-grid {
+                grid-template-columns: 1fr;
+            }
+            .reviews-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+
+
+    <!-- ==========================================
+       HERO SECTION
+       ========================================== -->
+    <section class="hero">
+        <div class="container hero-content">
+            <h1 class="hero-title">
+                Your business has grown.
+                <span>Is your accounting keeping up?</span>
+            </h1>
+            
+            <div class="hero-actions">
+                <a href="#contact" class="btn btn-solid">Start Your Enquiry</a>
+                <button class="btn btn-outline" onclick="alert('Playing success stories...')">Watch Success Stories</button>
+            </div>
+
+            <!-- Credential Pill Badge -->
+            <div class="hero-badge-pill">
+                <svg class="hero-badge-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/>
+                    <path d="m9 12 2 2 4-4"/>
+                </svg>
+                Chartered Certified Accountants for growing UK businesses
+            </div>
+            
+            <!-- Circled Checklist -->
+            <div class="hero-checklist">
+                <div class="hero-checklist-item">
+                    <div class="checklist-icon-circle">
+                        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                    </div>
+                    Fixed Monthly Fees
+                </div>
+                <div class="hero-checklist-item">
+                    <div class="checklist-icon-circle">
+                        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                    </div>
+                    Quick Support
+                </div>
+                <div class="hero-checklist-item">
+                    <div class="checklist-icon-circle">
+                        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                    </div>
+                    Tax Planning
+                </div>
+                <div class="hero-checklist-item">
+                    <div class="checklist-icon-circle">
+                        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                    </div>
+                    Dedicated Accountant
+                </div>
+            </div>
+            
+            <!-- Success Story Testimonial Card Overlay -->
+            <div class="hero-card-container">
+                <div class="hero-card-offset-border"></div>
+                <div class="hero-card" id="heroTestimonialCard">
+                    <!-- Left Video Panel -->
+                    <div class="hero-card-video">
+                        <img id="heroVideoThumb" src="https://a2zaccounting.co.uk/wp-content/uploads/2025/06/15.png" alt="Testimonial speaking in video">
+                        <div class="hero-card-play" onclick="playLoomVideo()" style="width: 60px; height: 42px; border-radius: 8px;">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="var(--color-navy-deepest)">
+                                <path d="M8 5v14l11-7z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    
+                    <!-- Right Testimonial Panel -->
+                    <div class="hero-card-info">
+                        <div>
+                            <div class="hero-card-header-row">
+                                <span class="hero-card-eyebrow">PROACTIVE SUCCESS STORY</span>
+                                <div class="hero-card-stars">
+                                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                                </div>
+                            </div>
+                            <p class="hero-card-quote" id="heroQuote">"An absolute pleasure to work with! They transformed our tax strategy and became a true partner in our growth. "</p>
+                        </div>
+                        
+                        <div class="hero-card-footer">
+                            <div class="hero-card-profile">
+                                <div class="hero-card-avatar">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                        <circle cx="12" cy="7" r="4"></circle>
+                                    </svg>
+                                </div>
+                                <div class="hero-card-meta">
+                                    <div class="hero-card-author-name" id="heroAuthorName">Mrs. Rona Tonge</div>
+                                    <div class="hero-card-author-role" id="heroAuthorRole">Managing Director, Golf View Hotel</div>
+                                </div>
+                            </div>
+                            <div class="hero-card-nav">
+                                <button class="hero-card-nav-btn" onclick="prevHeroTestimonial()" aria-label="Previous testimonial">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="15 18 9 12 15 6"></polyline>
+                                    </svg>
+                                </button>
+                                <button class="hero-card-nav-btn" onclick="nextHeroTestimonial()" aria-label="Next testimonial">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="9 6 15 12 9 18"></polyline>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+       SECTION 2: THREE THINGS
+       ========================================== -->
+    <section class="section-white" id="services">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-title">Three Things That Change<br>When You <span class="text-gold" style="font-style: italic;">Work With A2Z.</span></h2>
+            </div>
+            
+            <div class="features-grid">
+                <!-- Feature 1 -->
+                <div class="feature-card">
+                    <div class="feature-icon-wrapper">
+                        <!-- Icon: Pie Chart -->
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path>
+                            <path d="M22 12A10 10 0 0 0 12 2v10z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="feature-card-title">Structured Tax<br>Planning</h3>
+                    <p class="feature-card-desc">We plan your tax months ahead, not in a year-end rush. You keep more, with no surprises.</p>
+                </div>
+                
+                <!-- Feature 2 -->
+                <div class="feature-card">
+                    <div class="feature-icon-wrapper">
+                        <!-- Icon: Lightning -->
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                        </svg>
+                    </div>
+                    <h3 class="feature-card-title">Immediate, Reliable<br>Support</h3>
+                    <p class="feature-card-desc">Ask before midday and get an answer the same day, guaranteed in writing. Your business never waits.</p>
+                </div>
+                
+                <!-- Feature 3 -->
+                <div class="feature-card">
+                    <div class="feature-icon-wrapper">
+                        <!-- Icon: Shield-Check -->
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                            <polyline points="9 12 11 14 15 10"></polyline>
+                        </svg>
+                    </div>
+                    <h3 class="feature-card-title">Complete Financial<br>Confidence</h3>
+                    <p class="feature-card-desc">Zero missed deadlines and zero HMRC penalties since we started. Every figure is checked before it reaches you.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+       SECTION 3: THREE LEVELS
+       ========================================== -->
+    <section class="section-white" id="levels">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-title">Three Levels. <span class="text-gold" style="font-style: italic;">One Standard.</span></h2>
+            </div>
+            
+            <div class="levels-grid">
+                <!-- Foundational -->
+                <div class="level-card">
+                    <div class="level-eyebrow">SMALL, STEADY COMPANIES</div>
+                    <h3 class="level-card-title">Foundational</h3>
+                    <p class="level-card-desc">Everything you must get right: year end accounts, corporation tax, confirmation statement and HMRC deadlines, all done flawlessly and on time.</p>
+                </div>
+                
+                <!-- Structured -->
+                <div class="level-card highlighted">
+                    <div class="level-eyebrow">GROWING, VAT-REGISTERED</div>
+                    <h3 class="level-card-title">Structured</h3>
+                    <p class="level-card-desc">Everything in Foundational, plus quarterly bookkeeping and VAT, cloud software included, tax estimates and planning, and same day support.</p>
+                </div>
+                
+                <!-- Strategic -->
+                <div class="level-card">
+                    <div class="level-premium-badge">PREMIUM</div>
+                    <div class="level-eyebrow">ESTABLISHED &amp; COMPLEX</div>
+                    <h3 class="level-card-title">Strategic</h3>
+                    <p class="level-card-desc">A full finance function: quarterly management accounts, proactive monthly tax planning, cash flow forecasting, advisory and a dedicated manager.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+       SECTION 3.5: QUARTERLY MANAGEMENT ACCOUNTS
+       ========================================== -->
+    <section class="section-white" style="padding-top: 20px; padding-bottom: 80px;" id="optional-addon">
+        <div class="container">
+            <div class="text-center">
+                <div class="section-eyebrow">OPTIONAL ADD-ON</div>
+                <h2 class="section-title">Quarterly Management Accounts</h2>
+            </div>
+            
+            <div class="addon-container">
+                <div class="addon-grid">
+                    <!-- Column 1: Basic -->
+                    <div class="addon-col">
+                        <div class="addon-badge">BASIC</div>
+                        <div class="addon-icon">
+                            <!-- Custom SVG for Health Check -->
+                            <svg width="40" height="28" viewBox="-3 -3 40 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="0" y="0" width="10" height="10" rx="3" fill="#D4A84F" style="filter: drop-shadow(0px 0px 6px rgba(212,168,79,1));"/>
+                                <rect x="12" y="0" width="10" height="10" rx="3" fill="#5D6D82"/>
+                                <rect x="24" y="0" width="10" height="10" rx="3" fill="#5D6D82"/>
+                                <rect x="0" y="12" width="10" height="10" rx="3" fill="#5D6D82"/>
+                                <rect x="12" y="12" width="10" height="10" rx="3" fill="#E8D595"/>
+                                <rect x="24" y="12" width="10" height="10" rx="3" fill="#5D6D82"/>
+                            </svg>
+                        </div>
+                        <h3 class="addon-title">Financial<br>Health Check</h3>
+                        <p class="addon-desc">Your profit, cash and tax position, your outstanding tax liabilities and your year-to-date tax estimate. You always know where you stand.</p>
+                    </div>
+                    
+                    <!-- Column 2: Growth -->
+                    <div class="addon-col addon-col-middle">
+                        <div class="addon-badge">GROWTH</div>
+                        <div class="addon-icon">
+                            <!-- Custom SVG for Business Performance -->
+                            <svg width="40" height="34" viewBox="-4 -4 40 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <!-- Left bar -->
+                                <path d="M0 26 V14 C0 11.79 1.79 10 4 10 C6.21 10 8 11.79 8 14 V26 Z" fill="#5D6D82"/>
+                                <!-- Middle bar -->
+                                <path d="M12 26 V10 C12 7.79 13.79 6 16 6 C18.21 6 20 7.79 20 10 V26 Z" fill="#E8D595"/>
+                                <!-- Right bar -->
+                                <path d="M24 26 V4 C24 1.79 25.79 0 28 0 C30.21 0 32 1.79 32 4 V26 Z" fill="#D4A84F" style="filter: drop-shadow(0px 0px 8px rgba(212,168,79,0.9));"/>
+                            </svg>
+                        </div>
+                        <h3 class="addon-title">Business<br>Performance</h3>
+                        <p class="addon-desc">Everything above, plus margins, trends and KPIs, so you see what is working and act on it.</p>
+                    </div>
+                    
+                    <!-- Column 3: Premium -->
+                    <div class="addon-col">
+                        <div class="addon-badge">PREMIUM</div>
+                        <div class="addon-icon">
+                            <!-- Custom SVG for Strategic Advisory -->
+                            <svg width="44" height="32" viewBox="-4 -4 44 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <!-- Right ring drawn first -->
+                                <circle cx="26" cy="12" r="10" stroke="#E8D595" stroke-width="2.5"/>
+                                <!-- Left ring drawn second -->
+                                <circle cx="12" cy="12" r="10" stroke="#D4A84F" stroke-width="2.5" style="filter: drop-shadow(0px 0px 6px rgba(212,168,79,0.8));"/>
+                                <!-- Faint inner glow -->
+                                <circle cx="12" cy="12" r="10" fill="rgba(212,168,79,0.1)"/>
+                            </svg>
+                        </div>
+                        <h3 class="addon-title">Strategic<br>Advisory</h3>
+                        <p class="addon-desc">Everything above, plus forecasting and board-level guidance to drive your next stage of growth.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+       SECTION 4: REVIEWS STATS
+       ========================================== -->
+    <section class="section-light">
+        <div class="container">
+            <div class="text-center" style="margin-bottom: 20px;">
+                <h2 class="section-title">Quarterly Professional Reviews</h2>
+            </div>
+            
+            <div class="stats-grid">
+                <!-- Stat 1 -->
+                <div class="stat-item">
+                    <div class="stat-number">10+</div>
+                    <h3 class="stat-subtitle">Client Retention</h3>
+                    <p class="stat-desc">Years of average client retention, built on trust and reliable delivery.</p>
+                </div>
+                
+                <!-- Stat 2 -->
+                <div class="stat-item">
+                    <div class="stat-number">48</div>
+                    <h3 class="stat-subtitle">Hours Response</h3>
+                    <p class="stat-desc">Guaranteed response time, though we usually get back to you much faster.</p>
+                </div>
+                
+                <!-- Stat 3 -->
+                <div class="stat-item">
+                    <div class="stat-number">3</div>
+                    <h3 class="stat-subtitle">Locations</h3>
+                    <p class="stat-desc">Offices across the UK, serving clients nationwide and internationally.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+       SECTION 5: RECEPTION BANNER
+       ========================================== -->
+    <div class="reception-banner">
+        <div class="container">
+            <div class="reception-card">
+                <p class="reception-card-text">
+                    Our physical offices are designed to welcome you, but our systems are built to <span>serve you anywhere.</span>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==========================================
+       SECTION 6: HOW WE SERVE YOU (ACCORDION)
+       ========================================== -->
+    <section class="section-dark" id="process" style="border-top: 1px solid rgba(255, 255, 255, 0.05);">
+        <div class="container process-split">
+            <div class="process-info">
+                <span class="section-subtitle">Our Process</span>
+                <h2 class="section-title">How we serve you as a <span class="text-gold">full-service partner...</span></h2>
+                <p class="process-desc">We don't just file your accounts. We act as your outsourced finance department, managing everything from bookkeeping to board meetings.</p>
+            </div>
+            
+            <div class="accordion-wrapper">
+                <!-- Accordion Item 1 (Active) -->
+                <div class="accordion-item active" data-index="0">
+                    <button class="accordion-header">
+                        <span class="accordion-header-text">01. Onboarding</span>
+                        <div class="accordion-icon">
+                            <!-- Minus icon -->
+                            <svg class="icon-minus" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                            </svg>
+                        </div>
+                    </button>
+                    <div class="accordion-body">
+                        <h4 class="accordion-body-title">Seamless Transition</h4>
+                        <p class="accordion-body-desc">We handle the entire switch from your previous accountant, including transferring all records and setting up systems.</p>
+                    </div>
+                </div>
+                
+                <!-- Accordion Item 2 -->
+                <div class="accordion-item" data-index="1">
+                    <button class="accordion-header">
+                        <span class="accordion-header-text">02. Daily Operations</span>
+                        <div class="accordion-icon">
+                            <!-- Plus icon -->
+                            <svg class="icon-plus" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+                                <line x1="12" y1="5" x2="12" y2="19"></line>
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                            </svg>
+                        </div>
+                    </button>
+                    <div class="accordion-body">
+                        <h4 class="accordion-body-title">Real-Time Bookkeeping</h4>
+                        <p class="accordion-body-desc">Your books are updated daily, giving you accurate financial data whenever you need it.</p>
+                    </div>
+                </div>
+                
+                <!-- Accordion Item 3 -->
+                <div class="accordion-item" data-index="2">
+                    <button class="accordion-header">
+                        <span class="accordion-header-text">03. Advisory</span>
+                        <div class="accordion-icon">
+                            <!-- Plus icon -->
+                            <svg class="icon-plus" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+                                <line x1="12" y1="5" x2="12" y2="19"></line>
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                            </svg>
+                        </div>
+                    </button>
+                    <div class="accordion-body">
+                        <h4 class="accordion-body-title">Strategic Review</h4>
+                        <p class="accordion-body-desc">Regular meetings to review performance, plan taxes, and discuss growth strategy.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+       SECTION 7: DEEP SECTOR EXPERTISE
+       ========================================== -->
+    <section class="section-white" id="sectors">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-title">Deep Sector Expertise Across<br><span class="text-gold">Six Key Industries.</span></h2>
+            </div>
+            
+            <div class="sectors-grid">
+                <!-- Sector 1 -->
+                <div class="sector-card">
+                    <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=600&q=80" alt="Healthcare & Medical" class="sector-img">
+                    <div class="sector-content">
+                        <h3 class="sector-title">Healthcare & Medical</h3>
+                    </div>
+                </div>
+                
+                <!-- Sector 2 -->
+                <div class="sector-card">
+                    <img src="https://images.unsplash.com/photo-1521737708893-d14cc237f11d?auto=format&fit=crop&w=600&q=80" alt="Professional Services" class="sector-img">
+                    <div class="sector-content">
+                        <h3 class="sector-title">Professional Services</h3>
+                    </div>
+                </div>
+                
+                <!-- Sector 3 -->
+                <div class="sector-card">
+                    <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=600&q=80" alt="Property & Construction" class="sector-img">
+                    <div class="sector-content">
+                        <h3 class="sector-title">Property & Construction</h3>
+                    </div>
+                </div>
+                
+                <!-- Sector 4 -->
+                <div class="sector-card">
+                    <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=600&q=80" alt="E-Commerce & Retail" class="sector-img">
+                    <div class="sector-content">
+                        <h3 class="sector-title">E-Commerce & Retail</h3>
+                    </div>
+                </div>
+                
+                <!-- Sector 5 -->
+                <div class="sector-card">
+                    <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=600&q=80" alt="Hospitality & Leisure" class="sector-img">
+                    <div class="sector-content">
+                        <h3 class="sector-title">Hospitality & Leisure</h3>
+                    </div>
+                </div>
+                
+                <!-- Sector 6 -->
+                <div class="sector-card">
+                    <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=600&q=80" alt="Engineering & Energy" class="sector-img">
+                    <div class="sector-content">
+                        <h3 class="sector-title">Engineering & Energy</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+       SECTION 8: READY TO TAKE CONTROL (CTA)
+       ========================================== -->
+    <div class="cta-bar">
+        <div class="container cta-bar-wrap">
+            <div class="cta-bar-info">
+                <h3 class="cta-bar-title">Ready to take control of your finances?</h3>
+                <div class="cta-bar-checklist">
+                    <div class="cta-bar-check">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                        Dedicated CPA Team
+                    </div>
+                    <div class="cta-bar-check">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                        Guaranteed Response
+                    </div>
+                    <div class="cta-bar-check">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                        Fixed Monthly Fees
+                    </div>
+                </div>
+            </div>
+            
+            <div class="cta-bar-actions">
+                <a href="#contact" class="btn btn-solid">Book a Call</a>
+                <a href="#levels" class="btn btn-outline" style="border-color: var(--color-white); color: var(--color-white);">View Pricing</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==========================================
+       SECTION 9: SWITCHING STEP
+       ========================================== -->
+    <section class="section-dark" id="switching">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-title">Switching To Us Is <span class="text-gold">Simple.</span></h2>
+            </div>
+            
+            <div class="steps-grid">
+                <!-- Step 1 -->
+                <div class="step-card">
+                    <div class="step-img-box">
+                        <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=600&q=80" alt="Consultant in Discovery Call">
+                        <div class="step-number">01</div>
+                    </div>
+                    <div class="step-body">
+                        <h3 class="step-card-title">Discovery Call</h3>
+                        <p class="step-card-desc">We discuss your business needs, review your current setup, and provide a transparent, fixed quote.</p>
+                    </div>
+                </div>
+                
+                <!-- Step 2 -->
+                <div class="step-card">
+                    <div class="step-img-box">
+                        <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=600&q=80" alt="We Handle The Switch agreement">
+                        <div class="step-number">02</div>
+                    </div>
+                    <div class="step-body">
+                        <h3 class="step-card-title">We Handle The Switch</h3>
+                        <p class="step-card-desc">We contact your old accountant, retrieve your records, and register as your tax agent with HMRC. You don't have to do a thing.</p>
+                    </div>
+                </div>
+                
+                <!-- Step 3 -->
+                <div class="step-card">
+                    <div class="step-img-box">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80" alt="Onboarding dashboard setup">
+                        <div class="step-number">03</div>
+                    </div>
+                    <div class="step-body">
+                        <h3 class="step-card-title">Onboarding & Launch</h3>
+                        <p class="step-card-desc">We set up your cloud accounting software, assign your dedicated team, and start managing your finances.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="steps-footer-btn">
+                <a href="#contact" class="btn btn-solid">Start Your Switch</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+       SECTION 10: RESOURCE CENTER (BLOG)
+       ========================================== -->
+    <section class="section-light" id="blogs">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-title">From Our <span class="text-gold">Resource Center.</span></h2>
+            </div>
+            
+            <div class="blogs-grid">
+                <!-- Blog 1 -->
+                <div class="blog-card">
+                    <div class="blog-img-box">
+                        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=600&q=80" alt="London Canary Wharf city office building">
+                    </div>
+                    <div class="blog-body">
+                        <div class="blog-meta">
+                            <span class="blog-tag">Tax</span>
+                            <span class="blog-date">June 15, 2026</span>
+                        </div>
+                        <a href="#blog-single" class="blog-card-title"><h3>Understanding Corporation Tax Changes in the UK</h3></a>
+                        <p class="blog-card-desc">A comprehensive guide to the latest corporation tax rates and how they affect your business planning.</p>
+                        <a href="#blog-single" class="blog-card-link">
+                            Read Article
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Blog 2 -->
+                <div class="blog-card">
+                    <div class="blog-img-box">
+                        <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=600&q=80" alt="Logistics warehouse boxes">
+                    </div>
+                    <div class="blog-body">
+                        <div class="blog-meta">
+                            <span class="blog-tag">Growth</span>
+                            <span class="blog-date">May 28, 2026</span>
+                        </div>
+                        <a href="#blog-single" class="blog-card-title"><h3>How to Manage Cash Flow During Rapid Growth</h3></a>
+                        <p class="blog-card-desc">Strategies for high-growth businesses to maintain healthy cash flow and avoid common traps.</p>
+                        <a href="#blog-single" class="blog-card-link">
+                            Read Article
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Blog 3 -->
+                <div class="blog-card">
+                    <div class="blog-img-box">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80" alt="Finance tablet charts and graphs">
+                    </div>
+                    <div class="blog-body">
+                        <div class="blog-meta">
+                            <span class="blog-tag">Systems</span>
+                            <span class="blog-date">May 10, 2026</span>
+                        </div>
+                        <a href="#blog-single" class="blog-card-title"><h3>Choosing the Right Cloud Accounting Software</h3></a>
+                        <p class="blog-card-desc">An in-depth comparison of Xero, QuickBooks, and Sage for growing UK businesses.</p>
+                        <a href="#blog-single" class="blog-card-link">
+                            Read Article
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="steps-footer-btn">
+                <a href="#blogs" class="btn btn-outline">View All Articles</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+       SECTION 11: TRUSTED BY (REVIEWS)
+       ========================================== -->
+    <section class="section-white">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-title">Trusted by Growing Businesses<br><span class="text-gold">Across the UK.</span></h2>
+            </div>
+            
+            <div class="reviews-summary">
+                <div class="reviews-stars-aggregate">
+                    <!-- 5 Stars -->
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                </div>
+                <div class="reviews-rating-text">Excellent <span>4.9 / 5</span> based on 150+ reviews</div>
+            </div>
+            
+            <div class="reviews-grid">
+                <!-- Review 1 -->
+                <div class="review-card">
+                    <div class="review-stars">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    </div>
+                    <p class="review-text">"A2Z has been game-changing for our business. They solved our tax issues months ahead of schedule and they respond immediately."</p>
+                    <div class="review-author-info">
+                        <span class="review-author">Sarah L.</span>
+                        <div class="review-verified">
+                            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            Verified
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Review 2 -->
+                <div class="review-card">
+                    <div class="review-stars">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    </div>
+                    <p class="review-text">"Professional, responsive, and highly knowledgeable. Moving to their service was completely seamless. Highly recommended."</p>
+                    <div class="review-author-info">
+                        <span class="review-author">David M.</span>
+                        <div class="review-verified">
+                            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            Verified
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Review 3 -->
+                <div class="review-card">
+                    <div class="review-stars">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    </div>
+                    <p class="review-text">"Outstanding advice on corporate structures. They saved us thousands in tax this year alone. They make the complex simple."</p>
+                    <div class="review-author-info">
+                        <span class="review-author">Marcus T.</span>
+                        <div class="review-verified">
+                            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            Verified
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Review 4 -->
+                <div class="review-card">
+                    <div class="review-stars">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    </div>
+                    <p class="review-text">"Their monthly management accounts give us total control over our numbers. The reporting is crystal clear. 5-star service!"</p>
+                    <div class="review-author-info">
+                        <span class="review-author">Emma W.</span>
+                        <div class="review-verified">
+                            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            Verified
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+       CONTACT/LEAD CAPTURE FORM (Target for CTAs)
+       ========================================== -->
+    <section class="section-light" id="contact" style="border-top: 1px solid var(--color-slate-200);">
+        <div class="container" style="max-width: 600px;">
+            <div class="text-center" style="margin-bottom: 30px;">
+                <span class="section-subtitle">Get in Touch</span>
+                <h2 class="section-title">Schedule a Consultation</h2>
+                <p style="color: var(--color-slate-600); font-size: 0.95rem;">Fill out the form below and one of our Senior CPAs will contact you within 24 hours.</p>
+            </div>
+            
+            <form style="display: flex; flex-direction: column; gap: 20px; background-color: var(--color-white); padding: 30px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);" onsubmit="event.preventDefault(); alert('Thank you! Your enquiry has been received. We will contact you within 24 hours.')">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+                    <div style="display: flex; flex-direction: column; gap: 6px;">
+                        <label for="name" style="font-size: 0.8rem; font-weight: 700; color: var(--color-navy-deep);">Full Name *</label>
+                        <input type="text" id="name" required style="padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 6px; font-family: inherit;">
+                    </div>
+                    <div style="display: flex; flex-direction: column; gap: 6px;">
+                        <label for="company" style="font-size: 0.8rem; font-weight: 700; color: var(--color-navy-deep);">Company Name</label>
+                        <input type="text" id="company" style="padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 6px; font-family: inherit;">
+                    </div>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+                    <div style="display: flex; flex-direction: column; gap: 6px;">
+                        <label for="email" style="font-size: 0.8rem; font-weight: 700; color: var(--color-navy-deep);">Email Address *</label>
+                        <input type="email" id="email" required style="padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 6px; font-family: inherit;">
+                    </div>
+                    <div style="display: flex; flex-direction: column; gap: 6px;">
+                        <label for="phone" style="font-size: 0.8rem; font-weight: 700; color: var(--color-navy-deep);">Phone Number *</label>
+                        <input type="tel" id="phone" required style="padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 6px; font-family: inherit;">
+                    </div>
+                </div>
+                
+                <div style="display: flex; flex-direction: column; gap: 6px;">
+                    <label for="message" style="font-size: 0.8rem; font-weight: 700; color: var(--color-navy-deep);">Tell us about your business</label>
+                    <textarea id="message" rows="4" style="padding: 12px; border: 1px solid var(--color-slate-300); border-radius: 6px; font-family: inherit; resize: vertical;"></textarea>
+                </div>
+                
+                <button type="submit" class="btn btn-solid" style="width: 100%;">Submit Consultation Request</button>
+            </form>
+        </div>
+    </section>
+
+
+
+    <!-- ==========================================
+       JAVASCRIPT INTERACTIONS
+       ========================================== -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // 1. Mobile navigation menu toggle (disabled since header is removed)
+            const menuToggle = document.getElementById('menuToggle');
+            const navMenu = document.getElementById('navMenu');
+            
+            if (menuToggle && navMenu) {
+                menuToggle.addEventListener('click', () => {
+                    navMenu.classList.toggle('mobile-open');
+                    
+                    // Animate menu toggle icon to an 'X' shape
+                    const spans = menuToggle.querySelectorAll('span');
+                    if (navMenu.classList.contains('mobile-open')) {
+                        spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+                        spans[1].style.opacity = '0';
+                        spans[2].style.transform = 'rotate(-45deg) translate(5px, -5px)';
+                    } else {
+                        spans[0].style.transform = 'none';
+                        spans[1].style.opacity = '1';
+                        spans[2].style.transform = 'none';
+                    }
+                });
+                
+                // Close mobile menu when clicking nav links
+                const navLinks = navMenu.querySelectorAll('a');
+                navLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        navMenu.classList.remove('mobile-open');
+                        const spans = menuToggle.querySelectorAll('span');
+                        spans[0].style.transform = 'none';
+                        spans[1].style.opacity = '1';
+                        spans[2].style.transform = 'none';
+                    });
+                });
+            }
+
+            // 2. Interactive Process Accordions
+            const accordionItems = document.querySelectorAll('.accordion-item');
+            
+            accordionItems.forEach(item => {
+                const header = item.querySelector('.accordion-header');
+                
+                header.addEventListener('click', () => {
+                    const isActive = item.classList.contains('active');
+                    
+                    // Collapse all accordion items
+                    accordionItems.forEach(acc => {
+                        acc.classList.remove('active');
+                        // Reset all icons to pluses
+                        const iconWrapper = acc.querySelector('.accordion-icon');
+                        iconWrapper.innerHTML = `
+                            <svg class="icon-plus" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+                                <line x1="12" y1="5" x2="12" y2="19"></line>
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                            </svg>
+                        `;
+                    });
+                    
+                    // If clicked item was not active, expand it and set its icon to a minus
+                    if (!isActive) {
+                        item.classList.add('active');
+                        const iconWrapper = item.querySelector('.accordion-icon');
+                        iconWrapper.innerHTML = `
+                            <svg class="icon-minus" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                            </svg>
+                        `;
+                    }
+                });
+            });
+
+            // 3. Smooth scrolling for internal anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+                    if (href !== '#') {
+                        e.preventDefault();
+                        const target = document.querySelector(href);
+                        if (target) {
+                            target.scrollIntoView({
+                                behavior: 'smooth'
+                            });
+                        }
+                    }
+                });
+            });
+
+            // 4. Hero Video Testimonial Carousel
+            const heroTestimonials = [
+                {
+                    name: "Mrs. Rona Tonge",
+                    role: "Managing Director, Golf View Hotel",
+                    quote: `"An absolute pleasure to work with! They transformed our tax strategy and became a true partner in our growth."`,
+                    videoName: "Mr. Hassan",
+                    videoRole: "British Film Director &amp;<br>Entrepreneur - Aberdeen",
+                    thumb: "https://a2zaccounting.co.uk/wp-content/uploads/2025/06/15.png",
+                    captions: "like, four or five different, come on, both. and",
+                    loomUrl: "https://www.loom.com/embed/921fccbea4f843c491d01bcbd43ecb59"
+                },
+                {
+                    name: "Kimberley Welsh",
+                    role: "Owner, Ca'dora Diner &ndash; Elgin",
+                    quote: `"Switching to A2Z has been a game-changer &ndash; fast, efficient, and helped improve my knowledge!"`,
+                    videoName: "Kimberley Welsh",
+                    videoRole: "Owner, Ca'dora Diner &ndash; Elgin",
+                    thumb: "https://a2zaccounting.co.uk/wp-content/uploads/2025/06/11.png",
+                    captions: "\"Switching to A2Z has been a game-changer...\"",
+                    loomUrl: "https://www.loom.com/embed/13ce4a974d34447baf27484eebf9b93f"
+                },
+                {
+                    name: "Dr. Hassan Abbas",
+                    role: "Managing Director &amp; Consultant Cardiologist",
+                    quote: `"7 years of unwavering support &mdash; A2Z navigates VAT complexities and fuels my clinic's growth!"`,
+                    videoName: "Dr. Hassan Abbas",
+                    videoRole: "Managing Director &amp; Consultant Cardiologist &ndash; Aberdeen",
+                    thumb: "https://a2zaccounting.co.uk/wp-content/uploads/2025/06/14.png",
+                    captions: "\"A2Z fuels my clinic's growth!\"",
+                    loomUrl: "https://www.loom.com/embed/a541d08386e4430f9f24cf73c2d8555b"
+                }
+            ];
+
+            let currentHeroTestimonial = 0;
+
+            window.updateHeroTestimonial = () => {
+                const data = heroTestimonials[currentHeroTestimonial];
+                document.getElementById('heroAuthorName').innerHTML = data.name;
+                document.getElementById('heroAuthorRole').innerHTML = data.role;
+                document.getElementById('heroQuote').innerHTML = data.quote;
+                document.getElementById('heroVideoThumb').src = data.thumb;
+            };
+
+            window.nextHeroTestimonial = () => {
+                currentHeroTestimonial = (currentHeroTestimonial + 1) % heroTestimonials.length;
+                updateHeroTestimonial();
+            };
+
+            window.prevHeroTestimonial = () => {
+                currentHeroTestimonial = (currentHeroTestimonial - 1 + heroTestimonials.length) % heroTestimonials.length;
+                updateHeroTestimonial();
+            };
+
+            window.playLoomVideo = () => {
+                const data = heroTestimonials[currentHeroTestimonial];
+                alert('Playing video testimonial from ' + data.name + ':\n' + data.loomUrl);
+            };
+        });
+    </script>
+</body>
+</html>

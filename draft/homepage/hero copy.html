@@ -1,0 +1,932 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>A2Z Accounting — Hero</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        font-size: 16px;
+      }
+      body {
+        font-family: "DM Sans", sans-serif;
+        font-weight: 300;
+        overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
+        background: #040b16;
+      }
+
+      :root {
+        --gold: #c8953a;
+        --gold-lt: #e2b45a;
+        --gold-dk: #8a6520;
+        --cyan: #1fd4e8;
+        --violet: #6c5ce7;
+        --serif: "Cormorant Garamond", Georgia, serif;
+        --sans: "DM Sans", sans-serif;
+        --ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      }
+
+      /* ── HERO ── */
+      .hero {
+        min-height: 100vh;
+        background: #040b16;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+      }
+
+      /* subtle dot grid */
+      .hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        background-image: radial-gradient(
+          rgba(200, 149, 58, 0.07) 1px,
+          transparent 1px
+        );
+        background-size: 38px 38px;
+      }
+
+      /* glows */
+      .g {
+        position: absolute;
+        border-radius: 50%;
+        pointer-events: none;
+      }
+      .ga {
+        width: 720px;
+        height: 720px;
+        left: -180px;
+        top: -200px;
+        background: radial-gradient(
+          circle,
+          rgba(108, 92, 231, 0.16) 0%,
+          transparent 65%
+        );
+        animation: gb 16s ease-in-out infinite;
+      }
+      .gb {
+        width: 560px;
+        height: 560px;
+        right: 5%;
+        bottom: -140px;
+        background: radial-gradient(
+          circle,
+          rgba(31, 212, 232, 0.1) 0%,
+          transparent 65%
+        );
+        animation: gb 22s ease-in-out infinite 6s;
+      }
+      .gc {
+        width: 400px;
+        height: 400px;
+        left: 40%;
+        top: 0;
+        background: radial-gradient(
+          circle,
+          rgba(200, 149, 58, 0.09) 0%,
+          transparent 65%
+        );
+        animation: gb 28s ease-in-out infinite 11s;
+      }
+      @keyframes gb {
+        0%,
+        100% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.1) translate(12px, -10px);
+        }
+      }
+
+      /* photo slab */
+      .slab {
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 42%;
+        height: 100%;
+        clip-path: polygon(18% 0, 100% 0, 100% 100%, 0 100%);
+        background: url("https://a2zaccounting.co.uk/wp-content/uploads/2025/10/home_banner-scaled-1.webp")
+          center/cover no-repeat;
+      }
+      .slab::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          to right,
+          #040b16 0%,
+          rgba(4, 11, 22, 0.72) 36%,
+          rgba(4, 11, 22, 0.08) 100%
+        );
+      }
+
+      /* hex + orbit decorations */
+      .hex {
+        position: absolute;
+        right: -70px;
+        top: -50px;
+        width: 440px;
+        height: 440px;
+        opacity: 0.18;
+        animation: spin 100s linear infinite;
+        pointer-events: none;
+      }
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+      .orbit-ring {
+        position: absolute;
+        right: 6%;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 300px;
+        height: 300px;
+        border: 1px solid rgba(31, 212, 232, 0.09);
+        border-radius: 50%;
+        animation: ospin 36s linear infinite;
+        pointer-events: none;
+      }
+      .orbit-ring::before {
+        content: "";
+        position: absolute;
+        inset: 40px;
+        border: 1px solid rgba(200, 149, 58, 0.11);
+        border-radius: 50%;
+      }
+      .odot {
+        position: absolute;
+        top: -5px;
+        left: 50%;
+        margin-left: -5px;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: var(--cyan);
+        box-shadow: 0 0 14px rgba(31, 212, 232, 0.8);
+      }
+      @keyframes ospin {
+        to {
+          transform: translateY(-50%) rotate(360deg);
+        }
+      }
+
+      /* corner tl */
+      .ctl {
+        position: absolute;
+        left: 0;
+        top: 0;
+        opacity: 0.4;
+        pointer-events: none;
+      }
+
+      /* particles */
+      .pts {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        overflow: hidden;
+      }
+      .pt {
+        position: absolute;
+        border-radius: 50%;
+        animation: ptf linear infinite;
+        opacity: 0;
+      }
+      @keyframes ptf {
+        0% {
+          opacity: 0;
+          transform: translateY(0) scale(0);
+        }
+        10% {
+          opacity: 0.6;
+        }
+        90% {
+          opacity: 0.2;
+        }
+        100% {
+          opacity: 0;
+          transform: translateY(-90px) scale(1.3);
+        }
+      }
+
+      /* ── LAYOUT ── */
+      .hero-inner {
+        max-width: 1360px;
+        margin: 0 auto;
+        padding: 0 clamp(24px, 5vw, 80px);
+        position: relative;
+        z-index: 2;
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 420px;
+        gap: clamp(48px, 6vw, 90px);
+        align-items: center;
+        min-height: 100vh;
+      }
+
+      /* ── LEFT ── */
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        background: rgba(200, 149, 58, 0.07);
+        border: 1px solid rgba(200, 149, 58, 0.24);
+        padding: 7px 16px 7px 12px;
+        margin-bottom: 36px;
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 8px 100%);
+      }
+      .bdot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--gold);
+        flex-shrink: 0;
+        animation: bp 2.6s ease-in-out infinite;
+      }
+      @keyframes bp {
+        0%,
+        100% {
+          box-shadow: 0 0 0 0 rgba(200, 149, 58, 0.5);
+        }
+        50% {
+          box-shadow: 0 0 0 5px rgba(200, 149, 58, 0);
+        }
+      }
+      .badge span {
+        font-size: 0.59rem;
+        font-weight: 600;
+        letter-spacing: 0.24em;
+        text-transform: uppercase;
+        color: var(--gold-lt);
+      }
+
+      /* headline – typographic treatment */
+      .h1-wrap {
+        margin-bottom: 26px;
+      }
+      .h1-line1 {
+        font-family: var(--serif);
+        font-weight: 700;
+        font-size: clamp(1rem, 1.5vw, 1.28rem);
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.38);
+        display: block;
+        margin-bottom: 10px;
+      }
+      .h1-main {
+        font-family: var(--serif);
+        font-weight: 700;
+        font-size: clamp(3.2rem, 6.2vw, 6.4rem);
+        line-height: 0.96;
+        letter-spacing: -0.02em;
+        color: #fff;
+        display: block;
+        margin-bottom: 14px;
+      }
+      .h1-accent {
+        font-family: var(--serif);
+        font-weight: 600;
+        font-size: clamp(1.6rem, 3vw, 3rem);
+        letter-spacing: -0.01em;
+        color: var(--gold-lt);
+        display: block;
+        position: relative;
+        padding-left: 22px;
+      }
+      .h1-accent::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 12px;
+        height: 2px;
+        background: var(--gold);
+      }
+
+      .sub {
+        font-size: 0.97rem;
+        line-height: 1.82;
+        color: rgba(255, 255, 255, 0.4);
+        max-width: 44ch;
+        margin-bottom: 40px;
+        font-weight: 300;
+      }
+
+      .btns {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-family: var(--sans);
+        font-size: 0.67rem;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        padding: 14px 26px;
+        border: 1px solid transparent;
+        transition: all 0.28s var(--ease);
+        cursor: pointer;
+        text-decoration: none;
+        white-space: nowrap;
+      }
+      .btn-g {
+        background: linear-gradient(108deg, var(--gold-lt), var(--gold));
+        color: #07100a;
+        border-color: var(--gold);
+        clip-path: polygon(
+          0 0,
+          calc(100% - 10px) 0,
+          100% 10px,
+          100% 100%,
+          10px 100%,
+          0 calc(100% - 10px)
+        );
+        position: relative;
+        overflow: hidden;
+      }
+      .btn-g::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          108deg,
+          rgba(255, 255, 255, 0.22),
+          transparent
+        );
+        transform: translateX(-100%);
+        transition: transform 0.4s var(--ease);
+      }
+      .btn-g:hover::before {
+        transform: translateX(100%);
+      }
+      .btn-g:hover {
+        box-shadow: 0 8px 28px rgba(200, 149, 58, 0.36);
+      }
+      .btn-o {
+        background: transparent;
+        color: rgba(255, 255, 255, 0.55);
+        border-color: rgba(255, 255, 255, 0.16);
+      }
+      .btn-o:hover {
+        color: #fff;
+        border-color: rgba(255, 255, 255, 0.35);
+      }
+
+      /* ── RIGHT – UNIQUE SHAPED PANEL ── */
+      .right-panel {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+      }
+
+      /* === MAIN HEXAGONAL STAT CLUSTER === */
+      .hex-cluster {
+        position: relative;
+        width: 100%;
+        height: 380px;
+        flex-shrink: 0;
+      }
+
+      /* Central large hexagon */
+      .hx {
+        position: absolute;
+        clip-path: polygon(
+          50% 0%,
+          100% 25%,
+          100% 75%,
+          50% 100%,
+          0% 75%,
+          0% 25%
+        );
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      }
+
+      .hx-main {
+        width: 180px;
+        height: 180px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: linear-gradient(
+          145deg,
+          rgba(200, 149, 58, 0.18),
+          rgba(200, 149, 58, 0.06)
+        );
+        border: 1px solid rgba(200, 149, 58, 0.35);
+        z-index: 3;
+      }
+      /* extra hex ring around main */
+      .hx-main-ring {
+        position: absolute;
+        width: 210px;
+        height: 210px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        clip-path: polygon(
+          50% 0%,
+          100% 25%,
+          100% 75%,
+          50% 100%,
+          0% 75%,
+          0% 25%
+        );
+        border: 1px solid rgba(200, 149, 58, 0.12);
+        background: transparent;
+        pointer-events: none;
+        z-index: 2;
+      }
+
+      .hx-main-val {
+        font-family: var(--serif);
+        font-weight: 700;
+        font-size: 2.8rem;
+        line-height: 1;
+        color: var(--gold-lt);
+        display: block;
+        margin-bottom: 6px;
+      }
+      .hx-main-lbl {
+        font-family: var(--sans);
+        font-size: 0.58rem;
+        font-weight: 600;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.45);
+        line-height: 1.5;
+      }
+
+      /* Satellite hexagons */
+      .hx-sat {
+        width: 116px;
+        height: 116px;
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        z-index: 3;
+        transition:
+          border-color 0.3s,
+          background 0.3s;
+      }
+      .hx-sat:hover {
+        background: rgba(255, 255, 255, 0.065);
+        border-color: rgba(200, 149, 58, 0.3);
+      }
+
+      .hx-s1 {
+        top: 20px;
+        left: 18px;
+        border-color: rgba(108, 92, 231, 0.28);
+        background: rgba(108, 92, 231, 0.06);
+      }
+      .hx-s1:hover {
+        border-color: rgba(108, 92, 231, 0.5);
+        background: rgba(108, 92, 231, 0.1);
+      }
+      .hx-s2 {
+        top: 20px;
+        right: 18px;
+        border-color: rgba(31, 212, 232, 0.22);
+        background: rgba(31, 212, 232, 0.05);
+      }
+      .hx-s2:hover {
+        border-color: rgba(31, 212, 232, 0.45);
+        background: rgba(31, 212, 232, 0.08);
+      }
+      .hx-s3 {
+        bottom: 20px;
+        left: 18px;
+        border-color: rgba(31, 212, 232, 0.2);
+        background: rgba(31, 212, 232, 0.04);
+      }
+      .hx-s3:hover {
+        border-color: rgba(31, 212, 232, 0.42);
+      }
+      .hx-s4 {
+        bottom: 20px;
+        right: 18px;
+        border-color: rgba(108, 92, 231, 0.22);
+        background: rgba(108, 92, 231, 0.05);
+      }
+      .hx-s4:hover {
+        border-color: rgba(108, 92, 231, 0.44);
+      }
+
+      .hx-sat-val {
+        font-family: var(--serif);
+        font-weight: 700;
+        font-size: 1.55rem;
+        line-height: 1;
+        color: #fff;
+        display: block;
+        margin-bottom: 5px;
+      }
+      .hx-sat-lbl {
+        font-family: var(--sans);
+        font-size: 0.52rem;
+        font-weight: 600;
+        letter-spacing: 0.13em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.38);
+        line-height: 1.5;
+      }
+      .hx-s1 .hx-sat-val {
+        color: rgba(168, 158, 255, 0.9);
+      }
+      .hx-s2 .hx-sat-val {
+        color: rgba(31, 212, 232, 0.9);
+      }
+      .hx-s3 .hx-sat-val {
+        color: rgba(31, 212, 232, 0.85);
+      }
+      .hx-s4 .hx-sat-val {
+        color: rgba(168, 158, 255, 0.85);
+      }
+
+      /* connector lines svg */
+      .connectors {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        z-index: 1;
+      }
+
+      /* === BOTTOM WIDE PANEL === */
+      .wide-panel {
+        background: rgba(255, 255, 255, 0.025);
+        border: 1px solid rgba(255, 255, 255, 0.07);
+        border-top: 2px solid var(--gold);
+        padding: 20px 24px;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        clip-path: polygon(
+          0 0,
+          100% 0,
+          100% calc(100% - 10px),
+          calc(100% - 10px) 100%,
+          0 100%
+        );
+        margin-top: 14px;
+      }
+      .wp-icon {
+        width: 44px;
+        height: 44px;
+        flex-shrink: 0;
+        background: rgba(200, 149, 58, 0.1);
+        clip-path: polygon(
+          50% 0%,
+          100% 25%,
+          100% 75%,
+          50% 100%,
+          0% 75%,
+          0% 25%
+        );
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .wp-icon svg {
+        width: 20px;
+        height: 20px;
+        stroke: var(--gold-lt);
+        fill: none;
+        stroke-width: 1.8;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+      .wp-body {
+      }
+      .wp-label {
+        font-size: 0.57rem;
+        font-weight: 600;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: rgba(200, 149, 58, 0.65);
+        display: block;
+        margin-bottom: 4px;
+      }
+      .wp-text {
+        font-family: var(--sans);
+        font-size: 0.84rem;
+        font-weight: 400;
+        color: rgba(255, 255, 255, 0.62);
+        line-height: 1.5;
+      }
+
+      /* ── REVEAL ── */
+      .rv {
+        opacity: 0;
+        transform: translateY(16px);
+        transition:
+          opacity 0.85s var(--ease),
+          transform 0.85s var(--ease);
+      }
+      .rv.in {
+        opacity: 1;
+        transform: none;
+      }
+      .d1 {
+        transition-delay: 0.1s;
+      }
+      .d2 {
+        transition-delay: 0.24s;
+      }
+      .d3 {
+        transition-delay: 0.38s;
+      }
+      .d4 {
+        transition-delay: 0.52s;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .rv {
+          opacity: 1;
+          transform: none;
+        }
+      }
+
+      /* ── RESPONSIVE ── */
+      @media (max-width: 1080px) {
+        .hero-inner {
+          grid-template-columns: 1fr;
+        }
+        .slab,
+        .orbit-ring,
+        .hex {
+          display: none;
+        }
+        .right-panel {
+          display: none;
+        }
+      }
+      @media (max-width: 480px) {
+        .btns {
+          flex-direction: column;
+        }
+        .btn {
+          justify-content: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section class="hero">
+      <div class="g ga"></div>
+      <div class="g gb"></div>
+      <div class="g gc"></div>
+      <div class="pts" id="pts"></div>
+      <div class="slab" aria-hidden="true"></div>
+
+      <svg class="hex" viewBox="0 0 440 440" fill="none" aria-hidden="true">
+        <polygon
+          points="220,18 412,126 412,314 220,422 28,314 28,126"
+          stroke="rgba(31,212,232,.4)"
+          stroke-width=".7"
+        />
+        <polygon
+          points="220,60 380,154 380,286 220,380 60,286 60,154"
+          stroke="rgba(200,149,58,.2)"
+          stroke-width=".55"
+        />
+        <polygon
+          points="220,102 348,182 348,258 220,338 92,258 92,182"
+          stroke="rgba(108,92,231,.14)"
+          stroke-width=".45"
+        />
+        <circle cx="220" cy="18" r="3.5" fill="rgba(31,212,232,.8)" />
+        <circle cx="412" cy="126" r="3" fill="rgba(200,149,58,.7)" />
+        <circle cx="412" cy="314" r="3" fill="rgba(31,212,232,.5)" />
+        <circle cx="220" cy="422" r="3.5" fill="rgba(108,92,231,.7)" />
+        <circle cx="28" cy="314" r="3" fill="rgba(200,149,58,.5)" />
+        <circle cx="28" cy="126" r="3.5" fill="rgba(31,212,232,.6)" />
+      </svg>
+
+      <div class="orbit-ring" aria-hidden="true"><div class="odot"></div></div>
+
+      <svg
+        class="ctl"
+        width="110"
+        height="110"
+        viewBox="0 0 110 110"
+        fill="none"
+        aria-hidden="true"
+      >
+        <path
+          d="M12 60 L12 12 L60 12"
+          stroke="rgba(200,149,58,.36)"
+          stroke-width="1.3"
+          stroke-linecap="round"
+        />
+        <circle cx="12" cy="12" r="3" fill="rgba(200,149,58,.52)" />
+        <path
+          d="M32 60 L32 32 L60 32"
+          stroke="rgba(200,149,58,.12)"
+          stroke-width=".65"
+        />
+      </svg>
+
+      <!-- CONTENT -->
+      <div class="hero-inner">
+        <!-- LEFT -->
+        <div>
+          <div class="badge rv">
+            <span class="bdot"></span>
+            <span>FCCA Chartered Accountants · Aberdeen</span>
+          </div>
+
+          <div class="h1-wrap rv d1">
+            <span class="h1-line1">Accounting built for growth</span>
+            <span class="h1-main">Your Business<br />Has Grown.</span>
+            <span class="h1-accent">Is Your Accounting Keeping Up?</span>
+          </div>
+
+          <p class="sub rv d2">
+            Fully managed, proactively advised, same-day response guaranteed —
+            so you can focus on building.
+          </p>
+
+          <div class="btns rv d3">
+            <a href="/contact/" class="btn btn-g">Get a free fee estimate →</a>
+            <a href="/testimonial/" class="btn btn-o">Watch client stories</a>
+          </div>
+        </div>
+
+        <!-- RIGHT — HEXAGONAL CLUSTER -->
+        <div class="right-panel rv d2">
+          <div class="hex-cluster">
+            <!-- Connector lines -->
+            <svg class="connectors" viewBox="0 0 420 380" fill="none">
+              <!-- center to top-left -->
+              <line
+                x1="210"
+                y1="190"
+                x2="76"
+                y2="78"
+                stroke="rgba(108,92,231,.18)"
+                stroke-width=".8"
+                stroke-dasharray="4 4"
+              />
+              <!-- center to top-right -->
+              <line
+                x1="210"
+                y1="190"
+                x2="344"
+                y2="78"
+                stroke="rgba(31,212,232,.15)"
+                stroke-width=".8"
+                stroke-dasharray="4 4"
+              />
+              <!-- center to bottom-left -->
+              <line
+                x1="210"
+                y1="190"
+                x2="76"
+                y2="302"
+                stroke="rgba(31,212,232,.13)"
+                stroke-width=".8"
+                stroke-dasharray="4 4"
+              />
+              <!-- center to bottom-right -->
+              <line
+                x1="210"
+                y1="190"
+                x2="344"
+                y2="302"
+                stroke="rgba(108,92,231,.15)"
+                stroke-width=".8"
+                stroke-dasharray="4 4"
+              />
+              <!-- corner dots on connectors -->
+              <circle cx="76" cy="78" r="2" fill="rgba(108,92,231,.5)" />
+              <circle cx="344" cy="78" r="2" fill="rgba(31,212,232,.5)" />
+              <circle cx="76" cy="302" r="2" fill="rgba(31,212,232,.45)" />
+              <circle cx="344" cy="302" r="2" fill="rgba(108,92,231,.45)" />
+              <circle cx="210" cy="190" r="3" fill="rgba(200,149,58,.55)" />
+            </svg>
+
+            <!-- Ring behind main hex -->
+            <div class="hx-main-ring"></div>
+
+            <!-- Central hex — FCCA credential -->
+            <div class="hx hx-main">
+              <span class="hx-main-val">FCCA</span>
+              <span class="hx-main-lbl">Fellow Chartered<br />Accountant</span>
+            </div>
+
+            <!-- Satellite: top-left — Big 4 -->
+            <div class="hx hx-sat hx-s1">
+              <span class="hx-sat-val">Big 4</span>
+              <span class="hx-sat-lbl">Audit<br />Standards</span>
+            </div>
+
+            <!-- Satellite: top-right — 75 reviews -->
+            <div class="hx hx-sat hx-s2">
+              <span class="hx-sat-val">75+</span>
+              <span class="hx-sat-lbl">5-Star<br />Reviews</span>
+            </div>
+
+            <!-- Satellite: bottom-left — zero penalties -->
+            <div class="hx hx-sat hx-s3">
+              <span class="hx-sat-val">£0</span>
+              <span class="hx-sat-lbl">HMRC<br />Penalties</span>
+            </div>
+
+            <!-- Satellite: bottom-right — zero deadlines -->
+            <div class="hx hx-sat hx-s4">
+              <span class="hx-sat-val">0</span>
+              <span class="hx-sat-lbl">Missed<br />Deadlines</span>
+            </div>
+          </div>
+
+          <!-- Bottom trust strip -->
+          <div class="wide-panel">
+            <div class="wp-icon">
+              <svg viewBox="0 0 24 24">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+              </svg>
+            </div>
+            <div class="wp-body">
+              <span class="wp-label">Same-day guarantee</span>
+              <span class="wp-text"
+                >Queries before midday answered the same day — written into
+                every engagement letter.</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      (function () {
+        if ("IntersectionObserver" in window) {
+          var io = new IntersectionObserver(
+            function (e) {
+              e.forEach(function (x) {
+                if (x.isIntersecting) {
+                  x.target.classList.add("in");
+                  io.unobserve(x.target);
+                }
+              });
+            },
+            { threshold: 0.06 },
+          );
+          document.querySelectorAll(".rv").forEach(function (el) {
+            io.observe(el);
+          });
+        } else {
+          document.querySelectorAll(".rv").forEach(function (el) {
+            el.classList.add("in");
+          });
+        }
+        var c = document.getElementById("pts");
+        var cols = ["rgba(200,149,58,", "rgba(31,212,232,", "rgba(108,92,231,"];
+        for (var i = 0; i < 20; i++) {
+          var p = document.createElement("div");
+          p.className = "pt";
+          var s = Math.random() * 2.4 + 1;
+          p.style.cssText = [
+            "width:" + s + "px",
+            "height:" + s + "px",
+            "left:" + (Math.random() * 92 + 4) + "%",
+            "bottom:" + Math.random() * 28 + "%",
+            "background:" + cols[Math.floor(Math.random() * 3)] + "0.8)",
+            "animation-duration:" + (Math.random() * 10 + 8) + "s",
+            "animation-delay:" + Math.random() * 15 + "s",
+          ].join(";");
+          c.appendChild(p);
+        }
+      })();
+    </script>
+  </body>
+</html>

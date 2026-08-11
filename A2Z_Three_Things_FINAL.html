@@ -1,0 +1,53 @@
+<section class="a2z3t">
+<style>
+.a2z3t{background:#FFFFFF;padding:64px 16px 84px;font-family:'DM Sans',Arial,sans-serif;-webkit-font-smoothing:antialiased;}
+.a2z3t *{box-sizing:border-box;margin:0;padding:0;}
+.a2z3t-inner{max-width:1100px;margin:0 auto;}
+.a2z3t h2{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;font-size:clamp(34px,7.4vw,48px);line-height:1.12;text-align:center;color:#0D2B42;margin:0 auto 58px;max-width:660px;}
+.a2z3t h2 em{font-style:italic;color:#C4905A;}
+.a2z3t-grid{display:grid;grid-template-columns:1fr;gap:48px;}
+.a2z3t-card{position:relative;border-radius:20px;border:1px solid rgba(196,144,90,.7);background-image:radial-gradient(120% 70% at 20% 0%,rgba(255,255,255,.75),rgba(255,255,255,0) 55%),repeating-linear-gradient(45deg,rgba(196,144,90,.035) 0 1px,rgba(0,0,0,0) 1px 7px),linear-gradient(170deg,#FDFBF7,#F3EBDC);box-shadow:0 28px 54px -28px rgba(13,43,66,.5);padding:52px 24px 32px;}
+.a2z3t-card::after{content:"";position:absolute;inset:9px;border:1px solid rgba(196,144,90,.45);border-radius:13px;pointer-events:none;}
+.a2z3t-ghost{position:absolute;inset:0;overflow:hidden;border-radius:19px;pointer-events:none;}
+.a2z3t-ghost svg{position:absolute;top:-18px;right:-22px;width:150px;height:150px;opacity:.07;}
+.a2z3t-seal{position:absolute;top:-33px;left:24px;width:66px;height:66px;border-radius:50%;background:linear-gradient(150deg,#16456b,#0D2B42 55%,#0a2236);border:2px solid #C4905A;box-shadow:0 0 0 4px #FFFFFF,inset 0 0 0 3px rgba(216,175,130,.4),0 10px 22px -8px rgba(13,43,66,.6);display:flex;align-items:center;justify-content:center;z-index:2;}
+.a2z3t-seal svg{width:30px;height:30px;}
+.a2z3t-body{position:relative;z-index:1;}
+.a2z3t-body h3{font-family:'Cormorant Garamond',Georgia,serif;font-weight:700;font-size:27px;line-height:1.18;color:#0D2B42;margin-bottom:10px;text-align:left;}
+.a2z3t-body p{color:#4A5057;font-size:15.5px;line-height:1.62;text-align:left;}
+@media (min-width:900px){
+  .a2z3t{padding:96px 24px 116px;}
+  .a2z3t h2{margin-bottom:74px;}
+  .a2z3t-grid{grid-template-columns:1fr 1fr 1fr;gap:28px;}
+  .a2z3t-card{padding:60px 30px 38px;}
+  .a2z3t-seal{left:30px;width:70px;height:70px;top:-35px;}
+  .a2z3t-seal svg{width:32px;height:32px;}
+  .a2z3t-ghost svg{width:170px;height:170px;}
+  .a2z3t-body h3{font-size:28px;min-height:66px;}
+}
+@media (hover:hover) and (min-width:900px){
+  .a2z3t-card{transition:transform .25s ease,box-shadow .25s ease;}
+  .a2z3t-card:hover{transform:translateY(-5px);box-shadow:0 36px 64px -30px rgba(13,43,66,.6);}
+}
+</style>
+<div class="a2z3t-inner">
+  <h2>Three Things That Change When You <em>Work With A2Z.</em></h2>
+  <div class="a2z3t-grid">
+    <div class="a2z3t-card">
+      <span class="a2z3t-ghost" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#C4905A" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2.5"/><path d="M3 9.5h18M8 2.5V6M16 2.5V6"/><path d="M9.2 15.2l2.1 2.1 3.9-4.2"/></svg></span>
+      <span class="a2z3t-seal"><svg viewBox="0 0 24 24" fill="none" stroke="#D8AF82" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2.5"/><path d="M3 9.5h18M8 2.5V6M16 2.5V6"/><path d="M9.2 15.2l2.1 2.1 3.9-4.2" stroke-width="1.8"/></svg></span>
+      <div class="a2z3t-body"><h3>Structured Tax Planning</h3><p>We plan your tax months ahead, not in a year-end rush. You keep more, with no surprises.</p></div>
+    </div>
+    <div class="a2z3t-card">
+      <span class="a2z3t-ghost" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#C4905A" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12.5" r="9"/><path d="M12 12.5V6.8"/><path d="M12 12.5l3.6 2.1"/><path d="M12 1.5v1.6"/></svg></span>
+      <span class="a2z3t-seal"><svg viewBox="0 0 24 24" fill="none" stroke="#D8AF82" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12.5" r="9"/><path d="M12 12.5V6.8" stroke-width="1.9"/><path d="M12 12.5l3.6 2.1"/><path d="M12 1.5v1.6"/></svg></span>
+      <div class="a2z3t-body"><h3>Immediate, Reliable Support</h3><p>Ask before midday and get an answer the same day, guaranteed in writing. Your business never waits.</p></div>
+    </div>
+    <div class="a2z3t-card">
+      <span class="a2z3t-ghost" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#C4905A" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 3.5v5.5c0 5-3.4 9.3-8 10.5-4.6-1.2-8-5.5-8-10.5V5.5z"/><path d="M8.6 12.2l2.3 2.3 4.5-4.8"/></svg></span>
+      <span class="a2z3t-seal"><svg viewBox="0 0 24 24" fill="none" stroke="#D8AF82" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 3.5v5.5c0 5-3.4 9.3-8 10.5-4.6-1.2-8-5.5-8-10.5V5.5z"/><path d="M8.6 12.2l2.3 2.3 4.5-4.8" stroke-width="1.8"/></svg></span>
+      <div class="a2z3t-body"><h3>Complete Financial Confidence</h3><p>Zero missed deadlines and zero HMRC penalties since we started. Every figure is checked before it reaches you.</p></div>
+    </div>
+  </div>
+</div>
+</section>

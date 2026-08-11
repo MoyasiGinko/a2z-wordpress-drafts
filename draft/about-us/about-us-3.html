@@ -1,0 +1,1194 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      About — A2Z Accounting Solutions | FCCA Chartered Accountants, Aberdeen
+    </title>
+    <meta
+      name="description"
+      content="A2Z Accounting Solutions is an FCCA-led chartered accountancy firm in Aberdeen, founded by Shabbir Rahman. Specialist departments, four-layer quality control, three written guarantees."
+    />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://a2zaccounting.co.uk/about-us/" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      /* ───────────────────────────────────────
+   COLOUR SYSTEM
+   Warm cream paper · deep navy ink ·
+   sparing bronze-gold accent.
+─────────────────────────────────────── */
+      :root {
+        /* surfaces */
+        --paper: #f1e8d4;
+        --paper-soft: #ebe1ca;
+        --paper-card: #e6dcc1;
+
+        /* text */
+        --ink: #15253e;
+        --ink-2: #243652;
+        --slate: #525d75;
+        --muted: #8a8d96;
+
+        /* accent (used sparingly) */
+        --gold: #a3743f;
+        --gold-soft: rgba(163, 116, 63, 0.34);
+        --gold-faint: rgba(163, 116, 63, 0.1);
+
+        /* hairlines */
+        --rule: rgba(21, 37, 62, 0.13);
+        --rule-soft: rgba(21, 37, 62, 0.07);
+
+        /* type */
+        --display: "Fraunces", Georgia, "Times New Roman", serif;
+        --sans: "DM Sans", system-ui, -apple-system, sans-serif;
+
+        /* motion */
+        --ease: cubic-bezier(0.22, 1, 0.36, 1);
+      }
+
+      /* ─────────────── RESET ─────────────── */
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        scroll-behavior: smooth;
+        -webkit-text-size-adjust: 100%;
+      }
+      body {
+        background: var(--paper);
+        color: var(--ink);
+        font-family: var(--sans);
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 1.6;
+        overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
+        text-rendering: optimizeLegibility;
+      }
+      img {
+        display: block;
+        max-width: 100%;
+        height: auto;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      button {
+        font: inherit;
+        color: inherit;
+        background: none;
+        border: 0;
+        cursor: pointer;
+      }
+
+      /* subtle paper grain */
+      body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        z-index: 1;
+        opacity: 0.4;
+        mix-blend-mode: multiply;
+        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.06 0 0 0 0 0.11 0 0 0 0 0.18 0 0 0 0.05 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+      }
+
+      /* ─────────────── PAGE ─────────────── */
+      .page {
+        position: relative;
+        z-index: 2;
+        max-width: 1240px;
+        margin: 0 auto;
+        padding: 0 clamp(20px, 5vw, 64px);
+      }
+
+      /* ─────────────── SECTION DIVIDERS ─────────────── */
+      .divider {
+        display: block;
+        width: 64px;
+        height: 1px;
+        background: var(--gold-soft);
+        border: 0;
+        margin: clamp(56px, 9vw, 110px) auto;
+      }
+
+      /* ─────────────── SECTION ─────────────── */
+      .section {
+        padding: clamp(20px, 3vw, 32px) 0;
+      }
+      .section-head {
+        text-align: center;
+        max-width: 780px;
+        margin: 0 auto clamp(48px, 7vw, 80px);
+      }
+      .section-title {
+        font-family: var(--display);
+        font-weight: 300;
+        font-size: clamp(2rem, 5vw, 3.6rem);
+        line-height: 1.05;
+        letter-spacing: -0.022em;
+        color: var(--ink);
+      }
+      .section-title em {
+        font-style: italic;
+        font-weight: 300;
+        color: var(--gold);
+      }
+      .section-lede {
+        margin-top: clamp(18px, 2.5vw, 28px);
+        font-size: clamp(0.97rem, 1.1vw, 1.05rem);
+        line-height: 1.7;
+        color: var(--slate);
+        max-width: 60ch;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      /* ─────────────── HERO ─────────────── */
+      .hero {
+        padding: clamp(80px, 14vw, 160px) 0 clamp(40px, 6vw, 70px);
+        text-align: center;
+      }
+      .hero h1 {
+        font-family: var(--display);
+        font-weight: 300;
+        font-size: clamp(3rem, 9vw, 7rem);
+        line-height: 0.96;
+        letter-spacing: -0.025em;
+        color: var(--ink);
+        max-width: 14ch;
+        margin: 0 auto;
+      }
+      .hero h1 em {
+        display: block;
+        font-style: italic;
+        font-weight: 300;
+        color: var(--gold);
+      }
+      .hero-sub {
+        margin: clamp(24px, 3vw, 36px) auto 0;
+        max-width: 60ch;
+        font-size: clamp(1rem, 1.2vw, 1.1rem);
+        line-height: 1.7;
+        color: var(--slate);
+        font-weight: 300;
+      }
+
+      /* PORTRAIT */
+      .portrait {
+        margin: clamp(56px, 8vw, 80px) auto clamp(24px, 3vw, 32px);
+        width: clamp(220px, 26vw, 280px);
+        position: relative;
+      }
+      .portrait-frame {
+        position: relative;
+        aspect-ratio: 1 / 1.18;
+        border-radius: 50% 50% 6px 6px;
+        overflow: hidden;
+        background: var(--paper-card);
+        box-shadow: 0 28px 60px -34px rgba(21, 37, 62, 0.45);
+      }
+      .portrait-frame img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: contrast(1.04) saturate(0.88);
+      }
+      .portrait-frame::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+        box-shadow: inset 0 0 0 1px rgba(21, 37, 62, 0.18);
+        pointer-events: none;
+      }
+      .portrait::before {
+        content: "";
+        position: absolute;
+        inset: -12px;
+        border: 1px solid var(--gold-soft);
+        border-radius: 50% 50% 10px 10px;
+        pointer-events: none;
+      }
+      .portrait-caption {
+        font-family: var(--display);
+        font-style: italic;
+        font-weight: 400;
+        font-size: 1.05rem;
+        color: var(--ink);
+        text-align: center;
+      }
+      .portrait-caption span {
+        display: block;
+        margin-top: 6px;
+        font-family: var(--sans);
+        font-style: normal;
+        font-weight: 400;
+        font-size: 0.92rem;
+        color: var(--slate);
+      }
+
+      /* hero stats — symmetric three across */
+      .stats {
+        margin: clamp(56px, 8vw, 80px) auto 0;
+        max-width: 880px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        border-top: 1px solid var(--rule);
+        border-bottom: 1px solid var(--rule);
+        padding: clamp(24px, 3vw, 32px) 0;
+      }
+      .stat {
+        text-align: center;
+        padding: 0 clamp(8px, 2vw, 24px);
+        position: relative;
+      }
+      .stat + .stat::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 18%;
+        bottom: 18%;
+        width: 1px;
+        background: var(--rule);
+      }
+      .stat-num {
+        font-family: var(--display);
+        font-weight: 300;
+        font-size: clamp(2rem, 4vw, 3rem);
+        line-height: 1;
+        color: var(--ink);
+        letter-spacing: -0.005em;
+        margin-bottom: 10px;
+      }
+      .stat-num em {
+        color: var(--gold);
+        font-style: italic;
+        font-weight: 400;
+      }
+      .stat-lbl {
+        font-size: 0.85rem;
+        color: var(--slate);
+        letter-spacing: 0.01em;
+      }
+      @media (max-width: 720px) {
+        .stats {
+          grid-template-columns: 1fr;
+          padding: 0;
+        }
+        .stat {
+          padding: 22px 0;
+          border-bottom: 1px solid var(--rule-soft);
+        }
+        .stat:last-child {
+          border-bottom: 0;
+        }
+        .stat + .stat::before {
+          display: none;
+        }
+      }
+
+      /* ─────────────── BUTTONS ─────────────── */
+      .btn-row {
+        margin-top: clamp(40px, 6vw, 56px);
+        display: flex;
+        gap: 14px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      .btn {
+        font-family: var(--sans);
+        font-size: 0.9rem;
+        font-weight: 500;
+        letter-spacing: 0.02em;
+        padding: 16px 32px;
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        transition: all 0.35s var(--ease);
+        border-radius: 1px;
+        border: 1px solid transparent;
+      }
+      .btn-primary {
+        background: var(--ink);
+        color: var(--paper);
+        border-color: var(--ink);
+      }
+      .btn-primary:hover {
+        background: var(--gold);
+        border-color: var(--gold);
+        color: var(--ink);
+      }
+      .btn-ghost {
+        background: transparent;
+        color: var(--ink);
+        border-color: var(--ink);
+      }
+      .btn-ghost:hover {
+        background: var(--ink);
+        color: var(--paper);
+      }
+      .btn .arrow {
+        width: 14px;
+        height: 14px;
+        transition: transform 0.35s var(--ease);
+      }
+      .btn:hover .arrow {
+        transform: translateX(4px);
+      }
+
+      /* ─────────────── FOUNDER STORY ─────────────── */
+      .story {
+        max-width: 1000px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1px 1fr;
+        gap: clamp(28px, 5vw, 64px);
+        align-items: start;
+      }
+      .story-divider {
+        width: 1px;
+        background: linear-gradient(
+          to bottom,
+          transparent,
+          var(--rule) 14%,
+          var(--rule) 86%,
+          transparent
+        );
+      }
+      .story p {
+        font-size: 1rem;
+        line-height: 1.8;
+        color: var(--ink-2);
+        margin-bottom: 1.2rem;
+      }
+      .story p:last-child {
+        margin-bottom: 0;
+      }
+      @media (max-width: 880px) {
+        .story {
+          grid-template-columns: 1fr;
+          gap: 28px;
+        }
+        .story-divider {
+          height: 1px;
+          width: auto;
+          background: linear-gradient(
+            to right,
+            transparent,
+            var(--rule) 20%,
+            var(--rule) 80%,
+            transparent
+          );
+        }
+      }
+
+      .pull {
+        margin: clamp(56px, 8vw, 88px) auto 0;
+        max-width: 760px;
+        text-align: center;
+        padding: clamp(28px, 4vw, 40px) clamp(20px, 3vw, 36px);
+        position: relative;
+      }
+      .pull::before,
+      .pull::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 56px;
+        height: 1px;
+        background: var(--gold-soft);
+      }
+      .pull::before {
+        top: 0;
+      }
+      .pull::after {
+        bottom: 0;
+      }
+      .pull blockquote {
+        font-family: var(--display);
+        font-style: italic;
+        font-weight: 300;
+        font-size: clamp(1.4rem, 2.8vw, 2rem);
+        line-height: 1.4;
+        color: var(--ink);
+      }
+      .pull cite {
+        display: block;
+        margin-top: 22px;
+        font-style: normal;
+        font-size: 0.9rem;
+        color: var(--slate);
+      }
+
+      /* ─────────────── 3-CARD SYMMETRIC GRID ─────────────── */
+      .tri {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        border: 1px solid var(--rule);
+        background: var(--rule);
+        gap: 1px;
+        max-width: 1180px;
+        margin: 0 auto;
+      }
+      .tri > article {
+        background: var(--paper);
+        padding: clamp(36px, 4.5vw, 56px) clamp(26px, 3vw, 40px);
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transition: background 0.4s var(--ease);
+      }
+      .tri > article:hover {
+        background: var(--paper-soft);
+      }
+      .card-num {
+        font-family: var(--display);
+        font-style: italic;
+        font-weight: 300;
+        font-size: clamp(2.4rem, 4vw, 3.2rem);
+        line-height: 1;
+        color: var(--gold);
+        margin-bottom: 22px;
+      }
+      .card-rule {
+        width: 40px;
+        height: 1px;
+        background: var(--ink);
+        margin-bottom: 24px;
+        opacity: 0.5;
+      }
+      .tri h3 {
+        font-family: var(--display);
+        font-weight: 400;
+        font-size: clamp(1.2rem, 1.8vw, 1.5rem);
+        line-height: 1.25;
+        color: var(--ink);
+        margin-bottom: 16px;
+        letter-spacing: -0.005em;
+      }
+      .tri p {
+        font-size: 0.95rem;
+        line-height: 1.7;
+        color: var(--slate);
+        max-width: 32ch;
+      }
+      @media (max-width: 880px) {
+        .tri {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* ─────────────── FOUR LAYERS ─────────────── */
+      .layers {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        border: 1px solid var(--rule);
+        background: var(--rule);
+        gap: 1px;
+        max-width: 1180px;
+        margin: 0 auto;
+      }
+      .layer {
+        background: var(--paper);
+        padding: clamp(34px, 4vw, 52px) clamp(22px, 2.6vw, 32px);
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transition: background 0.4s var(--ease);
+      }
+      .layer:hover {
+        background: var(--paper-soft);
+      }
+      .layer-num {
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        border: 1px solid var(--ink);
+        background: var(--paper);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: var(--display);
+        font-weight: 400;
+        font-style: italic;
+        font-size: 1.1rem;
+        color: var(--ink);
+        margin-bottom: 26px;
+        transition: all 0.35s var(--ease);
+      }
+      .layer:hover .layer-num {
+        background: var(--ink);
+        color: var(--paper);
+        border-color: var(--gold);
+      }
+      .layer h4 {
+        font-family: var(--display);
+        font-weight: 400;
+        font-size: clamp(1.05rem, 1.5vw, 1.25rem);
+        line-height: 1.25;
+        color: var(--ink);
+        margin-bottom: 14px;
+        letter-spacing: -0.005em;
+      }
+      .layer p {
+        font-size: 0.9rem;
+        line-height: 1.65;
+        color: var(--slate);
+      }
+      @media (max-width: 980px) {
+        .layers {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      @media (max-width: 560px) {
+        .layers {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* ─────────────── DEPARTMENTS ─────────────── */
+      .depts {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1px;
+        background: var(--rule);
+        border: 1px solid var(--rule);
+        max-width: 1180px;
+        margin: 0 auto;
+      }
+      .dept {
+        background: var(--paper);
+        padding: clamp(36px, 4vw, 52px) clamp(28px, 3vw, 40px);
+        display: flex;
+        flex-direction: column;
+      }
+      .dept-head {
+        text-align: center;
+        padding-bottom: clamp(22px, 3vw, 30px);
+        margin-bottom: clamp(22px, 3vw, 30px);
+        border-bottom: 1px solid var(--rule);
+      }
+      .dept-head h3 {
+        font-family: var(--display);
+        font-weight: 400;
+        font-size: clamp(1.2rem, 1.8vw, 1.5rem);
+        line-height: 1.2;
+        color: var(--ink);
+        letter-spacing: -0.005em;
+      }
+      .dept-desc {
+        font-size: 0.95rem;
+        line-height: 1.7;
+        color: var(--slate);
+        text-align: center;
+        margin-bottom: clamp(24px, 3vw, 32px);
+      }
+      .dept-list {
+        list-style: none;
+        margin-top: auto;
+      }
+      .dept-list li {
+        padding: 12px 0;
+        font-size: 0.92rem;
+        color: var(--ink-2);
+        border-bottom: 1px solid var(--rule-soft);
+        display: flex;
+        align-items: flex-start;
+        gap: 14px;
+        line-height: 1.5;
+      }
+      .dept-list li:last-child {
+        border-bottom: 0;
+      }
+      .dept-list li::before {
+        content: "";
+        flex-shrink: 0;
+        width: 5px;
+        height: 5px;
+        background: var(--gold);
+        border-radius: 50%;
+        margin-top: 8px;
+      }
+      @media (max-width: 880px) {
+        .depts {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* ─────────────── CONTACT ─────────────── */
+      .contact {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1px;
+        background: var(--rule);
+        border-top: 1px solid var(--ink);
+        border-bottom: 1px solid var(--ink);
+        max-width: 1080px;
+        margin: 0 auto;
+      }
+      .cnt {
+        background: var(--paper);
+        padding: clamp(34px, 4vw, 48px) clamp(22px, 3vw, 32px);
+        text-align: center;
+        transition: background 0.35s var(--ease);
+      }
+      .cnt:hover {
+        background: var(--paper-soft);
+      }
+      .cnt-icon {
+        width: 38px;
+        height: 38px;
+        margin: 0 auto 18px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid var(--gold-soft);
+        border-radius: 50%;
+      }
+      .cnt-icon svg {
+        width: 14px;
+        height: 14px;
+        stroke: var(--gold);
+        fill: none;
+        stroke-width: 1.5;
+      }
+      .cnt-key {
+        font-family: var(--display);
+        font-style: italic;
+        font-weight: 400;
+        font-size: 0.95rem;
+        color: var(--slate);
+        margin-bottom: 10px;
+      }
+      .cnt-val {
+        font-family: var(--display);
+        font-weight: 400;
+        font-size: clamp(1rem, 1.3vw, 1.15rem);
+        line-height: 1.45;
+        color: var(--ink);
+        font-style: normal;
+      }
+      .cnt-val a {
+        transition: color 0.3s var(--ease);
+      }
+      .cnt-val a:hover {
+        color: var(--gold);
+      }
+      @media (max-width: 720px) {
+        .contact {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* ─────────────── REVEALS ─────────────── */
+      .reveal {
+        opacity: 0;
+        transform: translateY(20px);
+        transition:
+          opacity 0.9s var(--ease),
+          transform 0.9s var(--ease);
+      }
+      .reveal.in {
+        opacity: 1;
+        transform: none;
+      }
+
+      /* reduced motion */
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.01ms !important;
+          transition-duration: 0.01ms !important;
+        }
+        .reveal {
+          opacity: 1;
+          transform: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page">
+      <!-- ─────────────── HERO ─────────────── -->
+      <section class="hero">
+        <h1 class="reveal">
+          The standard
+          <em>begins here.</em>
+        </h1>
+        <p class="hero-sub reveal">
+          A fully managed finance function for growing businesses across the
+          United Kingdom — built on Big&nbsp;4 discipline, run with personal
+          FCCA-qualified accountability, and delivered through specialist
+          departments and a four-layer quality structure.
+        </p>
+
+        <figure class="portrait reveal">
+          <div class="portrait-frame">
+            <img
+              src="https://a2zaccounting.co.uk/wp-content/uploads/2026/04/srahman.png"
+              alt="Shabbir Rahman FCCA, Founder and Chief Executive of A2Z Accounting Solutions"
+              width="600"
+              height="700"
+            />
+          </div>
+        </figure>
+        <figcaption class="portrait-caption reveal">
+          Shabbir Rahman, FCCA
+          <span>Founder &amp; Chief Executive</span>
+        </figcaption>
+
+        <div class="stats reveal">
+          <div class="stat">
+            <div class="stat-num"><em>FCCA</em></div>
+            <div class="stat-lbl">Director Qualification</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">Four</div>
+            <div class="stat-lbl">Quality Review Layers</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">Three</div>
+            <div class="stat-lbl">Written Guarantees</div>
+          </div>
+        </div>
+
+        <div class="btn-row reveal">
+          <a href="/contact/" class="btn btn-primary">
+            Book a Conversation
+            <svg
+              class="arrow"
+              viewBox="0 0 16 16"
+              fill="none"
+              aria-hidden="true"
+            >
+              <path
+                d="M3 8h10M9 4l4 4-4 4"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </a>
+          <a href="/what-we-do-well/" class="btn btn-ghost">
+            Our Approach
+            <svg
+              class="arrow"
+              viewBox="0 0 16 16"
+              fill="none"
+              aria-hidden="true"
+            >
+              <path
+                d="M3 8h10M9 4l4 4-4 4"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </a>
+        </div>
+      </section>
+
+      <hr class="divider" aria-hidden="true" />
+
+      <!-- ─────────────── FOUNDER STORY ─────────────── -->
+      <section class="section">
+        <header class="section-head">
+          <h2 class="section-title reveal">
+            A discipline learned <em>somewhere different.</em>
+          </h2>
+        </header>
+
+        <div class="story reveal">
+          <div>
+            <p>
+              It began deep beneath the North Sea at Subsea&nbsp;7, where
+              Shabbir Rahman managed complex group accounts and operated to the
+              full rigour of Big&nbsp;4 audit standards — Deloitte and EY
+              scrutinising every number, every quarter, without exception.
+            </p>
+            <p>
+              Those years demanded bulletproof processes, precise systems, and
+              zero tolerance for error. When A2Z was founded in 2018, that
+              discipline was not aspirational — it was operational from the
+              first engagement letter.
+            </p>
+          </div>
+          <span class="story-divider" aria-hidden="true"></span>
+          <div>
+            <p>
+              A2Z was built on an entirely different model: specialist
+              departments rather than generalists, multiple independent
+              quality-control layers rather than a single reviewer, and FCCA
+              director-level oversight on every single client engagement.
+            </p>
+            <p>
+              One hundred per cent paperless, proactively managed, and delivered
+              to the standards Shabbir applied at corporate level — only now to
+              the clients who had previously been priced out of them.
+            </p>
+          </div>
+        </div>
+
+        <div class="pull reveal">
+          <blockquote>
+            We did not build another accounting firm. We built the finance
+            function that growing businesses deserved — and never had access to.
+          </blockquote>
+          <cite>Shabbir Rahman, FCCA</cite>
+        </div>
+      </section>
+
+      <hr class="divider" aria-hidden="true" />
+
+      <!-- ─────────────── PRINCIPLES ─────────────── -->
+      <section class="section">
+        <header class="section-head">
+          <h2 class="section-title reveal">
+            Three things we will <em>not compromise.</em>
+          </h2>
+          <p class="section-lede reveal">
+            Every engagement is built on three non-negotiable positions. They
+            are not marketing — they define how the firm works, and what every
+            client may expect.
+          </p>
+        </header>
+
+        <div class="tri reveal">
+          <article>
+            <div class="card-num">i</div>
+            <span class="card-rule"></span>
+            <h3>We do not compete on price.</h3>
+            <p>
+              Cheap accounting creates expensive problems. We price for the
+              value delivered — certainty, accuracy, and measurable strategic
+              advantage.
+            </p>
+          </article>
+          <article>
+            <div class="card-num">ii</div>
+            <span class="card-rule"></span>
+            <h3>We do not sell hours.</h3>
+            <p>
+              Every engagement is for specific, guaranteed outcomes — fixed-fee,
+              fully scoped, and confirmed in writing before any work begins.
+            </p>
+          </article>
+          <article>
+            <div class="card-num">iii</div>
+            <span class="card-rule"></span>
+            <h3>We do not react to problems.</h3>
+            <p>
+              We prevent them. The four-layer quality structure identifies and
+              resolves issues long before they reach you — or HMRC.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <hr class="divider" aria-hidden="true" />
+
+      <!-- ─────────────── FOUR LAYERS ─────────────── -->
+      <section class="section">
+        <header class="section-head">
+          <h2 class="section-title reveal">
+            Four layers of review. <em>Every single time.</em>
+          </h2>
+          <p class="section-lede reveal">
+            No output leaves A2Z without passing through every layer. Not a
+            checklist — a structural guarantee, built into how the firm operates
+            at every client tier.
+          </p>
+        </header>
+
+        <div class="layers reveal">
+          <div class="layer">
+            <div class="layer-num">i</div>
+            <h4>Specialist completes</h4>
+            <p>
+              Work completed by a department specialist with focused, deep
+              expertise in their discipline.
+            </p>
+          </div>
+          <div class="layer">
+            <div class="layer-num">ii</div>
+            <h4>Department review</h4>
+            <p>
+              The department head independently reviews for technical accuracy,
+              compliance, and completeness.
+            </p>
+          </div>
+          <div class="layer">
+            <div class="layer-num">iii</div>
+            <h4>Senior verification</h4>
+            <p>
+              A senior accountant verifies regulatory compliance and identifies
+              proactive planning opportunities.
+            </p>
+          </div>
+          <div class="layer">
+            <div class="layer-num">iv</div>
+            <h4>Director approval</h4>
+            <p>
+              The FCCA director personally approves every output before release.
+              Without exception.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <hr class="divider" aria-hidden="true" />
+
+      <!-- ─────────────── DEPARTMENTS ─────────────── -->
+      <section class="section">
+        <header class="section-head">
+          <h2 class="section-title reveal">
+            Three specialist departments. <em>One point of contact.</em>
+          </h2>
+          <p class="section-lede reveal">
+            Generalist firms ask one accountant to do everything. We separate
+            the disciplines — so each is handled by someone whose entire focus
+            is that work.
+          </p>
+        </header>
+
+        <div class="depts reveal">
+          <article class="dept">
+            <div class="dept-head">
+              <h3>Payroll &amp; Billing</h3>
+            </div>
+            <p class="dept-desc">
+              Full-service payroll and credit control — RTI, PAYE, pension
+              auto-enrolment, and accounts receivable.
+            </p>
+            <ul class="dept-list">
+              <li>RTI submissions and PAYE management</li>
+              <li>Pension auto-enrolment administration</li>
+              <li>Credit control and aged-debtor reporting</li>
+              <li>P11D benefits-in-kind processing</li>
+              <li>Statutory sick pay and maternity calculations</li>
+              <li>HMRC correspondence and resolution</li>
+            </ul>
+          </article>
+
+          <article class="dept">
+            <div class="dept-head">
+              <h3>VAT &amp; Management Accounts</h3>
+            </div>
+            <p class="dept-desc">
+              MTD-compliant bookkeeping, quarterly VAT returns, and regular
+              management reporting in real time.
+            </p>
+            <ul class="dept-list">
+              <li>Monthly bookkeeping and reconciliation</li>
+              <li>Quarterly VAT returns (MTD-compliant)</li>
+              <li>Management accounts with commentary</li>
+              <li>Cash-flow forecasting and reporting</li>
+              <li>VAT scheme selection and optimisation</li>
+              <li>Making Tax Digital compliance</li>
+            </ul>
+          </article>
+
+          <article class="dept">
+            <div class="dept-head">
+              <h3>Year-End &amp; Tax</h3>
+            </div>
+            <p class="dept-desc">
+              Annual accounts, Corporation Tax, self-assessment, and year-round
+              strategic planning.
+            </p>
+            <ul class="dept-list">
+              <li>Statutory annual accounts preparation</li>
+              <li>CT600 Corporation Tax returns</li>
+              <li>Self-assessment personal tax returns</li>
+              <li>Proactive tax planning and structuring</li>
+              <li>Companies House filing and compliance</li>
+              <li>Research &amp; Development tax credit claims</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <hr class="divider" aria-hidden="true" />
+
+      <!-- ─────────────── GUARANTEES ─────────────── -->
+      <section class="section">
+        <header class="section-head">
+          <h2 class="section-title reveal">
+            Three commitments. <em>All in writing.</em>
+          </h2>
+          <p class="section-lede reveal">
+            Not aspirational promises — contractual obligations, included in
+            every engagement letter and enforceable from day one.
+          </p>
+        </header>
+
+        <div class="tri reveal">
+          <article>
+            <div class="card-num">i</div>
+            <span class="card-rule"></span>
+            <h3>Same-day response.</h3>
+            <p>
+              Any query submitted before midday on a working day receives a
+              substantive response the same day. Not an acknowledgement — a real
+              answer.
+            </p>
+          </article>
+          <article>
+            <div class="card-num">ii</div>
+            <span class="card-rule"></span>
+            <h3>Zero missed deadlines.</h3>
+            <p>
+              Every HMRC and Companies House deadline is met proactively, well
+              in advance. No last-minute rushes, no penalty exposure.
+            </p>
+          </article>
+          <article>
+            <div class="card-num">iii</div>
+            <span class="card-rule"></span>
+            <h3>Transparent fixed fees.</h3>
+            <p>
+              Your monthly fee is agreed, confirmed in writing, and never
+              changes without your prior approval. No hourly billing, no
+              surprise invoices.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <hr class="divider" aria-hidden="true" />
+
+      <!-- ─────────────── CONTACT ─────────────── -->
+      <section class="section" style="padding-bottom: clamp(80px, 12vw, 140px)">
+        <header class="section-head">
+          <h2 class="section-title reveal">
+            If this is the standard you have been<br />looking for,
+            <em>let us speak.</em>
+          </h2>
+          <p class="section-lede reveal">
+            No obligation — a straightforward conversation about your business,
+            where it stands, and what a properly managed finance function would
+            look like for you.
+          </p>
+        </header>
+
+        <div class="contact reveal">
+          <div class="cnt">
+            <div class="cnt-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+                />
+              </svg>
+            </div>
+            <div class="cnt-key">By phone</div>
+            <div class="cnt-val">
+              <a href="tel:01224042961">01224 042 961</a>
+            </div>
+          </div>
+          <div class="cnt">
+            <div class="cnt-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                />
+                <polyline points="22,6 12,13 2,6" />
+              </svg>
+            </div>
+            <div class="cnt-key">By email</div>
+            <div class="cnt-val">
+              <a href="mailto:info@a2zaccounting.co.uk"
+                >info@a2zaccounting.co.uk</a
+              >
+            </div>
+          </div>
+          <div class="cnt">
+            <div class="cnt-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                <circle cx="12" cy="10" r="3" />
+              </svg>
+            </div>
+            <div class="cnt-key">In person</div>
+            <address class="cnt-val">
+              1st Floor, 499 Union Street<br />Aberdeen, AB11 6DB
+            </address>
+          </div>
+        </div>
+
+        <div class="btn-row reveal">
+          <a href="/contact/" class="btn btn-primary">
+            Book a Conversation
+            <svg
+              class="arrow"
+              viewBox="0 0 16 16"
+              fill="none"
+              aria-hidden="true"
+            >
+              <path
+                d="M3 8h10M9 4l4 4-4 4"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </a>
+          <a href="/what-we-do-well/" class="btn btn-ghost">
+            Explore Our Services
+            <svg
+              class="arrow"
+              viewBox="0 0 16 16"
+              fill="none"
+              aria-hidden="true"
+            >
+              <path
+                d="M3 8h10M9 4l4 4-4 4"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      /* Scroll reveals */
+      const io = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              e.target.classList.add("in");
+              io.unobserve(e.target);
+            }
+          });
+        },
+        { threshold: 0.12, rootMargin: "0px 0px -40px 0px" },
+      );
+      document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+    </script>
+  </body>
+</html>

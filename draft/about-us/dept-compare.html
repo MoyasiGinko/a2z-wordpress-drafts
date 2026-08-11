@@ -1,0 +1,989 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Departments — 3 Design Options · A2Z</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #f8f6f2;
+        --bg-dark: #0c0c0a;
+        --bg-mid: #141410;
+        --ink: #0c0c0a;
+        --ink-60: rgba(12, 12, 10, 0.6);
+        --ink-10: rgba(12, 12, 10, 0.08);
+        --gold: #b08d57;
+        --gold-lt: #c9a96e;
+        --gold-10: rgba(176, 141, 87, 0.12);
+        --white: #ffffff;
+        --serif: "Cormorant Garamond", Georgia, serif;
+        --sans: "DM Sans", system-ui, sans-serif;
+        --mono: "DM Mono", monospace;
+        --ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      }
+
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+      html { font-size: 16px; scroll-behavior: smooth; }
+      body {
+        font-family: var(--sans);
+        font-weight: 300;
+        color: var(--ink);
+        background: var(--bg-dark);
+        -webkit-font-smoothing: antialiased;
+        overflow-x: hidden;
+      }
+      a { color: inherit; text-decoration: none; }
+
+      /* ─── Chooser header ─── */
+      .chooser-header {
+        background: var(--bg-dark);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        padding: clamp(48px, 7vw, 72px) clamp(24px, 5vw, 72px);
+      }
+      .chooser-header-inner {
+        max-width: 1160px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr max-content;
+        gap: 48px;
+        align-items: end;
+      }
+      .chooser-eyebrow {
+        font-family: var(--mono);
+        font-size: 0.62rem;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--gold);
+        opacity: 0.7;
+        display: block;
+        margin-bottom: 14px;
+      }
+      .chooser-title {
+        font-family: var(--serif);
+        font-weight: 300;
+        font-style: italic;
+        font-size: clamp(2rem, 4vw, 3.2rem);
+        color: var(--white);
+        line-height: 1.1;
+      }
+      .chooser-sub {
+        font-size: 0.88rem;
+        color: rgba(255, 255, 255, 0.35);
+        font-weight: 300;
+        line-height: 1.75;
+        max-width: 34ch;
+        text-align: right;
+      }
+
+      /* ─── Option divider bar ─── */
+      .opt-bar {
+        background: var(--bg-mid);
+        padding: 18px clamp(24px, 5vw, 72px);
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      }
+      .opt-bar-inner {
+        max-width: 1160px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        gap: 18px;
+      }
+      .opt-badge {
+        font-family: var(--mono);
+        font-size: 0.6rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--bg-dark);
+        background: var(--gold);
+        padding: 6px 14px;
+        flex-shrink: 0;
+      }
+      .opt-desc {
+        font-family: var(--serif);
+        font-style: italic;
+        font-size: 1rem;
+        color: rgba(255, 255, 255, 0.42);
+        font-weight: 300;
+      }
+
+      /* ══════════════════════════════════════════
+         OPTION A — DOSSIER (Split-screen tabs)
+      ══════════════════════════════════════════ */
+      .opt-a {
+        background: var(--bg-dark);
+        padding: clamp(80px, 11vw, 120px) clamp(24px, 5vw, 72px);
+      }
+      .opt-a-inner { max-width: 1160px; margin: 0 auto; }
+
+      .sect-head {
+        display: grid;
+        grid-template-columns: 1fr max-content;
+        gap: clamp(40px, 6vw, 100px);
+        align-items: end;
+        margin-bottom: clamp(60px, 8vw, 96px);
+        padding-bottom: clamp(36px, 5vw, 56px);
+      }
+      .sect-head.on-dark { border-bottom: 1px solid rgba(255, 255, 255, 0.07); }
+      .sect-head.on-light { border-bottom: 1px solid var(--ink-10); }
+      .sect-head-eyebrow {
+        font-family: var(--mono);
+        font-size: 0.68rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--gold);
+        display: block;
+        margin-bottom: 18px;
+      }
+      .sect-head h2 {
+        font-family: var(--serif);
+        font-weight: 300;
+        font-size: clamp(2.4rem, 4.5vw, 4.2rem);
+        line-height: 1.05;
+        letter-spacing: -0.02em;
+      }
+      .sect-head h2 em { font-style: italic; color: var(--gold); }
+      .on-dark .sect-head h2 { color: var(--white); }
+      .on-light .sect-head h2 { color: var(--ink); }
+      .sect-head-right p {
+        font-size: 1.05rem;
+        line-height: 1.85;
+        font-weight: 300;
+        max-width: 34ch;
+        text-align: right;
+      }
+      .on-dark .sect-head-right p { color: rgba(255, 255, 255, 0.5); }
+      .on-light .sect-head-right p { color: var(--ink-60); }
+
+      /* Split layout */
+      .a-layout {
+        display: grid;
+        grid-template-columns: 300px 1fr;
+        border: 1px solid rgba(255, 255, 255, 0.07);
+        min-height: 520px;
+      }
+
+      /* Left nav */
+      .a-nav { border-right: 1px solid rgba(255, 255, 255, 0.07); display: flex; flex-direction: column; }
+      .a-nav-item {
+        position: relative;
+        padding: 32px 36px 32px 38px;
+        cursor: pointer;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        transition: background 0.35s var(--ease);
+        overflow: hidden;
+      }
+      .a-nav-item:last-child { border-bottom: 0; }
+      .a-nav-item::before {
+        content: "";
+        position: absolute;
+        left: 0; top: 0;
+        width: 2px; height: 100%;
+        background: linear-gradient(to bottom, var(--gold), rgba(176, 141, 87, 0.3));
+        transform: scaleY(0);
+        transform-origin: top;
+        transition: transform 0.4s var(--ease);
+      }
+      .a-nav-item.active::before { transform: scaleY(1); }
+      .a-nav-item:hover { background: rgba(255, 255, 255, 0.02); }
+      .a-nav-num {
+        font-family: var(--mono);
+        font-size: 0.58rem;
+        letter-spacing: 0.18em;
+        color: var(--gold);
+        opacity: 0.5;
+        display: block;
+        margin-bottom: 10px;
+        transition: opacity 0.35s;
+      }
+      .a-nav-item.active .a-nav-num { opacity: 0.85; }
+      .a-nav-name {
+        font-family: var(--serif);
+        font-style: italic;
+        font-weight: 300;
+        font-size: clamp(1.1rem, 1.5vw, 1.35rem);
+        color: rgba(255, 255, 255, 0.3);
+        line-height: 1.25;
+        display: block;
+        transition: color 0.35s;
+      }
+      .a-nav-item.active .a-nav-name,
+      .a-nav-item:hover .a-nav-name { color: rgba(255, 255, 255, 0.88); }
+      .a-nav-arrow {
+        position: absolute;
+        right: 28px; top: 50%;
+        transform: translateY(-50%) translateX(-6px);
+        font-family: var(--mono);
+        font-size: 0.7rem;
+        color: var(--gold);
+        opacity: 0;
+        transition: opacity 0.35s, transform 0.35s;
+      }
+      .a-nav-item.active .a-nav-arrow,
+      .a-nav-item:hover .a-nav-arrow { opacity: 1; transform: translateY(-50%) translateX(0); }
+
+      /* Right panel */
+      .a-panel-wrap { position: relative; overflow: hidden; }
+      .a-panel {
+        position: absolute; inset: 0;
+        padding: clamp(44px, 5vw, 64px);
+        opacity: 0;
+        transition: opacity 0.45s var(--ease);
+        pointer-events: none;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+      }
+      .a-panel.active { opacity: 1; pointer-events: auto; }
+      .a-wm {
+        position: absolute;
+        bottom: -48px; right: -6px;
+        font-family: var(--serif);
+        font-style: italic;
+        font-weight: 300;
+        font-size: clamp(10rem, 16vw, 20rem);
+        line-height: 1;
+        color: transparent;
+        -webkit-text-stroke: 1px rgba(255, 255, 255, 0.038);
+        pointer-events: none;
+        user-select: none;
+        z-index: 0;
+      }
+      .a-panel-idx {
+        font-family: var(--mono);
+        font-size: 0.62rem;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--gold);
+        opacity: 0.65;
+        display: block;
+        margin-bottom: 18px;
+        position: relative; z-index: 1;
+      }
+      .a-panel h3 {
+        font-family: var(--serif);
+        font-weight: 300;
+        font-style: italic;
+        font-size: clamp(1.9rem, 3vw, 2.9rem);
+        color: var(--white);
+        line-height: 1.1;
+        letter-spacing: -0.015em;
+        margin-bottom: 16px;
+        position: relative; z-index: 1;
+      }
+      .a-panel-desc {
+        font-size: 0.9rem;
+        line-height: 1.82;
+        color: rgba(255, 255, 255, 0.4);
+        font-weight: 300;
+        margin-bottom: 32px;
+        padding-bottom: 28px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+        max-width: 54ch;
+        position: relative; z-index: 1;
+      }
+      .a-services {
+        list-style: none;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        counter-reset: as;
+        position: relative; z-index: 1;
+      }
+      .a-services li {
+        counter-increment: as;
+        display: grid;
+        grid-template-columns: 28px 1fr;
+        gap: 0 8px;
+        align-items: baseline;
+        padding: 11px 0;
+        font-size: 0.84rem;
+        line-height: 1.5;
+        color: rgba(255, 255, 255, 0.3);
+        font-weight: 300;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+      }
+      .a-services li:nth-last-child(-n+2) { border-bottom: 0; }
+      .a-services li::before {
+        content: "0" counter(as);
+        font-family: var(--mono);
+        font-size: 0.56rem;
+        letter-spacing: 0.08em;
+        color: var(--gold);
+        opacity: 0.4;
+        display: block;
+        padding-top: 2px;
+      }
+
+      /* ══════════════════════════════════════════
+         OPTION B — LEDGER (Expandable table)
+      ══════════════════════════════════════════ */
+      .opt-b {
+        background: var(--bg);
+        padding: clamp(80px, 11vw, 120px) clamp(24px, 5vw, 72px);
+      }
+      .opt-b-inner { max-width: 1160px; margin: 0 auto; }
+
+      .ledger { width: 100%; border-collapse: collapse; }
+      .ledger thead tr { border-bottom: 2px solid rgba(176, 141, 87, 0.3); }
+      .ledger thead th {
+        font-family: var(--mono);
+        font-size: 0.6rem;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--gold);
+        font-weight: 400;
+        padding: 0 0 18px;
+        text-align: left;
+      }
+      .ledger thead th.col-ref   { width: 72px; }
+      .ledger thead th.col-scope { width: 38%; }
+      .ledger thead th.col-toggle { width: 52px; text-align: center; }
+
+      .ledger-row {
+        cursor: pointer;
+        border-bottom: 1px solid var(--ink-10);
+        transition: background 0.35s var(--ease), box-shadow 0.35s var(--ease);
+      }
+      .ledger-row:hover {
+        background: rgba(176, 141, 87, 0.03);
+        box-shadow: inset 2px 0 0 var(--gold);
+      }
+      .ledger-row.open {
+        background: rgba(176, 141, 87, 0.03);
+        box-shadow: inset 2px 0 0 var(--gold);
+      }
+      .ledger-row td { padding: 30px 0; vertical-align: middle; }
+      .ledger-row td:not(:last-child) { padding-right: 28px; }
+
+      .l-ref {
+        font-family: var(--mono);
+        font-size: 0.62rem;
+        letter-spacing: 0.14em;
+        color: var(--gold);
+        opacity: 0.55;
+      }
+      .l-name {
+        font-family: var(--serif);
+        font-weight: 300;
+        font-size: clamp(1.4rem, 2.2vw, 2rem);
+        color: var(--ink);
+        line-height: 1.15;
+      }
+      .l-scope {
+        font-size: 0.88rem;
+        line-height: 1.75;
+        color: var(--ink-60);
+        font-weight: 300;
+      }
+      .l-toggle {
+        width: 34px;
+        height: 34px;
+        border: 1px solid rgba(176, 141, 87, 0.28);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+        font-family: var(--mono);
+        font-size: 1.1rem;
+        color: var(--gold);
+        line-height: 1;
+        transition: all 0.4s var(--ease);
+      }
+      .ledger-row.open .l-toggle {
+        background: var(--gold);
+        color: var(--bg-dark);
+        border-color: var(--gold);
+        transform: rotate(45deg);
+      }
+
+      /* Detail row */
+      .ledger-detail { border-bottom: 1px solid var(--ink-10); }
+      .ledger-detail td { padding: 0; }
+      .ledger-detail-inner {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.55s var(--ease);
+      }
+      .ledger-row.open + .ledger-detail .ledger-detail-inner { max-height: 360px; }
+      .ledger-services {
+        list-style: none;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0 36px;
+        padding: 12px 0 36px;
+        border-top: 1px solid rgba(176, 141, 87, 0.18);
+        counter-reset: ls;
+      }
+      .ledger-services li {
+        counter-increment: ls;
+        display: grid;
+        grid-template-columns: 26px 1fr;
+        gap: 0 8px;
+        align-items: baseline;
+        padding: 11px 0;
+        font-size: 0.84rem;
+        line-height: 1.5;
+        color: var(--ink-60);
+        font-weight: 300;
+        border-bottom: 1px solid var(--ink-10);
+      }
+      .ledger-services li:nth-last-child(-n+3) { border-bottom: 0; }
+      .ledger-services li::before {
+        content: "0" counter(ls);
+        font-family: var(--mono);
+        font-size: 0.56rem;
+        letter-spacing: 0.08em;
+        color: var(--gold);
+        opacity: 0.45;
+        padding-top: 2px;
+      }
+
+      /* ══════════════════════════════════════════
+         OPTION C — PILLARS (Hover-expand columns)
+      ══════════════════════════════════════════ */
+      .opt-c {
+        background: var(--bg-dark);
+        padding: clamp(80px, 11vw, 120px) clamp(24px, 5vw, 72px);
+      }
+      .opt-c-inner { max-width: 1160px; margin: 0 auto; }
+
+      .c-grid {
+        display: flex;
+        align-items: stretch;
+        border: 1px solid rgba(255, 255, 255, 0.07);
+        min-height: 600px;
+        overflow: hidden;
+      }
+      .c-col {
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+        border-right: 1px solid rgba(255, 255, 255, 0.07);
+        transition: width 0.72s var(--ease), background 0.55s var(--ease);
+        width: 116px;
+        flex-shrink: 0;
+        flex-grow: 0;
+      }
+      .c-col:last-child { border-right: 0; }
+      .c-col.expanded { width: calc(100% - 232px); }
+
+      /* Gold top crown — dim at rest, vivid on expand */
+      .c-col::before {
+        content: "";
+        position: absolute;
+        top: 0; left: 0;
+        width: 100%; height: 2px;
+        background: linear-gradient(to right, transparent 0%, var(--gold) 50%, transparent 100%);
+        opacity: 0.22;
+        transition: opacity 0.5s var(--ease), background 0.5s var(--ease);
+        z-index: 3;
+      }
+      .c-col.expanded::before {
+        opacity: 1;
+        background: linear-gradient(to right, var(--gold) 0%, rgba(176, 141, 87, 0.3) 60%, transparent 100%);
+      }
+
+      /* Warm glow */
+      .c-col::after {
+        content: "";
+        position: absolute; inset: 0;
+        background: radial-gradient(ellipse at 0% 35%, rgba(176, 141, 87, 0.065) 0%, transparent 58%);
+        opacity: 0;
+        transition: opacity 0.6s var(--ease);
+        pointer-events: none;
+        z-index: 0;
+      }
+      .c-col.expanded::after { opacity: 1; }
+
+      /* Rest label: rotated name + number */
+      .c-rest {
+        position: absolute; inset: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 22px;
+        opacity: 1;
+        transition: opacity 0.28s var(--ease);
+        pointer-events: none;
+        z-index: 2;
+      }
+      .c-col.expanded .c-rest { opacity: 0; }
+      .c-rest-num {
+        font-family: var(--mono);
+        font-size: 0.58rem;
+        letter-spacing: 0.18em;
+        color: var(--gold);
+        opacity: 0.48;
+      }
+      .c-rest-name {
+        font-family: var(--serif);
+        font-style: italic;
+        font-weight: 300;
+        font-size: 1.05rem;
+        color: rgba(255, 255, 255, 0.28);
+        white-space: nowrap;
+        writing-mode: vertical-rl;
+        text-orientation: mixed;
+        transform: rotate(180deg);
+        line-height: 1;
+      }
+
+      /* Expanded content */
+      .c-content {
+        position: absolute; inset: 0;
+        padding: clamp(44px, 5vw, 60px) clamp(36px, 4vw, 52px);
+        opacity: 0;
+        transition: opacity 0.42s 0.18s var(--ease);
+        pointer-events: none;
+        overflow: hidden;
+        z-index: 1;
+      }
+      .c-col.expanded .c-content { opacity: 1; pointer-events: auto; }
+
+      .c-wm {
+        position: absolute;
+        bottom: -44px; right: -6px;
+        font-family: var(--serif);
+        font-style: italic;
+        font-weight: 300;
+        font-size: clamp(10rem, 14vw, 18rem);
+        line-height: 1;
+        color: transparent;
+        -webkit-text-stroke: 1px rgba(176, 141, 87, 0.08);
+        pointer-events: none;
+        user-select: none;
+        z-index: 0;
+      }
+      .c-idx {
+        font-family: var(--mono);
+        font-size: 0.62rem;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--gold);
+        opacity: 0.65;
+        display: block;
+        margin-bottom: 18px;
+        position: relative; z-index: 1;
+      }
+      .c-content h3 {
+        font-family: var(--serif);
+        font-weight: 300;
+        font-style: italic;
+        font-size: clamp(1.8rem, 2.8vw, 2.6rem);
+        color: var(--white);
+        line-height: 1.12;
+        letter-spacing: -0.015em;
+        margin-bottom: 16px;
+        position: relative; z-index: 1;
+      }
+      .c-desc {
+        font-size: 0.9rem;
+        line-height: 1.82;
+        color: rgba(255, 255, 255, 0.38);
+        font-weight: 300;
+        margin-bottom: 30px;
+        padding-bottom: 26px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        max-width: 50ch;
+        position: relative; z-index: 1;
+      }
+      .c-services {
+        list-style: none;
+        counter-reset: cs;
+        position: relative; z-index: 1;
+      }
+      .c-services li {
+        counter-increment: cs;
+        display: grid;
+        grid-template-columns: 28px 1fr;
+        gap: 0 10px;
+        align-items: baseline;
+        padding: 10px 0;
+        font-size: 0.84rem;
+        line-height: 1.5;
+        color: rgba(255, 255, 255, 0.3);
+        font-weight: 300;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+      }
+      .c-services li:last-child { border-bottom: 0; }
+      .c-services li::before {
+        content: "0" counter(cs);
+        font-family: var(--mono);
+        font-size: 0.56rem;
+        letter-spacing: 0.08em;
+        color: var(--gold);
+        opacity: 0.4;
+        display: block;
+        padding-top: 2px;
+      }
+
+      /* ─── Footer ─── */
+      .chooser-footer {
+        background: var(--bg-mid);
+        border-top: 1px solid rgba(255, 255, 255, 0.06);
+        padding: 36px clamp(24px, 5vw, 72px);
+        text-align: center;
+      }
+      .chooser-footer p {
+        font-family: var(--mono);
+        font-size: 0.62rem;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.22);
+      }
+
+      @media (max-width: 860px) {
+        .chooser-header-inner { grid-template-columns: 1fr; }
+        .chooser-sub { text-align: left; max-width: 100%; }
+        .sect-head { grid-template-columns: 1fr; }
+        .sect-head-right p { text-align: left; max-width: 100%; }
+        .a-layout { grid-template-columns: 1fr; }
+        .a-panel-wrap { min-height: 500px; position: relative; }
+        .ledger thead th.col-scope { display: none; }
+        .ledger-row td:nth-child(3) { display: none; }
+        .ledger-services { grid-template-columns: 1fr 1fr; }
+        .ledger-services li:nth-last-child(-n+3) { border-bottom: 1px solid var(--ink-10); }
+        .ledger-services li:nth-last-child(-n+2) { border-bottom: 0; }
+        .c-grid { min-height: 480px; }
+        .c-col { width: 80px; }
+        .c-col.expanded { width: calc(100% - 160px); }
+      }
+    </style>
+  </head>
+  <body>
+
+    <!-- Chooser header -->
+    <header class="chooser-header">
+      <div class="chooser-header-inner">
+        <div>
+          <span class="chooser-eyebrow">Design Comparison · Departments Section · A2Z Accounting</span>
+          <h1 class="chooser-title">Three directions.<br /><em>Choose one.</em></h1>
+        </div>
+        <p class="chooser-sub">All three use identical content. Interactions are live — try hovering and clicking each option, then reply A, B, or C.</p>
+      </div>
+    </header>
+
+    <!-- ══════════════════════════
+         OPTION A
+    ══════════════════════════ -->
+    <div class="opt-bar">
+      <div class="opt-bar-inner">
+        <span class="opt-badge">Option A</span>
+        <span class="opt-desc">Dossier — click a department on the left to reveal its brief on the right.</span>
+      </div>
+    </div>
+
+    <section class="opt-a">
+      <div class="opt-a-inner">
+        <div class="sect-head on-dark">
+          <div>
+            <span class="sect-head-eyebrow">Specialist Departments</span>
+            <h2>Three specialists.<br /><em>One point of contact.</em></h2>
+          </div>
+          <div class="sect-head-right">
+            <p>Generalist firms ask one accountant to do everything. We separate the disciplines — so each is handled by someone whose entire focus is that work.</p>
+          </div>
+        </div>
+
+        <div class="a-layout">
+          <nav class="a-nav">
+            <div class="a-nav-item active" data-target="a0">
+              <span class="a-nav-num">Dept · 01</span>
+              <span class="a-nav-name">Payroll &amp; Billing</span>
+              <span class="a-nav-arrow">→</span>
+            </div>
+            <div class="a-nav-item" data-target="a1">
+              <span class="a-nav-num">Dept · 02</span>
+              <span class="a-nav-name">VAT &amp; Management Accounts</span>
+              <span class="a-nav-arrow">→</span>
+            </div>
+            <div class="a-nav-item" data-target="a2">
+              <span class="a-nav-num">Dept · 03</span>
+              <span class="a-nav-name">Year-End &amp; Tax</span>
+              <span class="a-nav-arrow">→</span>
+            </div>
+          </nav>
+
+          <div class="a-panel-wrap">
+            <div class="a-panel active" id="a0">
+              <div class="a-wm">I</div>
+              <span class="a-panel-idx">Dept · 01</span>
+              <h3>Payroll &amp;<br />Billing</h3>
+              <p class="a-panel-desc">Full-service payroll and credit control — RTI, PAYE, pension auto-enrolment, and accounts receivable.</p>
+              <ul class="a-services">
+                <li>RTI submissions and PAYE management</li>
+                <li>Pension auto-enrolment administration</li>
+                <li>Credit control and aged-debtor reporting</li>
+                <li>P11D benefits-in-kind processing</li>
+                <li>Statutory sick pay and maternity calculations</li>
+                <li>HMRC correspondence and resolution</li>
+              </ul>
+            </div>
+            <div class="a-panel" id="a1">
+              <div class="a-wm">II</div>
+              <span class="a-panel-idx">Dept · 02</span>
+              <h3>VAT &amp; Management<br />Accounts</h3>
+              <p class="a-panel-desc">MTD-compliant bookkeeping, quarterly VAT returns, and regular management reporting in real time.</p>
+              <ul class="a-services">
+                <li>Monthly bookkeeping and reconciliation</li>
+                <li>Quarterly VAT returns (MTD-compliant)</li>
+                <li>Management accounts with commentary</li>
+                <li>Cash-flow forecasting and reporting</li>
+                <li>VAT scheme selection and optimisation</li>
+                <li>Making Tax Digital compliance</li>
+              </ul>
+            </div>
+            <div class="a-panel" id="a2">
+              <div class="a-wm">III</div>
+              <span class="a-panel-idx">Dept · 03</span>
+              <h3>Year-End<br />&amp; Tax</h3>
+              <p class="a-panel-desc">Annual accounts, Corporation Tax, self-assessment, and year-round strategic planning.</p>
+              <ul class="a-services">
+                <li>Statutory annual accounts preparation</li>
+                <li>CT600 Corporation Tax returns</li>
+                <li>Self-assessment personal tax returns</li>
+                <li>Proactive tax planning and structuring</li>
+                <li>Companies House filing and compliance</li>
+                <li>Research &amp; Development tax credit claims</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════
+         OPTION B
+    ══════════════════════════ -->
+    <div class="opt-bar">
+      <div class="opt-bar-inner">
+        <span class="opt-badge">Option B</span>
+        <span class="opt-desc">Ledger — click any row to expand its service list. Reads like a financial register.</span>
+      </div>
+    </div>
+
+    <section class="opt-b">
+      <div class="opt-b-inner">
+        <div class="sect-head on-light">
+          <div>
+            <span class="sect-head-eyebrow">Specialist Departments</span>
+            <h2>Three specialists.<br /><em>One point of contact.</em></h2>
+          </div>
+          <div class="sect-head-right">
+            <p>Generalist firms ask one accountant to do everything. We separate the disciplines — so each is handled by someone whose entire focus is that work.</p>
+          </div>
+        </div>
+
+        <table class="ledger">
+          <thead>
+            <tr>
+              <th class="col-ref">Ref</th>
+              <th>Department</th>
+              <th class="col-scope">Discipline</th>
+              <th class="col-toggle">+</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="ledger-row" data-detail="b0">
+              <td><span class="l-ref">01</span></td>
+              <td><span class="l-name">Payroll &amp; Billing</span></td>
+              <td><span class="l-scope">Full-service payroll and credit control — RTI, PAYE, pension auto-enrolment, and accounts receivable.</span></td>
+              <td><div class="l-toggle">+</div></td>
+            </tr>
+            <tr class="ledger-detail" id="b0">
+              <td colspan="4">
+                <div class="ledger-detail-inner">
+                  <ul class="ledger-services">
+                    <li>RTI submissions and PAYE management</li>
+                    <li>Pension auto-enrolment administration</li>
+                    <li>Credit control and aged-debtor reporting</li>
+                    <li>P11D benefits-in-kind processing</li>
+                    <li>Statutory sick pay and maternity calculations</li>
+                    <li>HMRC correspondence and resolution</li>
+                  </ul>
+                </div>
+              </td>
+            </tr>
+
+            <tr class="ledger-row" data-detail="b1">
+              <td><span class="l-ref">02</span></td>
+              <td><span class="l-name">VAT &amp; Management Accounts</span></td>
+              <td><span class="l-scope">MTD-compliant bookkeeping, quarterly VAT returns, and regular management reporting in real time.</span></td>
+              <td><div class="l-toggle">+</div></td>
+            </tr>
+            <tr class="ledger-detail" id="b1">
+              <td colspan="4">
+                <div class="ledger-detail-inner">
+                  <ul class="ledger-services">
+                    <li>Monthly bookkeeping and reconciliation</li>
+                    <li>Quarterly VAT returns (MTD-compliant)</li>
+                    <li>Management accounts with commentary</li>
+                    <li>Cash-flow forecasting and reporting</li>
+                    <li>VAT scheme selection and optimisation</li>
+                    <li>Making Tax Digital compliance</li>
+                  </ul>
+                </div>
+              </td>
+            </tr>
+
+            <tr class="ledger-row" data-detail="b2">
+              <td><span class="l-ref">03</span></td>
+              <td><span class="l-name">Year-End &amp; Tax</span></td>
+              <td><span class="l-scope">Annual accounts, Corporation Tax, self-assessment, and year-round strategic planning.</span></td>
+              <td><div class="l-toggle">+</div></td>
+            </tr>
+            <tr class="ledger-detail" id="b2">
+              <td colspan="4">
+                <div class="ledger-detail-inner">
+                  <ul class="ledger-services">
+                    <li>Statutory annual accounts preparation</li>
+                    <li>CT600 Corporation Tax returns</li>
+                    <li>Self-assessment personal tax returns</li>
+                    <li>Proactive tax planning and structuring</li>
+                    <li>Companies House filing and compliance</li>
+                    <li>Research &amp; Development tax credit claims</li>
+                  </ul>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════
+         OPTION C
+    ══════════════════════════ -->
+    <div class="opt-bar">
+      <div class="opt-bar-inner">
+        <span class="opt-badge">Option C</span>
+        <span class="opt-desc">Pillars — hover a column to expand it. The other two compress into thin slivers.</span>
+      </div>
+    </div>
+
+    <section class="opt-c">
+      <div class="opt-c-inner">
+        <div class="sect-head on-dark">
+          <div>
+            <span class="sect-head-eyebrow">Specialist Departments</span>
+            <h2>Three specialists.<br /><em>One point of contact.</em></h2>
+          </div>
+          <div class="sect-head-right">
+            <p>Generalist firms ask one accountant to do everything. We separate the disciplines — so each is handled by someone whose entire focus is that work.</p>
+          </div>
+        </div>
+
+        <div class="c-grid">
+          <div class="c-col">
+            <div class="c-rest">
+              <span class="c-rest-num">01</span>
+              <span class="c-rest-name">Payroll &amp; Billing</span>
+            </div>
+            <div class="c-content">
+              <div class="c-wm">I</div>
+              <span class="c-idx">Dept · 01</span>
+              <h3>Payroll &amp;<br />Billing</h3>
+              <p class="c-desc">Full-service payroll and credit control — RTI, PAYE, pension auto-enrolment, and accounts receivable.</p>
+              <ul class="c-services">
+                <li>RTI submissions and PAYE management</li>
+                <li>Pension auto-enrolment administration</li>
+                <li>Credit control and aged-debtor reporting</li>
+                <li>P11D benefits-in-kind processing</li>
+                <li>Statutory sick pay and maternity calculations</li>
+                <li>HMRC correspondence and resolution</li>
+              </ul>
+            </div>
+          </div>
+          <div class="c-col">
+            <div class="c-rest">
+              <span class="c-rest-num">02</span>
+              <span class="c-rest-name">VAT &amp; Management Accounts</span>
+            </div>
+            <div class="c-content">
+              <div class="c-wm">II</div>
+              <span class="c-idx">Dept · 02</span>
+              <h3>VAT &amp; Management<br />Accounts</h3>
+              <p class="c-desc">MTD-compliant bookkeeping, quarterly VAT returns, and regular management reporting in real time.</p>
+              <ul class="c-services">
+                <li>Monthly bookkeeping and reconciliation</li>
+                <li>Quarterly VAT returns (MTD-compliant)</li>
+                <li>Management accounts with commentary</li>
+                <li>Cash-flow forecasting and reporting</li>
+                <li>VAT scheme selection and optimisation</li>
+                <li>Making Tax Digital compliance</li>
+              </ul>
+            </div>
+          </div>
+          <div class="c-col">
+            <div class="c-rest">
+              <span class="c-rest-num">03</span>
+              <span class="c-rest-name">Year-End &amp; Tax</span>
+            </div>
+            <div class="c-content">
+              <div class="c-wm">III</div>
+              <span class="c-idx">Dept · 03</span>
+              <h3>Year-End<br />&amp; Tax</h3>
+              <p class="c-desc">Annual accounts, Corporation Tax, self-assessment, and year-round strategic planning.</p>
+              <ul class="c-services">
+                <li>Statutory annual accounts preparation</li>
+                <li>CT600 Corporation Tax returns</li>
+                <li>Self-assessment personal tax returns</li>
+                <li>Proactive tax planning and structuring</li>
+                <li>Companies House filing and compliance</li>
+                <li>Research &amp; Development tax credit claims</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="chooser-footer">
+      <p>A2Z Accounting Solutions · Departments Section · Design Comparison · Reply A, B or C to implement</p>
+    </footer>
+
+    <script>
+      // Option A — tab switching
+      document.querySelectorAll('.a-nav-item').forEach(item => {
+        item.addEventListener('click', () => {
+          const target = item.dataset.target;
+          document.querySelectorAll('.a-nav-item').forEach(i => i.classList.remove('active'));
+          document.querySelectorAll('.a-panel').forEach(p => p.classList.remove('active'));
+          item.classList.add('active');
+          document.getElementById(target).classList.add('active');
+        });
+      });
+
+      // Option B — accordion rows
+      document.querySelectorAll('.ledger-row').forEach(row => {
+        row.addEventListener('click', () => {
+          const detailId = row.dataset.detail;
+          const isOpen = row.classList.contains('open');
+          document.querySelectorAll('.ledger-row').forEach(r => r.classList.remove('open'));
+          if (!isOpen) row.classList.add('open');
+        });
+      });
+
+      // Option C — pillar expand on hover
+      const cols = document.querySelectorAll('.c-col');
+      const grid = document.querySelector('.c-grid');
+      cols.forEach(col => {
+        col.addEventListener('mouseenter', () => {
+          cols.forEach(c => c.classList.remove('expanded'));
+          col.classList.add('expanded');
+        });
+      });
+      grid.addEventListener('mouseleave', () => {
+        cols.forEach(c => c.classList.remove('expanded'));
+      });
+    </script>
+  </body>
+</html>

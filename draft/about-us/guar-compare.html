@@ -1,0 +1,1312 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guarantees — Design Options</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #f8f6f2;
+        --bg-dark: #0c0c0a;
+        --bg-mid: #141410;
+        --ink: #0c0c0a;
+        --ink-60: rgba(12, 12, 10, 0.6);
+        --ink-30: rgba(12, 12, 10, 0.3);
+        --ink-10: rgba(12, 12, 10, 0.08);
+        --gold: #b08d57;
+        --gold-lt: #c9a96e;
+        --gold-10: rgba(176, 141, 87, 0.12);
+        --white: #ffffff;
+        --serif: "Cormorant Garamond", Georgia, serif;
+        --sans: "DM Sans", system-ui, sans-serif;
+        --mono: "DM Mono", monospace;
+        --ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      }
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        font-size: 16px;
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: var(--sans);
+        font-weight: 300;
+        color: var(--ink);
+        background: #1a1a18;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      /* ─── NAV BAR ─── */
+      .nav {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        background: #0c0c0a;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        display: flex;
+        align-items: center;
+        gap: 0;
+        padding: 0 32px;
+        height: 52px;
+      }
+      .nav-label {
+        font-family: var(--mono);
+        font-size: 0.62rem;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.25);
+        margin-right: 28px;
+      }
+      .nav a {
+        font-family: var(--mono);
+        font-size: 0.65rem;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.35);
+        text-decoration: none;
+        padding: 0 18px;
+        height: 52px;
+        display: flex;
+        align-items: center;
+        border-right: 1px solid rgba(255, 255, 255, 0.06);
+        transition:
+          color 0.25s,
+          background 0.25s;
+      }
+      .nav a:first-of-type {
+        border-left: 1px solid rgba(255, 255, 255, 0.06);
+      }
+      .nav a:hover {
+        color: var(--gold);
+        background: rgba(176, 141, 87, 0.06);
+      }
+
+      /* ─── SECTION DIVIDERS ─── */
+      .opt-bar {
+        background: #111110;
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        padding: 14px 32px;
+        display: flex;
+        align-items: center;
+        gap: 16px;
+      }
+      .opt-badge {
+        font-family: var(--mono);
+        font-size: 0.6rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--bg-dark);
+        background: var(--gold);
+        padding: 4px 10px;
+      }
+      .opt-desc {
+        font-family: var(--mono);
+        font-size: 0.64rem;
+        letter-spacing: 0.1em;
+        color: rgba(255, 255, 255, 0.25);
+      }
+
+      /* ══════════════════════════════════════════════════════════
+         OPTION A — THE MANIFESTO
+         Dark. Full-bleed typographic rows. Oversized headings.
+         The guarantee title IS the design element.
+      ══════════════════════════════════════════════════════════ */
+      .opt-a {
+        background: var(--bg-dark);
+        padding: clamp(80px, 11vw, 120px) 0;
+        position: relative;
+        overflow: hidden;
+      }
+
+      /* Faint watermark across the full section */
+      .a-bg-text {
+        position: absolute;
+        bottom: -40px;
+        left: -20px;
+        font-family: var(--serif);
+        font-style: italic;
+        font-weight: 300;
+        font-size: clamp(12rem, 22vw, 28rem);
+        line-height: 1;
+        color: transparent;
+        -webkit-text-stroke: 1px rgba(255, 255, 255, 0.035);
+        pointer-events: none;
+        user-select: none;
+        white-space: nowrap;
+        z-index: 0;
+      }
+
+      .a-inner {
+        max-width: 1160px;
+        margin: 0 auto;
+        padding: 0 clamp(24px, 5vw, 72px);
+        position: relative;
+        z-index: 1;
+      }
+
+      /* Header */
+      .a-head {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: clamp(40px, 6vw, 80px);
+        margin-bottom: clamp(60px, 8vw, 96px);
+        align-items: end;
+      }
+      .a-eyebrow {
+        font-family: var(--mono);
+        font-size: 0.68rem;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--gold);
+        display: block;
+        margin-bottom: 20px;
+      }
+      .a-head h2 {
+        font-family: var(--serif);
+        font-weight: 300;
+        font-size: clamp(2.4rem, 4.5vw, 4.2rem);
+        line-height: 1.05;
+        letter-spacing: -0.02em;
+        color: var(--white);
+      }
+      .a-head h2 em {
+        font-style: italic;
+        color: var(--gold);
+      }
+      .a-head-right {
+        padding-bottom: 8px;
+      }
+      .a-head-right p {
+        font-size: 1rem;
+        line-height: 1.88;
+        color: rgba(255, 255, 255, 0.42);
+        font-weight: 300;
+      }
+
+      /* Manifesto rows */
+      .a-rows {
+        position: relative;
+        z-index: 1;
+      }
+
+      .a-row {
+        display: grid;
+        grid-template-columns: 100px 1fr 180px;
+        gap: 0 clamp(32px, 4vw, 56px);
+        align-items: center;
+        padding: clamp(36px, 5vw, 56px) clamp(24px, 5vw, 72px);
+        border-top: 1px solid rgba(255, 255, 255, 0.07);
+        position: relative;
+        cursor: default;
+        transition: background 0.4s var(--ease);
+        overflow: hidden;
+      }
+      .a-rows .a-row:last-child {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+      }
+
+      /* Gold sweep on hover */
+      .a-row::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: linear-gradient(
+          to right,
+          var(--gold),
+          rgba(176, 141, 87, 0.2),
+          transparent
+        );
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.55s var(--ease);
+      }
+      .a-row:hover {
+        background: rgba(255, 255, 255, 0.022);
+      }
+      .a-row:hover::before {
+        transform: scaleX(1);
+      }
+
+      /* Number — large outlined */
+      .a-num {
+        font-family: var(--serif);
+        font-style: italic;
+        font-weight: 300;
+        font-size: clamp(3.5rem, 5.5vw, 6rem);
+        line-height: 1;
+        color: transparent;
+        -webkit-text-stroke: 1px rgba(176, 141, 87, 0.28);
+        user-select: none;
+        transition: -webkit-text-stroke-color 0.4s var(--ease);
+        flex-shrink: 0;
+      }
+      .a-row:hover .a-num {
+        -webkit-text-stroke-color: rgba(176, 141, 87, 0.75);
+      }
+
+      /* Heading — large serif */
+      .a-body h3 {
+        font-family: var(--serif);
+        font-weight: 300;
+        font-style: italic;
+        font-size: clamp(2rem, 3.5vw, 3.8rem);
+        line-height: 1.08;
+        letter-spacing: -0.02em;
+        color: var(--white);
+        margin-bottom: 12px;
+        transition: color 0.4s var(--ease);
+      }
+      .a-row:hover .a-body h3 {
+        color: var(--gold-lt);
+      }
+      .a-body p {
+        font-size: 0.94rem;
+        line-height: 1.85;
+        color: rgba(255, 255, 255, 0.36);
+        font-weight: 300;
+        max-width: 50ch;
+        transition: color 0.4s var(--ease);
+      }
+      .a-row:hover .a-body p {
+        color: rgba(255, 255, 255, 0.55);
+      }
+
+      /* Right badge */
+      .a-badge {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        flex-shrink: 0;
+      }
+      .a-badge-circle {
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+        border: 1px solid rgba(176, 141, 87, 0.22);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        transition:
+          border-color 0.4s var(--ease),
+          background 0.4s var(--ease);
+      }
+      .a-row:hover .a-badge-circle {
+        border-color: var(--gold);
+        background: rgba(176, 141, 87, 0.08);
+      }
+      .a-badge-circle svg {
+        width: 22px;
+        height: 22px;
+        stroke: var(--gold);
+        fill: none;
+        stroke-width: 1.5;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        opacity: 0.45;
+        transition: opacity 0.4s var(--ease);
+      }
+      .a-row:hover .a-badge-circle svg {
+        opacity: 1;
+      }
+      .a-badge-text {
+        font-family: var(--mono);
+        font-size: 0.56rem;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--gold);
+        opacity: 0.4;
+        transition: opacity 0.4s var(--ease);
+      }
+      .a-row:hover .a-badge-text {
+        opacity: 0.75;
+      }
+
+      /* Footer */
+      .a-footer {
+        max-width: 1160px;
+        margin: 56px auto 0;
+        padding: 0 clamp(24px, 5vw, 72px);
+        position: relative;
+        z-index: 1;
+      }
+      .a-footer-line {
+        border-top: 1px solid rgba(255, 255, 255, 0.07);
+        padding-top: 22px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+      }
+      .a-footer-line p {
+        font-family: var(--mono);
+        font-size: 0.64rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.2);
+      }
+      .a-footer-sig {
+        font-family: var(--serif);
+        font-style: italic;
+        font-size: 1.1rem;
+        color: rgba(255, 255, 255, 0.18);
+      }
+
+      /* ══════════════════════════════════════════════════════════
+         OPTION B — THE CERTIFICATE
+         Light. A single formal document frame — one panel,
+         three clauses inside, signature and seal at base.
+      ══════════════════════════════════════════════════════════ */
+      .opt-b {
+        background: #eeebe5;
+        padding: clamp(80px, 11vw, 120px) clamp(24px, 5vw, 72px);
+        position: relative;
+        overflow: hidden;
+      }
+
+      /* Subtle diagonal grain — pure CSS */
+      .opt-b::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: repeating-linear-gradient(
+          135deg,
+          rgba(12, 12, 10, 0.012) 0px,
+          rgba(12, 12, 10, 0.012) 1px,
+          transparent 1px,
+          transparent 12px
+        );
+        pointer-events: none;
+      }
+
+      .b-inner {
+        max-width: 860px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+      }
+
+      /* Pre-cert label */
+      .b-pre {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        justify-content: center;
+        margin-bottom: clamp(32px, 4vw, 48px);
+      }
+      .b-pre-line {
+        flex: 1;
+        height: 1px;
+        background: var(--ink-30);
+      }
+      .b-pre-text {
+        font-family: var(--mono);
+        font-size: 0.62rem;
+        letter-spacing: 0.24em;
+        text-transform: uppercase;
+        color: var(--ink-30);
+        white-space: nowrap;
+      }
+
+      /* The certificate frame */
+      .b-cert {
+        border: 1px solid var(--ink-30);
+        position: relative;
+        background: var(--bg);
+        box-shadow:
+          0 2px 40px rgba(12, 12, 10, 0.08),
+          0 0 0 6px rgba(12, 12, 10, 0.03);
+      }
+
+      /* Corner ornaments */
+      .b-cert::before,
+      .b-cert::after {
+        content: "";
+        position: absolute;
+        width: 22px;
+        height: 22px;
+        border-color: var(--gold);
+        border-style: solid;
+        opacity: 0.6;
+      }
+      .b-cert::before {
+        top: 10px;
+        left: 10px;
+        border-width: 1px 0 0 1px;
+      }
+      .b-cert::after {
+        bottom: 10px;
+        right: 10px;
+        border-width: 0 1px 1px 0;
+      }
+
+      /* Inner corner ornaments via pseudo on child */
+      .b-cert-corners::before,
+      .b-cert-corners::after {
+        content: "";
+        position: absolute;
+        width: 22px;
+        height: 22px;
+        border-color: var(--gold);
+        border-style: solid;
+        opacity: 0.6;
+      }
+      .b-cert-corners::before {
+        top: 10px;
+        right: 10px;
+        border-width: 1px 1px 0 0;
+      }
+      .b-cert-corners::after {
+        bottom: 10px;
+        left: 10px;
+        border-width: 0 0 1px 1px;
+      }
+      .b-cert-corners {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+      }
+
+      /* Certificate content */
+      .b-cert-content {
+        padding: clamp(44px, 6vw, 72px) clamp(44px, 6vw, 72px)
+          clamp(36px, 5vw, 60px);
+      }
+
+      /* Cert header */
+      .b-cert-header {
+        text-align: center;
+        padding-bottom: clamp(28px, 4vw, 44px);
+        border-bottom: 1px solid var(--ink-10);
+        margin-bottom: clamp(28px, 4vw, 44px);
+        position: relative;
+      }
+      .b-firm {
+        font-family: var(--mono);
+        font-size: 0.62rem;
+        letter-spacing: 0.28em;
+        text-transform: uppercase;
+        color: var(--ink-30);
+        display: block;
+        margin-bottom: 16px;
+      }
+      .b-cert-title {
+        font-family: var(--serif);
+        font-weight: 300;
+        font-style: italic;
+        font-size: clamp(1.8rem, 3vw, 3rem);
+        line-height: 1.08;
+        letter-spacing: -0.02em;
+        color: var(--ink);
+        margin-bottom: 14px;
+      }
+      .b-cert-title em {
+        color: var(--gold);
+        font-style: normal;
+      }
+      .b-cert-sub {
+        font-size: 0.88rem;
+        line-height: 1.7;
+        color: var(--ink-60);
+        font-weight: 300;
+        max-width: 50ch;
+        margin: 0 auto;
+      }
+
+      /* Gold ornament divider */
+      .b-ornament {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        justify-content: center;
+        margin-bottom: clamp(28px, 4vw, 44px);
+      }
+      .b-orn-line {
+        flex: 1;
+        height: 1px;
+        background: rgba(176, 141, 87, 0.25);
+      }
+      .b-orn-diamond {
+        width: 6px;
+        height: 6px;
+        background: var(--gold);
+        opacity: 0.55;
+        transform: rotate(45deg);
+      }
+
+      /* Clauses */
+      .b-clauses {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+      }
+      .b-clause {
+        display: grid;
+        grid-template-columns: 52px 1fr;
+        gap: 0 28px;
+        padding: clamp(20px, 3vw, 28px) 0;
+        border-bottom: 1px solid var(--ink-10);
+        transition: background 0.3s var(--ease);
+        margin: 0 -8px;
+        padding-left: 8px;
+        padding-right: 8px;
+      }
+      .b-clause:last-child {
+        border-bottom: 0;
+      }
+      .b-clause:hover {
+        background: rgba(176, 141, 87, 0.04);
+      }
+
+      .b-clause-num {
+        font-family: var(--serif);
+        font-style: italic;
+        font-weight: 300;
+        font-size: clamp(1.8rem, 3vw, 2.6rem);
+        line-height: 1;
+        color: transparent;
+        -webkit-text-stroke: 1px rgba(176, 141, 87, 0.4);
+        padding-top: 4px;
+        transition: -webkit-text-stroke-color 0.3s var(--ease);
+      }
+      .b-clause:hover .b-clause-num {
+        -webkit-text-stroke-color: rgba(176, 141, 87, 0.8);
+      }
+
+      .b-clause-body h3 {
+        font-family: var(--serif);
+        font-weight: 300;
+        font-size: clamp(1.1rem, 1.8vw, 1.5rem);
+        line-height: 1.15;
+        letter-spacing: -0.01em;
+        color: var(--ink);
+        margin-bottom: 8px;
+      }
+      .b-clause-body p {
+        font-size: 0.88rem;
+        line-height: 1.78;
+        color: var(--ink-60);
+        font-weight: 300;
+      }
+
+      /* Cert footer — signature + seal */
+      .b-cert-footer {
+        margin-top: clamp(28px, 4vw, 44px);
+        padding-top: clamp(20px, 3vw, 30px);
+        border-top: 1px solid var(--ink-10);
+        display: grid;
+        grid-template-columns: 1fr auto 1fr;
+        gap: 24px;
+        align-items: center;
+      }
+      .b-sig-block {
+      }
+      .b-sig-line {
+        width: 140px;
+        height: 1px;
+        background: var(--ink-30);
+        margin-bottom: 8px;
+      }
+      .b-sig-label {
+        font-family: var(--mono);
+        font-size: 0.58rem;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--ink-30);
+      }
+      .b-sig-name {
+        font-family: var(--serif);
+        font-style: italic;
+        font-size: 1.3rem;
+        color: var(--ink-60);
+        display: block;
+        margin-bottom: 4px;
+      }
+
+      /* Wax seal */
+      .b-seal {
+        width: 72px;
+        height: 72px;
+        border-radius: 50%;
+        border: 1px solid rgba(176, 141, 87, 0.35);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2px;
+        background: rgba(176, 141, 87, 0.05);
+        margin: 0 auto;
+      }
+      .b-seal-inner {
+        font-family: var(--serif);
+        font-style: italic;
+        font-size: 1rem;
+        color: var(--gold);
+        opacity: 0.7;
+        line-height: 1;
+      }
+      .b-seal-label {
+        font-family: var(--mono);
+        font-size: 0.42rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--gold);
+        opacity: 0.45;
+      }
+
+      .b-sig-block-right {
+        text-align: right;
+      }
+      .b-sig-line-right {
+        width: 140px;
+        height: 1px;
+        background: var(--ink-30);
+        margin-left: auto;
+        margin-bottom: 8px;
+      }
+
+      /* ══════════════════════════════════════════════════════════
+         OPTION C — VAULT PANELS
+         Dark. Three tall static columns, each with a large
+         circular "seal" ring at top and content below.
+         Strong verticality, distinct from dept pillars.
+      ══════════════════════════════════════════════════════════ */
+      .opt-c {
+        background: var(--bg-dark);
+        padding: clamp(80px, 11vw, 120px) clamp(24px, 5vw, 72px);
+        position: relative;
+        overflow: hidden;
+      }
+
+      /* Radial glow behind seal rings */
+      .opt-c::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 50%;
+        background: radial-gradient(
+          ellipse at 50% 0%,
+          rgba(176, 141, 87, 0.06) 0%,
+          transparent 65%
+        );
+        pointer-events: none;
+      }
+
+      .c-inner {
+        max-width: 1160px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+      }
+
+      /* Header */
+      .c-head {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: clamp(40px, 6vw, 80px);
+        align-items: start;
+        margin-bottom: clamp(60px, 8vw, 96px);
+      }
+      .c-eyebrow {
+        font-family: var(--mono);
+        font-size: 0.68rem;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--gold);
+        display: block;
+        margin-bottom: 20px;
+      }
+      .c-head h2 {
+        font-family: var(--serif);
+        font-weight: 300;
+        font-size: clamp(2.4rem, 4.5vw, 4.2rem);
+        line-height: 1.05;
+        letter-spacing: -0.02em;
+        color: var(--white);
+      }
+      .c-head h2 em {
+        font-style: italic;
+        color: var(--gold);
+      }
+      .c-head-right {
+        padding-top: clamp(16px, 3vw, 44px);
+      }
+      .c-head-right p {
+        font-size: 1rem;
+        line-height: 1.88;
+        color: rgba(255, 255, 255, 0.42);
+        font-weight: 300;
+      }
+
+      /* Panel grid */
+      .c-panels {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1px;
+        background: rgba(255, 255, 255, 0.07);
+        border: 1px solid rgba(255, 255, 255, 0.07);
+      }
+
+      .c-panel {
+        background: var(--bg-dark);
+        padding: clamp(44px, 5.5vw, 64px) clamp(32px, 4vw, 48px)
+          clamp(44px, 5.5vw, 64px);
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        cursor: default;
+        position: relative;
+        overflow: hidden;
+        transition: background 0.45s var(--ease);
+      }
+      .c-panel:hover {
+        background: #111110;
+      }
+
+      /* Gold top bar */
+      .c-panel::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: linear-gradient(
+          to right,
+          var(--gold),
+          rgba(176, 141, 87, 0.2),
+          transparent
+        );
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.55s var(--ease);
+      }
+      .c-panel:hover::before {
+        transform: scaleX(1);
+      }
+
+      /* The seal ring */
+      .c-seal-wrap {
+        position: relative;
+        width: 84px;
+        height: 84px;
+        margin-bottom: clamp(28px, 3.5vw, 40px);
+        flex-shrink: 0;
+      }
+
+      /* Outer ring — slowly spins on hover */
+      .c-seal-outer {
+        position: absolute;
+        inset: 0;
+        border-radius: 50%;
+        border: 1px solid rgba(176, 141, 87, 0.22);
+        transition: border-color 0.45s var(--ease);
+      }
+      .c-panel:hover .c-seal-outer {
+        border-color: rgba(176, 141, 87, 0.55);
+        animation: sealSpin 8s linear infinite;
+      }
+      @keyframes sealSpin {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      /* Tick marks on the outer ring */
+      .c-seal-outer::before {
+        content: "";
+        position: absolute;
+        top: -1px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background: var(--gold);
+        opacity: 0.5;
+      }
+
+      /* Inner ring */
+      .c-seal-inner {
+        position: absolute;
+        inset: 8px;
+        border-radius: 50%;
+        border: 1px solid rgba(176, 141, 87, 0.12);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition:
+          border-color 0.45s var(--ease),
+          background 0.45s var(--ease);
+      }
+      .c-panel:hover .c-seal-inner {
+        border-color: rgba(176, 141, 87, 0.35);
+        background: rgba(176, 141, 87, 0.06);
+      }
+
+      /* Number inside seal */
+      .c-seal-num {
+        font-family: var(--serif);
+        font-style: italic;
+        font-weight: 300;
+        font-size: 1.6rem;
+        line-height: 1;
+        color: var(--gold);
+        opacity: 0.55;
+        transition: opacity 0.45s var(--ease);
+      }
+      .c-panel:hover .c-seal-num {
+        opacity: 1;
+      }
+
+      /* Panel content */
+      .c-panel-idx {
+        font-family: var(--mono);
+        font-size: 0.62rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--gold);
+        opacity: 0.55;
+        display: block;
+        margin-bottom: 14px;
+      }
+
+      .c-panel h3 {
+        font-family: var(--serif);
+        font-weight: 300;
+        font-size: clamp(1.5rem, 2.4vw, 2.2rem);
+        line-height: 1.1;
+        letter-spacing: -0.015em;
+        color: var(--white);
+        margin-bottom: 16px;
+        transition: color 0.4s var(--ease);
+      }
+      .c-panel:hover h3 {
+        color: var(--gold-lt);
+      }
+
+      .c-panel-rule {
+        width: 28px;
+        height: 1px;
+        background: var(--gold);
+        opacity: 0.35;
+        margin-bottom: 16px;
+        transition:
+          width 0.45s var(--ease),
+          opacity 0.45s var(--ease);
+      }
+      .c-panel:hover .c-panel-rule {
+        width: 48px;
+        opacity: 0.7;
+      }
+
+      .c-panel p {
+        font-size: 0.9rem;
+        line-height: 1.82;
+        color: rgba(255, 255, 255, 0.36);
+        font-weight: 300;
+        transition: color 0.4s var(--ease);
+        flex: 1;
+      }
+      .c-panel:hover p {
+        color: rgba(255, 255, 255, 0.54);
+      }
+
+      /* Bottom tag */
+      .c-panel-tag {
+        margin-top: clamp(28px, 3.5vw, 40px);
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .c-panel-tag-dot {
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background: var(--gold);
+        opacity: 0.4;
+        transition: opacity 0.4s var(--ease);
+      }
+      .c-panel:hover .c-panel-tag-dot {
+        opacity: 1;
+      }
+      .c-panel-tag-text {
+        font-family: var(--mono);
+        font-size: 0.58rem;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--gold);
+        opacity: 0.35;
+        transition: opacity 0.4s var(--ease);
+      }
+      .c-panel:hover .c-panel-tag-text {
+        opacity: 0.75;
+      }
+
+      /* Footer */
+      .c-footer {
+        margin-top: clamp(48px, 6vw, 64px);
+        border-top: 1px solid rgba(255, 255, 255, 0.07);
+        padding-top: 22px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+      }
+      .c-footer p {
+        font-family: var(--mono);
+        font-size: 0.63rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.18);
+      }
+      .c-footer-sig {
+        font-family: var(--serif);
+        font-style: italic;
+        font-size: 1.1rem;
+        color: rgba(255, 255, 255, 0.16);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- NAV -->
+    <nav class="nav">
+      <span class="nav-label">Guarantees — Design Options</span>
+      <a href="#option-a">A · Manifesto</a>
+      <a href="#option-b">B · Certificate</a>
+      <a href="#option-c">C · Vault Panels</a>
+    </nav>
+
+    <!-- ══════════════════════════════════════════════════════
+         OPTION A — THE MANIFESTO
+    ══════════════════════════════════════════════════════ -->
+    <div class="opt-bar" id="option-a">
+      <span class="opt-badge">Option A</span>
+      <span class="opt-desc"
+        >Manifesto — dark, full-bleed typographic rows. Headings ARE the design.
+        Oversized italic serif on hover turns gold.</span
+      >
+    </div>
+
+    <section class="opt-a">
+      <div class="a-bg-text" aria-hidden="true">Covenant</div>
+
+      <div class="a-inner">
+        <div class="a-head">
+          <div>
+            <span class="a-eyebrow">Contractual Commitments</span>
+            <h2>Three commitments.<br /><em>All in writing.</em></h2>
+          </div>
+          <div class="a-head-right">
+            <p>
+              Not aspirational promises — contractual obligations, included in
+              every engagement letter and enforceable from day one.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="a-rows">
+        <div class="a-row">
+          <div class="a-num" aria-hidden="true">01</div>
+          <div class="a-body">
+            <h3>Same-day Response</h3>
+            <p>
+              Any query submitted before midday on a working day receives a
+              substantive response the same day. Not an acknowledgement — a real
+              answer.
+            </p>
+          </div>
+          <div class="a-badge">
+            <div class="a-badge-circle">
+              <svg
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span class="a-badge-text">Contractual</span>
+          </div>
+        </div>
+        <div class="a-row">
+          <div class="a-num" aria-hidden="true">02</div>
+          <div class="a-body">
+            <h3>Zero Missed Deadlines</h3>
+            <p>
+              Every HMRC and Companies House deadline is met proactively, well
+              in advance. No last-minute rushes, no penalty exposure.
+            </p>
+          </div>
+          <div class="a-badge">
+            <div class="a-badge-circle">
+              <svg
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span class="a-badge-text">Contractual</span>
+          </div>
+        </div>
+        <div class="a-row">
+          <div class="a-num" aria-hidden="true">03</div>
+          <div class="a-body">
+            <h3>Transparent Fixed Fees</h3>
+            <p>
+              Your monthly fee is agreed, confirmed in writing, and never
+              changes without your prior approval. No hourly billing, no
+              surprise invoices.
+            </p>
+          </div>
+          <div class="a-badge">
+            <div class="a-badge-circle">
+              <svg
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <span class="a-badge-text">Contractual</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="a-footer">
+        <div class="a-footer-line">
+          <p>
+            All three appear in your engagement letter, in plain English, before
+            any work begins.
+          </p>
+          <span class="a-footer-sig">A2Z Accounting Solutions</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+         OPTION B — THE CERTIFICATE
+    ══════════════════════════════════════════════════════ -->
+    <div class="opt-bar" id="option-b">
+      <span class="opt-badge">Option B</span>
+      <span class="opt-desc"
+        >Certificate — light parchment background, single formal document frame
+        with corner ornaments, clauses, and signature block.</span
+      >
+    </div>
+
+    <section class="opt-b">
+      <div class="b-inner">
+        <div class="b-pre">
+          <span class="b-pre-line"></span>
+          <span class="b-pre-text">Contractual Commitments</span>
+          <span class="b-pre-line"></span>
+        </div>
+
+        <div class="b-cert">
+          <div class="b-cert-corners"></div>
+          <div class="b-cert-content">
+            <div class="b-cert-header">
+              <span class="b-firm"
+                >A2Z Accounting Solutions · FCCA · Aberdeen</span
+              >
+              <h2 class="b-cert-title">
+                Three commitments.<br /><em>All in writing.</em>
+              </h2>
+              <p class="b-cert-sub">
+                Not aspirational promises — contractual obligations, included in
+                every engagement letter and enforceable from day one.
+              </p>
+            </div>
+
+            <div class="b-ornament">
+              <span class="b-orn-line"></span>
+              <span class="b-orn-diamond"></span>
+              <span class="b-orn-line"></span>
+            </div>
+
+            <div class="b-clauses">
+              <div class="b-clause">
+                <div class="b-clause-num" aria-hidden="true">1</div>
+                <div class="b-clause-body">
+                  <h3>Same-day Response</h3>
+                  <p>
+                    Any query submitted before midday on a working day receives
+                    a substantive response the same day. Not an acknowledgement
+                    — a real answer.
+                  </p>
+                </div>
+              </div>
+              <div class="b-clause">
+                <div class="b-clause-num" aria-hidden="true">2</div>
+                <div class="b-clause-body">
+                  <h3>Zero Missed Deadlines</h3>
+                  <p>
+                    Every HMRC and Companies House deadline is met proactively,
+                    well in advance. No last-minute rushes, no penalty exposure.
+                  </p>
+                </div>
+              </div>
+              <div class="b-clause">
+                <div class="b-clause-num" aria-hidden="true">3</div>
+                <div class="b-clause-body">
+                  <h3>Transparent Fixed Fees</h3>
+                  <p>
+                    Your monthly fee is agreed, confirmed in writing, and never
+                    changes without your prior approval. No hourly billing, no
+                    surprise invoices.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="b-cert-footer">
+              <div class="b-sig-block">
+                <span class="b-sig-name">Shabbir Rahman</span>
+                <div class="b-sig-line"></div>
+                <span class="b-sig-label">Director · FCCA</span>
+              </div>
+              <div class="b-seal">
+                <span class="b-seal-inner">A2Z</span>
+                <span class="b-seal-label">Certified</span>
+              </div>
+              <div class="b-sig-block b-sig-block-right">
+                <span class="b-sig-name" style="color: var(--ink-30)"
+                  >A2Z Accounting</span
+                >
+                <div class="b-sig-line-right"></div>
+                <span class="b-sig-label">Effective from engagement date</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+         OPTION C — VAULT PANELS
+    ══════════════════════════════════════════════════════ -->
+    <div class="opt-bar" id="option-c">
+      <span class="opt-badge">Option C</span>
+      <span class="opt-desc"
+        >Vault Panels — dark, three static columns each with a circular seal
+        ring at top. Ring slowly spins on hover. Strong vertical rhythm.</span
+      >
+    </div>
+
+    <section class="opt-c">
+      <div class="c-inner">
+        <div class="c-head">
+          <div>
+            <span class="c-eyebrow">Contractual Commitments</span>
+            <h2>Three commitments.<br /><em>All in writing.</em></h2>
+          </div>
+          <div class="c-head-right">
+            <p>
+              Not aspirational promises — contractual obligations, included in
+              every engagement letter and enforceable from day one.
+            </p>
+          </div>
+        </div>
+
+        <div class="c-panels">
+          <div class="c-panel">
+            <div class="c-seal-wrap">
+              <div class="c-seal-outer"></div>
+              <div class="c-seal-inner">
+                <span class="c-seal-num">01</span>
+              </div>
+            </div>
+            <span class="c-panel-idx">Commitment · 01</span>
+            <h3>Same-day Response</h3>
+            <div class="c-panel-rule"></div>
+            <p>
+              Any query submitted before midday on a working day receives a
+              substantive response the same day. Not an acknowledgement — a real
+              answer.
+            </p>
+            <div class="c-panel-tag">
+              <span class="c-panel-tag-dot"></span>
+              <span class="c-panel-tag-text">Contractual</span>
+            </div>
+          </div>
+
+          <div class="c-panel">
+            <div class="c-seal-wrap">
+              <div class="c-seal-outer"></div>
+              <div class="c-seal-inner">
+                <span class="c-seal-num">02</span>
+              </div>
+            </div>
+            <span class="c-panel-idx">Commitment · 02</span>
+            <h3>Zero Missed Deadlines</h3>
+            <div class="c-panel-rule"></div>
+            <p>
+              Every HMRC and Companies House deadline is met proactively, well
+              in advance. No last-minute rushes, no penalty exposure.
+            </p>
+            <div class="c-panel-tag">
+              <span class="c-panel-tag-dot"></span>
+              <span class="c-panel-tag-text">Contractual</span>
+            </div>
+          </div>
+
+          <div class="c-panel">
+            <div class="c-seal-wrap">
+              <div class="c-seal-outer"></div>
+              <div class="c-seal-inner">
+                <span class="c-seal-num">03</span>
+              </div>
+            </div>
+            <span class="c-panel-idx">Commitment · 03</span>
+            <h3>Transparent Fixed Fees</h3>
+            <div class="c-panel-rule"></div>
+            <p>
+              Your monthly fee is agreed, confirmed in writing, and never
+              changes without your prior approval. No hourly billing, no
+              surprise invoices.
+            </p>
+            <div class="c-panel-tag">
+              <span class="c-panel-tag-dot"></span>
+              <span class="c-panel-tag-text">Contractual</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="c-footer">
+          <p>
+            All three appear in your engagement letter, in plain English, before
+            any work begins.
+          </p>
+          <span class="c-footer-sig">A2Z Accounting Solutions</span>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

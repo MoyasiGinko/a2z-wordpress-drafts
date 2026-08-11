@@ -1,0 +1,593 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Three Principles — A2Z Accounting Solutions</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@200;300;400;600;700;800&family=Barlow:wght@300;400;500&family=DM+Serif+Display:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --navy: #070f1c;
+        --navy-2: #0b1627;
+        --navy-3: #101e33;
+        --gold: #c9a070;
+        --gold-lt: #dbb98a;
+        --white: #f4f1ec;
+        --muted: rgba(244, 241, 236, 0.38);
+        --dim: rgba(244, 241, 236, 0.14);
+        --rule: rgba(244, 241, 236, 0.08);
+        --rule-gold: rgba(201, 160, 112, 0.22);
+        --ease: cubic-bezier(0.22, 1, 0.36, 1);
+      }
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html,
+      body {
+        min-height: 100%;
+      }
+      body {
+        background: var(--navy);
+        font-family: "Barlow", sans-serif;
+        color: var(--white);
+        overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
+      }
+      img {
+        display: block;
+        max-width: 100%;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      /* ══ SECTION SHELL ══ */
+      .principles {
+        position: relative;
+        background: var(--navy);
+        overflow: hidden;
+      }
+
+      /* ── Section index strip ── */
+      .section-strip {
+        position: relative;
+        z-index: 10;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 clamp(24px, 4vw, 56px);
+        height: 44px;
+        border-bottom: 1px solid var(--rule);
+        border-top: 1px solid var(--rule);
+      }
+      .ss-left {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+      .ss-index {
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: 0.62rem;
+        font-weight: 600;
+        letter-spacing: 0.18em;
+        color: var(--gold);
+      }
+      .ss-sep {
+        width: 1px;
+        height: 14px;
+        background: var(--rule);
+      }
+      .ss-title {
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: 0.65rem;
+        font-weight: 400;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--muted);
+      }
+      .ss-right {
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: 0.62rem;
+        font-weight: 300;
+        letter-spacing: 0.14em;
+        color: var(--dim);
+      }
+
+      /* ══ HEADER ══ */
+      .principles-header {
+        position: relative;
+        z-index: 5;
+        padding: clamp(52px, 8vw, 100px) clamp(24px, 4vw, 56px) 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: clamp(40px, 6vw, 100px);
+        align-items: end;
+      }
+      .header-left {
+        position: relative;
+      }
+      .header-eyebrow {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: clamp(20px, 3vw, 32px);
+      }
+      .h-ey-num {
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: 0.6rem;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        color: var(--dim);
+      }
+      .h-ey-dash {
+        width: 22px;
+        height: 1px;
+        background: rgba(201, 160, 112, 0.4);
+        flex-shrink: 0;
+      }
+      .h-ey-text {
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: 0.66rem;
+        font-weight: 400;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: rgba(244, 241, 236, 0.4);
+      }
+      .principles-heading {
+        font-family: "Barlow Condensed", sans-serif;
+        font-weight: 800;
+        font-size: clamp(3rem, 8.5vw, 8rem);
+        line-height: 0.88;
+        letter-spacing: -0.02em;
+        text-transform: uppercase;
+      }
+      .ph-solid {
+        display: block;
+        color: var(--white);
+      }
+      .ph-outline {
+        display: block;
+        -webkit-text-stroke: 1.5px var(--gold);
+        color: transparent;
+      }
+      .ph-serif {
+        display: block;
+        font-family: "DM Serif Display", serif;
+        font-weight: 400;
+        font-style: italic;
+        text-transform: none;
+        -webkit-text-stroke: 0;
+        color: rgba(244, 241, 236, 0.25);
+        font-size: 0.48em;
+        letter-spacing: -0.01em;
+        margin-top: 0.22em;
+      }
+      .header-right {
+        padding-bottom: clamp(4px, 1vw, 12px);
+        max-width: 42ch;
+      }
+      .header-desc {
+        font-size: clamp(0.88rem, 1.05vw, 0.98rem);
+        line-height: 1.85;
+        color: var(--muted);
+        font-weight: 300;
+      }
+
+      /* ══ DIVIDER ══ */
+      .section-divider {
+        margin: clamp(44px, 6vw, 72px) clamp(24px, 4vw, 56px) 0;
+        height: 1px;
+        background: linear-gradient(
+          to right,
+          var(--rule-gold),
+          var(--rule) 60%,
+          transparent
+        );
+      }
+
+      /* ══ PRINCIPLES GRID ══ */
+      .principles-grid {
+        position: relative;
+        z-index: 5;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        border-top: 1px solid var(--rule);
+        margin-top: 0;
+      }
+
+      .principle-card {
+        position: relative;
+        padding: clamp(44px, 5.5vw, 72px) clamp(28px, 3.5vw, 52px)
+          clamp(44px, 5.5vw, 72px);
+        border-right: 1px solid var(--rule);
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        transition: background 0.45s var(--ease);
+        overflow: hidden;
+        cursor: default;
+      }
+      .principle-card:last-child {
+        border-right: none;
+      }
+      .principle-card:hover {
+        background: var(--navy-2);
+      }
+
+      /* Gold top border that animates in on hover */
+      .principle-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: var(--gold);
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.5s var(--ease);
+      }
+      .principle-card:hover::before {
+        transform: scaleX(1);
+      }
+
+      /* Large roman numeral — structural, not decorative clutter */
+      .card-numeral {
+        font-family: "Barlow Condensed", sans-serif;
+        font-weight: 800;
+        font-size: clamp(3.5rem, 5.5vw, 6rem);
+        line-height: 1;
+        letter-spacing: -0.03em;
+        color: var(--rule-gold);
+        margin-bottom: clamp(28px, 4vw, 44px);
+        transition: color 0.4s var(--ease);
+      }
+      .principle-card:hover .card-numeral {
+        color: rgba(201, 160, 112, 0.45);
+      }
+
+      /* Principle statement — the main text */
+      .card-statement {
+        font-family: "Barlow Condensed", sans-serif;
+        font-weight: 700;
+        font-size: clamp(1.5rem, 2.4vw, 2.2rem);
+        line-height: 1.1;
+        letter-spacing: -0.01em;
+        text-transform: uppercase;
+        color: var(--white);
+        margin-bottom: clamp(20px, 3vw, 32px);
+      }
+      /* The "not" word gets gold treatment */
+      .card-statement .not {
+        -webkit-text-stroke: 1px var(--gold);
+        color: transparent;
+      }
+
+      /* Horizontal rule between statement and body */
+      .card-rule {
+        width: 32px;
+        height: 1px;
+        background: var(--rule-gold);
+        margin-bottom: clamp(20px, 3vw, 28px);
+        transition: width 0.4s var(--ease);
+        flex-shrink: 0;
+      }
+      .principle-card:hover .card-rule {
+        width: 56px;
+      }
+
+      /* Body copy */
+      .card-body {
+        font-size: clamp(0.88rem, 1vw, 0.95rem);
+        line-height: 1.85;
+        color: var(--muted);
+        font-weight: 300;
+        flex: 1;
+      }
+
+      /* Bottom label — what this principle protects */
+      .card-footer {
+        margin-top: clamp(32px, 4.5vw, 52px);
+        padding-top: clamp(16px, 2vw, 22px);
+        border-top: 1px solid var(--rule);
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .card-footer-dash {
+        width: 14px;
+        height: 1px;
+        background: var(--gold);
+        opacity: 0.5;
+        flex-shrink: 0;
+      }
+      .card-footer-label {
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: 0.62rem;
+        font-weight: 600;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--gold);
+        opacity: 0.7;
+      }
+
+      /* ══ BOTTOM STATEMENT BAR ══ */
+      .statement-bar {
+        position: relative;
+        z-index: 5;
+        border-top: 1px solid var(--rule);
+        padding: clamp(36px, 5vw, 64px) clamp(24px, 4vw, 56px);
+        display: grid;
+        grid-template-columns: 1fr auto;
+        align-items: center;
+        gap: clamp(32px, 5vw, 80px);
+      }
+      .statement-bar-left {
+        font-family: "DM Serif Display", serif;
+        font-style: italic;
+        font-weight: 400;
+        font-size: clamp(1.2rem, 2.2vw, 1.9rem);
+        line-height: 1.45;
+        color: rgba(244, 241, 236, 0.55);
+        max-width: 60ch;
+      }
+      .statement-bar-left strong {
+        color: var(--white);
+        font-style: normal;
+        font-family: "Barlow Condensed", sans-serif;
+        font-weight: 700;
+        font-size: 0.88em;
+        text-transform: uppercase;
+        letter-spacing: 0.02em;
+        -webkit-text-stroke: 0.5px var(--gold);
+      }
+      .statement-bar-right {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 14px;
+        flex-shrink: 0;
+      }
+      .btn {
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: 0.72rem;
+        font-weight: 600;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        padding: 13px 28px;
+        border: 1px solid transparent;
+        display: inline-flex;
+        align-items: center;
+        gap: 9px;
+        transition: all 0.35s var(--ease);
+        cursor: pointer;
+        white-space: nowrap;
+      }
+      .btn-solid {
+        background: var(--gold);
+        color: var(--navy);
+        border-color: var(--gold);
+      }
+      .btn-solid:hover {
+        background: var(--gold-lt);
+        border-color: var(--gold-lt);
+      }
+      .btn-line {
+        background: transparent;
+        color: var(--muted);
+        border-color: var(--rule);
+      }
+      .btn-line:hover {
+        border-color: var(--muted);
+        color: var(--white);
+      }
+
+      /* ══ SCROLL REVEAL ══ */
+      .reveal {
+        opacity: 0;
+        transform: translateY(20px);
+        transition:
+          opacity 0.9s var(--ease),
+          transform 0.9s var(--ease);
+      }
+      .reveal.in {
+        opacity: 1;
+        transform: none;
+      }
+      .rd1 {
+        transition-delay: 0.05s;
+      }
+      .rd2 {
+        transition-delay: 0.15s;
+      }
+      .rd3 {
+        transition-delay: 0.25s;
+      }
+      .rd4 {
+        transition-delay: 0.35s;
+      }
+      .rd5 {
+        transition-delay: 0.45s;
+      }
+
+      /* ══ RESPONSIVE ══ */
+      @media (max-width: 900px) {
+        .principles-header {
+          grid-template-columns: 1fr;
+          gap: 24px;
+        }
+        .header-right {
+          display: none;
+        }
+        .principles-grid {
+          grid-template-columns: 1fr;
+        }
+        .principle-card {
+          border-right: none;
+          border-bottom: 1px solid var(--rule);
+        }
+        .principle-card:last-child {
+          border-bottom: none;
+        }
+        .statement-bar {
+          grid-template-columns: 1fr;
+          gap: 28px;
+        }
+        .statement-bar-right {
+          align-items: flex-start;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .reveal {
+          opacity: 1;
+          transform: none;
+        }
+        .principle-card::before {
+          transition: none;
+        }
+        .card-rule {
+          transition: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section class="principles">
+      <!-- Section strip -->
+      <div class="section-strip">
+        <div class="ss-left">
+          <span class="ss-index">003</span>
+          <span class="ss-sep"></span>
+          <span class="ss-title">Three Principles</span>
+        </div>
+        <span class="ss-right">Section 003 / 006</span>
+      </div>
+
+      <!-- Header -->
+      <div class="principles-header">
+        <div class="header-left reveal">
+          <div class="header-eyebrow">
+            <span class="h-ey-num">003</span>
+            <span class="h-ey-dash"></span>
+            <span class="h-ey-text">What we will not compromise</span>
+          </div>
+          <h2 class="principles-heading">
+            <span class="ph-solid">Three</span>
+            <span class="ph-outline">positions.</span>
+            <span class="ph-serif">Non-negotiable.</span>
+          </h2>
+        </div>
+        <div class="header-right reveal rd2">
+          <p class="header-desc">
+            Every engagement is built on three positions that never move. They
+            are not marketing language — they define how this firm operates, and
+            what every client can expect without asking.
+          </p>
+        </div>
+      </div>
+
+      <div class="section-divider reveal"></div>
+
+      <!-- Cards -->
+      <div class="principles-grid">
+        <article class="principle-card reveal rd2">
+          <div class="card-numeral">I</div>
+          <h3 class="card-statement">
+            We do <span class="not">not</span><br />compete<br />on price.
+          </h3>
+          <div class="card-rule"></div>
+          <p class="card-body">
+            Cheap accounting creates expensive problems. Missed deadlines,
+            incorrect filings, reactive advice — these carry real costs that
+            dwarf any fee saving. We price for the value delivered: certainty,
+            accuracy, and strategic advantage that compounds over time.
+          </p>
+          <div class="card-footer">
+            <span class="card-footer-dash"></span>
+            <span class="card-footer-label">Protects: Long-term value</span>
+          </div>
+        </article>
+
+        <article class="principle-card reveal rd3">
+          <div class="card-numeral">II</div>
+          <h3 class="card-statement">
+            We do <span class="not">not</span><br />sell<br />hours.
+          </h3>
+          <div class="card-rule"></div>
+          <p class="card-body">
+            Hourly billing creates misaligned incentives. It rewards slow work
+            and penalises clients for asking questions. Every engagement is
+            scoped for specific, guaranteed outcomes — fixed-fee, fully defined,
+            and confirmed in writing before any work begins.
+          </p>
+          <div class="card-footer">
+            <span class="card-footer-dash"></span>
+            <span class="card-footer-label">Protects: Cost certainty</span>
+          </div>
+        </article>
+
+        <article class="principle-card reveal rd4">
+          <div class="card-numeral">III</div>
+          <h3 class="card-statement">
+            We do <span class="not">not</span><br />react to<br />problems.
+          </h3>
+          <div class="card-rule"></div>
+          <p class="card-body">
+            Reactive accounting is not accounting — it is damage control. The
+            four-layer quality structure identifies and resolves issues long
+            before they reach the client or HMRC. Every deadline is met in
+            advance. Every risk is surfaced early.
+          </p>
+          <div class="card-footer">
+            <span class="card-footer-dash"></span>
+            <span class="card-footer-label"
+              >Protects: Compliance & peace of mind</span
+            >
+          </div>
+        </article>
+      </div>
+
+      <!-- Bottom statement bar -->
+      <div class="statement-bar reveal rd5">
+        <p class="statement-bar-left">
+          These are not aspirational values.<br />
+          They are <strong>operational realities</strong> — built into every
+          process, every review layer, and every engagement letter we issue.
+        </p>
+        <div class="statement-bar-right">
+          <a href="/contact/" class="btn btn-solid"
+            >Book a Conversation &rarr;</a
+          >
+          <a href="/what-we-do-well/" class="btn btn-line"
+            >See How We Work &rarr;</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <script>
+      const io = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              e.target.classList.add("in");
+              io.unobserve(e.target);
+            }
+          });
+        },
+        { threshold: 0.1, rootMargin: "0px 0px -40px 0px" },
+      );
+      document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+    </script>
+  </body>
+</html>

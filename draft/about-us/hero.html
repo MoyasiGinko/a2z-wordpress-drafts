@@ -1,0 +1,741 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>A2Z Accounting Solutions</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@200;300;400;600;700;800&family=Barlow:wght@300;400;500&family=DM+Serif+Display:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --navy: #070f1c;
+        --navy-2: #0b1627;
+        --navy-3: #101e33;
+        --gold: #c9a070;
+        --gold-lt: #dbb98a;
+        --white: #f4f1ec;
+        --muted: rgba(244, 241, 236, 0.38);
+        --dim: rgba(244, 241, 236, 0.14);
+        --rule: rgba(244, 241, 236, 0.08);
+        --ease: cubic-bezier(0.22, 1, 0.36, 1);
+        --col: calc(100% / 12);
+      }
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html,
+      body {
+        min-height: 100%;
+        height: 100%;
+      }
+      body {
+        background: var(--navy);
+        font-family: "Barlow", sans-serif;
+        color: var(--white);
+        overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
+      }
+      img {
+        display: block;
+        max-width: 100%;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      /* ══ HERO ══ */
+      .hero {
+        min-height: 100svh;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        background: var(--navy);
+      }
+
+      /* ── Exposed column grid lines ── */
+      .grid-lines {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        pointer-events: none;
+      }
+      .grid-lines span {
+        border-left: 1px solid var(--rule);
+      }
+      .grid-lines span:last-child {
+        border-right: 1px solid var(--rule);
+      }
+
+      /* ── Horizontal tick marks ── */
+      .h-ticks {
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        pointer-events: none;
+      }
+      .h-tick {
+        position: absolute;
+        left: 0;
+        right: 0;
+        display: flex;
+        align-items: center;
+        gap: 0;
+      }
+      .h-tick::before {
+        content: attr(data-n);
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: 0.6rem;
+        font-weight: 300;
+        letter-spacing: 0.12em;
+        color: var(--dim);
+        padding: 0 10px;
+        min-width: 40px;
+        text-align: right;
+      }
+      .h-tick::after {
+        content: "";
+        flex: 1;
+        height: 1px;
+        background: var(--rule);
+      }
+
+      /* ── Top strip ── */
+      .hero-strip {
+        position: relative;
+        z-index: 10;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 clamp(24px, 4vw, 56px);
+        height: 52px;
+        border-bottom: 1px solid var(--rule);
+        opacity: 0;
+        animation: aFade 0.6s var(--ease) 0.05s forwards;
+      }
+      .strip-left {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+      }
+      .strip-logo {
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: 0.75rem;
+        font-weight: 600;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: rgba(244, 241, 236, 0.5);
+      }
+      .strip-sep {
+        width: 1px;
+        height: 16px;
+        background: var(--rule);
+      }
+      .strip-tag {
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: 0.68rem;
+        font-weight: 400;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--gold);
+      }
+      .strip-right {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+      .strip-loc {
+        font-size: 0.68rem;
+        font-weight: 300;
+        letter-spacing: 0.1em;
+        color: var(--muted);
+      }
+      .strip-cta {
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: 0.68rem;
+        font-weight: 600;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        padding: 7px 16px;
+        border: 1px solid rgba(201, 160, 112, 0.35);
+        color: var(--gold);
+        transition: all 0.3s var(--ease);
+      }
+      .strip-cta:hover {
+        background: var(--gold);
+        color: var(--navy);
+        border-color: var(--gold);
+      }
+
+      /* ══ MAIN BODY ══ */
+      .hero-body {
+        position: relative;
+        z-index: 5;
+        flex: 1;
+        display: grid;
+        /* 5 cols portrait | 1 col gutter | 6 cols type */
+        grid-template-columns: 5fr 1px 7fr;
+        align-items: stretch;
+      }
+
+      /* ── Portrait column ── */
+      .col-portrait {
+        position: relative;
+        overflow: hidden;
+        border-right: 1px solid var(--rule);
+        opacity: 0;
+        animation: aSlideRight 0.9s var(--ease) 0.2s forwards;
+      }
+      .portrait-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: 50% 12%;
+        filter: contrast(1.1) saturate(0.55) brightness(0.75);
+        display: block;
+      }
+      /* heavy crop overlay — documentary feel */
+      .portrait-overlay {
+        position: absolute;
+        inset: 0;
+        background:
+          linear-gradient(to right, transparent 50%, var(--navy) 100%),
+          linear-gradient(to top, var(--navy) 0%, transparent 30%);
+        pointer-events: none;
+      }
+      /* annotation label on portrait */
+      .portrait-annotation {
+        position: absolute;
+        bottom: clamp(20px, 3vw, 36px);
+        left: clamp(16px, 2.5vw, 28px);
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        opacity: 0;
+        animation: aFade 0.8s var(--ease) 1s forwards;
+      }
+      .ann-line {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .ann-dash {
+        width: 18px;
+        height: 1px;
+        background: var(--gold);
+        flex-shrink: 0;
+      }
+      .ann-text {
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: 0.65rem;
+        font-weight: 400;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--gold);
+      }
+      .ann-name {
+        font-family: "DM Serif Display", serif;
+        font-style: italic;
+        font-size: clamp(0.95rem, 1.4vw, 1.2rem);
+        color: var(--white);
+        line-height: 1.2;
+      }
+
+      /* year watermark inside portrait col */
+      .portrait-year {
+        position: absolute;
+        top: clamp(16px, 2.5vw, 28px);
+        right: clamp(16px, 2.5vw, 24px);
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: 0.62rem;
+        font-weight: 300;
+        letter-spacing: 0.2em;
+        color: var(--dim);
+        writing-mode: vertical-rl;
+        text-transform: uppercase;
+      }
+
+      /* ── Gutter col ── */
+      .col-gutter {
+        background: var(--rule);
+        width: 1px;
+      }
+
+      /* ── Type column ── */
+      .col-type {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: clamp(32px, 5vw, 64px) clamp(28px, 5vw, 64px)
+          clamp(28px, 4vw, 48px);
+        overflow: hidden;
+      }
+
+      /* giant background number */
+      .type-bg-num {
+        position: absolute;
+        top: -0.1em;
+        right: -0.05em;
+        font-family: "Barlow Condensed", sans-serif;
+        font-weight: 800;
+        font-size: clamp(180px, 28vw, 340px);
+        line-height: 1;
+        color: rgba(244, 241, 236, 0.025);
+        pointer-events: none;
+        user-select: none;
+        letter-spacing: -0.04em;
+      }
+
+      /* Eyebrow */
+      .eyebrow {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: clamp(28px, 5vw, 56px);
+        opacity: 0;
+        animation: aSlideLeft 0.8s var(--ease) 0.45s forwards;
+      }
+      .ey-num {
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: 0.6rem;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        color: var(--dim);
+      }
+      .ey-dash {
+        width: 24px;
+        height: 1px;
+        background: rgba(201, 160, 112, 0.4);
+        flex-shrink: 0;
+      }
+      .ey-text {
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: 0.68rem;
+        font-weight: 400;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: rgba(244, 241, 236, 0.45);
+      }
+
+      /* ── The headline — condensed grotesque, slamming ── */
+      .hero-headline {
+        position: relative;
+        z-index: 2;
+      }
+      .hl {
+        display: block;
+        font-family: "Barlow Condensed", sans-serif;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: -0.02em;
+        line-height: 0.87;
+        opacity: 0;
+      }
+      .hl-1 {
+        font-size: clamp(4.5rem, 11vw, 10rem);
+        color: var(--white);
+        animation: aSlideLeft 0.8s var(--ease) 0.55s forwards;
+      }
+      .hl-2 {
+        font-size: clamp(4.5rem, 11vw, 10rem);
+        /* outlined stroke text */
+        -webkit-text-stroke: 1.5px var(--gold);
+        color: transparent;
+        animation: aSlideLeft 0.8s var(--ease) 0.68s forwards;
+      }
+      .hl-3 {
+        font-size: clamp(4.5rem, 11vw, 10rem);
+        color: var(--white);
+        animation: aSlideLeft 0.8s var(--ease) 0.8s forwards;
+      }
+      /* serif italic contrast word inline */
+      .hl-serif {
+        font-family: "DM Serif Display", serif;
+        font-weight: 400;
+        font-style: italic;
+        -webkit-text-stroke: 0;
+        color: var(--gold);
+        font-size: 0.88em;
+        text-transform: none;
+        letter-spacing: -0.01em;
+      }
+
+      /* ── Middle: sub copy + rule ── */
+      .hero-mid {
+        opacity: 0;
+        animation: aFade 0.8s var(--ease) 1s forwards;
+      }
+      .hero-rule-line {
+        width: clamp(40px, 6vw, 80px);
+        height: 1px;
+        background: linear-gradient(
+          to right,
+          var(--gold),
+          rgba(201, 160, 112, 0.2)
+        );
+        margin-bottom: clamp(16px, 2.5vw, 24px);
+      }
+      .hero-sub {
+        font-size: clamp(0.85rem, 1vw, 0.95rem);
+        line-height: 1.88;
+        color: var(--muted);
+        font-weight: 300;
+        max-width: 44ch;
+      }
+
+      /* ── Bottom: stats + CTAs ── */
+      .hero-foot {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        align-items: end;
+        gap: 32px;
+        opacity: 0;
+        animation: aFade 0.8s var(--ease) 1.15s forwards;
+      }
+      .stats {
+        display: flex;
+        gap: 0;
+        border-top: 1px solid var(--rule);
+      }
+      .stat {
+        padding: clamp(10px, 1.5vw, 16px) clamp(14px, 2vw, 24px) 0 0;
+        margin-right: clamp(14px, 2vw, 24px);
+        border-top: 1px solid transparent;
+        transition: border-color 0.3s;
+        position: relative;
+      }
+      .stat::before {
+        content: "";
+        position: absolute;
+        top: -1px;
+        left: 0;
+        width: 0;
+        height: 1px;
+        background: var(--gold);
+        transition: width 0.5s var(--ease);
+      }
+      .stat:hover::before {
+        width: 100%;
+      }
+      .stat-val {
+        font-family: "Barlow Condensed", sans-serif;
+        font-weight: 700;
+        font-size: clamp(1.1rem, 1.8vw, 1.5rem);
+        color: var(--white);
+        letter-spacing: 0.02em;
+        line-height: 1;
+        margin-bottom: 4px;
+      }
+      .stat-lbl {
+        font-size: 0.62rem;
+        font-weight: 400;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--dim);
+      }
+      .hero-btns {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+      }
+      .btn {
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: 0.7rem;
+        font-weight: 600;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        padding: 12px 24px;
+        border: 1px solid transparent;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        transition: all 0.35s var(--ease);
+        cursor: pointer;
+        white-space: nowrap;
+      }
+      .btn-solid {
+        background: var(--gold);
+        color: var(--navy);
+        border-color: var(--gold);
+      }
+      .btn-solid:hover {
+        background: var(--gold-lt);
+        border-color: var(--gold-lt);
+      }
+      .btn-line {
+        background: transparent;
+        color: var(--muted);
+        border-color: var(--rule);
+      }
+      .btn-line:hover {
+        border-color: var(--muted);
+        color: var(--white);
+      }
+
+      /* ══ BOTTOM TICKER ══ */
+      .ticker-wrap {
+        position: relative;
+        z-index: 10;
+        height: 36px;
+        border-top: 1px solid var(--rule);
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        opacity: 0;
+        animation: aFade 0.6s var(--ease) 1.4s forwards;
+      }
+      .ticker-track {
+        display: flex;
+        gap: 0;
+        white-space: nowrap;
+        animation: tickerScroll 22s linear infinite;
+      }
+      .ticker-item {
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: 0.65rem;
+        font-weight: 400;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--dim);
+        padding: 0 40px;
+        flex-shrink: 0;
+      }
+      .ticker-item em {
+        color: var(--gold);
+        font-style: normal;
+      }
+      @keyframes tickerScroll {
+        from {
+          transform: translateX(0);
+        }
+        to {
+          transform: translateX(-50%);
+        }
+      }
+
+      /* ══ KEYFRAMES ══ */
+      @keyframes aFade {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      @keyframes aSlideLeft {
+        from {
+          opacity: 0;
+          transform: translateX(32px);
+        }
+        to {
+          opacity: 1;
+          transform: none;
+        }
+      }
+      @keyframes aSlideRight {
+        from {
+          opacity: 0;
+          transform: translateX(-20px);
+        }
+        to {
+          opacity: 1;
+          transform: none;
+        }
+      }
+
+      /* ══ RESPONSIVE ══ */
+      @media (max-width: 900px) {
+        .hero-body {
+          grid-template-columns: 1fr;
+          grid-template-rows: auto 1fr;
+        }
+        .col-portrait {
+          height: clamp(260px, 55vw, 400px);
+          border-right: none;
+          border-bottom: 1px solid var(--rule);
+        }
+        .col-gutter {
+          display: none;
+        }
+        .col-type {
+          padding: clamp(28px, 5vw, 48px) clamp(20px, 5vw, 40px);
+        }
+        .hl-1,
+        .hl-2,
+        .hl-3 {
+          font-size: clamp(3.2rem, 13vw, 7rem);
+        }
+        .hero-foot {
+          grid-template-columns: 1fr;
+          gap: 20px;
+        }
+        .hero-btns {
+          justify-content: flex-start;
+        }
+        .grid-lines {
+          display: none;
+        }
+        .h-ticks {
+          display: none;
+        }
+        .type-bg-num {
+          display: none;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.01ms !important;
+        }
+        .hero-strip,
+        .col-portrait,
+        .eyebrow,
+        .hl,
+        .hero-mid,
+        .hero-foot,
+        .portrait-annotation,
+        .ticker-wrap {
+          opacity: 1;
+          transform: none;
+        }
+        .ticker-track {
+          animation: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section class="hero">
+      <!-- Exposed grid -->
+
+      <!-- Main body -->
+      <div class="hero-body">
+        <!-- Portrait -->
+        <div class="col-portrait">
+          <img
+            class="portrait-img"
+            src="https://a2zaccounting.co.uk/wp-content/uploads/2026/04/srahman.png"
+            alt="Shabbir Rahman FCCA, Founder and Chief Executive of A2Z Accounting Solutions"
+            width="800"
+            height="1100"
+          />
+          <div class="portrait-overlay"></div>
+          <div class="portrait-year">Founded · 2018</div>
+          <div class="portrait-annotation">
+            <div class="ann-line">
+              <span class="ann-dash"></span>
+              <span class="ann-text">Founder &amp; Chief Executive</span>
+            </div>
+            <div class="ann-name">Shabbir Rahman, FCCA</div>
+          </div>
+        </div>
+
+        <div class="col-gutter"></div>
+
+        <!-- Type -->
+        <div class="col-type">
+          <div class="type-bg-num" aria-hidden="true">A2Z</div>
+          <div>
+            <h1 class="hero-headline">
+              <span class="hl hl-1">The</span>
+              <span class="hl hl-2">standard</span>
+              <span class="hl hl-3"
+                ><span class="hl-serif">begins</span> here.</span
+              >
+            </h1>
+          </div>
+
+          <div class="hero-mid">
+            <div class="hero-rule-line"></div>
+            <p class="hero-sub">
+              A fully managed finance function built on Big&nbsp;4 rigour —
+              specialist departments, four independent quality-review layers,
+              and FCCA director-level accountability on every engagement.
+            </p>
+          </div>
+
+          <div class="hero-foot">
+            <div class="stats">
+              <div class="stat">
+                <div class="stat-val">FCCA</div>
+                <div class="stat-lbl">Qualification</div>
+              </div>
+              <div class="stat">
+                <div class="stat-val">4</div>
+                <div class="stat-lbl">Review Layers</div>
+              </div>
+              <div class="stat">
+                <div class="stat-val">3</div>
+                <div class="stat-lbl">Guarantees</div>
+              </div>
+              <div class="stat">
+                <div class="stat-val">100%</div>
+                <div class="stat-lbl">Fixed-Fee</div>
+              </div>
+            </div>
+            <div class="hero-btns">
+              <a href="/contact/" class="btn btn-solid"
+                >Book a Conversation &rarr;</a
+              >
+              <a href="/what-we-do-well/" class="btn btn-line"
+                >Our Approach &rarr;</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ticker -->
+      <div class="ticker-wrap" aria-hidden="true">
+        <div class="ticker-track">
+          <span class="ticker-item">FCCA Chartered Accountants</span>
+          <span class="ticker-item">·</span>
+          <span class="ticker-item"><em>Four-Layer Quality Control</em></span>
+          <span class="ticker-item">·</span>
+          <span class="ticker-item">Specialist Departments</span>
+          <span class="ticker-item">·</span>
+          <span class="ticker-item"><em>Three Written Guarantees</em></span>
+          <span class="ticker-item">·</span>
+          <span class="ticker-item">Aberdeen, Scotland</span>
+          <span class="ticker-item">·</span>
+          <span class="ticker-item"><em>100% Fixed-Fee Engagements</em></span>
+          <span class="ticker-item">·</span>
+          <span class="ticker-item">Big 4 Discipline</span>
+          <span class="ticker-item">·</span>
+          <!-- duplicate for seamless loop -->
+          <span class="ticker-item">FCCA Chartered Accountants</span>
+          <span class="ticker-item">·</span>
+          <span class="ticker-item"><em>Four-Layer Quality Control</em></span>
+          <span class="ticker-item">·</span>
+          <span class="ticker-item">Specialist Departments</span>
+          <span class="ticker-item">·</span>
+          <span class="ticker-item"><em>Three Written Guarantees</em></span>
+          <span class="ticker-item">·</span>
+          <span class="ticker-item">Aberdeen, Scotland</span>
+          <span class="ticker-item">·</span>
+          <span class="ticker-item"><em>100% Fixed-Fee Engagements</em></span>
+          <span class="ticker-item">·</span>
+          <span class="ticker-item">Big 4 Discipline</span>
+          <span class="ticker-item">·</span>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

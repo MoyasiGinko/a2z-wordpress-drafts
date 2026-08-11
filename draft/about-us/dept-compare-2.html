@@ -1,0 +1,1041 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Departments — 3 New Options · A2Z</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #f8f6f2;
+        --bg-dark: #0c0c0a;
+        --bg-mid: #141410;
+        --ink: #0c0c0a;
+        --ink-60: rgba(12, 12, 10, 0.6);
+        --ink-10: rgba(12, 12, 10, 0.08);
+        --gold: #b08d57;
+        --gold-lt: #c9a96e;
+        --white: #ffffff;
+        --serif: "Cormorant Garamond", Georgia, serif;
+        --sans: "DM Sans", system-ui, sans-serif;
+        --mono: "DM Mono", monospace;
+        --ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      }
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+      html { font-size: 16px; scroll-behavior: smooth; }
+      body {
+        font-family: var(--sans);
+        font-weight: 300;
+        color: var(--ink);
+        background: var(--bg-dark);
+        -webkit-font-smoothing: antialiased;
+        overflow-x: hidden;
+      }
+
+      /* ─── Shared chooser chrome ─── */
+      .chooser-header {
+        background: var(--bg-dark);
+        border-bottom: 1px solid rgba(255,255,255,0.06);
+        padding: clamp(48px,7vw,72px) clamp(24px,5vw,72px);
+      }
+      .chooser-header-inner {
+        max-width: 1160px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr max-content;
+        gap: 48px;
+        align-items: end;
+      }
+      .ch-eyebrow {
+        font-family: var(--mono);
+        font-size: 0.62rem;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--gold);
+        opacity: 0.7;
+        display: block;
+        margin-bottom: 14px;
+      }
+      .ch-title {
+        font-family: var(--serif);
+        font-weight: 300;
+        font-style: italic;
+        font-size: clamp(2rem,4vw,3.2rem);
+        color: var(--white);
+        line-height: 1.1;
+      }
+      .ch-sub {
+        font-size: 0.88rem;
+        color: rgba(255,255,255,0.32);
+        font-weight: 300;
+        line-height: 1.75;
+        max-width: 30ch;
+        text-align: right;
+      }
+      .opt-bar {
+        background: var(--bg-mid);
+        padding: 18px clamp(24px,5vw,72px);
+        border-top: 1px solid rgba(255,255,255,0.05);
+        border-bottom: 1px solid rgba(255,255,255,0.05);
+      }
+      .opt-bar-inner {
+        max-width: 1160px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        gap: 18px;
+      }
+      .opt-badge {
+        font-family: var(--mono);
+        font-size: 0.6rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--bg-dark);
+        background: var(--gold);
+        padding: 6px 14px;
+        flex-shrink: 0;
+      }
+      .opt-desc {
+        font-family: var(--serif);
+        font-style: italic;
+        font-size: 1rem;
+        color: rgba(255,255,255,0.42);
+        font-weight: 300;
+      }
+
+      /* ─── Shared section head ─── */
+      .s-head {
+        display: grid;
+        grid-template-columns: 1fr max-content;
+        gap: clamp(40px,6vw,100px);
+        align-items: end;
+        margin-bottom: clamp(60px,8vw,96px);
+        padding-bottom: clamp(36px,5vw,56px);
+      }
+      .s-head.dark  { border-bottom: 1px solid rgba(255,255,255,0.07); }
+      .s-head.light { border-bottom: 1px solid var(--ink-10); }
+      .s-eyebrow {
+        font-family: var(--mono);
+        font-size: 0.68rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--gold);
+        display: block;
+        margin-bottom: 18px;
+      }
+      .s-head h2 {
+        font-family: var(--serif);
+        font-weight: 300;
+        font-size: clamp(2.4rem,4.5vw,4.2rem);
+        line-height: 1.05;
+        letter-spacing: -0.02em;
+      }
+      .s-head h2 em { font-style: italic; color: var(--gold); }
+      .dark  .s-head-title { color: var(--white); }
+      .light .s-head-title { color: var(--ink); }
+      .s-head-right p {
+        font-size: 1.05rem;
+        line-height: 1.85;
+        font-weight: 300;
+        max-width: 34ch;
+        text-align: right;
+      }
+      .dark  .s-head-right p { color: rgba(255,255,255,0.48); }
+      .light .s-head-right p { color: var(--ink-60); }
+
+      /* ══════════════════════════════════════════
+         OPTION D — GALLERY / MUSEUM EXHIBITS
+         Corner-bracket plates, growing gold rail
+      ══════════════════════════════════════════ */
+      .opt-d {
+        background: var(--bg);
+        padding: clamp(80px,11vw,120px) clamp(24px,5vw,72px);
+      }
+      .opt-d-inner { max-width: 1160px; margin: 0 auto; }
+
+      .d-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        border-left: 1px solid var(--ink-10);
+        border-top: 1px solid var(--ink-10);
+      }
+      .d-exhibit {
+        position: relative;
+        background: var(--bg);
+        padding: clamp(52px,6vw,76px) clamp(36px,4vw,52px) clamp(60px,7vw,84px);
+        border-right: 1px solid var(--ink-10);
+        border-bottom: 1px solid var(--ink-10);
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        transition: background 0.6s var(--ease);
+      }
+      .d-exhibit:hover { background: #f4f2ed; }
+
+      /* Faint background numeral watermark */
+      .d-exhibit-wm {
+        position: absolute;
+        bottom: -44px; right: -8px;
+        font-family: var(--serif);
+        font-style: italic;
+        font-weight: 300;
+        font-size: clamp(10rem,16vw,20rem);
+        line-height: 1;
+        color: transparent;
+        -webkit-text-stroke: 1px rgba(12,12,10,0.05);
+        pointer-events: none;
+        user-select: none;
+        z-index: 0;
+        transition: -webkit-text-stroke-color 0.65s var(--ease);
+      }
+      .d-exhibit:hover .d-exhibit-wm {
+        -webkit-text-stroke-color: rgba(176,141,87,0.1);
+      }
+
+      /* Corner-bracket exhibit plate */
+      .d-plate {
+        width: clamp(64px,6vw,80px);
+        height: clamp(64px,6vw,80px);
+        position: relative;
+        margin-bottom: clamp(32px,4vw,48px);
+        flex-shrink: 0;
+        z-index: 1;
+      }
+      .d-plate::before,
+      .d-plate::after {
+        content: "";
+        position: absolute;
+        width: 48%;
+        height: 48%;
+        border: 1px solid rgba(176,141,87,0.3);
+        transition: border-color 0.5s var(--ease), width 0.5s var(--ease), height 0.5s var(--ease);
+      }
+      .d-plate::before { top: 0; left: 0; border-right: none; border-bottom: none; }
+      .d-plate::after  { bottom: 0; right: 0; border-left: none; border-top: none; }
+      .d-exhibit:hover .d-plate::before,
+      .d-exhibit:hover .d-plate::after {
+        border-color: var(--gold);
+        width: 56%;
+        height: 56%;
+      }
+      .d-plate-inner {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2px;
+      }
+      .d-plate-label {
+        font-family: var(--mono);
+        font-size: 0.46rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--gold);
+        opacity: 0.45;
+      }
+      .d-plate-num {
+        font-family: var(--serif);
+        font-style: italic;
+        font-size: 1.6rem;
+        color: var(--gold);
+        font-weight: 300;
+        line-height: 1;
+      }
+
+      /* Dept title */
+      .d-exhibit h3 {
+        font-family: var(--serif);
+        font-weight: 300;
+        font-style: italic;
+        font-size: clamp(1.55rem,2.3vw,2.15rem);
+        color: var(--ink);
+        line-height: 1.2;
+        letter-spacing: -0.015em;
+        margin-bottom: clamp(16px,2vw,22px);
+        position: relative; z-index: 1;
+      }
+      .d-exhibit-desc {
+        font-size: 0.9rem;
+        line-height: 1.82;
+        color: var(--ink-60);
+        font-weight: 300;
+        margin-bottom: clamp(26px,3.5vw,38px);
+        padding-bottom: clamp(22px,3vw,32px);
+        border-bottom: 1px solid var(--ink-10);
+        position: relative; z-index: 1;
+      }
+
+      /* Growing gold vertical rail */
+      .d-rail-wrap {
+        position: relative;
+        padding-left: 18px;
+        flex: 1;
+        z-index: 1;
+      }
+      .d-rail-wrap::before {
+        content: "";
+        position: absolute;
+        left: 0; top: 0;
+        width: 1px; height: 0;
+        background: linear-gradient(to bottom, var(--gold) 0%, rgba(176,141,87,0) 100%);
+        transition: height 0.85s var(--ease);
+      }
+      .d-exhibit:hover .d-rail-wrap::before { height: 100%; }
+
+      .d-services {
+        list-style: none;
+        counter-reset: ds;
+      }
+      .d-services li {
+        counter-increment: ds;
+        display: grid;
+        grid-template-columns: 28px 1fr;
+        gap: 0 8px;
+        align-items: baseline;
+        padding: 10px 0;
+        font-size: 0.84rem;
+        line-height: 1.5;
+        color: rgba(12,12,10,0.32);
+        font-weight: 300;
+        border-bottom: 1px solid var(--ink-10);
+        transition: color 0.4s var(--ease);
+      }
+      .d-services li:last-child { border-bottom: 0; }
+      .d-exhibit:hover .d-services li { color: var(--ink-60); }
+      .d-services li::before {
+        content: "0" counter(ds);
+        font-family: var(--mono);
+        font-size: 0.56rem;
+        letter-spacing: 0.08em;
+        color: var(--gold);
+        opacity: 0.45;
+        display: block;
+        padding-top: 2px;
+      }
+
+      /* ══════════════════════════════════════════
+         OPTION E — CLASSIFIED TERMINAL
+         Intelligence-file aesthetic, scan line, data fields
+      ══════════════════════════════════════════ */
+      .opt-e {
+        background: #060604;
+        padding: clamp(80px,11vw,120px) clamp(24px,5vw,72px);
+      }
+      .opt-e-inner { max-width: 1160px; margin: 0 auto; }
+
+      .e-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2px;
+        background: rgba(176,141,87,0.07);
+      }
+      .e-file {
+        background: #080806;
+        padding: clamp(40px,5vw,60px) clamp(28px,3.5vw,44px);
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+        transition: background 0.4s var(--ease);
+      }
+      .e-file:hover { background: #0a0907; }
+      .e-file.open   { background: #0c0b09; }
+
+      /* Gold scan line sweeping on hover */
+      .e-file::before {
+        content: "";
+        position: absolute;
+        left: 0; top: 0;
+        width: 100%; height: 1px;
+        background: linear-gradient(to right, transparent 0%, rgba(176,141,87,0.7) 50%, transparent 100%);
+        opacity: 0;
+        pointer-events: none;
+        z-index: 6;
+      }
+      .e-file.scanning::before {
+        animation: escan 1.1s var(--ease) forwards;
+        opacity: 1;
+      }
+      @keyframes escan {
+        0%   { top: 0; opacity: 0.9; }
+        80%  { opacity: 0.5; }
+        100% { top: 100%; opacity: 0; }
+      }
+
+      /* Gold left accent bar on open */
+      .e-file::after {
+        content: "";
+        position: absolute;
+        left: 0; top: 0;
+        width: 2px; height: 0;
+        background: linear-gradient(to bottom, var(--gold), rgba(176,141,87,0.2));
+        transition: height 0.6s var(--ease);
+        z-index: 2;
+      }
+      .e-file.open::after { height: 100%; }
+
+      /* File header status bar */
+      .e-status-bar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 30px;
+        padding-bottom: 14px;
+        border-bottom: 1px solid rgba(176,141,87,0.1);
+      }
+      .e-file-ref {
+        font-family: var(--mono);
+        font-size: 0.52rem;
+        letter-spacing: 0.12em;
+        color: rgba(176,141,87,0.4);
+      }
+      .e-live {
+        display: flex;
+        align-items: center;
+        gap: 7px;
+        font-family: var(--mono);
+        font-size: 0.5rem;
+        letter-spacing: 0.18em;
+        color: #5ecb8a;
+        opacity: 0.65;
+      }
+      .e-live-dot {
+        width: 5px; height: 5px;
+        border-radius: 50%;
+        background: #5ecb8a;
+        animation: edot 2.8s ease infinite;
+      }
+      @keyframes edot {
+        0%, 100% { opacity: 0.65; }
+        50%       { opacity: 0.12; }
+      }
+
+      /* Dept code + heading */
+      .e-dept-code {
+        font-family: var(--mono);
+        font-size: 0.58rem;
+        letter-spacing: 0.22em;
+        color: rgba(176,141,87,0.5);
+        display: block;
+        margin-bottom: 12px;
+      }
+      .e-file h3 {
+        font-family: var(--serif);
+        font-style: italic;
+        font-weight: 300;
+        font-size: clamp(1.55rem,2.3vw,2.1rem);
+        color: rgba(255,255,255,0.78);
+        line-height: 1.2;
+        margin-bottom: 16px;
+      }
+      .e-brief {
+        font-family: var(--mono);
+        font-size: 0.74rem;
+        line-height: 1.75;
+        color: rgba(255,255,255,0.22);
+        margin-bottom: 26px;
+        padding-bottom: 22px;
+        border-bottom: 1px solid rgba(176,141,87,0.08);
+        letter-spacing: 0.01em;
+      }
+
+      /* Expand prompt */
+      .e-prompt {
+        font-family: var(--mono);
+        font-size: 0.56rem;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: rgba(176,141,87,0.3);
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        transition: color 0.3s;
+        margin-bottom: 0;
+      }
+      .e-prompt::before {
+        content: "▸";
+        font-size: 0.7rem;
+        transition: transform 0.35s var(--ease), color 0.3s;
+      }
+      .e-file.open .e-prompt { color: rgba(176,141,87,0.6); }
+      .e-file.open .e-prompt::before { transform: rotate(90deg); }
+
+      /* Data field list */
+      .e-fields {
+        list-style: none;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.6s var(--ease);
+        margin-top: 0;
+      }
+      .e-file.open .e-fields {
+        max-height: 380px;
+        margin-top: 20px;
+      }
+      .e-field {
+        display: grid;
+        grid-template-columns: 50px 1fr;
+        gap: 0 10px;
+        padding: 10px 0;
+        border-bottom: 1px solid rgba(255,255,255,0.03);
+        font-size: 0.78rem;
+        line-height: 1.45;
+      }
+      .e-field:last-child { border-bottom: 0; }
+      .e-f-key {
+        font-family: var(--mono);
+        font-size: 0.52rem;
+        letter-spacing: 0.07em;
+        color: rgba(176,141,87,0.38);
+        padding-top: 2px;
+        display: block;
+      }
+      .e-f-val {
+        font-family: var(--mono);
+        font-size: 0.73rem;
+        color: rgba(255,255,255,0.36);
+        letter-spacing: 0.01em;
+      }
+
+      /* Classified stamp on open */
+      .e-stamp {
+        position: absolute;
+        bottom: 28px; right: 24px;
+        font-family: var(--mono);
+        font-size: 0.52rem;
+        letter-spacing: 0.28em;
+        text-transform: uppercase;
+        color: var(--gold);
+        border: 1px solid rgba(176,141,87,0.28);
+        padding: 5px 10px;
+        transform: rotate(-9deg);
+        opacity: 0;
+        transition: opacity 0.4s 0.35s var(--ease);
+        pointer-events: none;
+      }
+      .e-file.open .e-stamp { opacity: 0.4; }
+
+      /* ══════════════════════════════════════════
+         OPTION F — SPLIT-FLAP DEPARTURE BOARD
+         Kinetic flip cells, airport-board aesthetic
+      ══════════════════════════════════════════ */
+      .opt-f {
+        background: #0e0d0b;
+        padding: clamp(80px,11vw,120px) clamp(24px,5vw,72px);
+      }
+      .opt-f-inner { max-width: 1160px; margin: 0 auto; }
+
+      .f-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        border: 1px solid rgba(255,255,255,0.07);
+        overflow: hidden;
+      }
+      .f-col {
+        border-right: 1px solid rgba(255,255,255,0.07);
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+      }
+      .f-col:last-child { border-right: 0; }
+
+      /* Header tab — click target */
+      .f-header {
+        position: relative;
+        padding: clamp(36px,4.5vw,52px) clamp(32px,4vw,48px) clamp(28px,3.5vw,40px);
+        border-bottom: 1px solid rgba(255,255,255,0.07);
+        transition: background 0.45s var(--ease);
+        flex-shrink: 0;
+      }
+      .f-col.active .f-header { background: rgba(176,141,87,0.04); }
+
+      /* Gold top sweep indicator */
+      .f-indicator {
+        position: absolute;
+        top: 0; left: 0;
+        width: 100%; height: 2px;
+        background: linear-gradient(to right, var(--gold) 0%, rgba(176,141,87,0.25) 55%, transparent 100%);
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.55s var(--ease);
+      }
+      .f-col.active .f-indicator { transform: scaleX(1); }
+
+      .f-header-idx {
+        font-family: var(--mono);
+        font-size: 0.6rem;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--gold);
+        opacity: 0.55;
+        display: block;
+        margin-bottom: 14px;
+      }
+      .f-header h3 {
+        font-family: var(--serif);
+        font-weight: 300;
+        font-style: italic;
+        font-size: clamp(1.6rem,2.4vw,2.25rem);
+        color: rgba(255,255,255,0.78);
+        line-height: 1.18;
+        letter-spacing: -0.015em;
+        margin-bottom: 12px;
+      }
+      .f-header-desc {
+        font-size: 0.85rem;
+        line-height: 1.78;
+        color: rgba(255,255,255,0.28);
+        font-weight: 300;
+      }
+      .f-click-hint {
+        margin-top: 18px;
+        font-family: var(--mono);
+        font-size: 0.54rem;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: rgba(176,141,87,0.3);
+        transition: color 0.3s;
+      }
+      .f-col.active .f-click-hint { color: rgba(176,141,87,0.65); }
+
+      /* Board — the flip cells */
+      .f-board {
+        padding: clamp(24px,3vw,36px) clamp(32px,4vw,48px) clamp(40px,5vw,56px);
+        flex: 1;
+        background: #0a0908;
+      }
+      .f-cell {
+        position: relative;
+        background: rgba(255,255,255,0.028);
+        border: 1px solid rgba(255,255,255,0.05);
+        border-top: none;
+        min-height: 52px;
+        display: flex;
+        align-items: center;
+        perspective: 500px;
+      }
+      .f-cell:first-child { border-top: 1px solid rgba(255,255,255,0.05); }
+
+      /* The split-flap mid-line */
+      .f-cell::before {
+        content: "";
+        position: absolute;
+        left: 0; right: 0;
+        top: calc(50% - 0.5px);
+        height: 1px;
+        background: rgba(0,0,0,0.55);
+        z-index: 3;
+        pointer-events: none;
+      }
+
+      /* Cell content — the text that flips in */
+      .f-cell-inner {
+        width: 100%;
+        padding: 14px 18px;
+        display: grid;
+        grid-template-columns: 28px 1fr;
+        gap: 0 10px;
+        align-items: baseline;
+        transform-origin: center top;
+        opacity: 0;
+        transform: rotateX(-88deg);
+        backface-visibility: hidden;
+        will-change: transform, opacity;
+      }
+      .f-cell-num {
+        font-family: var(--mono);
+        font-size: 0.55rem;
+        letter-spacing: 0.08em;
+        color: var(--gold);
+        opacity: 0.4;
+        padding-top: 2px;
+        display: block;
+      }
+      .f-cell-text {
+        font-size: 0.84rem;
+        line-height: 1.5;
+        color: rgba(255,255,255,0.52);
+        font-weight: 300;
+      }
+
+      /* Flip-in animation */
+      @keyframes flipIn {
+        0%   { opacity: 0; transform: rotateX(-88deg); }
+        35%  { opacity: 1; }
+        100% { opacity: 1; transform: rotateX(0deg); }
+      }
+      /* Flip-out animation (when becoming inactive) */
+      @keyframes flipOut {
+        0%   { opacity: 1; transform: rotateX(0deg); }
+        100% { opacity: 0; transform: rotateX(-88deg); }
+      }
+
+      .f-col.active .f-cell-inner {
+        animation: flipIn 0.5s var(--ease) both;
+      }
+      .f-col.was-active .f-cell-inner {
+        animation: flipOut 0.25s var(--ease) both;
+      }
+
+      /* Staggered delay for each cell */
+      .f-col.active   .f-cell:nth-child(1) .f-cell-inner { animation-delay: 0.04s; }
+      .f-col.active   .f-cell:nth-child(2) .f-cell-inner { animation-delay: 0.14s; }
+      .f-col.active   .f-cell:nth-child(3) .f-cell-inner { animation-delay: 0.24s; }
+      .f-col.active   .f-cell:nth-child(4) .f-cell-inner { animation-delay: 0.34s; }
+      .f-col.active   .f-cell:nth-child(5) .f-cell-inner { animation-delay: 0.44s; }
+      .f-col.active   .f-cell:nth-child(6) .f-cell-inner { animation-delay: 0.54s; }
+      .f-col.was-active .f-cell:nth-child(1) .f-cell-inner { animation-delay: 0s; }
+      .f-col.was-active .f-cell:nth-child(2) .f-cell-inner { animation-delay: 0.04s; }
+      .f-col.was-active .f-cell:nth-child(3) .f-cell-inner { animation-delay: 0.08s; }
+      .f-col.was-active .f-cell:nth-child(4) .f-cell-inner { animation-delay: 0.12s; }
+      .f-col.was-active .f-cell:nth-child(5) .f-cell-inner { animation-delay: 0.16s; }
+      .f-col.was-active .f-cell:nth-child(6) .f-cell-inner { animation-delay: 0.20s; }
+
+      /* Footer */
+      .chooser-footer {
+        background: var(--bg-mid);
+        border-top: 1px solid rgba(255,255,255,0.06);
+        padding: 36px clamp(24px,5vw,72px);
+        text-align: center;
+      }
+      .chooser-footer p {
+        font-family: var(--mono);
+        font-size: 0.62rem;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: rgba(255,255,255,0.2);
+      }
+
+      @media (max-width: 860px) {
+        .chooser-header-inner { grid-template-columns: 1fr; }
+        .ch-sub { text-align: left; max-width: 100%; }
+        .s-head { grid-template-columns: 1fr; }
+        .s-head-right p { text-align: left; }
+        .d-grid, .e-grid, .f-grid { grid-template-columns: 1fr; }
+      }
+    </style>
+  </head>
+  <body>
+
+    <header class="chooser-header">
+      <div class="chooser-header-inner">
+        <div>
+          <span class="ch-eyebrow">New Design Options · Round 2 · Departments · A2Z</span>
+          <h1 class="ch-title">Three new directions.<br /><em>More distinct.</em></h1>
+        </div>
+        <p class="ch-sub">D, E, F — all new visual languages. Try the interactions, then reply D, E, or F.</p>
+      </div>
+    </header>
+
+    <!-- ══════════════════════════
+         OPTION D — GALLERY
+    ══════════════════════════ -->
+    <div class="opt-bar">
+      <div class="opt-bar-inner">
+        <span class="opt-badge">Option D</span>
+        <span class="opt-desc">Gallery — corner-bracket exhibit plates on a light ground. Gold rail grows as you hover.</span>
+      </div>
+    </div>
+
+    <section class="opt-d">
+      <div class="opt-d-inner">
+        <div class="s-head light">
+          <div>
+            <span class="s-eyebrow">Specialist Departments</span>
+            <h2 class="s-head-title">Three specialists.<br /><em>One point of contact.</em></h2>
+          </div>
+          <div class="s-head-right">
+            <p>Generalist firms ask one accountant to do everything. We separate the disciplines — so each is handled by someone whose entire focus is that work.</p>
+          </div>
+        </div>
+
+        <div class="d-grid">
+          <article class="d-exhibit">
+            <div class="d-exhibit-wm">I</div>
+            <div class="d-plate">
+              <div class="d-plate-inner">
+                <span class="d-plate-label">Exhibit</span>
+                <span class="d-plate-num">I</span>
+              </div>
+            </div>
+            <h3>Payroll &amp; Billing</h3>
+            <p class="d-exhibit-desc">Full-service payroll and credit control — RTI, PAYE, pension auto-enrolment, and accounts receivable.</p>
+            <div class="d-rail-wrap">
+              <ul class="d-services">
+                <li>RTI submissions and PAYE management</li>
+                <li>Pension auto-enrolment administration</li>
+                <li>Credit control and aged-debtor reporting</li>
+                <li>P11D benefits-in-kind processing</li>
+                <li>Statutory sick pay and maternity calculations</li>
+                <li>HMRC correspondence and resolution</li>
+              </ul>
+            </div>
+          </article>
+          <article class="d-exhibit">
+            <div class="d-exhibit-wm">II</div>
+            <div class="d-plate">
+              <div class="d-plate-inner">
+                <span class="d-plate-label">Exhibit</span>
+                <span class="d-plate-num">II</span>
+              </div>
+            </div>
+            <h3>VAT &amp; Management Accounts</h3>
+            <p class="d-exhibit-desc">MTD-compliant bookkeeping, quarterly VAT returns, and regular management reporting in real time.</p>
+            <div class="d-rail-wrap">
+              <ul class="d-services">
+                <li>Monthly bookkeeping and reconciliation</li>
+                <li>Quarterly VAT returns (MTD-compliant)</li>
+                <li>Management accounts with commentary</li>
+                <li>Cash-flow forecasting and reporting</li>
+                <li>VAT scheme selection and optimisation</li>
+                <li>Making Tax Digital compliance</li>
+              </ul>
+            </div>
+          </article>
+          <article class="d-exhibit">
+            <div class="d-exhibit-wm">III</div>
+            <div class="d-plate">
+              <div class="d-plate-inner">
+                <span class="d-plate-label">Exhibit</span>
+                <span class="d-plate-num">III</span>
+              </div>
+            </div>
+            <h3>Year-End &amp; Tax</h3>
+            <p class="d-exhibit-desc">Annual accounts, Corporation Tax, self-assessment, and year-round strategic planning.</p>
+            <div class="d-rail-wrap">
+              <ul class="d-services">
+                <li>Statutory annual accounts preparation</li>
+                <li>CT600 Corporation Tax returns</li>
+                <li>Self-assessment personal tax returns</li>
+                <li>Proactive tax planning and structuring</li>
+                <li>Companies House filing and compliance</li>
+                <li>Research &amp; Development tax credit claims</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════
+         OPTION E — TERMINAL
+    ══════════════════════════ -->
+    <div class="opt-bar">
+      <div class="opt-bar-inner">
+        <span class="opt-badge">Option E</span>
+        <span class="opt-desc">Classified Terminal — click a file to open it. Scan line sweeps on hover. Data fields reveal.</span>
+      </div>
+    </div>
+
+    <section class="opt-e">
+      <div class="opt-e-inner">
+        <div class="s-head dark">
+          <div>
+            <span class="s-eyebrow">Specialist Departments</span>
+            <h2 class="s-head-title" style="color:var(--white)">Three specialists.<br /><em>One point of contact.</em></h2>
+          </div>
+          <div class="s-head-right">
+            <p>Generalist firms ask one accountant to do everything. We separate the disciplines — so each is handled by someone whose entire focus is that work.</p>
+          </div>
+        </div>
+
+        <div class="e-grid">
+          <div class="e-file" data-efile="0">
+            <div class="e-status-bar">
+              <span class="e-file-ref">FILE: A2Z-DEPT-001</span>
+              <span class="e-live"><span class="e-live-dot"></span>ACTIVE</span>
+            </div>
+            <span class="e-dept-code">DEPT · 01 // PAYROLL</span>
+            <h3>Payroll &amp; Billing</h3>
+            <p class="e-brief">Full-service payroll and credit control — RTI, PAYE, pension auto-enrolment, and accounts receivable.</p>
+            <p class="e-prompt">Access service index</p>
+            <ul class="e-fields">
+              <li class="e-field"><span class="e-f-key">SVC_01</span><span class="e-f-val">RTI submissions and PAYE management</span></li>
+              <li class="e-field"><span class="e-f-key">SVC_02</span><span class="e-f-val">Pension auto-enrolment administration</span></li>
+              <li class="e-field"><span class="e-f-key">SVC_03</span><span class="e-f-val">Credit control and aged-debtor reporting</span></li>
+              <li class="e-field"><span class="e-f-key">SVC_04</span><span class="e-f-val">P11D benefits-in-kind processing</span></li>
+              <li class="e-field"><span class="e-f-key">SVC_05</span><span class="e-f-val">Statutory sick pay and maternity calculations</span></li>
+              <li class="e-field"><span class="e-f-key">SVC_06</span><span class="e-f-val">HMRC correspondence and resolution</span></li>
+            </ul>
+            <div class="e-stamp">Verified</div>
+          </div>
+          <div class="e-file" data-efile="1">
+            <div class="e-status-bar">
+              <span class="e-file-ref">FILE: A2Z-DEPT-002</span>
+              <span class="e-live"><span class="e-live-dot"></span>ACTIVE</span>
+            </div>
+            <span class="e-dept-code">DEPT · 02 // VAT &amp; MGMT</span>
+            <h3>VAT &amp; Management Accounts</h3>
+            <p class="e-brief">MTD-compliant bookkeeping, quarterly VAT returns, and regular management reporting in real time.</p>
+            <p class="e-prompt">Access service index</p>
+            <ul class="e-fields">
+              <li class="e-field"><span class="e-f-key">SVC_01</span><span class="e-f-val">Monthly bookkeeping and reconciliation</span></li>
+              <li class="e-field"><span class="e-f-key">SVC_02</span><span class="e-f-val">Quarterly VAT returns (MTD-compliant)</span></li>
+              <li class="e-field"><span class="e-f-key">SVC_03</span><span class="e-f-val">Management accounts with commentary</span></li>
+              <li class="e-field"><span class="e-f-key">SVC_04</span><span class="e-f-val">Cash-flow forecasting and reporting</span></li>
+              <li class="e-field"><span class="e-f-key">SVC_05</span><span class="e-f-val">VAT scheme selection and optimisation</span></li>
+              <li class="e-field"><span class="e-f-key">SVC_06</span><span class="e-f-val">Making Tax Digital compliance</span></li>
+            </ul>
+            <div class="e-stamp">Verified</div>
+          </div>
+          <div class="e-file" data-efile="2">
+            <div class="e-status-bar">
+              <span class="e-file-ref">FILE: A2Z-DEPT-003</span>
+              <span class="e-live"><span class="e-live-dot"></span>ACTIVE</span>
+            </div>
+            <span class="e-dept-code">DEPT · 03 // YEAR-END</span>
+            <h3>Year-End &amp; Tax</h3>
+            <p class="e-brief">Annual accounts, Corporation Tax, self-assessment, and year-round strategic planning.</p>
+            <p class="e-prompt">Access service index</p>
+            <ul class="e-fields">
+              <li class="e-field"><span class="e-f-key">SVC_01</span><span class="e-f-val">Statutory annual accounts preparation</span></li>
+              <li class="e-field"><span class="e-f-key">SVC_02</span><span class="e-f-val">CT600 Corporation Tax returns</span></li>
+              <li class="e-field"><span class="e-f-key">SVC_03</span><span class="e-f-val">Self-assessment personal tax returns</span></li>
+              <li class="e-field"><span class="e-f-key">SVC_04</span><span class="e-f-val">Proactive tax planning and structuring</span></li>
+              <li class="e-field"><span class="e-f-key">SVC_05</span><span class="e-f-val">Companies House filing and compliance</span></li>
+              <li class="e-field"><span class="e-f-key">SVC_06</span><span class="e-f-val">Research &amp; Development tax credit claims</span></li>
+            </ul>
+            <div class="e-stamp">Verified</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════
+         OPTION F — FLIP BOARD
+    ══════════════════════════ -->
+    <div class="opt-bar">
+      <div class="opt-bar-inner">
+        <span class="opt-badge">Option F</span>
+        <span class="opt-desc">Split-Flap Board — click a department header. Services flip into view one by one like an airport board.</span>
+      </div>
+    </div>
+
+    <section class="opt-f">
+      <div class="opt-f-inner">
+        <div class="s-head dark">
+          <div>
+            <span class="s-eyebrow">Specialist Departments</span>
+            <h2 class="s-head-title" style="color:var(--white)">Three specialists.<br /><em>One point of contact.</em></h2>
+          </div>
+          <div class="s-head-right">
+            <p>Generalist firms ask one accountant to do everything. We separate the disciplines — so each is handled by someone whose entire focus is that work.</p>
+          </div>
+        </div>
+
+        <div class="f-grid">
+          <!-- Column 1 -->
+          <div class="f-col">
+            <div class="f-header">
+              <div class="f-indicator"></div>
+              <span class="f-header-idx">Dept · 01</span>
+              <h3>Payroll &amp; Billing</h3>
+              <p class="f-header-desc">Full-service payroll and credit control — RTI, PAYE, pension auto-enrolment, and accounts receivable.</p>
+              <p class="f-click-hint">↓ Click to load services</p>
+            </div>
+            <div class="f-board">
+              <div class="f-cell"><div class="f-cell-inner"><span class="f-cell-num">01</span><span class="f-cell-text">RTI submissions and PAYE management</span></div></div>
+              <div class="f-cell"><div class="f-cell-inner"><span class="f-cell-num">02</span><span class="f-cell-text">Pension auto-enrolment administration</span></div></div>
+              <div class="f-cell"><div class="f-cell-inner"><span class="f-cell-num">03</span><span class="f-cell-text">Credit control and aged-debtor reporting</span></div></div>
+              <div class="f-cell"><div class="f-cell-inner"><span class="f-cell-num">04</span><span class="f-cell-text">P11D benefits-in-kind processing</span></div></div>
+              <div class="f-cell"><div class="f-cell-inner"><span class="f-cell-num">05</span><span class="f-cell-text">Statutory sick pay and maternity calculations</span></div></div>
+              <div class="f-cell"><div class="f-cell-inner"><span class="f-cell-num">06</span><span class="f-cell-text">HMRC correspondence and resolution</span></div></div>
+            </div>
+          </div>
+          <!-- Column 2 -->
+          <div class="f-col">
+            <div class="f-header">
+              <div class="f-indicator"></div>
+              <span class="f-header-idx">Dept · 02</span>
+              <h3>VAT &amp; Management Accounts</h3>
+              <p class="f-header-desc">MTD-compliant bookkeeping, quarterly VAT returns, and regular management reporting in real time.</p>
+              <p class="f-click-hint">↓ Click to load services</p>
+            </div>
+            <div class="f-board">
+              <div class="f-cell"><div class="f-cell-inner"><span class="f-cell-num">01</span><span class="f-cell-text">Monthly bookkeeping and reconciliation</span></div></div>
+              <div class="f-cell"><div class="f-cell-inner"><span class="f-cell-num">02</span><span class="f-cell-text">Quarterly VAT returns (MTD-compliant)</span></div></div>
+              <div class="f-cell"><div class="f-cell-inner"><span class="f-cell-num">03</span><span class="f-cell-text">Management accounts with commentary</span></div></div>
+              <div class="f-cell"><div class="f-cell-inner"><span class="f-cell-num">04</span><span class="f-cell-text">Cash-flow forecasting and reporting</span></div></div>
+              <div class="f-cell"><div class="f-cell-inner"><span class="f-cell-num">05</span><span class="f-cell-text">VAT scheme selection and optimisation</span></div></div>
+              <div class="f-cell"><div class="f-cell-inner"><span class="f-cell-num">06</span><span class="f-cell-text">Making Tax Digital compliance</span></div></div>
+            </div>
+          </div>
+          <!-- Column 3 -->
+          <div class="f-col">
+            <div class="f-header">
+              <div class="f-indicator"></div>
+              <span class="f-header-idx">Dept · 03</span>
+              <h3>Year-End &amp; Tax</h3>
+              <p class="f-header-desc">Annual accounts, Corporation Tax, self-assessment, and year-round strategic planning.</p>
+              <p class="f-click-hint">↓ Click to load services</p>
+            </div>
+            <div class="f-board">
+              <div class="f-cell"><div class="f-cell-inner"><span class="f-cell-num">01</span><span class="f-cell-text">Statutory annual accounts preparation</span></div></div>
+              <div class="f-cell"><div class="f-cell-inner"><span class="f-cell-num">02</span><span class="f-cell-text">CT600 Corporation Tax returns</span></div></div>
+              <div class="f-cell"><div class="f-cell-inner"><span class="f-cell-num">03</span><span class="f-cell-text">Self-assessment personal tax returns</span></div></div>
+              <div class="f-cell"><div class="f-cell-inner"><span class="f-cell-num">04</span><span class="f-cell-text">Proactive tax planning and structuring</span></div></div>
+              <div class="f-cell"><div class="f-cell-inner"><span class="f-cell-num">05</span><span class="f-cell-text">Companies House filing and compliance</span></div></div>
+              <div class="f-cell"><div class="f-cell-inner"><span class="f-cell-num">06</span><span class="f-cell-text">Research &amp; Development tax credit claims</span></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="chooser-footer">
+      <p>A2Z Accounting Solutions · Departments · Round 2 · Reply D, E, or F — or mix elements from any option</p>
+    </footer>
+
+    <script>
+      // ─── Option E: scan on hover, open on click ───
+      document.querySelectorAll('.e-file').forEach(file => {
+        file.addEventListener('mouseenter', () => {
+          file.classList.remove('scanning');
+          void file.offsetWidth;
+          file.classList.add('scanning');
+        });
+        file.addEventListener('animationend', e => {
+          if (e.animationName === 'escan') file.classList.remove('scanning');
+        });
+        file.addEventListener('click', () => {
+          const isOpen = file.classList.contains('open');
+          document.querySelectorAll('.e-file').forEach(f => f.classList.remove('open'));
+          if (!isOpen) file.classList.add('open');
+        });
+      });
+
+      // ─── Option F: flip-board on header click ───
+      const fCols = document.querySelectorAll('.f-col');
+      fCols.forEach(col => {
+        col.querySelector('.f-header').addEventListener('click', () => {
+          const isActive = col.classList.contains('active');
+
+          // Mark currently active as was-active (flip out)
+          fCols.forEach(c => {
+            if (c.classList.contains('active')) {
+              c.classList.remove('active');
+              c.classList.add('was-active');
+              // Remove was-active after flip-out completes
+              setTimeout(() => c.classList.remove('was-active'), 450);
+            }
+          });
+
+          if (!isActive) {
+            // Small delay so flip-out starts before flip-in
+            setTimeout(() => {
+              col.classList.remove('was-active');
+              void col.offsetWidth;
+              col.classList.add('active');
+            }, 80);
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
