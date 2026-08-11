@@ -5030,45 +5030,252 @@
                 color: var(--grey);
             }
         </style>
-        <!-- ============ PLATFORMS BAND ============ -->
-        <section class="band">
-            <svg class="motif" viewBox="0 0 1200 400" preserveAspectRatio="xMidYMid slice"
-                xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <!-- ============ PLATFORMS BAND (EXACT DESIGN MATCH) ============ -->
+        <style id="platforms-section-design">
+            .a2z-ec .platforms-new-section {
+                padding: clamp(60px, 7vw, 96px) 0;
+                background-color: #FAF7F2;
+                text-align: center;
+            }
 
-                <g fill="none" stroke="#1b3a55" stroke-width="1">
-                    <path d="M0 80 C300 40 600 160 1200 90" />
-                    <path d="M0 160 C300 120 600 240 1200 170" />
-                    <path d="M0 240 C300 200 600 320 1200 250" />
-                    <path d="M0 320 C300 280 600 400 1200 330" />
-                </g>
-            </svg>
+            .a2z-ec .plat-eyebrow {
+                font-family: 'DM Sans', system-ui, sans-serif;
+                font-size: 13px;
+                font-weight: 800;
+                letter-spacing: 0.16em;
+                text-transform: uppercase;
+                color: #D49C47;
+                margin-bottom: 12px;
+                display: block;
+            }
+
+            .a2z-ec .plat-heading {
+                font-family: 'Playfair Display', 'Cormorant Garamond', Georgia, serif !important;
+                font-size: clamp(34px, 4.2vw, 54px) !important;
+                font-weight: 700 !important;
+                color: #0F172A !important;
+                line-height: 1.15 !important;
+                margin: 0 0 16px 0 !important;
+                letter-spacing: -0.015em !important;
+                text-align: center !important;
+            }
+
+            .a2z-ec .plat-heading em {
+                font-family: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+                font-style: italic;
+                font-weight: 500;
+                color: #D49C47;
+                background: linear-gradient(135deg, #F5D794 0%, #D49C47 50%, #B07D3C 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+            .a2z-ec .plat-subtext {
+                font-family: 'DM Sans', system-ui, sans-serif;
+                font-size: clamp(14.5px, 1.3vw, 16.5px);
+                color: #475569;
+                max-width: 580px;
+                margin: 0 auto clamp(40px, 5vw, 60px);
+                line-height: 1.55;
+            }
+
+            .a2z-ec .plat-cards-grid {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                gap: clamp(16px, 2vw, 24px);
+                max-width: 1100px;
+                margin: 0 auto;
+            }
+
+            .a2z-ec .plat-card {
+                position: relative;
+                background: linear-gradient(180deg, #FFFFFF 0%, #FAF5EC 100%);
+                border: 1px solid #EAE0D0;
+                border-radius: 20px;
+                overflow: hidden;
+                box-shadow: 0 12px 30px -10px rgba(15, 27, 43, 0.07);
+                transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.35s ease, border-color 0.35s ease;
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                text-decoration: none !important;
+            }
+
+            .a2z-ec .plat-card:hover {
+                transform: translateY(-6px);
+                box-shadow: 0 22px 45px -12px rgba(15, 27, 43, 0.14);
+                border-color: #D49C47;
+            }
+
+            .a2z-ec .plat-card-header {
+                position: relative;
+                background: #0D2034;
+                height: 105px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding-bottom: 20px;
+            }
+
+            .a2z-ec .plat-icon-box {
+                position: relative;
+                z-index: 2;
+                width: 44px;
+                height: 44px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: #ffffff;
+            }
+
+            .a2z-ec .plat-icon-box svg {
+                width: 34px;
+                height: 34px;
+                stroke: #ffffff;
+                stroke-width: 1.75;
+                fill: none;
+            }
+
+            .a2z-ec .plat-header-curve {
+                position: absolute;
+                bottom: -1px;
+                left: 0;
+                width: 100%;
+                height: 38px;
+                pointer-events: none;
+                z-index: 1;
+            }
+
+            .a2z-ec .plat-card-body {
+                padding: 12px 22px 32px 22px;
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+            }
+
+            .a2z-ec .plat-card-title {
+                font-family: 'Playfair Display', 'Cormorant Garamond', Georgia, serif !important;
+                font-size: clamp(20px, 2vw, 24px) !important;
+                font-weight: 700 !important;
+                color: #0F172A !important;
+                margin: 0 0 12px 0 !important;
+                line-height: 1.25 !important;
+            }
+
+            .a2z-ec .plat-card-desc {
+                font-family: 'DM Sans', system-ui, sans-serif !important;
+                font-size: 13.5px !important;
+                color: #475569 !important;
+                line-height: 1.55 !important;
+                margin: 0 !important;
+            }
+
+            @media (max-width: 992px) {
+                .a2z-ec .plat-cards-grid {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+            }
+
+            @media (max-width: 540px) {
+                .a2z-ec .plat-cards-grid {
+                    grid-template-columns: 1fr;
+                }
+            }
+        </style>
+
+        <section class="platforms-new-section">
             <div class="wrap">
-                <div class="sec-head rv">
-                    <p class="eyebrow">Platforms we know inside out</p>
-                    <h2>Specialist support for <em>every</em> channel you sell on</h2>
-                    <p>Each platform reports money differently. We know exactly how, so your accounts reflect what you
-                        actually earned.</p>
-                </div>
-                <div class="platindex rv">
-                    <a href="/shopify-accountants-uk/">
-                        <h3>Shopify</h3>
-                        <p>Payouts, fees and app subscriptions reconciled, with true store margin and VAT handled.</p>
-                        <span class="go" aria-hidden="true">&rsaquo;</span>
+                <span class="plat-eyebrow">PLATFORMS WE KNOW INSIDE OUT</span>
+                <h2 class="plat-heading">
+                    Specialist support for <em>every</em> channel<br>you sell on
+                </h2>
+                <p class="plat-subtext">
+                    Each platform reports money differently. We know exactly how, so your accounts reflect what you actually earned.
+                </p>
+
+                <div class="plat-cards-grid">
+                    <!-- Shopify -->
+                    <a href="/shopify-accountants-uk/" class="plat-card">
+                        <div class="plat-card-header">
+                            <div class="plat-icon-box">
+                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                                </svg>
+                            </div>
+                            <svg class="plat-header-curve" viewBox="0 0 300 48" preserveAspectRatio="none" aria-hidden="true">
+                                <path d="M 0 0 Q 150 48 300 0 L 300 48 L 0 48 Z" fill="#FFFFFF" />
+                                <path d="M 0 0 Q 150 48 300 0" fill="none" stroke="#D49C47" stroke-width="3" />
+                            </svg>
+                        </div>
+                        <div class="plat-card-body">
+                            <h3 class="plat-card-title">Shopify</h3>
+                            <p class="plat-card-desc">Payouts, fees and app subscriptions reconciled, with true store margin and VAT handled.</p>
+                        </div>
                     </a>
-                    <a href="/amazon-fba-accountant/">
-                        <h3>Amazon FBA</h3>
-                        <p>FBA fees, storage, referral and advertising untangled from your settlement statements.</p>
-                        <span class="go" aria-hidden="true">&rsaquo;</span>
+
+                    <!-- Amazon FBA -->
+                    <a href="/amazon-fba-accountant/" class="plat-card">
+                        <div class="plat-card-header">
+                            <div class="plat-icon-box">
+                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                                    <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                                    <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                                </svg>
+                            </div>
+                            <svg class="plat-header-curve" viewBox="0 0 300 48" preserveAspectRatio="none" aria-hidden="true">
+                                <path d="M 0 0 Q 150 48 300 0 L 300 48 L 0 48 Z" fill="#FFFFFF" />
+                                <path d="M 0 0 Q 150 48 300 0" fill="none" stroke="#D49C47" stroke-width="3" />
+                            </svg>
+                        </div>
+                        <div class="plat-card-body">
+                            <h3 class="plat-card-title">Amazon FBA</h3>
+                            <p class="plat-card-desc">FBA fees, storage, referral and advertising untangled from your settlement statements.</p>
+                        </div>
                     </a>
-                    <a href="/woocommerce-accountant-uk/">
-                        <h3>WooCommerce</h3>
-                        <p>Gateway fees, plugins and multi-currency sales mapped to clean, accurate records.</p><span
-                            class="go" aria-hidden="true">&rsaquo;</span>
+
+                    <!-- WooCommerce -->
+                    <a href="/woocommerce-accountant-uk/" class="plat-card">
+                        <div class="plat-card-header">
+                            <div class="plat-icon-box">
+                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <circle cx="9" cy="21" r="1"></circle>
+                                    <circle cx="20" cy="21" r="1"></circle>
+                                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                                </svg>
+                            </div>
+                            <svg class="plat-header-curve" viewBox="0 0 300 48" preserveAspectRatio="none" aria-hidden="true">
+                                <path d="M 0 0 Q 150 48 300 0 L 300 48 L 0 48 Z" fill="#FFFFFF" />
+                                <path d="M 0 0 Q 150 48 300 0" fill="none" stroke="#D49C47" stroke-width="3" />
+                            </svg>
+                        </div>
+                        <div class="plat-card-body">
+                            <h3 class="plat-card-title">WooCommerce</h3>
+                            <p class="plat-card-desc">Gateway fees, plugins and multi-currency sales mapped to clean, accurate records.</p>
+                        </div>
                     </a>
-                    <a href="/dropshipping-accountant-uk/">
-                        <h3>Dropshipping</h3>
-                        <p>Supplier costs, import VAT and thin margins tracked, so profit is real, not assumed.</p><span
-                            class="go" aria-hidden="true">&rsaquo;</span>
+
+                    <!-- Dropshipping -->
+                    <a href="/dropshipping-accountant-uk/" class="plat-card">
+                        <div class="plat-card-header">
+                            <div class="plat-icon-box">
+                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <rect x="1" y="3" width="15" height="13"></rect>
+                                    <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+                                    <circle cx="5.5" cy="18.5" r="2.5"></circle>
+                                    <circle cx="18.5" cy="18.5" r="2.5"></circle>
+                                </svg>
+                            </div>
+                            <svg class="plat-header-curve" viewBox="0 0 300 48" preserveAspectRatio="none" aria-hidden="true">
+                                <path d="M 0 0 Q 150 48 300 0 L 300 48 L 0 48 Z" fill="#FFFFFF" />
+                                <path d="M 0 0 Q 150 48 300 0" fill="none" stroke="#D49C47" stroke-width="3" />
+                            </svg>
+                        </div>
+                        <div class="plat-card-body">
+                            <h3 class="plat-card-title">Dropshipping</h3>
+                            <p class="plat-card-desc">Supplier costs, import VAT and thin margins tracked, so profit is real, not assumed.</p>
+                        </div>
                     </a>
                 </div>
             </div>
