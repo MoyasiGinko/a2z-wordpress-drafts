@@ -228,343 +228,383 @@
                 window.addEventListener('load', tidy); setTimeout(tidy, 800); setTimeout(tidy, 2200);
             })();
         </script>
-
-        <!-- ============ FULL-WIDTH CENTERED HERO SECTION ============ -->
-        <style id="classic-hero-design">
-            .a2z-ec .hero {
+        <!-- ============ HERO (EXACT DESIGN MATCH) ============ -->
+        <style id="exact-hero-design">
+            .a2z-ec .new-hero-exact {
                 position: relative;
-                background: radial-gradient(120% 100% at 50% 0%, #11324c 0%, #0c293f 50%, #0a2236 100%);
+                background-color: #0b1424;
+                background-image:
+                    radial-gradient(circle at 75% 25%, rgba(26, 48, 80, 0.45) 0%, transparent 55%),
+                    radial-gradient(circle at 20% 80%, rgba(16, 32, 56, 0.55) 0%, transparent 65%),
+                    linear-gradient(180deg, rgba(8, 16, 29, 0.84) 0%, rgba(10, 18, 33, 0.94) 100%),
+                    url('https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1600&auto=format&fit=crop');
+                background-size: cover;
+                background-position: center;
                 color: #ffffff;
+                padding: clamp(54px, 6.5vw, 92px) 0 clamp(64px, 7.5vw, 100px);
                 overflow: hidden;
-                padding: clamp(60px, 7.5vw, 104px) 0 clamp(54px, 6.5vw, 88px);
-                text-align: center;
             }
 
-            .a2z-ec .hero::before {
+            .a2z-ec .new-hero-exact::before {
                 content: "";
                 position: absolute;
                 inset: 0;
-                background-image: var(--guil);
-                background-size: 300px;
-                opacity: .10;
-                -webkit-mask-image: radial-gradient(120% 90% at 50% 30%, #000 0%, rgba(0, 0, 0, .25) 60%, transparent 100%);
-                mask-image: radial-gradient(120% 90% at 50% 30%, #000 0%, rgba(0, 0, 0, .25) 60%, transparent 100%);
+                background: radial-gradient(ellipse at center, transparent 35%, rgba(6, 12, 22, 0.75) 100%);
                 pointer-events: none;
             }
 
-            .a2z-ec .hero .grain {
-                position: absolute;
-                inset: 0;
-                opacity: .06;
-                mix-blend-mode: overlay;
-                pointer-events: none;
-            }
-
-            .a2z-ec .hero .hero-inner-wrap {
-                max-width: 920px;
-                margin: 0 auto;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
+            .a2z-ec .exact-hero-grid {
+                display: grid;
+                grid-template-columns: 1.3fr 0.7fr;
+                gap: clamp(24px, 3.5vw, 48px);
+                align-items: flex-end;
                 position: relative;
                 z-index: 2;
             }
 
-            .a2z-ec .hero .eyebrow {
-                color: #D8AF82;
-                font-family: 'DM Sans', system-ui, sans-serif;
-                font-size: 13px;
-                font-weight: 700;
-                letter-spacing: 0.14em;
-                text-transform: uppercase;
-                margin-bottom: 20px;
-                display: inline-block;
+            /* Left Column */
+            .a2z-ec .exact-hero-left {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                width: 100%;
             }
 
-            .a2z-ec .hero h1 {
-                color: #ffffff !important;
-                font-family: 'Cormorant Garamond', 'Playfair Display', serif !important;
-                font-size: clamp(38px, 4.8vw, 60px) !important;
+            .a2z-ec .exact-hero-pill {
+                display: inline-block;
+                background: #ffffff;
+                color: #111827;
+                font-family: 'DM Sans', system-ui, sans-serif;
+                font-weight: 800;
+                font-size: 12.5px;
+                letter-spacing: 0.12em;
+                text-transform: uppercase;
+                padding: 10px 20px;
+                border-radius: 6px;
+                box-shadow: 0 0 24px rgba(255, 255, 255, 0.45), 0 4px 14px rgba(0, 0, 0, 0.35);
+                margin-bottom: 28px;
+            }
+
+            .a2z-ec .exact-hero-title {
+                font-family: 'Playfair Display', 'Cormorant Garamond', Georgia, serif !important;
+                color: #FFFFFF !important;
+                font-size: clamp(38px, 4.6vw, 62px) !important;
                 line-height: 1.08 !important;
                 font-weight: 600 !important;
-                max-width: 22ch !important;
-                margin: 0 auto 22px auto !important;
-                text-align: center !important;
-                letter-spacing: -.018em;
+                letter-spacing: -0.015em !important;
+                margin: 0 0 26px 0 !important;
+                text-align: left !important;
+                max-width: 640px !important;
             }
 
-            .a2z-ec .hero h1 em {
+            .a2z-ec .exact-hero-title .gold-italic {
+                font-family: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
                 font-style: italic;
-                color: #C4905A;
-                font-weight: 600;
+                font-weight: 500;
                 background: linear-gradient(135deg, #F5D794 0%, #D49C47 50%, #F5D794 100%);
                 -webkit-background-clip: text;
                 -webkit-text-fill-color: transparent;
                 display: inline-block;
+                filter: drop-shadow(0 2px 12px rgba(212, 156, 71, 0.25));
             }
 
-            .a2z-ec .hero .lede {
-                color: #dbe6ef !important;
-                font-family: 'DM Sans', system-ui, sans-serif !important;
-                font-size: clamp(16.5px, 1.45vw, 19.5px) !important;
+            .a2z-ec .exact-hero-lede {
+                font-family: 'DM Sans', 'Inter', system-ui, sans-serif !important;
+                color: #94A3B8 !important;
+                font-size: clamp(15.5px, 1.35vw, 18px) !important;
                 line-height: 1.62 !important;
-                max-width: 62ch !important;
-                margin: 0 auto 34px auto !important;
-                text-align: center !important;
+                margin: 0 0 36px 0 !important;
+                max-width: 600px !important;
+                text-align: left !important;
             }
 
-            .a2z-ec .hero .cta-group {
+            .a2z-ec .exact-hero-badges {
                 display: flex;
-                flex-direction: column;
-                align-items: center;
-                gap: 18px;
-                width: 100%;
-            }
-
-            .a2z-ec .hero .btns {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 16px;
-            }
-
-            .a2z-ec .hero .meta {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                margin-top: 6px;
-            }
-
-            .a2z-ec .hero .cc-badge {
-                display: inline-flex;
-                align-items: center;
-                gap: 9px;
-                font-size: 14px;
-                font-weight: 700;
-                color: #ffffff;
-                background: linear-gradient(180deg, rgba(196, 144, 90, .22), rgba(196, 144, 90, .07));
-                border: 1px solid rgba(216, 175, 130, .6);
-                border-radius: 999px;
-                padding: 8px 20px;
-                box-shadow: 0 10px 26px -16px rgba(196, 144, 90, .8);
-            }
-
-            .a2z-ec .hero .cc-badge svg {
-                width: 18px;
-                height: 18px;
-                stroke: #D8AF82;
-            }
-
-            .a2z-ec .hero .toolslider {
-                margin: 28px auto 0 auto;
-                max-width: 620px;
-                overflow: hidden;
-                -webkit-mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
-                mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
-            }
-
-            .a2z-ec .hero .toolslider .track {
-                display: flex;
-                width: max-content;
-                animation: ecslide 26s linear infinite;
-                will-change: transform;
-            }
-
-            .a2z-ec .hero .toolslider:hover .track {
-                animation-play-state: paused;
-            }
-
-            @keyframes ecslide {
-                from { transform: translateX(0); }
-                to { transform: translateX(-50%); }
-            }
-
-            .a2z-ec .hero .tsb {
-                display: inline-flex;
-                align-items: center;
+                flex-wrap: nowrap;
                 gap: 10px;
-                white-space: nowrap;
-                font-size: 13.5px;
-                font-weight: 600;
-                color: #eef4f9;
-                background: rgba(255, 255, 255, .06);
-                border: 1px solid rgba(255, 255, 255, .15);
-                border-radius: 11px;
-                padding: 10px 18px;
-                margin-right: 12px;
+                align-items: center;
+                max-width: 100%;
             }
 
-            .a2z-ec .hero .tsb .tmark {
-                width: 24px;
-                height: 24px;
+            .a2z-ec .hero-feature-badge {
+                display: inline-flex;
+                align-items: center;
+                gap: 8px;
+                background: rgba(15, 25, 42, 0.65);
+                border: 1px solid rgba(212, 156, 71, 0.35);
+                backdrop-filter: blur(12px);
+                -webkit-backdrop-filter: blur(12px);
+                padding: 9px 13px;
+                border-radius: 9px;
+                color: #E2E8F0;
+                font-family: 'DM Sans', system-ui, sans-serif;
+                font-size: 13px;
+                font-weight: 600;
+                letter-spacing: 0.01em;
+                box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+                transition: border-color 0.2s, transform 0.2s;
+                white-space: nowrap;
+            }
+
+            .a2z-ec .hero-feature-badge:hover {
+                border-color: rgba(212, 156, 71, 0.7);
+                transform: translateY(-2px);
+            }
+
+            .a2z-ec .badge-icon {
+                width: 16px;
+                height: 16px;
+                flex-shrink: 0;
+            }
+
+            .a2z-ec .badge-brand-icon {
                 display: inline-flex;
                 align-items: center;
                 justify-content: center;
+                width: 22px;
+                height: 22px;
+                border-radius: 50%;
                 font-size: 11px;
                 font-weight: 800;
                 color: #ffffff;
-                flex: none;
                 line-height: 1;
             }
 
-            .a2z-ec .hero .tsb .tmark.xero {
-                background: #13B5EA;
-                border-radius: 50%;
+            .a2z-ec .badge-brand-icon.xero-icon {
+                background: #00B4D8;
             }
 
-            .a2z-ec .hero .tsb .tmark.qb {
+            .a2z-ec .badge-brand-icon.qb-icon {
                 background: #2CA01C;
-                border-radius: 50%;
             }
 
-            .a2z-ec .hero .tsb .tmark.doc,
-            .a2z-ec .hero .tsb .tmark.pl {
-                background: linear-gradient(160deg, #16456b, #0D2B42);
-                border: 1px solid rgba(216, 175, 130, .55);
-                border-radius: 7px;
-            }
-
-            /* Flow diagram & Real Profit card band */
-            .a2z-ec .hero .hero-diagram-band {
-                margin-top: 48px;
-                width: 100%;
-                max-width: 840px;
-                background: rgba(13, 43, 66, 0.65);
-                border: 1px solid rgba(216, 175, 130, 0.45);
-                backdrop-filter: blur(16px);
-                -webkit-backdrop-filter: blur(16px);
-                border-radius: 20px;
-                padding: clamp(24px, 3.5vw, 40px);
-                box-shadow: 0 32px 64px -20px rgba(0, 0, 0, 0.75);
+            /* Right Column */
+            .a2z-ec .exact-hero-right {
                 display: flex;
                 flex-direction: column;
-                align-items: center;
-            }
-
-            .a2z-ec .hero .hero-diagram-band svg {
+                align-items: flex-end;
                 width: 100%;
-                height: auto;
-                max-width: 680px;
             }
 
-            .a2z-ec .hero .rp-row {
-                display: flex;
-                flex-direction: column;
+            .a2z-ec .exact-cc-badge {
+                display: inline-flex;
                 align-items: center;
-                gap: 8px;
-                margin-top: 20px;
+                gap: 10px;
+                background: rgba(18, 30, 52, 0.65);
+                border: 1px solid rgba(212, 156, 71, 0.4);
+                backdrop-filter: blur(12px);
+                -webkit-backdrop-filter: blur(12px);
+                padding: 13px 24px;
+                border-radius: 12px;
+                color: #F3D085;
+                font-family: 'DM Sans', system-ui, sans-serif;
+                font-weight: 700;
+                font-size: 14.5px;
+                margin-bottom: 24px;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
             }
 
-            .a2z-ec .hero .rp-label {
-                font-family: 'Cormorant Garamond', serif;
-                font-style: italic;
-                font-weight: 600;
-                color: #D8AF82;
-                font-size: clamp(26px, 3vw, 36px);
-                line-height: 1;
+            .a2z-ec .cc-star-icon {
+                width: 19px;
+                height: 19px;
+                flex-shrink: 0;
             }
 
-            .a2z-ec .hero .chip {
-                background: linear-gradient(180deg, #ffffff, #FCFAF6);
-                color: #0D2B42;
-                border-radius: 9px;
-                padding: 12px 24px;
-                box-shadow: 0 20px 48px -16px rgba(0, 0, 0, .75);
-                border: 1px solid #E2D2A8;
+            .a2z-ec .exact-cta-card {
+                width: 100%;
+                max-width: 440px;
+                background: rgba(18, 30, 52, 0.65);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                backdrop-filter: blur(20px);
+                -webkit-backdrop-filter: blur(20px);
+                border-radius: 18px;
+                padding: 38px 34px;
+                box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.65), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+            }
+
+            .a2z-ec .exact-btn-primary {
+                display: block;
+                width: 100%;
                 text-align: center;
-            }
-
-            .a2z-ec .hero .chip .cl {
-                font-size: 11px;
-                letter-spacing: .18em;
+                background: linear-gradient(180deg, #E6BA68 0%, #D49C47 100%);
+                color: #1A160E !important;
+                font-family: 'DM Sans', system-ui, sans-serif;
+                font-weight: 800;
+                font-size: 13.5px;
+                letter-spacing: 0.09em;
                 text-transform: uppercase;
-                color: #B07D3C;
-                font-weight: 700;
+                padding: 17px 24px;
+                border-radius: 8px;
+                box-shadow: 0 4px 18px rgba(212, 156, 71, 0.3);
+                transition: all 0.2s ease;
+                text-decoration: none !important;
             }
 
-            .a2z-ec .hero .chip .cn {
-                font-family: 'Cormorant Garamond', serif;
-                font-size: 28px;
+            .a2z-ec .exact-btn-primary:hover {
+                background: linear-gradient(180deg, #F5D794 0%, #E0A854 100%);
+                transform: translateY(-2px);
+                box-shadow: 0 8px 26px rgba(212, 156, 71, 0.45);
+                color: #000000 !important;
+            }
+
+            .a2z-ec .exact-cta-divider {
+                display: flex;
+                align-items: center;
+                text-align: center;
+                margin: 22px 0;
+                color: #64748B;
+                font-family: 'DM Sans', system-ui, sans-serif;
+                font-size: 12px;
                 font-weight: 700;
-                color: #0D2B42;
-                line-height: 1.1;
+                letter-spacing: 0.12em;
+            }
+
+            .a2z-ec .exact-cta-divider::before,
+            .a2z-ec .exact-cta-divider::after {
+                content: '';
+                flex: 1;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+            }
+
+            .a2z-ec .exact-cta-divider::before {
+                margin-right: 16px;
+            }
+
+            .a2z-ec .exact-cta-divider::after {
+                margin-left: 16px;
+            }
+
+            .a2z-ec .exact-btn-secondary {
+                display: block;
+                width: 100%;
+                text-align: center;
+                background: rgba(12, 22, 38, 0.7);
+                border: 1px solid rgba(212, 156, 71, 0.45);
+                color: #F3D085 !important;
+                font-family: 'DM Sans', system-ui, sans-serif;
+                font-weight: 700;
+                font-size: 13px;
+                letter-spacing: 0.08em;
+                text-transform: uppercase;
+                padding: 17px 24px;
+                border-radius: 8px;
+                transition: all 0.2s ease;
+                text-decoration: none !important;
+            }
+
+            .a2z-ec .exact-btn-secondary:hover {
+                border-color: #F5D794;
+                background: rgba(212, 156, 71, 0.12);
+                color: #FFFFFF !important;
+                transform: translateY(-2px);
+            }
+
+            /* Responsive Breakpoints */
+            @media (max-width: 992px) {
+                .a2z-ec .exact-hero-grid {
+                    grid-template-columns: 1fr;
+                    gap: 40px;
+                }
+
+                .a2z-ec .exact-hero-right {
+                    align-items: center;
+                }
+
+                .a2z-ec .exact-cta-card {
+                    max-width: 100%;
+                }
+            }
+
+            @media (max-width: 640px) {
+                .a2z-ec .exact-hero-badges {
+                    flex-direction: column;
+                    align-items: stretch;
+                    width: 100%;
+                }
+
+                .a2z-ec .hero-feature-badge {
+                    justify-content: center;
+                }
+
+                .a2z-ec .exact-hero-title {
+                    font-size: 34px !important;
+                }
             }
         </style>
 
-        <section class="hero">
-            <div class="grain"></div>
+        <section class="hero new-hero-exact">
             <div class="wrap">
-                <div class="hero-inner-wrap">
-                    <span class="eyebrow">E-COMMERCE ACCOUNTANTS — UK-WIDE</span>
-                    <h1>E-Commerce Accountants<br>Built For How Online Businesses<br><em>Actually Make Money</em></h1>
-                    <p class="lede">We are specialist e-commerce accountants for established and growing UK online sellers. We turn marketplace payouts, cross-border VAT and stock into a clear picture of real profit per channel, so you can price, stock and scale on evidence.</p>
-                    <div class="cta-group">
-                        <div class="btns">
-                            <a href="#a2z-enquire" class="btn btn-gold" data-a2z-source="E-Commerce Enquiry">Book a Consultation <span class="ar">&rarr;</span></a>
-                            <a href="#a2z-feequote" class="btn btn-ghost">Instant Fee Estimate <span class="ar">&rarr;</span></a>
+                <div class="exact-hero-grid">
+                    <!-- Left Column -->
+                    <div class="exact-hero-left">
+                        <div class="exact-hero-pill">
+                            E-COMMERCE ACCOUNTANTS - UK-WIDE
                         </div>
-                        <div class="meta">
-                            <span class="cc-badge">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="#D8AF82" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                                Chartered Certified (FCCA)
-                            </span>
-                        </div>
-                    </div>
-                    <div class="toolslider">
-                        <div class="track">
-                            <span class="tsb"><span class="tmark xero">x</span> Xero</span>
-                            <span class="tsb"><span class="tmark qb">qb</span> QuickBooks</span>
-                            <span class="tsb"><span class="tmark doc"><svg viewBox="0 0 24 24" fill="none" stroke="#D8AF82" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span> Remote Document Tools</span>
-                            <span class="tsb"><span class="tmark pl"><svg viewBox="0 0 24 24" fill="none" stroke="#D8AF82" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></span> 100% Paperless</span>
-                            <span class="tsb" aria-hidden="true"><span class="tmark xero">x</span> Xero</span>
-                            <span class="tsb" aria-hidden="true"><span class="tmark qb">qb</span> QuickBooks</span>
-                            <span class="tsb" aria-hidden="true"><span class="tmark doc"><svg viewBox="0 0 24 24" fill="none" stroke="#D8AF82" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span> Remote Document Tools</span>
-                            <span class="tsb" aria-hidden="true"><span class="tmark pl"><svg viewBox="0 0 24 24" fill="none" stroke="#D8AF82" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></span> 100% Paperless</span>
+                        <h1 class="exact-hero-title">
+                            E-Commerce<br>
+                            Accountants<br>
+                            Built For How<br>
+                            Online Businesses<br>
+                            <span class="gold-italic">Actually Make Money</span>
+                        </h1>
+                        <p class="exact-hero-lede">
+                            We are specialist e-commerce accountants for established and growing UK online sellers. We
+                            turn marketplace payouts, cross-border VAT and stock into a clear picture of real profit per
+                            channel, so you can price, stock and scale on evidence.
+                        </p>
+                        <div class="exact-hero-badges">
+                            <div class="hero-feature-badge">
+                                <svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="#D49C47"
+                                    stroke-width="2">
+                                    <path
+                                        d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z">
+                                    </path>
+                                    <path d="M12 11v6M9 14h6"></path>
+                                </svg>
+                                <span>Remote Document Tools</span>
+                            </div>
+                            <div class="hero-feature-badge">
+                                <span class="badge-brand-icon xero-icon">x</span>
+                                <span>Xero</span>
+                            </div>
+                            <div class="hero-feature-badge">
+                                <svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="#D49C47"
+                                    stroke-width="2">
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                                    <path d="M9 12l2 2 4-4"></path>
+                                </svg>
+                                <span>100% Paperless</span>
+                            </div>
+                            <div class="hero-feature-badge">
+                                <span class="badge-brand-icon qb-icon">qb</span>
+                                <span>QuickBooks</span>
+                            </div>
                         </div>
                     </div>
 
-                    <!-- Flow Diagram & Real Profit Card Band -->
-                    <div class="hero-diagram-band">
-                        <svg viewBox="0 0 680 320" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <defs>
-                                <linearGradient id="ch-ha-1" x1="0%" y1="0%" x2="100%" y2="100%">
-                                    <stop offset="0%" stop-color="#C4905A" stop-opacity="0.9"/>
-                                    <stop offset="100%" stop-color="#D8AF82" stop-opacity="0.35"/>
-                                </linearGradient>
-                                <linearGradient id="ch-ha-2" x1="0%" y1="0%" x2="100%" y2="100%">
-                                    <stop offset="0%" stop-color="#16456b" stop-opacity="0.85"/>
-                                    <stop offset="100%" stop-color="#0D2B42" stop-opacity="0.95"/>
-                                </linearGradient>
-                            </defs>
-                            <path d="M60 60 Q 280 60, 440 160" stroke="url(#ch-ha-1)" stroke-width="2" stroke-dasharray="4 4"/>
-                            <path d="M60 130 Q 280 130, 440 160" stroke="url(#ch-ha-1)" stroke-width="2" stroke-dasharray="4 4"/>
-                            <path d="M60 190 Q 280 190, 440 160" stroke="url(#ch-ha-1)" stroke-width="2" stroke-dasharray="4 4"/>
-                            <path d="M60 260 Q 280 260, 440 160" stroke="url(#ch-ha-1)" stroke-width="2" stroke-dasharray="4 4"/>
-                            <g transform="translate(30, 42)">
-                                <rect width="140" height="38" rx="8" fill="#11364f" stroke="rgba(216,175,130,0.45)"/>
-                                <text x="70" y="24" fill="#e2ebf3" font-size="12.5" font-family="DM Sans" font-weight="600" text-anchor="middle">Shopify Sales</text>
-                            </g>
-                            <g transform="translate(30, 112)">
-                                <rect width="140" height="38" rx="8" fill="#11364f" stroke="rgba(216,175,130,0.45)"/>
-                                <text x="70" y="24" fill="#e2ebf3" font-size="12.5" font-family="DM Sans" font-weight="600" text-anchor="middle">Amazon FBA</text>
-                            </g>
-                            <g transform="translate(30, 172)">
-                                <rect width="140" height="38" rx="8" fill="#11364f" stroke="rgba(216,175,130,0.45)"/>
-                                <text x="70" y="24" fill="#e2ebf3" font-size="12.5" font-family="DM Sans" font-weight="600" text-anchor="middle">WooCommerce</text>
-                            </g>
-                            <g transform="translate(30, 242)">
-                                <rect width="140" height="38" rx="8" fill="#11364f" stroke="rgba(216,175,130,0.45)"/>
-                                <text x="70" y="24" fill="#e2ebf3" font-size="12.5" font-family="DM Sans" font-weight="600" text-anchor="middle">eBay &amp; Multi-Channel</text>
-                            </g>
-                            <circle cx="440" cy="160" r="36" fill="url(#ch-ha-2)" stroke="#C4905A" stroke-width="2.5"/>
-                            <circle cx="440" cy="160" r="9" fill="#C4905A"/>
-                        </svg>
-                        <div class="rp-row">
-                            <span class="rp-label">Real Profit</span>
-                            <div class="chip">
-                                <div class="cl">CLIENT RESULTS</div>
-                                <div class="cn">+£34k/yr</div>
+                    <!-- Right Column -->
+                    <div class="exact-hero-right">
+                        <div class="exact-cc-badge">
+                            <svg viewBox="0 0 24 24" fill="none" class="cc-star-icon">
+                                <path
+                                    d="M12 2L14.7 4.3L18.1 3.9L19.3 7.1L22.4 8.6L21.7 12L22.4 15.4L19.3 16.9L18.1 20.1L14.7 19.7L12 22L9.3 19.7L5.9 20.1L4.7 16.9L1.6 15.4L2.3 12L1.6 8.6L4.7 7.1L5.9 3.9L9.3 4.3L12 2Z"
+                                    fill="#D49C47" fill-opacity="0.2" stroke="#D49C47" stroke-width="1.8"
+                                    stroke-linejoin="round" />
+                                <path d="M9 12L11 14L15 9.5" stroke="#F3D085" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                            <span>Chartered Certified</span>
+                        </div>
+                        <div class="exact-cta-card">
+                            <a class="exact-btn-primary" href="#a2z-enquire" data-a2z-source="E-Commerce Enquiry">
+                                BOOK A CONSULTATION
+                            </a>
+                            <div class="exact-cta-divider">
+                                <span>OR</span>
                             </div>
+                            <a class="exact-btn-secondary" href="#a2z-feequote">
+                                GET AN INSTANT FEE ESTIMATE
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -4216,47 +4256,15 @@
                     position: relative !important;
                 }
 
-                .a2zv-vp::before,
-                .a2zv-vp::after {
-                    content: '' !important;
-                    position: absolute !important;
-                    top: 0 !important;
-                    bottom: 0 !important;
-                    width: clamp(48px, 8vw, 110px) !important;
-                    z-index: 4 !important;
-                    pointer-events: none !important;
-                }
-
-                .a2zv-vp::before {
-                    left: 0 !important;
-                    background: linear-gradient(to right, rgba(255, 255, 255, 0.98) 0%, rgba(255, 255, 255, 0.7) 35%, rgba(255, 255, 255, 0) 100%) !important;
-                }
-
-                .a2zv-vp::after {
-                    right: 0 !important;
-                    background: linear-gradient(to left, rgba(255, 255, 255, 0.98) 0%, rgba(255, 255, 255, 0.7) 35%, rgba(255, 255, 255, 0) 100%) !important;
-                }
-
-                @keyframes a2zv-marquee {
-                    0% {
-                        transform: translateX(0);
-                    }
-                    100% {
-                        transform: translateX(-50%);
-                    }
-                }
-
                 .a2zv-track {
                     display: flex !important;
                     gap: 20px !important;
-                    width: max-content !important;
+                    overflow-x: auto !important;
+                    scroll-snap-type: x mandatory !important;
                     padding: 10px 24px 28px 24px !important;
-                    animation: a2zv-marquee 48s linear infinite !important;
-                    will-change: transform !important;
-                }
-
-                .a2zv-track:hover {
-                    animation-play-state: paused !important;
+                    -webkit-overflow-scrolling: touch !important;
+                    scrollbar-width: none !important;
+                    -ms-overflow-style: none !important;
                 }
 
                 .a2zv-track::-webkit-scrollbar {
@@ -4271,6 +4279,7 @@
                     border-radius: 16px !important;
                     position: relative !important;
                     overflow: hidden !important;
+                    scroll-snap-align: start !important;
                     background-color: #0D2034 !important;
                     border: 1px solid rgba(15, 23, 42, 0.08) !important;
                     box-shadow: 0 8px 24px rgba(11, 25, 44, 0.08) !important;
@@ -4544,24 +4553,8 @@
                     <div class="a2zv-all"><a class="a2zv-btn" href="https://a2zaccounting.co.uk/testimonial/">See all
                             client
                             stories</a></div>
+                </div>
             </section>
-
-        <script id="vidtest-autoscroll-script">
-            (function () {
-                var track = document.querySelector('.a2zv-track');
-                if (!track) return;
-                if (!track.dataset.duplicated) {
-                    track.innerHTML += track.innerHTML;
-                    track.dataset.duplicated = "true";
-                }
-                track.addEventListener('touchstart', function () {
-                    track.style.animationPlayState = 'paused';
-                }, { passive: true });
-                track.addEventListener('touchend', function () {
-                    track.style.animationPlayState = 'running';
-                }, { passive: true });
-            })();
-        </script>
 
             <!-- Fee/enquiry popups, calculator modal and all calculator JS now live in the GLOBAL footer snippet (A2Z_GLOBAL_popups.html). Page keeps only the CTA buttons below/above. -->
     </main>
