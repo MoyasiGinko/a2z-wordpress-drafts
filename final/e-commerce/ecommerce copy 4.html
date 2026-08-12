@@ -3921,390 +3921,378 @@
             .a2z-ec section {
                 border-top: none !important;
             }
-        </style>
-        <!-- ============ HERO (EXACT DESIGN MATCH) ============ -->
-        <style id="exact-hero-design">
-            .a2z-ec .new-hero-exact {
+        </style> <!-- ============ FULL-WIDTH CENTERED HERO SECTION ============ -->
+        <style id="classic-hero-design">
+            .a2z-ec .hero {
                 position: relative;
-                background-color: #0b1424;
-                background-image:
-                    radial-gradient(circle at 75% 25%, rgba(26, 48, 80, 0.45) 0%, transparent 55%),
-                    radial-gradient(circle at 20% 80%, rgba(16, 32, 56, 0.55) 0%, transparent 65%),
-                    linear-gradient(180deg, rgba(8, 16, 29, 0.84) 0%, rgba(10, 18, 33, 0.94) 100%),
-                    url('https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1600&auto=format&fit=crop');
-                background-size: cover;
-                background-position: center;
+                background: radial-gradient(120% 100% at 50% 0%, #11324c 0%, #0c293f 50%, #0a2236 100%);
                 color: #ffffff;
-                padding: clamp(54px, 6.5vw, 92px) 0 clamp(64px, 7.5vw, 100px);
                 overflow: hidden;
+                padding: clamp(60px, 7.5vw, 104px) 0 clamp(54px, 6.5vw, 88px);
+                text-align: center;
             }
 
-            .a2z-ec .new-hero-exact::before {
+            .a2z-ec .hero::before {
                 content: "";
                 position: absolute;
                 inset: 0;
-                background: radial-gradient(ellipse at center, transparent 35%, rgba(6, 12, 22, 0.75) 100%);
+                background-image: var(--guil);
+                background-size: 300px;
+                opacity: .10;
+                -webkit-mask-image: radial-gradient(120% 90% at 50% 30%, #000 0%, rgba(0, 0, 0, .25) 60%, transparent 100%);
+                mask-image: radial-gradient(120% 90% at 50% 30%, #000 0%, rgba(0, 0, 0, .25) 60%, transparent 100%);
                 pointer-events: none;
             }
 
-            .a2z-ec .exact-hero-grid {
-                display: grid;
-                grid-template-columns: 1.3fr 0.7fr;
-                gap: clamp(24px, 3.5vw, 48px);
-                align-items: flex-end;
+            .a2z-ec .hero .grain {
+                position: absolute;
+                inset: 0;
+                opacity: .06;
+                mix-blend-mode: overlay;
+                pointer-events: none;
+            }
+
+            .a2z-ec .hero .hero-inner-wrap {
+                max-width: 920px;
+                margin: 0 auto;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
                 position: relative;
                 z-index: 2;
             }
 
-            /* Left Column */
-            .a2z-ec .exact-hero-left {
-                display: flex;
-                flex-direction: column;
-                align-items: flex-start;
-                width: 100%;
-            }
-
-            .a2z-ec .exact-hero-pill {
-                display: inline-block;
-                background: #ffffff;
-                color: #111827;
+            .a2z-ec .hero .eyebrow {
+                color: #D8AF82;
                 font-family: 'DM Sans', system-ui, sans-serif;
-                font-weight: 800;
-                font-size: 12.5px;
-                letter-spacing: 0.12em;
+                font-size: 13px;
+                font-weight: 700;
+                letter-spacing: 0.14em;
                 text-transform: uppercase;
-                padding: 10px 20px;
-                border-radius: 6px;
-                box-shadow: 0 0 24px rgba(255, 255, 255, 0.45), 0 4px 14px rgba(0, 0, 0, 0.35);
-                margin-bottom: 28px;
+                margin-bottom: 20px;
+                display: inline-block;
             }
 
-            .a2z-ec .exact-hero-title {
-                font-family: 'Playfair Display', 'Cormorant Garamond', Georgia, serif !important;
-                color: #FFFFFF !important;
-                font-size: clamp(38px, 4.6vw, 62px) !important;
+            .a2z-ec .hero h1 {
+                color: #ffffff !important;
+                font-family: 'Cormorant Garamond', 'Playfair Display', serif !important;
+                font-size: clamp(38px, 4.8vw, 60px) !important;
                 line-height: 1.08 !important;
                 font-weight: 600 !important;
-                letter-spacing: -0.015em !important;
-                margin: 0 0 26px 0 !important;
-                text-align: left !important;
-                max-width: 640px !important;
+                max-width: 22ch !important;
+                margin: 0 auto 22px auto !important;
+                text-align: center !important;
+                letter-spacing: -.018em;
             }
 
-            .a2z-ec .exact-hero-title .gold-italic {
-                font-family: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+            .a2z-ec .hero h1 em {
                 font-style: italic;
-                font-weight: 500;
+                color: #C4905A;
+                font-weight: 600;
                 background: linear-gradient(135deg, #F5D794 0%, #D49C47 50%, #F5D794 100%);
                 -webkit-background-clip: text;
                 -webkit-text-fill-color: transparent;
                 display: inline-block;
-                filter: drop-shadow(0 2px 12px rgba(212, 156, 71, 0.25));
             }
 
-            .a2z-ec .exact-hero-lede {
-                font-family: 'DM Sans', 'Inter', system-ui, sans-serif !important;
-                color: #94A3B8 !important;
-                font-size: clamp(15.5px, 1.35vw, 18px) !important;
+            .a2z-ec .hero .lede {
+                color: #dbe6ef !important;
+                font-family: 'DM Sans', system-ui, sans-serif !important;
+                font-size: clamp(16.5px, 1.45vw, 19.5px) !important;
                 line-height: 1.62 !important;
-                margin: 0 0 36px 0 !important;
-                max-width: 600px !important;
-                text-align: left !important;
+                max-width: 62ch !important;
+                margin: 0 auto 34px auto !important;
+                text-align: center !important;
             }
 
-            .a2z-ec .exact-hero-badges {
+            .a2z-ec .hero .cta-group {
                 display: flex;
-                flex-wrap: nowrap;
-                gap: 10px;
+                flex-direction: column;
                 align-items: center;
-                max-width: 100%;
+                gap: 18px;
+                width: 100%;
             }
 
-            .a2z-ec .hero-feature-badge {
+            .a2z-ec .hero .btns {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 16px;
+            }
+
+            .a2z-ec .hero .meta {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-top: 6px;
+            }
+
+            .a2z-ec .hero .cc-badge {
                 display: inline-flex;
                 align-items: center;
-                gap: 8px;
-                background: rgba(15, 25, 42, 0.65);
-                border: 1px solid rgba(212, 156, 71, 0.35);
-                backdrop-filter: blur(12px);
-                -webkit-backdrop-filter: blur(12px);
-                padding: 9px 13px;
-                border-radius: 9px;
-                color: #E2E8F0;
-                font-family: 'DM Sans', system-ui, sans-serif;
-                font-size: 13px;
-                font-weight: 600;
-                letter-spacing: 0.01em;
-                box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
-                transition: border-color 0.2s, transform 0.2s;
+                gap: 9px;
+                font-size: 14px;
+                font-weight: 700;
+                color: #ffffff;
+                background: linear-gradient(180deg, rgba(196, 144, 90, .22), rgba(196, 144, 90, .07));
+                border: 1px solid rgba(216, 175, 130, .6);
+                border-radius: 999px;
+                padding: 8px 20px;
+                box-shadow: 0 10px 26px -16px rgba(196, 144, 90, .8);
+            }
+
+            .a2z-ec .hero .cc-badge svg {
+                width: 18px;
+                height: 18px;
+                stroke: #D8AF82;
+            }
+
+            .a2z-ec .hero .toolslider {
+                margin: 28px auto 0 auto;
+                max-width: 620px;
+                overflow: hidden;
+                -webkit-mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
+                mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
+            }
+
+            .a2z-ec .hero .toolslider .track {
+                display: flex;
+                width: max-content;
+                animation: ecslide 26s linear infinite;
+                will-change: transform;
+            }
+
+            .a2z-ec .hero .toolslider:hover .track {
+                animation-play-state: paused;
+            }
+
+            @keyframes ecslide {
+                from {
+                    transform: translateX(0);
+                }
+
+                to {
+                    transform: translateX(-50%);
+                }
+            }
+
+            .a2z-ec .hero .tsb {
+                display: inline-flex;
+                align-items: center;
+                gap: 10px;
                 white-space: nowrap;
+                font-size: 13.5px;
+                font-weight: 600;
+                color: #eef4f9;
+                background: rgba(255, 255, 255, .06);
+                border: 1px solid rgba(255, 255, 255, .15);
+                border-radius: 11px;
+                padding: 10px 18px;
+                margin-right: 12px;
             }
 
-            letter-spacing: 0.01em;
-            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
-            transition: border-color 0.2s,
-            transform 0.2s;
-            }
-
-            .a2z-ec .hero-feature-badge:hover {
-                border-color: rgba(212, 156, 71, 0.7);
-                transform: translateY(-2px);
-            }
-
-            .a2z-ec .badge-icon {
-                width: 16px;
-                height: 16px;
-                flex-shrink: 0;
-            }
-
-            .a2z-ec .badge-brand-icon {
+            .a2z-ec .hero .tsb .tmark {
+                width: 24px;
+                height: 24px;
                 display: inline-flex;
                 align-items: center;
                 justify-content: center;
-                width: 22px;
-                height: 22px;
-                border-radius: 50%;
                 font-size: 11px;
                 font-weight: 800;
                 color: #ffffff;
+                flex: none;
                 line-height: 1;
             }
 
-            .a2z-ec .badge-brand-icon.xero-icon {
-                background: #00B4D8;
+            .a2z-ec .hero .tsb .tmark.xero {
+                background: #13B5EA;
+                border-radius: 50%;
             }
 
-            .a2z-ec .badge-brand-icon.qb-icon {
+            .a2z-ec .hero .tsb .tmark.qb {
                 background: #2CA01C;
+                border-radius: 50%;
             }
 
-            /* Right Column */
-            .a2z-ec .exact-hero-right {
+            .a2z-ec .hero .tsb .tmark.doc,
+            .a2z-ec .hero .tsb .tmark.pl {
+                background: linear-gradient(160deg, #16456b, #0D2B42);
+                border: 1px solid rgba(216, 175, 130, .55);
+                border-radius: 7px;
+            }
+
+            /* Flow diagram & Real Profit card band */
+            .a2z-ec .hero .hero-diagram-band {
+                margin-top: 48px;
+                width: 100%;
+                max-width: 840px;
+                background: rgba(13, 43, 66, 0.65);
+                border: 1px solid rgba(216, 175, 130, 0.45);
+                backdrop-filter: blur(16px);
+                -webkit-backdrop-filter: blur(16px);
+                border-radius: 20px;
+                padding: clamp(24px, 3.5vw, 40px);
+                box-shadow: 0 32px 64px -20px rgba(0, 0, 0, 0.75);
                 display: flex;
                 flex-direction: column;
-                align-items: flex-end;
-                width: 100%;
-            }
-
-            .a2z-ec .exact-cc-badge {
-                display: inline-flex;
                 align-items: center;
-                gap: 10px;
-                background: rgba(18, 30, 52, 0.65);
-                border: 1px solid rgba(212, 156, 71, 0.4);
-                backdrop-filter: blur(12px);
-                -webkit-backdrop-filter: blur(12px);
-                padding: 13px 24px;
-                border-radius: 12px;
-                color: #F3D085;
-                font-family: 'DM Sans', system-ui, sans-serif;
-                font-weight: 700;
-                font-size: 14.5px;
-                margin-bottom: 24px;
-                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
             }
 
-            .a2z-ec .cc-star-icon {
-                width: 19px;
-                height: 19px;
-                flex-shrink: 0;
-            }
-
-            .a2z-ec .exact-cta-card {
+            .a2z-ec .hero .hero-diagram-band svg {
                 width: 100%;
-                max-width: 440px;
-                background: rgba(18, 30, 52, 0.65);
-                border: 1px solid rgba(255, 255, 255, 0.1);
-                backdrop-filter: blur(20px);
-                -webkit-backdrop-filter: blur(20px);
-                border-radius: 18px;
-                padding: 38px 34px;
-                box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.65), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+                height: auto;
+                max-width: 680px;
             }
 
-            .a2z-ec .exact-btn-primary {
-                display: block;
-                width: 100%;
-                text-align: center;
-                background: linear-gradient(180deg, #E6BA68 0%, #D49C47 100%);
-                color: #1A160E !important;
-                font-family: 'DM Sans', system-ui, sans-serif;
-                font-weight: 800;
-                font-size: 13.5px;
-                letter-spacing: 0.09em;
-                text-transform: uppercase;
-                padding: 17px 24px;
-                border-radius: 8px;
-                box-shadow: 0 4px 18px rgba(212, 156, 71, 0.3);
-                transition: all 0.2s ease;
-                text-decoration: none !important;
-            }
-
-            .a2z-ec .exact-btn-primary:hover {
-                background: linear-gradient(180deg, #F5D794 0%, #E0A854 100%);
-                transform: translateY(-2px);
-                box-shadow: 0 8px 26px rgba(212, 156, 71, 0.45);
-                color: #000000 !important;
-            }
-
-            .a2z-ec .exact-cta-divider {
+            .a2z-ec .hero .rp-row {
                 display: flex;
+                flex-direction: column;
                 align-items: center;
+                gap: 8px;
+                margin-top: 20px;
+            }
+
+            .a2z-ec .hero .rp-label {
+                font-family: 'Cormorant Garamond', serif;
+                font-style: italic;
+                font-weight: 600;
+                color: #D8AF82;
+                font-size: clamp(26px, 3vw, 36px);
+                line-height: 1;
+            }
+
+            .a2z-ec .hero .chip {
+                background: linear-gradient(180deg, #ffffff, #FCFAF6);
+                color: #0D2B42;
+                border-radius: 999px;
+                padding: 12px 24px;
+                box-shadow: 0 20px 48px -16px rgba(0, 0, 0, .75);
+                border: 1px solid #E2D2A8;
                 text-align: center;
-                margin: 22px 0;
-                color: #64748B;
-                font-family: 'DM Sans', system-ui, sans-serif;
-                font-size: 12px;
-                font-weight: 700;
-                letter-spacing: 0.12em;
             }
 
-            .a2z-ec .exact-cta-divider::before,
-            .a2z-ec .exact-cta-divider::after {
-                content: '';
-                flex: 1;
-                border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-            }
-
-            .a2z-ec .exact-cta-divider::before {
-                margin-right: 16px;
-            }
-
-            .a2z-ec .exact-cta-divider::after {
-                margin-left: 16px;
-            }
-
-            .a2z-ec .exact-btn-secondary {
-                display: block;
-                width: 100%;
-                text-align: center;
-                background: rgba(12, 22, 38, 0.7);
-                border: 1px solid rgba(212, 156, 71, 0.45);
-                color: #F3D085 !important;
-                font-family: 'DM Sans', system-ui, sans-serif;
-                font-weight: 700;
-                font-size: 13px;
-                letter-spacing: 0.08em;
+            .a2z-ec .hero .chip .cl {
+                font-size: 11px;
+                letter-spacing: .18em;
                 text-transform: uppercase;
-                padding: 17px 24px;
-                border-radius: 8px;
-                transition: all 0.2s ease;
-                text-decoration: none !important;
+                color: #B07D3C;
+                font-weight: 700;
             }
 
-            .a2z-ec .exact-btn-secondary:hover {
-                border-color: #F5D794;
-                background: rgba(212, 156, 71, 0.12);
-                color: #FFFFFF !important;
-                transform: translateY(-2px);
-            }
-
-            /* Responsive Breakpoints */
-            @media (max-width: 992px) {
-                .a2z-ec .exact-hero-grid {
-                    grid-template-columns: 1fr;
-                    gap: 40px;
-                }
-
-                .a2z-ec .exact-hero-right {
-                    align-items: center;
-                }
-
-                .a2z-ec .exact-cta-card {
-                    max-width: 100%;
-                }
-            }
-
-            @media (max-width: 640px) {
-                .a2z-ec .exact-hero-badges {
-                    flex-direction: column;
-                    align-items: stretch;
-                    width: 100%;
-                }
-
-                .a2z-ec .hero-feature-badge {
-                    justify-content: center;
-                }
-
-                .a2z-ec .exact-hero-title {
-                    font-size: 34px !important;
-                }
+            .a2z-ec .hero .chip .cn {
+                font-family: 'Cormorant Garamond', serif;
+                font-size: 28px;
+                font-weight: 700;
+                color: #0D2B42;
+                line-height: 1.1;
             }
         </style>
 
-        <section class="hero new-hero-exact">
+        <section class="hero">
+            <div class="grain"></div>
             <div class="wrap">
-                <div class="exact-hero-grid">
-                    <!-- Left Column -->
-                    <div class="exact-hero-left">
-                        <div class="exact-hero-pill">
-                            E-COMMERCE ACCOUNTANTS - UK-WIDE
+                <div class="hero-inner-wrap">
+                    <span class="eyebrow">E-COMMERCE ACCOUNTANTS — UK-WIDE</span>
+                    <h1>E-Commerce Accountants<br>Built For How Online Businesses<br><em>Actually Make Money</em></h1>
+                    <p class="lede">We are specialist e-commerce accountants for established and growing UK online
+                        sellers. We turn marketplace payouts, cross-border VAT and stock into a clear picture of real
+                        profit per channel, so you can price, stock and scale on evidence.</p>
+                    <div class="cta-group">
+                        <div class="btns">
+                            <a href="#a2z-enquire" class="btn btn-gold" data-a2z-source="E-Commerce Enquiry">Book a
+                                Consultation <span class="ar">&rarr;</span></a>
+                            <a href="#a2z-feequote" class="btn btn-ghost">Instant Fee Estimate <span
+                                    class="ar">&rarr;</span></a>
                         </div>
-                        <h1 class="exact-hero-title">
-                            E-Commerce<br>
-                            Accountants<br>
-                            Built For How<br>
-                            Online Businesses<br>
-                            <span class="gold-italic">Actually Make Money</span>
-                        </h1>
-                        <p class="exact-hero-lede">
-                            We are specialist e-commerce accountants for established and growing UK online sellers. We
-                            turn marketplace payouts, cross-border VAT and stock into a clear picture of real profit per
-                            channel, so you can price, stock and scale on evidence.
-                        </p>
-                        <div class="exact-hero-badges">
-                            <div class="hero-feature-badge">
-                                <svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="#D49C47"
-                                    stroke-width="2">
+                        <div class="meta">
+                            <span class="cc-badge">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="#D8AF82" stroke-width="2">
                                     <path
-                                        d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z">
-                                    </path>
-                                    <path d="M12 11v6M9 14h6"></path>
+                                        d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
                                 </svg>
-                                <span>Remote Document Tools</span>
-                            </div>
-                            <div class="hero-feature-badge">
-                                <span class="badge-brand-icon xero-icon">x</span>
-                                <span>Xero</span>
-                            </div>
-                            <div class="hero-feature-badge">
-                                <svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="#D49C47"
-                                    stroke-width="2">
-                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-                                    <path d="M9 12l2 2 4-4"></path>
-                                </svg>
-                                <span>100% Paperless</span>
-                            </div>
-                            <div class="hero-feature-badge">
-                                <span class="badge-brand-icon qb-icon">qb</span>
-                                <span>QuickBooks</span>
-                            </div>
+                                Chartered Certified (FCCA)
+                            </span>
+                        </div>
+                    </div>
+                    <div class="toolslider">
+                        <div class="track">
+                            <span class="tsb"><span class="tmark xero">x</span> Xero</span>
+                            <span class="tsb"><span class="tmark qb">qb</span> QuickBooks</span>
+                            <span class="tsb"><span class="tmark doc"><svg viewBox="0 0 24 24" fill="none"
+                                        stroke="#D8AF82" stroke-width="2">
+                                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                                        <polyline points="14 2 14 8 20 8" />
+                                    </svg></span> Remote Document Tools</span>
+                            <span class="tsb"><span class="tmark pl"><svg viewBox="0 0 24 24" fill="none"
+                                        stroke="#D8AF82" stroke-width="2">
+                                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                                        <path d="M9 12l2 2 4-4" />
+                                    </svg></span> 100% Paperless</span>
+                            <span class="tsb" aria-hidden="true"><span class="tmark xero">x</span> Xero</span>
+                            <span class="tsb" aria-hidden="true"><span class="tmark qb">qb</span> QuickBooks</span>
+                            <span class="tsb" aria-hidden="true"><span class="tmark doc"><svg viewBox="0 0 24 24"
+                                        fill="none" stroke="#D8AF82" stroke-width="2">
+                                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                                        <polyline points="14 2 14 8 20 8" />
+                                    </svg></span> Remote Document Tools</span>
+                            <span class="tsb" aria-hidden="true"><span class="tmark pl"><svg viewBox="0 0 24 24"
+                                        fill="none" stroke="#D8AF82" stroke-width="2">
+                                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                                        <path d="M9 12l2 2 4-4" />
+                                    </svg></span> 100% Paperless</span>
                         </div>
                     </div>
 
-                    <!-- Right Column -->
-                    <div class="exact-hero-right">
-                        <div class="exact-cc-badge">
-                            <svg viewBox="0 0 24 24" fill="none" class="cc-star-icon">
-                                <path
-                                    d="M12 2L14.7 4.3L18.1 3.9L19.3 7.1L22.4 8.6L21.7 12L22.4 15.4L19.3 16.9L18.1 20.1L14.7 19.7L12 22L9.3 19.7L5.9 20.1L4.7 16.9L1.6 15.4L2.3 12L1.6 8.6L4.7 7.1L5.9 3.9L9.3 4.3L12 2Z"
-                                    fill="#D49C47" fill-opacity="0.2" stroke="#D49C47" stroke-width="1.8"
-                                    stroke-linejoin="round" />
-                                <path d="M9 12L11 14L15 9.5" stroke="#F3D085" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round" />
-                            </svg>
-                            <span>Chartered Certified</span>
-                        </div>
-                        <div class="exact-cta-card">
-                            <a class="exact-btn-primary" href="#a2z-enquire" data-a2z-source="E-Commerce Enquiry">
-                                BOOK A CONSULTATION
-                            </a>
-                            <div class="exact-cta-divider">
-                                <span>OR</span>
+                    <!-- Flow Diagram & Real Profit Card Band -->
+                    <div class="hero-diagram-band">
+                        <svg viewBox="0 0 680 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="ch-ha-1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#C4905A" stop-opacity="0.9" />
+                                    <stop offset="100%" stop-color="#D8AF82" stop-opacity="0.35" />
+                                </linearGradient>
+                                <linearGradient id="ch-ha-2" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#16456b" stop-opacity="0.85" />
+                                    <stop offset="100%" stop-color="#0D2B42" stop-opacity="0.95" />
+                                </linearGradient>
+                            </defs>
+                            <path d="M60 60 Q 280 60, 440 160" stroke="url(#ch-ha-1)" stroke-width="2"
+                                stroke-dasharray="4 4" />
+                            <path d="M60 130 Q 280 130, 440 160" stroke="url(#ch-ha-1)" stroke-width="2"
+                                stroke-dasharray="4 4" />
+                            <path d="M60 190 Q 280 190, 440 160" stroke="url(#ch-ha-1)" stroke-width="2"
+                                stroke-dasharray="4 4" />
+                            <path d="M60 260 Q 280 260, 440 160" stroke="url(#ch-ha-1)" stroke-width="2"
+                                stroke-dasharray="4 4" />
+                            <g transform="translate(30, 42)">
+                                <rect width="140" height="38" rx="8" fill="#11364f" stroke="rgba(216,175,130,0.45)" />
+                                <text x="70" y="24" fill="#e2ebf3" font-size="12.5" font-family="DM Sans"
+                                    font-weight="600" text-anchor="middle">Shopify Sales</text>
+                            </g>
+                            <g transform="translate(30, 112)">
+                                <rect width="140" height="38" rx="8" fill="#11364f" stroke="rgba(216,175,130,0.45)" />
+                                <text x="70" y="24" fill="#e2ebf3" font-size="12.5" font-family="DM Sans"
+                                    font-weight="600" text-anchor="middle">Amazon FBA</text>
+                            </g>
+                            <g transform="translate(30, 172)">
+                                <rect width="140" height="38" rx="8" fill="#11364f" stroke="rgba(216,175,130,0.45)" />
+                                <text x="70" y="24" fill="#e2ebf3" font-size="12.5" font-family="DM Sans"
+                                    font-weight="600" text-anchor="middle">WooCommerce</text>
+                            </g>
+                            <g transform="translate(30, 242)">
+                                <rect width="140" height="38" rx="8" fill="#11364f" stroke="rgba(216,175,130,0.45)" />
+                                <text x="70" y="24" fill="#e2ebf3" font-size="12.5" font-family="DM Sans"
+                                    font-weight="600" text-anchor="middle">eBay &amp; Multi-Channel</text>
+                            </g>
+                            <circle cx="440" cy="160" r="36" fill="url(#ch-ha-2)" stroke="#C4905A" stroke-width="2.5" />
+                            <circle cx="440" cy="160" r="9" fill="#C4905A" />
+                        </svg>
+                        <div class="rp-row">
+                            <span class="rp-label">Real Profit</span>
+                            <div class="chip">
+                                <div class="cl">CLIENT RESULTS</div>
+                                <div class="cn">+£34k/yr</div>
                             </div>
-                            <a class="exact-btn-secondary" href="#a2z-feequote">
-                                GET AN INSTANT FEE ESTIMATE
-                            </a>
                         </div>
                     </div>
                 </div>
@@ -5068,99 +5056,536 @@
                 color: var(--grey);
             }
         </style>
-        <!-- ============ PLATFORMS BAND ============ -->
-        <section class="band">
-            <svg class="motif" viewBox="0 0 1200 400" preserveAspectRatio="xMidYMid slice"
-                xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <!-- ============ PLATFORMS BAND (EXACT DESIGN MATCH) ============ -->
+        <style id="platforms-section-design">
+            .a2z-ec .platforms-new-section {
+                padding: clamp(60px, 7vw, 96px) 0;
+                background-color: #ffffff;
+                text-align: center;
+            }
 
-                <g fill="none" stroke="#1b3a55" stroke-width="1">
-                    <path d="M0 80 C300 40 600 160 1200 90" />
-                    <path d="M0 160 C300 120 600 240 1200 170" />
-                    <path d="M0 240 C300 200 600 320 1200 250" />
-                    <path d="M0 320 C300 280 600 400 1200 330" />
-                </g>
-            </svg>
+            .a2z-ec .plat-eyebrow {
+                font-family: 'DM Sans', system-ui, sans-serif;
+                font-size: 13px;
+                font-weight: 800;
+                letter-spacing: 0.16em;
+                text-transform: uppercase;
+                color: #D49C47;
+                margin-bottom: 12px;
+                display: block;
+            }
+
+            .a2z-ec .plat-heading {
+                font-family: 'Playfair Display', 'Cormorant Garamond', Georgia, serif !important;
+                font-size: clamp(34px, 4.2vw, 54px) !important;
+                font-weight: 700 !important;
+                color: #0F172A !important;
+                line-height: 1.15 !important;
+                margin: 0 0 16px 0 !important;
+                letter-spacing: -0.015em !important;
+                text-align: center !important;
+            }
+
+            .a2z-ec .plat-heading em {
+                font-family: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+                font-style: italic;
+                font-weight: 500;
+                color: #D49C47;
+                background: linear-gradient(135deg, #F5D794 0%, #D49C47 50%, #B07D3C 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+            .a2z-ec .plat-subtext {
+                font-family: 'DM Sans', system-ui, sans-serif;
+                font-size: clamp(14.5px, 1.3vw, 16.5px);
+                color: #475569;
+                max-width: 580px;
+                margin: 0 auto clamp(40px, 5vw, 60px);
+                line-height: 1.55;
+            }
+
+            .a2z-ec .plat-cards-grid {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                gap: clamp(16px, 2vw, 24px);
+                max-width: 1100px;
+                margin: 0 auto;
+            }
+
+            .a2z-ec .plat-card {
+                position: relative;
+                background: linear-gradient(180deg, #FFFFFF 0%, #FAF5EC 100%);
+                border: 1px solid #EAE0D0;
+                border-radius: 20px;
+                overflow: hidden;
+                box-shadow: 0 12px 30px -10px rgba(15, 27, 43, 0.07);
+                transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.35s ease, border-color 0.35s ease;
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                text-decoration: none !important;
+            }
+
+            .a2z-ec .plat-card:hover {
+                transform: translateY(-6px);
+                box-shadow: 0 22px 45px -12px rgba(15, 27, 43, 0.14);
+                border-color: #D49C47;
+            }
+
+            .a2z-ec .plat-card-header {
+                position: relative;
+                background: #0D2034;
+                height: 105px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding-bottom: 20px;
+            }
+
+            .a2z-ec .plat-icon-box {
+                position: relative;
+                z-index: 2;
+                width: 44px;
+                height: 44px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: #ffffff;
+            }
+
+            .a2z-ec .plat-icon-box svg {
+                width: 34px;
+                height: 34px;
+                stroke: #ffffff;
+                stroke-width: 1.75;
+                fill: none;
+            }
+
+            .a2z-ec .plat-header-curve {
+                position: absolute;
+                bottom: -1px;
+                left: 0;
+                width: 100%;
+                height: 38px;
+                pointer-events: none;
+                z-index: 1;
+            }
+
+            .a2z-ec .plat-card-body {
+                padding: 12px 22px 32px 22px;
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+            }
+
+            .a2z-ec .plat-card-title {
+                font-family: 'Playfair Display', 'Cormorant Garamond', Georgia, serif !important;
+                font-size: clamp(20px, 2vw, 24px) !important;
+                font-weight: 700 !important;
+                color: #0F172A !important;
+                margin: 0 0 12px 0 !important;
+                line-height: 1.25 !important;
+            }
+
+            .a2z-ec .plat-card-desc {
+                font-family: 'DM Sans', system-ui, sans-serif !important;
+                font-size: 13.5px !important;
+                color: #475569 !important;
+                line-height: 1.55 !important;
+                margin: 0 !important;
+            }
+
+            @media (max-width: 992px) {
+                .a2z-ec .plat-cards-grid {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+            }
+
+            @media (max-width: 540px) {
+                .a2z-ec .plat-cards-grid {
+                    grid-template-columns: 1fr;
+                }
+            }
+        </style>
+
+        <section class="platforms-new-section">
             <div class="wrap">
-                <div class="sec-head rv">
-                    <p class="eyebrow">Platforms we know inside out</p>
-                    <h2>Specialist support for <em>every</em> channel you sell on</h2>
-                    <p>Each platform reports money differently. We know exactly how, so your accounts reflect what you
-                        actually earned.</p>
-                </div>
-                <div class="platindex rv">
-                    <a href="/shopify-accountants-uk/">
-                        <h3>Shopify</h3>
-                        <p>Payouts, fees and app subscriptions reconciled, with true store margin and VAT handled.</p>
-                        <span class="go" aria-hidden="true">&rsaquo;</span>
+                <span class="plat-eyebrow">PLATFORMS WE KNOW INSIDE OUT</span>
+                <h2 class="plat-heading">
+                    Specialist support for <em>every</em> channel<br>you sell on
+                </h2>
+                <p class="plat-subtext">
+                    Each platform reports money differently. We know exactly how, so your accounts reflect what you
+                    actually earned.
+                </p>
+
+                <div class="plat-cards-grid">
+                    <!-- Shopify -->
+                    <a href="/shopify-accountants-uk/" class="plat-card">
+                        <div class="plat-card-header">
+                            <div class="plat-icon-box">
+                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                                </svg>
+                            </div>
+                            <svg class="plat-header-curve" viewBox="0 0 300 48" preserveAspectRatio="none"
+                                aria-hidden="true">
+                                <path d="M 0 0 Q 150 48 300 0 L 300 48 L 0 48 Z" fill="#FFFFFF" />
+                                <path d="M 0 0 Q 150 48 300 0" fill="none" stroke="#D49C47" stroke-width="3" />
+                            </svg>
+                        </div>
+                        <div class="plat-card-body">
+                            <h3 class="plat-card-title">Shopify</h3>
+                            <p class="plat-card-desc">Payouts, fees and app subscriptions reconciled, with true store
+                                margin and VAT handled.</p>
+                        </div>
                     </a>
-                    <a href="/amazon-fba-accountant/">
-                        <h3>Amazon FBA</h3>
-                        <p>FBA fees, storage, referral and advertising untangled from your settlement statements.</p>
-                        <span class="go" aria-hidden="true">&rsaquo;</span>
+
+                    <!-- Amazon FBA -->
+                    <a href="/amazon-fba-accountant/" class="plat-card">
+                        <div class="plat-card-header">
+                            <div class="plat-icon-box">
+                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <path
+                                        d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z">
+                                    </path>
+                                    <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                                    <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                                </svg>
+                            </div>
+                            <svg class="plat-header-curve" viewBox="0 0 300 48" preserveAspectRatio="none"
+                                aria-hidden="true">
+                                <path d="M 0 0 Q 150 48 300 0 L 300 48 L 0 48 Z" fill="#FFFFFF" />
+                                <path d="M 0 0 Q 150 48 300 0" fill="none" stroke="#D49C47" stroke-width="3" />
+                            </svg>
+                        </div>
+                        <div class="plat-card-body">
+                            <h3 class="plat-card-title">Amazon FBA</h3>
+                            <p class="plat-card-desc">FBA fees, storage, referral and advertising untangled from your
+                                settlement statements.</p>
+                        </div>
                     </a>
-                    <a href="/woocommerce-accountant-uk/">
-                        <h3>WooCommerce</h3>
-                        <p>Gateway fees, plugins and multi-currency sales mapped to clean, accurate records.</p><span
-                            class="go" aria-hidden="true">&rsaquo;</span>
+
+                    <!-- WooCommerce -->
+                    <a href="/woocommerce-accountant-uk/" class="plat-card">
+                        <div class="plat-card-header">
+                            <div class="plat-icon-box">
+                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <circle cx="9" cy="21" r="1"></circle>
+                                    <circle cx="20" cy="21" r="1"></circle>
+                                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                                </svg>
+                            </div>
+                            <svg class="plat-header-curve" viewBox="0 0 300 48" preserveAspectRatio="none"
+                                aria-hidden="true">
+                                <path d="M 0 0 Q 150 48 300 0 L 300 48 L 0 48 Z" fill="#FFFFFF" />
+                                <path d="M 0 0 Q 150 48 300 0" fill="none" stroke="#D49C47" stroke-width="3" />
+                            </svg>
+                        </div>
+                        <div class="plat-card-body">
+                            <h3 class="plat-card-title">WooCommerce</h3>
+                            <p class="plat-card-desc">Gateway fees, plugins and multi-currency sales mapped to clean,
+                                accurate records.</p>
+                        </div>
                     </a>
-                    <a href="/dropshipping-accountant-uk/">
-                        <h3>Dropshipping</h3>
-                        <p>Supplier costs, import VAT and thin margins tracked, so profit is real, not assumed.</p><span
-                            class="go" aria-hidden="true">&rsaquo;</span>
+
+                    <!-- Dropshipping -->
+                    <a href="/dropshipping-accountant-uk/" class="plat-card">
+                        <div class="plat-card-header">
+                            <div class="plat-icon-box">
+                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <rect x="1" y="3" width="15" height="13"></rect>
+                                    <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+                                    <circle cx="5.5" cy="18.5" r="2.5"></circle>
+                                    <circle cx="18.5" cy="18.5" r="2.5"></circle>
+                                </svg>
+                            </div>
+                            <svg class="plat-header-curve" viewBox="0 0 300 48" preserveAspectRatio="none"
+                                aria-hidden="true">
+                                <path d="M 0 0 Q 150 48 300 0 L 300 48 L 0 48 Z" fill="#FFFFFF" />
+                                <path d="M 0 0 Q 150 48 300 0" fill="none" stroke="#D49C47" stroke-width="3" />
+                            </svg>
+                        </div>
+                        <div class="plat-card-body">
+                            <h3 class="plat-card-title">Dropshipping</h3>
+                            <p class="plat-card-desc">Supplier costs, import VAT and thin margins tracked, so profit is
+                                real, not assumed.</p>
+                        </div>
                     </a>
                 </div>
             </div>
         </section>
 
-        <section>
+        <!-- ============ THE REAL PROBLEMS SECTION (EXACT DESIGN MATCH) ============ -->
+        <style id="real-problems-design">
+            .a2z-ec .real-problems-section {
+                padding: clamp(64px, 7.5vw, 104px) 0;
+                background-color: #0B192C;
+                color: #ffffff;
+                text-align: center;
+            }
+
+            .a2z-ec .prob-eyebrow {
+                font-family: 'DM Sans', system-ui, sans-serif;
+                font-size: 13px;
+                font-weight: 800;
+                letter-spacing: 0.16em;
+                text-transform: uppercase;
+                color: #D49C47;
+                margin-bottom: 12px;
+                display: block;
+            }
+
+            .a2z-ec .prob-heading {
+                font-family: 'Playfair Display', 'Cormorant Garamond', Georgia, serif !important;
+                font-size: clamp(34px, 4.4vw, 54px) !important;
+                font-weight: 700 !important;
+                color: #FFFFFF !important;
+                line-height: 1.15 !important;
+                margin: 0 0 clamp(44px, 5.5vw, 68px) 0 !important;
+                letter-spacing: -0.015em !important;
+                text-align: center !important;
+            }
+
+            .a2z-ec .prob-heading em {
+                font-family: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+                font-style: italic;
+                font-weight: 500;
+                color: #D49C47;
+                background: linear-gradient(135deg, #F5D794 0%, #D49C47 50%, #B07D3C 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                display: inline-block;
+            }
+
+            .a2z-ec .prob-grid {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: clamp(36px, 4vw, 52px) clamp(24px, 3vw, 40px);
+                max-width: 1040px;
+                margin: 0 auto;
+                text-align: left;
+            }
+
+            .a2z-ec .prob-card-pair {
+                position: relative;
+                display: flex;
+                flex-direction: column;
+            }
+
+            /* Top Left Icon Badge */
+            .a2z-ec .prob-icon-badge {
+                position: absolute;
+                top: -16px;
+                left: 18px;
+                z-index: 10;
+                width: 44px;
+                height: 44px;
+                background: linear-gradient(135deg, #E6BA68 0%, #D49C47 100%);
+                border-radius: 10px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+            }
+
+            .a2z-ec .prob-icon-badge svg {
+                width: 22px;
+                height: 22px;
+                stroke: #0F1B2B;
+                stroke-width: 2;
+                fill: none;
+            }
+
+            /* Primary Blue Card (The Issue) */
+            .a2z-ec .prob-blue-card {
+                background-color: #1C4082;
+                border-radius: 18px;
+                padding: 38px 28px 48px 28px;
+                position: relative;
+                z-index: 1;
+                box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            }
+
+            .a2z-ec .prob-card-title {
+                font-family: 'DM Sans', system-ui, sans-serif !important;
+                font-size: clamp(20px, 2.2vw, 24px) !important;
+                font-weight: 700 !important;
+                color: #FFFFFF !important;
+                margin: 0 0 16px 0 !important;
+                line-height: 1.25 !important;
+            }
+
+            .a2z-ec .prob-issue-tag {
+                font-family: 'DM Sans', system-ui, sans-serif;
+                font-size: 11px;
+                font-weight: 800;
+                letter-spacing: 0.14em;
+                text-transform: uppercase;
+                color: #93C5FD;
+                margin-bottom: 6px;
+                display: block;
+            }
+
+            .a2z-ec .prob-issue-desc {
+                font-family: 'DM Sans', system-ui, sans-serif !important;
+                font-size: 13.8px !important;
+                color: #E2E8F0 !important;
+                line-height: 1.55 !important;
+                margin: 0 !important;
+            }
+
+            /* Secondary Cream Card (How We Fix It) */
+            .a2z-ec .prob-fix-card {
+                background-color: #FEF8D3;
+                border-radius: 14px;
+                padding: 24px 28px;
+                position: relative;
+                z-index: 3;
+                margin-top: -28px;
+                margin-left: 24px;
+                box-shadow: 0 14px 32px rgba(0, 0, 0, 0.28);
+                color: #0F172A;
+            }
+
+            .a2z-ec .prob-fix-tag {
+                font-family: 'DM Sans', system-ui, sans-serif;
+                font-size: 11px;
+                font-weight: 800;
+                letter-spacing: 0.14em;
+                text-transform: uppercase;
+                color: #0F172A;
+                margin-bottom: 6px;
+                display: block;
+            }
+
+            .a2z-ec .prob-fix-desc {
+                font-family: 'DM Sans', system-ui, sans-serif !important;
+                font-size: 13.8px !important;
+                font-weight: 600 !important;
+                color: #0F172A !important;
+                line-height: 1.5 !important;
+                margin: 0 !important;
+            }
+
+            @media (max-width: 840px) {
+                .a2z-ec .prob-grid {
+                    grid-template-columns: 1fr;
+                    gap: 48px;
+                }
+
+                .a2z-ec .prob-fix-card {
+                    margin-left: 14px;
+                }
+            }
+        </style>
+
+        <section class="real-problems-section">
             <div class="wrap">
-                <div class="sec-head rv">
-                    <p class="eyebrow">The real problems</p>
-                    <h2>Where online sellers lose money, and how we stop it</h2>
-                </div>
-                <div class="ledger rv">
-                    <div class="lrow">
-                        <div class="lp">
-                            <h3>Profit hidden in fees and refunds</h3>
-                            <p>Marketplaces bundle commission, FBA charges, advertising and refunds into one payout.
-                                Booked as a single deposit, your real costs disappear.</p>
+                <span class="prob-eyebrow">THE REAL PROBLEMS</span>
+                <h2 class="prob-heading">
+                    Where online sellers<br>
+                    lose money, and<br>
+                    <em>How we stop it</em>
+                </h2>
+
+                <div class="prob-grid">
+                    <!-- Card Pair 1 -->
+                    <div class="prob-card-pair">
+                        <div class="prob-icon-badge">
+                            <!-- Receipt / Ledger Icon -->
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                <polyline points="14 2 14 8 20 8"></polyline>
+                                <line x1="16" y1="13" x2="8" y2="13"></line>
+                                <line x1="16" y1="17" x2="8" y2="17"></line>
+                                <polyline points="10 9 9 9 8 9"></polyline>
+                            </svg>
                         </div>
-                        <div class="lf"><span class="sl">How we fix it</span>
-                            <p>We split every fee, refund and chargeback line by line, so your accounts and VAT return
-                                reflect only the genuine costs you incurred.</p>
+                        <div class="prob-blue-card">
+                            <h3 class="prob-card-title">Profit hidden in fees and refunds</h3>
+                            <span class="prob-issue-tag">THE ISSUE</span>
+                            <p class="prob-issue-desc">Marketplaces bundle commission, FBA charges, advertising and
+                                refunds into one payout. Booked as a single deposit, your real costs disappear.</p>
                         </div>
-                    </div>
-                    <div class="lrow">
-                        <div class="lp">
-                            <h3>VAT that varies by border</h3>
-                            <p>Distance-selling thresholds, OSS and IOSS, import VAT and customs duties differ by
-                                country, product and shipping method, and the rules keep moving.</p>
-                        </div>
-                        <div class="lf"><span class="sl">How we fix it</span>
-                            <p>We register and file correctly across the UK and EU, and document the treatment for HMRC,
-                                so you neither overpay nor get caught out later.</p>
-                        </div>
-                    </div>
-                    <div class="lrow">
-                        <div class="lp">
-                            <h3>Cash trapped in stock</h3>
-                            <p>Overstock ties up cash, understock loses sales, and a healthy profit on paper can still
-                                leave you short when it is time to reorder.</p>
-                        </div>
-                        <div class="lf"><span class="sl">How we fix it</span>
-                            <p>Cash-flow forecasting that links stock to cash, so you grow and reorder with confidence
-                                rather than crossing your fingers.</p>
+                        <div class="prob-fix-card">
+                            <span class="prob-fix-tag">HOW WE FIX IT</span>
+                            <p class="prob-fix-desc">We split every fee, refund and chargeback line by line, so your
+                                accounts and VAT return reflect only the genuine costs you incurred.</p>
                         </div>
                     </div>
-                    <div class="lrow">
-                        <div class="lp">
-                            <h3>Selling well, but somehow broke</h3>
-                            <p>High turnover does not mean high profit. Without margin by product and channel, it is
-                                easy to scale the very things that quietly lose money.</p>
+
+                    <!-- Card Pair 2 -->
+                    <div class="prob-card-pair">
+                        <div class="prob-icon-badge">
+                            <!-- Globe Icon -->
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line x1="2" y1="12" x2="22" y2="12"></line>
+                                <path
+                                    d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+                                </path>
+                            </svg>
                         </div>
-                        <div class="lf"><span class="sl">How we fix it</span>
-                            <p>Clear margin per product and per channel, so you cut what loses, back what works, and
-                                scale on evidence.</p>
+                        <div class="prob-blue-card">
+                            <h3 class="prob-card-title">VAT that varies by border</h3>
+                            <span class="prob-issue-tag">THE ISSUE</span>
+                            <p class="prob-issue-desc">Distance-selling thresholds, OSS and IOSS, import VAT and customs
+                                duties differ by country, product and shipping method, and the rules keep moving.</p>
+                        </div>
+                        <div class="prob-fix-card">
+                            <span class="prob-fix-tag">HOW WE FIX IT</span>
+                            <p class="prob-fix-desc">We register and file correctly across the UK and EU, and document
+                                the treatment for HMRC, so you neither overpay nor get caught out later.</p>
+                        </div>
+                    </div>
+
+                    <!-- Card Pair 3 -->
+                    <div class="prob-card-pair">
+                        <div class="prob-icon-badge">
+                            <!-- Package / Box Icon -->
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <path
+                                    d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z">
+                                </path>
+                                <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                                <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                            </svg>
+                        </div>
+                        <div class="prob-blue-card">
+                            <h3 class="prob-card-title">Cash trapped in stock</h3>
+                            <span class="prob-issue-tag">THE ISSUE</span>
+                            <p class="prob-issue-desc">Overstock ties up cash, understock loses sales, and a healthy
+                                profit on paper can still leave you short when it is time to reorder.</p>
+                        </div>
+                        <div class="prob-fix-card">
+                            <span class="prob-fix-tag">HOW WE FIX IT</span>
+                            <p class="prob-fix-desc">Cash-flow forecasting that links stock to cash, so you grow and
+                                reorder with confidence rather than crossing your fingers.</p>
+                        </div>
+                    </div>
+
+                    <!-- Card Pair 4 -->
+                    <div class="prob-card-pair">
+                        <div class="prob-icon-badge">
+                            <!-- Decreasing Trend Line Chart Icon -->
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <polyline points="23 18 13.5 8.5 8.5 13.5 1 6"></polyline>
+                                <polyline points="17 18 23 18 23 12"></polyline>
+                            </svg>
+                        </div>
+                        <div class="prob-blue-card">
+                            <h3 class="prob-card-title">Selling well, but somehow broke</h3>
+                            <span class="prob-issue-tag">THE ISSUE</span>
+                            <p class="prob-issue-desc">High turnover does not mean high profit. Without margin by
+                                product and channel, it is easy to scale the very things that quietly lose money.</p>
+                        </div>
+                        <div class="prob-fix-card">
+                            <span class="prob-fix-tag">HOW WE FIX IT</span>
+                            <p class="prob-fix-desc">Clear margin per product and per channel, so you cut what loses,
+                                back what works, and scale on evidence.</p>
                         </div>
                     </div>
                 </div>
@@ -5195,157 +5620,766 @@
             })();
         </script>
 
-        <!-- ============ WHY SPECIALIST (two-col editorial) ============ -->
-        <section class="panelled alt">
-            <div class="wrap">
-                <div class="twocol">
-                    <div class="rv">
-                        <p class="eyebrow">Why a specialist</p>
-                        <h2 style="font-size:clamp(31px,4vw,46px); line-height:1.05;">Specialists in online business,
-                            not generalists who also do it</h2>
-                        <figure class="why-photo rv d1"><img alt="A2Z meeting an e-commerce client in our office"
-                                src="https://a2zaccounting.co.uk/wp-content/uploads/2026/06/a2z-photo-1-team-desk.jpg">
-                        </figure>
-                        <p style="color:var(--grey); margin-top:4px; font-size:18px;">Marketplace fees, refunds,
-                            multi-country VAT, foreign exchange and stock all sit between turnover and real profit. Most
-                            accountants can file your accounts; far fewer speak fluently about what decides whether an
-                            online business is profitable.</p>
-                    </div>
-                    <div class="stack rv d1">
-                        <div class="it">
-                            <h3>We live in this every day</h3>
-                            <p>The <a href="/services/vat-returns-bookkeeping-services/">VAT</a> margin scheme, OSS and
-                                IOSS, distance selling and marketplace fee splits are routine for us, not something we
-                                look up after you ask.</p>
-                        </div>
-                        <div class="it">
-                            <h3>We measure real profit</h3>
-                            <p>Stripe and Amazon payouts are not accounting records. We turn them into accurate margin
-                                per channel and per product, so you know what truly makes money.</p>
-                        </div>
-                        <div class="it">
-                            <h3>We keep your VAT defensible</h3>
-                            <p>Cross-border, distance-selling, import VAT and digital-product rules, handled and
-                                documented for HMRC, so you neither overpay nor get caught out.</p>
-                        </div>
-                        <div class="it">
-                            <h3>We work as your finance function</h3>
-                            <p>Year-end and VAT as standard, with <a href="/services/management-accounts/">management
-                                    accounts</a> and cash-flow forecasting when you need to steer, not just report.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <!-- ============ WHY SPECIALIST SECTION (EXACT DESIGN MATCH) ============ -->
+        <style id="why-specialist-design">
+            .a2z-ec .why-specialist-new-section {
+                padding: clamp(60px, 7vw, 96px) 0;
+                background-color: #ffffff;
+            }
 
-        <!-- ============ WHAT WE HANDLE (editorial list + custom icons) ============ -->
-        <section class="dark">
+            .a2z-ec .why-main-card {
+                max-width: 1080px;
+                margin: 0 auto;
+                background: #FFFFFF;
+                border-radius: 24px;
+                overflow: hidden;
+                box-shadow: 0 25px 65px -15px rgba(11, 25, 44, 0.16);
+                border: 1px solid #EAE0D0;
+                display: grid;
+                grid-template-columns: 0.92fr 1.08fr;
+            }
+
+            /* Left Dark Column */
+            .a2z-ec .why-left-col {
+                background-color: #0D2034;
+                color: #ffffff;
+                padding: clamp(32px, 4vw, 48px) clamp(24px, 3vw, 40px);
+                display: flex;
+                flex-direction: column;
+            }
+
+            .a2z-ec .why-eyebrow {
+                font-family: 'DM Sans', system-ui, sans-serif;
+                font-size: 13px;
+                font-weight: 800;
+                letter-spacing: 0.14em;
+                text-transform: uppercase;
+                color: #D49C47;
+                margin-bottom: 16px;
+                display: block;
+            }
+
+            .a2z-ec .why-heading {
+                font-family: 'Playfair Display', 'Cormorant Garamond', Georgia, serif !important;
+                font-size: clamp(26px, 2.5vw, 34px) !important;
+                font-weight: 700 !important;
+                color: #FFFFFF !important;
+                line-height: 1.25 !important;
+                margin: 0 0 18px 0 !important;
+            }
+
+            .a2z-ec .why-subtext {
+                font-family: 'DM Sans', system-ui, sans-serif !important;
+                font-size: 13.8px !important;
+                color: #94A3B8 !important;
+                line-height: 1.55 !important;
+                margin: 0 0 28px 0 !important;
+            }
+
+            .a2z-ec .why-photo-box {
+                margin-top: auto;
+                border-radius: 14px;
+                overflow: hidden;
+                position: relative;
+                aspect-ratio: 16 / 10;
+                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+            }
+
+            .a2z-ec .why-photo-box img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                display: block;
+            }
+
+            /* Right Grid Column (Checkerboard Layout) */
+            .a2z-ec .why-right-grid {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: 1fr 1fr;
+            }
+
+            .a2z-ec .why-block {
+                padding: clamp(28px, 3.5vw, 40px) clamp(24px, 3vw, 34px);
+                display: flex;
+                flex-direction: column;
+            }
+
+            .a2z-ec .why-block.bg-white {
+                background-color: #FFFFFF;
+            }
+
+            .a2z-ec .why-block.bg-cream {
+                background-color: #FDF8EE;
+            }
+
+            .a2z-ec .why-badge-icon {
+                width: 38px;
+                height: 38px;
+                background-color: #0D2034;
+                border-radius: 8px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 20px;
+                box-shadow: 0 4px 10px rgba(13, 32, 52, 0.2);
+            }
+
+            .a2z-ec .why-badge-icon svg {
+                width: 20px;
+                height: 20px;
+                stroke: #ffffff;
+                stroke-width: 1.8;
+                fill: none;
+            }
+
+            .a2z-ec .why-block-title {
+                font-family: 'Playfair Display', 'Cormorant Garamond', Georgia, serif !important;
+                font-size: clamp(19px, 1.8vw, 22px) !important;
+                font-weight: 700 !important;
+                color: #0F172A !important;
+                margin: 0 0 12px 0 !important;
+                line-height: 1.25 !important;
+            }
+
+            .a2z-ec .why-block-desc {
+                font-family: 'DM Sans', system-ui, sans-serif !important;
+                font-size: 13.5px !important;
+                color: #334155 !important;
+                line-height: 1.55 !important;
+                margin: 0 !important;
+            }
+
+            .a2z-ec .why-block-desc a {
+                color: #0F172A;
+                font-weight: 600;
+                text-decoration: underline;
+                text-decoration-color: #D49C47;
+            }
+
+            @media (max-width: 920px) {
+                .a2z-ec .why-main-card {
+                    grid-template-columns: 1fr;
+                }
+            }
+
+            @media (max-width: 600px) {
+                .a2z-ec .why-right-grid {
+                    grid-template-columns: 1fr;
+                }
+            }
+        </style>
+
+        <section class="why-specialist-new-section">
             <div class="wrap">
-                <div class="sec-head rv">
-                    <p class="eyebrow">What we handle</p>
-                    <h2>The work behind a <em>profitable</em> online business</h2>
-                </div>
-                <div class="elist rv">
-                    <div class="erow">
-                        <svg class="eic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M3 7h13l-2-2M21 17H8l2 2" />
-                            <path d="M3 7v0M21 17v0" />
-                            <circle cx="18" cy="7" r="2.4" />
-                            <circle cx="6" cy="17" r="2.4" />
-                        </svg>
-                        <div>
-                            <h3>Multi-channel reconciliation</h3>
-                            <p>Amazon, Shopify, eBay, Etsy, WooCommerce, Stripe, PayPal and Klarna, reconciled through
-                                specialist tools such as A2X and Link My Books, so fees, refunds and payouts are split
-                                correctly, never booked as a single net deposit.</p>
+                <div class="why-main-card">
+                    <!-- Left Dark Hero Block -->
+                    <div class="why-left-col">
+                        <span class="why-eyebrow">WHY A SPECIALIST?</span>
+                        <h2 class="why-heading">
+                            Specialists in online business, not generalists who also do it.
+                        </h2>
+                        <p class="why-subtext">
+                            Marketplace fees, refunds, multi-country VAT, foreign exchange and stock all sit between
+                            turnover and real profit. Most accountants can file your accounts; far fewer speak fluently
+                            about what decides whether an online business is profitable.
+                        </p>
+
+                        <div class="why-photo-box">
+                            <img src="https://a2zaccounting.co.uk/wp-content/uploads/2026/06/a2z-photo-1-team-desk.jpg"
+                                alt="A2Z Accounting Specialists Meeting Client">
                         </div>
                     </div>
-                    <div class="erow">
-                        <svg class="eic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="12" cy="12" r="9" />
-                            <path d="M3 12h18M12 3c2.5 2.5 2.5 15 0 18M12 3c-2.5 2.5-2.5 15 0 18" />
-                        </svg>
-                        <div>
-                            <h3>VAT, UK and EU</h3>
-                            <p>Registration, returns, OSS and IOSS, EORI and import VAT, distance selling and the
-                                second-hand margin scheme, set up to run cleanly each quarter under Making Tax Digital.
+
+                    <!-- Right 2x2 Checkerboard Grid -->
+                    <div class="why-right-grid">
+                        <!-- Block 1 (Top Left, White) -->
+                        <div class="why-block bg-white">
+                            <div class="why-badge-icon">
+                                <!-- Lightbulb / Gear Icon -->
+                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <path
+                                        d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7z">
+                                    </path>
+                                    <line x1="9" y1="21" x2="15" y2="21"></line>
+                                </svg>
+                            </div>
+                            <h3 class="why-block-title">We live in this every day</h3>
+                            <p class="why-block-desc">
+                                The <a href="/services/vat-returns-bookkeeping-services/">VAT</a> margin scheme, OSS and
+                                IOSS, distance selling and marketplace fee splits are routine for us, not something we
+                                look up after you ask.
+                            </p>
+                        </div>
+
+                        <!-- Block 2 (Top Right, Cream) -->
+                        <div class="why-block bg-cream">
+                            <div class="why-badge-icon">
+                                <!-- Bar Chart / Trend Icon -->
+                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <line x1="18" y1="20" x2="18" y2="10"></line>
+                                    <line x1="12" y1="20" x2="12" y2="4"></line>
+                                    <line x1="6" y1="20" x2="6" y2="14"></line>
+                                </svg>
+                            </div>
+                            <h3 class="why-block-title">We measure real profit</h3>
+                            <p class="why-block-desc">
+                                Stripe and Amazon payouts are not accounting records. We turn them into accurate margin
+                                per channel and per product, so you know what truly makes money.
+                            </p>
+                        </div>
+
+                        <!-- Block 3 (Bottom Left, Cream) -->
+                        <div class="why-block bg-cream">
+                            <div class="why-badge-icon">
+                                <!-- Shield Check Icon -->
+                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                                    <polyline points="9 12 11 14 15 10"></polyline>
+                                </svg>
+                            </div>
+                            <h3 class="why-block-title">We keep your VAT defensible</h3>
+                            <p class="why-block-desc">
+                                Cross-border, distance-selling, import VAT and digital-product rules, handled and
+                                documented for HMRC, so you neither overpay nor get caught out.
+                            </p>
+                        </div>
+
+                        <!-- Block 4 (Bottom Right, White) -->
+                        <div class="why-block bg-white">
+                            <div class="why-badge-icon">
+                                <!-- Organization Chart / Finance Function Icon -->
+                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                                    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                                </svg>
+                            </div>
+                            <h3 class="why-block-title">We work as your finance function</h3>
+                            <p class="why-block-desc">
+                                Year-end and VAT as standard, with <a href="/services/management-accounts/">management
+                                    accounts</a> and cash-flow forecasting when you need to steer, not just report.
                             </p>
                         </div>
                     </div>
-                    <div class="erow">
-                        <svg class="eic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M4 20V4M4 20h16" />
-                            <path d="M8 16l4-5 3 3 5-7" />
-                        </svg>
-                        <div>
-                            <h3>Real profit reporting</h3>
-                            <p>Margin per SKU and per channel, so pricing and ad spend are decisions made on facts
-                                rather than on the bank balance.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ WHAT WE HANDLE SECTION (EXACT DESIGN MATCH) ============ -->
+        <style id="what-we-handle-design">
+            section.handle-new-section {
+                padding: clamp(64px, 7.5vw, 104px) 0 !important;
+                background: #0D1C2E !important;
+                background-color: #0D1C2E !important;
+                color: #ffffff !important;
+                text-align: center !important;
+                position: relative !important;
+                border: none !important;
+            }
+
+            section.handle-new-section .handle-wrap {
+                max-width: 1040px !important;
+                margin: 0 auto !important;
+                padding: 0 24px !important;
+                background: transparent !important;
+                border: none !important;
+                box-shadow: none !important;
+                border-radius: 0 !important;
+            }
+
+            section.handle-new-section .handle-eyebrow {
+                font-family: 'DM Sans', system-ui, sans-serif !important;
+                font-size: 13px !important;
+                font-weight: 800 !important;
+                letter-spacing: 0.16em !important;
+                text-transform: uppercase !important;
+                color: #D49C47 !important;
+                margin-bottom: 14px !important;
+                display: block !important;
+            }
+
+            section.handle-new-section .handle-heading {
+                font-family: 'Playfair Display', Georgia, serif !important;
+                font-size: clamp(34px, 4.4vw, 52px) !important;
+                font-weight: 700 !important;
+                color: #FFFFFF !important;
+                line-height: 1.15 !important;
+                margin: 0 0 clamp(44px, 5.5vw, 64px) 0 !important;
+                letter-spacing: -0.015em !important;
+                text-align: center !important;
+            }
+
+            section.handle-new-section .handle-heading em {
+                font-family: 'Playfair Display', Georgia, serif !important;
+                font-style: italic !important;
+                font-weight: 500 !important;
+                color: #D49C47 !important;
+                background: linear-gradient(135deg, #F5D794 0%, #D49C47 100%);
+                -webkit-background-clip: text !important;
+                -webkit-text-fill-color: transparent !important;
+                display: inline-block !important;
+            }
+
+            section.handle-new-section .handle-grid-container {
+                max-width: 980px !important;
+                margin: 0 auto !important;
+                display: grid !important;
+                grid-template-columns: 1fr 1fr !important;
+                text-align: left !important;
+                background: transparent !important;
+                border: none !important;
+            }
+
+            section.handle-new-section .handle-cell {
+                padding: clamp(32px, 3.8vw, 44px) clamp(28px, 3.5vw, 44px) !important;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.14) !important;
+                background: transparent !important;
+                background-color: transparent !important;
+                box-shadow: none !important;
+                border-radius: 0 !important;
+                margin: 0 !important;
+            }
+
+            /* Vertical border right on left column items */
+            section.handle-new-section .handle-cell:nth-child(odd) {
+                border-right: 1px solid rgba(255, 255, 255, 0.14) !important;
+            }
+
+            /* Remove bottom border from last row items */
+            section.handle-new-section .handle-cell:nth-last-child(1),
+            section.handle-new-section .handle-cell:nth-last-child(2) {
+                border-bottom: none !important;
+            }
+
+            section.handle-new-section .handle-cell-header {
+                display: flex !important;
+                align-items: center !important;
+                gap: 14px !important;
+                margin-bottom: 16px !important;
+            }
+
+            section.handle-new-section .handle-icon-box {
+                width: 36px !important;
+                height: 36px !important;
+                background: linear-gradient(135deg, #E6BA68 0%, #D49C47 100%) !important;
+                border-radius: 8px !important;
+                display: flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+                flex-shrink: 0 !important;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25) !important;
+            }
+
+            section.handle-new-section .handle-icon-box svg {
+                width: 20px !important;
+                height: 20px !important;
+                stroke: #0D1C2E !important;
+                stroke-width: 2 !important;
+                fill: none !important;
+            }
+
+            section.handle-new-section .handle-cell-title {
+                font-family: 'Playfair Display', Georgia, serif !important;
+                font-size: clamp(21px, 2vw, 25px) !important;
+                font-weight: 700 !important;
+                color: #FFFFFF !important;
+                margin: 0 !important;
+                line-height: 1.25 !important;
+            }
+
+            section.handle-new-section .handle-cell-desc {
+                font-family: 'DM Sans', system-ui, sans-serif !important;
+                font-size: 14px !important;
+                color: #CBD5E1 !important;
+                line-height: 1.62 !important;
+                margin: 0 !important;
+            }
+
+            section.handle-new-section .handle-cell-desc a {
+                color: #D49C47 !important;
+                font-weight: 600 !important;
+                text-decoration: underline !important;
+            }
+
+            @media (max-width: 768px) {
+                section.handle-new-section .handle-grid-container {
+                    grid-template-columns: 1fr !important;
+                }
+
+                section.handle-new-section .handle-cell:nth-child(odd) {
+                    border-right: none !important;
+                }
+
+                section.handle-new-section .handle-cell {
+                    border-bottom: 1px solid rgba(255, 255, 255, 0.14) !important;
+                }
+
+                section.handle-new-section .handle-cell:last-child {
+                    border-bottom: none !important;
+                }
+            }
+        </style>
+
+        <section class="handle-new-section">
+            <div class="handle-wrap">
+                <span class="handle-eyebrow">WHAT WE HANDLE</span>
+                <h2 class="handle-heading">
+                    The work behind a <em>profitable</em><br>online business
+                </h2>
+
+                <div class="handle-grid-container">
+                    <!-- Cell 1: Multi-channel reconciliation -->
+                    <div class="handle-cell">
+                        <div class="handle-cell-header">
+                            <div class="handle-icon-box">
+                                <!-- Reconcile Sliders Icon -->
+                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <line x1="4" y1="21" x2="4" y2="14"></line>
+                                    <line x1="4" y1="10" x2="4" y2="3"></line>
+                                    <line x1="12" y1="21" x2="12" y2="12"></line>
+                                    <line x1="12" y1="8" x2="12" y2="3"></line>
+                                    <line x1="20" y1="21" x2="20" y2="16"></line>
+                                    <line x1="20" y1="12" x2="20" y2="3"></line>
+                                    <line x1="1" y1="14" x2="7" y2="14"></line>
+                                    <line x1="9" y1="8" x2="15" y2="8"></line>
+                                    <line x1="17" y1="16" x2="23" y2="16"></line>
+                                </svg>
+                            </div>
+                            <h3 class="handle-cell-title">Multi-channel reconciliation</h3>
                         </div>
+                        <p class="handle-cell-desc">
+                            Amazon, Shopify, eBay, Etsy, WooCommerce, Stripe, PayPal and Klarna, reconciled through
+                            specialist tools such as A2X and Link My Books, so fees, refunds and payouts are split
+                            correctly, never booked as a single net deposit.
+                        </p>
                     </div>
-                    <div class="erow">
-                        <svg class="eic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M7 3h7l5 5v13H7z" transform="translate(-1 0)" />
-                            <path d="M13 3v5h5M9 13h6M9 17h6" />
-                        </svg>
-                        <div>
-                            <h3>Corporation tax and structure</h3>
-                            <p><a href="/services/company-accounts-corporation-tax/">Corporation tax</a> and
-                                profit-extraction planning, capital allowances on stock and equipment, and the right
-                                structure as you grow.</p>
+
+                    <!-- Cell 2: VAT, UK and EU -->
+                    <div class="handle-cell">
+                        <div class="handle-cell-header">
+                            <div class="handle-icon-box">
+                                <!-- Globe Icon -->
+                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <line x1="2" y1="12" x2="22" y2="12"></line>
+                                    <path
+                                        d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <h3 class="handle-cell-title">VAT, UK and EU</h3>
                         </div>
+                        <p class="handle-cell-desc">
+                            Registration, returns, OSS and IOSS, EORI and import VAT, distance selling and the
+                            second-hand margin scheme, set up to run cleanly each quarter under Making Tax Digital.
+                        </p>
                     </div>
-                    <div class="erow">
-                        <svg class="eic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M21 8a9 9 0 1 0 .6 6" />
-                            <path d="M21 4v4h-4" />
-                            <path d="M12 8v4l3 2" />
-                        </svg>
-                        <div>
-                            <h3>Cash flow and stock</h3>
-                            <p>Forecasting that links stock to cash, so growth does not quietly leave you short when it
-                                is time to reorder.</p>
+
+                    <!-- Cell 3: Real profit reporting -->
+                    <div class="handle-cell">
+                        <div class="handle-cell-header">
+                            <div class="handle-icon-box">
+                                <!-- Trend Line Icon -->
+                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+                                    <polyline points="17 6 23 6 23 12"></polyline>
+                                </svg>
+                            </div>
+                            <h3 class="handle-cell-title">Real profit reporting</h3>
                         </div>
+                        <p class="handle-cell-desc">
+                            Margin per SKU and per channel, so pricing and ad spend are decisions made on facts rather
+                            than on the bank balance.
+                        </p>
                     </div>
-                    <div class="erow">
-                        <svg class="eic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <rect x="3" y="5" width="18" height="16" rx="1.5" />
-                            <path d="M3 9h18M8 3v4M16 3v4M8.5 14l2.2 2.2L16 12" />
-                        </svg>
-                        <div>
-                            <h3>Year-end and compliance</h3>
-                            <p>Accounts and Companies House and HMRC returns prepared and filed on time, with deadlines
-                                tracked so nothing arrives as a surprise.</p>
+
+                    <!-- Cell 4: Corporation tax and structure -->
+                    <div class="handle-cell">
+                        <div class="handle-cell-header">
+                            <div class="handle-icon-box">
+                                <!-- Document Tax Icon -->
+                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                    <polyline points="14 2 14 8 20 8"></polyline>
+                                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                                </svg>
+                            </div>
+                            <h3 class="handle-cell-title">Corporation tax and structure</h3>
                         </div>
+                        <p class="handle-cell-desc">
+                            <a href="/services/company-accounts-corporation-tax/">Corporation tax</a> and
+                            profit-extraction planning, capital allowances on stock and equipment, and the right
+                            structure as you grow.
+                        </p>
+                    </div>
+
+                    <!-- Cell 5: Cash flow and stock -->
+                    <div class="handle-cell">
+                        <div class="handle-cell-header">
+                            <div class="handle-icon-box">
+                                <!-- Loop / Refresh Stock Icon -->
+                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <polyline points="23 4 23 10 17 10"></polyline>
+                                    <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path>
+                                </svg>
+                            </div>
+                            <h3 class="handle-cell-title">Cash flow and stock</h3>
+                        </div>
+                        <p class="handle-cell-desc">
+                            Forecasting that links stock to cash, so growth does not quietly leave you short when it is
+                            time to reorder.
+                        </p>
+                    </div>
+
+                    <!-- Cell 6: Year-end and compliance -->
+                    <div class="handle-cell">
+                        <div class="handle-cell-header">
+                            <div class="handle-icon-box">
+                                <!-- Calendar Check Icon -->
+                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                                    <polyline points="9 16 11 18 15 14"></polyline>
+                                </svg>
+                            </div>
+                            <h3 class="handle-cell-title">Year-end and compliance</h3>
+                        </div>
+                        <p class="handle-cell-desc">
+                            Accounts and Companies House and HMRC returns prepared and filed on time, with deadlines
+                            tracked so nothing arrives as a surprise.
+                        </p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ============ DUOTONE IMAGE BAND ============ -->
-        <section class="panelled">
-            <div class="wrap">
-                <div class="duoband">
-                    <div class="duo rv"><img
-                            src="https://a2zaccounting.co.uk/wp-content/uploads/2026/06/a2z-photo-2-office.jpg"
-                            alt="A2Z Accounting team member working at the Aberdeen office"></div>
-                    <div class="rv d1">
-                        <p class="eyebrow">A finance function, not just filing</p>
-                        <p class="pull">Most accountants tell you what <em>happened</em>. We help you decide what to do
-                            <em>next</em>.
-                        </p>
-                        <p>Compliance keeps HMRC happy. It does not help you price a product, plan a reorder or decide
-                            which channel deserves your ad budget. We pair accurate year-end and VAT with the management
-                            information online sellers actually run on, so every decision is backed by numbers you can
-                            trust.</p>
-                        <div class="btns"><a class="btn btn-navy" href="/services/management-accounts/">Explore
-                                management accounts</a></div>
+        <!-- ============ A FINANCE FUNCTION SECTION (EXACT DESIGN MATCH) ============ -->
+        <style id="finance-function-design">
+            section.finance-function-section {
+                padding: clamp(64px, 8vw, 110px) 0 !important;
+                background-color: #FFFFFF !important;
+                position: relative !important;
+            }
+
+            section.finance-function-section .ff-container {
+                max-width: 1140px !important;
+                margin: 0 auto !important;
+                padding: 0 24px !important;
+                position: relative !important;
+            }
+
+            /* Relative Box Wrapper to hold the Gold Corner Bracket */
+            section.finance-function-section .ff-card-wrapper {
+                position: relative !important;
+                margin: 30px auto 0 !important;
+                max-width: 1040px !important;
+            }
+
+            /* L-Shaped Gold Corner Bracket at Top-Left */
+            section.finance-function-section .ff-gold-bracket {
+                position: absolute !important;
+                top: -24px !important;
+                left: -24px !important;
+                width: 140px !important;
+                height: 140px !important;
+                border-top: 2px solid #D49C47 !important;
+                border-left: 2px solid #D49C47 !important;
+                pointer-events: none !important;
+                z-index: 1 !important;
+            }
+
+            /* Main Dark Navy Card */
+            section.finance-function-section .ff-card {
+                background: #0B192C !important;
+                background-color: #0B192C !important;
+                border-radius: 24px !important;
+                display: grid !important;
+                grid-template-columns: 1.15fr 0.85fr !important;
+                align-items: center !important;
+                position: relative !important;
+                z-index: 2 !important;
+                box-shadow: 0 20px 50px rgba(11, 25, 44, 0.15) !important;
+                min-height: 440px !important;
+            }
+
+            /* Left Content Column */
+            section.finance-function-section .ff-content {
+                padding: clamp(40px, 5vw, 64px) clamp(32px, 4.5vw, 56px) !important;
+                color: #FFFFFF !important;
+                z-index: 3 !important;
+            }
+
+            section.finance-function-section .ff-eyebrow {
+                font-family: 'DM Sans', system-ui, sans-serif !important;
+                font-size: 13px !important;
+                font-weight: 800 !important;
+                letter-spacing: 0.16em !important;
+                text-transform: uppercase !important;
+                color: #D49C47 !important;
+                margin-bottom: 18px !important;
+                display: block !important;
+            }
+
+            section.finance-function-section .ff-heading {
+                font-family: 'Playfair Display', Georgia, serif !important;
+                font-size: clamp(30px, 3.4vw, 44px) !important;
+                font-weight: 700 !important;
+                color: #FFFFFF !important;
+                line-height: 1.18 !important;
+                margin: 0 0 22px 0 !important;
+                letter-spacing: -0.015em !important;
+            }
+
+            section.finance-function-section .ff-heading em {
+                font-family: 'Playfair Display', Georgia, serif !important;
+                font-style: italic !important;
+                font-weight: 500 !important;
+                color: #D49C47 !important;
+                background: linear-gradient(135deg, #F5D794 0%, #D49C47 100%);
+                -webkit-background-clip: text !important;
+                -webkit-text-fill-color: transparent !important;
+                display: inline-block !important;
+            }
+
+            section.finance-function-section .ff-desc {
+                font-family: 'DM Sans', system-ui, sans-serif !important;
+                font-size: clamp(13.5px, 1.1vw, 15px) !important;
+                color: #CBD5E1 !important;
+                line-height: 1.65 !important;
+                margin: 0 0 32px 0 !important;
+                max-width: 520px !important;
+            }
+
+            section.finance-function-section .ff-btn {
+                display: inline-flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+                background: linear-gradient(135deg, #E6BA68 0%, #D49C47 100%) !important;
+                color: #0D1C2E !important;
+                font-family: 'DM Sans', system-ui, sans-serif !important;
+                font-size: 13px !important;
+                font-weight: 800 !important;
+                letter-spacing: 0.12em !important;
+                text-transform: uppercase !important;
+                padding: 15px 32px !important;
+                border-radius: 8px !important;
+                text-decoration: none !important;
+                box-shadow: 0 6px 20px rgba(212, 156, 71, 0.3) !important;
+                transition: all 0.25s ease !important;
+            }
+
+            section.finance-function-section .ff-btn:hover {
+                transform: translateY(-2px) !important;
+                box-shadow: 0 10px 25px rgba(212, 156, 71, 0.45) !important;
+                background: linear-gradient(135deg, #F5D794 0%, #E6BA68 100%) !important;
+            }
+
+            /* Right Image Container - Overlapping Circular Photo Frame */
+            section.finance-function-section .ff-image-col {
+                position: relative !important;
+                display: flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+                height: 100% !important;
+            }
+
+            section.finance-function-section .ff-circle-frame {
+                position: absolute !important;
+                right: -50px !important;
+                width: clamp(340px, 35vw, 450px) !important;
+                height: clamp(340px, 35vw, 450px) !important;
+                border-radius: 50% !important;
+                border: 14px solid #FFFFFF !important;
+                overflow: hidden !important;
+                box-shadow: 0 15px 40px rgba(0, 0, 0, 0.18) !important;
+                z-index: 4 !important;
+                background-color: #FFFFFF !important;
+            }
+
+            section.finance-function-section .ff-circle-frame img {
+                width: 100% !important;
+                height: 100% !important;
+                object-fit: cover !important;
+                object-position: center !important;
+                display: block !important;
+            }
+
+            @media (max-width: 992px) {
+                section.finance-function-section .ff-card {
+                    grid-template-columns: 1fr !important;
+                    padding-bottom: 0 !important;
+                    overflow: visible !important;
+                }
+
+                section.finance-function-section .ff-image-col {
+                    height: 320px !important;
+                    margin-bottom: -40px !important;
+                }
+
+                section.finance-function-section .ff-circle-frame {
+                    position: relative !important;
+                    right: auto !important;
+                    width: 320px !important;
+                    height: 320px !important;
+                    border-width: 10px !important;
+                }
+
+                section.finance-function-section .ff-gold-bracket {
+                    top: -16px !important;
+                    left: -16px !important;
+                    width: 100px !important;
+                    height: 100px !important;
+                }
+            }
+
+            @media (max-width: 576px) {
+                section.finance-function-section .ff-circle-frame {
+                    width: 260px !important;
+                    height: 260px !important;
+                }
+
+                section.finance-function-section .ff-image-col {
+                    height: 260px !important;
+                }
+            }
+        </style>
+
+        <section class="finance-function-section">
+            <div class="ff-container">
+                <div class="ff-card-wrapper">
+                    <!-- Top-Left Gold Corner Accent Bracket -->
+                    <div class="ff-gold-bracket"></div>
+
+                    <!-- Main Dark Card -->
+                    <div class="ff-card">
+                        <!-- Left Content Area -->
+                        <div class="ff-content">
+                            <span class="ff-eyebrow">A FINANCE FUNCTION, NOT JUST FILING</span>
+                            <h2 class="ff-heading">
+                                Most accountants tell you what <em>happened</em>. We help you decide what to do
+                                <em>next</em>.
+                            </h2>
+                            <p class="ff-desc">
+                                Compliance keeps HMRC happy. It does not help you price a product, plan a reorder or
+                                decide which channel deserves your ad budget. We pair accurate year-end and VAT with the
+                                management information online sellers actually run on, so every decision is backed by
+                                numbers you can trust.
+                            </p>
+                            <a href="/services/management-accounts/" class="ff-btn">
+                                EXPLORE MANAGEMENT ACCOUNTS
+                            </a>
+                        </div>
+
+                        <!-- Right Overlapping Circular Photo Column -->
+                        <div class="ff-image-col">
+                            <div class="ff-circle-frame">
+                                <img src="https://a2zaccounting.co.uk/wp-content/uploads/2026/06/a2z-photo-2-office.jpg"
+                                    alt="A2Z Accounting Team Member Working at Aberdeen Office">
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -5354,275 +6388,1641 @@
         <!-- ============ WHERE SELLERS LOSE MONEY ============ -->
 
 
-        <!-- ============ PROCESS ============ -->
-        <section class="dark">
-            <div class="wrap">
-                <div class="sec-head rv">
-                    <p class="eyebrow">How we start</p>
-                    <h2>Live in five working days, <em>without</em> the disruption</h2>
+        <!-- ============ HOW WE START SECTION (EXACT DESIGN MATCH) ============ -->
+        <style id="process-new-design">
+            section.process-new-section {
+                padding: clamp(64px, 7.5vw, 104px) 0 !important;
+                background-color: #0B192C !important;
+                color: #FFFFFF !important;
+                position: relative !important;
+                overflow: hidden !important;
+            }
+
+            /* Angular corner shade overlays */
+            section.process-new-section::before {
+                content: '' !important;
+                position: absolute !important;
+                top: 0 !important;
+                right: 0 !important;
+                width: 450px !important;
+                height: 450px !important;
+                background: linear-gradient(225deg, rgba(3, 12, 24, 0.75) 0%, transparent 60%) !important;
+                pointer-events: none !important;
+            }
+
+            section.process-new-section::after {
+                content: '' !important;
+                position: absolute !important;
+                bottom: 0 !important;
+                left: 0 !important;
+                width: 450px !important;
+                height: 450px !important;
+                background: linear-gradient(45deg, rgba(3, 12, 24, 0.75) 0%, transparent 60%) !important;
+                pointer-events: none !important;
+            }
+
+            section.process-new-section .proc-container {
+                max-width: 1040px !important;
+                margin: 0 auto !important;
+                padding: 0 24px !important;
+                position: relative !important;
+                z-index: 2 !important;
+            }
+
+            section.process-new-section .proc-eyebrow {
+                font-family: 'DM Sans', system-ui, sans-serif !important;
+                font-size: 13px !important;
+                font-weight: 800 !important;
+                letter-spacing: 0.16em !important;
+                text-transform: uppercase !important;
+                color: #D49C47 !important;
+                margin-bottom: 14px !important;
+                display: block !important;
+                text-align: center !important;
+            }
+
+            section.process-new-section .proc-heading {
+                font-family: 'Playfair Display', Georgia, serif !important;
+                font-size: clamp(34px, 4.4vw, 52px) !important;
+                font-weight: 700 !important;
+                color: #FFFFFF !important;
+                line-height: 1.15 !important;
+                margin: 0 0 clamp(48px, 6vw, 68px) 0 !important;
+                letter-spacing: -0.015em !important;
+                text-align: center !important;
+            }
+
+            section.process-new-section .proc-heading em {
+                font-family: 'Playfair Display', Georgia, serif !important;
+                font-style: italic !important;
+                font-weight: 500 !important;
+                color: #D49C47 !important;
+                background: linear-gradient(135deg, #F5D794 0%, #D49C47 100%);
+                -webkit-background-clip: text !important;
+                -webkit-text-fill-color: transparent !important;
+                display: inline-block !important;
+            }
+
+            /* Vertical Timeline Wrapper */
+            section.process-new-section .timeline-wrapper {
+                max-width: 780px !important;
+                margin: 0 auto !important;
+                position: relative !important;
+            }
+
+            /* Single continuous gold vertical line */
+            section.process-new-section .timeline-line {
+                position: absolute !important;
+                top: 36px !important;
+                bottom: 36px !important;
+                left: 170px !important;
+                width: 2px !important;
+                background-color: #D49C47 !important;
+                z-index: 1 !important;
+            }
+
+            section.process-new-section .timeline-list {
+                display: flex !important;
+                flex-direction: column !important;
+                gap: 28px !important;
+                position: relative !important;
+                z-index: 2 !important;
+            }
+
+            section.process-new-section .timeline-row {
+                display: grid !important;
+                grid-template-columns: 150px 42px 1fr !important;
+                align-items: center !important;
+            }
+
+            /* Step Title on Left */
+            section.process-new-section .step-label {
+                font-family: 'Playfair Display', Georgia, serif !important;
+                font-size: clamp(22px, 2.2vw, 28px) !important;
+                font-weight: 700 !important;
+                color: #FFFFFF !important;
+                text-align: right !important;
+                padding-right: 16px !important;
+                margin: 0 !important;
+            }
+
+            /* Center Ring Node */
+            section.process-new-section .step-node-box {
+                display: flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+            }
+
+            section.process-new-section .step-node-ring {
+                width: 15px !important;
+                height: 15px !important;
+                border: 2.5px solid #D49C47 !important;
+                background-color: #0B192C !important;
+                border-radius: 50% !important;
+                display: flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+                box-shadow: 0 0 0 4px #0B192C !important;
+            }
+
+            section.process-new-section .step-node-dot {
+                width: 3px !important;
+                height: 3px !important;
+                background-color: #D49C47 !important;
+                border-radius: 50% !important;
+            }
+
+            /* Right White Card */
+            section.process-new-section .step-card {
+                background-color: #FFFFFF !important;
+                border-radius: 12px !important;
+                padding: clamp(20px, 2.5vw, 26px) clamp(22px, 3vw, 32px) !important;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25) !important;
+                display: flex !important;
+                align-items: flex-start !important;
+                gap: 14px !important;
+            }
+
+            section.process-new-section .step-card-check {
+                width: 18px !important;
+                height: 18px !important;
+                flex-shrink: 0 !important;
+                stroke: #D49C47 !important;
+                stroke-width: 2.5 !important;
+                fill: none !important;
+                margin-top: 3px !important;
+            }
+
+            section.process-new-section .step-card-text {
+                font-family: 'DM Sans', system-ui, sans-serif !important;
+                font-size: clamp(13.8px, 1.1vw, 15px) !important;
+                color: #1E293B !important;
+                line-height: 1.58 !important;
+                font-weight: 500 !important;
+                margin: 0 !important;
+            }
+
+            /* Bottom CTA Wrapper */
+            section.process-new-section .proc-cta-wrap {
+                margin-top: clamp(40px, 5vw, 56px) !important;
+                text-align: center !important;
+            }
+
+            section.process-new-section .proc-btn {
+                display: inline-flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+                background: linear-gradient(135deg, #E6BA68 0%, #D49C47 100%) !important;
+                color: #0D1C2E !important;
+                font-family: 'DM Sans', system-ui, sans-serif !important;
+                font-size: 13px !important;
+                font-weight: 800 !important;
+                letter-spacing: 0.12em !important;
+                text-transform: uppercase !important;
+                padding: 15px 36px !important;
+                border-radius: 8px !important;
+                text-decoration: none !important;
+                box-shadow: 0 6px 20px rgba(212, 156, 71, 0.3) !important;
+                transition: all 0.25s ease !important;
+            }
+
+            section.process-new-section .proc-btn:hover {
+                transform: translateY(-2px) !important;
+                box-shadow: 0 10px 25px rgba(212, 156, 71, 0.45) !important;
+                background: linear-gradient(135deg, #F5D794 0%, #E6BA68 100%) !important;
+            }
+
+            @media (max-width: 680px) {
+                section.process-new-section .timeline-line {
+                    left: 17px !important;
+                }
+
+                section.process-new-section .timeline-row {
+                    grid-template-columns: 36px 1fr !important;
+                    row-gap: 8px !important;
+                }
+
+                section.process-new-section .step-label {
+                    grid-column: 2 !important;
+                    text-align: left !important;
+                    padding-left: 0 !important;
+                    margin-bottom: 6px !important;
+                }
+
+                section.process-new-section .step-node-box {
+                    grid-column: 1 !important;
+                    grid-row: 1 / span 2 !important;
+                }
+
+                section.process-new-section .step-card {
+                    grid-column: 2 !important;
+                }
+            }
+        </style>
+
+        <section class="process-new-section">
+            <div class="proc-container">
+                <span class="proc-eyebrow">HOW WE START</span>
+                <h2 class="proc-heading">
+                    Live in five working days,<br><em>without</em> the disruption
+                </h2>
+
+                <div class="timeline-wrapper">
+                    <!-- Single continuous vertical gold line -->
+                    <div class="timeline-line"></div>
+
+                    <div class="timeline-list">
+                        <!-- Step 1: Review -->
+                        <div class="timeline-row">
+                            <h3 class="step-label">Review</h3>
+                            <div class="step-node-box">
+                                <div class="step-node-ring">
+                                    <div class="step-node-dot"></div>
+                                </div>
+                            </div>
+                            <div class="step-card">
+                                <svg class="step-card-check" viewBox="0 0 24 24" aria-hidden="true">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                <p class="step-card-text">
+                                    We look at your channels, VAT position and current records, and show you where
+                                    profit and tax are leaking.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Step 2: Set up -->
+                        <div class="timeline-row">
+                            <h3 class="step-label">Set up</h3>
+                            <div class="step-node-box">
+                                <div class="step-node-ring">
+                                    <div class="step-node-dot"></div>
+                                </div>
+                            </div>
+                            <div class="step-card">
+                                <svg class="step-card-check" viewBox="0 0 24 24" aria-hidden="true">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                <p class="step-card-text">
+                                    We connect your platforms and bank feeds, fix the chart of accounts, and get VAT and
+                                    reconciliation running cleanly in Xero or QuickBooks.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Step 3: Report -->
+                        <div class="timeline-row">
+                            <h3 class="step-label">Report</h3>
+                            <div class="step-node-box">
+                                <div class="step-node-ring">
+                                    <div class="step-node-dot"></div>
+                                </div>
+                            </div>
+                            <div class="step-card">
+                                <svg class="step-card-check" viewBox="0 0 24 24" aria-hidden="true">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                <p class="step-card-text">
+                                    You start seeing real margin by channel and product, with VAT and deadlines handled
+                                    in the background.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Step 4: Advise -->
+                        <div class="timeline-row">
+                            <h3 class="step-label">Advise</h3>
+                            <div class="step-node-box">
+                                <div class="step-node-ring">
+                                    <div class="step-node-dot"></div>
+                                </div>
+                            </div>
+                            <div class="step-card">
+                                <svg class="step-card-check" viewBox="0 0 24 24" aria-hidden="true">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                <p class="step-card-text">
+                                    We meet to plan tax, structure and cash flow, so each decision is made on numbers
+                                    you can trust.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="timeline rv">
-                    <div class="tstep">
-                        <h3>Review</h3>
-                        <p>We look at your channels, VAT position and current records, and show you where profit and tax
-                            are leaking.</p>
-                    </div>
-                    <div class="tstep">
-                        <h3>Set up</h3>
-                        <p>We connect your platforms and bank feeds, fix the chart of accounts, and get VAT and
-                            reconciliation running cleanly in Xero or QuickBooks.</p>
-                    </div>
-                    <div class="tstep">
-                        <h3>Report</h3>
-                        <p>You start seeing real margin by channel and product, with VAT and deadlines handled in the
-                            background.</p>
-                    </div>
-                    <div class="tstep">
-                        <h3>Advise</h3>
-                        <p>We meet to plan tax, structure and cash flow, so each decision is made on numbers you can
-                            trust.</p>
-                    </div>
-                </div>
-                <div class="proc-cta rv d2">
-                    <p>Most online sellers are fully up and running with us inside a week - the sooner we see your
-                        numbers, the sooner the leaks stop.</p><a class="btn btn-gold" href="#a2z-enquire"
-                        data-a2z-source="E-Commerce Enquiry">Book your free consultation</a>
+
+                <!-- Bottom CTA -->
+                <div class="proc-cta-wrap">
+                    <a href="#a2z-enquire" class="proc-btn" data-a2z-source="E-Commerce Enquiry">
+                        BOOK A CONSULTATION
+                    </a>
                 </div>
             </div>
         </section>
 
-        <!-- ============ WHO WE WORK BEST WITH ============ -->
-        <section class="alt">
-            <div class="wrap">
-                <div class="sec-head rv">
-                    <p class="eyebrow">Who we work best with</p>
-                    <h2>Built for established and growing online sellers</h2>
-                    <p>If you are an established seller turning over serious volume across one or more channels,
-                        carrying stock, and handling VAT that is well past simple, you will feel the difference of a
-                        team that already runs at your level.</p>
-                </div>
-                <div class="aud rv">
-                    <div class="ac"><svg class="ai" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M4 6h5M4 18h5" />
-                            <path d="M9 6c6 0 4 6 9 6M9 18c6 0 4-6 9-6" />
-                            <circle cx="20" cy="12" r="1.8" />
-                        </svg>
-                        <h3>Multi-channel sellers</h3>
-                        <p>Selling across Amazon, eBay, Shopify and your own store, with one clear set of numbers.</p>
+        <!-- ============ WHO WE WORK BEST WITH SECTION (EXACT DESIGN MATCH) ============ -->
+        <style id="who-work-best-design">
+            section.who-work-best-section {
+                padding: clamp(64px, 7.5vw, 104px) 0 !important;
+                background-color: #EAE0CC !important;
+                color: #0B192C !important;
+                position: relative !important;
+            }
+
+            section.who-work-best-section .who-container {
+                max-width: 1080px !important;
+                margin: 0 auto !important;
+                padding: 0 24px !important;
+            }
+
+            section.who-work-best-section .who-eyebrow {
+                font-family: 'DM Sans', system-ui, sans-serif !important;
+                font-size: 13px !important;
+                font-weight: 800 !important;
+                letter-spacing: 0.16em !important;
+                text-transform: uppercase !important;
+                color: #C4905A !important;
+                margin-bottom: 14px !important;
+                display: block !important;
+                text-align: center !important;
+            }
+
+            section.who-work-best-section .who-heading {
+                font-family: 'Playfair Display', Georgia, serif !important;
+                font-size: clamp(34px, 4.4vw, 52px) !important;
+                font-weight: 700 !important;
+                color: #0B192C !important;
+                line-height: 1.15 !important;
+                margin: 0 0 20px 0 !important;
+                letter-spacing: -0.015em !important;
+                text-align: center !important;
+            }
+
+            section.who-work-best-section .who-heading em {
+                font-family: 'Playfair Display', Georgia, serif !important;
+                font-style: italic !important;
+                font-weight: 500 !important;
+                color: #D49C47 !important;
+                background: linear-gradient(135deg, #D49C47 0%, #B07D3C 100%);
+                -webkit-background-clip: text !important;
+                -webkit-text-fill-color: transparent !important;
+                display: inline-block !important;
+            }
+
+            section.who-work-best-section .who-lede {
+                font-family: 'DM Sans', system-ui, sans-serif !important;
+                font-size: clamp(14px, 1.1vw, 15.5px) !important;
+                color: #334155 !important;
+                line-height: 1.6 !important;
+                max-width: 640px !important;
+                margin: 0 auto clamp(48px, 6vw, 64px) !important;
+                text-align: center !important;
+            }
+
+            /* 3x2 Grid */
+            section.who-work-best-section .who-grid {
+                display: grid !important;
+                grid-template-columns: repeat(3, 1fr) !important;
+                gap: 28px 24px !important;
+            }
+
+            /* Dual-layer card box */
+            section.who-work-best-section .who-card-box {
+                display: flex !important;
+                position: relative !important;
+                border-radius: 14px !important;
+                box-shadow: 0 10px 25px rgba(11, 25, 44, 0.08) !important;
+            }
+
+            /* Left Dark Navy Pillar */
+            section.who-work-best-section .who-navy-pillar {
+                width: 72px !important;
+                flex-shrink: 0 !important;
+                background-color: #0D2034 !important;
+                border-radius: 14px 0 0 14px !important;
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+                padding-top: 14px !important;
+                position: relative !important;
+            }
+
+            section.who-work-best-section .who-number {
+                font-family: 'Playfair Display', Georgia, serif !important;
+                font-size: 34px !important;
+                font-weight: 700 !important;
+                color: #FFFFFF !important;
+                line-height: 1 !important;
+            }
+
+            /* Overlapping Gold Icon Badge */
+            section.who-work-best-section .who-icon-badge {
+                position: absolute !important;
+                left: 54px !important;
+                top: 55% !important;
+                transform: translateY(-50%) !important;
+                width: 36px !important;
+                height: 36px !important;
+                background: linear-gradient(135deg, #E6BA68 0%, #D49C47 100%) !important;
+                border-radius: 8px !important;
+                display: flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.18) !important;
+                z-index: 3 !important;
+            }
+
+            section.who-work-best-section .who-icon-badge svg {
+                width: 19px !important;
+                height: 19px !important;
+                stroke: #FFFFFF !important;
+                stroke-width: 2 !important;
+                fill: none !important;
+            }
+
+            /* Right White Card */
+            section.who-work-best-section .who-white-card {
+                flex: 1 !important;
+                background-color: #FFFFFF !important;
+                border-radius: 0 14px 14px 0 !important;
+                padding: 22px 24px 22px 34px !important;
+                display: flex !important;
+                flex-direction: column !important;
+                justify-content: center !important;
+                min-height: 140px !important;
+            }
+
+            section.who-work-best-section .who-card-title {
+                font-family: 'DM Sans', system-ui, sans-serif !important;
+                font-size: clamp(17px, 1.4vw, 19px) !important;
+                font-weight: 700 !important;
+                color: #0B192C !important;
+                margin: 0 0 8px 0 !important;
+                line-height: 1.25 !important;
+            }
+
+            section.who-work-best-section .who-card-desc {
+                font-family: 'DM Sans', system-ui, sans-serif !important;
+                font-size: 13.5px !important;
+                color: #475569 !important;
+                line-height: 1.55 !important;
+                margin: 0 !important;
+            }
+
+            @media (max-width: 992px) {
+                section.who-work-best-section .who-grid {
+                    grid-template-columns: repeat(2, 1fr) !important;
+                }
+            }
+
+            @media (max-width: 640px) {
+                section.who-work-best-section .who-grid {
+                    grid-template-columns: 1fr !important;
+                }
+            }
+        </style>
+
+        <section class="who-work-best-section">
+            <div class="who-container">
+                <span class="who-eyebrow">WHO WE WORK BEST WITH</span>
+                <h2 class="who-heading">
+                    Built for established and growing<br><em>online sellers</em>
+                </h2>
+                <p class="who-lede">
+                    If you are an established seller turning over serious volume across one or more channels, carrying
+                    stock, and handling VAT that is well past simple, you will feel the difference of a team that
+                    already runs at your level.
+                </p>
+
+                <div class="who-grid">
+                    <!-- Card 1 -->
+                    <div class="who-card-box">
+                        <div class="who-navy-pillar">
+                            <span class="who-number">1</span>
+                        </div>
+                        <div class="who-icon-badge">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M4 6h5M4 18h5"></path>
+                                <path d="M9 6c6 0 4 6 9 6M9 18c6 0 4-6 9-6"></path>
+                                <circle cx="20" cy="12" r="1.8"></circle>
+                            </svg>
+                        </div>
+                        <div class="who-white-card">
+                            <h3 class="who-card-title">Multi-channel sellers</h3>
+                            <p class="who-card-desc">
+                                Selling across Amazon, eBay, Shopify and your own store, with one clear set of numbers.
+                            </p>
+                        </div>
                     </div>
-                    <div class="ac"><svg class="ai" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M6 8h12l-1 12H7z" />
-                            <path d="M9 8a3 3 0 0 1 6 0" />
-                        </svg>
-                        <h3>DTC &amp; Shopify brands</h3>
-                        <p>Direct-to-consumer brands scaling on ad spend, margin and repeat orders.</p>
+
+                    <!-- Card 2 -->
+                    <div class="who-card-box">
+                        <div class="who-navy-pillar">
+                            <span class="who-number">2</span>
+                        </div>
+                        <div class="who-icon-badge">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                                <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                            </svg>
+                        </div>
+                        <div class="who-white-card">
+                            <h3 class="who-card-title">DTC &amp; Shopify brands</h3>
+                            <p class="who-card-desc">
+                                Direct-to-consumer brands scaling on ad spend, margin and repeat orders.
+                            </p>
+                        </div>
                     </div>
-                    <div class="ac"><svg class="ai" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M12 3l8 4-8 4-8-4z" />
-                            <path d="M4 7v10l8 4 8-4V7" />
-                            <path d="M12 11v10" />
-                        </svg>
-                        <h3>Amazon FBA businesses</h3>
-                        <p>FBA sellers untangling fees, storage and VAT from their settlement statements.</p>
+
+                    <!-- Card 3 -->
+                    <div class="who-card-box">
+                        <div class="who-navy-pillar">
+                            <span class="who-number">3</span>
+                        </div>
+                        <div class="who-icon-badge">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                                <line x1="3" y1="6" x2="21" y2="6"></line>
+                                <path d="M16 10a4 4 0 0 1-8 0"></path>
+                            </svg>
+                        </div>
+                        <div class="who-white-card">
+                            <h3 class="who-card-title">Amazon FBA businesses</h3>
+                            <p class="who-card-desc">
+                                FBA sellers untangling fees, storage and VAT from their settlement statements.
+                            </p>
+                        </div>
                     </div>
-                    <div class="ac"><svg class="ai" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M4 12a8 8 0 0 1 13-6" />
-                            <path d="M17 2v4h-4" />
-                            <path d="M20 12a8 8 0 0 1-13 6" />
-                            <path d="M7 22v-4h4" />
-                        </svg>
-                        <h3>Subscription &amp; digital products</h3>
-                        <p>Recurring revenue and digital sales, with VAT MOSS treated correctly.</p>
+
+                    <!-- Card 4 -->
+                    <div class="who-card-box">
+                        <div class="who-navy-pillar">
+                            <span class="who-number">4</span>
+                        </div>
+                        <div class="who-icon-badge">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <polyline points="23 4 23 10 17 10"></polyline>
+                                <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path>
+                            </svg>
+                        </div>
+                        <div class="who-white-card">
+                            <h3 class="who-card-title">Subscription &amp; digital products</h3>
+                            <p class="who-card-desc">
+                                Recurring revenue and digital sales, with VAT MOSS treated correctly.
+                            </p>
+                        </div>
                     </div>
-                    <div class="ac"><svg class="ai" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
-                            <rect x="3" y="9" width="7" height="8" />
-                            <rect x="14" y="9" width="7" height="8" />
-                            <path d="M6.5 9V6h11v3" />
-                        </svg>
-                        <h3>Wholesale moving online</h3>
-                        <p>Established wholesalers adding a direct online channel to their trade.</p>
+
+                    <!-- Card 5 -->
+                    <div class="who-card-box">
+                        <div class="who-navy-pillar">
+                            <span class="who-number">5</span>
+                        </div>
+                        <div class="who-icon-badge">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <rect x="1" y="3" width="15" height="13"></rect>
+                                <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+                                <circle cx="5.5" cy="18.5" r="2.5"></circle>
+                                <circle cx="18.5" cy="18.5" r="2.5"></circle>
+                            </svg>
+                        </div>
+                        <div class="who-white-card">
+                            <h3 class="who-card-title">Wholesale moving online</h3>
+                            <p class="who-card-desc">
+                                Established wholesalers adding a direct online channel to their trade.
+                            </p>
+                        </div>
                     </div>
-                    <div class="ac"><svg class="ai" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M4 12V5a1 1 0 0 1 1-1h7l8 8-8 8z" />
-                            <circle cx="8.5" cy="8.5" r="1.4" />
-                        </svg>
-                        <h3>Retail with physical stock</h3>
-                        <p>Shops taking their range online while managing real inventory and margin.</p>
+
+                    <!-- Card 6 -->
+                    <div class="who-card-box">
+                        <div class="who-navy-pillar">
+                            <span class="who-number">6</span>
+                        </div>
+                        <div class="who-icon-badge">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <path
+                                    d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z">
+                                </path>
+                                <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                                <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                            </svg>
+                        </div>
+                        <div class="who-white-card">
+                            <h3 class="who-card-title">Retail with physical stock</h3>
+                            <p class="who-card-desc">
+                                Shops taking their range online while managing real inventory and margin.
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ============ IMAGE TRUST BAND ============ -->
-        <section class="imgband" style="padding:0">
-            <div class="imgband-inner">
-                <img src="https://a2zaccounting.co.uk/wp-content/uploads/2026/06/a2z-photo-3-band.jpg"
-                    alt="A2Z Accounting office in Aberdeen">
-                <div class="imgband-cap rv">
-                    <p class="eyebrow">A real practice behind every login</p>
-                    <h2>Cloud-based service. <em>A real team behind it.</em></h2>
-                </div>
-            </div>
-        </section>
+        <!-- ============ IMAGE TRUST BAND SECTION (EXACT DESIGN MATCH) ============ -->
+        <style id="imgband-new-design">
+            section.imgband-new-section {
+                padding: 0 !important;
+                position: relative !important;
+                background-color: #0D2034 !important;
+                min-height: clamp(340px, 28vw, 420px) !important;
+                display: flex !important;
+                align-items: center !important;
+                overflow: hidden !important;
+            }
 
-        <!-- ============ TOOLS ============ -->
-        <section>
-            <div class="wrap">
-                <div class="sec-head rv">
-                    <p class="eyebrow">Free tools</p>
-                    <h2>Run the numbers before you talk to us</h2>
-                </div>
-                <div class="tools rv">
-                    <div class="tool"><span class="tl">Free calculator</span><svg class="ti" viewBox="0 0 24 24"
-                            fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"
-                            stroke-linejoin="round">
-                            <path d="M12 3v18" />
-                            <path d="M5 7h14" />
-                            <path d="M5 7l-2.4 6.5a3 3 0 0 0 6.8 0z" />
-                            <path d="M19 7l-2.4 6.5a3 3 0 0 0 6.8 0z" />
-                        </svg>
-                        <h3>Sole Trader vs Limited Company</h3>
-                        <p>See which structure keeps more of your money, with the difference shown in pounds.</p><a
-                            class="tlink" href="/sole-trader-vs-limited-company-calculator/">Open the calculator</a>
+            /* Background Image with Dark Blue Duotone Overlay */
+            section.imgband-new-section .imgband-bg {
+                position: absolute !important;
+                inset: 0 !important;
+                width: 100% !important;
+                height: 100% !important;
+                object-fit: cover !important;
+                object-position: center !important;
+                z-index: 1 !important;
+                filter: brightness(0.6) contrast(1.1) !important;
+            }
+
+            section.imgband-new-section .imgband-overlay {
+                position: absolute !important;
+                inset: 0 !important;
+                background: linear-gradient(90deg, rgba(13, 32, 52, 0.92) 0%, rgba(13, 32, 52, 0.78) 60%, rgba(13, 32, 52, 0.65) 100%) !important;
+                z-index: 2 !important;
+            }
+
+            section.imgband-new-section .imgband-container {
+                max-width: 1140px !important;
+                margin: 0 auto !important;
+                padding: clamp(60px, 7vw, 90px) 24px !important;
+                position: relative !important;
+                z-index: 3 !important;
+                width: 100% !important;
+            }
+
+            section.imgband-new-section .imgband-content {
+                max-width: 680px !important;
+            }
+
+            /* Eyebrow with gold underline */
+            section.imgband-new-section .imgband-eyebrow-wrap {
+                display: inline-block !important;
+                border-bottom: 1.5px solid #D49C47 !important;
+                padding-bottom: 6px !important;
+                margin-bottom: 20px !important;
+            }
+
+            section.imgband-new-section .imgband-eyebrow {
+                font-family: 'DM Sans', system-ui, sans-serif !important;
+                font-size: clamp(12.5px, 1.1vw, 14px) !important;
+                font-weight: 700 !important;
+                letter-spacing: 0.16em !important;
+                text-transform: uppercase !important;
+                color: #FFFFFF !important;
+                margin: 0 !important;
+                display: block !important;
+            }
+
+            section.imgband-new-section .imgband-heading {
+                font-family: 'Playfair Display', Georgia, serif !important;
+                font-size: clamp(32px, 4vw, 50px) !important;
+                font-weight: 700 !important;
+                color: #FFFFFF !important;
+                line-height: 1.2 !important;
+                margin: 0 !important;
+                letter-spacing: -0.015em !important;
+            }
+
+            section.imgband-new-section .imgband-heading em {
+                font-family: 'Playfair Display', Georgia, serif !important;
+                font-style: italic !important;
+                font-weight: 500 !important;
+                color: #D49C47 !important;
+                background: linear-gradient(135deg, #F5D794 0%, #D49C47 100%);
+                -webkit-background-clip: text !important;
+                -webkit-text-fill-color: transparent !important;
+                display: block !important;
+                margin-top: 4px !important;
+            }
+        </style>
+
+        <section class="imgband-new-section">
+            <img class="imgband-bg" src="https://a2zaccounting.co.uk/wp-content/uploads/2026/06/a2z-photo-3-band.jpg"
+                alt="A2Z Accounting office executive desk">
+            <div class="imgband-overlay"></div>
+
+            <div class="imgband-container">
+                <div class="imgband-content">
+                    <div class="imgband-eyebrow-wrap">
+                        <span class="imgband-eyebrow">A REAL PRACTICE BEHIND EVERY LOGIN</span>
                     </div>
-                    <div class="tool"><span class="tl">Free tool</span><svg class="ti" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
-                            <rect x="4" y="3" width="16" height="18" rx="2" />
-                            <path d="M8 7h8" />
-                            <path d="M8 11h3M8 15h3" />
-                            <rect x="14" y="11" width="2.5" height="6" />
-                        </svg>
-                        <h3>Business Budget &amp; Profit Estimator</h3>
-                        <p>Enter your income and costs to see your profit for the year, with cost lines built for your
-                            sector.</p><a class="tlink" href="/business-budget-profit-estimator/">Open the estimator</a>
+                    <h2 class="imgband-heading">
+                        Cloud-based service.
+                        <em>A real team behind it.</em>
+                    </h2>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ FREE TOOLS SECTION (EXACT DESIGN MATCH) ============ -->
+        <style id="tools-new-design">
+            section.tools-new-section {
+                padding: clamp(64px, 7.5vw, 104px) 0 !important;
+                background-color: #F4F6FB !important;
+                position: relative !important;
+                overflow: hidden !important;
+            }
+
+            /* Massive A2Z Background Watermark */
+            section.tools-new-section .tools-watermark {
+                position: absolute !important;
+                top: 52% !important;
+                left: 50% !important;
+                transform: translate(-50%, -50%) !important;
+                font-family: 'Playfair Display', Georgia, serif !important;
+                font-size: clamp(260px, 32vw, 460px) !important;
+                font-weight: 700 !important;
+                color: rgba(15, 23, 42, 0.035) !important;
+                letter-spacing: -0.02em !important;
+                white-space: nowrap !important;
+                pointer-events: none !important;
+                user-select: none !important;
+                z-index: 1 !important;
+            }
+
+            section.tools-new-section .tools-container {
+                max-width: 1040px !important;
+                margin: 0 auto !important;
+                padding: 0 24px !important;
+                position: relative !important;
+                z-index: 2 !important;
+            }
+
+            section.tools-new-section .tools-heading {
+                font-family: 'Playfair Display', Georgia, serif !important;
+                font-size: clamp(34px, 4.4vw, 52px) !important;
+                font-weight: 700 !important;
+                color: #0B192C !important;
+                line-height: 1.15 !important;
+                margin: 0 0 clamp(44px, 5.5vw, 64px) 0 !important;
+                letter-spacing: -0.015em !important;
+                text-align: center !important;
+            }
+
+            section.tools-new-section .tools-heading em {
+                font-family: 'Playfair Display', Georgia, serif !important;
+                font-style: italic !important;
+                font-weight: 500 !important;
+                color: #D49C47 !important;
+                background: linear-gradient(135deg, #D49C47 0%, #B07D3C 100%);
+                -webkit-background-clip: text !important;
+                -webkit-text-fill-color: transparent !important;
+                display: inline-block !important;
+            }
+
+            /* Stacked Cards Container */
+            section.tools-new-section .tools-card-stack {
+                max-width: 680px !important;
+                margin: 0 auto !important;
+                display: flex !important;
+                flex-direction: column !important;
+                gap: 32px !important;
+            }
+
+            section.tools-new-section .tool-card {
+                background-color: #FFFFFF !important;
+                border-radius: 20px !important;
+                padding: clamp(28px, 3.5vw, 36px) clamp(32px, 4vw, 44px) !important;
+                box-shadow: 0 15px 45px rgba(11, 25, 44, 0.06) !important;
+                display: flex !important;
+                align-items: flex-start !important;
+                gap: 24px !important;
+                transition: transform 0.25s ease, box-shadow 0.25s ease !important;
+            }
+
+            section.tools-new-section .tool-card:hover {
+                transform: translateY(-3px) !important;
+                box-shadow: 0 20px 50px rgba(11, 25, 44, 0.1) !important;
+            }
+
+            section.tools-new-section .tool-icon-box {
+                width: 64px !important;
+                height: 64px !important;
+                background-color: #0D2034 !important;
+                border-radius: 16px !important;
+                display: flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+                flex-shrink: 0 !important;
+                margin-top: 4px !important;
+                box-shadow: 0 6px 16px rgba(13, 32, 52, 0.15) !important;
+            }
+
+            section.tools-new-section .tool-icon-box svg {
+                width: 30px !important;
+                height: 30px !important;
+                stroke: #FFFFFF !important;
+                stroke-width: 1.8 !important;
+                fill: none !important;
+            }
+
+            section.tools-new-section .tool-content {
+                flex: 1 !important;
+            }
+
+            section.tools-new-section .tool-eyebrow {
+                font-family: 'DM Sans', system-ui, sans-serif !important;
+                font-size: 13px !important;
+                font-weight: 800 !important;
+                letter-spacing: 0.14em !important;
+                text-transform: uppercase !important;
+                color: #D49C47 !important;
+                margin-bottom: 8px !important;
+                display: block !important;
+            }
+
+            section.tools-new-section .tool-title {
+                font-family: 'Playfair Display', Georgia, serif !important;
+                font-size: clamp(22px, 2.2vw, 27px) !important;
+                font-weight: 700 !important;
+                color: #0B192C !important;
+                margin: 0 0 10px 0 !important;
+                line-height: 1.25 !important;
+            }
+
+            section.tools-new-section .tool-desc {
+                font-family: 'DM Sans', system-ui, sans-serif !important;
+                font-size: 14px !important;
+                color: #475569 !important;
+                line-height: 1.55 !important;
+                margin: 0 0 20px 0 !important;
+            }
+
+            section.tools-new-section .tool-btn {
+                display: inline-flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+                background: linear-gradient(135deg, #E6BA68 0%, #D49C47 100%) !important;
+                color: #FFFFFF !important;
+                font-family: 'DM Sans', system-ui, sans-serif !important;
+                font-size: 12.5px !important;
+                font-weight: 800 !important;
+                letter-spacing: 0.1em !important;
+                text-transform: uppercase !important;
+                padding: 11px 24px !important;
+                border-radius: 8px !important;
+                text-decoration: none !important;
+                box-shadow: 0 4px 14px rgba(212, 156, 71, 0.3) !important;
+                transition: all 0.25s ease !important;
+            }
+
+            section.tools-new-section .tool-btn:hover {
+                background: linear-gradient(135deg, #F5D794 0%, #E6BA68 100%) !important;
+                box-shadow: 0 6px 18px rgba(212, 156, 71, 0.45) !important;
+            }
+
+            @media (max-width: 600px) {
+                section.tools-new-section .tool-card {
+                    flex-direction: column !important;
+                    align-items: flex-start !important;
+                }
+            }
+        </style>
+
+        <section class="tools-new-section">
+            <!-- Background A2Z Watermark -->
+            <div class="tools-watermark">A2Z</div>
+
+            <div class="tools-container">
+                <h2 class="tools-heading">
+                    Run the numbers before<br>you <em>talk to us</em>
+                </h2>
+
+                <div class="tools-card-stack">
+                    <!-- Tool Card 1 -->
+                    <div class="tool-card">
+                        <div class="tool-icon-box">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="8.5" cy="7" r="4"></circle>
+                                <polyline points="17 8 20 11 23 8"></polyline>
+                                <path d="M20 11V4"></path>
+                            </svg>
+                        </div>
+                        <div class="tool-content">
+                            <span class="tool-eyebrow">FREE CALCULATOR</span>
+                            <h3 class="tool-title">Sole Trader vs Limited Company</h3>
+                            <p class="tool-desc">
+                                See which structure keeps more of your money, with the difference shown in pounds.
+                            </p>
+                            <a href="/sole-trader-vs-limited-company-calculator/" class="tool-btn">
+                                OPEN THE CALCULATOR
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Tool Card 2 -->
+                    <div class="tool-card">
+                        <div class="tool-icon-box">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <rect x="4" y="2" width="16" height="20" rx="2"></rect>
+                                <line x1="8" y1="6" x2="16" y2="6"></line>
+                                <line x1="16" y1="14" x2="16" y2="18"></line>
+                                <path d="M8 10h.01M12 10h.01M16 10h.01M8 14h.01M12 14h.01M8 18h.01M12 18h.01"></path>
+                            </svg>
+                        </div>
+                        <div class="tool-content">
+                            <span class="tool-eyebrow">FREE TOOL</span>
+                            <h3 class="tool-title">Business Budget and Profit Estimator</h3>
+                            <p class="tool-desc">
+                                Enter your income and costs to see your profit for the year, with cost lines built for
+                                your sector.
+                            </p>
+                            <a href="/business-budget-profit-estimator/" class="tool-btn">
+                                OPEN THE ESTIMATOR
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ============ RESOURCES ============ -->
-        <section class="dark">
-            <div class="wrap">
-                <div class="sec-head rv">
-                    <p class="eyebrow">Go deeper</p>
-                    <h2>Guides for online sellers</h2>
-                </div>
-                <div class="res rv">
-                    <a href="/e-commerce-vat-explained-what-uk-online-sellers-must-know/"><span class="rk">VAT</span>
-                        <h3>E-Commerce VAT Explained for UK Online Sellers</h3>
+        <!-- ============ GO DEEPER SECTION (EXACT DESIGN MATCH) ============ -->
+        <style id="guides-new-design">
+            section.guides-new-section {
+                padding: clamp(64px, 7.5vw, 104px) 0 !important;
+                background-color: #0B192C !important;
+                color: #FFFFFF !important;
+                position: relative !important;
+            }
+
+            section.guides-new-section .guides-container {
+                max-width: 1080px !important;
+                margin: 0 auto !important;
+                padding: 0 24px !important;
+            }
+
+            section.guides-new-section .guides-eyebrow {
+                font-family: 'DM Sans', system-ui, sans-serif !important;
+                font-size: 13px !important;
+                font-weight: 800 !important;
+                letter-spacing: 0.16em !important;
+                text-transform: uppercase !important;
+                color: #D49C47 !important;
+                margin-bottom: 14px !important;
+                display: block !important;
+                text-align: center !important;
+            }
+
+            section.guides-new-section .guides-heading {
+                font-family: 'Playfair Display', Georgia, serif !important;
+                font-size: clamp(34px, 4.4vw, 52px) !important;
+                font-weight: 700 !important;
+                color: #FFFFFF !important;
+                line-height: 1.15 !important;
+                margin: 0 0 clamp(48px, 6vw, 68px) 0 !important;
+                letter-spacing: -0.015em !important;
+                text-align: center !important;
+            }
+
+            section.guides-new-section .guides-heading em {
+                font-family: 'Playfair Display', Georgia, serif !important;
+                font-style: italic !important;
+                font-weight: 500 !important;
+                color: #D49C47 !important;
+                background: linear-gradient(135deg, #F5D794 0%, #D49C47 100%);
+                -webkit-background-clip: text !important;
+                -webkit-text-fill-color: transparent !important;
+                display: inline-block !important;
+            }
+
+            /* 2 Columns x 3 Rows Grid */
+            section.guides-new-section .guides-grid {
+                display: grid !important;
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 28px 24px !important;
+            }
+
+            /* Outer White Card Container */
+            section.guides-new-section .guide-card {
+                background-color: #FFFFFF !important;
+                border-radius: 18px !important;
+                padding: 14px !important;
+                box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25) !important;
+                display: grid !important;
+                grid-template-columns: 1fr 1.35fr !important;
+                gap: 14px !important;
+                align-items: stretch !important;
+                text-decoration: none !important;
+                transition: transform 0.25s ease, box-shadow 0.25s ease !important;
+            }
+
+            section.guides-new-section .guide-card:hover {
+                transform: translateY(-3px) !important;
+                box-shadow: 0 18px 45px rgba(0, 0, 0, 0.35) !important;
+            }
+
+            /* Left Photo Thumbnail with Diagonal Opposite Curved Corner */
+            section.guides-new-section .guide-thumb {
+                position: relative !important;
+                width: 100% !important;
+                height: 100% !important;
+                min-height: 170px !important;
+                border-radius: 14px 14px 44px 14px !important;
+                overflow: hidden !important;
+            }
+
+            section.guides-new-section .guide-thumb img {
+                width: 100% !important;
+                height: 100% !important;
+                object-fit: cover !important;
+                display: block !important;
+            }
+
+            /* Right Soft Blue Info Panel */
+            section.guides-new-section .guide-info-panel {
+                background-color: #EEF4FF !important;
+                border-radius: 14px !important;
+                padding: 20px 22px !important;
+                display: flex !important;
+                flex-direction: column !important;
+                justify-content: space-between !important;
+            }
+
+            section.guides-new-section .guide-category {
+                font-family: 'DM Sans', system-ui, sans-serif !important;
+                font-size: 12.5px !important;
+                font-weight: 800 !important;
+                letter-spacing: 0.14em !important;
+                text-transform: uppercase !important;
+                color: #D49C47 !important;
+                margin-bottom: 8px !important;
+                display: block !important;
+            }
+
+            section.guides-new-section .guide-title {
+                font-family: 'DM Sans', system-ui, sans-serif !important;
+                font-size: clamp(16px, 1.3vw, 18px) !important;
+                font-weight: 700 !important;
+                color: #0F172A !important;
+                line-height: 1.32 !important;
+                margin: 0 0 14px 0 !important;
+            }
+
+            section.guides-new-section .guide-link {
+                font-family: 'DM Sans', system-ui, sans-serif !important;
+                font-size: 13px !important;
+                font-weight: 700 !important;
+                color: #0F172A !important;
+                display: inline-flex !important;
+                align-items: center !important;
+                gap: 4px !important;
+                margin-top: auto !important;
+            }
+
+            @media (max-width: 900px) {
+                section.guides-new-section .guides-grid {
+                    grid-template-columns: 1fr !important;
+                }
+            }
+
+            @media (max-width: 540px) {
+                section.guides-new-section .guide-card {
+                    grid-template-columns: 1fr !important;
+                }
+
+                section.guides-new-section .guide-thumb {
+                    height: 180px !important;
+                    border-radius: 14px !important;
+                }
+            }
+        </style>
+
+        <section class="guides-new-section">
+            <div class="guides-container">
+                <span class="guides-eyebrow">GO DEEPER</span>
+                <h2 class="guides-heading">
+                    Guides for<br><em>online sellers</em>
+                </h2>
+
+                <div class="guides-grid">
+                    <!-- Guide Card 1 -->
+                    <a href="/e-commerce-vat-explained-what-uk-online-sellers-must-know/" class="guide-card">
+                        <div class="guide-thumb">
+                            <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=600&auto=format&fit=crop"
+                                alt="E-Commerce VAT Tax Invoices and Calculator">
+                        </div>
+                        <div class="guide-info-panel">
+                            <div>
+                                <span class="guide-category">VAT</span>
+                                <h3 class="guide-title">E-Commerce VAT Explained for UK Online Sellers</h3>
+                            </div>
+                            <span class="guide-link">Read Guide &rarr;</span>
+                        </div>
                     </a>
-                    <a href="/how-management-accounts-improve-e-commerce-profitability/"><span class="rk">Profit</span>
-                        <h3>How Management Accounts Improve E-Commerce Profitability</h3>
+
+                    <!-- Guide Card 2 -->
+                    <a href="/how-management-accounts-improve-e-commerce-profitability/" class="guide-card">
+                        <div class="guide-thumb">
+                            <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?q=80&w=600&auto=format&fit=crop"
+                                alt="Trading chart on tablet screen with stylus pen">
+                        </div>
+                        <div class="guide-info-panel">
+                            <div>
+                                <span class="guide-category">PROFIT</span>
+                                <h3 class="guide-title">How Management Accounts Improve E-Commerce Profitability</h3>
+                            </div>
+                            <span class="guide-link">Read Guide &rarr;</span>
+                        </div>
                     </a>
-                    <a href="/e-commerce-accounting-vat-guide-for-shopify-amazon-fba-dropshipping/"><span
-                            class="rk">Guide</span>
-                        <h3>Accounting &amp; VAT Guide for Shopify, Amazon FBA &amp; Dropshipping</h3>
+
+                    <!-- Guide Card 3 -->
+                    <a href="/e-commerce-accounting-vat-guide-for-shopify-amazon-fba-dropshipping/" class="guide-card">
+                        <div class="guide-thumb">
+                            <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=600&auto=format&fit=crop"
+                                alt="Business professionals reviewing financial chart report">
+                        </div>
+                        <div class="guide-info-panel">
+                            <div>
+                                <span class="guide-category">GUIDE</span>
+                                <h3 class="guide-title">Accounting &amp; VAT Guide for Shopify, Amazon FBA &amp;
+                                    Dropshipping</h3>
+                            </div>
+                            <span class="guide-link">Read Guide &rarr;</span>
+                        </div>
                     </a>
-                    <a href="/the-vat-mistake-most-amazon-sellers-dont-catch-until-year-two/"><span
-                            class="rk">Amazon</span>
-                        <h3>The VAT Mistake Most Amazon Sellers Miss Until Year Two</h3>
+
+                    <!-- Guide Card 4 -->
+                    <a href="/the-vat-mistake-most-amazon-sellers-dont-catch-until-year-two/" class="guide-card">
+                        <div class="guide-thumb">
+                            <img src="https://images.unsplash.com/photo-1523474253046-8cd2748b5fd2?q=80&w=600&auto=format&fit=crop"
+                                alt="Amazon logo displayed on smartphone screen">
+                        </div>
+                        <div class="guide-info-panel">
+                            <div>
+                                <span class="guide-category">AMAZON</span>
+                                <h3 class="guide-title">The VAT Mistake Most Amazon Sellers Miss Until Year Two</h3>
+                            </div>
+                            <span class="guide-link">Read Guide &rarr;</span>
+                        </div>
                     </a>
-                    <a href="/hiring-an-amazon-accountant-ask-these-three-questions-first/"><span
-                            class="rk">Choosing</span>
-                        <h3>Hiring an Amazon Accountant: Three Questions to Ask First</h3>
+
+                    <!-- Guide Card 5 -->
+                    <a href="/hiring-an-amazon-accountant-ask-these-three-questions-first/" class="guide-card">
+                        <div class="guide-thumb">
+                            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=600&auto=format&fit=crop"
+                                alt="Accountant team discussing growth charts around desk">
+                        </div>
+                        <div class="guide-info-panel">
+                            <div>
+                                <span class="guide-category">CHOOSING</span>
+                                <h3 class="guide-title">Hiring an Amazon Accountant: Three Questions to Ask First</h3>
+                            </div>
+                            <span class="guide-link">Read Guide &rarr;</span>
+                        </div>
                     </a>
-                    <a
-                        href="/e-commerce-accountants-uk-profitability-vat-control-finance-function-support-for-online-businesses/"><span
-                            class="rk">Overview</span>
-                        <h3>E-Commerce Accounting: Profit, VAT and Finance-Function Support</h3>
+
+                    <!-- Guide Card 6 -->
+                    <a href="/e-commerce-accountants-uk-profitability-vat-control-finance-function-support-for-online-businesses/"
+                        class="guide-card">
+                        <div class="guide-thumb">
+                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=600&auto=format&fit=crop"
+                                alt="Corporate team meeting in boardroom">
+                        </div>
+                        <div class="guide-info-panel">
+                            <div>
+                                <span class="guide-category">OVERVIEW</span>
+                                <h3 class="guide-title">E-Commerce Accounting: Profit, VAT and Finance-Function Support
+                                </h3>
+                            </div>
+                            <span class="guide-link">Read Guide &rarr;</span>
+                        </div>
                     </a>
                 </div>
             </div>
         </section>
 
-        <!-- ============ FAQ ============ -->
-        <section class="alt">
-            <div class="wrap">
-                <div class="sec-head rv">
-                    <p class="eyebrow">Questions we are asked every day</p>
-                    <h2>E-commerce accounting, answered plainly</h2>
-                </div>
-                <div class="faq rv">
-                    <details>
-                        <summary>Do I really need a specialist e-commerce accountant?</summary>
-                        <p>If you sell across multiple platforms or internationally, yes. Online accounting is more
+        <!-- ============ FAQ SECTION (EXACT DESIGN MATCH) ============ -->
+        <style id="faq-new-design">
+            section.faq-new-section {
+                padding: clamp(64px, 7.5vw, 104px) 0 !important;
+                background-color: #FFFFFF !important;
+                color: #0B192C !important;
+                position: relative !important;
+            }
+
+            section.faq-new-section .faq-container {
+                max-width: 860px !important;
+                margin: 0 auto !important;
+                padding: 0 24px !important;
+            }
+
+            section.faq-new-section .faq-eyebrow {
+                font-family: 'DM Sans', system-ui, sans-serif !important;
+                font-size: 13px !important;
+                font-weight: 800 !important;
+                letter-spacing: 0.16em !important;
+                text-transform: uppercase !important;
+                color: #C4905A !important;
+                margin-bottom: 14px !important;
+                display: block !important;
+                text-align: center !important;
+            }
+
+            section.faq-new-section .faq-heading {
+                font-family: 'Playfair Display', Georgia, serif !important;
+                font-size: clamp(34px, 4.4vw, 52px) !important;
+                font-weight: 700 !important;
+                color: #0B192C !important;
+                line-height: 1.15 !important;
+                margin: 0 0 clamp(40px, 5vw, 56px) 0 !important;
+                letter-spacing: -0.015em !important;
+                text-align: center !important;
+            }
+
+            section.faq-new-section .faq-heading em {
+                font-family: 'Playfair Display', Georgia, serif !important;
+                font-style: italic !important;
+                font-weight: 500 !important;
+                color: #D49C47 !important;
+                background: linear-gradient(135deg, #D49C47 0%, #B07D3C 100%);
+                -webkit-background-clip: text !important;
+                -webkit-text-fill-color: transparent !important;
+                display: inline-block !important;
+            }
+
+            /* FAQ Accordion List Stack */
+            section.faq-new-section .faq-list {
+                display: flex !important;
+                flex-direction: column !important;
+                gap: 16px !important;
+            }
+
+            /* Single FAQ Item (<details>) */
+            section.faq-new-section details.faq-item {
+                background-color: #FFFFFF !important;
+                border: 1px solid rgba(226, 232, 240, 0.9) !important;
+                border-radius: 12px !important;
+                box-shadow: 0 4px 16px rgba(11, 25, 44, 0.03) !important;
+                overflow: hidden !important;
+                transition: all 0.25s ease !important;
+            }
+
+            section.faq-new-section details.faq-item:hover {
+                border-color: rgba(212, 156, 71, 0.4) !important;
+                box-shadow: 0 6px 20px rgba(11, 25, 44, 0.06) !important;
+            }
+
+            section.faq-new-section details.faq-item[open] {
+                border-color: #D49C47 !important;
+                box-shadow: 0 8px 24px rgba(212, 156, 71, 0.12) !important;
+            }
+
+            /* Summary Header (<summary>) */
+            section.faq-new-section summary.faq-question {
+                padding: clamp(18px, 2.2vw, 24px) clamp(24px, 3vw, 32px) !important;
+                font-family: 'DM Sans', system-ui, sans-serif !important;
+                font-size: clamp(15.5px, 1.4vw, 17.5px) !important;
+                font-weight: 700 !important;
+                color: #0F172A !important;
+                cursor: pointer !important;
+                list-style: none !important;
+                display: flex !important;
+                align-items: center !important;
+                justify-content: space-between !important;
+                gap: 16px !important;
+                user-select: none !important;
+            }
+
+            section.faq-new-section summary.faq-question::-webkit-details-marker {
+                display: none !important;
+            }
+
+            /* Plus / Minus Icon */
+            section.faq-new-section .faq-icon {
+                font-family: 'DM Sans', system-ui, sans-serif !important;
+                font-size: 22px !important;
+                font-weight: 400 !important;
+                color: #D49C47 !important;
+                transition: transform 0.3s ease !important;
+                line-height: 1 !important;
+                flex-shrink: 0 !important;
+            }
+
+            section.faq-new-section details.faq-item[open] .faq-icon {
+                transform: rotate(45deg) !important;
+            }
+
+            /* Answer Content Body */
+            section.faq-new-section .faq-answer {
+                padding: 0 clamp(24px, 3vw, 32px) clamp(20px, 2.5vw, 26px) clamp(24px, 3vw, 32px) !important;
+                font-family: 'DM Sans', system-ui, sans-serif !important;
+                font-size: 15px !important;
+                color: #475569 !important;
+                line-height: 1.65 !important;
+                margin: 0 !important;
+                border-top: 1px solid rgba(241, 245, 249, 0.8) !important;
+                padding-top: 16px !important;
+            }
+
+            /* Bottom SEE ALL Button */
+            section.faq-new-section .faq-cta-wrap {
+                margin-top: 40px !important;
+                text-align: center !important;
+            }
+
+            section.faq-new-section .faq-cta-btn {
+                display: inline-flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+                background: linear-gradient(135deg, #E6BA68 0%, #D49C47 100%) !important;
+                color: #FFFFFF !important;
+                font-family: 'DM Sans', system-ui, sans-serif !important;
+                font-size: 12.5px !important;
+                font-weight: 800 !important;
+                letter-spacing: 0.12em !important;
+                text-transform: uppercase !important;
+                padding: 12px 32px !important;
+                border-radius: 8px !important;
+                text-decoration: none !important;
+                box-shadow: 0 4px 14px rgba(212, 156, 71, 0.3) !important;
+                transition: all 0.25s ease !important;
+            }
+
+            section.faq-new-section .faq-cta-btn:hover {
+                background: linear-gradient(135deg, #F5D794 0%, #E6BA68 100%) !important;
+                box-shadow: 0 6px 18px rgba(212, 156, 71, 0.45) !important;
+            }
+        </style>
+
+        <section class="faq-new-section">
+            <div class="faq-container">
+                <span class="faq-eyebrow">QUESTIONS WE ARE ASKED EVERY DAY</span>
+                <h2 class="faq-heading">
+                    E-commerce accounting,<br><em>Answered plainly</em>
+                </h2>
+
+                <div class="faq-list">
+                    <!-- FAQ 1 -->
+                    <details class="faq-item">
+                        <summary class="faq-question">
+                            <span>Do I really need a specialist e-commerce accountant?</span>
+                            <span class="faq-icon">+</span>
+                        </summary>
+                        <p class="faq-answer">
+                            If you sell across multiple platforms or internationally, yes. Online accounting is more
                             complex than traditional bookkeeping, mainly because of marketplace fees and cross-border
                             VAT. A specialist gets the margin and VAT right, which is usually worth far more than the
-                            fee.</p>
+                            fee.
+                        </p>
                     </details>
-                    <details>
-                        <summary>Why does my store feel busy but not very profitable?</summary>
-                        <p>Almost always because fees, refunds, VAT and stock sit between turnover and profit. Once we
+
+                    <!-- FAQ 2 -->
+                    <details class="faq-item">
+                        <summary class="faq-question">
+                            <span>Why does my store feel busy but not very profitable?</span>
+                            <span class="faq-icon">+</span>
+                        </summary>
+                        <p class="faq-answer">
+                            Almost always because fees, refunds, VAT and stock sit between turnover and profit. Once we
                             reconcile each channel and show margin per product, the picture becomes clear, and so do the
-                            changes that lift profit.</p>
+                            changes that lift profit.
+                        </p>
                     </details>
-                    <details>
-                        <summary>How do you handle VAT for online sellers?</summary>
-                        <p>We manage <a href="https://www.gov.uk/register-for-vat">UK VAT</a>, EU VAT through OSS and <a
-                                href="https://www.gov.uk/government/collections/vat-import-one-stop-shop-scheme">IOSS</a>,
-                            import VAT, distance selling and the <a href="https://www.gov.uk/vat-margin-schemes">margin
-                                scheme</a>, all under Making Tax Digital. We set the treatment up correctly, file each
-                            return, and keep records that stand up if HMRC ever asks.</p>
+
+                    <!-- FAQ 3 -->
+                    <details class="faq-item">
+                        <summary class="faq-question">
+                            <span>How do you handle VAT for online sellers?</span>
+                            <span class="faq-icon">+</span>
+                        </summary>
+                        <p class="faq-answer">
+                            We manage UK VAT, EU VAT through OSS and IOSS, import VAT, distance selling and the margin
+                            scheme, all under Making Tax Digital. We set the treatment up correctly, file each return,
+                            and keep records that stand up if HMRC ever asks.
+                        </p>
                     </details>
-                    <details>
-                        <summary>Can you track profit across Amazon and Shopify together?</summary>
-                        <p>Yes. We reconcile every platform, fee and payout, then report margin by channel and by
+
+                    <!-- FAQ 4 -->
+                    <details class="faq-item">
+                        <summary class="faq-question">
+                            <span>Can you track profit across Amazon and Shopify together?</span>
+                            <span class="faq-icon">+</span>
+                        </summary>
+                        <p class="faq-answer">
+                            Yes. We reconcile every platform, fee and payout, then report margin by channel and by
                             product, so you see your true profit across the whole business rather than per dashboard.
                         </p>
                     </details>
-                    <details>
-                        <summary>Do you only work with online sellers in your area?</summary>
-                        <p>No. We are an e-commerce specialist serving online businesses across the UK. Our work is
+
+                    <!-- FAQ 5 -->
+                    <details class="faq-item">
+                        <summary class="faq-question">
+                            <span>Do you only work with online sellers in your area?</span>
+                            <span class="faq-icon">+</span>
+                        </summary>
+                        <p class="faq-answer">
+                            No. We are an e-commerce specialist serving online businesses across the UK. Our work is
                             fully cloud-based, so where you are based makes no difference to the service you receive.
                         </p>
                     </details>
-                    <details>
-                        <summary>What size of business do you work with?</summary>
-                        <p>We work best with established and growing online sellers - past the early start-up stage,
+
+                    <!-- FAQ 6 -->
+                    <details class="faq-item">
+                        <summary class="faq-question">
+                            <span>What size of business do you work with?</span>
+                            <span class="faq-icon">+</span>
+                        </summary>
+                        <p class="faq-answer">
+                            We work best with established and growing online sellers - past the early start-up stage,
                             turning over serious volume, carrying stock and handling real VAT complexity. If you are
-                            just starting out, our free tools and guides are the right place to begin.</p>
+                            just starting out, our free tools and guides are the right place to begin.
+                        </p>
                     </details>
-                    <details>
-                        <summary>Which accounting software do you use?</summary>
-                        <p>We work in Xero and QuickBooks, with the apps that connect your sales channels, so your data
-                            flows through cleanly and your VAT meets Making Tax Digital requirements.</p>
+
+                    <!-- FAQ 7 -->
+                    <details class="faq-item">
+                        <summary class="faq-question">
+                            <span>Which accounting software do you use?</span>
+                            <span class="faq-icon">+</span>
+                        </summary>
+                        <p class="faq-answer">
+                            We work in Xero and QuickBooks, with the apps that connect your sales channels, so your data
+                            flows through cleanly and your VAT meets Making Tax Digital requirements.
+                        </p>
                     </details>
-                    <details>
-                        <summary>How do we get started?</summary>
-                        <p>Book a free consultation or request an instant fee estimate. We review your current setup,
+
+                    <!-- FAQ 8 -->
+                    <details class="faq-item">
+                        <summary class="faq-question">
+                            <span>How do we get started?</span>
+                            <span class="faq-icon">+</span>
+                        </summary>
+                        <p class="faq-answer">
+                            Book a free consultation or request an instant fee estimate. We review your current setup,
                             show you where profit and tax are leaking, and recommend the next steps. Most clients are
-                            fully set up within five working days.</p>
+                            fully set up within five working days.
+                        </p>
                     </details>
                 </div>
             </div>
         </section>
 
-        <!-- ============ CTA ============ -->
-        <section class="dark deepnavy">
-            <div class="wrap">
-                <div class="cta rv">
-                    <svg class="motif" viewBox="0 0 1200 300" preserveAspectRatio="xMidYMid slice"
-                        xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                        <g fill="none" stroke="#1c4a70" stroke-width="1">
-                            <path d="M0 60 C300 20 700 140 1200 70" />
-                            <path d="M0 150 C300 110 700 230 1200 160" />
-                            <path d="M0 240 C300 200 700 320 1200 250" />
-                        </g>
-                    </svg>
-                    <div class="wrapin">
-                        <h2>Ready for accounting that fits <em>how you actually sell?</em></h2>
-                        <p>Tell us about your channels, your stock and your VAT, and we will show you the clearest path
-                            to real, defensible profit.</p>
-                        <div class="btns" style="justify-content:center;">
-                            <a class="btn btn-gold" href="#a2z-enquire" data-a2z-source="E-Commerce Enquiry">Book a
-                                consultation</a>
-                            <a class="btn btn-ghost" href="#a2z-feequote">Get an instant fee estimate</a>
+        <!-- ============ FINAL CTA SECTION (EXACT DESIGN MATCH) ============ -->
+        <style id="cta-new-design">
+            section.cta-new-section {
+                padding: clamp(64px, 7.5vw, 96px) 0 !important;
+                background-color: #FFFFFF !important;
+                position: relative !important;
+            }
+
+            section.cta-new-section .cta-container {
+                max-width: 1060px !important;
+                margin: 0 auto !important;
+                padding: 0 24px !important;
+            }
+
+            /* Dark Navy Floating Card Box */
+            section.cta-new-section .cta-card-box {
+                background-color: #0D2034 !important;
+                border-radius: 20px !important;
+                padding: clamp(48px, 6vw, 72px) clamp(28px, 5vw, 64px) !important;
+                position: relative !important;
+                overflow: hidden !important;
+                text-align: center !important;
+                box-shadow: 0 20px 60px rgba(13, 32, 52, 0.18) !important;
+            }
+
+            /* Subdued Background Texture Overlay */
+            section.cta-new-section .cta-bg-overlay {
+                position: absolute !important;
+                inset: 0 !important;
+                background-image: url('https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?q=80&w=1200&auto=format&fit=crop') !important;
+                background-size: cover !important;
+                background-position: center !important;
+                opacity: 0.12 !important;
+                filter: grayscale(100%) contrast(1.2) !important;
+                z-index: 1 !important;
+                pointer-events: none !important;
+            }
+
+            section.cta-new-section .cta-content {
+                position: relative !important;
+                z-index: 2 !important;
+                max-width: 780px !important;
+                margin: 0 auto !important;
+            }
+
+            section.cta-new-section .cta-heading {
+                font-family: 'Playfair Display', Georgia, serif !important;
+                font-size: clamp(32px, 4vw, 48px) !important;
+                font-weight: 700 !important;
+                color: #FFFFFF !important;
+                line-height: 1.2 !important;
+                margin: 0 0 20px 0 !important;
+                letter-spacing: -0.015em !important;
+            }
+
+            section.cta-new-section .cta-heading em {
+                font-family: 'Playfair Display', Georgia, serif !important;
+                font-style: italic !important;
+                font-weight: 500 !important;
+                color: #D49C47 !important;
+                background: linear-gradient(135deg, #F5D794 0%, #D49C47 100%);
+                -webkit-background-clip: text !important;
+                -webkit-text-fill-color: transparent !important;
+                display: block !important;
+                margin-top: 4px !important;
+            }
+
+            section.cta-new-section .cta-desc {
+                font-family: 'DM Sans', system-ui, sans-serif !important;
+                font-size: clamp(14.5px, 1.2vw, 16px) !important;
+                color: #D1D5DB !important;
+                line-height: 1.65 !important;
+                max-width: 640px !important;
+                margin: 0 auto clamp(32px, 4vw, 40px) auto !important;
+            }
+
+            /* Two Buttons Row */
+            section.cta-new-section .cta-btns-row {
+                display: flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+                gap: 16px !important;
+                flex-wrap: wrap !important;
+            }
+
+            /* Button 1: Solid Gold */
+            section.cta-new-section .btn-solid-gold {
+                display: inline-flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+                background: linear-gradient(135deg, #E6BA68 0%, #D49C47 100%) !important;
+                color: #0D2034 !important;
+                font-family: 'DM Sans', system-ui, sans-serif !important;
+                font-size: 12.5px !important;
+                font-weight: 800 !important;
+                letter-spacing: 0.1em !important;
+                text-transform: uppercase !important;
+                padding: 13px 28px !important;
+                border-radius: 8px !important;
+                text-decoration: none !important;
+                box-shadow: 0 4px 14px rgba(212, 156, 71, 0.35) !important;
+                transition: all 0.25s ease !important;
+            }
+
+            section.cta-new-section .btn-solid-gold:hover {
+                background: linear-gradient(135deg, #F5D794 0%, #E6BA68 100%) !important;
+                box-shadow: 0 6px 18px rgba(212, 156, 71, 0.5) !important;
+                transform: translateY(-2px) !important;
+            }
+
+            /* Button 2: Gold Outline */
+            section.cta-new-section .btn-outline-gold {
+                display: inline-flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+                background-color: rgba(255, 255, 255, 0.03) !important;
+                border: 1.5px solid rgba(212, 156, 71, 0.6) !important;
+                color: #E6BA68 !important;
+                font-family: 'DM Sans', system-ui, sans-serif !important;
+                font-size: 12.5px !important;
+                font-weight: 800 !important;
+                letter-spacing: 0.1em !important;
+                text-transform: uppercase !important;
+                padding: 12px 28px !important;
+                border-radius: 8px !important;
+                text-decoration: none !important;
+                transition: all 0.25s ease !important;
+            }
+
+            section.cta-new-section .btn-outline-gold:hover {
+                border-color: #D49C47 !important;
+                background-color: rgba(212, 156, 71, 0.12) !important;
+                color: #FFFFFF !important;
+                transform: translateY(-2px) !important;
+            }
+        </style>
+
+        <section class="cta-new-section">
+            <div class="cta-container">
+                <div class="cta-card-box">
+                    <div class="cta-bg-overlay"></div>
+                    <div class="cta-content">
+                        <h2 class="cta-heading">
+                            Ready for accounting that fits
+                            <em>How you actually sell?</em>
+                        </h2>
+                        <p class="cta-desc">
+                            Tell us about your channels, your stock and your VAT, and we will show you the clearest path
+                            to real, defensible profit.
+                        </p>
+                        <div class="cta-btns-row">
+                            <a href="#a2z-enquire" class="btn-solid-gold" data-a2z-source="E-Commerce Enquiry">
+                                BOOK A CONSULTATION
+                            </a>
+                            <a href="#a2z-feequote" class="btn-outline-gold">
+                                GET AN INSTANT FEE ESTIMATE
+                            </a>
                         </div>
                     </div>
                 </div>
