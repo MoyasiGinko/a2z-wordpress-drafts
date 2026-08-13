@@ -4849,7 +4849,7 @@
 
                 <div class="faq-list">
                     <!-- FAQ 1 -->
-                    <details class="faq-item">
+                    <details class="faq-item" name="ecommerce-faq">
                         <summary class="faq-question">
                             <span>Do I really need a specialist e-commerce accountant?</span>
                             <span class="faq-icon">+</span>
@@ -4863,7 +4863,7 @@
                     </details>
 
                     <!-- FAQ 2 -->
-                    <details class="faq-item">
+                    <details class="faq-item" name="ecommerce-faq">
                         <summary class="faq-question">
                             <span>Why does my store feel busy but not very profitable?</span>
                             <span class="faq-icon">+</span>
@@ -4876,7 +4876,7 @@
                     </details>
 
                     <!-- FAQ 3 -->
-                    <details class="faq-item">
+                    <details class="faq-item" name="ecommerce-faq">
                         <summary class="faq-question">
                             <span>How do you handle VAT for online sellers?</span>
                             <span class="faq-icon">+</span>
@@ -4889,7 +4889,7 @@
                     </details>
 
                     <!-- FAQ 4 -->
-                    <details class="faq-item">
+                    <details class="faq-item" name="ecommerce-faq">
                         <summary class="faq-question">
                             <span>Can you track profit across Amazon and Shopify together?</span>
                             <span class="faq-icon">+</span>
@@ -4901,7 +4901,7 @@
                     </details>
 
                     <!-- FAQ 5 -->
-                    <details class="faq-item">
+                    <details class="faq-item" name="ecommerce-faq">
                         <summary class="faq-question">
                             <span>Do you only work with online sellers in your area?</span>
                             <span class="faq-icon">+</span>
@@ -4917,6 +4917,19 @@
                     <a href="#a2z-enquire" class="faq-cta-btn">SEE ALL</a>
                 </div>
             </div>
+            <script>
+                document.querySelectorAll('section.faq-new-section details.faq-item').forEach(function(targetDetail) {
+                    targetDetail.addEventListener('toggle', function() {
+                        if (this.open) {
+                            document.querySelectorAll('section.faq-new-section details.faq-item').forEach(function(detail) {
+                                if (detail !== targetDetail) {
+                                    detail.open = false;
+                                }
+                            });
+                        }
+                    });
+                });
+            </script>
         </section>
 
         <!-- ============ FINAL CTA SECTION (EXACT DESIGN MATCH) ============ -->
