@@ -20,7 +20,8 @@
             href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400;1,600;1,700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&display=swap">
     </noscript>
     <style>
-        html, body {
+        html,
+        body {
             margin: 0;
             padding: 0;
         }
@@ -312,7 +313,7 @@
                 font-weight: 600 !important;
                 font-style: normal !important;
                 letter-spacing: 0px !important;
-                vertical-align: middle;
+                vertical-align: baseline !important;
                 margin: 0 0 clamp(22px, 3.2vw, 35px) 0 !important;
                 text-align: left !important;
                 max-width: 680px !important;
@@ -326,8 +327,8 @@
                 -webkit-text-fill-color: #D4A850 !important;
                 background: none !important;
                 letter-spacing: 0px;
-                vertical-align: middle;
-                display: inline-block;
+                vertical-align: baseline !important;
+                display: inline !important;
             }
 
             .a2z-ec .exact-hero-lede {
@@ -615,6 +616,7 @@
             }
 
             @media (max-width: 480px) {
+
                 .a2z-ec .exact-btn-primary,
                 .a2z-ec .exact-btn-secondary {
                     padding: 15px 16px;
@@ -716,39 +718,54 @@
             }
 
             .a2z-ec .case-study-heading {
-                font-family: 'Playfair Display', 'Cormorant Garamond', Georgia, serif !important;
-                font-size: clamp(34px, 4.2vw, 54px) !important;
+                font-family: 'Playfair Display', Georgia, serif !important;
+                font-size: clamp(34px, 4.8vw, 64px) !important;
                 font-weight: 700 !important;
+                font-style: normal !important;
                 color: #0F172A !important;
                 margin: 0 0 clamp(32px, 4vw, 52px) 0 !important;
-                letter-spacing: -0.015em !important;
+                letter-spacing: 0px !important;
                 text-align: center !important;
+                vertical-align: baseline !important;
             }
 
-            .a2z-ec .case-study-heading em {
-                font-family: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+            .a2z-ec .case-study-heading em,
+            .a2z-ec .case-study-heading span {
+                font-family: 'Playfair Display', Georgia, serif;
                 font-style: italic;
-                font-weight: 500;
-                color: #D49C47;
-                background: linear-gradient(135deg, #F5D794 0%, #D49C47 50%, #B07D3C 100%);
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
-                display: inline-block;
+                font-weight: 700;
+                color: #D4A851 !important;
+                -webkit-text-fill-color: #D4A851 !important;
+                background: none !important;
+                letter-spacing: 0px;
+                text-align: center;
+                vertical-align: baseline !important;
+                display: inline !important;
             }
 
             .a2z-ec .case-study-card {
                 position: relative;
-                max-width: 980px;
+                width: 100%;
+                max-width: 945px;
+                height: 441px;
                 margin: 0 auto;
-                border-radius: 26px;
+                border-radius: 36px;
+                background: linear-gradient(180deg, #112b46 0%, #081428 100%);
+                padding: 20px;
+                box-sizing: border-box;
+                box-shadow: 0 25px 65px -15px rgba(0, 0, 0, 0.4);
+                cursor: pointer;
+            }
+
+            .a2z-ec .case-study-inner {
+                position: relative;
+                width: 100%;
+                height: 100%;
+                border-radius: 16px;
                 overflow: hidden;
-                box-shadow: 0 25px 65px -15px rgba(11, 25, 44, 0.4);
-                aspect-ratio: 16 / 9.2;
-                min-height: 380px;
                 display: flex;
                 flex-direction: column;
                 justify-content: flex-end;
-                cursor: pointer;
             }
 
             .a2z-ec .case-study-card-bg {
@@ -757,7 +774,9 @@
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
-                transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+                object-position: top center;
+                opacity: 0.1;
+                transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.3s ease;
             }
 
             .a2z-ec .case-study-card:hover .case-study-card-bg {
@@ -767,10 +786,7 @@
             .a2z-ec .case-study-overlay {
                 position: absolute;
                 inset: 0;
-                background: linear-gradient(180deg,
-                        rgba(11, 25, 44, 0.45) 0%,
-                        rgba(11, 25, 44, 0.75) 50%,
-                        rgba(8, 18, 33, 0.96) 100%);
+                background: linear-gradient(0deg, #081428 0%, rgba(17, 43, 70, 0.3) 50%, rgba(17, 43, 70, 0.0) 100%);
                 transition: background 0.3s ease;
             }
 
@@ -779,62 +795,78 @@
                 top: 50%;
                 left: 50%;
                 transform: translate(-50%, -50%);
-                width: clamp(72px, 7vw, 92px);
-                height: clamp(72px, 7vw, 92px);
+                width: 120px;
+                height: 120px;
                 border-radius: 50%;
-                background: linear-gradient(135deg, #F5D794 0%, #D49C47 100%);
+                background: #D4A850;
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 z-index: 3;
-                box-shadow: 0 10px 32px rgba(212, 156, 71, 0.45);
-                transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.3s ease;
+                box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+                transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), background-color 0.2s ease, box-shadow 0.3s ease;
             }
 
             .a2z-ec .case-study-card:hover .case-study-play-btn {
-                transform: translate(-50%, -50%) scale(1.1);
-                box-shadow: 0 15px 42px rgba(212, 156, 71, 0.65);
+                transform: translate(-50%, -50%) scale(1.08);
+                width: 120px;
+                height: 120px;
+                background: #D4A850;
+                box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
             }
 
             .a2z-ec .case-study-play-icon {
-                width: 0;
-                height: 0;
-                border-top: 14px solid transparent;
-                border-bottom: 14px solid transparent;
-                border-left: 22px solid #0B192C;
-                margin-left: 5px;
+                width: 36px;
+                height: 41.567996978759766px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-left: 6px;
+            }
+
+            .a2z-ec .case-study-play-icon svg {
+                width: 36px;
+                height: 41.567996978759766px;
+                fill: #000000;
             }
 
             .a2z-ec .case-study-content {
                 position: relative;
                 z-index: 3;
-                padding: clamp(24px, 4vw, 42px);
+                padding: 20px !important;
                 display: flex;
                 justify-content: space-between;
                 align-items: flex-end;
-                gap: 20px;
+                gap: 24px;
                 text-align: left;
             }
 
             .a2z-ec .case-study-left {
-                max-width: 540px;
+                max-width: 580px;
             }
 
             .a2z-ec .case-study-title {
-                font-family: 'Playfair Display', 'Cormorant Garamond', Georgia, serif !important;
-                font-size: clamp(22px, 2.5vw, 32px) !important;
-                font-weight: 600 !important;
+                font-family: 'Playfair Display', Georgia, serif !important;
+                font-size: clamp(24px, 2.8vw, 32px) !important;
+                font-weight: 700 !important;
+                font-style: normal !important;
+                letter-spacing: 0px !important;
                 color: #FFFFFF !important;
                 margin: 0 0 8px 0 !important;
                 line-height: 1.2 !important;
+                vertical-align: middle;
             }
 
             .a2z-ec .case-study-quote {
-                font-family: 'DM Sans', system-ui, sans-serif !important;
-                font-size: clamp(13.5px, 1.2vw, 15.5px) !important;
-                color: #CBD5E1 !important;
+                font-family: 'Manrope', 'DM Sans', system-ui, sans-serif !important;
+                font-size: clamp(13px, 1.4vw, 16px) !important;
+                font-weight: 600 !important;
+                font-style: normal !important;
+                letter-spacing: 0px !important;
+                vertical-align: middle;
+                color: #E2E8F0 !important;
                 margin: 0 !important;
-                line-height: 1.5 !important;
+                line-height: 1.45 !important;
             }
 
             .a2z-ec .case-study-right {
@@ -843,21 +875,34 @@
             }
 
             .a2z-ec .case-study-tag {
-                font-family: 'DM Sans', system-ui, sans-serif;
-                font-size: 11px;
-                font-weight: 800;
-                letter-spacing: 0.14em;
-                text-transform: uppercase;
-                color: #D49C47;
-                margin-bottom: 4px;
+                font-family: 'Manrope', 'DM Sans', system-ui, sans-serif !important;
+                font-size: 14px !important;
+                font-weight: 700 !important;
+                font-style: normal !important;
+                letter-spacing: 1.4px !important;
+                text-transform: uppercase !important;
+                color: #E9C349 !important;
+                margin-bottom: 4px !important;
+                vertical-align: middle;
                 display: block;
             }
 
             .a2z-ec .case-study-company {
-                font-family: 'DM Sans', system-ui, sans-serif;
-                font-size: 15px;
-                font-weight: 700;
-                color: #FFFFFF;
+                font-family: 'Manrope', 'DM Sans', system-ui, sans-serif !important;
+                font-size: 16px !important;
+                font-weight: 700 !important;
+                font-style: normal !important;
+                letter-spacing: 0px !important;
+                color: #FFFFFF !important;
+                vertical-align: middle;
+            }
+
+            @media (max-width: 992px) {
+                .a2z-ec .case-study-card {
+                    height: auto;
+                    aspect-ratio: 945 / 441;
+                    min-height: 280px;
+                }
             }
 
             @media (max-width: 640px) {
@@ -880,24 +925,31 @@
                 </h2>
 
                 <div class="case-study-card">
-                    <img class="case-study-card-bg"
-                        src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=1200&auto=format&fit=crop"
-                        alt="Client Case Study">
-                    <div class="case-study-overlay"></div>
+                    <div class="case-study-inner">
+                        <img class="case-study-card-bg"
+                            src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=1200&auto=format&fit=crop"
+                            alt="Client Case Study">
+                        <div class="case-study-overlay"></div>
 
-                    <div class="case-study-play-btn" aria-label="Play Client Video">
-                        <div class="case-study-play-icon"></div>
-                    </div>
-
-                    <div class="case-study-content">
-                        <div class="case-study-left">
-                            <h3 class="case-study-title">Scaling E-Commerce Ventures</h3>
-                            <p class="case-study-quote">"The strategic clarity provided by Prestige Advisory was the
-                                catalyst for our international expansion."</p>
+                        <div class="case-study-play-btn" aria-label="Play Client Video">
+                            <div class="case-study-play-icon">
+                                <svg width="36" height="42" viewBox="0 0 36 42" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M36 20.784L0 41.568V0L36 20.784Z" fill="#000000" />
+                                </svg>
+                            </div>
                         </div>
-                        <div class="case-study-right">
-                            <span class="case-study-tag">FEATURED CASE STUDY</span>
-                            <div class="case-study-company">Global Retail Group</div>
+
+                        <div class="case-study-content">
+                            <div class="case-study-left">
+                                <h3 class="case-study-title">Scaling E-Commerce Ventures</h3>
+                                <p class="case-study-quote">"The strategic clarity provided by Prestige Advisory was the
+                                    catalyst for our international expansion."</p>
+                            </div>
+                            <div class="case-study-right">
+                                <span class="case-study-tag">FEATURED CASE STUDY</span>
+                                <div class="case-study-company">Global Retail Group</div>
+                            </div>
                         </div>
                     </div>
                 </div>
