@@ -1295,12 +1295,29 @@
             }
 
             /* Cascading wave stagger delays */
-            .a2z-ec .calc-ledger-item:nth-child(1) { transition-delay: 0ms; }
-            .a2z-ec .calc-ledger-item:nth-child(2) { transition-delay: 30ms; }
-            .a2z-ec .calc-ledger-item:nth-child(3) { transition-delay: 60ms; }
-            .a2z-ec .calc-ledger-item:nth-child(4) { transition-delay: 90ms; }
-            .a2z-ec .calc-ledger-item:nth-child(5) { transition-delay: 120ms; }
-            .a2z-ec .calc-ledger-item:nth-child(6) { transition-delay: 150ms; }
+            .a2z-ec .calc-ledger-item:nth-child(1) {
+                transition-delay: 0ms;
+            }
+
+            .a2z-ec .calc-ledger-item:nth-child(2) {
+                transition-delay: 30ms;
+            }
+
+            .a2z-ec .calc-ledger-item:nth-child(3) {
+                transition-delay: 60ms;
+            }
+
+            .a2z-ec .calc-ledger-item:nth-child(4) {
+                transition-delay: 90ms;
+            }
+
+            .a2z-ec .calc-ledger-item:nth-child(5) {
+                transition-delay: 120ms;
+            }
+
+            .a2z-ec .calc-ledger-item:nth-child(6) {
+                transition-delay: 150ms;
+            }
 
             /* Interactive live nudge animations when slider changes */
             .a2z-ec .calc-ledger-list.shift-right .calc-ledger-item {
@@ -1715,59 +1732,91 @@
                 padding: clamp(60px, 7vw, 96px) 0;
                 background-color: #ffffff;
                 text-align: center;
+                max-width: 1280px;
+                margin: 0 auto;
             }
 
             .a2z-ec .plat-eyebrow {
-                font-family: 'DM Sans', system-ui, sans-serif;
-                font-size: 13px;
-                font-weight: 800;
-                letter-spacing: 0.16em;
-                text-transform: uppercase;
-                color: #D49C47;
+                font-family: 'Inter', system-ui, sans-serif !important;
+                font-size: 20px !important;
+                font-weight: 700 !important;
+                font-style: normal !important;
+                letter-spacing: 1.2px !important;
+                text-transform: uppercase !important;
+                color: #D4A850 !important;
+                text-align: center !important;
+                vertical-align: middle;
                 margin-bottom: 12px;
                 display: block;
             }
 
             .a2z-ec .plat-heading {
-                font-family: 'Playfair Display', 'Cormorant Garamond', Georgia, serif !important;
-                font-size: clamp(34px, 4.2vw, 54px) !important;
-                font-weight: 700 !important;
-                color: #0F172A !important;
-                line-height: 1.15 !important;
-                margin: 0 0 16px 0 !important;
-                letter-spacing: -0.015em !important;
+                font-family: 'Playfair Display', Georgia, serif !important;
+                font-size: clamp(36px, 5vw, 64px) !important;
+                font-weight: 600 !important;
+                font-style: normal !important;
+                color: #000307 !important;
+                line-height: 74px !important;
+                letter-spacing: 0px !important;
                 text-align: center !important;
+                vertical-align: baseline !important;
+                margin: 0 0 16px 0 !important;
             }
 
             .a2z-ec .plat-heading em {
-                font-family: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
-                font-style: italic;
-                font-weight: 500;
-                color: #D49C47;
-                background: linear-gradient(135deg, #F5D794 0%, #D49C47 50%, #B07D3C 100%);
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
+                font-family: 'Playfair Display', Georgia, serif !important;
+                font-size: 1em !important;
+                font-weight: 700 !important;
+                font-style: italic !important;
+                line-height: inherit !important;
+                letter-spacing: 0px !important;
+                color: #D4A850 !important;
+                -webkit-text-fill-color: #D4A850 !important;
+                background: none !important;
+                vertical-align: baseline !important;
+                display: inline !important;
+            }
+
+            .a2z-ec .plat-heading-italic {
+                font-family: 'Playfair Display', Georgia, serif !important;
+                font-size: 1em !important;
+                font-weight: 600 !important;
+                font-style: italic !important;
+                line-height: inherit !important;
+                letter-spacing: 0px !important;
+                color: #000307 !important;
+                vertical-align: baseline !important;
+                display: inline !important;
             }
 
             .a2z-ec .plat-subtext {
-                font-family: 'DM Sans', system-ui, sans-serif;
-                font-size: clamp(14.5px, 1.3vw, 16.5px);
-                color: #475569;
-                max-width: 580px;
+                font-family: 'Manrope', 'DM Sans', system-ui, sans-serif !important;
+                font-size: 22px !important;
+                font-weight: 600 !important;
+                font-style: normal !important;
+                letter-spacing: 0px !important;
+                text-align: justify !important;
+                vertical-align: middle;
+                color: #000000 !important;
+                max-width: 604px;
                 margin: 0 auto clamp(40px, 5vw, 60px);
                 line-height: 1.55;
             }
 
             .a2z-ec .plat-cards-grid {
                 display: grid;
-                grid-template-columns: repeat(4, 1fr);
-                gap: clamp(16px, 2vw, 24px);
-                max-width: 1100px;
+                grid-template-columns: repeat(4, 280px);
+                justify-content: center;
+                gap: 30px;
+                max-width: 1220px;
                 margin: 0 auto;
             }
 
             .a2z-ec .plat-card {
                 position: relative;
+                width: 280px;
+                height: 306px;
+                box-sizing: border-box;
                 background: linear-gradient(180deg, #FFFFFF 0%, #FAF5EC 100%);
                 border: 1px solid #EAE0D0;
                 border-radius: 20px;
@@ -1849,9 +1898,17 @@
                 margin: 0 !important;
             }
 
-            @media (max-width: 992px) {
+            @media (max-width: 1240px) {
                 .a2z-ec .plat-cards-grid {
-                    grid-template-columns: repeat(2, 1fr);
+                    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                    justify-content: center;
+                    max-width: 100%;
+                }
+
+                .a2z-ec .plat-card {
+                    width: 100%;
+                    max-width: 280px;
+                    margin: 0 auto;
                 }
             }
 
@@ -1866,7 +1923,8 @@
             <div class="wrap">
                 <span class="plat-eyebrow">PLATFORMS WE KNOW INSIDE OUT</span>
                 <h2 class="plat-heading">
-                    Specialist support for <em>every</em> channel<br>you sell on
+                    Specialist support for <em>every</em> <span class="plat-heading-italic">channel<br>you sell
+                        on</span>
                 </h2>
                 <p class="plat-subtext">
                     Each platform reports money differently. We know exactly how, so your accounts reflect what you
