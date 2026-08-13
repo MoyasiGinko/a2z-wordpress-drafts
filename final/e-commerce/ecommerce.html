@@ -1282,6 +1282,7 @@
                 display: flex;
                 flex-direction: column;
                 gap: 18px;
+                transition: transform 0.3s ease, opacity 0.3s ease;
             }
 
             .a2z-ec .calc-ledger-item {
@@ -1289,6 +1290,7 @@
                 flex-direction: column;
                 gap: 8px;
                 padding-bottom: 12px;
+                transition: transform 0.25s cubic-bezier(0.25, 1, 0.5, 1);
             }
 
             .a2z-ec .calc-ledger-item:nth-child(2) {
@@ -1381,7 +1383,7 @@
                 height: 100%;
                 background: #D4A84F;
                 border-radius: 2px;
-                transition: width 0.2s ease;
+                transition: width 0.35s cubic-bezier(0.25, 1, 0.5, 1);
             }
 
             .a2z-ec .calc-ledger-item.total-row .calc-item-amount {
@@ -1564,25 +1566,78 @@
                     return '£' + Math.round(num).toLocaleString('en-GB');
                 }
 
-                function updateCalc() {
-                    var val = parseFloat(range.value) || 115000;
+                var currentValues = null;
+                var animFrameId = null;
 
-                    // Breakdown ratios based on benchmark multi-channel UK sellers
-                    var cog = Math.round(val * 0.3884);
-                    var overheads = Math.round(val * 0.1684);
-                    var adv = Math.round(val * 0.1121);
-                    var fees = Math.round(val * 0.1042);
-                    var refunds = Math.round(val * 0.0321);
-                    var profit = val - (cog + overheads + adv + fees + refunds);
-                    var marginPct = Math.round((profit / val) * 100);
+                function updateCalc(instant) {
+                    var targetVal = parseFloat(range.value) || 115000;
 
-                    // Update Display Texts
+                    var targetCog = Math.round(targetVal * 0.3884);
+                    var targetOverheads = Math.round(targetVal * 0.1684);
+                    var targetAdv = Math.round(targetVal * 0.1121);
+                    var targetFees = Math.round(targetVal * 0.1042);
+                    var targetRefunds = Math.round(targetVal * 0.0321);
+                    var targetProfit = targetVal - (targetCog + targetOverheads + targetAdv + targetFees + targetRefunds);
+                    var targetMarginPct = Math.round((targetProfit / targetVal) * 100);
+
+                    var targets = {
+                        val: targetVal,
+                        cog: targetCog,
+                        overheads: targetOverheads,
+                        adv: targetAdv,
+                        fees: targetFees,
+                        refunds: targetRefunds,
+                        profit: targetProfit,
+                        marginPct: targetMarginPct
+                    };
+
+                    if (instant || !currentValues) {
+                        currentValues = Object.assign({}, targets);
+                        render();
+                        return;
+                    }
+
+                    if (animFrameId) cancelAnimationFrame(animFrameId);
+
+                    function step() {
+                        var complete = true;
+                        var ease = 0.3;
+
+                        for (var key in targets) {
+                            var diff = targets[key] - currentValues[key];
+                            if (Math.abs(diff) > 0.4) {
+                                currentValues[key] += diff * ease;
+                                complete = false;
+                            } else {
+                                currentValues[key] = targets[key];
+                            }
+                        }
+
+                        render();
+
+                        if (!complete) {
+                            animFrameId = requestAnimationFrame(step);
+                        }
+                    }
+
+                    animFrameId = requestAnimationFrame(step);
+                }
+
+                function render() {
+                    var val = currentValues.val;
+                    var cog = currentValues.cog;
+                    var overheads = currentValues.overheads;
+                    var adv = currentValues.adv;
+                    var fees = currentValues.fees;
+                    var refunds = currentValues.refunds;
+                    var profit = currentValues.profit;
+                    var marginPct = Math.round(currentValues.marginPct);
+
                     document.getElementById('exactTurnoverDisplay').textContent = fmt(val);
                     document.getElementById('exactProfitDisplay').textContent = fmt(profit);
                     document.getElementById('exactMarginPct').textContent = marginPct + '%';
                     document.getElementById('exactSalesBasis').textContent = fmt(val);
 
-                    // Update Right Breakdown Table
                     document.getElementById('valCog').textContent = fmt(cog);
                     document.getElementById('valOverheads').textContent = fmt(overheads);
                     document.getElementById('valAdv').textContent = fmt(adv);
@@ -1590,7 +1645,6 @@
                     document.getElementById('valRefunds').textContent = fmt(refunds);
                     document.getElementById('valProfit').textContent = fmt(profit);
 
-                    // Update Bars
                     document.getElementById('barCog').style.width = (cog / val * 100).toFixed(1) + '%';
                     document.getElementById('barOverheads').style.width = (overheads / val * 100).toFixed(1) + '%';
                     document.getElementById('barAdv').style.width = (adv / val * 100).toFixed(1) + '%';
@@ -1598,13 +1652,12 @@
                     document.getElementById('barRefunds').style.width = (refunds / val * 100).toFixed(1) + '%';
                     document.getElementById('barProfit').style.width = (profit / val * 100).toFixed(1) + '%';
 
-                    // Update Slider fill gradient
                     var pct = ((val - range.min) / (range.max - range.min)) * 100;
                     range.style.background = 'linear-gradient(90deg, #D4A850 0%, #D4A850 ' + pct + '%, rgba(255, 255, 255, 0.12) ' + pct + '%)';
                 }
 
-                range.addEventListener('input', updateCalc);
-                updateCalc();
+                range.addEventListener('input', function () { updateCalc(false); });
+                updateCalc(true);
             })();
         </script>
 
