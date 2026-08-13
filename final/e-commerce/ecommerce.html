@@ -2093,7 +2093,7 @@
                 display: grid;
                 grid-template-columns: repeat(2, 1fr);
                 gap: clamp(36px, 4vw, 52px) clamp(24px, 3vw, 40px);
-                max-width: 1040px;
+                max-width: 1220px;
                 margin: 0 auto;
                 text-align: left;
             }
@@ -2102,27 +2102,31 @@
                 position: relative;
                 display: flex;
                 flex-direction: column;
+                align-items: flex-start;
             }
 
             /* Top Left Icon Badge */
             .a2z-ec .prob-icon-badge {
                 position: absolute;
-                top: -16px;
-                left: 18px;
+                top: -24px;
+                left: -18px;
                 z-index: 10;
-                width: 44px;
-                height: 44px;
-                background: linear-gradient(135deg, #E6BA68 0%, #D49C47 100%);
-                border-radius: 10px;
+                width: 56.87px;
+                height: 56.87px;
+                background: #D4A84F;
+                border: 3.55px solid #FFFFFF;
+                border-radius: 10.66px;
                 display: flex;
                 align-items: center;
                 justify-content: center;
+                box-sizing: border-box;
+                opacity: 1;
                 box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
             }
 
             .a2z-ec .prob-icon-badge svg {
-                width: 22px;
-                height: 22px;
+                width: 24px;
+                height: 24px;
                 stroke: #0F1B2B;
                 stroke-width: 2;
                 fill: none;
@@ -2130,71 +2134,101 @@
 
             /* Primary Blue Card (The Issue) */
             .a2z-ec .prob-blue-card {
-                background-color: #1C4082;
-                border-radius: 18px;
-                padding: 38px 28px 48px 28px;
+                background: #1E3A8A;
+                border: 0.89px solid rgba(255, 255, 255, 0.05);
+                border-radius: 14.22px;
+                max-width: 500px;
+                height: 340px;
+                box-sizing: border-box;
+                padding: 44px;
                 position: relative;
                 z-index: 1;
+                opacity: 1;
                 box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
             }
 
             .a2z-ec .prob-card-title {
-                font-family: 'DM Sans', system-ui, sans-serif !important;
-                font-size: clamp(20px, 2.2vw, 24px) !important;
-                font-weight: 700 !important;
+                font-family: 'Manrope', system-ui, sans-serif !important;
+                font-size: 31.99px !important;
+                font-weight: 600 !important;
+                font-style: normal !important;
+                line-height: 35.54px !important;
+                letter-spacing: 0px !important;
+                vertical-align: middle;
                 color: #FFFFFF !important;
                 margin: 0 0 16px 0 !important;
-                line-height: 1.25 !important;
             }
 
             .a2z-ec .prob-issue-tag {
-                font-family: 'DM Sans', system-ui, sans-serif;
-                font-size: 11px;
-                font-weight: 800;
-                letter-spacing: 0.14em;
-                text-transform: uppercase;
-                color: #93C5FD;
+                font-family: 'Manrope', system-ui, sans-serif !important;
+                font-size: 14px !important;
+                font-weight: 600 !important;
+                font-style: normal !important;
+                letter-spacing: 0px !important;
+                vertical-align: middle;
+                text-transform: uppercase !important;
+                color: #FFFFFF !important;
                 margin-bottom: 6px;
                 display: block;
             }
 
             .a2z-ec .prob-issue-desc {
-                font-family: 'DM Sans', system-ui, sans-serif !important;
-                font-size: 13.8px !important;
-                color: #E2E8F0 !important;
-                line-height: 1.55 !important;
+                font-family: 'Manrope', system-ui, sans-serif !important;
+                font-size: 17.77px !important;
+                font-weight: 600 !important;
+                font-style: normal !important;
+                letter-spacing: 0px !important;
+                text-align: justify !important;
+                vertical-align: middle;
+                color: #FFFFFF !important;
+                line-height: 1.35 !important;
                 margin: 0 !important;
             }
 
             /* Secondary Cream Card (How We Fix It) */
             .a2z-ec .prob-fix-card {
                 background-color: #FEF8D3;
-                border-radius: 14px;
-                padding: 24px 28px;
+                border: 0.89px solid #EAE0D0;
+                border-radius: 14.22px;
+                width: 500px;
+                height: 180px;
+                padding: 35.54px;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                justify-content: center;
+                box-sizing: border-box;
                 position: relative;
                 z-index: 3;
-                margin-top: -28px;
+                margin-top: -65px;
                 margin-left: 24px;
+                opacity: 1;
                 box-shadow: 0 14px 32px rgba(0, 0, 0, 0.28);
                 color: #0F172A;
             }
 
             .a2z-ec .prob-fix-tag {
-                font-family: 'DM Sans', system-ui, sans-serif;
-                font-size: 11px;
-                font-weight: 800;
-                letter-spacing: 0.14em;
-                text-transform: uppercase;
-                color: #0F172A;
+                font-family: 'Manrope', system-ui, sans-serif !important;
+                font-size: 16px !important;
+                font-weight: 700 !important;
+                font-style: normal !important;
+                letter-spacing: 0px !important;
+                vertical-align: middle;
+                text-transform: uppercase !important;
+                color: #000000 !important;
                 margin-bottom: 6px;
                 display: block;
             }
 
             .a2z-ec .prob-fix-desc {
-                font-family: 'DM Sans', system-ui, sans-serif !important;
-                font-size: 13.8px !important;
+                font-family: 'Manrope', system-ui, sans-serif !important;
+                font-size: 18px !important;
                 font-weight: 600 !important;
-                color: #0F172A !important;
+                font-style: normal !important;
+                letter-spacing: 0px !important;
+                text-align: justify !important;
+                vertical-align: middle;
+                color: #000000 !important;
                 line-height: 1.5 !important;
                 margin: 0 !important;
             }
