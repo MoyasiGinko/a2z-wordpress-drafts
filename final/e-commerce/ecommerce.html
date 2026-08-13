@@ -13,11 +13,11 @@
     <meta name="description"
         content="Specialist e-commerce accountants for UK online sellers. We control VAT (OSS/IOSS), reveal real profit per channel and cut tax, for Amazon, Shopify, WooCommerce and multi-channel businesses.">
     <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@700&family=Manrope:wght@500;600;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400;1,600;1,700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@700&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Manrope:wght@500;600;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400;1,600;1,700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&display=swap"
         media="print" onload="this.media='all'">
     <noscript>
         <link rel="stylesheet"
-            href="https://fonts.googleapis.com/css2?family=Inter:wght@700&family=Manrope:wght@500;600;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400;1,600;1,700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&display=swap">
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@700&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Manrope:wght@500;600;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400;1,600;1,700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&display=swap">
     </noscript>
     <style>
         html,
@@ -4017,35 +4017,20 @@
         <!-- ============ FREE TOOLS SECTION (EXACT DESIGN MATCH WITH A2Z WATERMARK) ============ -->
         <style id="tools-new-design">
             section.tools-new-section {
-                padding: clamp(64px, 7.5vw, 104px) 0 !important;
-                background-color: #F4F6FB !important;
+                padding: clamp(64px, 7.5vw, 90px) 0 clamp(64px, 7.5vw, 90px) 0 !important;
+                background-color: #FFFFFF !important;
                 position: relative !important;
-                overflow: hidden !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                margin: 0 !important;
+                box-sizing: border-box !important;
             }
 
-            /* Massive A2Z Background Watermark */
-            section.tools-new-section .tools-watermark {
-                position: absolute !important;
-                top: 52% !important;
-                left: 50% !important;
-                transform: translate(-50%, -50%) !important;
-                font-family: 'Playfair Display', Georgia, serif !important;
-                font-size: clamp(260px, 32vw, 460px) !important;
-                font-weight: 700 !important;
-                color: rgba(15, 23, 42, 0.035) !important;
-                letter-spacing: -0.02em !important;
-                white-space: nowrap !important;
-                pointer-events: none !important;
-                user-select: none !important;
-                z-index: 1 !important;
-            }
-
-            section.tools-new-section .tools-container {
+            section.tools-new-section .tools-header-container {
                 max-width: 1040px !important;
-                margin: 0 auto !important;
+                margin: 0 auto clamp(48px, 6vw, 64px) auto !important;
                 padding: 0 24px !important;
-                position: relative !important;
-                z-index: 2 !important;
+                text-align: center !important;
             }
 
             section.tools-new-section .tools-heading {
@@ -4055,7 +4040,7 @@
                 font-style: normal !important;
                 color: #000000 !important;
                 line-height: 1.15 !important;
-                margin: 0 0 clamp(44px, 5.5vw, 64px) 0 !important;
+                margin: 0 !important;
                 letter-spacing: 0px !important;
                 text-align: center !important;
                 vertical-align: baseline !important;
@@ -4077,47 +4062,111 @@
                 display: inline !important;
             }
 
+            /* Middle #F9F9FF Cards Wrapper */
+            section.tools-new-section .tools-cards-wrapper {
+                width: 100% !important;
+                max-width: 100% !important;
+                height: 861px !important;
+                max-height: 861px !important;
+                background-color: #F9F9FF !important;
+                position: relative !important;
+                overflow: hidden !important;
+                display: flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+                box-sizing: border-box !important;
+            }
+
+            /* Massive A2Z Background Watermark */
+            section.tools-new-section .tools-watermark {
+                position: absolute !important;
+                top: 50% !important;
+                left: 50% !important;
+                transform: translate(-50%, -50%) !important;
+                max-width: 1426px !important;
+                width: 100% !important;
+                font-family: 'Libre Caslon Text', Georgia, serif !important;
+                font-weight: 400 !important;
+                font-style: normal !important;
+                font-size: clamp(260px, 32vw, 707.12px) !important;
+                line-height: 707.12px !important;
+                letter-spacing: 0px !important;
+                text-align: center !important;
+                vertical-align: middle;
+                color: #9E9EA2 !important;
+                opacity: 0.12 !important;
+                white-space: nowrap !important;
+                pointer-events: none !important;
+                user-select: none !important;
+                z-index: 1 !important;
+            }
+
+            section.tools-new-section .tools-container {
+                width: 100% !important;
+                max-width: 1440px !important;
+                height: 100% !important;
+                max-height: 861px !important;
+                margin: 0 auto !important;
+                padding: 0 24px !important;
+                position: relative !important;
+                z-index: 2 !important;
+                display: flex !important;
+                flex-direction: column !important;
+                justify-content: center !important;
+                box-sizing: border-box !important;
+            }
+
             /* Stacked Cards Container */
             section.tools-new-section .tools-card-stack {
-                max-width: 680px !important;
+                max-width: 847px !important;
+                width: 100% !important;
                 margin: 0 auto !important;
                 display: flex !important;
                 flex-direction: column !important;
-                gap: 32px !important;
+                gap: 60px !important;
+                align-items: center !important;
             }
 
             section.tools-new-section .tool-card {
+                width: 847px !important;
+                max-width: 100% !important;
+                height: 325px !important;
+                opacity: 1 !important;
+                border-radius: 32px !important;
+                background: #FFFFFF !important;
                 background-color: #FFFFFF !important;
-                border-radius: 20px !important;
-                padding: clamp(28px, 3.5vw, 36px) clamp(32px, 4vw, 44px) !important;
-                box-shadow: 0 15px 45px rgba(11, 25, 44, 0.06) !important;
+                box-shadow: 0px 0px 40px -15px #112B4638 !important;
+                padding: 40px 30px 40px 50px !important;
                 display: flex !important;
-                align-items: flex-start !important;
-                gap: 24px !important;
+                align-items: center !important;
+                gap: 32px !important;
+                box-sizing: border-box !important;
                 transition: transform 0.25s ease, box-shadow 0.25s ease !important;
             }
 
             section.tools-new-section .tool-card:hover {
                 transform: translateY(-3px) !important;
-                box-shadow: 0 20px 50px rgba(11, 25, 44, 0.1) !important;
+                box-shadow: 0px 0px 45px -10px #112B4645 !important;
             }
 
             section.tools-new-section .tool-icon-box {
-                width: 64px !important;
-                height: 64px !important;
-                background-color: #0D2034 !important;
-                border-radius: 16px !important;
+                width: 101px !important;
+                height: 101px !important;
+                opacity: 1 !important;
+                background: #112B46 !important;
+                background-color: #112B46 !important;
+                border-radius: 30.3px !important;
                 display: flex !important;
                 align-items: center !important;
                 justify-content: center !important;
                 flex-shrink: 0 !important;
-                margin-top: 4px !important;
+                margin-top: 0 !important;
                 box-shadow: 0 6px 16px rgba(13, 32, 52, 0.15) !important;
             }
 
             section.tools-new-section .tool-icon-box svg {
-                width: 30px !important;
-                height: 30px !important;
+                width: 44px !important;
+                height: 44px !important;
                 stroke: #FFFFFF !important;
                 stroke-width: 1.8 !important;
                 fill: none !important;
@@ -4128,54 +4177,71 @@
             }
 
             section.tools-new-section .tool-eyebrow {
-                font-family: 'DM Sans', system-ui, sans-serif !important;
-                font-size: 13px !important;
-                font-weight: 800 !important;
-                letter-spacing: 0.14em !important;
+                font-family: 'Manrope', system-ui, sans-serif !important;
+                font-weight: 700 !important;
+                font-style: normal !important;
+                font-size: 26px !important;
+                letter-spacing: 0px !important;
+                vertical-align: middle;
                 text-transform: uppercase !important;
-                color: #D49C47 !important;
-                margin-bottom: 8px !important;
+                color: #D4A850 !important;
+                margin-bottom: 6px !important;
                 display: block !important;
             }
 
             section.tools-new-section .tool-title {
                 font-family: 'Playfair Display', Georgia, serif !important;
-                font-size: clamp(22px, 2.2vw, 27px) !important;
-                font-weight: 700 !important;
-                color: #0B192C !important;
+                font-weight: 600 !important;
+                font-style: normal !important;
+                font-size: 36px !important;
+                letter-spacing: 0px !important;
+                vertical-align: middle;
+                color: #000000 !important;
                 margin: 0 0 10px 0 !important;
                 line-height: 1.25 !important;
             }
 
             section.tools-new-section .tool-desc {
-                font-family: 'DM Sans', system-ui, sans-serif !important;
-                font-size: 14px !important;
-                color: #475569 !important;
-                line-height: 1.55 !important;
-                margin: 0 0 20px 0 !important;
+                font-family: 'Manrope', system-ui, sans-serif !important;
+                font-weight: 500 !important;
+                font-style: normal !important;
+                font-size: 20px !important;
+                letter-spacing: 0px !important;
+                text-align: justify !important;
+                vertical-align: middle;
+                color: #000000 !important;
+                line-height: 1.5 !important;
+                max-width: 540px !important;
+                margin: 0 0 26px 0 !important;
             }
 
             section.tools-new-section .tool-btn {
                 display: inline-flex !important;
                 align-items: center !important;
                 justify-content: center !important;
-                background: linear-gradient(135deg, #E6BA68 0%, #D49C47 100%) !important;
+                height: 52px !important;
+                background: #D4A84F !important;
+                background-color: #D4A84F !important;
                 color: #FFFFFF !important;
-                font-family: 'DM Sans', system-ui, sans-serif !important;
-                font-size: 12.5px !important;
+                font-family: 'Manrope', system-ui, sans-serif !important;
                 font-weight: 800 !important;
-                letter-spacing: 0.1em !important;
+                font-style: normal !important;
+                font-size: 14px !important;
+                letter-spacing: 1.4px !important;
+                vertical-align: middle;
                 text-transform: uppercase !important;
-                padding: 11px 24px !important;
-                border-radius: 8px !important;
+                padding: 16px 32px !important;
+                border-radius: 7px !important;
                 text-decoration: none !important;
-                box-shadow: 0 4px 14px rgba(212, 156, 71, 0.3) !important;
+                box-shadow: none !important;
                 transition: all 0.25s ease !important;
+                box-sizing: border-box !important;
             }
 
             section.tools-new-section .tool-btn:hover {
-                background: linear-gradient(135deg, #F5D794 0%, #E6BA68 100%) !important;
-                box-shadow: 0 6px 18px rgba(212, 156, 71, 0.45) !important;
+                background: #E4B85F !important;
+                background-color: #E4B85F !important;
+                color: #FFFFFF !important;
             }
 
             @media (max-width: 600px) {
@@ -4187,57 +4253,63 @@
         </style>
 
         <section class="tools-new-section">
-            <!-- Background A2Z Watermark -->
-            <div class="tools-watermark">A2Z</div>
-
-            <div class="tools-container">
+            <div class="tools-header-container">
                 <h2 class="tools-heading">
                     Run the numbers before<br>you <em>talk to us</em>
                 </h2>
+            </div>
 
-                <div class="tools-card-stack">
-                    <!-- Tool Card 1 -->
-                    <div class="tool-card">
-                        <div class="tool-icon-box">
-                            <svg viewBox="0 0 24 24" aria-hidden="true">
-                                <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                                <circle cx="8.5" cy="7" r="4"></circle>
-                                <polyline points="17 8 20 11 23 8"></polyline>
-                                <path d="M20 11V4"></path>
-                            </svg>
-                        </div>
-                        <div class="tool-content">
-                            <span class="tool-eyebrow">FREE CALCULATOR</span>
-                            <h3 class="tool-title">Sole Trader vs Limited Company</h3>
-                            <p class="tool-desc">
-                                See which structure keeps more of your money, with the difference shown in pounds.
-                            </p>
-                            <a href="/sole-trader-vs-limited-company-calculator/" class="tool-btn">
-                                OPEN THE CALCULATOR
-                            </a>
-                        </div>
-                    </div>
+            <div class="tools-cards-wrapper">
+                <!-- Background A2Z Watermark -->
+                <div class="tools-watermark">A2Z</div>
 
-                    <!-- Tool Card 2 -->
-                    <div class="tool-card">
-                        <div class="tool-icon-box">
-                            <svg viewBox="0 0 24 24" aria-hidden="true">
-                                <rect x="4" y="2" width="16" height="20" rx="2"></rect>
-                                <line x1="8" y1="6" x2="16" y2="6"></line>
-                                <line x1="16" y1="14" x2="16" y2="18"></line>
-                                <path d="M8 10h.01M12 10h.01M16 10h.01M8 14h.01M12 14h.01M8 18h.01M12 18h.01"></path>
-                            </svg>
+                <div class="tools-container">
+                    <div class="tools-card-stack">
+                        <!-- Tool Card 1 -->
+                        <div class="tool-card">
+                            <div class="tool-icon-box">
+                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="8.5" cy="7" r="4"></circle>
+                                    <polyline points="17 8 20 11 23 8"></polyline>
+                                    <path d="M20 11V4"></path>
+                                </svg>
+                            </div>
+                            <div class="tool-content">
+                                <span class="tool-eyebrow">FREE CALCULATOR</span>
+                                <h3 class="tool-title">Sole Trader vs Limited Company</h3>
+                                <p class="tool-desc">
+                                    See which structure keeps more of your money, with the difference shown in pounds.
+                                </p>
+                                <a href="/sole-trader-vs-limited-company-calculator/" class="tool-btn">
+                                    OPEN THE CALCULATOR
+                                </a>
+                            </div>
                         </div>
-                        <div class="tool-content">
-                            <span class="tool-eyebrow">FREE TOOL</span>
-                            <h3 class="tool-title">Business Budget and Profit Estimator</h3>
-                            <p class="tool-desc">
-                                Enter your income and costs to see your profit for the year, with cost lines built for
-                                your sector.
-                            </p>
-                            <a href="/business-budget-profit-estimator/" class="tool-btn">
-                                OPEN THE ESTIMATOR
-                            </a>
+
+                        <!-- Tool Card 2 -->
+                        <div class="tool-card">
+                            <div class="tool-icon-box">
+                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <rect x="4" y="2" width="16" height="20" rx="2"></rect>
+                                    <line x1="8" y1="6" x2="16" y2="6"></line>
+                                    <line x1="16" y1="14" x2="16" y2="18"></line>
+                                    <path d="M8 10h.01M12 10h.01M16 10h.01M8 14h.01M12 14h.01M8 18h.01M12 18h.01">
+                                    </path>
+                                </svg>
+                            </div>
+                            <div class="tool-content">
+                                <span class="tool-eyebrow">FREE TOOL</span>
+                                <h3 class="tool-title">Business Budget and Profit Estimator</h3>
+                                <p class="tool-desc">
+                                    Enter your income and costs to see your profit for the year, with cost lines built
+                                    for
+                                    your sector.
+                                </p>
+                                <a href="/business-budget-profit-estimator/" class="tool-btn">
+                                    OPEN THE ESTIMATOR
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
