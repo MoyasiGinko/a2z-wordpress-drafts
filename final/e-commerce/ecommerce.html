@@ -1295,16 +1295,32 @@
                 padding-left: 16px;
             }
 
+            .a2z-ec .calc-ledger-item:nth-child(2) .calc-item-bar-bg {
+                opacity: 0.6;
+            }
+
             .a2z-ec .calc-ledger-item:nth-child(3) {
                 padding-left: 32px;
+            }
+
+            .a2z-ec .calc-ledger-item:nth-child(3) .calc-item-bar-bg {
+                opacity: 0.5;
             }
 
             .a2z-ec .calc-ledger-item:nth-child(4) {
                 padding-left: 48px;
             }
 
+            .a2z-ec .calc-ledger-item:nth-child(4) .calc-item-bar-bg {
+                opacity: 0.4;
+            }
+
             .a2z-ec .calc-ledger-item:nth-child(5) {
                 padding-left: 64px;
+            }
+
+            .a2z-ec .calc-ledger-item:nth-child(5) .calc-item-bar-bg {
+                opacity: 0.3;
             }
 
             .a2z-ec .calc-ledger-item.total-row {
@@ -1424,7 +1440,14 @@
                                 <span class="calc-control-label">Your monthly sales</span>
                                 <span class="calc-control-val" id="exactTurnoverDisplay">£115,000</span>
                             </div>
-                            <div class="calc-drag-hint">↔ Drag to change</div>
+                            <div class="calc-drag-hint">
+                                <svg width="18" height="15" viewBox="0 0 20 16" fill="currentColor"
+                                    xmlns="http://www.w3.org/2000/svg" style="margin-right: 7px; flex-shrink: 0;">
+                                    <path d="M7 2H13V0L19 4L13 8V6H7V2Z" />
+                                    <path d="M13 14H7V16L1 12L7 8V10H13V14Z" />
+                                </svg>
+                                Drag to change
+                            </div>
                         </div>
                         <div class="calc-slider-wrapper">
                             <input class="calc-slider" id="exactTurnoverRange" type="range" min="15000" max="300000"
