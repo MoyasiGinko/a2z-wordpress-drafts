@@ -1290,7 +1290,35 @@
                 flex-direction: column;
                 gap: 8px;
                 padding-bottom: 12px;
-                transition: transform 0.25s cubic-bezier(0.25, 1, 0.5, 1);
+                transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.3s ease;
+                will-change: transform;
+            }
+
+            /* Cascading wave stagger delays */
+            .a2z-ec .calc-ledger-item:nth-child(1) { transition-delay: 0ms; }
+            .a2z-ec .calc-ledger-item:nth-child(2) { transition-delay: 30ms; }
+            .a2z-ec .calc-ledger-item:nth-child(3) { transition-delay: 60ms; }
+            .a2z-ec .calc-ledger-item:nth-child(4) { transition-delay: 90ms; }
+            .a2z-ec .calc-ledger-item:nth-child(5) { transition-delay: 120ms; }
+            .a2z-ec .calc-ledger-item:nth-child(6) { transition-delay: 150ms; }
+
+            /* Interactive live nudge animations when slider changes */
+            .a2z-ec .calc-ledger-list.shift-right .calc-ledger-item {
+                transform: translateX(10px) scale(1.01);
+            }
+
+            .a2z-ec .calc-ledger-list.shift-left .calc-ledger-item {
+                transform: translateX(-6px) scale(0.99);
+            }
+
+            /* Glow pulse on bar fill and values while moving */
+            .a2z-ec .calc-ledger-list.is-changing .calc-item-bar-fill {
+                box-shadow: 0 0 10px rgba(212, 168, 79, 0.6);
+            }
+
+            .a2z-ec .calc-ledger-list.is-changing .calc-item-amount {
+                color: #F3C465 !important;
+                text-shadow: 0 0 12px rgba(212, 168, 79, 0.5);
             }
 
             .a2z-ec .calc-ledger-item:nth-child(2) {
@@ -1568,9 +1596,28 @@
 
                 var currentValues = null;
                 var animFrameId = null;
+                var lastVal = parseFloat(range.value) || 115000;
+                var ledgerList = document.querySelector('.calc-ledger-list');
+                var shiftTimeout = null;
 
                 function updateCalc(instant) {
                     var targetVal = parseFloat(range.value) || 115000;
+
+                    if (!instant && ledgerList) {
+                        if (targetVal > lastVal) {
+                            ledgerList.classList.add('shift-right', 'is-changing');
+                            ledgerList.classList.remove('shift-left');
+                        } else if (targetVal < lastVal) {
+                            ledgerList.classList.add('shift-left', 'is-changing');
+                            ledgerList.classList.remove('shift-right');
+                        }
+                        lastVal = targetVal;
+
+                        if (shiftTimeout) clearTimeout(shiftTimeout);
+                        shiftTimeout = setTimeout(function () {
+                            ledgerList.classList.remove('shift-left', 'shift-right', 'is-changing');
+                        }, 320);
+                    }
 
                     var targetCog = Math.round(targetVal * 0.3884);
                     var targetOverheads = Math.round(targetVal * 0.1684);
