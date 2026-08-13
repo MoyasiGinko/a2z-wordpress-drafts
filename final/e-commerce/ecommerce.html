@@ -3561,14 +3561,14 @@
         <!-- ============ WHO WE WORK BEST WITH SECTION (EXACT DESIGN MATCH) ============ -->
         <style id="who-work-best-design">
             section.who-work-best-section {
-                padding: clamp(64px, 7.5vw, 104px) 0 !important;
+                padding: clamp(64px, 7.5vw, 120px) 0 !important;
                 background-color: #EAE0CC !important;
                 color: #0B192C !important;
                 position: relative !important;
             }
 
             section.who-work-best-section .who-container {
-                max-width: 1080px !important;
+                max-width: 1156px !important;
                 margin: 0 auto !important;
                 padding: 0 24px !important;
             }
@@ -3635,6 +3635,8 @@
                 grid-template-columns: repeat(3, 1fr) !important;
                 gap: 32px 28px !important;
                 justify-items: center !important;
+                max-width: 1156px !important;
+                margin: 0 auto 50px auto !important;
             }
 
             /* Dual-layer card box with 5px right border */
@@ -3737,7 +3739,7 @@
                 font-style: normal !important;
                 font-size: 16px !important;
                 letter-spacing: 0px !important;
-                text-align: justify !important;
+                text-align: left !important;
                 vertical-align: middle;
                 color: #000000 !important;
                 line-height: 1.5 !important;
@@ -3900,7 +3902,8 @@
                 padding: 0 !important;
                 position: relative !important;
                 background-color: #0D2034 !important;
-                min-height: clamp(340px, 28vw, 420px) !important;
+                min-height: 520px !important;
+                height: 520px !important;
                 display: flex !important;
                 align-items: center !important;
                 overflow: hidden !important;
@@ -3926,31 +3929,38 @@
             }
 
             section.imgband-new-section .imgband-container {
-                max-width: 1140px !important;
+                max-width: 1440px !important;
                 margin: 0 auto !important;
-                padding: clamp(60px, 7vw, 90px) 24px !important;
+                padding: 48px 24px 54px 51px !important;
                 position: relative !important;
                 z-index: 3 !important;
                 width: 100% !important;
+                height: 520px !important;
+                display: flex !important;
+                align-items: flex-end !important;
+                justify-content: flex-start !important;
+                box-sizing: border-box !important;
             }
 
             section.imgband-new-section .imgband-content {
-                max-width: 680px !important;
+                max-width: 900px !important;
+                margin: 0 !important;
             }
 
-            /* Eyebrow with gold underline */
             section.imgband-new-section .imgband-eyebrow-wrap {
                 display: inline-block !important;
-                border-bottom: 1.5px solid #D49C47 !important;
-                padding-bottom: 6px !important;
-                margin-bottom: 20px !important;
+                border-bottom: 1.5px solid #D4A850 !important;
+                padding-bottom: 8px !important;
+                margin-bottom: 24px !important;
             }
 
             section.imgband-new-section .imgband-eyebrow {
-                font-family: 'DM Sans', system-ui, sans-serif !important;
-                font-size: clamp(12.5px, 1.1vw, 14px) !important;
-                font-weight: 700 !important;
-                letter-spacing: 0.16em !important;
+                font-family: 'Manrope', system-ui, sans-serif !important;
+                font-weight: 600 !important;
+                font-style: normal !important;
+                font-size: 32px !important;
+                letter-spacing: 0px !important;
+                vertical-align: middle;
                 text-transform: uppercase !important;
                 color: #FFFFFF !important;
                 margin: 0 !important;
@@ -3959,24 +3969,30 @@
 
             section.imgband-new-section .imgband-heading {
                 font-family: 'Playfair Display', Georgia, serif !important;
-                font-size: clamp(32px, 4vw, 50px) !important;
                 font-weight: 700 !important;
+                font-style: normal !important;
+                font-size: 56px !important;
+                letter-spacing: -1.12px !important;
+                vertical-align: middle;
                 color: #FFFFFF !important;
-                line-height: 1.2 !important;
+                line-height: 1.15 !important;
                 margin: 0 !important;
-                letter-spacing: -0.015em !important;
             }
 
-            section.imgband-new-section .imgband-heading em {
+            section.imgband-new-section .imgband-heading em,
+            section.imgband-new-section .imgband-heading span {
                 font-family: 'Playfair Display', Georgia, serif !important;
+                font-weight: 700 !important;
                 font-style: italic !important;
-                font-weight: 500 !important;
-                color: #D49C47 !important;
-                background: linear-gradient(135deg, #F5D794 0%, #D49C47 100%);
-                -webkit-background-clip: text !important;
-                -webkit-text-fill-color: transparent !important;
-                display: block !important;
-                margin-top: 4px !important;
+                font-size: 56px !important;
+                letter-spacing: -1.12px !important;
+                vertical-align: middle;
+                color: #D4A850 !important;
+                background: none !important;
+                -webkit-background-clip: unset !important;
+                -webkit-text-fill-color: #D4A850 !important;
+                display: inline !important;
+                margin-top: 0 !important;
             }
         </style>
 
@@ -3991,7 +4007,7 @@
                         <span class="imgband-eyebrow">A REAL PRACTICE BEHIND EVERY LOGIN</span>
                     </div>
                     <h2 class="imgband-heading">
-                        Cloud-based service.
+                        Cloud-based service.<br>
                         <em>A real team behind it.</em>
                     </h2>
                 </div>
