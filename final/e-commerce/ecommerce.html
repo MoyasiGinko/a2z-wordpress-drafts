@@ -4677,7 +4677,7 @@
             }
 
             section.faq-new-section .faq-container {
-                max-width: 860px !important;
+                max-width: 1120px !important;
                 margin: 0 auto !important;
                 padding: 0 24px !important;
             }
@@ -4816,19 +4816,23 @@
                 display: inline-flex !important;
                 align-items: center !important;
                 justify-content: center !important;
+                width: 135px !important;
                 height: 52px !important;
+                opacity: 1 !important;
+                border-radius: 4px !important;
                 background: #D4A84F !important;
                 background-color: #D4A84F !important;
-                color: #FFFFFF !important;
-                font-family: 'Manrope', system-ui, sans-serif !important;
+                box-shadow: 0px 4px 6px -4px rgba(0, 0, 0, 0.1), 0px 10px 15px -3px rgba(0, 0, 0, 0.1) !important;
+                font-family: 'Inter', system-ui, sans-serif !important;
+                font-weight: 700 !important;
+                font-style: normal !important;
                 font-size: 14px !important;
-                font-weight: 800 !important;
                 letter-spacing: 1.4px !important;
+                vertical-align: middle;
                 text-transform: uppercase !important;
-                padding: 16px 32px !important;
-                border-radius: 7px !important;
+                color: #151515 !important;
+                padding: 0 !important;
                 text-decoration: none !important;
-                box-shadow: none !important;
                 transition: all 0.25s ease !important;
                 box-sizing: border-box !important;
             }
@@ -4836,7 +4840,8 @@
             section.faq-new-section .faq-cta-btn:hover {
                 background: #E4B85F !important;
                 background-color: #E4B85F !important;
-                color: #FFFFFF !important;
+                color: #151515 !important;
+                box-shadow: 0px 6px 12px -2px rgba(0, 0, 0, 0.15), 0px 12px 20px -2px rgba(0, 0, 0, 0.15) !important;
             }
         </style>
 
@@ -4941,20 +4946,32 @@
             }
 
             section.cta-new-section .cta-container {
-                max-width: 1060px !important;
+                max-width: 1200px !important;
                 margin: 0 auto !important;
                 padding: 0 24px !important;
             }
 
             /* Dark Navy Floating Card Box */
             section.cta-new-section .cta-card-box {
-                background-color: #0D2034 !important;
-                border-radius: 20px !important;
-                padding: clamp(48px, 6vw, 72px) clamp(28px, 5vw, 64px) !important;
+                background: #112B46 !important;
+                background-color: #112B46 !important;
+                border-radius: 10px !important;
+                max-width: 1142px !important;
+                width: 100% !important;
+                height: 462px !important;
+                max-height: 462px !important;
+                margin: 0 auto !important;
+                padding: 65px 190px !important;
+                gap: 10px !important;
                 position: relative !important;
                 overflow: hidden !important;
                 text-align: center !important;
-                box-shadow: 0 20px 60px rgba(13, 32, 52, 0.18) !important;
+                box-shadow: 0 20px 60px rgba(17, 43, 70, 0.25) !important;
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+                justify-content: center !important;
+                box-sizing: border-box !important;
             }
 
             /* Subdued Background Texture Overlay */
@@ -4979,33 +4996,45 @@
 
             section.cta-new-section .cta-heading {
                 font-family: 'Playfair Display', Georgia, serif !important;
-                font-size: clamp(32px, 4vw, 48px) !important;
-                font-weight: 700 !important;
+                font-size: 56px !important;
+                font-weight: 600 !important;
+                font-style: normal !important;
                 color: #FFFFFF !important;
-                line-height: 1.2 !important;
-                margin: 0 0 20px 0 !important;
-                letter-spacing: -0.015em !important;
+                line-height: 1.15 !important;
+                margin: 0 0 16px 0 !important;
+                letter-spacing: 0px !important;
+                text-align: center !important;
+                vertical-align: baseline !important;
             }
 
-            section.cta-new-section .cta-heading em {
+            section.cta-new-section .cta-heading em,
+            section.cta-new-section .cta-heading span {
                 font-family: 'Playfair Display', Georgia, serif !important;
                 font-style: italic !important;
-                font-weight: 500 !important;
-                color: #D49C47 !important;
-                background: linear-gradient(135deg, #F5D794 0%, #D49C47 100%);
-                -webkit-background-clip: text !important;
-                -webkit-text-fill-color: transparent !important;
+                font-weight: 700 !important;
+                font-size: 56px !important;
+                letter-spacing: 0px !important;
+                text-align: center !important;
+                vertical-align: baseline !important;
+                color: #D4A850 !important;
+                background: none !important;
+                -webkit-background-clip: unset !important;
+                -webkit-text-fill-color: #D4A850 !important;
                 display: block !important;
                 margin-top: 4px !important;
             }
 
             section.cta-new-section .cta-desc {
-                font-family: 'DM Sans', system-ui, sans-serif !important;
-                font-size: clamp(14.5px, 1.2vw, 16px) !important;
-                color: #D1D5DB !important;
-                line-height: 1.65 !important;
-                max-width: 640px !important;
-                margin: 0 auto clamp(32px, 4vw, 40px) auto !important;
+                font-family: 'Manrope', system-ui, sans-serif !important;
+                font-weight: 600 !important;
+                font-style: normal !important;
+                font-size: 22px !important;
+                letter-spacing: 0px !important;
+                vertical-align: middle;
+                color: #FFFFFF !important;
+                line-height: 1.5 !important;
+                max-width: 720px !important;
+                margin: 0 auto clamp(28px, 3.5vw, 36px) auto !important;
             }
 
             /* Two Buttons Row */
@@ -5022,23 +5051,30 @@
                 display: inline-flex !important;
                 align-items: center !important;
                 justify-content: center !important;
-                background: linear-gradient(135deg, #E6BA68 0%, #D49C47 100%) !important;
-                color: #0D2034 !important;
-                font-family: 'DM Sans', system-ui, sans-serif !important;
-                font-size: 12.5px !important;
-                font-weight: 800 !important;
-                letter-spacing: 0.1em !important;
+                height: 52px !important;
+                opacity: 1 !important;
+                border-radius: 7px !important;
+                padding: 16px 32px !important;
+                background: #D4A84F !important;
+                background-color: #D4A84F !important;
+                color: #000000 !important;
+                font-family: 'Inter', system-ui, sans-serif !important;
+                font-weight: 700 !important;
+                font-style: normal !important;
+                font-size: 14px !important;
+                letter-spacing: 1.4px !important;
+                vertical-align: middle;
                 text-transform: uppercase !important;
-                padding: 13px 28px !important;
-                border-radius: 8px !important;
                 text-decoration: none !important;
-                box-shadow: 0 4px 14px rgba(212, 156, 71, 0.35) !important;
+                box-shadow: none !important;
                 transition: all 0.25s ease !important;
+                box-sizing: border-box !important;
             }
 
             section.cta-new-section .btn-solid-gold:hover {
-                background: linear-gradient(135deg, #F5D794 0%, #E6BA68 100%) !important;
-                box-shadow: 0 6px 18px rgba(212, 156, 71, 0.5) !important;
+                background: #E4B85F !important;
+                background-color: #E4B85F !important;
+                color: #000000 !important;
                 transform: translateY(-2px) !important;
             }
 
@@ -5047,18 +5083,30 @@
                 display: inline-flex !important;
                 align-items: center !important;
                 justify-content: center !important;
-                background-color: rgba(255, 255, 255, 0.03) !important;
-                border: 1.5px solid rgba(212, 156, 71, 0.6) !important;
-                color: #E6BA68 !important;
-                font-family: 'DM Sans', system-ui, sans-serif !important;
-                font-size: 12.5px !important;
-                font-weight: 800 !important;
-                letter-spacing: 0.1em !important;
+                height: 52px !important;
+                opacity: 1 !important;
+                border-radius: 7px !important;
+                border: 1px solid #D4A84F !important;
+                padding: 15.5px 32px 16.5px 32px !important;
+                background: #FFFFFF0D !important;
+                background-color: rgba(255, 255, 255, 0.05) !important;
+                color: #D4A84F !important;
+                font-family: 'Inter', system-ui, sans-serif !important;
+                font-weight: 700 !important;
+                font-style: normal !important;
+                font-size: 14px !important;
+                letter-spacing: 1.4px !important;
+                vertical-align: middle;
                 text-transform: uppercase !important;
-                padding: 12px 28px !important;
-                border-radius: 8px !important;
                 text-decoration: none !important;
                 transition: all 0.25s ease !important;
+                box-sizing: border-box !important;
+            }
+
+            section.cta-new-section .btn-outline-gold:hover {
+                background-color: rgba(212, 168, 79, 0.15) !important;
+                color: #FFFFFF !important;
+                transform: translateY(-2px) !important;
             }
 
             section.cta-new-section .btn-outline-gold:hover {
