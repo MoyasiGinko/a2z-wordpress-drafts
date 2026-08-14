@@ -345,12 +345,34 @@
                 max-width: 620px !important;
             }
 
+            @keyframes heroBadgesMarquee {
+                0% {
+                    transform: translateX(0);
+                }
+                100% {
+                    transform: translateX(-50%);
+                }
+            }
+
             .a2z-ec .exact-hero-badges {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 20px;
-                align-items: center;
-                max-width: 100%;
+                display: flex !important;
+                overflow: hidden !important;
+                position: relative !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                padding: 4px 0 !important;
+            }
+
+            .a2z-ec .exact-hero-badges-track {
+                display: flex !important;
+                gap: 14px !important;
+                width: max-content !important;
+                animation: heroBadgesMarquee 15s linear infinite !important;
+                will-change: transform !important;
+            }
+
+            .a2z-ec .exact-hero-badges:hover .exact-hero-badges-track {
+                animation-play-state: paused !important;
             }
 
             .a2z-ec .hero-feature-badge {
@@ -635,19 +657,10 @@
                 .a2z-ec .exact-hero-badges {
                     order: 6 !important;
                     display: flex !important;
-                    flex-direction: row !important;
-                    flex-wrap: nowrap !important;
-                    overflow-x: auto !important;
-                    justify-content: flex-start !important;
+                    overflow: hidden !important;
+                    position: relative !important;
                     width: 100% !important;
-                    gap: 10px !important;
-                    padding-bottom: 6px !important;
-                    -webkit-overflow-scrolling: touch !important;
-                    scrollbar-width: none !important;
-                }
-
-                .a2z-ec .exact-hero-badges::-webkit-scrollbar {
-                    display: none !important;
+                    padding: 6px 0 !important;
                 }
 
                 .a2z-ec .hero-feature-badge {
@@ -684,31 +697,60 @@
                             channel, so you can price, stock and scale on evidence.
                         </p>
                         <div class="exact-hero-badges">
-                            <div class="hero-feature-badge">
-                                <svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="#D49C47"
-                                    stroke-width="2">
-                                    <path
-                                        d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z">
-                                    </path>
-                                    <path d="M12 11v6M9 14h6"></path>
-                                </svg>
-                                <span>Remote Document Tools</span>
-                            </div>
-                            <div class="hero-feature-badge">
-                                <span class="badge-brand-icon xero-icon">x</span>
-                                <span>Xero</span>
-                            </div>
-                            <div class="hero-feature-badge">
-                                <svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="#D49C47"
-                                    stroke-width="2">
-                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-                                    <path d="M9 12l2 2 4-4"></path>
-                                </svg>
-                                <span>100% Paperless</span>
-                            </div>
-                            <div class="hero-feature-badge">
-                                <span class="badge-brand-icon qb-icon">qb</span>
-                                <span>QuickBooks</span>
+                            <div class="exact-hero-badges-track">
+                                <div class="hero-feature-badge">
+                                    <svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="#D49C47"
+                                        stroke-width="2">
+                                        <path
+                                            d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z">
+                                        </path>
+                                        <path d="M12 11v6M9 14h6"></path>
+                                    </svg>
+                                    <span>Remote Document Tools</span>
+                                </div>
+                                <div class="hero-feature-badge">
+                                    <span class="badge-brand-icon xero-icon">x</span>
+                                    <span>Xero</span>
+                                </div>
+                                <div class="hero-feature-badge">
+                                    <svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="#D49C47"
+                                        stroke-width="2">
+                                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                                        <path d="M9 12l2 2 4-4"></path>
+                                    </svg>
+                                    <span>100% Paperless</span>
+                                </div>
+                                <div class="hero-feature-badge">
+                                    <span class="badge-brand-icon qb-icon">qb</span>
+                                    <span>QuickBooks</span>
+                                </div>
+                                <!-- Duplicated Set for Infinite Sliding Loop -->
+                                <div class="hero-feature-badge">
+                                    <svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="#D49C47"
+                                        stroke-width="2">
+                                        <path
+                                            d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z">
+                                        </path>
+                                        <path d="M12 11v6M9 14h6"></path>
+                                    </svg>
+                                    <span>Remote Document Tools</span>
+                                </div>
+                                <div class="hero-feature-badge">
+                                    <span class="badge-brand-icon xero-icon">x</span>
+                                    <span>Xero</span>
+                                </div>
+                                <div class="hero-feature-badge">
+                                    <svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="#D49C47"
+                                        stroke-width="2">
+                                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                                        <path d="M9 12l2 2 4-4"></path>
+                                    </svg>
+                                    <span>100% Paperless</span>
+                                </div>
+                                <div class="hero-feature-badge">
+                                    <span class="badge-brand-icon qb-icon">qb</span>
+                                    <span>QuickBooks</span>
+                                </div>
                             </div>
                         </div>
                     </div>
