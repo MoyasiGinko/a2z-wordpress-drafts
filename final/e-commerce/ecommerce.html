@@ -4716,7 +4716,7 @@
             section.who-work-best-section .who-grid {
                 display: grid !important;
                 grid-template-columns: repeat(3, 1fr) !important;
-                gap: 32px 28px !important;
+                gap: clamp(20px, 2.4vw, 32px) clamp(16px, 2vw, 28px) !important;
                 justify-items: center !important;
                 max-width: 1156px !important;
                 margin: 0 auto 50px auto !important;
@@ -4726,9 +4726,10 @@
             section.who-work-best-section .who-card-box {
                 display: flex !important;
                 position: relative !important;
-                width: 368px !important;
-                max-width: 100% !important;
-                height: 247px !important;
+                width: 100% !important;
+                max-width: 368px !important;
+                min-height: clamp(210px, 20vw, 247px) !important;
+                height: auto !important;
                 opacity: 1 !important;
                 border-radius: 14px !important;
                 border-right: 5px solid #D4A850 !important;
@@ -4739,8 +4740,9 @@
 
             /* Left Dark Navy Pillar */
             section.who-work-best-section .who-navy-pillar {
-                width: 51px !important;
-                height: 247px !important;
+                width: clamp(42px, 4vw, 51px) !important;
+                min-height: 100% !important;
+                height: auto !important;
                 flex-shrink: 0 !important;
                 background: #112B46 !important;
                 background-color: #112B46 !important;
@@ -4749,7 +4751,7 @@
                 display: flex !important;
                 flex-direction: column !important;
                 align-items: center !important;
-                padding-top: 12px !important;
+                padding-top: clamp(8px, 1vw, 12px) !important;
                 position: relative !important;
                 box-sizing: border-box !important;
             }
@@ -4758,7 +4760,7 @@
                 font-family: 'Playfair Display', Georgia, serif !important;
                 font-weight: 700 !important;
                 font-style: normal !important;
-                font-size: 62px !important;
+                font-size: clamp(44px, 4.8vw, 62px) !important;
                 letter-spacing: 0px !important;
                 vertical-align: middle;
                 color: #FFFFFF !important;
@@ -4768,10 +4770,10 @@
             /* Overlapping Gold Icon Badge */
             section.who-work-best-section .who-icon-badge {
                 position: absolute !important;
-                left: 19px !important;
-                top: 110px !important;
-                width: 64px !important;
-                height: 64px !important;
+                left: clamp(14px, 1.5vw, 19px) !important;
+                top: clamp(85px, 8.8vw, 110px) !important;
+                width: clamp(48px, 4.8vw, 64px) !important;
+                height: clamp(48px, 4.8vw, 64px) !important;
                 opacity: 1 !important;
                 border-radius: 8px !important;
                 background: #D4A850 !important;
@@ -4784,8 +4786,8 @@
             }
 
             section.who-work-best-section .who-icon-badge svg {
-                width: 28px !important;
-                height: 28px !important;
+                width: clamp(20px, 2.2vw, 28px) !important;
+                height: clamp(20px, 2.2vw, 28px) !important;
                 stroke: #FFFFFF !important;
                 stroke-width: 2.2 !important;
                 fill: none !important;
@@ -4796,11 +4798,12 @@
                 flex: 1 !important;
                 background-color: #FFFFFF !important;
                 border-radius: 0 14px 14px 0 !important;
-                padding: 44px 36px 44px 44px !important;
+                padding: clamp(24px, 3.2vw, 44px) clamp(16px, 2.6vw, 36px) clamp(24px, 3.2vw, 44px) clamp(24px, 3.4vw, 44px) !important;
                 display: flex !important;
                 flex-direction: column !important;
                 justify-content: flex-start !important;
-                height: 247px !important;
+                min-height: 100% !important;
+                height: auto !important;
                 box-sizing: border-box !important;
             }
 
@@ -4808,11 +4811,11 @@
                 font-family: 'Manrope', system-ui, sans-serif !important;
                 font-weight: 700 !important;
                 font-style: normal !important;
-                font-size: 24px !important;
+                font-size: clamp(17px, 1.8vw, 24px) !important;
                 letter-spacing: 0px !important;
                 vertical-align: middle;
                 color: #000000 !important;
-                margin: 0 0 20px 0 !important;
+                margin: 0 0 clamp(8px, 1.4vw, 20px) 0 !important;
                 line-height: 1.25 !important;
             }
 
@@ -4820,13 +4823,13 @@
                 font-family: 'Manrope', system-ui, sans-serif !important;
                 font-weight: 600 !important;
                 font-style: normal !important;
-                font-size: 16px !important;
+                font-size: clamp(12.5px, 1.2vw, 16px) !important;
                 letter-spacing: 0px !important;
                 text-align: left !important;
                 vertical-align: middle;
                 color: #000000 !important;
-                line-height: 1.5 !important;
-                margin: 0 0 34px 0 !important;
+                line-height: 1.45 !important;
+                margin: 0 !important;
             }
 
             @media (max-width: 992px) {
