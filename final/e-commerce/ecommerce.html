@@ -97,11 +97,6 @@
             color: var(--gold);
         }
 
-        .a2z-ec section {
-            padding: clamp(46px, 6vw, 84px) 0;
-            position: relative;
-        }
-
         /* ===== DEFENSIVE LAYER: stop the live theme's global CSS bleeding into this scoped page ===== */
         .a2z-ec h1,
         .a2z-ec h2,
@@ -1618,6 +1613,7 @@
                 line-height: 1.55;
                 margin-top: 32px;
                 padding-top: 24px;
+                border-top: none;
             }
 
             /* Control Enclosure */
@@ -1946,6 +1942,7 @@
                     line-height: 1.55 !important;
                     margin-top: 24px !important;
                     padding-top: 18px !important;
+                    border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
                 }
             }
 
@@ -2238,7 +2235,6 @@
         <!-- ============ PLATFORMS BAND (EXACT DESIGN MATCH) ============ -->
         <style id="platforms-section-design">
             .a2z-ec .platforms-new-section {
-                padding: clamp(60px, 7vw, 96px) 0;
                 background-color: #ffffff;
                 text-align: center;
                 max-width: 1280px;
