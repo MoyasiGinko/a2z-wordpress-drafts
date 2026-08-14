@@ -4008,12 +4008,12 @@
                 /* 2. Middle Circular Photo Frame (Floats Absolute over 15px gap) */
                 section.finance-function-section .ff-circle-frame {
                     position: absolute !important;
-                    top: 211.5px !important;
+                    top: 29% !important;
                     left: 50% !important;
                     right: auto !important;
                     transform: translate(-50%, -50%) !important;
-                    width: clamp(210px, 58vw, 270px) !important;
-                    height: clamp(210px, 58vw, 270px) !important;
+                    width: 222px !important;
+                    height: 222px !important;
                     border-radius: 50% !important;
                     border: 15px solid #FFFFFF !important;
                     margin: 0 !important;
@@ -4041,7 +4041,7 @@
                     background: #0B233F !important;
                     background-color: #0B233F !important;
                     border-radius: 28px !important;
-                    padding: 145px 24px 32px 24px !important;
+                    padding: 100px 24px 32px 24px !important;
                     width: 100% !important;
                     box-sizing: border-box !important;
                     position: relative !important;
@@ -6925,21 +6925,25 @@
                     gap: 16px !important;
                     width: max-content !important;
                     padding: 6px 0 28px 0 !important;
-                    animation: a2zvscroll 16s linear infinite !important;
+                    animation: a2zvscroll 32s linear infinite !important;
                     will-change: transform !important;
+                    -webkit-backface-visibility: hidden !important;
+                    backface-visibility: hidden !important;
+                    transform-style: preserve-3d !important;
                 }
 
-                .a2zv-vp:hover .a2zv-track {
+                .a2zv-vp:hover .a2zv-track,
+                .a2zv-track:has(iframe) {
                     animation-play-state: paused !important;
                 }
 
                 @keyframes a2zvscroll {
-                    from {
-                        transform: translateX(0);
+                    0% {
+                        transform: translate3d(0, 0, 0);
                     }
 
-                    to {
-                        transform: translateX(-50%);
+                    100% {
+                        transform: translate3d(-50%, 0, 0);
                     }
                 }
 
@@ -7141,7 +7145,7 @@
                         tap
                         to play.</p>
                     <div class="a2zv-vp">
-                        <div class="a2zv-track">
+                        <div class="a2zv-track" data-cloned="true">
                             <button type="button" class="a2zv-tile" aria-label="Play Kevin Smith video"
                                 onclick="this.innerHTML='&lt;iframe src=\'https://www.loom.com/embed/8761cb23b0a34e558b8867204c69e68f?autoplay=1\' allow=\'autoplay; fullscreen\' allowfullscreen style=\'position:absolute;inset:0;width:100%;height:100%;border:0;z-index:5\'&gt;&lt;/iframe&gt;';">
                                 <span class="a2zv-thumb"
@@ -7277,6 +7281,165 @@
                                         class="a2zv-r">Norah&rsquo;s, Elgin</span></span>
                             </button>
                             <button type="button" class="a2zv-tile" aria-label="Play Nathan Davies video"
+                                onclick="this.innerHTML='&lt;iframe src=\'https://www.loom.com/embed/6bf95862ebcc4ef5b65815d3e65cb092?autoplay=1\' allow=\'autoplay; fullscreen\' allowfullscreen style=\'position:absolute;inset:0;width:100%;height:100%;border:0;z-index:5\'&gt;&lt;/iframe&gt;';">
+                                <span class="a2zv-thumb"
+                                    style="background-image:url('https://a2zaccounting.co.uk/wp-content/uploads/2025/06/Testimonial-%E2%80%93-a2z-accounting-06-03-2025_05_51_PM-21.png')"></span>
+                                <span class="a2zv-play"></span>
+                                <span class="a2zv-meta"><span class="a2zv-n">Nathan Davies</span><span
+                                        class="a2zv-r">Badenoch&rsquo;s, Elgin</span></span>
+                            </button>
+                            <button type="button" class="a2zv-tile" aria-hidden="true" tabindex="-1"
+                                aria-label="Play Kevin Smith video"
+                                onclick="this.innerHTML='&lt;iframe src=\'https://www.loom.com/embed/8761cb23b0a34e558b8867204c69e68f?autoplay=1\' allow=\'autoplay; fullscreen\' allowfullscreen style=\'position:absolute;inset:0;width:100%;height:100%;border:0;z-index:5\'&gt;&lt;/iframe&gt;';">
+                                <span class="a2zv-thumb"
+                                    style="background-image:url('https://a2zaccounting.co.uk/wp-content/uploads/2025/06/Testimonial-%E2%80%93-a2z-accounting-06-04-2025_12_21_PM-21.png')"></span>
+                                <span class="a2zv-play"></span>
+                                <span class="a2zv-meta"><span class="a2zv-n">Kevin Smith</span><span class="a2zv-r">The
+                                        Drouthy Cobbler, Elgin</span></span>
+                            </button>
+                            <button type="button" class="a2zv-tile" aria-hidden="true" tabindex="-1"
+                                aria-label="Play Rona Tonge video"
+                                onclick="this.innerHTML='&lt;iframe src=\'https://www.loom.com/embed/7878b7d8ae564fb7822bcc706a5efc33?autoplay=1\' allow=\'autoplay; fullscreen\' allowfullscreen style=\'position:absolute;inset:0;width:100%;height:100%;border:0;z-index:5\'&gt;&lt;/iframe&gt;';">
+                                <span class="a2zv-thumb"
+                                    style="background-image:url('https://a2zaccounting.co.uk/wp-content/uploads/2025/04/testi-img-1.jpg')"></span>
+                                <span class="a2zv-play"></span>
+                                <span class="a2zv-meta"><span class="a2zv-n">Rona Tonge</span><span class="a2zv-r">Golf
+                                        View
+                                        Hotel, Lossiemouth</span></span>
+                            </button>
+                            <button type="button" class="a2zv-tile" aria-hidden="true" tabindex="-1"
+                                aria-label="Play Mohamed Ali video"
+                                onclick="this.innerHTML='&lt;iframe src=\'https://www.loom.com/embed/9caff76064d2408c8193cb5406ef69ea?autoplay=1\' allow=\'autoplay; fullscreen\' allowfullscreen style=\'position:absolute;inset:0;width:100%;height:100%;border:0;z-index:5\'&gt;&lt;/iframe&gt;';">
+                                <span class="a2zv-thumb"
+                                    style="background-image:url('https://a2zaccounting.co.uk/wp-content/uploads/2025/06/3.png')"></span>
+                                <span class="a2zv-play"></span>
+                                <span class="a2zv-meta"><span class="a2zv-n">Mohamed Ali</span><span
+                                        class="a2zv-r">MacAli
+                                        Hotel Group, Elgin</span></span>
+                            </button>
+                            <button type="button" class="a2zv-tile" aria-hidden="true" tabindex="-1"
+                                aria-label="Play Behrouz Abolghassem video"
+                                onclick="this.innerHTML='&lt;iframe src=\'https://www.loom.com/embed/157bd97bdd42416497aab3ccf8de5843?autoplay=1\' allow=\'autoplay; fullscreen\' allowfullscreen style=\'position:absolute;inset:0;width:100%;height:100%;border:0;z-index:5\'&gt;&lt;/iframe&gt;';">
+                                <span class="a2zv-thumb"
+                                    style="background-image:url('https://a2zaccounting.co.uk/wp-content/uploads/2025/06/4.png')"></span>
+                                <span class="a2zv-play"></span>
+                                <span class="a2zv-meta"><span class="a2zv-n">Behrouz Abolghassem</span><span
+                                        class="a2zv-r">Little Italy, St Andrews</span></span>
+                            </button>
+                            <button type="button" class="a2zv-tile" aria-hidden="true" tabindex="-1"
+                                aria-label="Play Christopher O&rsquo;Halloran video"
+                                onclick="this.innerHTML='&lt;iframe src=\'https://www.loom.com/embed/6e7d53d784924c84a5240d390cf0e40b?autoplay=1\' allow=\'autoplay; fullscreen\' allowfullscreen style=\'position:absolute;inset:0;width:100%;height:100%;border:0;z-index:5\'&gt;&lt;/iframe&gt;';">
+                                <span class="a2zv-thumb"
+                                    style="background-image:url('https://a2zaccounting.co.uk/wp-content/uploads/2025/06/5.png')"></span>
+                                <span class="a2zv-play"></span>
+                                <span class="a2zv-meta"><span class="a2zv-n">Christopher O&rsquo;Halloran</span><span
+                                        class="a2zv-r">The Green Inn, Ballater</span></span>
+                            </button>
+                            <button type="button" class="a2zv-tile" aria-hidden="true" tabindex="-1"
+                                aria-label="Play Khuram Qadir video"
+                                onclick="this.innerHTML='&lt;iframe src=\'https://www.loom.com/embed/0f25c7b69a2e4af4bac8d720949df52b?autoplay=1\' allow=\'autoplay; fullscreen\' allowfullscreen style=\'position:absolute;inset:0;width:100%;height:100%;border:0;z-index:5\'&gt;&lt;/iframe&gt;';">
+                                <span class="a2zv-thumb"
+                                    style="background-image:url('https://a2zaccounting.co.uk/wp-content/uploads/2025/06/6.png')"></span>
+                                <span class="a2zv-play"></span>
+                                <span class="a2zv-meta"><span class="a2zv-n">Khuram Qadir</span><span
+                                        class="a2zv-r">Cygnas
+                                        Solutions, Aberdeen</span></span>
+                            </button>
+                            <button type="button" class="a2zv-tile" aria-hidden="true" tabindex="-1"
+                                aria-label="Play Lisa Morrison video"
+                                onclick="this.innerHTML='&lt;iframe src=\'https://www.loom.com/embed/71e4d66232384e49ad4642d862c65f73?autoplay=1\' allow=\'autoplay; fullscreen\' allowfullscreen style=\'position:absolute;inset:0;width:100%;height:100%;border:0;z-index:5\'&gt;&lt;/iframe&gt;';">
+                                <span class="a2zv-thumb"
+                                    style="background-image:url('https://a2zaccounting.co.uk/wp-content/uploads/2025/06/7.png')"></span>
+                                <span class="a2zv-play"></span>
+                                <span class="a2zv-meta"><span class="a2zv-n">Lisa Morrison</span><span
+                                        class="a2zv-r">Seaforth Club, Nairn</span></span>
+                            </button>
+                            <button type="button" class="a2zv-tile" aria-hidden="true" tabindex="-1"
+                                aria-label="Play Hosam Yousef video"
+                                onclick="this.innerHTML='&lt;iframe src=\'https://www.loom.com/embed/93fa845584ea405891cbf002857eff90?autoplay=1\' allow=\'autoplay; fullscreen\' allowfullscreen style=\'position:absolute;inset:0;width:100%;height:100%;border:0;z-index:5\'&gt;&lt;/iframe&gt;';">
+                                <span class="a2zv-thumb"
+                                    style="background-image:url('https://a2zaccounting.co.uk/wp-content/uploads/2025/06/8.webp')"></span>
+                                <span class="a2zv-play"></span>
+                                <span class="a2zv-meta"><span class="a2zv-n">Hosam Yousef</span><span
+                                        class="a2zv-r">Pharmacy Owner, Aberdeen</span></span>
+                            </button>
+                            <button type="button" class="a2zv-tile" aria-hidden="true" tabindex="-1"
+                                aria-label="Play Lesia Robertson video"
+                                onclick="this.innerHTML='&lt;iframe src=\'https://www.loom.com/embed/6a780d36e37a4a308ffcfaa4b5c574d6?autoplay=1\' allow=\'autoplay; fullscreen\' allowfullscreen style=\'position:absolute;inset:0;width:100%;height:100%;border:0;z-index:5\'&gt;&lt;/iframe&gt;';">
+                                <span class="a2zv-thumb"
+                                    style="background-image:url('https://a2zaccounting.co.uk/wp-content/uploads/2025/06/9.png')"></span>
+                                <span class="a2zv-play"></span>
+                                <span class="a2zv-meta"><span class="a2zv-n">Lesia Robertson</span><span
+                                        class="a2zv-r">Mamma Mia, Banchory</span></span>
+                            </button>
+                            <button type="button" class="a2zv-tile" aria-hidden="true" tabindex="-1"
+                                aria-label="Play Nurul Hoque Ali video"
+                                onclick="this.innerHTML='&lt;iframe src=\'https://www.loom.com/embed/fd60672b40cf4103a1f5c30f0ddfe884?autoplay=1\' allow=\'autoplay; fullscreen\' allowfullscreen style=\'position:absolute;inset:0;width:100%;height:100%;border:0;z-index:5\'&gt;&lt;/iframe&gt;';">
+                                <span class="a2zv-thumb"
+                                    style="background-image:url('https://a2zaccounting.co.uk/wp-content/uploads/2025/06/10.webp')"></span>
+                                <span class="a2zv-play"></span>
+                                <span class="a2zv-meta"><span class="a2zv-n">Nurul Hoque Ali</span><span
+                                        class="a2zv-r">Oil
+                                        &amp; Gas Consultant, Aberdeen</span></span>
+                            </button>
+                            <button type="button" class="a2zv-tile" aria-hidden="true" tabindex="-1"
+                                aria-label="Play Kimberley Welsh video"
+                                onclick="this.innerHTML='&lt;iframe src=\'https://www.loom.com/embed/13ce4a974d34447baf27484eebf9b93f?autoplay=1\' allow=\'autoplay; fullscreen\' allowfullscreen style=\'position:absolute;inset:0;width:100%;height:100%;border:0;z-index:5\'&gt;&lt;/iframe&gt;';">
+                                <span class="a2zv-thumb"
+                                    style="background-image:url('https://a2zaccounting.co.uk/wp-content/uploads/2025/06/11.png')"></span>
+                                <span class="a2zv-play"></span>
+                                <span class="a2zv-meta"><span class="a2zv-n">Kimberley Welsh</span><span
+                                        class="a2zv-r">Ca&rsquo;dora Diner, Elgin</span></span>
+                            </button>
+                            <button type="button" class="a2zv-tile" aria-hidden="true" tabindex="-1"
+                                aria-label="Play Ameer Aslam video"
+                                onclick="this.innerHTML='&lt;iframe src=\'https://www.loom.com/embed/309b1b0e1364427ab246273db38147ab?autoplay=1\' allow=\'autoplay; fullscreen\' allowfullscreen style=\'position:absolute;inset:0;width:100%;height:100%;border:0;z-index:5\'&gt;&lt;/iframe&gt;';">
+                                <span class="a2zv-thumb"
+                                    style="background-image:url('https://a2zaccounting.co.uk/wp-content/uploads/2025/06/12.webp')"></span>
+                                <span class="a2zv-play"></span>
+                                <span class="a2zv-meta"><span class="a2zv-n">Ameer Aslam</span><span
+                                        class="a2zv-r">Nickel
+                                        &amp; Dime</span></span>
+                            </button>
+                            <button type="button" class="a2zv-tile" aria-hidden="true" tabindex="-1"
+                                aria-label="Play Cassandara-Jane Thornton video"
+                                onclick="this.innerHTML='&lt;iframe src=\'https://www.loom.com/embed/3e5ec41c4e4c4373bf29d8eee84788cb?autoplay=1\' allow=\'autoplay; fullscreen\' allowfullscreen style=\'position:absolute;inset:0;width:100%;height:100%;border:0;z-index:5\'&gt;&lt;/iframe&gt;';">
+                                <span class="a2zv-thumb"
+                                    style="background-image:url('https://a2zaccounting.co.uk/wp-content/uploads/2025/06/13.png')"></span>
+                                <span class="a2zv-play"></span>
+                                <span class="a2zv-meta"><span class="a2zv-n">Cassandara-Jane Thornton</span><span
+                                        class="a2zv-r">West End Hotel, Nairn</span></span>
+                            </button>
+                            <button type="button" class="a2zv-tile" aria-hidden="true" tabindex="-1"
+                                aria-label="Play Dr. Hassan Abbas video"
+                                onclick="this.innerHTML='&lt;iframe src=\'https://www.loom.com/embed/a541d08386e4430f9f24cf73c2d8555b?autoplay=1\' allow=\'autoplay; fullscreen\' allowfullscreen style=\'position:absolute;inset:0;width:100%;height:100%;border:0;z-index:5\'&gt;&lt;/iframe&gt;';">
+                                <span class="a2zv-thumb"
+                                    style="background-image:url('https://a2zaccounting.co.uk/wp-content/uploads/2025/06/14.png')"></span>
+                                <span class="a2zv-play"></span>
+                                <span class="a2zv-meta"><span class="a2zv-n">Dr. Hassan Abbas</span><span
+                                        class="a2zv-r">Hourglass Wellbeing, Aberdeen</span></span>
+                            </button>
+                            <button type="button" class="a2zv-tile" aria-hidden="true" tabindex="-1"
+                                aria-label="Play Hassan Nazer video"
+                                onclick="this.innerHTML='&lt;iframe src=\'https://www.loom.com/embed/921fccbea4f843c491d01bcbd43ecb59?autoplay=1\' allow=\'autoplay; fullscreen\' allowfullscreen style=\'position:absolute;inset:0;width:100%;height:100%;border:0;z-index:5\'&gt;&lt;/iframe&gt;';">
+                                <span class="a2zv-thumb"
+                                    style="background-image:url('https://a2zaccounting.co.uk/wp-content/uploads/2025/06/15.png')"></span>
+                                <span class="a2zv-play"></span>
+                                <span class="a2zv-meta"><span class="a2zv-n">Hassan Nazer</span><span
+                                        class="a2zv-r">Film
+                                        Director, Aberdeen</span></span>
+                            </button>
+                            <button type="button" class="a2zv-tile" aria-hidden="true" tabindex="-1"
+                                aria-label="Play Ashlyn Johnson video"
+                                onclick="this.innerHTML='&lt;iframe src=\'https://www.loom.com/embed/27ac048697b54a79a365b2657613f947?autoplay=1\' allow=\'autoplay; fullscreen\' allowfullscreen style=\'position:absolute;inset:0;width:100%;height:100%;border:0;z-index:5\'&gt;&lt;/iframe&gt;';">
+                                <span class="a2zv-thumb"
+                                    style="background-image:url('https://a2zaccounting.co.uk/wp-content/uploads/2025/06/16.png')"></span>
+                                <span class="a2zv-play"></span>
+                                <span class="a2zv-meta"><span class="a2zv-n">Ashlyn Johnson</span><span
+                                        class="a2zv-r">Norah&rsquo;s, Elgin</span></span>
+                            </button>
+                            <button type="button" class="a2zv-tile" aria-hidden="true" tabindex="-1"
+                                aria-label="Play Nathan Davies video"
                                 onclick="this.innerHTML='&lt;iframe src=\'https://www.loom.com/embed/6bf95862ebcc4ef5b65815d3e65cb092?autoplay=1\' allow=\'autoplay; fullscreen\' allowfullscreen style=\'position:absolute;inset:0;width:100%;height:100%;border:0;z-index:5\'&gt;&lt;/iframe&gt;';">
                                 <span class="a2zv-thumb"
                                     style="background-image:url('https://a2zaccounting.co.uk/wp-content/uploads/2025/06/Testimonial-%E2%80%93-a2z-accounting-06-03-2025_05_51_PM-21.png')"></span>
