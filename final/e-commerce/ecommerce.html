@@ -3766,16 +3766,16 @@
                 margin: 30px auto 0 !important;
                 max-width: 1280px !important;
                 width: 100% !important;
-                min-height: 496px !important;
+                /* min-height: clamp(360px, 38.75vw, 496px) !important; */
             }
 
             /* L-Shaped Gold Corner Bracket at Top-Left */
             section.finance-function-section .ff-gold-bracket {
                 position: absolute !important;
-                top: -24px !important;
-                left: -24px !important;
-                width: 140px !important;
-                height: 140px !important;
+                top: clamp(-18px, -1.8vw, -24px) !important;
+                left: clamp(-18px, -1.8vw, -24px) !important;
+                width: clamp(90px, 11vw, 140px) !important;
+                height: clamp(90px, 11vw, 140px) !important;
                 border-top: 2px solid #D49C47 !important;
                 border-left: 2px solid #D49C47 !important;
                 pointer-events: none !important;
@@ -3792,11 +3792,12 @@
                 position: relative !important;
                 z-index: 2 !important;
                 box-shadow: none !important;
-                width: 890px !important;
-                max-width: 100% !important;
-                height: 496px !important;
+                width: calc(100% - clamp(140px, 18vw, 390px)) !important;
+                max-width: 890px !important;
+                height: clamp(340px, 36vw, 496px) !important;
+                min-height: clamp(340px, 36vw, 496px) !important;
                 box-sizing: border-box !important;
-                padding: 38px 66px !important;
+                padding: clamp(24px, 3.5vw, 38px) clamp(24px, 4vw, 66px) !important;
             }
 
             /* Left Content Column */
@@ -3805,31 +3806,32 @@
                 color: #FFFFFF !important;
                 z-index: 3 !important;
                 width: 100% !important;
+                max-width: clamp(280px, 44vw, 551px) !important;
             }
 
             section.finance-function-section .ff-eyebrow {
                 font-family: 'Manrope', system-ui, sans-serif !important;
-                font-size: 16px !important;
+                font-size: clamp(12px, 1.25vw, 16px) !important;
                 font-weight: 800 !important;
                 font-style: normal !important;
                 letter-spacing: 1.2px !important;
                 text-transform: uppercase !important;
                 vertical-align: middle;
                 color: #D4A84F !important;
-                margin-bottom: 18px !important;
+                margin-bottom: clamp(10px, 1.4vw, 18px) !important;
                 display: block !important;
             }
 
             section.finance-function-section .ff-heading {
                 font-family: 'Playfair Display', Georgia, serif !important;
-                font-size: 42px !important;
+                font-size: clamp(22px, 2.8vw, 42px) !important;
                 font-weight: 700 !important;
                 font-style: normal !important;
                 color: #FFFFFF !important;
                 line-height: 1.2 !important;
                 letter-spacing: 0px !important;
                 vertical-align: baseline !important;
-                margin: 0 0 22px 0 !important;
+                margin: 0 0 clamp(12px, 1.8vw, 22px) 0 !important;
                 max-width: 551px !important;
             }
 
@@ -3850,15 +3852,15 @@
 
             section.finance-function-section .ff-desc {
                 font-family: 'Manrope', system-ui, sans-serif !important;
-                font-size: 16px !important;
+                font-size: clamp(12.5px, 1.2vw, 16px) !important;
                 font-weight: 600 !important;
                 font-style: normal !important;
                 letter-spacing: 0px !important;
                 text-align: justify !important;
                 vertical-align: middle;
                 color: #FFFFFF !important;
-                line-height: 1.6 !important;
-                margin: 0 0 32px 0 !important;
+                line-height: 1.55 !important;
+                margin: 0 0 clamp(16px, 2.5vw, 32px) 0 !important;
                 max-width: 515px !important;
             }
 
@@ -3866,15 +3868,15 @@
                 display: inline-flex !important;
                 align-items: center !important;
                 justify-content: center !important;
-                height: 52px !important;
+                height: clamp(42px, 4vw, 52px) !important;
                 box-sizing: border-box !important;
                 opacity: 1 !important;
                 border-radius: 7px !important;
-                padding: 16px 20px !important;
+                padding: clamp(12px, 1.5vw, 16px) clamp(14px, 1.8vw, 20px) !important;
                 background: #D4A84F !important;
                 background-color: #D4A84F !important;
                 font-family: 'Inter', system-ui, sans-serif !important;
-                font-size: 14px !important;
+                font-size: clamp(12px, 1.1vw, 14px) !important;
                 font-weight: 700 !important;
                 font-style: normal !important;
                 letter-spacing: 1.4px !important;
@@ -3902,22 +3904,25 @@
                 top: 50% !important;
                 transform: translateY(-50%) !important;
                 right: 0 !important;
-                border-radius: 100000px !important;
-                border: 20px solid #FFFFFF !important;
+                width: clamp(340px, 36vw, 496px) !important;
+                height: clamp(340px, 36vw, 496px) !important;
+                border-radius: 50% !important;
+                border: clamp(10px, 1.4vw, 20px) solid #FFFFFF !important;
                 overflow: hidden !important;
-                box-sizing: border-box !important;
+                box-sizing: content-box !important;
                 box-shadow: none !important;
                 z-index: 4 !important;
                 background-color: #FFFFFF !important;
             }
 
             section.finance-function-section .ff-circle-frame img {
-                width: 496px !important;
-                height: 496px !important;
-                max-width: none !important;
+                width: 100% !important;
+                height: 100% !important;
+                max-width: 100% !important;
                 object-fit: cover !important;
                 object-position: center !important;
                 display: block !important;
+                border-radius: 50% !important;
             }
 
             section.finance-function-section .ff-top-box,
@@ -3977,7 +3982,7 @@
                     position: relative !important;
                     z-index: 100 !important;
                     margin-bottom: 15px !important;
-                    box-shadow: 0 10px 30px rgba(11, 35, 63, 0.2) !important;
+                    box-shadow: none !important;
                 }
 
                 section.finance-function-section .ff-eyebrow {
@@ -3995,7 +4000,7 @@
                     border-radius: 8px !important;
                     margin: 0 !important;
                     text-align: center !important;
-                    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12) !important;
+                    box-shadow: none !important;
                     max-width: 92% !important;
                     box-sizing: border-box !important;
                 }
@@ -4003,15 +4008,16 @@
                 /* 2. Middle Circular Photo Frame (Floats Absolute over 15px gap) */
                 section.finance-function-section .ff-circle-frame {
                     position: absolute !important;
-                    top: calc(100% + 7.5px) !important;
+                    top: 211.5px !important;
                     left: 50% !important;
+                    right: auto !important;
                     transform: translate(-50%, -50%) !important;
                     width: clamp(210px, 58vw, 270px) !important;
                     height: clamp(210px, 58vw, 270px) !important;
                     border-radius: 50% !important;
-                    border: 8px solid #FFFFFF !important;
+                    border: 15px solid #FFFFFF !important;
                     margin: 0 !important;
-                    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25) !important;
+                    box-shadow: none !important;
                     overflow: hidden !important;
                     z-index: 9999 !important;
                     background-color: #FFFFFF !important;
@@ -4041,7 +4047,7 @@
                     position: relative !important;
                     z-index: 1 !important;
                     margin-top: 0 !important;
-                    box-shadow: 0 10px 30px rgba(11, 35, 63, 0.2) !important;
+                    box-shadow: none !important;
                 }
 
                 section.finance-function-section .ff-heading {
@@ -4112,11 +4118,6 @@
                         <div class="ff-content">
                             <div class="ff-top-box">
                                 <span class="ff-eyebrow">A FINANCE FUNCTION, NOT JUST FILING</span>
-                                <!-- Right Circular Photo Frame -->
-                                <div class="ff-circle-frame">
-                                    <img src="https://a2zaccounting.co.uk/wp-content/uploads/2026/06/a2z-photo-2-office.jpg"
-                                        alt="A2Z Accounting team member working at office receptionist desk">
-                                </div>
                             </div>
                             <div class="ff-bottom-box">
                                 <h2 class="ff-heading">
@@ -4135,8 +4136,14 @@
                                     EXPLORE MANAGEMENT ACCOUNTS
                                 </a>
                             </div>
-                </div>
-            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Circular Photo Frame -->
+                    <div class="ff-circle-frame">
+                        <img src="https://a2zaccounting.co.uk/wp-content/uploads/2026/06/a2z-photo-2-office.jpg"
+                            alt="A2Z Accounting team member working at office receptionist desk">
+                    </div>
         </section>
 
         <!-- ============ HOW WE START SECTION (EXACT DESIGN MATCH) ============ -->
