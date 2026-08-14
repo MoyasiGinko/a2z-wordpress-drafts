@@ -200,7 +200,7 @@
 
         .a2z-ec .a2zv {
             margin: 0 auto !important;
-            padding: 6px 8px 0 !important;
+            padding: 30px 8px 0 !important;
         }
 
         .a2z-ec .a2zv-all {
@@ -6833,9 +6833,15 @@
             </div>
         </section>
 
-        <div style="max-width:1100px;margin:0 auto;padding:0 24px;">
+        <div class="vidtest-container-wrap">
             <!-- ============ CLIENT TESTIMONIAL VIDEO SLIDING CAROUSEL (PREVIOUS SLIDING SECTION RESTORED) ============ -->
             <style id="vidtest-design">
+                .vidtest-container-wrap {
+                    max-width: 1200px !important;
+                    margin: 0 auto !important;
+                    padding: 0 24px !important;
+                }
+
                 section.vidtest {
                     background: #ffffff !important;
                     padding: clamp(64px, 7.5vw, 104px) 0 !important;
@@ -6851,7 +6857,7 @@
 
                 .a2zv-h {
                     font-family: 'Playfair Display', Georgia, serif !important;
-                    font-size: 64px !important;
+                    font-size: clamp(36px, 5vw, 64px) !important;
                     font-weight: 600 !important;
                     font-style: normal !important;
                     color: #000000 !important;
@@ -6866,7 +6872,7 @@
                     font-family: 'Playfair Display', Georgia, serif !important;
                     font-style: italic !important;
                     font-weight: 700 !important;
-                    font-size: 64px !important;
+                    font-size: clamp(36px, 5vw, 64px) !important;
                     letter-spacing: 0px !important;
                     color: #D4A850 !important;
                     background: none !important;
@@ -6879,7 +6885,7 @@
                     font-family: 'Manrope', system-ui, sans-serif !important;
                     font-weight: 500 !important;
                     font-style: normal !important;
-                    font-size: 20px !important;
+                    font-size: clamp(16px, 1.8vw, 20px) !important;
                     color: #475569 !important;
                     line-height: 1.5 !important;
                     max-width: 640px !important;
@@ -7068,7 +7074,64 @@
                     color: #000000 !important;
                     transform: translateY(-2px) !important;
                 }
-            </style>
+
+                @media (max-width: 992px) {
+                    section.vidtest {
+                        padding: clamp(40px, 6vw, 64px) 0 !important;
+                    }
+
+                    .a2zv-h {
+                        font-size: clamp(28px, 7vw, 42px) !important;
+                        line-height: 1.15 !important;
+                        margin-bottom: 12px !important;
+                    }
+
+                    .a2zv-h em {
+                        font-size: inherit !important;
+                    }
+
+                    .a2zv-sub {
+                        font-size: clamp(14px, 3.5vw, 16px) !important;
+                        line-height: 1.5 !important;
+                        margin-bottom: 24px !important;
+                        padding: 0 16px !important;
+                    }
+
+                    .a2zv-tile {
+                        flex: 0 0 clamp(240px, 68vw, 290px) !important;
+                        height: 195px !important;
+                        border-radius: 14px !important;
+                    }
+
+                    .a2zv-play {
+                        width: 44px !important;
+                        height: 44px !important;
+                    }
+
+                    .a2zv-play::after {
+                        border-width: 6px 0 6px 11px !important;
+                        margin-left: 2px !important;
+                    }
+
+                    .a2zv-n {
+                        font-size: 15px !important;
+                    }
+
+                    .a2zv-r {
+                        font-size: 12px !important;
+                    }
+
+                    .a2zv-all {
+                        margin-top: 24px !important;
+                    }
+
+                    .a2zv-btn {
+                        height: 48px !important;
+                        font-size: 13px !important;
+                        padding: 14px 28px !important;
+                        border-radius: 6px !important;
+                    }
+                }
             </style>
 
             <section class="vidtest" style="background:#ffffff;padding:0;margin:0;">
