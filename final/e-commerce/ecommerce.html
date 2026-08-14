@@ -50,6 +50,14 @@
         .a2z-ec .wrap {
             max-width: 1440px;
             margin: 0 auto;
+            padding: 0 15px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .a2z-ec .special-wrap {
+            max-width: 1440px;
+            margin: 0 auto;
             padding: 0px;
             position: relative;
             z-index: 1;
@@ -3215,7 +3223,7 @@
                     height: 230px !important;
                     border-radius: 16px !important;
                     border: 3.5px solid #6CBDED !important;
-                    margin: 0 auto -90px auto !important;
+                    margin: 0 auto -175px auto !important;
                     box-shadow: 0 14px 30px rgba(0, 0, 0, 0.3) !important;
                     position: relative !important;
                     z-index: 10 !important;
@@ -3225,11 +3233,36 @@
                     grid-template-columns: 1fr !important;
                     padding-top: 100px !important;
                 }
+
+                .a2z-ec .why-block {
+                    border-bottom: 1px solid #E2E2E5 !important;
+                }
+
+                .a2z-ec .why-right-grid .why-block:nth-child(1) { order: 1 !important; }
+                .a2z-ec .why-right-grid .why-block:nth-child(2) { order: 2 !important; }
+                .a2z-ec .why-right-grid .why-block:nth-child(3) { order: 4 !important; }
+                .a2z-ec .why-right-grid .why-block:nth-child(4) { order: 3 !important; }
+            }
+
+            @media (min-width: 641px) and (max-width: 992px) {
+                .a2z-ec .why-left-col {
+                    text-align: center !important;
+                    align-items: center !important;
+                }
+
+                .a2z-ec .why-eyebrow,
+                .a2z-ec .why-heading,
+                .a2z-ec .why-subtext {
+                    max-width: 610px !important;
+                    margin-left: auto !important;
+                    margin-right: auto !important;
+                    text-align: center !important;
+                }
             }
         </style>
 
         <section class="why-specialist-new-section">
-            <div class="wrap">
+            <div class="special-wrap">
                 <div class="why-main-card">
                     <!-- Left Dark Hero Block -->
                     <div class="why-left-col">
@@ -3476,6 +3509,19 @@
                 color: #D49C47 !important;
                 font-weight: 600 !important;
                 text-decoration: underline !important;
+            }
+
+            @media (max-width: 992px) {
+                section.handle-new-section .handle-eyebrow {
+                    font-size: clamp(13px, 3.5vw, 16px) !important;
+                    margin-bottom: 10px !important;
+                }
+
+                section.handle-new-section .handle-heading {
+                    font-size: clamp(34px, 8vw, 48px) !important;
+                    line-height: 1.12 !important;
+                    margin-bottom: 36px !important;
+                }
             }
 
             @media (max-width: 768px) {
