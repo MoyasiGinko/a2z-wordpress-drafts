@@ -1096,7 +1096,7 @@
                             <div class="case-study-play-icon">
                                 <svg width="36" height="42" viewBox="0 0 36 42" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M36 20.784L0 41.568V0L36 20.784Z" fill="#000000" />
+                                    <path d="M36 20.784L0 41.568V0L36 20.784Z" fill="#243C54" />
                                 </svg>
                             </div>
                         </div>
@@ -1124,6 +1124,10 @@
                 padding: clamp(44px, 6.5vw, 60px) 0;
                 background-color: #ffffff;
                 text-align: center;
+            }
+
+            input[type="range"] {
+                padding: 0px !important;
             }
 
             .a2z-ec .calc-eyebrow {
@@ -3409,7 +3413,7 @@
                             </div>
                             <h3 class="why-block-title">We live in this every day</h3>
                             <p class="why-block-desc">
-                                The <a href="/services/vat-returns-bookkeeping-services/">VAT</a> margin scheme, OSS and
+                                The VAT margin scheme, OSS and
                                 IOSS, distance selling and marketplace fee splits are routine for us, not something we
                                 look up after you ask.
                             </p>
@@ -3459,8 +3463,8 @@
                             </div>
                             <h3 class="why-block-title">We work as your finance function</h3>
                             <p class="why-block-desc">
-                                Year-end and VAT as standard, with <a href="/services/management-accounts/">management
-                                    accounts</a> and cash-flow forecasting when you need to steer, not just report.
+                                Year-end and VAT as standard, with management accounts and cash-flow forecasting when
+                                you need to steer, not just report.
                             </p>
                         </div>
                     </div>
@@ -3617,10 +3621,9 @@
                 margin: 0 !important;
             }
 
-            section.handle-new-section .handle-cell-desc a {
+            section.handle-new-section .handle-cell-desc span {
                 color: #D49C47 !important;
-                font-weight: 600 !important;
-                text-decoration: underline !important;
+                font-weight: 500 !important;
             }
 
             @media (max-width: 992px) {
@@ -3798,7 +3801,7 @@
                             <h3 class="handle-cell-title">Corporation tax and structure</h3>
                         </div>
                         <p class="handle-cell-desc">
-                            <a href="/services/company-accounts-corporation-tax/">Corporation tax</a> and
+                            <span>Corporation tax</span> and
                             profit-extraction planning, capital allowances on stock and equipment, and the right
                             structure as you grow.
                         </p>
@@ -6319,7 +6322,8 @@
                 background: none !important;
                 -webkit-background-clip: unset !important;
                 -webkit-text-fill-color: #D4A850 !important;
-                display: inline !important;
+                display: block !important;
+                margin-top: 4px !important;
             }
 
             /* FAQ Accordion List Stack */
@@ -6456,13 +6460,19 @@
                     margin-bottom: 8px !important;
                 }
 
-                section.faq-new-section .faq-heading,
-                section.faq-new-section .faq-heading em,
-                section.faq-new-section .faq-heading span {
+                section.faq-new-section .faq-heading {
                     font-size: clamp(32px, 8vw, 46px) !important;
                     font-weight: 700 !important;
                     line-height: 1.18 !important;
                     margin-bottom: clamp(24px, 5vw, 36px) !important;
+                }
+
+                section.faq-new-section .faq-heading em,
+                section.faq-new-section .faq-heading span {
+                    font-size: inherit !important;
+                    font-weight: 700 !important;
+                    display: inline !important;
+                    margin-top: 0 !important;
                 }
 
                 section.faq-new-section .faq-list {
