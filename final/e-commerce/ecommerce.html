@@ -5080,8 +5080,8 @@
                 padding: 0 !important;
                 position: relative !important;
                 background-color: #0D2034 !important;
-                min-height: 520px !important;
-                height: 520px !important;
+                min-height: clamp(360px, 36vw, 520px) !important;
+                height: clamp(360px, 36vw, 520px) !important;
                 display: flex !important;
                 align-items: center !important;
                 overflow: hidden !important;
@@ -5109,11 +5109,11 @@
             section.imgband-new-section .imgband-container {
                 max-width: 1440px !important;
                 margin: 0 auto !important;
-                padding: 48px 24px 54px 51px !important;
+                padding: clamp(24px, 3.8vw, 48px) clamp(20px, 3.5vw, 51px) clamp(28px, 4.2vw, 54px) clamp(20px, 3.5vw, 51px) !important;
                 position: relative !important;
                 z-index: 3 !important;
                 width: 100% !important;
-                height: 520px !important;
+                height: 100% !important;
                 display: flex !important;
                 align-items: flex-end !important;
                 justify-content: flex-start !important;
@@ -5128,15 +5128,15 @@
             section.imgband-new-section .imgband-eyebrow-wrap {
                 display: inline-block !important;
                 border-bottom: 1.5px solid #D4A850 !important;
-                padding-bottom: 8px !important;
-                margin-bottom: 24px !important;
+                padding-bottom: clamp(4px, 0.6vw, 8px) !important;
+                margin-bottom: clamp(12px, 1.8vw, 24px) !important;
             }
 
             section.imgband-new-section .imgband-eyebrow {
                 font-family: 'Manrope', system-ui, sans-serif !important;
                 font-weight: 600 !important;
                 font-style: normal !important;
-                font-size: 32px !important;
+                font-size: clamp(18px, 2.2vw, 32px) !important;
                 letter-spacing: 0px !important;
                 vertical-align: middle;
                 text-transform: uppercase !important;
@@ -5149,7 +5149,7 @@
                 font-family: 'Playfair Display', Georgia, serif !important;
                 font-weight: 700 !important;
                 font-style: normal !important;
-                font-size: 56px !important;
+                font-size: clamp(32px, 4vw, 56px) !important;
                 letter-spacing: -1.12px !important;
                 vertical-align: middle;
                 color: #FFFFFF !important;
@@ -5162,7 +5162,7 @@
                 font-family: 'Playfair Display', Georgia, serif !important;
                 font-weight: 700 !important;
                 font-style: italic !important;
-                font-size: 56px !important;
+                font-size: clamp(32px, 4vw, 56px) !important;
                 letter-spacing: -1.12px !important;
                 vertical-align: middle;
                 color: #D4A850 !important;
@@ -5175,24 +5175,46 @@
 
             @media (max-width: 992px) {
                 section.imgband-new-section {
-                    min-height: 380px !important;
+                    min-height: 280px !important;
                     height: auto !important;
+                    padding: 0 !important;
+                    display: flex !important;
+                    align-items: flex-end !important;
+                    justify-content: flex-start !important;
                 }
 
                 section.imgband-new-section .imgband-container {
-                    padding: 36px 24px !important;
-                    height: auto !important;
+                    padding: 40px 20px 20px 20px !important;
+                    margin: 0 !important;
+                    width: 100% !important;
+                    height: 100% !important;
+                    display: flex !important;
+                    align-items: flex-end !important;
+                    justify-content: flex-start !important;
+                    box-sizing: border-box !important;
+                }
+
+                section.imgband-new-section .imgband-content {
+                    margin: 0 !important;
+                    text-align: left !important;
+                }
+
+                section.imgband-new-section .imgband-eyebrow-wrap {
+                    padding-bottom: 6px !important;
+                    margin-bottom: clamp(14px, 3vw, 20px) !important;
                 }
 
                 section.imgband-new-section .imgband-eyebrow {
-                    font-size: clamp(14px, 4vw, 22px) !important;
+                    font-size: clamp(12px, 3.2vw, 16px) !important;
+                    letter-spacing: 0.5px !important;
                 }
 
                 section.imgband-new-section .imgband-heading,
                 section.imgband-new-section .imgband-heading em,
                 section.imgband-new-section .imgband-heading span {
-                    font-size: clamp(26px, 6.5vw, 42px) !important;
+                    font-size: clamp(26px, 6.5vw, 38px) !important;
                     line-height: 1.2 !important;
+                    letter-spacing: -0.5px !important;
                 }
             }
         </style>
@@ -5234,9 +5256,23 @@
                 text-align: center !important;
             }
 
+            section.tools-new-section .tools-eyebrow {
+                font-family: 'Inter', system-ui, sans-serif !important;
+                font-size: 14px !important;
+                font-weight: 700 !important;
+                font-style: normal !important;
+                letter-spacing: 1.2px !important;
+                text-transform: uppercase !important;
+                vertical-align: middle;
+                color: #D4A850 !important;
+                margin-bottom: 12px !important;
+                display: block !important;
+                text-align: center !important;
+            }
+
             section.tools-new-section .tools-heading {
                 font-family: 'Playfair Display', Georgia, serif !important;
-                font-size: 64px !important;
+                font-size: clamp(36px, 5vw, 64px) !important;
                 font-weight: 600 !important;
                 font-style: normal !important;
                 color: #000000 !important;
@@ -5252,7 +5288,7 @@
                 font-family: 'Playfair Display', Georgia, serif !important;
                 font-style: italic !important;
                 font-weight: 700 !important;
-                font-size: 64px !important;
+                font-size: clamp(36px, 5vw, 64px) !important;
                 letter-spacing: 0px !important;
                 text-align: center !important;
                 vertical-align: baseline !important;
@@ -5267,8 +5303,8 @@
             section.tools-new-section .tools-cards-wrapper {
                 width: 100% !important;
                 max-width: 100% !important;
-                height: 861px !important;
-                max-height: 861px !important;
+                min-height: clamp(650px, 60vw, 861px) !important;
+                height: auto !important;
                 background-color: #F9F9FF !important;
                 position: relative !important;
                 overflow: hidden !important;
@@ -5276,6 +5312,7 @@
                 align-items: center !important;
                 justify-content: center !important;
                 box-sizing: border-box !important;
+                padding: clamp(40px, 5vw, 60px) 0 !important;
             }
 
             /* Massive A2Z Background Watermark */
@@ -5306,7 +5343,6 @@
                 width: 100% !important;
                 max-width: 1440px !important;
                 height: 100% !important;
-                max-height: 861px !important;
                 margin: 0 auto !important;
                 padding: 0 24px !important;
                 position: relative !important;
@@ -5324,23 +5360,24 @@
                 margin: 0 auto !important;
                 display: flex !important;
                 flex-direction: column !important;
-                gap: 60px !important;
+                gap: clamp(32px, 4vw, 60px) !important;
                 align-items: center !important;
             }
 
             section.tools-new-section .tool-card {
-                width: 847px !important;
-                max-width: 100% !important;
-                height: 325px !important;
+                width: 100% !important;
+                max-width: 847px !important;
+                min-height: clamp(240px, 22vw, 325px) !important;
+                height: auto !important;
                 opacity: 1 !important;
-                border-radius: 32px !important;
+                border-radius: clamp(20px, 2.5vw, 32px) !important;
                 background: #FFFFFF !important;
                 background-color: #FFFFFF !important;
                 box-shadow: 0px 0px 40px -15px #112B4638 !important;
-                padding: 40px 30px 40px 50px !important;
+                padding: clamp(28px, 3vw, 40px) clamp(24px, 3.5vw, 50px) !important;
                 display: flex !important;
                 align-items: center !important;
-                gap: 32px !important;
+                gap: clamp(24px, 2.5vw, 32px) !important;
                 box-sizing: border-box !important;
                 transition: transform 0.25s ease, box-shadow 0.25s ease !important;
             }
@@ -5351,12 +5388,12 @@
             }
 
             section.tools-new-section .tool-icon-box {
-                width: 101px !important;
-                height: 101px !important;
+                width: clamp(70px, 7vw, 101px) !important;
+                height: clamp(70px, 7vw, 101px) !important;
                 opacity: 1 !important;
                 background: #112B46 !important;
                 background-color: #112B46 !important;
-                border-radius: 30.3px !important;
+                border-radius: clamp(20px, 2vw, 30.3px) !important;
                 display: flex !important;
                 align-items: center !important;
                 justify-content: center !important;
@@ -5366,8 +5403,8 @@
             }
 
             section.tools-new-section .tool-icon-box svg {
-                width: 44px !important;
-                height: 44px !important;
+                width: clamp(30px, 3vw, 44px) !important;
+                height: clamp(30px, 3vw, 44px) !important;
                 stroke: #FFFFFF !important;
                 stroke-width: 1.8 !important;
                 fill: none !important;
@@ -5381,7 +5418,7 @@
                 font-family: 'Manrope', system-ui, sans-serif !important;
                 font-weight: 700 !important;
                 font-style: normal !important;
-                font-size: 26px !important;
+                font-size: clamp(18px, 2vw, 26px) !important;
                 letter-spacing: 0px !important;
                 vertical-align: middle;
                 text-transform: uppercase !important;
@@ -5394,7 +5431,7 @@
                 font-family: 'Playfair Display', Georgia, serif !important;
                 font-weight: 600 !important;
                 font-style: normal !important;
-                font-size: 36px !important;
+                font-size: clamp(24px, 2.6vw, 36px) !important;
                 letter-spacing: 0px !important;
                 vertical-align: middle;
                 color: #000000 !important;
@@ -5406,9 +5443,9 @@
                 font-family: 'Manrope', system-ui, sans-serif !important;
                 font-weight: 500 !important;
                 font-style: normal !important;
-                font-size: 20px !important;
+                font-size: clamp(14px, 1.4vw, 20px) !important;
                 letter-spacing: 0px !important;
-                text-align: justify !important;
+                text-align: left !important;
                 vertical-align: middle;
                 color: #000000 !important;
                 line-height: 1.5 !important;
@@ -5446,25 +5483,152 @@
             }
 
             @media (max-width: 992px) {
+                section.tools-new-section {
+                    padding: clamp(40px, 6vw, 64px) 0 !important;
+                }
+
+                section.tools-new-section .tools-header-container {
+                    margin-bottom: clamp(28px, 5vw, 40px) !important;
+                    padding: 0 16px !important;
+                }
+
+                section.tools-new-section .tools-eyebrow {
+                    font-size: clamp(12px, 3.2vw, 14px) !important;
+                    margin-bottom: 8px !important;
+                }
 
                 section.tools-new-section .tools-heading,
                 section.tools-new-section .tools-heading em,
                 section.tools-new-section .tools-heading span {
-                    font-size: clamp(26px, 6.5vw, 42px) !important;
-                    line-height: 1.15 !important;
+                    font-size: clamp(26px, 6.5vw, 38px) !important;
+                    line-height: 1.18 !important;
                 }
-            }
 
-            @media (max-width: 600px) {
+                section.tools-new-section .tools-cards-wrapper {
+                    height: auto !important;
+                    min-height: auto !important;
+                    max-height: none !important;
+                    padding: 24px 0 36px 0 !important;
+                    background-color: #F8F9FA !important;
+                }
+
+                section.tools-new-section .tools-watermark {
+                    font-size: clamp(180px, 36vw, 320px) !important;
+                    opacity: 0.08 !important;
+                }
+
+                section.tools-new-section .tools-container {
+                    height: auto !important;
+                    max-height: none !important;
+                    padding: 0 16px !important;
+                }
+
+                section.tools-new-section .tools-card-stack {
+                    gap: 24px !important;
+                    max-width: 440px !important;
+                    width: 100% !important;
+                    margin: 0 auto !important;
+                }
+
                 section.tools-new-section .tool-card {
+                    width: 100% !important;
+                    height: auto !important;
+                    min-height: auto !important;
+                    border-radius: 20px !important;
+                    padding: 24px 20px !important;
+                    display: grid !important;
+                    grid-template-columns: 56px 1fr !important;
+                    column-gap: 16px !important;
+                    row-gap: 16px !important;
+                    align-items: center !important;
+                    box-shadow: 0 10px 30px rgba(17, 43, 70, 0.08) !important;
+                }
+
+                section.tools-new-section .tool-icon-box {
+                    grid-column: 1 !important;
+                    grid-row: 1 !important;
+                    width: 56px !important;
+                    height: 56px !important;
+                    border-radius: 14px !important;
+                    background-color: #112B46 !important;
+                    margin: 0 !important;
+                    box-shadow: 0 4px 12px rgba(17, 43, 70, 0.2) !important;
+                }
+
+                section.tools-new-section .tool-icon-box svg {
+                    width: 26px !important;
+                    height: 26px !important;
+                    stroke-width: 2 !important;
+                }
+
+                section.tools-new-section .tool-content {
+                    display: contents !important;
+                }
+
+                section.tools-new-section .tool-header-text {
+                    grid-column: 2 !important;
+                    grid-row: 1 !important;
+                    display: flex !important;
                     flex-direction: column !important;
-                    align-items: flex-start !important;
+                    justify-content: center !important;
+                }
+
+                section.tools-new-section .tool-eyebrow {
+                    font-size: 13px !important;
+                    font-weight: 700 !important;
+                    letter-spacing: 0.8px !important;
+                    color: #D4A850 !important;
+                    margin-bottom: 4px !important;
+                    text-align: left !important;
+                }
+
+                section.tools-new-section .tool-title {
+                    font-family: 'Playfair Display', Georgia, serif !important;
+                    font-size: clamp(20px, 4.8vw, 24px) !important;
+                    font-weight: 600 !important;
+                    line-height: 1.2 !important;
+                    color: #000000 !important;
+                    margin: 0 !important;
+                    text-align: left !important;
+                }
+
+                section.tools-new-section .tool-desc {
+                    grid-column: 1 / span 2 !important;
+                    grid-row: 2 !important;
+                    font-family: 'Manrope', system-ui, sans-serif !important;
+                    font-size: clamp(14px, 3.4vw, 15.5px) !important;
+                    font-weight: 500 !important;
+                    line-height: 1.5 !important;
+                    color: #555555 !important;
+                    margin: 0 !important;
+                    text-align: left !important;
+                    max-width: 100% !important;
+                }
+
+                section.tools-new-section .tool-btn {
+                    grid-column: 1 / span 2 !important;
+                    grid-row: 3 !important;
+                    width: 100% !important;
+                    height: 48px !important;
+                    font-size: 13px !important;
+                    font-weight: 800 !important;
+                    border-radius: 8px !important;
+                    background: #D4A84F !important;
+                    background-color: #D4A84F !important;
+                    color: #FFFFFF !important;
+                    display: flex !important;
+                    align-items: center !important;
+                    justify-content: center !important;
+                    letter-spacing: 1.2px !important;
+                    margin-top: 4px !important;
+                    box-shadow: 0 4px 14px rgba(212, 168, 79, 0.35) !important;
                 }
             }
         </style>
 
         <section class="tools-new-section">
             <div class="tools-header-container">
+                <span class="tools-eyebrow">FREE TOOLS</span>
                 <h2 class="tools-heading">
                     Run the numbers before<br>you <em>talk to us</em>
                 </h2>
@@ -5487,8 +5651,10 @@
                                 </svg>
                             </div>
                             <div class="tool-content">
-                                <span class="tool-eyebrow">FREE CALCULATOR</span>
-                                <h3 class="tool-title">Sole Trader vs Limited Company</h3>
+                                <div class="tool-header-text">
+                                    <span class="tool-eyebrow">FREE CALCULATOR</span>
+                                    <h3 class="tool-title">Sole Trader vs Limited Company</h3>
+                                </div>
                                 <p class="tool-desc">
                                     See which structure keeps more of your money, with the difference shown in pounds.
                                 </p>
@@ -5510,12 +5676,13 @@
                                 </svg>
                             </div>
                             <div class="tool-content">
-                                <span class="tool-eyebrow">FREE TOOL</span>
-                                <h3 class="tool-title">Business Budget and Profit Estimator</h3>
+                                <div class="tool-header-text">
+                                    <span class="tool-eyebrow">FREE TOOL</span>
+                                    <h3 class="tool-title">Business Budget and Profit Estimator</h3>
+                                </div>
                                 <p class="tool-desc">
                                     Enter your income and costs to see your profit for the year, with cost lines built
-                                    for
-                                    your sector.
+                                    for your sector.
                                 </p>
                                 <a href="/business-budget-profit-estimator/" class="tool-btn">
                                     OPEN THE ESTIMATOR
