@@ -50,7 +50,7 @@
         .a2z-ec .wrap {
             max-width: 1440px;
             margin: 0 auto;
-            padding: 0 15px;
+            padding: 0px;
             position: relative;
             z-index: 1;
         }
@@ -3165,15 +3165,65 @@
                 text-decoration-color: #D49C47;
             }
 
-            @media (max-width: 920px) {
+            @media (max-width: 992px) {
                 .a2z-ec .why-main-card {
-                    grid-template-columns: 1fr;
+                    grid-template-columns: 1fr !important;
+                    border-radius: 0 !important;
+                    box-shadow: none !important;
+                    border: none !important;
+                    background: transparent !important;
                 }
-            }
 
-            @media (max-width: 600px) {
+                .a2z-ec .why-left-col {
+                    background-color: #0B233F !important;
+                    padding: 36px 20px 60px 20px !important;
+                    position: relative !important;
+                    overflow: visible !important;
+                    z-index: 2 !important;
+                }
+
+                .a2z-ec .why-eyebrow {
+                    font-size: 13px !important;
+                    font-weight: 700 !important;
+                    letter-spacing: 1.2px !important;
+                    margin-bottom: 16px !important;
+                    color: #D4A850 !important;
+                }
+
+                .a2z-ec .why-heading {
+                    font-family: 'Playfair Display', Georgia, serif !important;
+                    font-size: clamp(26px, 6.5vw, 32px) !important;
+                    font-weight: 700 !important;
+                    line-height: 1.25 !important;
+                    margin-bottom: 20px !important;
+                    color: #FFFFFF !important;
+                }
+
+                .a2z-ec .why-subtext {
+                    font-family: 'Manrope', sans-serif !important;
+                    font-size: 15px !important;
+                    font-weight: 400 !important;
+                    color: rgba(255, 255, 255, 0.88) !important;
+                    line-height: 1.55 !important;
+                    margin-bottom: 32px !important;
+                    text-align: left !important;
+                }
+
+                .a2z-ec .why-photo-box {
+                    max-width: 320px !important;
+                    width: 90% !important;
+                    height: 230px !important;
+                    border-radius: 16px !important;
+                    border: 3.5px solid #6CBDED !important;
+                    margin: 0 auto -90px auto !important;
+                    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.3) !important;
+                    position: relative !important;
+                    z-index: 10 !important;
+                }
+
                 .a2z-ec .why-right-grid {
-                    grid-template-columns: 1fr;
+                    grid-template-columns: 1fr !important;
+                    padding-top: 100px !important;
                 }
             }
         </style>
