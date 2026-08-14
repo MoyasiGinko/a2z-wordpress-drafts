@@ -22,9 +22,11 @@
     <style>
         html,
         body {
-            margin: 0;
-            padding: 0;
+            margin: 0 !important;
+            padding: 0 !important;
         }
+
+
 
         .a2z-ec {
             --navy: #0D2B42;
@@ -136,6 +138,10 @@
 
     <style id="a2z-ec-host-fix">
         /* Neutralise the theme's two-column wrapper around the e-commerce page */
+        .abtSec1 {
+            padding: 0 !important;
+        }
+
         .abtSec1 .container {
             max-width: none !important;
             width: 100% !important;
@@ -3913,6 +3919,7 @@
                 z-index: 3 !important;
                 width: 100% !important;
                 max-width: clamp(280px, 44vw, 551px) !important;
+                position: static !important;
             }
 
             section.finance-function-section .ff-eyebrow {
@@ -4000,16 +4007,15 @@
                 background: linear-gradient(135deg, #F5D794 0%, #E6BA68 100%) !important;
             }
 
-            /* Right Image Container - Overlapping Circular Photo Frame */
-            section.finance-function-section .ff-image-col {
-                position: static !important;
-            }
-
-            section.finance-function-section .ff-circle-frame {
+            /* Right Image Container - Overlapping Circular Photo Frame (Desktop) */
+            section.finance-function-section .ff-circle-frame.ff-desktop-only {
+                display: block !important;
                 position: absolute !important;
                 top: 50% !important;
-                transform: translateY(-50%) !important;
+                bottom: auto !important;
+                left: auto !important;
                 right: 0 !important;
+                transform: translateY(-50%) !important;
                 width: clamp(340px, 36vw, 496px) !important;
                 height: clamp(340px, 36vw, 496px) !important;
                 border-radius: 50% !important;
@@ -4019,6 +4025,10 @@
                 box-shadow: none !important;
                 z-index: 4 !important;
                 background-color: #FFFFFF !important;
+            }
+
+            section.finance-function-section .ff-circle-frame.ff-mobile-only {
+                display: none !important;
             }
 
             section.finance-function-section .ff-circle-frame img {
@@ -4111,12 +4121,19 @@
                     box-sizing: border-box !important;
                 }
 
-                /* 2. Middle Circular Photo Frame (Floats Absolute over 15px gap) */
-                section.finance-function-section .ff-circle-frame {
+                /* Hide Desktop Circle Frame on Mobile */
+                section.finance-function-section .ff-circle-frame.ff-desktop-only {
+                    display: none !important;
+                }
+
+                /* 2. Middle Circular Photo Frame (Anchored to bottom of Top Box on Mobile) */
+                section.finance-function-section .ff-circle-frame.ff-mobile-only {
+                    display: block !important;
                     position: absolute !important;
-                    top: 29% !important;
+                    top: 100% !important;
                     left: 50% !important;
                     right: auto !important;
+                    bottom: auto !important;
                     transform: translate(-50%, -50%) !important;
                     width: 222px !important;
                     height: 222px !important;
@@ -4147,7 +4164,7 @@
                     background: #0B233F !important;
                     background-color: #0B233F !important;
                     border-radius: 24px !important;
-                    padding: 100px 24px 32px 24px !important;
+                    padding: 110px 24px 32px 24px !important;
                     width: 100% !important;
                     box-sizing: border-box !important;
                     position: relative !important;
@@ -4163,8 +4180,10 @@
                     font-style: normal !important;
                     color: #FFFFFF !important;
                     line-height: 1.25 !important;
-                    text-align: justify !important;
-                    margin: 0 0 20px 0 !important;
+                    letter-spacing: 0px !important;
+                    vertical-align: middle;
+                    text-align: left !important;
+                    margin: 0 0 16px 0 !important;
                     max-width: 100% !important;
                 }
 
@@ -4174,8 +4193,10 @@
                     font-style: italic !important;
                     font-weight: 600 !important;
                     font-size: 1em !important;
+                    letter-spacing: 0px !important;
+                    vertical-align: middle;
+                    text-align: left !important;
                     color: #D4A850 !important;
-                    -webkit-text-fill-color: #D4A850 !important;
                     display: inline !important;
                 }
 
@@ -4224,6 +4245,11 @@
                         <div class="ff-content">
                             <div class="ff-top-box">
                                 <span class="ff-eyebrow">A FINANCE FUNCTION, NOT JUST FILING</span>
+                                <!-- Mobile-only Circular Frame (Anchored to Top Box) -->
+                                <div class="ff-circle-frame ff-mobile-only">
+                                    <img src="https://a2zaccounting.co.uk/wp-content/uploads/2026/06/a2z-photo-2-office.jpg"
+                                        alt="A2Z Accounting team member working at office receptionist desk">
+                                </div>
                             </div>
                             <div class="ff-bottom-box">
                                 <h2 class="ff-heading">
@@ -4245,11 +4271,13 @@
                         </div>
                     </div>
 
-                    <!-- Right Circular Photo Frame -->
-                    <div class="ff-circle-frame">
+                    <!-- Desktop-only Circular Frame (Anchored to Card Wrapper Right Edge) -->
+                    <div class="ff-circle-frame ff-desktop-only">
                         <img src="https://a2zaccounting.co.uk/wp-content/uploads/2026/06/a2z-photo-2-office.jpg"
                             alt="A2Z Accounting team member working at office receptionist desk">
                     </div>
+                </div>
+            </div>
         </section>
 
         <!-- ============ HOW WE START SECTION (EXACT DESIGN MATCH) ============ -->
@@ -5982,6 +6010,7 @@
                 color: #D4A850 !important;
                 margin-bottom: 8px !important;
                 display: block !important;
+                text-align: left !important;
             }
 
             section.guides-new-section .guide-title {
@@ -7069,7 +7098,7 @@
                     gap: 16px !important;
                     width: max-content !important;
                     padding: 6px 0 28px 0 !important;
-                    animation: a2zvscroll 32s linear infinite !important;
+                    animation: a2zvscroll 55s linear infinite !important;
                     will-change: transform !important;
                     -webkit-backface-visibility: hidden !important;
                     backface-visibility: hidden !important;
