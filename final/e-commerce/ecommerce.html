@@ -2788,14 +2788,14 @@
                 position: relative;
                 display: flex;
                 flex-direction: column;
-                align-items: flex-start;
+                align-items: center;
             }
 
             /* Top Left Icon Badge */
             .a2z-ec .prob-icon-badge {
                 position: absolute;
                 top: -24px;
-                left: -18px;
+                left: 18px;
                 z-index: 10;
                 width: 56.87px;
                 height: 56.87px;
@@ -2889,7 +2889,7 @@
                 position: relative;
                 z-index: 3;
                 margin-top: -100px;
-                margin-left: 24px;
+                margin-left: 60px;
                 opacity: 1;
                 box-shadow: 0 14px 32px rgba(0, 0, 0, 0.28);
                 color: #0F172A;
@@ -2919,6 +2919,70 @@
                 color: #000000 !important;
                 line-height: 1.5 !important;
                 margin: 0 !important;
+            }
+
+            /* Proportional Scaling for Tablet / Intermediate Desktops (993px - 1280px) */
+            @media (min-width: 993px) and (max-width: 1280px) {
+                .a2z-ec .prob-grid {
+                    gap: 40px 24px !important;
+                    max-width: 1060px !important;
+                    padding: 0 20px !important;
+                }
+
+                .a2z-ec .prob-icon-badge {
+                    top: -20px !important;
+                    left: 8px !important;
+                    width: 48px !important;
+                    height: 48px !important;
+                    border: 3px solid #FFFFFF !important;
+                    border-radius: 9px !important;
+                }
+
+                .a2z-ec .prob-icon-badge svg {
+                    width: 20px !important;
+                    height: 20px !important;
+                }
+
+                .a2z-ec .prob-blue-card {
+                    max-width: 440px !important;
+                    padding: 34px 32px 96px 32px !important;
+                    border-radius: 12px !important;
+                }
+
+                .a2z-ec .prob-card-title {
+                    font-size: 25px !important;
+                    line-height: 29px !important;
+                    margin-bottom: 12px !important;
+                }
+
+                .a2z-ec .prob-issue-tag {
+                    font-size: 12.5px !important;
+                    margin-bottom: 5px !important;
+                }
+
+                .a2z-ec .prob-issue-desc {
+                    font-size: 15px !important;
+                    line-height: 1.35 !important;
+                }
+
+                .a2z-ec .prob-fix-card {
+                    max-width: 440px !important;
+                    padding: 26px !important;
+                    border-radius: 12px !important;
+                    margin-top: -82px !important;
+                    margin-left: 44px !important;
+                    gap: 8px !important;
+                }
+
+                .a2z-ec .prob-fix-tag {
+                    font-size: 14px !important;
+                    margin-bottom: 5px !important;
+                }
+
+                .a2z-ec .prob-fix-desc {
+                    font-size: 15px !important;
+                    line-height: 1.45 !important;
+                }
             }
 
             @media (max-width: 992px) {
