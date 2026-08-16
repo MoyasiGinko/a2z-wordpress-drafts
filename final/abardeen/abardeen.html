@@ -3298,6 +3298,257 @@
                 font-size: 13px;
             }
         }
+
+        /* ==========================================================================
+           FINAL CTA / EXPECT MORE SECTION STYLES
+           Scoped prefix: .a2z-abd-cta-final
+           ========================================================================== */
+
+        .a2z-abd-cta-final {
+            position: relative;
+            width: 100%;
+            background-color: #0c2136;
+            padding: 130px 24px 150px;
+            overflow: hidden;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .a2z-abd-cta-final__container {
+            position: relative;
+            z-index: 10;
+            width: 100%;
+            max-width: 1140px;
+            margin: 0 auto;
+        }
+
+        /* 1. DESKTOP VIEW (Visible >= 860px) */
+        .a2z-abd-cta-final__desktop-grid {
+            display: grid;
+            grid-template-columns: 62% 38%;
+            gap: 24px;
+            align-items: stretch;
+        }
+
+        /* Left Message Card */
+        .a2z-abd-cta-final__message-card {
+            background-color: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 56px 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            box-shadow: 0 16px 40px -8px rgba(0, 0, 0, 0.35);
+        }
+
+        .a2z-abd-cta-final__tag {
+            font-family: var(--a2z-abd-font-sans);
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--a2z-abd-gold-main);
+            margin-bottom: 20px;
+        }
+
+        .a2z-abd-cta-final__title {
+            font-family: var(--a2z-abd-font-serif);
+            font-size: clamp(2.35rem, 3.8vw, 3.45rem);
+            font-weight: 700;
+            line-height: 1.15;
+            letter-spacing: -0.015em;
+            color: #ffffff;
+            margin: 0 0 24px;
+            text-shadow: 0 2px 20px rgba(0, 0, 0, 0.6);
+        }
+
+        .a2z-abd-cta-final__title-italic {
+            font-family: var(--a2z-abd-font-serif);
+            font-weight: 500;
+            font-style: italic;
+            color: var(--a2z-abd-gold-main);
+            letter-spacing: -0.008em;
+        }
+
+        .a2z-abd-cta-final__desc {
+            font-family: var(--a2z-abd-font-sans);
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 1.62;
+            color: #d1dced;
+            max-width: 520px;
+            margin: 0;
+            text-shadow: 0 1px 8px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Right Actions Column */
+        .a2z-abd-cta-final__actions-col {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .a2z-abd-cta-card {
+            background-color: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 34px 28px;
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            box-shadow: 0 16px 40px -8px rgba(0, 0, 0, 0.35);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .a2z-abd-cta-card--estimate {
+            padding: 38px 28px;
+        }
+
+        .a2z-abd-btn-estimate {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #cca05b;
+            color: #0c253d;
+            font-family: var(--a2z-abd-font-sans);
+            font-size: 13.5px;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            padding: 16px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            box-shadow: 0 4px 18px rgba(204, 160, 91, 0.35);
+            transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+            width: 100%;
+            text-align: center;
+        }
+
+        .a2z-abd-btn-estimate:hover {
+            background-color: #d8aa63;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(204, 160, 91, 0.5);
+        }
+
+        .a2z-abd-btn-consult {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            color: #ffffff;
+            font-family: var(--a2z-abd-font-sans);
+            font-size: 13.5px;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            padding: 16px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+            width: 100%;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .a2z-abd-btn-consult:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-color: var(--a2z-abd-gold-main);
+            color: var(--a2z-abd-gold-main);
+            transform: translateY(-2px);
+        }
+
+        .a2z-abd-cta-card__note {
+            font-family: var(--a2z-abd-font-sans);
+            font-size: 13px;
+            line-height: 1.5;
+            color: #94a3b8;
+            text-align: center;
+            margin: 0;
+        }
+
+        .a2z-abd-cta-card__phone-link {
+            color: var(--a2z-abd-gold-main);
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        .a2z-abd-cta-card__phone-link:hover {
+            text-decoration: underline;
+        }
+
+        /* 2. MOBILE VIEW (Visible <= 859px) */
+        .a2z-abd-cta-final__mobile-wrap {
+            display: none;
+        }
+
+        @media (max-width: 859px) {
+            .a2z-abd-cta-final {
+                padding: 70px 16px 85px;
+            }
+
+            .a2z-abd-cta-final__desktop-grid {
+                display: none;
+            }
+
+            .a2z-abd-cta-final__mobile-wrap {
+                display: flex;
+                flex-direction: column;
+                gap: 16px;
+                max-width: 480px;
+                margin: 0 auto;
+            }
+
+            .a2z-abd-cta-final__message-card-mobile {
+                background-color: rgba(255, 255, 255, 0.04);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                border-radius: 16px;
+                padding: 34px 24px;
+                margin-bottom: 12px;
+                box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+            }
+
+            .a2z-abd-cta-final__tag-mobile {
+                font-family: var(--a2z-abd-font-sans);
+                font-size: 12px;
+                font-weight: 800;
+                letter-spacing: 0.14em;
+                text-transform: uppercase;
+                color: var(--a2z-abd-gold-main);
+                margin-bottom: 14px;
+            }
+
+            .a2z-abd-cta-final__title-mobile {
+                font-family: var(--a2z-abd-font-serif);
+                font-size: 2.2rem;
+                font-weight: 700;
+                line-height: 1.2;
+                letter-spacing: -0.015em;
+                color: #ffffff;
+                margin: 0 0 16px;
+            }
+
+            .a2z-abd-cta-final__desc-mobile {
+                font-family: var(--a2z-abd-font-sans);
+                font-size: 14.5px;
+                font-weight: 400;
+                line-height: 1.58;
+                color: #cbd5e1;
+                margin: 0;
+            }
+
+            .a2z-abd-cta-final__note-mobile {
+                font-family: var(--a2z-abd-font-sans);
+                font-size: 13px;
+                line-height: 1.5;
+                color: #94a3b8;
+                text-align: center;
+                margin-top: 18px;
+            }
+        }
     </style>
 </head>
 
@@ -4900,6 +5151,76 @@
             });
         });
     </script>
+
+    <!-- ==========================================================================
+         FINAL CTA SECTION: EXPECT MORE FROM YOUR ACCOUNTANT
+         ========================================================================== -->
+    <section class="a2z-abd-cta-final" id="aberdeen-contact-cta" aria-label="Let's Talk">
+        <div class="a2z-abd-cta-final__container">
+            <!-- 1. DESKTOP VIEW (Visible >= 860px) -->
+            <div class="a2z-abd-cta-final__desktop-grid">
+                <!-- Left Message Card -->
+                <div class="a2z-abd-cta-final__message-card">
+                    <span class="a2z-abd-cta-final__tag">LET'S TALK</span>
+                    <h2 class="a2z-abd-cta-final__title">
+                        Expect more<br>from <span class="a2z-abd-cta-final__title-italic">your accountant</span>
+                    </h2>
+                    <p class="a2z-abd-cta-final__desc">
+                        More expertise, more care, and a team that looks after your business as if it were our own - all for one fair fixed fee. Start with a conversation or an instant fee estimate, and see the difference for yourself.
+                    </p>
+                </div>
+
+                <!-- Right Actions Column -->
+                <div class="a2z-abd-cta-final__actions-col">
+                    <!-- Action Card 1: Estimate -->
+                    <div class="a2z-abd-cta-card a2z-abd-cta-card--estimate">
+                        <a href="#quote-calculator" class="a2z-abd-btn-estimate" id="btn-final-estimate">
+                            GET AN INSTANT FEE ESTIMATE
+                        </a>
+                    </div>
+
+                    <!-- Action Card 2: Consultation & Phone -->
+                    <div class="a2z-abd-cta-card a2z-abd-cta-card--consult">
+                        <a href="#consultation-booking" class="a2z-abd-btn-consult" id="btn-final-consultation">
+                            BOOK A CONSULTATION
+                        </a>
+                        <p class="a2z-abd-cta-card__note">
+                            Fixed fees, agreed up front. No obligation - and if you would rather talk, call <a href="tel:01224042961" class="a2z-abd-cta-card__phone-link">01224 042961</a>.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. MOBILE VIEW (Visible <= 859px) -->
+            <div class="a2z-abd-cta-final__mobile-wrap">
+                <!-- Mobile Message Card -->
+                <div class="a2z-abd-cta-final__message-card-mobile">
+                    <span class="a2z-abd-cta-final__tag-mobile">LET'S TALK</span>
+                    <h2 class="a2z-abd-cta-final__title-mobile">
+                        Expect more<br>from <span class="a2z-abd-cta-final__title-italic">your accountant</span>
+                    </h2>
+                    <p class="a2z-abd-cta-final__desc-mobile">
+                        More expertise, more care, and a team that looks after your business as if it were our own - all for one fair fixed fee. Start with a conversation or an instant fee estimate, and see the difference for yourself.
+                    </p>
+                </div>
+
+                <!-- Mobile Button 1: Estimate -->
+                <a href="#quote-calculator" class="a2z-abd-btn-estimate" id="btn-final-estimate-m">
+                    GET AN INSTANT ESTIMATE
+                </a>
+
+                <!-- Mobile Button 2: Consultation -->
+                <a href="#consultation-booking" class="a2z-abd-btn-consult" id="btn-final-consultation-m">
+                    BOOK A CONSULTATION
+                </a>
+
+                <!-- Mobile Phone Note -->
+                <p class="a2z-abd-cta-final__note-mobile">
+                    Fixed fees, agreed up front. No obligation - and if you would rather talk, call <a href="tel:01224042961" class="a2z-abd-cta-card__phone-link">01224 042961</a>.
+                </p>
+            </div>
+        </div>
+    </section>
 
 </body>
 
