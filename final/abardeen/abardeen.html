@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accountants in Aberdeen | A2Z Accounting - Union Street</title>
+    <meta name="description"
+        content="Chartered Certified Accountants on Union Street, Aberdeen. We treat your business like our own with fixed monthly fees, expert tax planning, and dedicated local support.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..800;1,9..40,400..800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        /* ==========================================================================
+           A2Z ACCOUNTING - ABERDEEN HERO SECTION STYLES
+           Unique Scoped Class Namespace: .a2z-abd-
+           ========================================================================== */
+
+        :root {
+            --a2z-abd-navy-deep: #0c253d;
+            --a2z-abd-navy-mid: #133452;
+            --a2z-abd-navy-dark: #081a2b;
+            --a2z-abd-gold-main: #dfa868;
+            --a2z-abd-gold-btn: #d59f58;
+            --a2z-abd-gold-btn-hover: #e2ad67;
+            --a2z-abd-navy-btn-text: #0e273e;
+            --a2z-abd-text-white: #ffffff;
+            --a2z-abd-text-body: #f1f5f9;
+            --a2z-abd-font-serif: 'Playfair Display', Georgia, 'Times New Roman', serif;
+            --a2z-abd-font-sans: 'DM Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            width: 100%;
+            min-height: 100%;
+            font-family: var(--a2z-abd-font-sans);
+            background-color: var(--a2z-abd-navy-deep);
+            color: var(--a2z-abd-text-white);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            overflow-x: hidden;
+        }
+
+        /* Main Hero Section */
+        .a2z-abd-hero {
+            position: relative;
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 100px 24px 90px;
+            background: linear-gradient(135deg, #091f33 0%, #103250 50%, #081a2c 100%);
+            overflow: hidden;
+        }
+
+        /* Background Architecture Layer */
+        .a2z-abd-hero__bg {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .a2z-abd-hero__bg-svg {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.52;
+        }
+
+        /* Navy Atmospheric Blue Wash Overlay */
+        .a2z-abd-hero__overlay {
+            position: absolute;
+            inset: 0;
+            z-index: 2;
+            background: linear-gradient(
+                180deg,
+                rgba(11, 35, 58, 0.82) 0%,
+                rgba(14, 44, 72, 0.80) 45%,
+                rgba(8, 26, 44, 0.88) 100%
+            );
+        }
+
+        /* Subtle Ambient Radial Lighting */
+        .a2z-abd-hero__ambient {
+            position: absolute;
+            inset: 0;
+            z-index: 3;
+            background: radial-gradient(
+                ellipse at 50% 35%,
+                rgba(24, 66, 104, 0.3) 0%,
+                rgba(6, 20, 34, 0.4) 75%,
+                rgba(4, 14, 24, 0.7) 100%
+            );
+            pointer-events: none;
+        }
+
+        /* Content Container */
+        .a2z-abd-hero__container {
+            position: relative;
+            z-index: 10;
+            width: 100%;
+            max-width: 1060px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        /* Top Pill Badge */
+        .a2z-abd-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: #ffffff;
+            color: #0b2238;
+            padding: 8px 24px;
+            border-radius: 4px;
+            font-family: var(--a2z-abd-font-sans);
+            font-size: 12.5px;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+            margin-bottom: 34px;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+            user-select: none;
+        }
+
+        .a2z-abd-badge:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45);
+        }
+
+        /* Main Heading */
+        .a2z-abd-hero__title {
+            font-family: var(--a2z-abd-font-serif);
+            font-size: clamp(2.45rem, 5.2vw, 4.35rem);
+            font-weight: 700;
+            line-height: 1.15;
+            letter-spacing: -0.015em;
+            color: var(--a2z-abd-text-white);
+            margin-bottom: 26px;
+            max-width: 960px;
+            text-shadow: 0 2px 20px rgba(0, 0, 0, 0.65);
+        }
+
+        .a2z-abd-hero__title-italic {
+            font-family: var(--a2z-abd-font-serif);
+            font-weight: 500;
+            font-style: italic;
+            color: var(--a2z-abd-gold-main);
+            letter-spacing: -0.01em;
+            display: inline-block;
+            text-shadow: 0 2px 16px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Lead Paragraph */
+        .a2z-abd-hero__lead {
+            font-family: var(--a2z-abd-font-sans);
+            font-size: clamp(1.02rem, 1.2vw, 1.15rem);
+            font-weight: 400;
+            line-height: 1.62;
+            color: var(--a2z-abd-text-body);
+            max-width: 820px;
+            margin: 0 auto 20px;
+            text-shadow: 0 1px 10px rgba(0, 0, 0, 0.65);
+        }
+
+        /* Highlight Sub-paragraph */
+        .a2z-abd-hero__highlight {
+            font-family: var(--a2z-abd-font-sans);
+            font-size: clamp(1.02rem, 1.2vw, 1.15rem);
+            font-weight: 600;
+            line-height: 1.6;
+            color: var(--a2z-abd-gold-main);
+            max-width: 820px;
+            margin: 0 auto 38px;
+            text-shadow: 0 1px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        /* CTA Button Actions Group */
+        .a2z-abd-hero__actions {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            margin-bottom: 34px;
+            flex-wrap: wrap;
+            width: 100%;
+        }
+
+        /* Button Base Styles */
+        .a2z-abd-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--a2z-abd-font-sans);
+            font-size: 13.5px;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            padding: 15px 34px;
+            border-radius: 5px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+            position: relative;
+            user-select: none;
+            min-width: 250px;
+        }
+
+        /* Primary Button (Solid Warm Gold) */
+        .a2z-abd-btn--primary {
+            background-color: var(--a2z-abd-gold-btn);
+            color: var(--a2z-abd-navy-btn-text);
+            border: 1.5px solid var(--a2z-abd-gold-btn);
+            box-shadow: 0 4px 16px rgba(213, 159, 88, 0.35);
+        }
+
+        .a2z-abd-btn--primary:hover {
+            background-color: var(--a2z-abd-gold-btn-hover);
+            border-color: var(--a2z-abd-gold-btn-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 22px rgba(213, 159, 88, 0.52);
+        }
+
+        .a2z-abd-btn--primary:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 8px rgba(213, 159, 88, 0.3);
+        }
+
+        /* Secondary Button (Dark Navy Glass / Gold Outline) */
+        .a2z-abd-btn--secondary {
+            background-color: rgba(14, 40, 65, 0.65);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            color: var(--a2z-abd-text-white);
+            border: 1.5px solid rgba(223, 168, 104, 0.85);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        .a2z-abd-btn--secondary:hover {
+            background-color: var(--a2z-abd-gold-btn);
+            color: var(--a2z-abd-navy-btn-text);
+            border-color: var(--a2z-abd-gold-btn);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(213, 159, 88, 0.4);
+        }
+
+        .a2z-abd-btn--secondary:active {
+            transform: translateY(0);
+        }
+
+        .a2z-abd-btn:focus-visible {
+            outline: 2px solid var(--a2z-abd-gold-main);
+            outline-offset: 3px;
+        }
+
+        /* Footer Reassurance Note */
+        .a2z-abd-hero__guarantee {
+            font-family: var(--a2z-abd-font-sans);
+            font-size: 14.5px;
+            font-weight: 500;
+            color: rgba(240, 245, 250, 0.9);
+            letter-spacing: 0.01em;
+            text-shadow: 0 1px 8px rgba(0, 0, 0, 0.6);
+        }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 900px) {
+            .a2z-abd-hero {
+                padding: 75px 20px 65px;
+                min-height: auto;
+            }
+
+            .a2z-abd-badge {
+                font-size: 11px;
+                padding: 7px 18px;
+                margin-bottom: 26px;
+            }
+
+            .a2z-abd-hero__title {
+                margin-bottom: 22px;
+            }
+
+            .a2z-abd-hero__lead,
+            .a2z-abd-hero__highlight {
+                font-size: 15.5px;
+            }
+
+            .a2z-abd-hero__highlight {
+                margin-bottom: 30px;
+            }
+
+            .a2z-abd-btn {
+                padding: 14px 26px;
+                font-size: 13px;
+                min-width: 220px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .a2z-abd-hero {
+                padding: 60px 16px 50px;
+            }
+
+            .a2z-abd-badge {
+                font-size: 10px;
+                padding: 7px 14px;
+                letter-spacing: 0.05em;
+                line-height: 1.35;
+                margin-bottom: 22px;
+                border-radius: 4px;
+            }
+
+            .a2z-abd-hero__title {
+                font-size: 2.15rem;
+                line-height: 1.22;
+                margin-bottom: 18px;
+            }
+
+            .a2z-abd-hero__lead {
+                font-size: 14.5px;
+                line-height: 1.55;
+                margin-bottom: 16px;
+            }
+
+            .a2z-abd-hero__highlight {
+                font-size: 14.5px;
+                line-height: 1.55;
+                margin-bottom: 28px;
+            }
+
+            .a2z-abd-hero__actions {
+                flex-direction: column;
+                gap: 13px;
+                width: 100%;
+            }
+
+            .a2z-abd-btn {
+                width: 100%;
+                max-width: 320px;
+                padding: 14px 20px;
+                font-size: 13px;
+                min-width: unset;
+            }
+
+            .a2z-abd-hero__guarantee {
+                font-size: 13px;
+                line-height: 1.45;
+                padding: 0 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ==========================================================================
+         HERO SECTION: ABERDEEN CHARTERED CERTIFIED ACCOUNTANTS
+         ========================================================================== -->
+    <section class="a2z-abd-hero" id="aberdeen-accountants-hero" aria-label="Accountants in Aberdeen">
+        <!-- Background Architecture Graphic & Multi-Stop Overlays -->
+        <div class="a2z-abd-hero__bg" aria-hidden="true">
+            <!-- Architectural Facade Representation (Union Street Aberdeen office scene) -->
+            <svg class="a2z-abd-hero__bg-svg" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+                <!-- Sky and background buildings -->
+                <rect width="1600" height="900" fill="#2d4863" />
+                <path d="M0,0 L1600,0 L1600,450 L1200,420 L950,440 L700,410 L450,430 L0,450 Z" fill="#3a5874" opacity="0.5" />
+                
+                <!-- Historic Aberdeen Granite Architecture Buildings -->
+                <path d="M1250,150 L1450,130 L1600,160 L1600,900 L1250,900 Z" fill="#203a52" />
+                <!-- Windows and cornices right side -->
+                <rect x="1290" y="240" width="60" height="90" rx="30" fill="#15293d" />
+                <rect x="1380" y="240" width="60" height="90" rx="30" fill="#15293d" />
+                <rect x="1290" y="380" width="60" height="110" rx="4" fill="#15293d" />
+                <rect x="1380" y="380" width="60" height="110" rx="4" fill="#15293d" />
+                <rect x="1470" y="380" width="60" height="110" rx="4" fill="#15293d" />
+                <rect x="1270" y="200" width="280" height="15" fill="#4d6f8f" opacity="0.6" />
+                <rect x="1270" y="350" width="280" height="12" fill="#4d6f8f" opacity="0.6" />
+                
+                <!-- Central Granite Facade -->
+                <path d="M380,80 L1250,150 L1250,900 L380,900 Z" fill="#294661" />
+                <!-- Architectural Stone Pediments and Columns -->
+                <rect x="420" y="140" width="14" height="760" fill="#446788" opacity="0.35" />
+                <rect x="620" y="140" width="14" height="760" fill="#446788" opacity="0.35" />
+                <rect x="820" y="140" width="14" height="760" fill="#446788" opacity="0.35" />
+                <rect x="1020" y="140" width="14" height="760" fill="#446788" opacity="0.35" />
+                <rect x="1220" y="140" width="14" height="760" fill="#446788" opacity="0.35" />
+                
+                <!-- Center Storey Windows -->
+                <rect x="460" y="200" width="130" height="180" rx="6" fill="#142b40" />
+                <rect x="660" y="200" width="130" height="180" rx="6" fill="#142b40" />
+                <rect x="860" y="200" width="130" height="180" rx="6" fill="#142b40" />
+                <rect x="1060" y="200" width="130" height="180" rx="6" fill="#142b40" />
+                
+                <rect x="460" y="440" width="130" height="190" rx="4" fill="#112437" />
+                <rect x="660" y="440" width="130" height="190" rx="4" fill="#112437" />
+                <rect x="860" y="440" width="130" height="190" rx="4" fill="#112437" />
+                <rect x="1060" y="440" width="130" height="190" rx="4" fill="#112437" />
+
+                <!-- Left Office Signage Facade (A2Z Accounting Sign) -->
+                <path d="M0,50 L400,90 L400,900 L0,900 Z" fill="#32506d" />
+                <!-- 3D Signboard -->
+                <g opacity="0.85" transform="translate(180, 260) rotate(-4)">
+                    <rect x="0" y="0" width="280" height="160" rx="6" fill="#f8fafc" opacity="0.92" filter="drop-shadow(0px 15px 25px rgba(0,0,0,0.6))" />
+                    <!-- Circle Logo -->
+                    <circle cx="140" cy="45" r="22" fill="#0d2e4d" />
+                    <text x="140" y="52" fill="#ffffff" font-family="sans-serif" font-size="14" font-weight="900" text-anchor="middle">A2Z</text>
+                    <!-- Accounting Text -->
+                    <text x="140" y="96" fill="#0d2e4d" font-family="'DM Sans', sans-serif" font-size="20" font-weight="900" letter-spacing="2" text-anchor="middle">ACCOUNTING</text>
+                    <text x="140" y="122" fill="#335372" font-family="'DM Sans', sans-serif" font-size="11" font-weight="700" letter-spacing="1" text-anchor="middle">Chartered Accountant</text>
+                </g>
+
+                <!-- Background Street Shop signs (REED / TESCO subtle silhouettes) -->
+                <g opacity="0.45" transform="translate(720, 680)">
+                    <text x="0" y="0" fill="#527699" font-family="'DM Sans', sans-serif" font-size="34" font-weight="900" letter-spacing="4">REED</text>
+                    <text x="160" y="0" fill="#47698a" font-family="'DM Sans', sans-serif" font-size="26" font-weight="800" letter-spacing="2">TESCO</text>
+                </g>
+            </svg>
+            <div class="a2z-abd-hero__overlay"></div>
+            <div class="a2z-abd-hero__ambient"></div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="a2z-abd-hero__container">
+            <!-- Top Tagline Badge -->
+            <div class="a2z-abd-badge" role="text">
+                CHARTERED CERTIFIED ACCOUNTANTS - UNION STREET, ABERDEEN
+            </div>
+
+            <!-- Main Heading with Golden Italic Highlight -->
+            <h1 class="a2z-abd-hero__title">
+                Accountants in Aberdeen<br>
+                who treat your business<br>
+                <span class="a2z-abd-hero__title-italic">like their own</span>
+            </h1>
+
+            <!-- Lead Paragraph -->
+            <p class="a2z-abd-hero__lead">
+                That is not a line, it is how we work. You get the expertise and rigour the biggest firms
+                are known for, with the care and attention only a local team can give - all for one fair,
+                fixed fee that is a fraction of what you would expect to pay.
+            </p>
+
+            <!-- Highlight Value Proposition -->
+            <p class="a2z-abd-hero__highlight">
+                Real people who know your name and your numbers - who pick up the phone, plan ahead, and
+                treat your business as if it were our own.
+            </p>
+
+            <!-- Call to Action Buttons -->
+            <div class="a2z-abd-hero__actions">
+                <a href="#instant-estimate" class="a2z-abd-btn a2z-abd-btn--primary" id="btn-instant-estimate">
+                    GET AN INSTANT ESTIMATE
+                </a>
+                <a href="#book-consultation" class="a2z-abd-btn a2z-abd-btn--secondary" id="btn-book-consultation">
+                    BOOK A CONSULTATION
+                </a>
+            </div>
+
+            <!-- Footer Reassurance Note -->
+            <p class="a2z-abd-hero__guarantee">
+                Fixed monthly fees, agreed up front - no obligation either way.
+            </p>
+        </div>
+    </section>
+
+</body>
+
+</html>
