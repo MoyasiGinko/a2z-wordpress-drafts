@@ -2537,6 +2537,767 @@
                 color: #94a3b8;
             }
         }
+
+        /* ==========================================================================
+           FOUNDER QUOTE & BIO SECTION STYLES
+           Scoped prefix: .a2z-abd-founder
+           ========================================================================== */
+
+        .a2z-abd-founder {
+            position: relative;
+            width: 100%;
+            background-color: #ffffff;
+            padding: 120px 24px 140px;
+            overflow: hidden;
+        }
+
+        .a2z-abd-founder__container {
+            position: relative;
+            z-index: 10;
+            width: 100%;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        /* 1. DESKTOP VIEW (Visible >= 900px) */
+        .a2z-abd-founder__desktop-wrap {
+            display: flex;
+            align-items: stretch;
+            position: relative;
+        }
+
+        /* Left Navy Quote Box */
+        .a2z-abd-founder__quote-card {
+            background-color: #0c253d;
+            border-radius: 12px 0 0 12px;
+            padding: 60px 52px;
+            flex: 1 1 58%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            z-index: 2;
+            box-shadow: 0 20px 50px -10px rgba(12, 37, 61, 0.3);
+        }
+
+        .a2z-abd-founder__quote-icon-top {
+            font-family: var(--a2z-abd-font-serif);
+            font-size: 48px;
+            line-height: 0.8;
+            color: var(--a2z-abd-gold-main);
+            margin-bottom: 8px;
+            user-select: none;
+        }
+
+        .a2z-abd-founder__quote-text {
+            font-family: var(--a2z-abd-font-serif);
+            font-size: clamp(1.85rem, 2.3vw, 2.25rem);
+            font-weight: 700;
+            line-height: 1.32;
+            letter-spacing: -0.015em;
+            color: #ffffff;
+            margin: 0;
+        }
+
+        .a2z-abd-founder__quote-icon-bottom {
+            font-family: var(--a2z-abd-font-serif);
+            font-size: 48px;
+            line-height: 0.8;
+            color: var(--a2z-abd-gold-main);
+            display: inline-block;
+            margin-left: 6px;
+            user-select: none;
+        }
+
+        /* Right Gold Bio Box with Offset Backing */
+        .a2z-abd-founder__bio-wrap {
+            flex: 1 1 42%;
+            position: relative;
+            z-index: 3;
+            margin-left: -10px;
+        }
+
+        .a2z-abd-founder__bio-backdrop {
+            position: absolute;
+            top: 14px;
+            left: 14px;
+            width: 100%;
+            height: 100%;
+            background-color: #dfa868;
+            border-radius: 12px;
+            z-index: 1;
+        }
+
+        .a2z-abd-founder__bio-card {
+            position: relative;
+            z-index: 2;
+            background-color: #cca05b;
+            border-radius: 12px;
+            padding: 42px 36px 46px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 16px 40px -8px rgba(204, 160, 91, 0.4);
+        }
+
+        .a2z-abd-founder__avatar {
+            width: 72px;
+            height: 72px;
+            border-radius: 10px;
+            object-fit: cover;
+            border: 2px solid #ffffff;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            margin-bottom: 18px;
+            background-color: #e2e8f0;
+        }
+
+        .a2z-abd-founder__name {
+            font-family: var(--a2z-abd-font-sans);
+            font-size: 22px;
+            font-weight: 800;
+            color: #0c253d;
+            margin: 0 0 4px;
+            letter-spacing: -0.01em;
+        }
+
+        .a2z-abd-founder__role-tag {
+            font-family: var(--a2z-abd-font-sans);
+            font-size: 11.5px;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: #0c253d;
+            margin-bottom: 2px;
+        }
+
+        .a2z-abd-founder__role-sub {
+            font-family: var(--a2z-abd-font-sans);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: #0c253d;
+            margin-bottom: 22px;
+        }
+
+        .a2z-abd-founder__bio-p {
+            font-family: var(--a2z-abd-font-sans);
+            font-size: 13.5px;
+            font-weight: 500;
+            line-height: 1.6;
+            color: #0c253d;
+            margin: 0;
+        }
+
+        /* 2. MOBILE VIEW (Visible <= 899px) */
+        .a2z-abd-founder__mobile-wrap {
+            display: none;
+        }
+
+        @media (max-width: 899px) {
+            .a2z-abd-founder {
+                padding: 70px 16px 80px;
+            }
+
+            .a2z-abd-founder__desktop-wrap {
+                display: none;
+            }
+
+            .a2z-abd-founder__mobile-wrap {
+                display: flex;
+                flex-direction: column;
+                gap: 32px;
+                max-width: 500px;
+                margin: 0 auto;
+            }
+
+            /* Mobile Profile Section */
+            .a2z-abd-founder-mobile__profile {
+                position: relative;
+                padding-left: 20px;
+            }
+
+            .a2z-abd-founder-mobile__bar {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                width: 5px;
+                background-color: #cca05b;
+                border-radius: 4px;
+            }
+
+            .a2z-abd-founder-mobile__header-row {
+                display: flex;
+                align-items: center;
+                gap: 18px;
+                margin-bottom: 20px;
+            }
+
+            .a2z-abd-founder-mobile__avatar {
+                width: 76px;
+                height: 76px;
+                border-radius: 12px;
+                object-fit: cover;
+                border: 2px solid #ffffff;
+                box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+                flex-shrink: 0;
+                background-color: #e2e8f0;
+            }
+
+            .a2z-abd-founder-mobile__titles {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .a2z-abd-founder-mobile__name {
+                font-family: var(--a2z-abd-font-sans);
+                font-size: 21px;
+                font-weight: 800;
+                color: #0c253d;
+                margin: 0 0 4px;
+            }
+
+            .a2z-abd-founder-mobile__role {
+                font-family: var(--a2z-abd-font-sans);
+                font-size: 11.5px;
+                font-weight: 800;
+                letter-spacing: 0.08em;
+                text-transform: uppercase;
+                color: #0c253d;
+                margin-bottom: 2px;
+            }
+
+            .a2z-abd-founder-mobile__sub {
+                font-family: var(--a2z-abd-font-sans);
+                font-size: 11px;
+                font-weight: 700;
+                letter-spacing: 0.08em;
+                text-transform: uppercase;
+                color: #0c253d;
+            }
+
+            .a2z-abd-founder-mobile__bio {
+                font-family: var(--a2z-abd-font-sans);
+                font-size: 14.5px;
+                font-weight: 500;
+                line-height: 1.58;
+                color: #2b3847;
+                margin: 0;
+            }
+
+            /* Mobile Quote Card */
+            .a2z-abd-founder-mobile__quote-card {
+                background-color: #cca05b;
+                border-radius: 18px;
+                padding: 36px 26px 44px;
+                position: relative;
+                box-shadow: 0 16px 40px -8px rgba(204, 160, 91, 0.4);
+            }
+
+            .a2z-abd-founder-mobile__quote-icon {
+                font-family: var(--a2z-abd-font-serif);
+                font-size: 42px;
+                line-height: 0.8;
+                color: #ffffff;
+                margin-bottom: 12px;
+            }
+
+            .a2z-abd-founder-mobile__quote-text {
+                font-family: var(--a2z-abd-font-serif);
+                font-size: 22px;
+                font-weight: 700;
+                line-height: 1.35;
+                color: #0c253d;
+                margin: 0;
+            }
+
+            .a2z-abd-founder-mobile__dot {
+                position: absolute;
+                bottom: 20px;
+                right: 22px;
+                width: 18px;
+                height: 18px;
+                background-color: #ffffff;
+                border-radius: 50%;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+            }
+        }
+
+        /* ==========================================================================
+           SWITCHING PROCESS SECTION STYLES
+           Scoped prefix: .a2z-abd-switch
+           ========================================================================== */
+
+        .a2z-abd-switch {
+            position: relative;
+            width: 100%;
+            background-color: #0c2136;
+            padding: 130px 24px 160px;
+            overflow: hidden;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .a2z-abd-switch__container {
+            position: relative;
+            z-index: 10;
+            width: 100%;
+            max-width: 1140px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        .a2z-abd-switch__header {
+            text-align: center;
+            max-width: 820px;
+            margin: 0 auto 80px;
+        }
+
+        .a2z-abd-switch__tag {
+            display: inline-block;
+            font-family: var(--a2z-abd-font-sans);
+            font-size: 13.5px;
+            font-weight: 800;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--a2z-abd-gold-main);
+            margin-bottom: 16px;
+        }
+
+        .a2z-abd-switch__title {
+            font-family: var(--a2z-abd-font-serif);
+            font-size: clamp(2.45rem, 4.8vw, 4.25rem);
+            font-weight: 700;
+            line-height: 1.15;
+            letter-spacing: -0.015em;
+            color: var(--a2z-abd-text-white);
+            margin-bottom: 20px;
+            text-shadow: 0 2px 20px rgba(0, 0, 0, 0.6);
+        }
+
+        .a2z-abd-switch__title-italic {
+            font-family: var(--a2z-abd-font-serif);
+            font-weight: 500;
+            font-style: italic;
+            color: var(--a2z-abd-gold-main);
+            letter-spacing: -0.008em;
+            display: inline-block;
+        }
+
+        .a2z-abd-switch__desc {
+            font-family: var(--a2z-abd-font-sans);
+            font-size: clamp(1.02rem, 1.2vw, 1.15rem);
+            font-weight: 400;
+            line-height: 1.62;
+            color: #d1dced;
+            max-width: 720px;
+            margin: 0 auto;
+            text-shadow: 0 1px 8px rgba(0, 0, 0, 0.4);
+        }
+
+        /* 1. DESKTOP TIMELINE (Visible >= 769px) */
+        .a2z-abd-switch__timeline-desktop {
+            position: relative;
+            width: 100%;
+            max-width: 1040px;
+            margin: 0 auto;
+            min-height: 220px;
+        }
+
+        .a2z-abd-switch__wave-svg {
+            position: absolute;
+            top: 38px;
+            left: 8%;
+            width: 84%;
+            height: 120px;
+            z-index: 1;
+            pointer-events: none;
+            overflow: visible;
+        }
+
+        .a2z-abd-switch__nodes-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .a2z-abd-switch-node {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .a2z-abd-switch-node:hover {
+            transform: translateY(-4px);
+        }
+
+        /* Staggered Heights (Wave shape) */
+        .a2z-abd-switch-node--1 {
+            margin-top: 0;
+        }
+
+        .a2z-abd-switch-node--2 {
+            margin-top: 55px;
+        }
+
+        .a2z-abd-switch-node--3 {
+            margin-top: 0;
+        }
+
+        .a2z-abd-switch-node--4 {
+            margin-top: 55px;
+        }
+
+        .a2z-abd-switch-node__circle {
+            width: 76px;
+            height: 76px;
+            background-color: #ffffff;
+            border: 2.5px solid #cca05b;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+            margin-bottom: 18px;
+            flex-shrink: 0;
+        }
+
+        .a2z-abd-switch-node__num {
+            font-family: var(--a2z-abd-font-sans);
+            font-size: 24px;
+            font-weight: 800;
+            color: #cca05b;
+            line-height: 1;
+        }
+
+        .a2z-abd-switch-node__text {
+            font-family: var(--a2z-abd-font-sans);
+            font-size: 16.5px;
+            font-weight: 600;
+            line-height: 1.35;
+            color: #ffffff;
+            max-width: 170px;
+            margin: 0;
+            text-shadow: 0 1px 8px rgba(0, 0, 0, 0.4);
+        }
+
+        /* 2. MOBILE TIMELINE (Visible <= 768px) */
+        .a2z-abd-switch__timeline-mobile {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .a2z-abd-switch {
+                padding: 75px 16px 85px;
+            }
+
+            .a2z-abd-switch__header {
+                margin-bottom: 50px;
+            }
+
+            .a2z-abd-switch__tag {
+                font-size: 12px;
+                margin-bottom: 12px;
+            }
+
+            .a2z-abd-switch__title {
+                font-size: 2.25rem;
+                margin-bottom: 16px;
+            }
+
+            .a2z-abd-switch__desc {
+                font-size: 14.5px;
+                line-height: 1.55;
+            }
+
+            .a2z-abd-switch__timeline-desktop {
+                display: none;
+            }
+
+            .a2z-abd-switch__timeline-mobile {
+                display: block;
+                position: relative;
+                max-width: 360px;
+                margin: 0 auto;
+                padding: 10px 0;
+            }
+
+            /* Central Vertical Gold Line */
+            .a2z-abd-switch-mobile__line {
+                position: absolute;
+                top: 38px;
+                bottom: 38px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 2px;
+                background-color: #cca05b;
+                z-index: 1;
+            }
+
+            /* Alternating Step Rows */
+            .a2z-abd-switch-mobile__row {
+                display: grid;
+                grid-template-columns: 1fr 76px 1fr;
+                align-items: center;
+                gap: 16px;
+                margin-bottom: 42px;
+                position: relative;
+                z-index: 2;
+            }
+
+            .a2z-abd-switch-mobile__row:last-child {
+                margin-bottom: 0;
+            }
+
+            .a2z-abd-switch-mobile__circle {
+                width: 76px;
+                height: 76px;
+                background-color: #ffffff;
+                border: 2.5px solid #cca05b;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+                margin: 0 auto;
+                grid-column: 2;
+            }
+
+            .a2z-abd-switch-mobile__num {
+                font-family: var(--a2z-abd-font-sans);
+                font-size: 24px;
+                font-weight: 800;
+                color: #cca05b;
+                line-height: 1;
+            }
+
+            .a2z-abd-switch-mobile__text {
+                font-family: var(--a2z-abd-font-sans);
+                font-size: 16px;
+                font-weight: 600;
+                line-height: 1.35;
+                color: #ffffff;
+                margin: 0;
+            }
+
+            .a2z-abd-switch-mobile__text--left {
+                grid-column: 1;
+                text-align: right;
+            }
+
+            .a2z-abd-switch-mobile__text--right {
+                grid-column: 3;
+                text-align: left;
+            }
+        }
+
+        /* ==========================================================================
+           FAQ ACCORDION SECTION STYLES
+           Scoped prefix: .a2z-abd-faq / .a2z-abd-faq-item
+           ========================================================================== */
+
+        .a2z-abd-faq {
+            position: relative;
+            width: 100%;
+            background-color: #ffffff;
+            padding: 120px 24px 130px;
+            overflow: hidden;
+        }
+
+        .a2z-abd-faq__container {
+            position: relative;
+            z-index: 10;
+            width: 100%;
+            max-width: 860px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        .a2z-abd-faq__header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .a2z-abd-faq__title {
+            font-family: var(--a2z-abd-font-serif);
+            font-size: clamp(2.45rem, 4.6vw, 4.15rem);
+            font-weight: 700;
+            line-height: 1.15;
+            letter-spacing: -0.015em;
+            color: var(--a2z-abd-navy-deep);
+            margin: 0;
+        }
+
+        .a2z-abd-faq__title-italic {
+            font-family: var(--a2z-abd-font-serif);
+            font-weight: 500;
+            font-style: italic;
+            color: var(--a2z-abd-gold-main);
+            letter-spacing: -0.008em;
+            display: block;
+            margin-top: 4px;
+        }
+
+        /* FAQ List */
+        .a2z-abd-faq__list {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            margin-bottom: 40px;
+        }
+
+        /* Accordion Item */
+        .a2z-abd-faq-item {
+            background-color: #ffffff;
+            border: 1px solid #eef2f6;
+            border-radius: 10px;
+            box-shadow: 0 4px 18px rgba(12, 37, 61, 0.035);
+            transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+            overflow: hidden;
+        }
+
+        .a2z-abd-faq-item:hover {
+            border-color: rgba(204, 160, 91, 0.45);
+            box-shadow: 0 8px 26px rgba(12, 37, 61, 0.06);
+            transform: translateY(-1px);
+        }
+
+        /* Question Trigger */
+        .a2z-abd-faq-item__question {
+            padding: 22px 28px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 18px;
+            cursor: pointer;
+            user-select: none;
+            background: none;
+            border: none;
+            width: 100%;
+            text-align: left;
+        }
+
+        .a2z-abd-faq-item__q-text {
+            font-family: var(--a2z-abd-font-sans);
+            font-size: 16.5px;
+            font-weight: 500;
+            line-height: 1.45;
+            color: #0d2840;
+            margin: 0;
+        }
+
+        .a2z-abd-faq-item__icon {
+            font-family: var(--a2z-abd-font-sans);
+            font-size: 24px;
+            font-weight: 400;
+            line-height: 1;
+            color: #cca05b;
+            flex-shrink: 0;
+            transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+
+        /* Answer */
+        .a2z-abd-faq-item__answer {
+            padding: 0 28px 22px;
+            display: none;
+        }
+
+        .a2z-abd-faq-item.is-open .a2z-abd-faq-item__answer {
+            display: block;
+        }
+
+        .a2z-abd-faq-item.is-open .a2z-abd-faq-item__icon {
+            transform: rotate(45deg);
+        }
+
+        .a2z-abd-faq-item__a-text {
+            font-family: var(--a2z-abd-font-sans);
+            font-size: 15px;
+            font-weight: 400;
+            line-height: 1.62;
+            color: #4a5568;
+            margin: 0;
+        }
+
+        /* Bottom CTA */
+        .a2z-abd-faq__cta {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .a2z-abd-faq__btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #cca05b;
+            color: #0c253d;
+            font-family: var(--a2z-abd-font-sans);
+            font-size: 13.5px;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            padding: 14px 36px;
+            border-radius: 6px;
+            text-decoration: none;
+            box-shadow: 0 4px 18px rgba(204, 160, 91, 0.35);
+            transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+
+        .a2z-abd-faq__btn:hover {
+            background-color: #d8aa63;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(204, 160, 91, 0.5);
+        }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 768px) {
+            .a2z-abd-faq {
+                padding: 70px 16px 80px;
+            }
+
+            .a2z-abd-faq__header {
+                margin-bottom: 36px;
+            }
+
+            .a2z-abd-faq__title {
+                font-size: 2.15rem;
+            }
+
+            .a2z-abd-faq__list {
+                gap: 12px;
+                margin-bottom: 32px;
+            }
+
+            .a2z-abd-faq-item__question {
+                padding: 18px 20px;
+            }
+
+            .a2z-abd-faq-item__q-text {
+                font-size: 15px;
+            }
+
+            .a2z-abd-faq-item__icon {
+                font-size: 22px;
+            }
+
+            .a2z-abd-faq-item__answer {
+                padding: 0 20px 18px;
+            }
+
+            .a2z-abd-faq-item__a-text {
+                font-size: 14px;
+            }
+
+            .a2z-abd-faq__btn {
+                padding: 13px 30px;
+                font-size: 13px;
+            }
+        }
     </style>
 </head>
 
@@ -3838,6 +4599,307 @@
             </div>
         </div>
     </section>
+
+    <!-- ==========================================================================
+         FOUNDER QUOTE & LEADERSHIP SECTION: SHABBIR RAHMAN
+         ========================================================================== -->
+    <section class="a2z-abd-founder" id="aberdeen-founder" aria-label="Founder and Leadership">
+        <div class="a2z-abd-founder__container">
+            <!-- 1. DESKTOP VIEW: Interlocking Dual-Card (>= 900px) -->
+            <div class="a2z-abd-founder__desktop-wrap">
+                <!-- Left Card: Deep Navy Quote Box -->
+                <div class="a2z-abd-founder__quote-card">
+                    <span class="a2z-abd-founder__quote-icon-top">“</span>
+                    <blockquote class="a2z-abd-founder__quote-text">
+                        I oversee the standard on every client engagement myself. When something carries our name, it has to be right – and it has to be useful to you.<span class="a2z-abd-founder__quote-icon-bottom">„</span>
+                    </blockquote>
+                </div>
+
+                <!-- Right Card: Warm Gold Founder Bio Card with Offset Backing -->
+                <div class="a2z-abd-founder__bio-wrap">
+                    <div class="a2z-abd-founder__bio-backdrop" aria-hidden="true"></div>
+                    <div class="a2z-abd-founder__bio-card">
+                        <img 
+                            src="https://a2zaccounting.co.uk/wp-content/uploads/2026/04/srahman.png" 
+                            alt="Shabbir Rahman, Founder & CEO of A2Z Accounting Solutions" 
+                            class="a2z-abd-founder__avatar"
+                            width="72"
+                            height="72"
+                            loading="lazy"
+                        >
+                        <h3 class="a2z-abd-founder__name">Shabbir Rahman</h3>
+                        <span class="a2z-abd-founder__role-tag">FOUNDER AND CEO</span>
+                        <span class="a2z-abd-founder__role-sub">CHARTERED CERTIFIED ACCOUNTANT</span>
+                        <p class="a2z-abd-founder__bio-p">
+                            Shabbir built his early career in corporate finance at a multibillion-pound international group, working to top-tier audit standards, and is an Economics honours graduate of the University of Aberdeen. He founded A2Z to bring that same rigour to the owner-managed businesses the big firms overlook.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. MOBILE VIEW: Stacked Profile & Gold Quote Card (<= 899px) -->
+            <div class="a2z-abd-founder__mobile-wrap">
+                <!-- Mobile Top: Profile Section with Gold Accent Bar -->
+                <div class="a2z-abd-founder-mobile__profile">
+                    <div class="a2z-abd-founder-mobile__bar" aria-hidden="true"></div>
+                    <div class="a2z-abd-founder-mobile__header-row">
+                        <img 
+                            src="https://a2zaccounting.co.uk/wp-content/uploads/2026/04/srahman.png" 
+                            alt="Shabbir Rahman, Founder & CEO of A2Z Accounting Solutions" 
+                            class="a2z-abd-founder-mobile__avatar"
+                            width="76"
+                            height="76"
+                            loading="lazy"
+                        >
+                        <div class="a2z-abd-founder-mobile__titles">
+                            <h3 class="a2z-abd-founder-mobile__name">Shabbir Rahman</h3>
+                            <span class="a2z-abd-founder-mobile__role">FOUNDER AND CEO</span>
+                            <span class="a2z-abd-founder-mobile__sub">CHARTERED CERTIFIED ACCOUNTANT</span>
+                        </div>
+                    </div>
+                    <p class="a2z-abd-founder-mobile__bio">
+                        Shabbir built his early career in corporate finance at a multibillion-pound international group, working to top-tier audit standards, and is an Economics honours graduate of the University of Aberdeen. He founded A2Z to bring that same rigour to the owner-managed businesses the big firms overlook.
+                    </p>
+                </div>
+
+                <!-- Mobile Bottom: Warm Gold Quote Card -->
+                <div class="a2z-abd-founder-mobile__quote-card">
+                    <div class="a2z-abd-founder-mobile__quote-icon">“</div>
+                    <blockquote class="a2z-abd-founder-mobile__quote-text">
+                        I oversee the standard on every client engagement myself. When something carries our name, it has to be right - and it has to be useful to you.
+                    </blockquote>
+                    <div class="a2z-abd-founder-mobile__dot" aria-hidden="true"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         SWITCHING PROCESS SECTION: SWITCHING TAKES A WEEK
+         ========================================================================== -->
+    <section class="a2z-abd-switch" id="aberdeen-switch" aria-label="Switching is Easier Than You Think">
+        <div class="a2z-abd-switch__container">
+            <!-- Section Header -->
+            <div class="a2z-abd-switch__header">
+                <span class="a2z-abd-switch__tag">SWITCHING IS EASIER THAN YOU THINK</span>
+                <h2 class="a2z-abd-switch__title">
+                    Switching takes <span class="a2z-abd-switch__title-italic">a week</span>
+                </h2>
+                <p class="a2z-abd-switch__desc">
+                    Changing accountant sounds like a chore, so we do the heavy lifting. No gap in your filings, no awkward conversations - most clients are moved across within a week and looked after from day one.
+                </p>
+            </div>
+
+            <!-- 1. DESKTOP TIMELINE (Visible >= 769px) -->
+            <div class="a2z-abd-switch__timeline-desktop">
+                <!-- SVG Wave Line connecting the 4 circles -->
+                <svg class="a2z-abd-switch__wave-svg" viewBox="0 0 900 120" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                    <path d="M 50 38 C 160 38, 200 93, 310 93 C 420 93, 460 38, 570 38 C 680 38, 720 93, 850 93" stroke="#cca05b" stroke-width="1.8" stroke-dasharray="none" opacity="0.6" />
+                </svg>
+
+                <div class="a2z-abd-switch__nodes-grid">
+                    <!-- Step 01 -->
+                    <div class="a2z-abd-switch-node a2z-abd-switch-node--1">
+                        <div class="a2z-abd-switch-node__circle">
+                            <span class="a2z-abd-switch-node__num">01</span>
+                        </div>
+                        <h3 class="a2z-abd-switch-node__text">We have a proper chat</h3>
+                    </div>
+
+                    <!-- Step 02 -->
+                    <div class="a2z-abd-switch-node a2z-abd-switch-node--2">
+                        <div class="a2z-abd-switch-node__circle">
+                            <span class="a2z-abd-switch-node__num">02</span>
+                        </div>
+                        <h3 class="a2z-abd-switch-node__text">You get a fixed proposal</h3>
+                    </div>
+
+                    <!-- Step 03 -->
+                    <div class="a2z-abd-switch-node a2z-abd-switch-node--3">
+                        <div class="a2z-abd-switch-node__circle">
+                            <span class="a2z-abd-switch-node__num">03</span>
+                        </div>
+                        <h3 class="a2z-abd-switch-node__text">We handle the handover</h3>
+                    </div>
+
+                    <!-- Step 04 -->
+                    <div class="a2z-abd-switch-node a2z-abd-switch-node--4">
+                        <div class="a2z-abd-switch-node__circle">
+                            <span class="a2z-abd-switch-node__num">04</span>
+                        </div>
+                        <h3 class="a2z-abd-switch-node__text">Proactive support begins</h3>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. MOBILE TIMELINE (Visible <= 768px) -->
+            <div class="a2z-abd-switch__timeline-mobile">
+                <!-- Vertical Central Line -->
+                <div class="a2z-abd-switch-mobile__line" aria-hidden="true"></div>
+
+                <!-- Step 01 (Text Left) -->
+                <div class="a2z-abd-switch-mobile__row">
+                    <p class="a2z-abd-switch-mobile__text a2z-abd-switch-mobile__text--left">
+                        We have a<br>proper chat
+                    </p>
+                    <div class="a2z-abd-switch-mobile__circle">
+                        <span class="a2z-abd-switch-mobile__num">01</span>
+                    </div>
+                </div>
+
+                <!-- Step 02 (Text Right) -->
+                <div class="a2z-abd-switch-mobile__row">
+                    <div class="a2z-abd-switch-mobile__circle">
+                        <span class="a2z-abd-switch-mobile__num">02</span>
+                    </div>
+                    <p class="a2z-abd-switch-mobile__text a2z-abd-switch-mobile__text--right">
+                        You get a fixed<br>proposal
+                    </p>
+                </div>
+
+                <!-- Step 03 (Text Left) -->
+                <div class="a2z-abd-switch-mobile__row">
+                    <p class="a2z-abd-switch-mobile__text a2z-abd-switch-mobile__text--left">
+                        We handle<br>the handover
+                    </p>
+                    <div class="a2z-abd-switch-mobile__circle">
+                        <span class="a2z-abd-switch-mobile__num">03</span>
+                    </div>
+                </div>
+
+                <!-- Step 04 (Text Right) -->
+                <div class="a2z-abd-switch-mobile__row">
+                    <div class="a2z-abd-switch-mobile__circle">
+                        <span class="a2z-abd-switch-mobile__num">04</span>
+                    </div>
+                    <p class="a2z-abd-switch-mobile__text a2z-abd-switch-mobile__text--right">
+                        Proactive<br>support begins
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         FAQ SECTION: QUESTIONS WE GET ASKED THE MOST
+         ========================================================================== -->
+    <section class="a2z-abd-faq" id="aberdeen-faq" aria-label="Frequently Asked Questions">
+        <div class="a2z-abd-faq__container">
+            <!-- Section Header -->
+            <div class="a2z-abd-faq__header">
+                <h2 class="a2z-abd-faq__title">
+                    Questions We Get
+                    <span class="a2z-abd-faq__title-italic">Asked The Most</span>
+                </h2>
+            </div>
+
+            <!-- FAQ List (5 Accordion Cards) -->
+            <div class="a2z-abd-faq__list">
+                <!-- Question 1 -->
+                <div class="a2z-abd-faq-item">
+                    <button type="button" class="a2z-abd-faq-item__question" aria-expanded="false">
+                        <span class="a2z-abd-faq-item__q-text">Do I have to be in Aberdeen to work with you?</span>
+                        <span class="a2z-abd-faq-item__icon">+</span>
+                    </button>
+                    <div class="a2z-abd-faq-item__answer">
+                        <p class="a2z-abd-faq-item__a-text">
+                            No, not at all. While our primary office is located right in the heart of Aberdeen on Union Street and we take great pride in supporting local Aberdeenshire businesses, our cloud-native setup (Xero, QuickBooks, digital onboarding) allows us to serve ambitious business owners seamlessly right across Scotland and the entire UK.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Question 2 -->
+                <div class="a2z-abd-faq-item">
+                    <button type="button" class="a2z-abd-faq-item__question" aria-expanded="false">
+                        <span class="a2z-abd-faq-item__q-text">Which areas do you cover?</span>
+                        <span class="a2z-abd-faq-item__icon">+</span>
+                    </button>
+                    <div class="a2z-abd-faq-item__answer">
+                        <p class="a2z-abd-faq-item__a-text">
+                            We cover the whole of Aberdeen City and Aberdeenshire — including Westhill, Dyce, Bridge of Don, Kingswells, Stonehaven, Inverurie, Ellon, Peterhead, and Banchory — alongside client engagements throughout Scotland and the rest of the UK.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Question 3 -->
+                <div class="a2z-abd-faq-item">
+                    <button type="button" class="a2z-abd-faq-item__question" aria-expanded="false">
+                        <span class="a2z-abd-faq-item__q-text">Do you offer face-to-face meetings?</span>
+                        <span class="a2z-abd-faq-item__icon">+</span>
+                    </button>
+                    <div class="a2z-abd-faq-item__answer">
+                        <p class="a2z-abd-faq-item__a-text">
+                            Yes, absolutely. We welcome face-to-face meetings anytime at our office on Union Street in Aberdeen. If you prefer or are based further afield, we also offer convenient, secure video consultations and direct phone access whenever you need us.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Question 4 -->
+                <div class="a2z-abd-faq-item">
+                    <button type="button" class="a2z-abd-faq-item__question" aria-expanded="false">
+                        <span class="a2z-abd-faq-item__q-text">How much does an accountant in Aberdeen cost?</span>
+                        <span class="a2z-abd-faq-item__icon">+</span>
+                    </button>
+                    <div class="a2z-abd-faq-item__answer">
+                        <p class="a2z-abd-faq-item__a-text">
+                            Our transparent, all-inclusive monthly packages start from £105+VAT/month for company essentials, £125+VAT/month with director payroll, and £245+VAT/month for complete support with quarterly bookkeeping. Every package is agreed in advance in writing with zero surprise bills.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Question 5 -->
+                <div class="a2z-abd-faq-item">
+                    <button type="button" class="a2z-abd-faq-item__question" aria-expanded="false">
+                        <span class="a2z-abd-faq-item__q-text">Which accounting software do you work with?</span>
+                        <span class="a2z-abd-faq-item__icon">+</span>
+                    </button>
+                    <div class="a2z-abd-faq-item__answer">
+                        <p class="a2z-abd-faq-item__a-text">
+                            We are certified advisor partners in Xero, QuickBooks Online, FreeAgent, Dext, and standard industry tools. We can also handle the complete migration from spreadsheets or older desktop systems at no disruption to your daily operations.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom CTA Button -->
+            <div class="a2z-abd-faq__cta">
+                <a href="#all-faqs" class="a2z-abd-faq__btn" id="btn-faq-see-all">
+                    SEE ALL
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Accordion Interactive Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const faqItems = document.querySelectorAll('.a2z-abd-faq-item');
+            faqItems.forEach(item => {
+                const button = item.querySelector('.a2z-abd-faq-item__question');
+                button.addEventListener('click', () => {
+                    const isOpen = item.classList.contains('is-open');
+                    
+                    // Close others (accordion style)
+                    faqItems.forEach(other => {
+                        if (other !== item) {
+                            other.classList.remove('is-open');
+                            const otherBtn = other.querySelector('.a2z-abd-faq-item__question');
+                            if (otherBtn) otherBtn.setAttribute('aria-expanded', 'false');
+                        }
+                    });
+
+                    // Toggle current
+                    if (isOpen) {
+                        item.classList.remove('is-open');
+                        button.setAttribute('aria-expanded', 'false');
+                    } else {
+                        item.classList.add('is-open');
+                        button.setAttribute('aria-expanded', 'true');
+                    }
+                });
+            });
+        });
+    </script>
 
 </body>
 
