@@ -2304,6 +2304,239 @@
                 font-size: 13px;
             }
         }
+
+        /* ==========================================================================
+           EVERYTHING HANDLED SECTION STYLES
+           Scoped prefix: .a2z-abd-handled
+           ========================================================================== */
+
+        .a2z-abd-handled {
+            position: relative;
+            width: 100%;
+            background-color: #0c2136;
+            padding: 130px 24px 150px;
+            overflow: hidden;
+        }
+
+        /* Ambient Office Scene Background SVG Graphic */
+        .a2z-abd-handled__bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+            opacity: 0.18;
+        }
+
+        .a2z-abd-handled__bg-svg {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .a2z-abd-handled__container {
+            position: relative;
+            z-index: 10;
+            width: 100%;
+            max-width: 1240px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        .a2z-abd-handled__header {
+            text-align: center;
+            max-width: 820px;
+            margin: 0 auto 70px;
+        }
+
+        .a2z-abd-handled__pill-tag {
+            display: inline-block;
+            background-color: #ffffff;
+            color: #0c253d;
+            font-family: var(--a2z-abd-font-sans);
+            font-size: 11.5px;
+            font-weight: 800;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            padding: 6px 20px;
+            border-radius: 4px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+            margin-bottom: 22px;
+        }
+
+        .a2z-abd-handled__title {
+            font-family: var(--a2z-abd-font-serif);
+            font-size: clamp(2.5rem, 5vw, 4.35rem);
+            font-weight: 700;
+            line-height: 1.15;
+            letter-spacing: -0.015em;
+            color: var(--a2z-abd-text-white);
+            margin-bottom: 20px;
+            text-shadow: 0 2px 20px rgba(0, 0, 0, 0.6);
+        }
+
+        .a2z-abd-handled__title-italic {
+            font-family: var(--a2z-abd-font-serif);
+            font-weight: 500;
+            font-style: italic;
+            color: var(--a2z-abd-gold-main);
+            letter-spacing: -0.008em;
+            display: inline-block;
+        }
+
+        .a2z-abd-handled__desc {
+            font-family: var(--a2z-abd-font-sans);
+            font-size: clamp(1.02rem, 1.2vw, 1.15rem);
+            font-weight: 400;
+            line-height: 1.62;
+            color: #d1dced;
+            max-width: 680px;
+            margin: 0 auto;
+            text-shadow: 0 1px 8px rgba(0, 0, 0, 0.4);
+        }
+
+        /* 3-Column Grid */
+        .a2z-abd-handled__grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 46px 40px;
+        }
+
+        /* Service Item (Desktop) */
+        .a2z-abd-handled-item {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            padding-top: 24px;
+            border-top: 1px solid rgba(255, 255, 255, 0.12);
+        }
+
+        .a2z-abd-handled-item__header-wrap {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .a2z-abd-handled-item__icon {
+            width: 22px;
+            height: 22px;
+            stroke: var(--a2z-abd-gold-main);
+            stroke-width: 2.2;
+            fill: none;
+            flex-shrink: 0;
+            margin-top: 4px;
+        }
+
+        .a2z-abd-handled-item__title {
+            font-family: var(--a2z-abd-font-serif);
+            font-size: 21px;
+            font-weight: 700;
+            line-height: 1.25;
+            color: #ffffff;
+            margin: 0;
+        }
+
+        .a2z-abd-handled-item__desc {
+            font-family: var(--a2z-abd-font-sans);
+            font-size: 15px;
+            font-weight: 400;
+            line-height: 1.58;
+            color: #cbd5e1;
+            margin: 0;
+        }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 1024px) {
+            .a2z-abd-handled {
+                padding: 95px 20px 110px;
+            }
+
+            .a2z-abd-handled__grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 36px 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .a2z-abd-handled {
+                padding: 75px 16px 85px;
+            }
+
+            .a2z-abd-handled__header {
+                margin-bottom: 45px;
+            }
+
+            .a2z-abd-handled__pill-tag {
+                font-size: 11px;
+                padding: 5px 16px;
+                margin-bottom: 16px;
+            }
+
+            .a2z-abd-handled__title {
+                font-size: 2.25rem;
+                margin-bottom: 16px;
+            }
+
+            .a2z-abd-handled__desc {
+                font-size: 14.5px;
+                line-height: 1.55;
+            }
+
+            /* Mobile Card Transformation matching Mobile Image */
+            .a2z-abd-handled__grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+                max-width: 520px;
+                margin: 0 auto;
+            }
+
+            .a2z-abd-handled-item {
+                background: rgba(255, 255, 255, 0.04);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                border-radius: 12px;
+                padding: 24px 20px;
+                backdrop-filter: blur(8px);
+                -webkit-backdrop-filter: blur(8px);
+                box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+            }
+
+            .a2z-abd-handled-item__header-wrap {
+                flex-direction: column;
+                gap: 16px;
+                margin-bottom: 12px;
+            }
+
+            .a2z-abd-handled-item__icon-box {
+                width: 44px;
+                height: 44px;
+                background-color: rgba(255, 255, 255, 0.08);
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-shrink: 0;
+            }
+
+            .a2z-abd-handled-item__icon {
+                width: 20px;
+                height: 20px;
+                stroke: #ffffff;
+                margin-top: 0;
+            }
+
+            .a2z-abd-handled-item__title {
+                font-size: 19px;
+            }
+
+            .a2z-abd-handled-item__desc {
+                font-size: 14px;
+                line-height: 1.5;
+                color: #94a3b8;
+            }
+        }
     </style>
 </head>
 
@@ -3458,6 +3691,149 @@
                     <div class="a2z-abd-fit-card__note">
                         We are happy to recommend excellent firms if you fall into these categories.
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         EVERYTHING IN ONE PLACE SECTION: EVERYTHING, HANDLED
+         ========================================================================== -->
+    <section class="a2z-abd-handled" id="aberdeen-services" aria-label="Everything Handled">
+        <!-- Ambient Background Scene SVG Graphic -->
+        <div class="a2z-abd-handled__bg" aria-hidden="true">
+            <svg class="a2z-abd-handled__bg-svg" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+                <!-- Aberdeen Office Reception Illustration -->
+                <rect width="1600" height="900" fill="#081b2d" />
+                <path d="M0,0 L1600,0 L1600,900 L0,900 Z" fill="radial-gradient(circle at 50% 50%, #0d2840 0%, #061523 100%)" />
+                <!-- Office architectural pillars & panelling -->
+                <rect x="150" y="100" width="300" height="800" rx="10" fill="#0d2944" opacity="0.35" />
+                <rect x="1150" y="100" width="300" height="800" rx="10" fill="#0d2944" opacity="0.35" />
+                <rect x="520" y="320" width="560" height="580" rx="18" fill="#0a2238" opacity="0.45" />
+                <ellipse cx="800" cy="400" rx="200" ry="25" fill="#dfa868" opacity="0.08" />
+            </svg>
+        </div>
+
+        <div class="a2z-abd-handled__container">
+            <!-- Section Header -->
+            <div class="a2z-abd-handled__header">
+                <span class="a2z-abd-handled__pill-tag">EVERYTHING IN ONE PLACE</span>
+                <h2 class="a2z-abd-handled__title">
+                    Everything, <span class="a2z-abd-handled__title-italic">handled</span>
+                </h2>
+                <p class="a2z-abd-handled__desc">
+                    One firm for the compliance and the thinking behind it - all from people who already know your business.
+                </p>
+            </div>
+
+            <!-- 6 Services Grid (3 Columns Desktop, 1 Column Mobile) -->
+            <div class="a2z-abd-handled__grid">
+                <!-- Service 1: Company accounts and Corporation Tax -->
+                <div class="a2z-abd-handled-item">
+                    <div class="a2z-abd-handled-item__header-wrap">
+                        <div class="a2z-abd-handled-item__icon-box">
+                            <svg class="a2z-abd-handled-item__icon" viewBox="0 0 24 24">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                                <polyline points="14 2 14 8 20 8" />
+                                <line x1="16" y1="13" x2="8" y2="13" />
+                                <line x1="16" y1="17" x2="8" y2="17" />
+                                <line x1="10" y1="9" x2="8" y2="9" />
+                            </svg>
+                        </div>
+                        <h3 class="a2z-abd-handled-item__title">Company accounts and Corporation Tax</h3>
+                    </div>
+                    <p class="a2z-abd-handled-item__desc">
+                        Year-end accounts and CT600, filed on time with every relief claimed.
+                    </p>
+                </div>
+
+                <!-- Service 2: VAT and bookkeeping -->
+                <div class="a2z-abd-handled-item">
+                    <div class="a2z-abd-handled-item__header-wrap">
+                        <div class="a2z-abd-handled-item__icon-box">
+                            <svg class="a2z-abd-handled-item__icon" viewBox="0 0 24 24">
+                                <rect x="2" y="3" width="20" height="18" rx="2" />
+                                <line x1="2" y1="9" x2="22" y2="9" />
+                                <line x1="8" y1="15" x2="16" y2="15" />
+                                <line x1="12" y1="12" x2="12" y2="18" />
+                            </svg>
+                        </div>
+                        <h3 class="a2z-abd-handled-item__title">VAT and bookkeeping</h3>
+                    </div>
+                    <p class="a2z-abd-handled-item__desc">
+                        MTD bookkeeping in Xero or QuickBooks, every VAT return reviewed before filing.
+                    </p>
+                </div>
+
+                <!-- Service 3: Management accounts and advisory -->
+                <div class="a2z-abd-handled-item">
+                    <div class="a2z-abd-handled-item__header-wrap">
+                        <div class="a2z-abd-handled-item__icon-box">
+                            <svg class="a2z-abd-handled-item__icon" viewBox="0 0 24 24">
+                                <polyline points="22 7 13.5 15.5 8.5 10.5 2 17" />
+                                <polyline points="16 7 22 7 22 13" />
+                            </svg>
+                        </div>
+                        <h3 class="a2z-abd-handled-item__title">Management accounts and advisory</h3>
+                    </div>
+                    <p class="a2z-abd-handled-item__desc">
+                        Profit, margin and cashflow in plain terms - figures you can actually steer by.
+                    </p>
+                </div>
+
+                <!-- Service 4: Self assessment -->
+                <div class="a2z-abd-handled-item">
+                    <div class="a2z-abd-handled-item__header-wrap">
+                        <div class="a2z-abd-handled-item__icon-box">
+                            <svg class="a2z-abd-handled-item__icon" viewBox="0 0 24 24">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                                <circle cx="12" cy="7" r="4" />
+                            </svg>
+                        </div>
+                        <h3 class="a2z-abd-handled-item__title">Self assessment</h3>
+                    </div>
+                    <p class="a2z-abd-handled-item__desc">
+                        Director and personal returns - dividends and deadlines handled, no January surprises.
+                    </p>
+                </div>
+
+                <!-- Service 5: Payroll and CIS -->
+                <div class="a2z-abd-handled-item">
+                    <div class="a2z-abd-handled-item__header-wrap">
+                        <div class="a2z-abd-handled-item__icon-box">
+                            <svg class="a2z-abd-handled-item__icon" viewBox="0 0 24 24">
+                                <rect x="2" y="6" width="20" height="12" rx="2" />
+                                <circle cx="12" cy="12" r="2.5" />
+                                <path d="M6 12h.01M18 12h.01" />
+                            </svg>
+                        </div>
+                        <h3 class="a2z-abd-handled-item__title">Payroll and CIS</h3>
+                    </div>
+                    <p class="a2z-abd-handled-item__desc">
+                        Staff, directors and subcontractors paid right - PAYE, pensions and CIS each month.
+                    </p>
+                </div>
+
+                <!-- Service 6: Tax planning and structure -->
+                <div class="a2z-abd-handled-item">
+                    <div class="a2z-abd-handled-item__header-wrap">
+                        <div class="a2z-abd-handled-item__icon-box">
+                            <svg class="a2z-abd-handled-item__icon" viewBox="0 0 24 24">
+                                <line x1="3" y1="21" x2="21" y2="21" />
+                                <line x1="3" y1="10" x2="21" y2="10" />
+                                <polyline points="5 6 12 3 19 6" />
+                                <line x1="4" y1="10" x2="4" y2="21" />
+                                <line x1="20" y1="10" x2="20" y2="21" />
+                                <line x1="8" y1="10" x2="8" y2="21" />
+                                <line x1="12" y1="10" x2="12" y2="21" />
+                                <line x1="16" y1="10" x2="16" y2="21" />
+                            </svg>
+                        </div>
+                        <h3 class="a2z-abd-handled-item__title">Tax planning and structure</h3>
+                    </div>
+                    <p class="a2z-abd-handled-item__desc">
+                        Remuneration, structure and timing planned so you keep more, within the rules.
+                    </p>
                 </div>
             </div>
         </div>
