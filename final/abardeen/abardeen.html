@@ -1301,12 +1301,1007 @@
                 line-height: 1.45;
             }
 
-            .a2z-abd-diff-card--typical .a2z-abd-diff-mobile__value {
-                color: #1a202c;
-            }
-
             .a2z-abd-diff-card--a2z .a2z-abd-diff-mobile__value {
                 color: #ffffff;
+            }
+        }
+
+        /* ==========================================================================
+           PRICING SECTION STYLES
+           Scoped prefix: .a2z-abd-pricing / .a2z-abd-price-card
+           ========================================================================== */
+
+        .a2z-abd-pricing {
+            position: relative;
+            width: 100%;
+            background-color: #fbfcfd;
+            padding: 120px 24px 140px;
+            overflow: hidden;
+        }
+
+        .a2z-abd-pricing::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 1100px;
+            height: 450px;
+            background: radial-gradient(ellipse at 50% 100%, rgba(223, 168, 104, 0.12) 0%, rgba(251, 252, 253, 0) 70%);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .a2z-abd-pricing__container {
+            position: relative;
+            z-index: 10;
+            width: 100%;
+            max-width: 1240px;
+            margin: 0 auto;
+        }
+
+        /* Section Header */
+        .a2z-abd-pricing__header {
+            text-align: center;
+            max-width: 820px;
+            margin: 0 auto 64px;
+        }
+
+        .a2z-abd-pricing__tag {
+            display: inline-block;
+            font-family: var(--a2z-abd-font-sans);
+            font-size: 13.5px;
+            font-weight: 800;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--a2z-abd-gold-dark);
+            margin-bottom: 16px;
+        }
+
+        .a2z-abd-pricing__title {
+            font-family: var(--a2z-abd-font-serif);
+            font-size: clamp(2.45rem, 4.8vw, 4.25rem);
+            font-weight: 700;
+            line-height: 1.15;
+            letter-spacing: -0.015em;
+            color: var(--a2z-abd-navy-deep);
+            margin-bottom: 22px;
+        }
+
+        .a2z-abd-pricing__title-italic {
+            font-family: var(--a2z-abd-font-serif);
+            font-weight: 500;
+            font-style: italic;
+            color: var(--a2z-abd-gold-main);
+            letter-spacing: -0.008em;
+            display: inline-block;
+        }
+
+        .a2z-abd-pricing__desc {
+            font-family: var(--a2z-abd-font-sans);
+            font-size: clamp(1.02rem, 1.2vw, 1.15rem);
+            font-weight: 400;
+            line-height: 1.62;
+            color: #2e3d4f;
+            max-width: 740px;
+            margin: 0 auto;
+        }
+
+        /* 4-Column Grid */
+        .a2z-abd-pricing__grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            align-items: stretch;
+            margin-bottom: 50px;
+        }
+
+        /* Base Price Card */
+        .a2z-abd-price-card {
+            background: #ffffff;
+            border-radius: 14px;
+            border: 1px solid #e5e9f0;
+            padding: 28px 24px 34px;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 15px 35px -10px rgba(12, 37, 61, 0.06);
+            transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+            position: relative;
+        }
+
+        .a2z-abd-price-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 24px 50px -10px rgba(12, 37, 61, 0.12);
+        }
+
+        /* Featured Gold Card (Card 3: Most Chosen) */
+        .a2z-abd-price-card--featured {
+            background: #cca05b;
+            border-color: #cca05b;
+            box-shadow: 0 20px 48px -8px rgba(204, 160, 91, 0.38);
+        }
+
+        .a2z-abd-price-card--featured:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 28px 60px -8px rgba(204, 160, 91, 0.5);
+        }
+
+        /* Most Chosen Floating Pill Badge */
+        .a2z-abd-price-card__badge {
+            position: absolute;
+            top: -14px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #0c253d;
+            color: #ffffff;
+            font-family: var(--a2z-abd-font-sans);
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            padding: 5px 18px;
+            border-radius: 4px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+            z-index: 5;
+            white-space: nowrap;
+        }
+
+        /* Header Pill Box */
+        .a2z-abd-price-card__pill {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 12px 14px;
+            text-align: center;
+            font-family: var(--a2z-abd-font-serif);
+            font-size: 17px;
+            font-weight: 700;
+            color: #0d2840;
+            margin-bottom: 24px;
+            min-height: 58px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 1.25;
+        }
+
+        .a2z-abd-price-card--featured .a2z-abd-price-card__pill {
+            border: none;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+            font-size: 16.5px;
+        }
+
+        /* Price Box */
+        .a2z-abd-price-card__price-box {
+            display: flex;
+            align-items: baseline;
+            justify-content: flex-start;
+            gap: 6px;
+            margin-bottom: 16px;
+            flex-wrap: wrap;
+        }
+
+        .a2z-abd-price-card__from {
+            font-family: var(--a2z-abd-font-sans);
+            font-size: 13px;
+            font-weight: 500;
+            color: #4b5868;
+        }
+
+        .a2z-abd-price-card--featured .a2z-abd-price-card__from {
+            color: #0c253d;
+            font-weight: 600;
+        }
+
+        .a2z-abd-price-card__amount {
+            font-family: var(--a2z-abd-font-sans);
+            font-size: 40px;
+            font-weight: 800;
+            color: #f0a500;
+            line-height: 1;
+            letter-spacing: -0.02em;
+        }
+
+        .a2z-abd-price-card--featured .a2z-abd-price-card__amount {
+            color: #ffffff;
+        }
+
+        .a2z-abd-price-card__suffix {
+            font-family: var(--a2z-abd-font-sans);
+            font-size: 13.5px;
+            font-weight: 700;
+            color: #0d2840;
+        }
+
+        .a2z-abd-price-card--featured .a2z-abd-price-card__suffix {
+            color: #0c253d;
+        }
+
+        /* Subtitle Text */
+        .a2z-abd-price-card__sub {
+            font-family: var(--a2z-abd-font-sans);
+            font-size: 13.5px;
+            font-weight: 400;
+            line-height: 1.45;
+            color: #2b3847;
+            margin-bottom: 22px;
+            min-height: 40px;
+        }
+
+        .a2z-abd-price-card--featured .a2z-abd-price-card__sub {
+            color: #0c253d;
+            font-weight: 500;
+        }
+
+        /* Divider */
+        .a2z-abd-price-card__divider {
+            width: 100%;
+            height: 1px;
+            background-color: #edf2f7;
+            margin-bottom: 22px;
+        }
+
+        .a2z-abd-price-card--featured .a2z-abd-price-card__divider {
+            background-color: rgba(12, 37, 61, 0.2);
+        }
+
+        /* Features List */
+        .a2z-abd-price-card__features {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            flex-grow: 1;
+        }
+
+        .a2z-abd-price-card__feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-family: var(--a2z-abd-font-sans);
+            font-size: 13.5px;
+            font-weight: 500;
+            line-height: 1.48;
+            color: #1a202c;
+        }
+
+        .a2z-abd-price-card--featured .a2z-abd-price-card__feature-item {
+            color: #0c253d;
+            font-weight: 600;
+        }
+
+        .a2z-abd-price-card__check {
+            width: 15px;
+            height: 15px;
+            stroke: #0d2840;
+            stroke-width: 2.5;
+            fill: none;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        /* Pricing Section CTA */
+        .a2z-abd-pricing__cta {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .a2z-abd-pricing__btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #cca05b;
+            color: #0c253d;
+            font-family: var(--a2z-abd-font-sans);
+            font-size: 14px;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            padding: 16px 38px;
+            border-radius: 6px;
+            text-decoration: none;
+            box-shadow: 0 4px 18px rgba(204, 160, 91, 0.35);
+            transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+
+        .a2z-abd-pricing__btn:hover {
+            background-color: #d8aa63;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(204, 160, 91, 0.5);
+        }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 1024px) {
+            .a2z-abd-pricing {
+                padding: 90px 20px 100px;
+            }
+
+            .a2z-abd-pricing__grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 24px;
+            }
+        }
+
+        @media (max-width: 680px) {
+            .a2z-abd-pricing {
+                padding: 70px 16px 80px;
+            }
+
+            .a2z-abd-pricing__header {
+                margin-bottom: 40px;
+            }
+
+            .a2z-abd-pricing__tag {
+                font-size: 12px;
+                margin-bottom: 12px;
+            }
+
+            .a2z-abd-pricing__title {
+                font-size: 2.15rem;
+                margin-bottom: 16px;
+            }
+
+            .a2z-abd-pricing__desc {
+                font-size: 14.5px;
+                line-height: 1.55;
+            }
+
+            .a2z-abd-pricing__grid {
+                grid-template-columns: 1fr;
+                gap: 28px;
+            }
+
+            .a2z-abd-price-card {
+                padding: 26px 20px 28px;
+            }
+
+            .a2z-abd-pricing__btn {
+                width: 100%;
+                max-width: 320px;
+                padding: 15px 20px;
+                font-size: 13px;
+            }
+        }
+
+        /* ==========================================================================
+           ADD-ONS SECTION STYLES
+           Scoped prefix: .a2z-abd-addons / .a2z-abd-addon-pill
+           ========================================================================== */
+
+        .a2z-abd-addons {
+            position: relative;
+            width: 100%;
+            background-color: #0c253d;
+            padding: 110px 24px 120px;
+            overflow: hidden;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .a2z-abd-addons__container {
+            position: relative;
+            z-index: 10;
+            width: 100%;
+            max-width: 1240px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 42% 58%;
+            gap: 50px;
+            align-items: center;
+        }
+
+        /* Left Info Column */
+        .a2z-abd-addons__col-info {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .a2z-abd-addons__tag {
+            display: inline-block;
+            font-family: var(--a2z-abd-font-sans);
+            font-size: 13.5px;
+            font-weight: 800;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--a2z-abd-gold-main);
+            margin-bottom: 16px;
+        }
+
+        .a2z-abd-addons__title {
+            font-family: var(--a2z-abd-font-serif);
+            font-size: clamp(2.35rem, 4.4vw, 3.85rem);
+            font-weight: 700;
+            line-height: 1.16;
+            letter-spacing: -0.015em;
+            color: var(--a2z-abd-text-white);
+            margin-bottom: 20px;
+            text-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .a2z-abd-addons__desc {
+            font-family: var(--a2z-abd-font-sans);
+            font-size: clamp(1.02rem, 1.18vw, 1.15rem);
+            font-weight: 400;
+            line-height: 1.62;
+            color: #d1dced;
+            max-width: 460px;
+            margin: 0;
+            text-shadow: 0 1px 8px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Right Grid Column (2 columns x 3 rows) */
+        .a2z-abd-addons__col-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            width: 100%;
+        }
+
+        /* Add-on Pill Card */
+        .a2z-abd-addon-pill {
+            background-color: rgba(255, 255, 255, 0.035);
+            border: 1px solid rgba(255, 255, 255, 0.13);
+            border-radius: 10px;
+            padding: 20px 22px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            transition: all 0.28s cubic-bezier(0.2, 0.8, 0.2, 1);
+            cursor: default;
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+        }
+
+        .a2z-abd-addon-pill:hover {
+            background-color: rgba(255, 255, 255, 0.07);
+            border-color: rgba(223, 168, 104, 0.5);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+        }
+
+        .a2z-abd-addon-pill__icon {
+            font-family: var(--a2z-abd-font-sans);
+            font-size: 22px;
+            font-weight: 700;
+            line-height: 1;
+            color: var(--a2z-abd-gold-main);
+            flex-shrink: 0;
+            user-select: none;
+        }
+
+        .a2z-abd-addon-pill__label {
+            font-family: var(--a2z-abd-font-sans);
+            font-size: 14.5px;
+            font-weight: 500;
+            line-height: 1.44;
+            color: #ffffff;
+            margin: 0;
+        }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 991px) {
+            .a2z-abd-addons {
+                padding: 85px 20px 95px;
+            }
+
+            .a2z-abd-addons__container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                text-align: center;
+            }
+
+            .a2z-abd-addons__col-info {
+                align-items: center;
+                text-align: center;
+            }
+
+            .a2z-abd-addons__desc {
+                max-width: 600px;
+            }
+
+            .a2z-abd-addons__col-grid {
+                grid-template-columns: 1fr;
+                gap: 14px;
+                max-width: 580px;
+                margin: 0 auto;
+            }
+
+            .a2z-abd-addon-pill {
+                padding: 18px 20px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .a2z-abd-addons {
+                padding: 70px 16px 80px;
+            }
+
+            .a2z-abd-addons__tag {
+                font-size: 12px;
+                margin-bottom: 12px;
+            }
+
+            .a2z-abd-addons__title {
+                font-size: 2.15rem;
+                margin-bottom: 14px;
+            }
+
+            .a2z-abd-addons__desc {
+                font-size: 14.5px;
+                line-height: 1.55;
+            }
+
+            .a2z-abd-addons__col-grid {
+                gap: 12px;
+            }
+
+            .a2z-abd-addon-pill {
+                padding: 16px 18px;
+                border-radius: 8px;
+            }
+
+            .a2z-abd-addon-pill__icon {
+                font-size: 20px;
+            }
+
+            .a2z-abd-addon-pill__label {
+                font-size: 14px;
+                text-align: left;
+            }
+        }
+
+        /* ==========================================================================
+           GROW COMPLEXITY & INCLUDED FEATURES SECTION STYLES
+           Scoped prefix: .a2z-abd-grow
+           ========================================================================== */
+
+        .a2z-abd-grow {
+            position: relative;
+            width: 100%;
+            background-color: #f6f7f9;
+            padding: 100px 24px 110px;
+            overflow: hidden;
+            border-top: 1px solid #e8ecf2;
+        }
+
+        .a2z-abd-grow__container {
+            position: relative;
+            z-index: 10;
+            width: 100%;
+            max-width: 1240px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 48% 52%;
+            gap: 60px;
+            align-items: flex-start;
+        }
+
+        /* Left Column: Included at every level */
+        .a2z-abd-grow__col-included {
+            order: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .a2z-abd-grow__included-tag {
+            font-family: var(--a2z-abd-font-sans);
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: #0e2a44;
+            margin-bottom: 28px;
+        }
+
+        .a2z-abd-grow__included-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 28px 24px;
+        }
+
+        .a2z-abd-grow__included-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .a2z-abd-grow__check {
+            width: 16px;
+            height: 16px;
+            stroke: var(--a2z-abd-gold-main);
+            stroke-width: 2.5;
+            fill: none;
+            flex-shrink: 0;
+            margin-top: 3px;
+        }
+
+        .a2z-abd-grow__included-text {
+            font-family: var(--a2z-abd-font-sans);
+            font-size: 14.5px;
+            font-weight: 500;
+            line-height: 1.5;
+            color: #2b3847;
+            margin: 0;
+        }
+
+        /* Right Column: Story / As you grow */
+        .a2z-abd-grow__col-story {
+            order: 2;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .a2z-abd-grow__title {
+            font-family: var(--a2z-abd-font-serif);
+            font-size: clamp(2rem, 3.2vw, 2.75rem);
+            font-weight: 700;
+            line-height: 1.2;
+            letter-spacing: -0.015em;
+            color: #0d2840;
+            margin-bottom: 22px;
+        }
+
+        .a2z-abd-grow__p {
+            font-family: var(--a2z-abd-font-sans);
+            font-size: 15.5px;
+            font-weight: 400;
+            line-height: 1.62;
+            color: #4a5568;
+            margin: 0 0 18px;
+        }
+
+        .a2z-abd-grow__p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 991px) {
+            .a2z-abd-grow {
+                padding: 80px 20px 85px;
+            }
+
+            .a2z-abd-grow__container {
+                grid-template-columns: 1fr;
+                gap: 45px;
+            }
+
+            /* Responsive Re-ordering: Story at Top, Included at Bottom */
+            .a2z-abd-grow__col-story {
+                order: 1;
+            }
+
+            .a2z-abd-grow__col-included {
+                order: 2;
+            }
+
+            .a2z-abd-grow__title {
+                font-size: 2.35rem;
+                margin-bottom: 18px;
+            }
+
+            .a2z-abd-grow__included-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .a2z-abd-grow__included-tag {
+                margin-bottom: 22px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .a2z-abd-grow {
+                padding: 65px 16px 70px;
+            }
+
+            .a2z-abd-grow__title {
+                font-size: 2.05rem;
+                line-height: 1.22;
+            }
+
+            .a2z-abd-grow__p {
+                font-size: 14.5px;
+                line-height: 1.55;
+            }
+
+            .a2z-abd-grow__included-text {
+                font-size: 14.5px;
+            }
+        }
+
+        /* ==========================================================================
+           THE RIGHT FIT SECTION STYLES
+           Scoped prefix: .a2z-abd-fit / .a2z-abd-fit-card
+           ========================================================================== */
+
+        .a2z-abd-fit {
+            position: relative;
+            width: 100%;
+            background-color: #ffffff;
+            padding: 120px 24px 140px;
+            overflow: hidden;
+        }
+
+        .a2z-abd-fit__container {
+            position: relative;
+            z-index: 10;
+            width: 100%;
+            max-width: 1060px;
+            margin: 0 auto;
+        }
+
+        /* Section Header */
+        .a2z-abd-fit__header {
+            text-align: center;
+            max-width: 820px;
+            margin: 0 auto 64px;
+        }
+
+        .a2z-abd-fit__tag {
+            display: inline-block;
+            font-family: var(--a2z-abd-font-sans);
+            font-size: 13.5px;
+            font-weight: 800;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--a2z-abd-gold-dark);
+            margin-bottom: 16px;
+        }
+
+        .a2z-abd-fit__title {
+            font-family: var(--a2z-abd-font-serif);
+            font-size: clamp(2.45rem, 4.6vw, 4.15rem);
+            font-weight: 700;
+            line-height: 1.15;
+            letter-spacing: -0.015em;
+            color: var(--a2z-abd-navy-deep);
+            margin-bottom: 22px;
+        }
+
+        .a2z-abd-fit__title-italic {
+            font-family: var(--a2z-abd-font-serif);
+            font-weight: 500;
+            font-style: italic;
+            color: var(--a2z-abd-gold-main);
+            letter-spacing: -0.008em;
+            display: inline-block;
+        }
+
+        .a2z-abd-fit__desc {
+            font-family: var(--a2z-abd-font-sans);
+            font-size: clamp(1.02rem, 1.18vw, 1.15rem);
+            font-weight: 400;
+            line-height: 1.62;
+            color: #2e3d4f;
+            max-width: 740px;
+            margin: 0 auto;
+        }
+
+        /* 2-Card Comparison Grid with Divider */
+        .a2z-abd-fit__grid {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 36px;
+            align-items: stretch;
+        }
+
+        .a2z-abd-fit__divider {
+            width: 1px;
+            background-color: #e2e8f0;
+            margin: 20px 0;
+        }
+
+        /* Base Card Styling */
+        .a2z-abd-fit-card {
+            border-radius: 14px;
+            padding: 38px 32px 42px;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+
+        .a2z-abd-fit-card:hover {
+            transform: translateY(-4px);
+        }
+
+        /* Card 1: A Strong Fit (Warm Gold) */
+        .a2z-abd-fit-card--strong {
+            background-color: #cca05b;
+            box-shadow: 0 20px 48px -10px rgba(204, 160, 91, 0.35);
+        }
+
+        .a2z-abd-fit-card--strong:hover {
+            box-shadow: 0 26px 58px -10px rgba(204, 160, 91, 0.48);
+        }
+
+        /* Card 2: Probably Not For You (Deep Navy) */
+        .a2z-abd-fit-card--not {
+            background-color: #0d2840;
+            box-shadow: 0 20px 48px -10px rgba(13, 40, 64, 0.28);
+        }
+
+        .a2z-abd-fit-card--not:hover {
+            box-shadow: 0 26px 58px -10px rgba(13, 40, 64, 0.4);
+        }
+
+        /* Header Pill Box */
+        .a2z-abd-fit-card__pill {
+            background: #ffffff;
+            border-radius: 8px;
+            padding: 13px 24px;
+            text-align: center;
+            font-family: var(--a2z-abd-font-serif);
+            font-size: 18px;
+            font-weight: 700;
+            color: #0d2840;
+            margin-bottom: 34px;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+            line-height: 1.2;
+        }
+
+        /* List Items */
+        .a2z-abd-fit-card__list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 22px;
+            flex-grow: 1;
+        }
+
+        .a2z-abd-fit-card__item {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+        }
+
+        /* White Circle Checkmark */
+        .a2z-abd-fit-card__check-circle {
+            width: 22px;
+            height: 22px;
+            background-color: #ffffff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-top: 1px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .a2z-abd-fit-card__check-circle svg {
+            width: 12px;
+            height: 12px;
+            stroke: #0d2840;
+            stroke-width: 3;
+            fill: none;
+        }
+
+        /* White Cross Icon */
+        .a2z-abd-fit-card__cross-icon {
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-top: 2px;
+            color: #ffffff;
+            font-family: var(--a2z-abd-font-sans);
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 1;
+        }
+
+        .a2z-abd-fit-card__cross-icon svg {
+            width: 15px;
+            height: 15px;
+            stroke: #ffffff;
+            stroke-width: 2.4;
+            fill: none;
+        }
+
+        /* Text Content */
+        .a2z-abd-fit-card__text {
+            font-family: var(--a2z-abd-font-sans);
+            font-size: 15px;
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        .a2z-abd-fit-card--strong .a2z-abd-fit-card__text {
+            color: #0c253d;
+            font-weight: 600;
+        }
+
+        .a2z-abd-fit-card--not .a2z-abd-fit-card__text {
+            color: #ffffff;
+            font-weight: 400;
+        }
+
+        /* Note Box inside Card 2 */
+        .a2z-abd-fit-card__note {
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 14px 18px;
+            margin-top: 36px;
+            text-align: center;
+            font-family: var(--a2z-abd-font-sans);
+            font-size: 13.5px;
+            font-weight: 500;
+            line-height: 1.45;
+            color: #334155;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 860px) {
+            .a2z-abd-fit {
+                padding: 85px 20px 95px;
+            }
+
+            .a2z-abd-fit__header {
+                margin-bottom: 45px;
+            }
+
+            .a2z-abd-fit__grid {
+                grid-template-columns: 1fr;
+                gap: 28px;
+                max-width: 540px;
+                margin: 0 auto;
+            }
+
+            .a2z-abd-fit__divider {
+                display: none;
+            }
+
+            .a2z-abd-fit-card {
+                padding: 32px 24px 36px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .a2z-abd-fit {
+                padding: 70px 16px 80px;
+            }
+
+            .a2z-abd-fit__tag {
+                font-size: 12px;
+                margin-bottom: 12px;
+            }
+
+            .a2z-abd-fit__title {
+                font-size: 2.15rem;
+                margin-bottom: 16px;
+            }
+
+            .a2z-abd-fit__desc {
+                font-size: 14.5px;
+                line-height: 1.55;
+            }
+
+            .a2z-abd-fit-card__pill {
+                font-size: 17px;
+                padding: 12px 18px;
+                margin-bottom: 26px;
+            }
+
+            .a2z-abd-fit-card__list {
+                gap: 18px;
+            }
+
+            .a2z-abd-fit-card__text {
+                font-size: 14.5px;
+            }
+
+            .a2z-abd-fit-card__note {
+                margin-top: 28px;
+                font-size: 13px;
             }
         }
     </style>
@@ -2043,6 +3038,425 @@
                                 <span class="a2z-abd-diff-mobile__value">One fixed fee, in writing</span>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         PRICING SECTION: MORE INCLUDED, FOR ONE FAIR FEE
+         ========================================================================== -->
+    <section class="a2z-abd-pricing" id="aberdeen-pricing" aria-label="Fair, Fixed Pricing">
+        <div class="a2z-abd-pricing__container">
+            <!-- Section Header -->
+            <div class="a2z-abd-pricing__header">
+                <span class="a2z-abd-pricing__tag">FAIR, FIXED, EVERYTHING-IN PRICING</span>
+                <h2 class="a2z-abd-pricing__title">
+                    More included,<br>
+                    <span class="a2z-abd-pricing__title-italic">for one fair fee</span>
+                </h2>
+                <p class="a2z-abd-pricing__desc">
+                    Every plan is all-inclusive and agreed up front - so you always know the price,
+                    and a quick question never costs extra.
+                </p>
+            </div>
+
+            <!-- 4 Pricing Cards Grid -->
+            <div class="a2z-abd-pricing__grid">
+                <!-- Card 1: Company essentials -->
+                <div class="a2z-abd-price-card">
+                    <div class="a2z-abd-price-card__pill">
+                        Company essentials
+                    </div>
+                    <div class="a2z-abd-price-card__price-box">
+                        <span class="a2z-abd-price-card__from">From</span>
+                        <span class="a2z-abd-price-card__amount">£105</span>
+                        <span class="a2z-abd-price-card__suffix">+vat /mo</span>
+                    </div>
+                    <p class="a2z-abd-price-card__sub">
+                        Not VAT-registered, one or two owners, no payroll.
+                    </p>
+                    <div class="a2z-abd-price-card__divider"></div>
+                    <ul class="a2z-abd-price-card__features">
+                        <li class="a2z-abd-price-card__feature-item">
+                            <svg class="a2z-abd-price-card__check" viewBox="0 0 24 24">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
+                            <span>Year-end accounts and Corporation Tax return (CT600), filed once a year</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Card 2: Essentials plus payroll -->
+                <div class="a2z-abd-price-card">
+                    <div class="a2z-abd-price-card__pill">
+                        Essentials<br>plus payroll
+                    </div>
+                    <div class="a2z-abd-price-card__price-box">
+                        <span class="a2z-abd-price-card__from">From</span>
+                        <span class="a2z-abd-price-card__amount">£125</span>
+                        <span class="a2z-abd-price-card__suffix">+vat /mo</span>
+                    </div>
+                    <p class="a2z-abd-price-card__sub">
+                        The above, plus a director payroll to run each month.
+                    </p>
+                    <div class="a2z-abd-price-card__divider"></div>
+                    <ul class="a2z-abd-price-card__features">
+                        <li class="a2z-abd-price-card__feature-item">
+                            <svg class="a2z-abd-price-card__check" viewBox="0 0 24 24">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
+                            <span>Everything in the £105 level</span>
+                        </li>
+                        <li class="a2z-abd-price-card__feature-item">
+                            <svg class="a2z-abd-price-card__check" viewBox="0 0 24 24">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
+                            <span>Director payroll (PAYE and RTI), run every month</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Card 3: Full support with quarterly bookkeeping (MOST CHOSEN) -->
+                <div class="a2z-abd-price-card a2z-abd-price-card--featured">
+                    <span class="a2z-abd-price-card__badge">MOST CHOSEN</span>
+                    <div class="a2z-abd-price-card__pill">
+                        Full support with quarterly bookkeeping
+                    </div>
+                    <div class="a2z-abd-price-card__price-box">
+                        <span class="a2z-abd-price-card__from">From</span>
+                        <span class="a2z-abd-price-card__amount">£245</span>
+                        <span class="a2z-abd-price-card__suffix">+vat /mo</span>
+                    </div>
+                    <p class="a2z-abd-price-card__sub">
+                        Not VAT-registered, low turnover.
+                    </p>
+                    <div class="a2z-abd-price-card__divider"></div>
+                    <ul class="a2z-abd-price-card__features">
+                        <li class="a2z-abd-price-card__feature-item">
+                            <svg class="a2z-abd-price-card__check" viewBox="0 0 24 24">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
+                            <span>Everything in the £125 level</span>
+                        </li>
+                        <li class="a2z-abd-price-card__feature-item">
+                            <svg class="a2z-abd-price-card__check" viewBox="0 0 24 24">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
+                            <span>Bookkeeping done for you every quarter, kept up to date</span>
+                        </li>
+                        <li class="a2z-abd-price-card__feature-item">
+                            <svg class="a2z-abd-price-card__check" viewBox="0 0 24 24">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
+                            <span>Two premium apps included -worth £68+VAT a month</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Card 4: Full support with VAT -->
+                <div class="a2z-abd-price-card">
+                    <div class="a2z-abd-price-card__pill">
+                        Full support with VAT
+                    </div>
+                    <div class="a2z-abd-price-card__price-box">
+                        <span class="a2z-abd-price-card__from">From</span>
+                        <span class="a2z-abd-price-card__amount">£324</span>
+                        <span class="a2z-abd-price-card__suffix">+vat /mo</span>
+                    </div>
+                    <p class="a2z-abd-price-card__sub">
+                        VAT-registered, low turnover.
+                    </p>
+                    <div class="a2z-abd-price-card__divider"></div>
+                    <ul class="a2z-abd-price-card__features">
+                        <li class="a2z-abd-price-card__feature-item">
+                            <svg class="a2z-abd-price-card__check" viewBox="0 0 24 24">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
+                            <span>Everything in the £245 level</span>
+                        </li>
+                        <li class="a2z-abd-price-card__feature-item">
+                            <svg class="a2z-abd-price-card__check" viewBox="0 0 24 24">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
+                            <span>VAT returns filed quarterly under Making Tax Digital</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Instant Estimate Bottom CTA Button -->
+            <div class="a2z-abd-pricing__cta">
+                <a href="#instant-estimate" class="a2z-abd-pricing__btn" id="btn-pricing-estimate">
+                    GET AN INSTANT FEE ESTIMATE
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         ADD-ONS SECTION: MORE SUPPORT, WHEN YOU NEED IT (ADD ANYTHING, AT YOUR PACE)
+         ========================================================================== -->
+    <section class="a2z-abd-addons" id="aberdeen-addons" aria-label="Flexible Add-on Support">
+        <div class="a2z-abd-addons__container">
+            <!-- Left Info Column -->
+            <div class="a2z-abd-addons__col-info">
+                <span class="a2z-abd-addons__tag">MORE SUPPORT, WHEN YOU NEED IT</span>
+                <h2 class="a2z-abd-addons__title">
+                    Add anything, at your pace
+                </h2>
+                <p class="a2z-abd-addons__desc">
+                    Every plan flexes around you. Add more whenever it helps, at whatever frequency suits your business - always agreed up front.
+                </p>
+            </div>
+
+            <!-- Right Add-ons Pills Grid (6 Items) -->
+            <div class="a2z-abd-addons__col-grid">
+                <!-- Add-on 1 -->
+                <div class="a2z-abd-addon-pill">
+                    <span class="a2z-abd-addon-pill__icon">+</span>
+                    <p class="a2z-abd-addon-pill__label">Management accounts, monthly or quarterly</p>
+                </div>
+
+                <!-- Add-on 2 -->
+                <div class="a2z-abd-addon-pill">
+                    <span class="a2z-abd-addon-pill__icon">+</span>
+                    <p class="a2z-abd-addon-pill__label">Bookkeeping done monthly, not just quarterly</p>
+                </div>
+
+                <!-- Add-on 3 -->
+                <div class="a2z-abd-addon-pill">
+                    <span class="a2z-abd-addon-pill__icon">+</span>
+                    <p class="a2z-abd-addon-pill__label">Cashflow forecasting and planning ahead</p>
+                </div>
+
+                <!-- Add-on 4 -->
+                <div class="a2z-abd-addon-pill">
+                    <span class="a2z-abd-addon-pill__icon">+</span>
+                    <p class="a2z-abd-addon-pill__label">VAT and CIS returns, filed on time</p>
+                </div>
+
+                <!-- Add-on 5 -->
+                <div class="a2z-abd-addon-pill">
+                    <span class="a2z-abd-addon-pill__icon">+</span>
+                    <p class="a2z-abd-addon-pill__label">Personal tax for you and your family</p>
+                </div>
+
+                <!-- Add-on 6 -->
+                <div class="a2z-abd-addon-pill">
+                    <span class="a2z-abd-addon-pill__icon">+</span>
+                    <p class="a2z-abd-addon-pill__label">Advice whenever a decision comes up</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         GROW COMPLEXITY & INCLUDED FEATURES SECTION
+         ========================================================================== -->
+    <section class="a2z-abd-grow" id="aberdeen-grow" aria-label="As you grow, we carry the complexity">
+        <div class="a2z-abd-grow__container">
+            <!-- Left Block: Included at every level, always (Desktop order 1, Mobile order 2) -->
+            <div class="a2z-abd-grow__col-included">
+                <span class="a2z-abd-grow__included-tag">INCLUDED AT EVERY LEVEL, ALWAYS</span>
+                <div class="a2z-abd-grow__included-grid">
+                    <!-- Item 1 -->
+                    <div class="a2z-abd-grow__included-item">
+                        <svg class="a2z-abd-grow__check" viewBox="0 0 24 24">
+                            <polyline points="20 6 9 17 4 12" />
+                        </svg>
+                        <p class="a2z-abd-grow__included-text">
+                            Deadline monitoring, all year - year-end, tax and confirmation dates
+                        </p>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="a2z-abd-grow__included-item">
+                        <svg class="a2z-abd-grow__check" viewBox="0 0 24 24">
+                            <polyline points="20 6 9 17 4 12" />
+                        </svg>
+                        <p class="a2z-abd-grow__included-text">
+                            Your £50 Companies House fee, covered by us
+                        </p>
+                    </div>
+
+                    <!-- Item 3 -->
+                    <div class="a2z-abd-grow__included-item">
+                        <svg class="a2z-abd-grow__check" viewBox="0 0 24 24">
+                            <polyline points="20 6 9 17 4 12" />
+                        </svg>
+                        <p class="a2z-abd-grow__included-text">
+                            Confirmation statement prepared and filed each year
+                        </p>
+                    </div>
+
+                    <!-- Item 4 -->
+                    <div class="a2z-abd-grow__included-item">
+                        <svg class="a2z-abd-grow__check" viewBox="0 0 24 24">
+                            <polyline points="20 6 9 17 4 12" />
+                        </svg>
+                        <p class="a2z-abd-grow__included-text">
+                            A fair level of advice and support, whenever you need it
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Block: As you grow narrative (Desktop order 2, Mobile order 1) -->
+            <div class="a2z-abd-grow__col-story">
+                <h2 class="a2z-abd-grow__title">
+                    As you grow, we carry the complexity.
+                </h2>
+                <p class="a2z-abd-grow__p">
+                    More transactions, staff and payroll, VAT, extra entities or a group, tighter reporting - we take it on so you never feel it. Management accounts (monthly or quarterly), cashflow forecasting and advisory are all here when you need them, always agreed up front.
+                </p>
+                <p class="a2z-abd-grow__p">
+                    Every fee is fixed and agreed in writing before we start, so there are no surprises and a quick question never costs extra. Director self-assessment from £120+VAT a year, billed separately.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         THE RIGHT FIT SECTION: BUILT FOR OWNERS WHO WANT IT DONE PROPERLY
+         ========================================================================== -->
+    <section class="a2z-abd-fit" id="aberdeen-fit" aria-label="The Right Fit">
+        <div class="a2z-abd-fit__container">
+            <!-- Section Header -->
+            <div class="a2z-abd-fit__header">
+                <span class="a2z-abd-fit__tag">THE RIGHT FIT</span>
+                <h2 class="a2z-abd-fit__title">
+                    Built for owners who want it<br>
+                    <span class="a2z-abd-fit__title-italic">done properly</span>
+                </h2>
+                <p class="a2z-abd-fit__desc">
+                    We do our best work for established, owner-managed businesses that want a proactive accountant, not just a filing service. In fairness to you, here is who we suit - and who we honestly do not.
+                </p>
+            </div>
+
+            <!-- 2-Card Grid with Divider -->
+            <div class="a2z-abd-fit__grid">
+                <!-- Card 1: A strong fit (Warm Gold) -->
+                <div class="a2z-abd-fit-card a2z-abd-fit-card--strong">
+                    <div class="a2z-abd-fit-card__pill">
+                        A strong fit
+                    </div>
+                    <ul class="a2z-abd-fit-card__list">
+                        <!-- Fit Item 1 -->
+                        <li class="a2z-abd-fit-card__item">
+                            <span class="a2z-abd-fit-card__check-circle">
+                                <svg viewBox="0 0 24 24">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg>
+                            </span>
+                            <p class="a2z-abd-fit-card__text">
+                                Established service or consulting businesses (typically £500k-£5m turnover).
+                            </p>
+                        </li>
+
+                        <!-- Fit Item 2 -->
+                        <li class="a2z-abd-fit-card__item">
+                            <span class="a2z-abd-fit-card__check-circle">
+                                <svg viewBox="0 0 24 24">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg>
+                            </span>
+                            <p class="a2z-abd-fit-card__text">
+                                Owners looking to scale, exit, or step back from day-to-day operations.
+                            </p>
+                        </li>
+
+                        <!-- Fit Item 3 -->
+                        <li class="a2z-abd-fit-card__item">
+                            <span class="a2z-abd-fit-card__check-circle">
+                                <svg viewBox="0 0 24 24">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg>
+                            </span>
+                            <p class="a2z-abd-fit-card__text">
+                                You value strategic advice over just getting the cheapest tax return filed.
+                            </p>
+                        </li>
+
+                        <!-- Fit Item 4 -->
+                        <li class="a2z-abd-fit-card__item">
+                            <span class="a2z-abd-fit-card__check-circle">
+                                <svg viewBox="0 0 24 24">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg>
+                            </span>
+                            <p class="a2z-abd-fit-card__text">
+                                You are willing to use modern cloud software (Xero) to stay organised.
+                            </p>
+                        </li>
+
+                        <!-- Fit Item 5 -->
+                        <li class="a2z-abd-fit-card__item">
+                            <span class="a2z-abd-fit-card__check-circle">
+                                <svg viewBox="0 0 24 24">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg>
+                            </span>
+                            <p class="a2z-abd-fit-card__text">
+                                You appreciate responsiveness and want a partner, not a transaction.
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Middle Divider (Desktop only) -->
+                <div class="a2z-abd-fit__divider" aria-hidden="true"></div>
+
+                <!-- Card 2: Probably not for you (Deep Navy) -->
+                <div class="a2z-abd-fit-card a2z-abd-fit-card--not">
+                    <div class="a2z-abd-fit-card__pill">
+                        Probably not for you
+                    </div>
+                    <ul class="a2z-abd-fit-card__list">
+                        <!-- Not Item 1 -->
+                        <li class="a2z-abd-fit-card__item">
+                            <span class="a2z-abd-fit-card__cross-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <line x1="18" y1="6" x2="6" y2="18" />
+                                    <line x1="6" y1="6" x2="18" y2="18" />
+                                </svg>
+                            </span>
+                            <p class="a2z-abd-fit-card__text">
+                                Startups pre-revenue or sole traders looking for basic year-end compliance only.
+                            </p>
+                        </li>
+
+                        <!-- Not Item 2 -->
+                        <li class="a2z-abd-fit-card__item">
+                            <span class="a2z-abd-fit-card__cross-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <line x1="18" y1="6" x2="6" y2="18" />
+                                    <line x1="6" y1="6" x2="18" y2="18" />
+                                </svg>
+                            </span>
+                            <p class="a2z-abd-fit-card__text">
+                                Retail, hospitality, or heavy manufacturing businesses (we stick to our niche).
+                            </p>
+                        </li>
+
+                        <!-- Not Item 3 -->
+                        <li class="a2z-abd-fit-card__item">
+                            <span class="a2z-abd-fit-card__cross-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <line x1="18" y1="6" x2="6" y2="18" />
+                                    <line x1="6" y1="6" x2="18" y2="18" />
+                                </svg>
+                            </span>
+                            <p class="a2z-abd-fit-card__text">
+                                You see accounting strictly as a necessary evil to minimize at all costs.
+                            </p>
+                        </li>
+                    </ul>
+
+                    <!-- Bottom Recommendation Note Box -->
+                    <div class="a2z-abd-fit-card__note">
+                        We are happy to recommend excellent firms if you fall into these categories.
                     </div>
                 </div>
             </div>
