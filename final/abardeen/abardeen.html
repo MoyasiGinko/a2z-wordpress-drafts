@@ -81,13 +81,14 @@
             pointer-events: none;
         }
 
+        .a2z-abd-hero__bg-img,
         .a2z-abd-hero__bg-svg {
             position: absolute;
             inset: 0;
             width: 100%;
             height: 100%;
             object-fit: cover;
-            opacity: 0.52;
+            object-position: top center;
         }
 
         /* Navy Atmospheric Blue Wash Overlay */
@@ -3578,70 +3579,8 @@
     <section class="a2z-abd-hero" id="aberdeen-accountants-hero" aria-label="Accountants in Aberdeen">
         <!-- Background Architecture Graphic & Multi-Stop Overlays -->
         <div class="a2z-abd-hero__bg" aria-hidden="true">
-            <!-- Architectural Facade Representation (Union Street Aberdeen office scene) -->
-            <svg class="a2z-abd-hero__bg-svg" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg"
-                preserveAspectRatio="xMidYMid slice">
-                <!-- Sky and background buildings -->
-                <rect width="1600" height="900" fill="#2d4863" />
-                <path d="M0,0 L1600,0 L1600,450 L1200,420 L950,440 L700,410 L450,430 L0,450 Z" fill="#3a5874"
-                    opacity="0.5" />
-
-                <!-- Historic Aberdeen Granite Architecture Buildings -->
-                <path d="M1250,150 L1450,130 L1600,160 L1600,900 L1250,900 Z" fill="#203a52" />
-                <!-- Windows and cornices right side -->
-                <rect x="1290" y="240" width="60" height="90" rx="30" fill="#15293d" />
-                <rect x="1380" y="240" width="60" height="90" rx="30" fill="#15293d" />
-                <rect x="1290" y="380" width="60" height="110" rx="4" fill="#15293d" />
-                <rect x="1380" y="380" width="60" height="110" rx="4" fill="#15293d" />
-                <rect x="1470" y="380" width="60" height="110" rx="4" fill="#15293d" />
-                <rect x="1270" y="200" width="280" height="15" fill="#4d6f8f" opacity="0.6" />
-                <rect x="1270" y="350" width="280" height="12" fill="#4d6f8f" opacity="0.6" />
-
-                <!-- Central Granite Facade -->
-                <path d="M380,80 L1250,150 L1250,900 L380,900 Z" fill="#294661" />
-                <!-- Architectural Stone Pediments and Columns -->
-                <rect x="420" y="140" width="14" height="760" fill="#446788" opacity="0.35" />
-                <rect x="620" y="140" width="14" height="760" fill="#446788" opacity="0.35" />
-                <rect x="820" y="140" width="14" height="760" fill="#446788" opacity="0.35" />
-                <rect x="1020" y="140" width="14" height="760" fill="#446788" opacity="0.35" />
-                <rect x="1220" y="140" width="14" height="760" fill="#446788" opacity="0.35" />
-
-                <!-- Center Storey Windows -->
-                <rect x="460" y="200" width="130" height="180" rx="6" fill="#142b40" />
-                <rect x="660" y="200" width="130" height="180" rx="6" fill="#142b40" />
-                <rect x="860" y="200" width="130" height="180" rx="6" fill="#142b40" />
-                <rect x="1060" y="200" width="130" height="180" rx="6" fill="#142b40" />
-
-                <rect x="460" y="440" width="130" height="190" rx="4" fill="#112437" />
-                <rect x="660" y="440" width="130" height="190" rx="4" fill="#112437" />
-                <rect x="860" y="440" width="130" height="190" rx="4" fill="#112437" />
-                <rect x="1060" y="440" width="130" height="190" rx="4" fill="#112437" />
-
-                <!-- Left Office Signage Facade (A2Z Accounting Sign) -->
-                <path d="M0,50 L400,90 L400,900 L0,900 Z" fill="#32506d" />
-                <!-- 3D Signboard -->
-                <g opacity="0.85" transform="translate(180, 260) rotate(-4)">
-                    <rect x="0" y="0" width="280" height="160" rx="6" fill="#f8fafc" opacity="0.92"
-                        filter="drop-shadow(0px 15px 25px rgba(0,0,0,0.6))" />
-                    <!-- Circle Logo -->
-                    <circle cx="140" cy="45" r="22" fill="#0d2e4d" />
-                    <text x="140" y="52" fill="#ffffff" font-family="sans-serif" font-size="14" font-weight="900"
-                        text-anchor="middle">A2Z</text>
-                    <!-- Accounting Text -->
-                    <text x="140" y="96" fill="#0d2e4d" font-family="'DM Sans', sans-serif" font-size="20"
-                        font-weight="900" letter-spacing="2" text-anchor="middle">ACCOUNTING</text>
-                    <text x="140" y="122" fill="#335372" font-family="'DM Sans', sans-serif" font-size="11"
-                        font-weight="700" letter-spacing="1" text-anchor="middle">Chartered Accountant</text>
-                </g>
-
-                <!-- Background Street Shop signs (REED / TESCO subtle silhouettes) -->
-                <g opacity="0.45" transform="translate(720, 680)">
-                    <text x="0" y="0" fill="#527699" font-family="'DM Sans', sans-serif" font-size="34"
-                        font-weight="900" letter-spacing="4">REED</text>
-                    <text x="160" y="0" fill="#47698a" font-family="'DM Sans', sans-serif" font-size="26"
-                        font-weight="800" letter-spacing="2">TESCO</text>
-                </g>
-            </svg>
+            <img src="https://res.cloudinary.com/dvvcwzp4n/image/upload/v1787076066/IMG-20260818-WA0027_xnlpvj.jpg"
+                alt="Aberdeen Office Background" class="a2z-abd-hero__bg-img" loading="eager">
             <div class="a2z-abd-hero__overlay"></div>
             <div class="a2z-abd-hero__ambient"></div>
         </div>
