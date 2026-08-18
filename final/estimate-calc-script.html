@@ -1,0 +1,1176 @@
+<!-- =============================================================
+     A2Z GLOBAL FEE + ENQUIRY POPUPS + CALCULATOR
+     WPCode: HTML Snippet, Auto Insert, Location = Site Wide Footer, Active.
+     Single source of truth for the branded popups, the fee calculator and all JS.
+     Per page, add only the CTA buttons (styled by that page's own CSS):
+       <a class="btn btn-ghost" href="#a2z-feequote">Get an instant fee estimate</a>
+       <a class="btn btn-gold"  href="#a2z-enquire" data-a2z-source="E-Commerce Enquiry">Book a consultation</a>
+     data-a2z-source sets the Zoho record name + enquiry modal title for that page.
+     Requires (already global): jQuery, Bootstrap 5, theme #gitModal + #enquireModal,
+     the Zoho handlers, and the a2z_calc_nonce endpoint (snippet 38949, Run Everywhere).
+     ============================================================= -->
+<style id="a2z-fx-styles">
+    /* brand tokens for the global wrapper */
+    .a2z-fx {
+        --navy: #0D2B42;
+        --navy2: #081F33;
+        --navy3: #17507E;
+        --gold: #C4905A;
+        --goldd: #A56E2E;
+        --goldl: #E6BB80;
+        --gold-bright: #EAC58C;
+        --ink: #1B2026;
+        --grey: #545B62;
+        --cream: #FBF8F3;
+        --gborder: #E2D2A8;
+    }
+
+    /* Continue buttons inside the popups */
+    .a2z-fx .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 9px;
+        font-weight: 600;
+        font-size: 15px;
+        padding: 15px 30px;
+        border-radius: 3px;
+        transition: .18s;
+        cursor: pointer;
+        border: 0;
+        letter-spacing: .01em;
+        position: relative;
+    }
+
+    .a2z-fx .btn-gold {
+        background: linear-gradient(180deg, var(--goldl), var(--gold));
+        color: var(--navy);
+        box-shadow: 0 1px 0 rgba(255, 255, 255, .5) inset, 0 12px 26px -14px rgba(176, 125, 60, .9);
+    }
+
+    .a2z-fx .btn-gold:hover {
+        background: linear-gradient(180deg, var(--gold), var(--goldd));
+        color: #1a1208;
+        transform: translateY(-2px);
+        box-shadow: 0 1px 0 rgba(255, 255, 255, .4) inset, 0 18px 32px -14px rgba(176, 125, 60, .95);
+    }
+
+    .a2z-fx .btn-gold:active {
+        transform: translateY(0);
+    }
+
+    .a2z-fx a:focus-visible,
+    .a2z-fx button:focus-visible,
+    .a2z-fx input:focus-visible,
+    .a2z-fx select:focus-visible,
+    .a2z-fx textarea:focus-visible {
+        outline: 2px solid var(--goldl);
+        outline-offset: 2px;
+        border-radius: 3px;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+        .a2z-fx *,
+        .a2z-fx *::before,
+        .a2z-fx *::after {
+            transition: none !important;
+            animation: none !important;
+        }
+    }
+
+    /* popups + calculator chrome (re-scoped to .a2z-fx) */
+    .a2z-fx .a2z-modal {
+        position: fixed;
+        inset: 0;
+        z-index: 2147483000;
+        display: none;
+        background: rgba(4, 13, 26, .84);
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .a2z-fx .a2z-modal__book {
+        display: block;
+        width: 100%;
+        text-align: center;
+        box-sizing: border-box;
+        margin: 0 0 4px;
+    }
+
+    .a2z-fx .a2z-eform {
+        margin: 2px 0 4px;
+    }
+
+    .a2z-fx .a2z-eform__row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+    }
+
+    .a2z-fx .a2z-eform .inputouter {
+        margin: 0 0 9px;
+    }
+
+    .a2z-fx .a2z-eform label {
+        display: block;
+        font-family: 'DM Sans', sans-serif;
+        font-size: .76rem;
+        font-weight: 600;
+        color: var(--navy);
+        margin: 0 0 4px;
+    }
+
+    .a2z-fx .a2z-eform label span {
+        color: var(--grey);
+        font-weight: 500;
+    }
+
+    .a2z-fx .a2z-eform input,
+    .a2z-fx .a2z-eform select,
+    .a2z-fx .a2z-eform textarea {
+        width: 100%;
+        box-sizing: border-box;
+        font-family: 'DM Sans', sans-serif;
+        font-size: .9rem;
+        color: var(--ink);
+        background: #fff;
+        border: 1px solid var(--gborder);
+        border-radius: 9px;
+        padding: 9px 12px;
+    }
+
+    .a2z-fx .a2z-eform input:focus,
+    .a2z-fx .a2z-eform select:focus,
+    .a2z-fx .a2z-eform textarea:focus {
+        outline: none;
+        border-color: var(--gold);
+        box-shadow: 0 0 0 3px rgba(196, 144, 90, .15);
+    }
+
+    .a2z-fx .a2z-eform input:not([type=submit]),
+    .a2z-fx .a2z-eform select,
+    .a2z-fx .a2z-eform textarea {
+        color: var(--ink) !important;
+        -webkit-text-fill-color: var(--ink) !important;
+        caret-color: var(--navy) !important;
+        background-color: #fff !important;
+        opacity: 1 !important;
+        text-transform: none !important;
+        letter-spacing: normal !important;
+        text-indent: 0 !important;
+        line-height: 1.4 !important;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+    }
+
+    .a2z-fx .a2z-eform select {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%236E747A' d='M1 1l5 5 5 0z'/%3E%3C/svg%3E") !important;
+        background-repeat: no-repeat !important;
+        background-position: right 12px center !important;
+        padding-right: 34px !important;
+    }
+
+    .a2z-fx .a2z-eform select option {
+        color: var(--ink) !important;
+        background: #fff !important;
+    }
+
+    .a2z-fx .a2z-eform ::placeholder {
+        color: var(--grey) !important;
+        -webkit-text-fill-color: var(--grey) !important;
+        opacity: 1 !important;
+    }
+
+    .a2z-fx .a2z-eform textarea {
+        resize: vertical;
+        min-height: 48px;
+    }
+
+    .a2z-fx .a2z-eform__submit {
+        -webkit-appearance: none;
+        appearance: none;
+        border: none;
+        display: block;
+        width: 100%;
+        margin: 4px 0 0;
+        box-sizing: border-box;
+        cursor: pointer;
+    }
+
+    .a2z-fx .a2z-eform .error-message {
+        color: #c0392b;
+        font-size: .72rem;
+        margin-top: 4px;
+        font-family: 'DM Sans', sans-serif;
+    }
+
+    .a2z-fx .a2z-eform .input-inner.has-error input,
+    .a2z-fx .a2z-eform .input-inner.has-error select {
+        border-color: #c0392b;
+    }
+
+    @media(max-width:520px) {
+        .a2z-fx .a2z-eform__row {
+            grid-template-columns: 1fr;
+            gap: 0;
+        }
+    }
+
+    .a2z-fx .a2z-modal:target {
+        display: block;
+    }
+
+    .a2z-fx .a2z-modal__backdrop {
+        position: fixed;
+        inset: 0;
+        background: rgba(6, 16, 28, .74);
+    }
+
+    .a2z-fx .a2z-modal__panel {
+        position: relative;
+        z-index: 1;
+        background: #fff;
+        max-width: 680px;
+        width: calc(100% - 32px);
+        margin: 5vh auto;
+        border-radius: 14px;
+        padding: clamp(22px, 3.2vw, 34px);
+        box-shadow: 0 30px 90px rgba(0, 0, 0, .45);
+        border-top: 4px solid var(--gold);
+        max-height: 88vh;
+        overflow: auto;
+    }
+
+    .a2z-fx .a2z-modal__close {
+        position: absolute;
+        top: 12px;
+        right: 16px;
+        width: 34px;
+        height: 34px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 26px;
+        line-height: 1;
+        color: var(--grey);
+        text-decoration: none;
+        border-radius: 50%;
+    }
+
+    .a2z-fx .a2z-modal__close:hover {
+        background: #f2ede4;
+        color: var(--navy);
+    }
+
+    .a2z-fx .a2z-modal__eyebrow {
+        font-family: 'DM Sans', sans-serif;
+        font-size: .72rem;
+        letter-spacing: .16em;
+        text-transform: uppercase;
+        color: var(--goldd);
+        font-weight: 600;
+        margin: 0 0 6px;
+    }
+
+    .a2z-fx .a2z-modal__title {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: clamp(1.6rem, 3.4vw, 2.1rem);
+        line-height: 1.1;
+        color: var(--navy);
+        margin: 0 0 10px;
+        font-weight: 600;
+    }
+
+    .a2z-fx .a2z-modal__lede {
+        font-family: 'DM Sans', sans-serif;
+        font-size: .96rem;
+        line-height: 1.5;
+        color: var(--ink);
+        margin: 0 0 12px;
+    }
+
+    .a2z-fx .a2z-modal__price {
+        margin: 0 0 20px;
+        border: 1px solid var(--gborder);
+        border-radius: 12px;
+        overflow: hidden;
+    }
+
+    .a2z-fx .a2z-modal__price .pr-head {
+        font-family: 'DM Sans', sans-serif;
+        font-size: .66rem;
+        letter-spacing: .15em;
+        text-transform: uppercase;
+        font-weight: 700;
+        color: var(--goldd);
+        padding: 9px 15px;
+        border-bottom: 1px solid #efe7d6;
+        background: #faf7f1;
+    }
+
+    .a2z-fx .a2z-modal__price .pr {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 14px;
+        padding: 12px 15px;
+    }
+
+    .a2z-fx .a2z-modal__price .pr+.pr {
+        border-top: 1px solid #efe7d6;
+    }
+
+    .a2z-fx .a2z-modal__price .pr-l {
+        font-family: 'DM Sans', sans-serif;
+        font-size: .88rem;
+        font-weight: 600;
+        color: var(--navy);
+        line-height: 1.25;
+    }
+
+    .a2z-fx .a2z-modal__price .pr-l em {
+        display: block;
+        font-style: normal;
+        font-weight: 500;
+        color: var(--goldd);
+        font-size: .72rem;
+        letter-spacing: .01em;
+        margin-top: 2px;
+    }
+
+    .a2z-fx .a2z-modal__price .pr-v {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 1.22rem;
+        font-weight: 700;
+        color: var(--navy);
+        white-space: nowrap;
+    }
+
+    .a2z-fx .a2z-modal__price .pr-note {
+        font-family: 'DM Sans', sans-serif;
+        font-size: .82rem;
+        color: var(--ink);
+        font-weight: 600;
+        margin: 0;
+        padding: 12px 15px;
+        background: #f3ead8;
+        border-top: 1px solid #e6d4ac;
+        line-height: 1.5;
+    }
+
+    .a2z-fx .a2z-modal__price .pr-note .pr-tick {
+        color: var(--goldd);
+        font-weight: 800;
+        margin-right: 4px;
+    }
+
+    .a2z-fx .a2z-modal__price .pr-scale {
+        font-family: 'DM Sans', sans-serif;
+        font-size: .82rem;
+        line-height: 1.5;
+        color: var(--ink);
+        padding: 11px 15px;
+        background: #fff;
+        border-top: 1px solid #efe7d6;
+        border-left: 3px solid var(--gold);
+    }
+
+    .a2z-fx .a2z-modal__price .pr-scale__lab {
+        display: block;
+        font-size: .62rem;
+        letter-spacing: .14em;
+        text-transform: uppercase;
+        font-weight: 700;
+        color: var(--goldd);
+        margin-bottom: 3px;
+    }
+
+    .a2z-fx .a2z-modal__price .pr-scale b {
+        font-weight: 700;
+        color: var(--navy);
+    }
+
+    .a2z-fx .a2z-modal__price .pr-ask {
+        background: rgba(196, 144, 90, .09);
+        border-top: 1px solid #efe7d6;
+    }
+
+    .a2z-fx .a2z-modal__price .pr-ask .pr-l {
+        color: var(--navy);
+        font-weight: 700;
+    }
+
+    .a2z-fx .a2z-modal__price .pr-ask-v {
+        color: var(--goldd);
+        font-family: 'DM Sans', sans-serif;
+        font-size: .9rem;
+        font-weight: 700;
+    }
+
+    .a2z-fx .a2z-modal__slot {
+        border: 1px dashed var(--gborder);
+        border-radius: 10px;
+        padding: 22px;
+        text-align: center;
+        color: var(--grey);
+        font-family: 'DM Sans', sans-serif;
+        font-size: .9rem;
+        background: #faf7f1;
+    }
+
+    .a2z-fx .a2z-modal__out {
+        font-family: 'DM Sans', sans-serif;
+        font-size: .86rem;
+        line-height: 1.5;
+        color: var(--grey);
+        margin: 16px 0 0;
+        padding-top: 14px;
+        border-top: 1px solid #ece5d8;
+    }
+
+    .a2z-fx .a2z-modal__out a {
+        color: var(--goldd);
+        font-weight: 600;
+    }
+
+    @media(max-width:600px) {
+        .a2z-fx .a2z-modal__panel {
+            margin: 0;
+            width: 100%;
+            min-height: 100%;
+            border-radius: 0;
+            max-height: 100vh;
+            padding: 20px 16px 26px;
+        }
+
+        .a2z-fx .a2z-modal__lede {
+            font-size: .9rem;
+        }
+
+        .a2z-fx .a2z-modal__price {
+            margin: 0 0 16px;
+        }
+
+        .a2z-fx .a2z-modal__price .pr-head {
+            padding: 8px 14px;
+        }
+
+        .a2z-fx .a2z-modal__price .pr {
+            padding: 10px 14px;
+            gap: 10px;
+        }
+
+        .a2z-fx .a2z-modal__price .pr-l {
+            font-size: .85rem;
+        }
+
+        .a2z-fx .a2z-modal__price .pr-l em {
+            font-size: .67rem;
+            margin-top: 1px;
+        }
+
+        .a2z-fx .a2z-modal__price .pr-v {
+            font-size: 1.12rem;
+        }
+
+        /* quiet the two supporting blocks into one soft tone so the prices lead */
+        .a2z-fx .a2z-modal__price .pr-scale {
+            border-left: none;
+            background: #faf7f1;
+            padding: 10px 14px;
+            font-size: .78rem;
+        }
+
+        .a2z-fx .a2z-modal__price .pr-note {
+            background: #faf7f1;
+            border-top: 1px solid #efe7d6;
+            padding: 10px 14px;
+            font-size: .78rem;
+            font-weight: 500;
+        }
+    }
+</style>
+
+<div class="a2z-fx">
+    <div id="a2z-feequote" class="a2z-modal" role="dialog" aria-modal="true" aria-labelledby="fqTitle">
+        <a href="#!" class="a2z-modal__backdrop" aria-label="Close" tabindex="-1"></a>
+        <div class="a2z-modal__panel">
+            <a href="#!" class="a2z-modal__close" aria-label="Close">&times;</a>
+            <p class="a2z-modal__eyebrow">Fair, fixed, everything-in pricing</p>
+            <h2 id="fqTitle" class="a2z-modal__title">See your fixed fee, in minutes</h2>
+            <p class="a2z-modal__lede">Answer a few quick questions and see your <strong
+                    style="color:var(--goldd);">fixed monthly fee on the next step</strong> - everything included,
+                tailored to your business, no obligation. The calibre of a top firm, for a fraction of what you would
+                expect.</p>
+            <div class="a2z-modal__price">
+                <div class="pr-head">One all-inclusive monthly fee per level</div>
+                <div class="pr"><span class="pr-l">Company essentials<em>Year-end accounts and Corporation Tax, filed
+                            yearly. No payroll.</em></span><span class="pr-v">from £105+VAT</span></div>
+                <div class="pr"><span class="pr-l">Plus a director payroll<em>All of Company essentials, and a director
+                            payroll run monthly.</em></span><span class="pr-v">from £125+VAT</span></div>
+                <div class="pr"><span class="pr-l">Full support with quarterly bookkeeping<em>All of the above, and
+                            quarterly bookkeeping - includes two premium apps (worth £68+VAT/m) at no extra
+                            cost.</em></span><span class="pr-v">from £245+VAT</span></div>
+                <div class="pr"><span class="pr-l">Full support with VAT<em>All of the above, and VAT filed quarterly
+                            under MTD.</em></span><span class="pr-v">from £324+VAT</span></div>
+                <div class="pr pr-ask"><span class="pr-l">Sole trader or partnership?</span><span
+                        class="pr-v pr-ask-v">Just ask</span></div>
+                <div class="pr-scale"><span class="pr-scale__lab">Room to grow</span>As you grow, we carry the
+                    complexity - more transactions, staff, VAT, extra entities - so you never feel it. Management
+                    accounts (monthly or quarterly), cashflow and advisory are here whenever you need them, always
+                    agreed up front.</div>
+                <p class="pr-note"><span class="pr-tick" aria-hidden="true">&#10003;</span> Each price is the whole
+                    monthly fee for that level - you pay one figure, never added together. Every level also includes
+                    all-year deadline monitoring, your confirmation statement filed each year, your £50 Companies House
+                    fee, and a fair level of advice and support.</p>
+            </div>
+            <button type="button" class="btn btn-gold a2z-eform__submit" data-bs-toggle="modal"
+                data-bs-target="#gitModal" onclick="location.hash='!'">Continue to your instant estimate</button>
+        </div>
+    </div>
+
+    <div id="a2z-enquire" class="a2z-modal" role="dialog" aria-modal="true" aria-labelledby="eqTitle">
+        <a href="#!" class="a2z-modal__backdrop" aria-label="Close" tabindex="-1"></a>
+        <div class="a2z-modal__panel">
+            <a href="#!" class="a2z-modal__close" aria-label="Close">&times;</a>
+            <p class="a2z-modal__eyebrow">Real people, real answers</p>
+            <h2 id="eqTitle" class="a2z-modal__title">We treat your business like our own</h2>
+            <p class="a2z-modal__lede">Tell us a little about your business and a specialist - a real person who will
+                know your name - replies to you personally, usually the same day. No obligation, no pressure.</p>
+            <div class="a2z-modal__price">
+                <div class="pr-head">One all-inclusive monthly fee per level</div>
+                <div class="pr"><span class="pr-l">Company essentials<em>Year-end accounts and Corporation Tax, filed
+                            yearly. No payroll.</em></span><span class="pr-v">from £105+VAT</span></div>
+                <div class="pr"><span class="pr-l">Plus a director payroll<em>All of Company essentials, and a director
+                            payroll run monthly.</em></span><span class="pr-v">from £125+VAT</span></div>
+                <div class="pr"><span class="pr-l">Full support with quarterly bookkeeping<em>All of the above, and
+                            quarterly bookkeeping - includes two premium apps (worth £68+VAT/m) at no extra
+                            cost.</em></span><span class="pr-v">from £245+VAT</span></div>
+                <div class="pr"><span class="pr-l">Full support with VAT<em>All of the above, and VAT filed quarterly
+                            under MTD.</em></span><span class="pr-v">from £324+VAT</span></div>
+                <div class="pr pr-ask"><span class="pr-l">Sole trader or partnership?</span><span
+                        class="pr-v pr-ask-v">Just ask</span></div>
+                <div class="pr-scale"><span class="pr-scale__lab">Room to grow</span>As you grow, we carry the
+                    complexity - more transactions, staff, VAT, extra entities - so you never feel it. Management
+                    accounts (monthly or quarterly), cashflow and advisory are here whenever you need them, always
+                    agreed up front.</div>
+                <p class="pr-note"><span class="pr-tick" aria-hidden="true">&#10003;</span> Each price is the whole
+                    monthly fee for that level - you pay one figure, never added together. Every level also includes
+                    all-year deadline monitoring, your confirmation statement filed each year, your £50 Companies House
+                    fee, and a fair level of advice and support.</p>
+            </div>
+            <button type="button" class="btn btn-gold a2z-eform__submit" data-bs-toggle="modal"
+                data-bs-target="#enquireModal" data-source="Website Enquiry" onclick="location.hash='!'">Continue to
+                your enquiry</button>
+        </div>
+    </div>
+
+    <!-- Fee calculator modal (relocated to <body> by JS on ready) -->
+    <div class="modal service-table fade" id="service-table" tabindex="-1" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+                    <div class="table-wraper">
+                        <form id="calculator_form" class="pricing-calculator-form">
+                            <table class="pricing-calculator">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>Services</th>
+                                        <th>Monthly fee <br> excluding VAT</th>
+                                    </tr>
+                                    <tr>
+                                        <th>Select Annual Sales*</th>
+                                        <th>
+                                            <select name="client_revenue" id="client_revenue"
+                                                onchange="calculateTotal()">
+                                                <option value="">Select Revenue Range</option>
+                                                <option value="Up to 130k">Up to 130k</option>
+                                                <option value="130k to 150k">130k to 150k</option>
+                                                <option value="150k to 200k">150k to 200k</option>
+                                                <option value="200k to 300k">200k to 300k</option>
+                                                <option value="300k to 400k">300k to 400k</option>
+                                                <option value="400k to 500k">400k to 500k</option>
+                                                <option value="500k to 750k">500k to 750k</option>
+                                                <option value="750k to 1m">750k to 1m</option>
+                                                <option value="1m to 1.5m">1m to 1.5m</option>
+                                                <option value="1.5m to 2m">1.5m to 2m</option>
+                                                <option value="2m to 3m">2m to 3m</option>
+                                                <option value="3m to 5m">3m to 5m</option>
+                                                <option value="5m to 7m">5m to 7m</option>
+                                                <option value="7m to 10m">7m to 10m</option>
+                                            </select>
+                                        </th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td data-title="Services"><strong>Bookkeeping Software</strong></td>
+                                        <td>
+                                            <select name="bookkeeping_software" id="bookkeeping_software"
+                                                onchange="calculateTotal()">
+                                                <option value="NA">NA</option>
+                                                <option value="Quick Books">Quick Books</option>
+                                                <option value="XERO">XERO</option>
+                                            </select>
+                                        </td>
+                                        <td id="bookkeeping_software_price" data-title="Monthly fee excluding VAT:">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Document Uploads Software</strong></td>
+                                        <td>
+                                            <select name="document_uploads_software" id="document_uploads_software"
+                                                onchange="calculateTotal()">
+                                                <option value="NA">NA</option>
+                                                <option value="Dext">Dext</option>
+                                            </select>
+                                        </td>
+                                        <td id="document_uploads_software_price"
+                                            data-title="Monthly fee excluding VAT:"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Payroll</strong></td>
+                                        <td>
+                                            <select name="payroll" id="payroll" onchange="calculateTotal()">
+                                                <option value="NA">NA</option>
+                                                <option value="Weekly Payroll">Weekly Payroll</option>
+                                                <option value="Monthly Payroll">Monthly Payroll</option>
+                                            </select>
+                                        </td>
+                                        <td id="payroll_price" data-title="Monthly fee excluding VAT:"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>VAT</strong></td>
+                                        <td>
+                                            <select name="vat" id="vat" onchange="calculateTotal()">
+                                                <option value="NA">NA</option>
+                                                <option value="Quarterly VAT">Quarterly VAT</option>
+                                                <option value="Monthly VAT">Monthly VAT</option>
+                                            </select>
+                                        </td>
+                                        <td id="vat_price" data-title="Monthly fee excluding VAT:"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Bookkeeping</strong></td>
+                                        <td>
+                                            <select name="bookkeeping" id="bookkeeping" onchange="calculateTotal()">
+                                                <option value="NA">NA</option>
+                                                <option value="Quarterly Bookkeeping">Quarterly Bookkeeping</option>
+                                                <option value="Monthly Bookkeeping">Monthly Bookkeeping</option>
+                                            </select>
+                                        </td>
+                                        <td id="bookkeeping_price" data-title="Monthly fee excluding VAT:"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Management Accounts</strong></td>
+                                        <td>
+                                            <select name="management_accounts" id="management_accounts"
+                                                onchange="calculateTotal()">
+                                                <option value="NA">NA</option>
+                                                <option value="Quarterly Management Accounts">Quarterly Management
+                                                    Accounts</option>
+                                                <option value="Monthly Management Accounts">Monthly Management Accounts
+                                                </option>
+                                            </select>
+                                        </td>
+                                        <td id="management_accounts_price" data-title="Monthly fee excluding VAT:"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Annual Accounts &amp; Corporation Tax <span>*</span></strong></td>
+                                        <td>
+                                            <select name="annual_accounts" id="annual_accounts"
+                                                onchange="calculateTotal()">
+                                                <option value="Yes">Yes</option>
+                                            </select>
+                                        </td>
+                                        <td id="annual_accounts_price" data-title="Monthly fee excluding VAT:"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Director's Tax Returns (<span>select no. of
+                                                    people</span>)</strong><small
+                                                style="display:block;font-weight:400;font-size:.78em;line-height:1.4;color:#6E747A;margin-top:4px;">Shown
+                                                for completeness. &#163;120+VAT each per year, billed annually and
+                                                <strong style="color:#B07D3C;">separately from your monthly
+                                                    fee</strong>.</small></td>
+                                        <td>
+                                            <select name="people_tax_returns" id="people_tax_returns"
+                                                onchange="calculateTotal()">
+                                                <option value="NA">NA</option>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                                <option value="6">6</option>
+                                                <option value="7">7</option>
+                                                <option value="8">8</option>
+                                                <option value="9">9</option>
+                                                <option value="10">10</option>
+                                                <option value="11">11</option>
+                                                <option value="12">12</option>
+                                                <option value="13">13</option>
+                                                <option value="14">14</option>
+                                                <option value="15">15</option>
+                                            </select>
+                                        </td>
+                                        <td id="people_tax_returns_price" data-title="Per year, billed separately:">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Pension Contributions (no extra)</strong></td>
+                                        <td>
+                                            <select name="pension" id="pension" onchange="calculateTotal()">
+                                                <option value="NA">NA</option>
+                                                <option value="Yes">Yes</option>
+                                                <option value="No">No</option>
+                                            </select>
+                                        </td>
+                                        <td id="pension_price" data-title="Monthly fee excluding VAT:"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>CIS Returns</strong></td>
+                                        <td>
+                                            <select name="cis_returns" id="cis_returns" onchange="calculateTotal()">
+                                                <option value="NA">NA</option>
+                                                <option value="Yes">Yes</option>
+                                                <option value="No">No</option>
+                                            </select>
+                                        </td>
+                                        <td id="cis_returns_price" data-title="Monthly fee excluding VAT:"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Companies House Annual Fee
+                                                (<span>CS01</span>)<span>*</span></strong></td>
+                                        <td>
+                                            <select name="companies_house_annual" id="companies_house_annual"
+                                                onchange="calculateTotal()">
+                                                <option value="Yes">Yes</option>
+                                            </select>
+                                        </td>
+                                        <td id="companies_house_annual_price" data-title="Monthly fee excluding VAT:">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Address Service</strong></td>
+                                        <td>
+                                            <select name="address_service" id="address_service"
+                                                onchange="calculateTotal()">
+                                                <option value="NA">NA</option>
+                                                <option value="Yes">Yes</option>
+                                                <option value="No">No</option>
+                                            </select>
+                                        </td>
+                                        <td id="address_service_price" data-title="Monthly fee excluding VAT:"></td>
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <td colspan="2"><strong>Total</strong></td>
+                                        <td id="total_price"><strong></strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">VAT</td>
+                                        <td id="vat_total"></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2"><strong>Gross Monthly</strong></td>
+                                        <td id="gross_monthly"><strong></strong></td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+
+                            <div class="inputouter m-3 text-center">
+                                <input type="submit" value="Request A Quote" class="btn">
+                                <input type="hidden" id="calculator_nonce" name="calculator_nonce" value="">
+                                <input type="hidden" name="_wp_http_referer" value="/">
+                            </div>
+                        </form>
+
+                        <h4>Our fees are fixed, all-inclusive, and transparent, except for certain registration fees.
+                        </h4>
+                        <h5>Notes:</h5>
+                        <p>For a very small business, full bookkeeping or software may not be required.<br>
+                            A2Z is fully digital and does not accept paper invoices or receipts&mdash;records must be
+                            uploaded via the software.<br>
+                            Bank statements should be sent to a designated email quarterly (if we handle bookkeeping) or
+                            annually (for yearly service only).<br>
+                            Services marked * are essential, as we do not offer other services separately without these.
+                        </p>
+                        <h6>Fees are collected via monthly direct debit.</h6>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Safety net: ensure SweetAlert2 is available (it is normally loaded site-wide).
+    if (typeof Swal === 'undefined') {
+        var a2zSwalCss = document.createElement('link');
+        a2zSwalCss.rel = 'stylesheet';
+        a2zSwalCss.href = 'https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css';
+        document.head.appendChild(a2zSwalCss);
+        var a2zSwalJs = document.createElement('script');
+        a2zSwalJs.src = 'https://cdn.jsdelivr.net/npm/sweetalert2@11';
+        document.head.appendChild(a2zSwalJs);
+    }
+
+    // Calculator pricing data
+    const fixedFields = { "quick_books_software": 15, "xero_software": 30, "dext_software": 7, "monthly_vat": 1.5, "monthly_bookkeeping": 1.5, "monthly_management_accounts": 1.75, "personal_tax_per_person": 10, "companies_house_annual_fee": 5, "pension_contributions": 0 };
+    const repeaterData = [{ "client_revenue": "Up to 130k", "annual_accounts_corporation_tax": 100, "weekly_payroll": 70, "monthly_payroll": 20, "quarterly_vat": 25, "quarterly_bookkeeping": 75, "quarterly_management_accounts": 85, "cis_returns": 20, "address_service": 20, "quick_books_software": 25, "xero_software": 30, "dext_software": 20, "monthly_vat": 37.5, "monthly_bookkeeping": 97.5, "monthly_management_accounts": 148.75, "personal_tax_per_person": 10, "companies_house_annual_fee": 5, "pension_contributions": 0 }, { "client_revenue": "130k to 150k", "annual_accounts_corporation_tax": 125, "weekly_payroll": 75, "monthly_payroll": 25, "quarterly_vat": 30, "quarterly_bookkeeping": 85, "quarterly_management_accounts": 95, "cis_returns": 25, "address_service": 20, "quick_books_software": 25, "xero_software": 30, "dext_software": 20, "monthly_vat": 45, "monthly_bookkeeping": 110.5, "monthly_management_accounts": 166.25, "personal_tax_per_person": 10, "companies_house_annual_fee": 5, "pension_contributions": 0 }, { "client_revenue": "150k to 200k", "annual_accounts_corporation_tax": 135, "weekly_payroll": 75, "monthly_payroll": 25, "quarterly_vat": 30, "quarterly_bookkeeping": 100, "quarterly_management_accounts": 95, "cis_returns": 25, "address_service": 20, "quick_books_software": 25, "xero_software": 30, "dext_software": 20, "monthly_vat": 45, "monthly_bookkeeping": 130, "monthly_management_accounts": 166.25, "personal_tax_per_person": 10, "companies_house_annual_fee": 5, "pension_contributions": 0 }, { "client_revenue": "200k to 300k", "annual_accounts_corporation_tax": 150, "weekly_payroll": 75, "monthly_payroll": 25, "quarterly_vat": 35, "quarterly_bookkeeping": 150, "quarterly_management_accounts": 100, "cis_returns": 30, "address_service": 20, "quick_books_software": 25, "xero_software": 30, "dext_software": 20, "monthly_vat": 52.5, "monthly_bookkeeping": 195, "monthly_management_accounts": 175, "personal_tax_per_person": 10, "companies_house_annual_fee": 5, "pension_contributions": 0 }, { "client_revenue": "300k to 400k", "annual_accounts_corporation_tax": 175, "weekly_payroll": 85, "monthly_payroll": 35, "quarterly_vat": 40, "quarterly_bookkeeping": 175, "quarterly_management_accounts": 200, "cis_returns": 35, "address_service": 20, "quick_books_software": 25, "xero_software": 30, "dext_software": 20, "monthly_vat": 60, "monthly_bookkeeping": 227.5, "monthly_management_accounts": 218.75, "personal_tax_per_person": 10, "companies_house_annual_fee": 5, "pension_contributions": 0 }, { "client_revenue": "400k to 500k", "annual_accounts_corporation_tax": 200, "weekly_payroll": 105, "monthly_payroll": 55, "quarterly_vat": 45, "quarterly_bookkeeping": 185, "quarterly_management_accounts": 135, "cis_returns": 40, "address_service": 20, "quick_books_software": 25, "xero_software": 30, "dext_software": 20, "monthly_vat": 67.5, "monthly_bookkeeping": 240.5, "monthly_management_accounts": 236.25, "personal_tax_per_person": 10, "companies_house_annual_fee": 5, "pension_contributions": 0 }, { "client_revenue": "500k to 750k", "annual_accounts_corporation_tax": 250, "weekly_payroll": 115, "monthly_payroll": 65, "quarterly_vat": 55, "quarterly_bookkeeping": 200, "quarterly_management_accounts": 155, "cis_returns": 45, "address_service": 25, "quick_books_software": 25, "xero_software": 30, "dext_software": 20, "monthly_vat": 82.5, "monthly_bookkeeping": 260, "monthly_management_accounts": 271.25, "personal_tax_per_person": 10, "companies_house_annual_fee": 5, "pension_contributions": 0 }, { "client_revenue": "750k to 1m", "annual_accounts_corporation_tax": 325, "weekly_payroll": 125, "monthly_payroll": 75, "quarterly_vat": 60, "quarterly_bookkeeping": 250, "quarterly_management_accounts": 175, "cis_returns": 50, "address_service": 35, "quick_books_software": 25, "xero_software": 30, "dext_software": 20, "monthly_vat": 90, "monthly_bookkeeping": 325, "monthly_management_accounts": 306.25, "personal_tax_per_person": 10, "companies_house_annual_fee": 5, "pension_contributions": 0 }, { "client_revenue": "1m to 1.5m", "annual_accounts_corporation_tax": 350, "weekly_payroll": 135, "monthly_payroll": 85, "quarterly_vat": 65, "quarterly_bookkeeping": 350, "quarterly_management_accounts": 185, "cis_returns": 55, "address_service": 35, "quick_books_software": 25, "xero_software": 30, "dext_software": 20, "monthly_vat": 97.5, "monthly_bookkeeping": 455, "monthly_management_accounts": 323.75, "personal_tax_per_person": 10, "companies_house_annual_fee": 5, "pension_contributions": 0 }, { "client_revenue": "1.5m to 2m", "annual_accounts_corporation_tax": 500, "weekly_payroll": 145, "monthly_payroll": 95, "quarterly_vat": 75, "quarterly_bookkeeping": 375, "quarterly_management_accounts": 195, "cis_returns": 60, "address_service": 35, "quick_books_software": 25, "xero_software": 30, "dext_software": 20, "monthly_vat": 112.5, "monthly_bookkeeping": 487.5, "monthly_management_accounts": 341.25, "personal_tax_per_person": 10, "companies_house_annual_fee": 5, "pension_contributions": 0 }, { "client_revenue": "2m to 3m", "annual_accounts_corporation_tax": 550, "weekly_payroll": 165, "monthly_payroll": 115, "quarterly_vat": 85, "quarterly_bookkeeping": 400, "quarterly_management_accounts": 250, "cis_returns": 65, "address_service": 40, "quick_books_software": 25, "xero_software": 30, "dext_software": 20, "monthly_vat": 127.5, "monthly_bookkeeping": 520, "monthly_management_accounts": 437.5, "personal_tax_per_person": 10, "companies_house_annual_fee": 5, "pension_contributions": 0 }, { "client_revenue": "3m to 5m", "annual_accounts_corporation_tax": 650, "weekly_payroll": 175, "monthly_payroll": 125, "quarterly_vat": 115, "quarterly_bookkeeping": 500, "quarterly_management_accounts": 350, "cis_returns": 70, "address_service": 40, "quick_books_software": 25, "xero_software": 30, "dext_software": 20, "monthly_vat": 172.5, "monthly_bookkeeping": 650, "monthly_management_accounts": 612.5, "personal_tax_per_person": 10, "companies_house_annual_fee": 5, "pension_contributions": 0 }, { "client_revenue": "5m to 7m", "annual_accounts_corporation_tax": 1200, "weekly_payroll": 180, "monthly_payroll": 130, "quarterly_vat": 195, "quarterly_bookkeeping": 1000, "quarterly_management_accounts": 450, "cis_returns": 75, "address_service": 40, "quick_books_software": 25, "xero_software": 30, "dext_software": 20, "monthly_vat": 292.5, "monthly_bookkeeping": 1300, "monthly_management_accounts": 787.5, "personal_tax_per_person": 10, "companies_house_annual_fee": 5, "pension_contributions": 0 }, { "client_revenue": "7m to 10m", "annual_accounts_corporation_tax": 1800, "weekly_payroll": 225, "monthly_payroll": 175, "quarterly_vat": 260, "quarterly_bookkeeping": 2000, "quarterly_management_accounts": 500, "cis_returns": 80, "address_service": 45, "quick_books_software": 25, "xero_software": 30, "dext_software": 20, "monthly_vat": 390, "monthly_bookkeeping": 2600, "monthly_management_accounts": 875, "personal_tax_per_person": 10, "companies_house_annual_fee": 5, "pension_contributions": 0 }];
+    const vatRate = 0.2;
+
+    // Define calculateTotal globally
+    window.calculateTotal = function () {
+        const clientRevenue = document.getElementById('client_revenue')?.value || '';
+        const selectedRange = repeaterData.find(row => row.client_revenue === clientRevenue);
+        let total = 0;
+
+        const formatPrice = (price) => price === 0 ? '' : '\u00a3' + price.toFixed(2);
+
+        const formData = { client_revenue: clientRevenue };
+
+        if (!selectedRange) {
+            // No revenue chosen yet: clear price cells and totals, then stop.
+            ['bookkeeping_software_price', 'document_uploads_software_price', 'payroll_price', 'vat_price', 'bookkeeping_price', 'management_accounts_price', 'annual_accounts_price', 'people_tax_returns_price', 'pension_price', 'cis_returns_price', 'companies_house_annual_price', 'address_service_price', 'total_price', 'vat_total', 'gross_monthly'].forEach(function (id) { var el = document.getElementById(id); if (el) el.textContent = ''; });
+            window.calculatorFormData = formData;
+            return;
+        }
+
+        // Bookkeeping Software
+        const bookkeepingSoftware = document.getElementById('bookkeeping_software')?.value || 'NA';
+        let bookkeepingSoftwarePrice = 0;
+        if (bookkeepingSoftware === 'Quick Books') { bookkeepingSoftwarePrice = selectedRange.quick_books_software; }
+        else if (bookkeepingSoftware === 'XERO') { bookkeepingSoftwarePrice = selectedRange.xero_software; }
+        document.getElementById('bookkeeping_software_price').textContent = formatPrice(bookkeepingSoftwarePrice);
+        formData.bookkeeping_software = bookkeepingSoftware;
+        formData.bookkeeping_software_price = bookkeepingSoftwarePrice;
+        total += bookkeepingSoftwarePrice;
+
+        // Document Uploads Software
+        const documentUploadsSoftware = document.getElementById('document_uploads_software')?.value || 'NA';
+        let documentUploadsSoftwarePrice = documentUploadsSoftware === 'Dext' ? selectedRange.dext_software : 0;
+        document.getElementById('document_uploads_software_price').textContent = formatPrice(documentUploadsSoftwarePrice);
+        formData.document_uploads_software = documentUploadsSoftware;
+        formData.document_uploads_software_price = documentUploadsSoftwarePrice;
+        total += documentUploadsSoftwarePrice;
+
+        // Payroll
+        const payroll = document.getElementById('payroll')?.value || 'NA';
+        let payrollPrice = 0;
+        if (payroll === 'Weekly Payroll') { payrollPrice = selectedRange.weekly_payroll; }
+        else if (payroll === 'Monthly Payroll') { payrollPrice = selectedRange.monthly_payroll; }
+        document.getElementById('payroll_price').textContent = formatPrice(payrollPrice);
+        formData.payroll = payroll;
+        formData.payroll_price = payrollPrice;
+        total += payrollPrice;
+
+        // VAT
+        const vat = document.getElementById('vat')?.value || 'NA';
+        let vatPrice = 0;
+        if (vat === 'Quarterly VAT') { vatPrice = selectedRange.quarterly_vat; }
+        else if (vat === 'Monthly VAT') { vatPrice = selectedRange.monthly_vat; }
+        document.getElementById('vat_price').textContent = formatPrice(vatPrice);
+        formData.vat = vat;
+        formData.vat_price = vatPrice;
+        total += vatPrice;
+
+        // Bookkeeping
+        const bookkeeping = document.getElementById('bookkeeping')?.value || 'NA';
+        let bookkeepingPrice = 0;
+        if (bookkeeping === 'Quarterly Bookkeeping') { bookkeepingPrice = selectedRange.quarterly_bookkeeping; }
+        else if (bookkeeping === 'Monthly Bookkeeping') { bookkeepingPrice = selectedRange.monthly_bookkeeping; }
+        document.getElementById('bookkeeping_price').textContent = formatPrice(bookkeepingPrice);
+        formData.bookkeeping = bookkeeping;
+        formData.bookkeeping_price = bookkeepingPrice;
+        total += bookkeepingPrice;
+
+        // Management Accounts
+        const managementAccounts = document.getElementById('management_accounts')?.value || 'NA';
+        let managementAccountsPrice = 0;
+        if (managementAccounts === 'Quarterly Management Accounts') { managementAccountsPrice = selectedRange.quarterly_management_accounts; }
+        else if (managementAccounts === 'Monthly Management Accounts') { managementAccountsPrice = selectedRange.monthly_management_accounts; }
+        document.getElementById('management_accounts_price').textContent = formatPrice(managementAccountsPrice);
+        formData.management_accounts = managementAccounts;
+        formData.management_accounts_price = managementAccountsPrice;
+        total += managementAccountsPrice;
+
+        // Annual Accounts & Corporation Tax
+        const annualAccounts = document.getElementById('annual_accounts')?.value || 'No';
+        let annualAccountsPrice = annualAccounts === 'Yes' ? selectedRange.annual_accounts_corporation_tax : 0;
+        document.getElementById('annual_accounts_price').textContent = formatPrice(annualAccountsPrice);
+        formData.annual_accounts = annualAccounts;
+        formData.annual_accounts_price = annualAccountsPrice;
+        total += annualAccountsPrice;
+
+        // Director's Tax Returns
+        const peopleTaxRaw = document.getElementById('people_tax_returns')?.value || 'NA';
+        const peopleTaxReturns = (peopleTaxRaw === 'NA') ? 0 : (parseInt(peopleTaxRaw) || 0);
+        // Director personal tax returns: 120+VAT each per year, billed annually and
+        // separately - shown for completeness, NOT added to the monthly total.
+        const peopleTaxReturnsAnnual = peopleTaxReturns * selectedRange.personal_tax_per_person * 12;
+        document.getElementById('people_tax_returns_price').textContent = peopleTaxReturns > 0 ? ('\u00a3' + peopleTaxReturnsAnnual.toFixed(2) + '+VAT/yr') : '';
+        formData.people_tax_returns = (peopleTaxRaw === 'NA') ? 'NA' : peopleTaxReturns;
+        formData.people_tax_returns_price = peopleTaxReturnsAnnual;
+
+        // Pension Contributions
+        const pension = document.getElementById('pension')?.value || 'No';
+        let pensionPrice = pension === 'Yes' ? selectedRange.pension_contributions : 0;
+        document.getElementById('pension_price').textContent = '\u00a3' + pensionPrice.toFixed(2);
+        formData.pension = pension;
+        formData.pension_price = pensionPrice;
+        total += pensionPrice;
+
+        // CIS Returns
+        const cisReturns = document.getElementById('cis_returns')?.value || 'No';
+        let cisReturnsPrice = cisReturns === 'Yes' ? selectedRange.cis_returns : 0;
+        document.getElementById('cis_returns_price').textContent = formatPrice(cisReturnsPrice);
+        formData.cis_returns = cisReturns;
+        formData.cis_returns_price = cisReturnsPrice;
+        total += cisReturnsPrice;
+
+        // Companies House Annual Fee
+        const companiesHouseAnnual = document.getElementById('companies_house_annual')?.value || 'Yes';
+        let companiesHouseAnnualPrice = companiesHouseAnnual === 'Yes' ? selectedRange.companies_house_annual_fee : 0;
+        document.getElementById('companies_house_annual_price').textContent = formatPrice(companiesHouseAnnualPrice);
+        formData.companies_house_annual = companiesHouseAnnual;
+        formData.companies_house_annual_price = companiesHouseAnnualPrice;
+        total += companiesHouseAnnualPrice;
+
+        // Address Service
+        const addressService = document.getElementById('address_service')?.value || 'No';
+        let addressServicePrice = addressService === 'Yes' ? selectedRange.address_service : 0;
+        document.getElementById('address_service_price').textContent = formatPrice(addressServicePrice);
+        formData.address_service = addressService;
+        formData.address_service_price = addressServicePrice;
+        total += addressServicePrice;
+
+        // Totals
+        const vatTotal = total * vatRate;
+        const grossMonthly = total + vatTotal;
+        document.getElementById('total_price').textContent = '\u00a3' + total.toFixed(2);
+        document.getElementById('vat_total').textContent = '\u00a3' + vatTotal.toFixed(2);
+        document.getElementById('gross_monthly').textContent = '\u00a3' + grossMonthly.toFixed(2);
+        formData.total_price = total;
+        formData.vat_total = vatTotal;
+        formData.gross_monthly = grossMonthly;
+
+        window.calculatorFormData = formData;
+    };
+
+    jQuery(document).ready(function ($) {
+
+        // Move the whole popup wrapper to <body> so no transformed footer ancestor
+        // clips the fixed :target popups (same reason the calculator modal moves).
+        var _fx = document.querySelector('.a2z-fx');
+        if (_fx && _fx.parentNode !== document.body) { document.body.appendChild(_fx); }
+
+        // Move the calculator modal to <body> so no transformed ancestor clips the fixed overlay.
+        var _st = document.getElementById('service-table');
+        if (_st && _st.parentNode !== document.body) { document.body.appendChild(_st); }
+
+        // Bootstrap 5 native modal helpers (with a Bootstrap 4 jQuery fallback).
+        function a2zShowModal(id) {
+            var el = document.getElementById(id);
+            if (!el) return null;
+            try {
+                var inst = (window.bootstrap && bootstrap.Modal)
+                    ? bootstrap.Modal.getOrCreateInstance(el)
+                    : null;
+                if (inst) { inst.show(); return inst; }
+            } catch (err) { }
+            if (window.jQuery && jQuery(el).modal) { jQuery(el).modal('show'); }
+            return null;
+        }
+        function a2zHideModal(id) {
+            var el = document.getElementById(id);
+            if (!el) return;
+            try {
+                if (window.bootstrap && bootstrap.Modal) {
+                    var inst = bootstrap.Modal.getInstance(el) || bootstrap.Modal.getOrCreateInstance(el);
+                    inst.hide();
+                    return;
+                }
+            } catch (err) { }
+            if (window.jQuery && jQuery(el).modal) { jQuery(el).modal('hide'); }
+        }
+
+        // Wait for the background contact-save to provide the client id (up to ~6s).
+        function a2zWaitForClientId(cb, tries) {
+            var id = sessionStorage.getItem('clientId');
+            if (id) { cb(id); return; }
+            if (sessionStorage.getItem('clientSaveFailed') === '1') { cb(null); return; }
+            tries = tries || 0;
+            if (tries > 30) { cb(null); return; }
+            setTimeout(function () { a2zWaitForClientId(cb, tries + 1); }, 200);
+        }
+
+        // Client details form (inside #gitModal): bind UNCONDITIONALLY.
+        // No jquery-validate dependency - plain submit + preventDefault, so the
+        // form can never fall back to a native page-reload submit.
+        $(document).on('submit', '#calculator-client-details', function (e) {
+            e.preventDefault();
+            var $form = $(this);
+
+            // Minimal required-field check (vanilla).
+            var required = ['name', 'email', 'location', 'phone', 'business_name', 'business_sector'];
+            var missing = [];
+            required.forEach(function (n) {
+                var v = $form.find('[name="' + n + '"]').val();
+                if (!v || !String(v).trim()) { missing.push(n.replace(/_/g, ' ')); }
+            });
+            if (missing.length) {
+                if (typeof Swal !== 'undefined') {
+                    Swal.fire({ icon: 'warning', title: 'Please complete the form', text: 'Still needed: ' + missing.join(', ') });
+                } else { alert('Please complete: ' + missing.join(', ')); }
+                return;
+            }
+
+            // Open the calculator IMMEDIATELY (optimistic) - no wait for the server.
+            a2zHideModal('gitModal');
+            a2zShowModal('service-table');
+            window.calculateTotal();
+
+            // Save contact details to Zoho + email in the BACKGROUND.
+            sessionStorage.removeItem('clientId');
+            sessionStorage.setItem('clientSaveFailed', '');
+            $.ajax({
+                url: '/wp-admin/admin-ajax.php',
+                method: 'POST',
+                data: $form.serialize() + '&action=save_calculator_client_details',
+                success: function (response) {
+                    if (response && response.success) {
+                        sessionStorage.setItem('clientId', response.data.insert_id);
+                    } else {
+                        sessionStorage.setItem('clientSaveFailed', '1');
+                    }
+                },
+                error: function () { sessionStorage.setItem('clientSaveFailed', '1'); }
+            });
+        });
+
+        // Recalculate whenever the calculator modal is shown
+        $(document).on('shown.bs.modal', '#service-table', function () { window.calculateTotal(); });
+
+        // Recalculate on any calculator select change
+        $(document).on('change', '#calculator_form select', function () { window.calculateTotal(); });
+
+        // Calculator submit - updates the SAME Zoho record (no email). Fetches a
+        // fresh nonce from the a2z_calc_nonce endpoint, then saves the cost data.
+        $(document).on('submit', '#calculator_form', function (e) {
+            e.preventDefault();
+            var self = this;
+            var formData = window.calculatorFormData;
+
+            if (!formData || !formData.client_revenue) { alert('Please select a revenue range.'); return; }
+
+            var cleanedData = {};
+            for (var key in formData) {
+                if (!formData.hasOwnProperty(key)) continue;
+                var value = formData[key];
+                if (key.indexOf('_price') !== -1 || key === 'total_price' || key === 'vat_total' || key === 'gross_monthly') {
+                    cleanedData[key] = typeof value === 'number' ? value : 0;
+                } else {
+                    cleanedData[key] = value;
+                }
+            }
+
+            var $qbtn = $(self).find('input[type=submit], button[type=submit]');
+            var qOld = $qbtn.is('input') ? $qbtn.val() : $qbtn.text();
+            $qbtn.prop('disabled', true);
+            if ($qbtn.is('input')) { $qbtn.val('Sending...'); } else { $qbtn.text('Sending...'); }
+            function restoreQ() {
+                $qbtn.prop('disabled', false);
+                if ($qbtn.is('input')) { $qbtn.val(qOld); } else { $qbtn.text(qOld); }
+            }
+
+            var done = function () {
+                self.reset();
+                window.calculateTotal();
+                a2zHideModal('service-table');
+                var cd = document.getElementById('calculator-client-details');
+                if (cd) { cd.reset(); }
+                sessionStorage.removeItem('clientId');
+            };
+
+            // POST the cost data to Zoho using a valid nonce.
+            function submitCosts(clientId, nonce) {
+                var data = Object.assign({
+                    action: 'save_calculator_form_data',
+                    nonce: nonce,
+                    client_id: clientId
+                }, cleanedData);
+
+                fetch('/wp-admin/admin-ajax.php', {
+                    method: 'POST',
+                    credentials: 'same-origin',
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                    body: new URLSearchParams(data).toString()
+                })
+                    .then(function (response) { return response.json(); })
+                    .then(function (result) {
+                        restoreQ();
+                        if (result && result.success) {
+                            if (typeof Swal !== 'undefined') {
+                                Swal.fire({ icon: 'success', title: 'Your estimate is ready', html: '<div style="text-align:left;font-size:.98rem;line-height:1.5;color:#23272B;">A specialist will be in touch. For a proposal built around your needs, complete your <strong>Business Alignment Overview</strong> - tell us what you are looking for, your budget, and the services you actually need, so we can confirm how best to support you.</div>', showCancelButton: true, confirmButtonColor: '#B07D3C', confirmButtonText: 'Tell us what you need', cancelButtonText: 'Maybe later', focusConfirm: true }).then(function (r) { if (r.isConfirmed) { window.location.href = 'https://a2zaccounting.co.uk/business-alignment-overview/'; return; } done(); });
+                            } else { done(); }
+                        } else {
+                            var msg = (result && result.data && result.data.message) || 'Something went wrong.';
+                            if (typeof Swal !== 'undefined') { Swal.fire({ icon: 'error', title: 'Submission Failed', text: msg }); } else { alert(msg); }
+                        }
+                    })
+                    .catch(function () {
+                        restoreQ();
+                        if (typeof Swal !== 'undefined') { Swal.fire({ icon: 'error', title: 'Error', text: 'Could not submit form. Please try again.' }); } else { alert('Could not submit form. Please try again.'); }
+                    });
+            }
+
+            // Graceful path if no nonce is available (endpoint not installed):
+            // the lead is already saved from step 1, so just confirm the estimate.
+            function gracefulNoNonce() {
+                restoreQ();
+                if (typeof Swal !== 'undefined') {
+                    Swal.fire({ icon: 'success', title: 'Your estimate is ready', html: '<div style="text-align:left;font-size:.98rem;line-height:1.5;color:#23272B;">A specialist will be in touch. For a proposal built around your needs, complete your <strong>Business Alignment Overview</strong> - tell us what you are looking for, your budget, and the services you actually need, so we can confirm how best to support you.</div>', showCancelButton: true, confirmButtonColor: '#B07D3C', confirmButtonText: 'Tell us what you need', cancelButtonText: 'Maybe later', focusConfirm: true }).then(function (r) { if (r.isConfirmed) { window.location.href = 'https://a2zaccounting.co.uk/business-alignment-overview/'; return; } done(); });
+                } else { alert('Thanks - your details are with our team.'); done(); }
+            }
+
+            // Wait for the background contact-save to return the client id, then save.
+            a2zWaitForClientId(function (clientId) {
+                if (!clientId) { gracefulNoNonce(); return; }
+                var nonceEl = document.getElementById('calculator_nonce');
+                var pageNonce = nonceEl ? (nonceEl.value || '').trim() : '';
+                if (pageNonce) { submitCosts(clientId, pageNonce); return; }
+                fetch('/wp-admin/admin-ajax.php?action=a2z_calc_nonce', { credentials: 'same-origin' })
+                    .then(function (r) { return r.json(); })
+                    .then(function (d) {
+                        var n = (d && d.data && d.data.nonce) ? d.data.nonce : '';
+                        if (n) { submitCosts(clientId, n); } else { gracefulNoNonce(); }
+                    })
+                    .catch(function () { gracefulNoNonce(); });
+            });
+        });
+    });
+</script>
+
+<script>
+    /* Per-page sector attribution: a trigger link carrying data-a2z-source
+       sets the enquiry Continue button data-source (Zoho name + modal title). */
+    jQuery(function ($) {
+        $(document).on('click', 'a[href="#a2z-enquire"]', function () {
+            var src = this.getAttribute('data-a2z-source');
+            if (src) {
+                var b = document.querySelector('#a2z-enquire [data-bs-target="#enquireModal"]');
+                if (b) { b.setAttribute('data-source', src); }
+            }
+        });
+    });
+</script>
