@@ -12,7 +12,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..800;1,9..40,400..800&family=Inter:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..800;1,9..40,400..800&family=Hanken+Grotesk:ital,wght@0,400..800;1,400..800&family=Inter:wght@400;500;600;700;800&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700&display=swap"
         rel="stylesheet">
 
     <style>
@@ -35,6 +35,8 @@
             --a2z-abd-font-sans: 'DM Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             --a2z-abd-font-manrope: 'Manrope', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             --a2z-abd-font-inter: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            --a2z-abd-font-caslon: 'Libre Caslon Text', Georgia, 'Times New Roman', serif;
+            --a2z-abd-font-hanken: 'Hanken Grotesk', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         }
 
         *,
@@ -1399,41 +1401,51 @@
 
         .a2z-abd-pricing__tag {
             display: inline-block;
-            font-family: var(--a2z-abd-font-sans);
-            font-size: 13.5px;
-            font-weight: 800;
-            letter-spacing: 0.14em;
+            font-family: var(--a2z-abd-font-inter);
+            font-size: 20px;
+            font-weight: 700;
+            letter-spacing: 1.2px;
+            text-align: center;
+            vertical-align: middle;
             text-transform: uppercase;
-            color: var(--a2z-abd-gold-dark);
+            color: #D4A850;
             margin-bottom: 16px;
         }
 
         .a2z-abd-pricing__title {
             font-family: var(--a2z-abd-font-serif);
-            font-size: clamp(2.45rem, 4.8vw, 4.25rem);
-            font-weight: 700;
-            line-height: 1.15;
-            letter-spacing: -0.015em;
-            color: var(--a2z-abd-navy-deep);
+            font-size: clamp(2.35rem, 4.4vw, 64px);
+            font-weight: 600;
+            line-height: 1.16;
+            letter-spacing: -1.28px;
+            text-align: center;
+            vertical-align: middle;
+            color: #000000;
             margin-bottom: 22px;
         }
 
         .a2z-abd-pricing__title-italic {
             font-family: var(--a2z-abd-font-serif);
-            font-weight: 500;
+            font-weight: 600;
             font-style: italic;
-            color: var(--a2z-abd-gold-main);
-            letter-spacing: -0.008em;
+            font-size: inherit;
+            letter-spacing: -1.28px;
+            text-align: center;
+            vertical-align: middle;
+            color: #D4A850;
             display: inline-block;
         }
 
         .a2z-abd-pricing__desc {
-            font-family: var(--a2z-abd-font-sans);
-            font-size: clamp(1.02rem, 1.2vw, 1.15rem);
-            font-weight: 400;
-            line-height: 1.62;
-            color: #2e3d4f;
-            max-width: 740px;
+            font-family: var(--a2z-abd-font-manrope);
+            font-size: 22px;
+            font-weight: 500;
+            line-height: 1.6;
+            letter-spacing: 0px;
+            text-align: center;
+            vertical-align: middle;
+            color: #000000;
+            max-width: 760px;
             margin: 0 auto;
         }
 
@@ -1443,18 +1455,22 @@
             grid-template-columns: repeat(4, 1fr);
             gap: 20px;
             align-items: stretch;
-            margin-bottom: 50px;
+            max-width: 1204px;
+            margin: 0 auto 50px;
         }
 
         /* Base Price Card */
         .a2z-abd-price-card {
-            background: #ffffff;
-            border-radius: 14px;
+            width: 100%;
+            max-width: 286px;
+            min-height: 536px;
+            background: #FFFFFF;
+            border-radius: 10px;
             border: 1px solid #e5e9f0;
-            padding: 28px 24px 34px;
+            padding: 35px 21px;
             display: flex;
             flex-direction: column;
-            box-shadow: 0 15px 35px -10px rgba(12, 37, 61, 0.06);
+            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.15);
             transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
             position: relative;
         }
@@ -1498,17 +1514,20 @@
 
         /* Header Pill Box */
         .a2z-abd-price-card__pill {
-            background: #ffffff;
+            width: 100%;
+            max-width: 244px;
+            height: 69px;
+            background: #FFFFFF;
             border: 1px solid #e2e8f0;
-            border-radius: 8px;
+            border-radius: 10px;
             padding: 12px 14px;
             text-align: center;
             font-family: var(--a2z-abd-font-serif);
-            font-size: 17px;
-            font-weight: 700;
-            color: #0d2840;
-            margin-bottom: 24px;
-            min-height: 58px;
+            font-size: 20px;
+            font-weight: 600;
+            letter-spacing: 0px;
+            color: #112B46;
+            margin: 0 auto 24px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -1518,38 +1537,43 @@
         .a2z-abd-price-card--featured .a2z-abd-price-card__pill {
             border: none;
             box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
-            font-size: 16.5px;
+            color: #112B46;
         }
 
         /* Price Box */
         .a2z-abd-price-card__price-box {
             display: flex;
-            align-items: baseline;
-            justify-content: flex-start;
+            align-items: center;
+            justify-content: center;
             gap: 6px;
-            margin-bottom: 16px;
-            flex-wrap: wrap;
+            margin-top: 20px;
+            margin-bottom: 26px;
+            position: relative;
         }
 
         .a2z-abd-price-card__from {
-            font-family: var(--a2z-abd-font-sans);
-            font-size: 13px;
+            font-family: var(--a2z-abd-font-caslon);
+            font-size: 14px;
             font-weight: 500;
-            color: #4b5868;
+            letter-spacing: 0px;
+            color: #000000;
+            position: relative;
+            top: -22px;
+            line-height: 1;
         }
 
         .a2z-abd-price-card--featured .a2z-abd-price-card__from {
-            color: #0c253d;
-            font-weight: 600;
+            color: #000000;
         }
 
         .a2z-abd-price-card__amount {
-            font-family: var(--a2z-abd-font-sans);
-            font-size: 40px;
-            font-weight: 800;
-            color: #f0a500;
+            font-family: var(--a2z-abd-font-caslon);
+            font-size: 36px;
+            font-weight: 600;
+            letter-spacing: 0px;
+            color: #FFAA00;
             line-height: 1;
-            letter-spacing: -0.02em;
+            display: inline-block;
         }
 
         .a2z-abd-price-card--featured .a2z-abd-price-card__amount {
@@ -1557,10 +1581,15 @@
         }
 
         .a2z-abd-price-card__suffix {
-            font-family: var(--a2z-abd-font-sans);
-            font-size: 13.5px;
+            font-family: var(--a2z-abd-font-hanken);
+            font-size: 14px;
             font-weight: 700;
-            color: #0d2840;
+            letter-spacing: 1.2px;
+            text-transform: lowercase;
+            color: #000000;
+            position: relative;
+            bottom: -18px;
+            line-height: 1;
         }
 
         .a2z-abd-price-card--featured .a2z-abd-price-card__suffix {
@@ -1569,37 +1598,38 @@
 
         /* Subtitle Text */
         .a2z-abd-price-card__sub {
-            font-family: var(--a2z-abd-font-sans);
-            font-size: 13.5px;
-            font-weight: 400;
+            font-family: var(--a2z-abd-font-manrope);
+            font-size: 14px;
+            font-weight: 600;
             line-height: 1.45;
-            color: #2b3847;
+            letter-spacing: 0px;
+            color: #000000;
             margin-bottom: 22px;
             min-height: 40px;
         }
 
         .a2z-abd-price-card--featured .a2z-abd-price-card__sub {
-            color: #0c253d;
-            font-weight: 500;
+            color: #000000;
         }
 
         /* Divider */
         .a2z-abd-price-card__divider {
             width: 100%;
+            max-width: 273px;
             height: 1px;
-            background-color: #edf2f7;
-            margin-bottom: 22px;
+            background-color: #000000;
+            margin: 0 auto 22px;
         }
 
         .a2z-abd-price-card--featured .a2z-abd-price-card__divider {
-            background-color: rgba(12, 37, 61, 0.2);
+            background-color: #000000;
         }
 
         /* Features List */
         .a2z-abd-price-card__features {
             list-style: none;
             padding: 0;
-            margin: 0;
+            margin: 43px 0 0;
             display: flex;
             flex-direction: column;
             gap: 14px;
@@ -1608,18 +1638,18 @@
 
         .a2z-abd-price-card__feature-item {
             display: flex;
-            align-items: flex-start;
+            align-items: center;
             gap: 10px;
-            font-family: var(--a2z-abd-font-sans);
-            font-size: 13.5px;
-            font-weight: 500;
+            font-family: var(--a2z-abd-font-manrope);
+            font-size: 16px;
+            font-weight: 700;
             line-height: 1.48;
-            color: #1a202c;
+            letter-spacing: 0px;
+            color: #000000;
         }
 
         .a2z-abd-price-card--featured .a2z-abd-price-card__feature-item {
-            color: #0c253d;
-            font-weight: 600;
+            color: #000000;
         }
 
         .a2z-abd-price-card__check {
@@ -1629,7 +1659,7 @@
             stroke-width: 2.5;
             fill: none;
             flex-shrink: 0;
-            margin-top: 2px;
+            margin-top: 0;
         }
 
         /* Pricing Section CTA */
