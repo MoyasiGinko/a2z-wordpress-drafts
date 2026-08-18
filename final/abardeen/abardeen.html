@@ -12,7 +12,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..800;1,9..40,400..800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..800;1,9..40,400..800&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700&display=swap"
         rel="stylesheet">
 
     <style>
@@ -33,6 +33,7 @@
             --a2z-abd-text-body: #f1f5f9;
             --a2z-abd-font-serif: 'Playfair Display', Georgia, 'Times New Roman', serif;
             --a2z-abd-font-sans: 'DM Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            --a2z-abd-font-manrope: 'Manrope', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         }
 
         *,
@@ -134,14 +135,17 @@
             align-items: center;
             justify-content: center;
             background: #ffffff;
-            color: #0b2238;
-            padding: 8px 24px;
-            border-radius: 4px;
-            font-family: var(--a2z-abd-font-sans);
-            font-size: 12.5px;
+            color: #000000;
+            font-family: var(--a2z-abd-font-manrope);
             font-weight: 800;
-            letter-spacing: 0.08em;
+            font-size: 11.38px;
+            letter-spacing: 0.85px;
+            text-align: center;
             text-transform: uppercase;
+            height: 28.44px;
+            padding: 0 16px;
+            border-radius: 2.84px;
+            opacity: 1;
             box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
             margin-bottom: 34px;
             transition: transform 0.25s ease, box-shadow 0.25s ease;
@@ -155,23 +159,26 @@
 
         /* Main Heading */
         .a2z-abd-hero__title {
-            font-family: var(--a2z-abd-font-serif);
-            font-size: clamp(2.45rem, 5.2vw, 4.35rem);
+            font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+            font-size: clamp(2.5rem, 5.5vw, 64px);
             font-weight: 700;
             line-height: 1.15;
-            letter-spacing: -0.015em;
-            color: var(--a2z-abd-text-white);
+            letter-spacing: 0px;
+            text-align: center;
+            color: #ffffff;
             margin-bottom: 26px;
             max-width: 960px;
             text-shadow: 0 2px 20px rgba(0, 0, 0, 0.65);
         }
 
         .a2z-abd-hero__title-italic {
-            font-family: var(--a2z-abd-font-serif);
-            font-weight: 500;
+            font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+            font-weight: 700;
             font-style: italic;
-            color: var(--a2z-abd-gold-main);
-            letter-spacing: -0.01em;
+            font-size: inherit;
+            letter-spacing: 0px;
+            text-align: center;
+            color: #D4A850;
             display: inline-block;
             text-shadow: 0 2px 16px rgba(0, 0, 0, 0.4);
         }
@@ -328,11 +335,13 @@
 
             .a2z-abd-badge {
                 font-size: 10px;
-                padding: 7px 14px;
-                letter-spacing: 0.05em;
+                height: auto;
+                min-height: 26px;
+                padding: 5px 12px;
+                letter-spacing: 0.6px;
                 line-height: 1.35;
                 margin-bottom: 22px;
-                border-radius: 4px;
+                border-radius: 2.84px;
             }
 
             .a2z-abd-hero__title {
@@ -955,8 +964,8 @@
         .a2z-abd-diff {
             position: relative;
             width: 100%;
-            background-color: #fbfcfd;
-            padding: 120px 24px 140px;
+            background-color: #ffffff;
+            padding: 110px 24px 130px;
             overflow: hidden;
         }
 
@@ -964,35 +973,35 @@
             position: relative;
             z-index: 10;
             width: 100%;
-            max-width: 1100px;
+            max-width: 820px;
             margin: 0 auto;
         }
 
         /* Section Header */
         .a2z-abd-diff__header {
             text-align: center;
-            max-width: 840px;
-            margin: 0 auto 64px;
+            max-width: 760px;
+            margin: 0 auto 52px;
         }
 
         .a2z-abd-diff__tag {
             display: inline-block;
             font-family: var(--a2z-abd-font-sans);
-            font-size: 13.5px;
+            font-size: 13px;
             font-weight: 800;
             letter-spacing: 0.14em;
             text-transform: uppercase;
-            color: var(--a2z-abd-gold-dark);
+            color: #cca05b;
             margin-bottom: 16px;
         }
 
         .a2z-abd-diff__title {
             font-family: var(--a2z-abd-font-serif);
-            font-size: clamp(2.45rem, 4.8vw, 4.25rem);
+            font-size: clamp(2.35rem, 4.4vw, 3.85rem);
             font-weight: 700;
             line-height: 1.15;
             letter-spacing: -0.015em;
-            color: var(--a2z-abd-navy-deep);
+            color: #0c253d;
             margin-bottom: 22px;
         }
 
@@ -1000,159 +1009,191 @@
             font-family: var(--a2z-abd-font-serif);
             font-weight: 500;
             font-style: italic;
-            color: var(--a2z-abd-gold-main);
+            color: #cca05b;
             letter-spacing: -0.008em;
             display: inline-block;
         }
 
         .a2z-abd-diff__desc {
             font-family: var(--a2z-abd-font-sans);
-            font-size: clamp(1.02rem, 1.2vw, 1.15rem);
+            font-size: clamp(1rem, 1.15vw, 1.1rem);
             font-weight: 400;
             line-height: 1.62;
-            color: #2e3d4f;
-            max-width: 780px;
+            color: #2d3748;
+            max-width: 720px;
             margin: 0 auto;
         }
 
-        /* Desktop Table Layout (Default >= 769px) */
-        .a2z-abd-diff__table-wrap {
-            display: block;
+        /* Comparison Split Card */
+        .a2z-abd-diff__card {
+            position: relative;
             width: 100%;
-            background: #ffffff;
-            border-radius: 12px;
+            max-width: 720px;
+            margin: 0 auto;
+            border-radius: 16px;
             overflow: hidden;
-            box-shadow: 0 20px 48px -12px rgba(12, 37, 61, 0.08), 0 4px 16px -2px rgba(12, 37, 61, 0.04);
-            border: 1px solid #e2e8f0;
+            background-image: linear-gradient(to right, #edf0f3 50%, #0e263d 50%);
+            box-shadow: 0 20px 50px -12px rgba(12, 37, 61, 0.18), 0 4px 16px rgba(0, 0, 0, 0.04);
+            border: 1px solid rgba(12, 37, 61, 0.08);
         }
 
-        .a2z-abd-diff-table {
-            width: 100%;
-            border-collapse: collapse;
+        /* Top Header with VS Badge */
+        .a2z-abd-diff__card-header {
+            position: relative;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .a2z-abd-diff__card-col-head {
+            font-family: var(--a2z-abd-font-sans);
+            font-size: 13.5px;
+            font-weight: 800;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            text-align: center;
+            padding: 18px 12px;
+        }
+
+        .a2z-abd-diff__card-col-head--typical {
+            background-color: #d6d9df;
+            color: #475569;
+        }
+
+        .a2z-abd-diff__card-col-head--a2z {
+            background-color: #cca05b;
+            color: #0c253d;
+        }
+
+        .a2z-abd-diff__vs-badge {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: #cca05b;
+            border: 2px solid #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--a2z-abd-font-serif);
+            font-style: italic;
+            font-size: 13px;
+            font-weight: 700;
+            color: #0c253d;
+            z-index: 5;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Rows */
+        .a2z-abd-diff__row {
+            position: relative;
+            padding: 22px 0 24px;
+        }
+
+        .a2z-abd-diff__row:last-of-type {
+            padding-bottom: 34px;
+        }
+
+        .a2z-abd-diff__pill-wrap {
+            position: relative;
+            z-index: 3;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 18px;
+        }
+
+        .a2z-abd-diff__pill-wrap::before {
+            content: '';
+            position: absolute;
+            left: 8%;
+            right: 8%;
+            height: 1px;
+            background: linear-gradient(to right, rgba(0, 0, 0, 0.08) 0%, rgba(0, 0, 0, 0.08) 46%, transparent 46%, transparent 54%, rgba(255, 255, 255, 0.1) 54%, rgba(255, 255, 255, 0.1) 100%);
+            z-index: 1;
+        }
+
+        .a2z-abd-diff__pill {
+            position: relative;
+            z-index: 2;
+            display: inline-block;
+            background: #ffffff;
+            border: 1.5px solid #cca05b;
+            border-radius: 6px;
+            padding: 6px 18px;
+            font-family: var(--a2z-abd-font-sans);
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: #0c253d;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+        }
+
+        .a2z-abd-diff__row-cells {
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+        }
+
+        .a2z-abd-diff__cell {
+            font-family: var(--a2z-abd-font-sans);
+            line-height: 1.45;
+        }
+
+        .a2z-abd-diff__cell--typical {
+            padding: 0 24px 0 36px;
+            color: #1e293b;
+            font-size: 15.5px;
+            font-weight: 500;
             text-align: left;
         }
 
-        .a2z-abd-diff-table th {
-            padding: 20px 24px;
-            font-family: var(--a2z-abd-font-sans);
-            font-size: 14.5px;
-            font-weight: 700;
-            border-bottom: 1px solid #e2e8f0;
-        }
-
-        .a2z-abd-diff-table th.col-feature {
-            width: 27%;
-            background-color: #f3f5f8;
-            color: #0d2840;
-            font-weight: 800;
-        }
-
-        .a2z-abd-diff-table th.col-typical {
-            width: 33%;
-            background-color: #f3f5f8;
-            color: #0d2840;
-            border-left: 1px solid #e2e8f0;
-        }
-
-        .a2z-abd-diff-table th.col-a2z {
-            width: 40%;
-            background-color: #0c253d;
-            color: var(--a2z-abd-gold-main);
-            font-weight: 800;
-            font-size: 15px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .a2z-abd-diff-table td {
-            padding: 20px 24px;
-            font-family: var(--a2z-abd-font-sans);
-            font-size: 14.5px;
-            vertical-align: middle;
-        }
-
-        .a2z-abd-diff-table td.col-feature {
-            font-size: 12.5px;
-            font-weight: 800;
-            letter-spacing: 0.04em;
-            text-transform: uppercase;
-            color: #0d2840;
-            background-color: #ffffff;
-            border-bottom: 1px solid #eef2f6;
-        }
-
-        .a2z-abd-diff-table td.col-typical {
-            color: #4b5868;
-            background-color: #ffffff;
-            border-left: 1px solid #eef2f6;
-            border-bottom: 1px solid #eef2f6;
-            font-weight: 400;
-        }
-
-        .a2z-abd-diff-table td.col-a2z {
-            background-color: #0c253d;
+        .a2z-abd-diff__cell--a2z {
+            padding: 0 36px 0 24px;
             color: #ffffff;
-            font-weight: 500;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-        }
-
-        .a2z-abd-diff-table tr:last-child td {
-            border-bottom: none;
-        }
-
-        /* Checkmark item inside table */
-        .a2z-abd-diff__a2z-item {
+            font-size: 15.5px;
+            font-weight: 600;
+            text-align: left;
             display: flex;
             align-items: center;
             gap: 12px;
         }
 
-        .a2z-abd-diff__check-icon {
-            width: 20px;
-            height: 20px;
-            background-color: var(--a2z-abd-gold-main);
-            border-radius: 4px;
+        .a2z-abd-diff__check {
+            width: 18px;
+            height: 18px;
+            min-width: 18px;
+            border-radius: 3px;
+            background-color: #cca05b;
             display: inline-flex;
             align-items: center;
             justify-content: center;
             flex-shrink: 0;
         }
 
-        .a2z-abd-diff__check-icon svg {
-            width: 13px;
-            height: 13px;
+        .a2z-abd-diff__check svg {
+            width: 11px;
+            height: 11px;
             stroke: #0c253d;
-            stroke-width: 2.5;
+            stroke-width: 3;
             fill: none;
-        }
-
-        /* Header verified badge */
-        .a2z-abd-diff__header-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .a2z-abd-diff__header-badge svg {
-            width: 18px;
-            height: 18px;
-            stroke: var(--a2z-abd-gold-main);
-            fill: none;
-            stroke-width: 2;
-        }
-
-        /* Mobile Layout Dual Cards (Hidden on Desktop) */
-        .a2z-abd-diff-mobile {
-            display: none;
+            stroke-linecap: round;
+            stroke-linejoin: round;
         }
 
         /* Responsive Breakpoints */
         @media (max-width: 768px) {
             .a2z-abd-diff {
-                padding: 75px 16px 85px;
+                padding: 70px 16px 85px;
             }
 
             .a2z-abd-diff__header {
-                margin-bottom: 40px;
+                margin-bottom: 36px;
             }
 
             .a2z-abd-diff__tag {
@@ -1170,139 +1211,50 @@
                 line-height: 1.55;
             }
 
-            /* Hide table on mobile, show dual stacked cards */
-            .a2z-abd-diff__table-wrap {
-                display: none;
+            .a2z-abd-diff__card-col-head {
+                font-size: 12px;
+                padding: 15px 8px;
             }
 
-            .a2z-abd-diff-mobile {
-                display: flex;
-                flex-direction: column;
-                gap: 24px;
-                width: 100%;
+            .a2z-abd-diff__vs-badge {
+                width: 26px;
+                height: 26px;
+                font-size: 11.5px;
             }
 
-            /* Typical Card (Stone/Beige) */
-            .a2z-abd-diff-card--typical {
-                background-color: #f5f0ea;
-                border-radius: 14px;
-                padding: 34px 22px 28px;
-                border: 1px solid rgba(0, 0, 0, 0.05);
+            .a2z-abd-diff__row {
+                padding: 18px 0 20px;
             }
 
-            .a2z-abd-diff-card__heading-typical {
-                text-align: center;
-                font-family: var(--a2z-abd-font-sans);
+            .a2z-abd-diff__row:last-of-type {
+                padding-bottom: 26px;
+            }
+
+            .a2z-abd-diff__pill {
+                font-size: 10px;
+                padding: 5px 12px;
+            }
+
+            .a2z-abd-diff__cell--typical {
+                padding: 0 12px 0 16px;
                 font-size: 13.5px;
-                font-weight: 800;
-                letter-spacing: 0.12em;
-                text-transform: uppercase;
-                color: #0e2a44;
-                padding-bottom: 18px;
-                border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-                margin-bottom: 24px;
             }
 
-            /* A2Z Card (Deep Navy) */
-            .a2z-abd-diff-card--a2z {
-                background-color: #092036;
-                border-radius: 14px;
-                padding: 34px 22px 28px;
-                box-shadow: 0 16px 40px rgba(9, 32, 54, 0.25);
-            }
-
-            .a2z-abd-diff-card__heading-a2z {
-                text-align: center;
-                font-family: var(--a2z-abd-font-sans);
+            .a2z-abd-diff__cell--a2z {
+                padding: 0 16px 0 12px;
                 font-size: 13.5px;
-                font-weight: 800;
-                letter-spacing: 0.12em;
-                text-transform: uppercase;
-                color: var(--a2z-abd-gold-main);
-                padding-bottom: 18px;
-                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-                margin-bottom: 24px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
                 gap: 8px;
             }
 
-            /* Mobile Item Rows */
-            .a2z-abd-diff-mobile__list {
-                display: flex;
-                flex-direction: column;
-                gap: 22px;
+            .a2z-abd-diff__check {
+                width: 16px;
+                height: 16px;
+                min-width: 16px;
             }
 
-            .a2z-abd-diff-mobile__item {
-                display: flex;
-                align-items: flex-start;
-                gap: 14px;
-            }
-
-            /* Typical Dot */
-            .a2z-abd-diff-mobile__dot {
-                width: 7px;
-                height: 7px;
-                border-radius: 50%;
-                background-color: #0e2a44;
-                margin-top: 6px;
-                flex-shrink: 0;
-            }
-
-            /* A2Z Gold Circle Check */
-            .a2z-abd-diff-mobile__check {
-                width: 20px;
-                height: 20px;
-                border-radius: 50%;
-                background-color: var(--a2z-abd-gold-main);
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                margin-top: 1px;
-                flex-shrink: 0;
-            }
-
-            .a2z-abd-diff-mobile__check svg {
-                width: 12px;
-                height: 12px;
-                stroke: #092036;
-                stroke-width: 2.6;
-                fill: none;
-            }
-
-            .a2z-abd-diff-mobile__content {
-                display: flex;
-                flex-direction: column;
-                gap: 3px;
-            }
-
-            .a2z-abd-diff-mobile__label {
-                font-family: var(--a2z-abd-font-sans);
-                font-size: 11px;
-                font-weight: 800;
-                letter-spacing: 0.08em;
-                text-transform: uppercase;
-            }
-
-            .a2z-abd-diff-card--typical .a2z-abd-diff-mobile__label {
-                color: #718096;
-            }
-
-            .a2z-abd-diff-card--a2z .a2z-abd-diff-mobile__label {
-                color: #94a3b8;
-            }
-
-            .a2z-abd-diff-mobile__value {
-                font-family: var(--a2z-abd-font-sans);
-                font-size: 15px;
-                font-weight: 500;
-                line-height: 1.45;
-            }
-
-            .a2z-abd-diff-card--a2z .a2z-abd-diff-mobile__value {
-                color: #ffffff;
+            .a2z-abd-diff__check svg {
+                width: 10px;
+                height: 10px;
             }
         }
 
@@ -4009,279 +3961,119 @@
                     <span class="a2z-abd-diff__title-italic">and what you get with us</span>
                 </h2>
                 <p class="a2z-abd-diff__desc">
-                    You should not have to choose between a big-firm standard and a local team that actually cares.
-                    Here you get both - the calibre the biggest names are known for, delivered by people who know your business by name,
-                    for one fair fixed fee that is a fraction of what you would expect. More expertise, more care, more included, far less cost.
+                    You should not have to choose between a big-firm standard and a local team that actually cares. Here you get both - the calibre the biggest names are known for, delivered by people who know your business by name, for one fair fixed fee that is a fraction of what you would expect. More expertise, more care, more included, far less cost.
                 </p>
             </div>
 
-            <!-- 1. DESKTOP VIEW: Comparison Table (Visible on Desktop/Tablet >= 769px) -->
-            <div class="a2z-abd-diff__table-wrap">
-                <table class="a2z-abd-diff-table">
-                    <thead>
-                        <tr>
-                            <th class="col-feature">Features</th>
-                            <th class="col-typical">Typical</th>
-                            <th class="col-a2z">
-                                <span class="a2z-abd-diff__header-badge">
-                                    <svg viewBox="0 0 24 24">
-                                        <circle cx="12" cy="12" r="10" />
-                                        <path d="M8 12l2.5 2.5L16 9" />
-                                    </svg>
-                                    With A2Z Accounting
-                                </span>
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <!-- Row 1: Getting hold of them -->
-                        <tr>
-                            <td class="col-feature">GETTING HOLD OF THEM</td>
-                            <td class="col-typical">Chasing a reply for days</td>
-                            <td class="col-a2z">
-                                <div class="a2z-abd-diff__a2z-item">
-                                    <span class="a2z-abd-diff__check-icon">
-                                        <svg viewBox="0 0 24 24">
-                                            <polyline points="20 6 9 17 4 12" />
-                                        </svg>
-                                    </span>
-                                    <span>A quick reply from someone who knows you</span>
-                                </div>
-                            </td>
-                        </tr>
-                        <!-- Row 2: How often you hear from them -->
-                        <tr>
-                            <td class="col-feature">HOW OFTEN YOU HEAR FROM THEM</td>
-                            <td class="col-typical">Once a year, at the deadline</td>
-                            <td class="col-a2z">
-                                <div class="a2z-abd-diff__a2z-item">
-                                    <span class="a2z-abd-diff__check-icon">
-                                        <svg viewBox="0 0 24 24">
-                                            <polyline points="20 6 9 17 4 12" />
-                                        </svg>
-                                    </span>
-                                    <span>All year, before decisions are due</span>
-                                </div>
-                            </td>
-                        </tr>
-                        <!-- Row 3: The bill -->
-                        <tr>
-                            <td class="col-feature">THE BILL</td>
-                            <td class="col-typical">Hourly rates and surprise invoices</td>
-                            <td class="col-a2z">
-                                <div class="a2z-abd-diff__a2z-item">
-                                    <span class="a2z-abd-diff__check-icon">
-                                        <svg viewBox="0 0 24 24">
-                                            <polyline points="20 6 9 17 4 12" />
-                                        </svg>
-                                    </span>
-                                    <span>One fair fixed fee, agreed up front</span>
-                                </div>
-                            </td>
-                        </tr>
-                        <!-- Row 4: The advice -->
-                        <tr>
-                            <td class="col-feature">THE ADVICE</td>
-                            <td class="col-typical">Numbers filed and forgotten</td>
-                            <td class="col-a2z">
-                                <div class="a2z-abd-diff__a2z-item">
-                                    <span class="a2z-abd-diff__check-icon">
-                                        <svg viewBox="0 0 24 24">
-                                            <polyline points="20 6 9 17 4 12" />
-                                        </svg>
-                                    </span>
-                                    <span>Told what they mean and what to do next</span>
-                                </div>
-                            </td>
-                        </tr>
-                        <!-- Row 5: Making sense of it -->
-                        <tr>
-                            <td class="col-feature">MAKING SENSE OF IT</td>
-                            <td class="col-typical">Jargon you have to decode</td>
-                            <td class="col-a2z">
-                                <div class="a2z-abd-diff__a2z-item">
-                                    <span class="a2z-abd-diff__check-icon">
-                                        <svg viewBox="0 0 24 24">
-                                            <polyline points="20 6 9 17 4 12" />
-                                        </svg>
-                                    </span>
-                                    <span>Explained clearly, no jargon</span>
-                                </div>
-                            </td>
-                        </tr>
-                        <!-- Row 6: How your business is treated -->
-                        <tr>
-                            <td class="col-feature">HOW YOUR BUSINESS IS TREATED</td>
-                            <td class="col-typical">Another number on the list</td>
-                            <td class="col-a2z">
-                                <div class="a2z-abd-diff__a2z-item">
-                                    <span class="a2z-abd-diff__check-icon">
-                                        <svg viewBox="0 0 24 24">
-                                            <polyline points="20 6 9 17 4 12" />
-                                        </svg>
-                                    </span>
-                                    <span>Looked after like their own</span>
-                                </div>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+            <!-- Split Comparison Card -->
+            <div class="a2z-abd-diff__card">
+                <!-- Top Header Bar with VS Badge -->
+                <div class="a2z-abd-diff__card-header">
+                    <div class="a2z-abd-diff__card-col-head a2z-abd-diff__card-col-head--typical">
+                        A TYPICAL FIRM
+                    </div>
+                    <div class="a2z-abd-diff__card-col-head a2z-abd-diff__card-col-head--a2z">
+                        A2Z ACCOUNTING
+                    </div>
+                    <div class="a2z-abd-diff__vs-badge" aria-hidden="true">vs</div>
+                </div>
 
-            <!-- 2. MOBILE VIEW: Dual Stacked Cards (Visible on Mobile <= 768px) -->
-            <div class="a2z-abd-diff-mobile">
-                <!-- Card 1: A Typical Firm (Warm Stone/Beige) -->
-                <div class="a2z-abd-diff-card--typical">
-                    <h3 class="a2z-abd-diff-card__heading-typical">A TYPICAL FIRM</h3>
-                    <div class="a2z-abd-diff-mobile__list">
-                        <!-- Item 1 -->
-                        <div class="a2z-abd-diff-mobile__item">
-                            <span class="a2z-abd-diff-mobile__dot"></span>
-                            <div class="a2z-abd-diff-mobile__content">
-                                <span class="a2z-abd-diff-mobile__label">WHO HANDLES IT</span>
-                                <span class="a2z-abd-diff-mobile__value">One stretched generalist</span>
-                            </div>
+                <!-- Row 1: Getting hold of them -->
+                <div class="a2z-abd-diff__row">
+                    <div class="a2z-abd-diff__pill-wrap">
+                        <span class="a2z-abd-diff__pill">GETTING HOLD OF THEM</span>
+                    </div>
+                    <div class="a2z-abd-diff__row-cells">
+                        <div class="a2z-abd-diff__cell a2z-abd-diff__cell--typical">
+                            Chasing a reply for days
                         </div>
-                        <!-- Item 2 -->
-                        <div class="a2z-abd-diff-mobile__item">
-                            <span class="a2z-abd-diff-mobile__dot"></span>
-                            <div class="a2z-abd-diff-mobile__content">
-                                <span class="a2z-abd-diff-mobile__label">QUALIFICATION</span>
-                                <span class="a2z-abd-diff-mobile__value">Often a junior, undisclosed</span>
-                            </div>
-                        </div>
-                        <!-- Item 3 -->
-                        <div class="a2z-abd-diff-mobile__item">
-                            <span class="a2z-abd-diff-mobile__dot"></span>
-                            <div class="a2z-abd-diff-mobile__content">
-                                <span class="a2z-abd-diff-mobile__label">SECTOR KNOWLEDGE</span>
-                                <span class="a2z-abd-diff-mobile__value">Same advice for every industry</span>
-                            </div>
-                        </div>
-                        <!-- Item 4 -->
-                        <div class="a2z-abd-diff-mobile__item">
-                            <span class="a2z-abd-diff-mobile__dot"></span>
-                            <div class="a2z-abd-diff-mobile__content">
-                                <span class="a2z-abd-diff-mobile__label">RESPONSE TIME</span>
-                                <span class="a2z-abd-diff-mobile__value">Days, or no reply</span>
-                            </div>
-                        </div>
-                        <!-- Item 5 -->
-                        <div class="a2z-abd-diff-mobile__item">
-                            <span class="a2z-abd-diff-mobile__dot"></span>
-                            <div class="a2z-abd-diff-mobile__content">
-                                <span class="a2z-abd-diff-mobile__label">DEADLINES</span>
-                                <span class="a2z-abd-diff-mobile__value">Reactive, last minute</span>
-                            </div>
-                        </div>
-                        <!-- Item 6 -->
-                        <div class="a2z-abd-diff-mobile__item">
-                            <span class="a2z-abd-diff-mobile__dot"></span>
-                            <div class="a2z-abd-diff-mobile__content">
-                                <span class="a2z-abd-diff-mobile__label">TAX PLANNING</span>
-                                <span class="a2z-abd-diff-mobile__value">You ask, they react</span>
-                            </div>
-                        </div>
-                        <!-- Item 7 -->
-                        <div class="a2z-abd-diff-mobile__item">
-                            <span class="a2z-abd-diff-mobile__dot"></span>
-                            <div class="a2z-abd-diff-mobile__content">
-                                <span class="a2z-abd-diff-mobile__label">FEES</span>
-                                <span class="a2z-abd-diff-mobile__value">Hourly, scope creeps</span>
-                            </div>
+                        <div class="a2z-abd-diff__cell a2z-abd-diff__cell--a2z">
+                            <span class="a2z-abd-diff__check">
+                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg>
+                            </span>
+                            <span>A quick reply from someone who knows you</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Card 2: A2Z Accounting (Deep Navy) -->
-                <div class="a2z-abd-diff-card--a2z">
-                    <h3 class="a2z-abd-diff-card__heading-a2z">
-                        <span>★</span> A2Z ACCOUNTING
-                    </h3>
-                    <div class="a2z-abd-diff-mobile__list">
-                        <!-- Item 1 -->
-                        <div class="a2z-abd-diff-mobile__item">
-                            <span class="a2z-abd-diff-mobile__check">
-                                <svg viewBox="0 0 24 24">
-                                    <polyline points="20 6 9 17 4 12" />
-                                </svg>
-                            </span>
-                            <div class="a2z-abd-diff-mobile__content">
-                                <span class="a2z-abd-diff-mobile__label">WHO HANDLES IT</span>
-                                <span class="a2z-abd-diff-mobile__value">A dedicated specialist team</span>
-                            </div>
+                <!-- Row 2: How often you hear from them -->
+                <div class="a2z-abd-diff__row">
+                    <div class="a2z-abd-diff__pill-wrap">
+                        <span class="a2z-abd-diff__pill">HOW OFTEN YOU HEAR FROM THEM</span>
+                    </div>
+                    <div class="a2z-abd-diff__row-cells">
+                        <div class="a2z-abd-diff__cell a2z-abd-diff__cell--typical">
+                            Once a year, at the deadline
                         </div>
-                        <!-- Item 2 -->
-                        <div class="a2z-abd-diff-mobile__item">
-                            <span class="a2z-abd-diff-mobile__check">
-                                <svg viewBox="0 0 24 24">
+                        <div class="a2z-abd-diff__cell a2z-abd-diff__cell--a2z">
+                            <span class="a2z-abd-diff__check">
+                                <svg viewBox="0 0 24 24" aria-hidden="true">
                                     <polyline points="20 6 9 17 4 12" />
                                 </svg>
                             </span>
-                            <div class="a2z-abd-diff-mobile__content">
-                                <span class="a2z-abd-diff-mobile__label">QUALIFICATION</span>
-                                <span class="a2z-abd-diff-mobile__value">Reviewed to FCCA standard</span>
-                            </div>
+                            <span>All year, before decisions are due</span>
                         </div>
-                        <!-- Item 3 -->
-                        <div class="a2z-abd-diff-mobile__item">
-                            <span class="a2z-abd-diff-mobile__check">
-                                <svg viewBox="0 0 24 24">
-                                    <polyline points="20 6 9 17 4 12" />
-                                </svg>
-                            </span>
-                            <div class="a2z-abd-diff-mobile__content">
-                                <span class="a2z-abd-diff-mobile__label">SECTOR KNOWLEDGE</span>
-                                <span class="a2z-abd-diff-mobile__value">Specialists in your sector</span>
-                            </div>
+                    </div>
+                </div>
+
+                <!-- Row 3: The bill -->
+                <div class="a2z-abd-diff__row">
+                    <div class="a2z-abd-diff__pill-wrap">
+                        <span class="a2z-abd-diff__pill">THE BILL</span>
+                    </div>
+                    <div class="a2z-abd-diff__row-cells">
+                        <div class="a2z-abd-diff__cell a2z-abd-diff__cell--typical">
+                            Hourly rates and surprise invoices
                         </div>
-                        <!-- Item 4 -->
-                        <div class="a2z-abd-diff-mobile__item">
-                            <span class="a2z-abd-diff-mobile__check">
-                                <svg viewBox="0 0 24 24">
+                        <div class="a2z-abd-diff__cell a2z-abd-diff__cell--a2z">
+                            <span class="a2z-abd-diff__check">
+                                <svg viewBox="0 0 24 24" aria-hidden="true">
                                     <polyline points="20 6 9 17 4 12" />
                                 </svg>
                             </span>
-                            <div class="a2z-abd-diff-mobile__content">
-                                <span class="a2z-abd-diff-mobile__label">RESPONSE TIME</span>
-                                <span class="a2z-abd-diff-mobile__value">Same day for all queries received by midday</span>
-                            </div>
+                            <span>One fair fixed fee, agreed up front</span>
                         </div>
-                        <!-- Item 5 -->
-                        <div class="a2z-abd-diff-mobile__item">
-                            <span class="a2z-abd-diff-mobile__check">
-                                <svg viewBox="0 0 24 24">
-                                    <polyline points="20 6 9 17 4 12" />
-                                </svg>
-                            </span>
-                            <div class="a2z-abd-diff-mobile__content">
-                                <span class="a2z-abd-diff-mobile__label">DEADLINES</span>
-                                <span class="a2z-abd-diff-mobile__value">Tracked early. Zero missed, ever</span>
-                            </div>
+                    </div>
+                </div>
+
+                <!-- Row 4: The advice -->
+                <div class="a2z-abd-diff__row">
+                    <div class="a2z-abd-diff__pill-wrap">
+                        <span class="a2z-abd-diff__pill">THE ADVICE</span>
+                    </div>
+                    <div class="a2z-abd-diff__row-cells">
+                        <div class="a2z-abd-diff__cell a2z-abd-diff__cell--typical">
+                            Numbers filed and forgotten
                         </div>
-                        <!-- Item 6 -->
-                        <div class="a2z-abd-diff-mobile__item">
-                            <span class="a2z-abd-diff-mobile__check">
-                                <svg viewBox="0 0 24 24">
+                        <div class="a2z-abd-diff__cell a2z-abd-diff__cell--a2z">
+                            <span class="a2z-abd-diff__check">
+                                <svg viewBox="0 0 24 24" aria-hidden="true">
                                     <polyline points="20 6 9 17 4 12" />
                                 </svg>
                             </span>
-                            <div class="a2z-abd-diff-mobile__content">
-                                <span class="a2z-abd-diff-mobile__label">TAX PLANNING</span>
-                                <span class="a2z-abd-diff-mobile__value">Planned months ahead</span>
-                            </div>
+                            <span>Told what they mean and what to do next</span>
                         </div>
-                        <!-- Item 7 -->
-                        <div class="a2z-abd-diff-mobile__item">
-                            <span class="a2z-abd-diff-mobile__check">
-                                <svg viewBox="0 0 24 24">
+                    </div>
+                </div>
+
+                <!-- Row 5: Sector knowledge -->
+                <div class="a2z-abd-diff__row">
+                    <div class="a2z-abd-diff__pill-wrap">
+                        <span class="a2z-abd-diff__pill">SECTOR KNOWLEDGE</span>
+                    </div>
+                    <div class="a2z-abd-diff__row-cells">
+                        <div class="a2z-abd-diff__cell a2z-abd-diff__cell--typical">
+                            “We do small businesses”
+                        </div>
+                        <div class="a2z-abd-diff__cell a2z-abd-diff__cell--a2z">
+                            <span class="a2z-abd-diff__check">
+                                <svg viewBox="0 0 24 24" aria-hidden="true">
                                     <polyline points="20 6 9 17 4 12" />
                                 </svg>
                             </span>
-                            <div class="a2z-abd-diff-mobile__content">
-                                <span class="a2z-abd-diff-mobile__label">FEES</span>
-                                <span class="a2z-abd-diff-mobile__value">One fixed fee, in writing</span>
-                            </div>
+                            <span>Real experience in your exact sector</span>
                         </div>
                     </div>
                 </div>
