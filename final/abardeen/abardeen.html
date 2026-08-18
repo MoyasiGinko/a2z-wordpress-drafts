@@ -1366,7 +1366,7 @@
         .a2z-abd-pricing {
             position: relative;
             width: 100%;
-            background-color: #fbfcfd;
+            background-color: #ffffff;
             padding: 120px 24px 140px;
             overflow: hidden;
         }
@@ -1379,7 +1379,7 @@
             transform: translateX(-50%);
             width: 1100px;
             height: 450px;
-            background: radial-gradient(ellipse at 50% 100%, rgba(223, 168, 104, 0.12) 0%, rgba(251, 252, 253, 0) 70%);
+            background: radial-gradient(ellipse at 50% 100%, rgba(223, 168, 104, 0.12) 0%, rgba(255, 255, 255, 0) 70%);
             pointer-events: none;
             z-index: 1;
         }
@@ -1755,8 +1755,8 @@
         .a2z-abd-addons {
             position: relative;
             width: 100%;
-            background-color: #0c253d;
-            padding: 110px 24px 120px;
+            background: #112B46;
+            padding: 110px 32px 120px;
             overflow: hidden;
             border-top: 1px solid rgba(255, 255, 255, 0.06);
         }
@@ -1765,12 +1765,12 @@
             position: relative;
             z-index: 10;
             width: 100%;
-            max-width: 1240px;
+            max-width: 1204px;
             margin: 0 auto;
-            display: grid;
-            grid-template-columns: 42% 58%;
-            gap: 50px;
+            display: flex;
+            justify-content: space-between;
             align-items: center;
+            gap: 40px;
         }
 
         /* Left Info Column */
@@ -1778,55 +1778,63 @@
             display: flex;
             flex-direction: column;
             align-items: flex-start;
+            width: 546px;
+            max-width: 546px;
+            flex-shrink: 0;
         }
 
         .a2z-abd-addons__tag {
             display: inline-block;
-            font-family: var(--a2z-abd-font-sans);
-            font-size: 13.5px;
-            font-weight: 800;
-            letter-spacing: 0.14em;
+            font-family: var(--a2z-abd-font-manrope);
+            font-size: 16px;
+            font-weight: 700;
+            letter-spacing: 1.2px;
             text-transform: uppercase;
-            color: var(--a2z-abd-gold-main);
+            color: #D4A850;
             margin-bottom: 16px;
         }
 
         .a2z-abd-addons__title {
             font-family: var(--a2z-abd-font-serif);
-            font-size: clamp(2.35rem, 4.4vw, 3.85rem);
+            font-size: clamp(2rem, 3.2vw, 42px);
             font-weight: 700;
-            line-height: 1.16;
-            letter-spacing: -0.015em;
-            color: var(--a2z-abd-text-white);
+            line-height: 1.2;
+            letter-spacing: 0px;
+            color: #ffffff;
             margin-bottom: 20px;
-            text-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
         }
 
         .a2z-abd-addons__desc {
-            font-family: var(--a2z-abd-font-sans);
-            font-size: clamp(1.02rem, 1.18vw, 1.15rem);
-            font-weight: 400;
-            line-height: 1.62;
-            color: #d1dced;
-            max-width: 460px;
+            font-family: var(--a2z-abd-font-manrope);
+            font-size: 18px;
+            font-weight: 600;
+            line-height: 1.6;
+            letter-spacing: 0px;
+            color: #ffffff;
+            max-width: 546px;
             margin: 0;
-            text-shadow: 0 1px 8px rgba(0, 0, 0, 0.4);
         }
 
         /* Right Grid Column (2 columns x 3 rows) */
         .a2z-abd-addons__col-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(2, 265px);
             gap: 16px;
             width: 100%;
+            max-width: 546px;
+            margin-left: auto;
+            justify-content: end;
         }
 
         /* Add-on Pill Card */
         .a2z-abd-addon-pill {
+            width: 100%;
+            max-width: 265px;
+            min-height: 101px;
             background-color: rgba(255, 255, 255, 0.035);
-            border: 1px solid rgba(255, 255, 255, 0.13);
+            border: 1px solid rgba(255, 255, 255, 0.2);
             border-radius: 10px;
-            padding: 20px 22px;
+            padding: 24px;
             display: flex;
             align-items: center;
             gap: 14px;
@@ -1854,10 +1862,11 @@
         }
 
         .a2z-abd-addon-pill__label {
-            font-family: var(--a2z-abd-font-sans);
-            font-size: 14.5px;
+            font-family: var(--a2z-abd-font-manrope);
+            font-size: 16px;
             font-weight: 500;
             line-height: 1.44;
+            letter-spacing: 0px;
             color: #ffffff;
             margin: 0;
         }
