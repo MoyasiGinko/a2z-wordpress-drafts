@@ -1,0 +1,133 @@
+
+jQuery(document).ready(function ($) {
+    // Modal trigger to set form data
+    $(document).on('click', '[data-bs-toggle="modal"][data-bs-target="#enquireModal"]', function () {
+        const source = $(this).data('source') || '';
+        const redirectUrl = $(this).data('redirect-url') || '';
+        const downloadUrl = $(this).data('download-url') || '';
+        const zohoModule = $(this).data('zoho-module') || 'High_Intent_Clients';
+
+        $('#enquireModal').find('#source_button').val(source);
+        $('#enquireModal').data('redirect-url', redirectUrl);
+        $('#enquireModal').data('download-url', downloadUrl);
+        $('#enquireModal').data('zoho-module', zohoModule);
+        $('#exampleModalLabel').text(source);
+    });
+
+    // Initialize jQuery Validation
+    $('.get_quote.enquire-client-details').each(function () {
+        $(this).validate({
+            rules: {
+                name: {
+                    required: true
+                },
+                email: {
+                    required: true,
+                    email: true
+                },
+                phone: {
+                    required: true
+                },
+                location: {
+                    required: true
+                },
+                business_name: {
+                    required: true
+                },
+                business_sector: {
+                    required: true
+                },
+                source_button: {
+                    required: true
+                }
+            },
+            messages: {
+                name: {
+                    required: "Please enter your name",
+                    minlength: "Name must be at least 2 characters"
+                },
+                email: {
+                    required: "Please enter your email",
+                    email: "Please enter a valid email address"
+                },
+                phone: {
+                    required: "Please enter your phone number",
+                    digits: "Phone number must contain only digits",
+                    minlength: "Phone number must be at least 7 digits"
+                },
+                source_button: {
+                    required: "Source is required"
+                }
+            },
+            errorElement: 'div',
+            errorClass: 'error-message',
+            errorPlacement: function (error, element) {
+                error.appendTo(element.closest('.inputouter'));
+            },
+            highlight: function (element) {
+                $(element).closest('.input-inner').addClass('has-error');
+            },
+            unhighlight: function (element) {
+                $(element).closest('.input-inner').removeClass('has-error');
+            },
+            submitHandler: function (form, event) {
+                var $submitBtn = $(form).find("input[type=submit].btn");
+
+                // Disable after first click
+                $submitBtn.prop("disabled", true).val("Submitting...");
+
+                const formData = $(form).serialize();
+                const redirectUrl = $('#enquireModal').data('redirect-url') || '';
+                const downloadUrl = $('#enquireModal').data('download-url') || '';
+                const zohoModule = $('#enquireModal').data('zoho-module') || 'High_Intent_Clients';
+
+                $(form).find('.btn').prop('disabled', true);
+
+                $.ajax({
+                    url: my_ajax_object.ajax_url,
+                    type: 'POST',
+                    data: {
+                        action: 'submit_enquiry_form',
+                        data: formData,
+                        module: zohoModule
+                    },
+                    success: function (response) {
+                        $(form).find('.btn').prop('disabled', false);
+                        if (response.success) {
+                            if (downloadUrl) {
+                                const a = document.createElement('a');
+                                a.href = downloadUrl;
+                                a.download = ''; // You can set a filename like 'file.pdf'
+                                document.body.appendChild(a);
+                                a.click();
+                                document.body.removeChild(a);
+                            }
+
+                            if (typeof Swal !== 'undefined') {
+                                Swal.fire({ icon: 'success', title: 'Your enquiry is in', html: '<div style="text-align:left;font-size:.98rem;line-height:1.5;color:#23272B;">Thank you. A specialist who will know your name will be in touch personally, usually the same day. To tailor everything to your business, they\'ll send you a short form to complete, just 2 to 3 minutes. Nothing for you to do right now.</div>', showCancelButton: true, confirmButtonColor: '#B07D3C', confirmButtonText: 'Tell us what you need', cancelButtonText: 'Maybe later', focusConfirm: true, allowOutsideClick: false }).then(function (r) { if (r.isConfirmed) { window.location.href = 'https://a2zaccounting.co.uk/business-alignment-overview/'; return; } window.location.href = 'thank-you/'; });
+                            } else { window.location.href = 'thank-you/'; }
+                        } else {
+                            if (typeof Swal !== 'undefined') {
+                                Swal.fire({
+                                    icon: 'error',
+                                    title: 'Submission Failed',
+                                    text: response.data.message || 'Something went wrong.'
+                                });
+                            }
+                        }
+                    },
+                    error: function (xhr) {
+                        $(form).find('.btn').prop('disabled', false);
+                        if (typeof Swal !== 'undefined') {
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Error',
+                                text: 'Could not submit form. Please try again.'
+                            });
+                        }
+                    }
+                });
+            }
+        });
+    });
+});
