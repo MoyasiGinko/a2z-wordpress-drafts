@@ -95,12 +95,10 @@
             position: absolute;
             inset: 0;
             z-index: 2;
-            background: linear-gradient(
-                180deg,
-                rgba(11, 35, 58, 0.82) 0%,
-                rgba(14, 44, 72, 0.80) 45%,
-                rgba(8, 26, 44, 0.88) 100%
-            );
+            background: linear-gradient(180deg,
+                    rgba(11, 35, 58, 0.82) 0%,
+                    rgba(14, 44, 72, 0.80) 45%,
+                    rgba(8, 26, 44, 0.88) 100%);
         }
 
         /* Subtle Ambient Radial Lighting */
@@ -108,12 +106,10 @@
             position: absolute;
             inset: 0;
             z-index: 3;
-            background: radial-gradient(
-                ellipse at 50% 35%,
-                rgba(24, 66, 104, 0.3) 0%,
-                rgba(6, 20, 34, 0.4) 75%,
-                rgba(4, 14, 24, 0.7) 100%
-            );
+            background: radial-gradient(ellipse at 50% 35%,
+                    rgba(24, 66, 104, 0.3) 0%,
+                    rgba(6, 20, 34, 0.4) 75%,
+                    rgba(4, 14, 24, 0.7) 100%);
             pointer-events: none;
         }
 
@@ -434,7 +430,7 @@
             position: relative;
             z-index: 2;
             width: 100%;
-            max-width: 1240px;
+            max-width: 1156px;
             margin: 0 auto;
         }
 
@@ -447,40 +443,47 @@
 
         .a2z-abd-sectors__tag {
             display: inline-block;
-            font-family: var(--a2z-abd-font-sans);
-            font-size: 13.5px;
-            font-weight: 800;
-            letter-spacing: 0.14em;
+            font-family: var(--a2z-abd-font-inter);
+            font-size: 20px;
+            font-weight: 700;
+            letter-spacing: 2.4px;
+            text-align: center;
+            vertical-align: middle;
             text-transform: uppercase;
-            color: var(--a2z-abd-gold-dark);
+            color: #D4A850;
             margin-bottom: 16px;
         }
 
         .a2z-abd-sectors__title {
             font-family: var(--a2z-abd-font-serif);
-            font-size: clamp(2.35rem, 4.4vw, 3.85rem);
-            font-weight: 700;
+            font-size: clamp(2.35rem, 4.4vw, 64px);
+            font-weight: 600;
             line-height: 1.16;
-            letter-spacing: -0.015em;
-            color: var(--a2z-abd-navy-deep);
+            letter-spacing: 0px;
+            text-align: center;
+            color: #000000;
             margin-bottom: 22px;
         }
 
         .a2z-abd-sectors__title-italic {
             font-family: var(--a2z-abd-font-serif);
-            font-weight: 500;
+            font-weight: 600;
             font-style: italic;
-            color: var(--a2z-abd-gold-main);
-            letter-spacing: -0.008em;
+            font-size: inherit;
+            letter-spacing: 0px;
+            text-align: center;
+            color: #D4A850;
             display: inline-block;
         }
 
         .a2z-abd-sectors__desc {
-            font-family: var(--a2z-abd-font-sans);
-            font-size: clamp(1.02rem, 1.18vw, 1.15rem);
-            font-weight: 400;
-            line-height: 1.62;
-            color: #2e3d4f;
+            font-family: var(--a2z-abd-font-manrope);
+            font-size: 22px;
+            font-weight: 600;
+            line-height: 1.6;
+            letter-spacing: 0px;
+            text-align: justify;
+            color: #000000;
             max-width: 740px;
             margin: 0 auto;
         }
@@ -489,24 +492,30 @@
         .a2z-abd-sectors__grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 32px;
+            gap: 33px;
             align-items: start;
+            justify-content: center;
         }
 
         /* Sector Card */
         .a2z-abd-sector-card {
             background: #ffffff;
-            border-radius: 16px;
-            padding: 50px 34px 44px;
+            width: 100%;
+            max-width: 363px;
+            height: 312px;
+            border-radius: 12px;
+            opacity: 1;
+            padding: 32px 48px 54px 48px;
             text-align: center;
             display: flex;
             flex-direction: column;
             align-items: center;
+            justify-content: flex-start;
             box-shadow: 0 20px 48px -12px rgba(12, 37, 61, 0.09), 0 4px 16px -2px rgba(12, 37, 61, 0.03);
             border: 1px solid rgba(226, 232, 240, 0.75);
             transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), border-color 0.35s ease;
             position: relative;
-            height: 100%;
+            margin: 0 auto;
         }
 
         /* Middle Column Vertical Stagger / Offset on Desktop */
@@ -524,27 +533,27 @@
 
         /* Card Icon Wrap */
         .a2z-abd-sector-card__icon-wrap {
-            width: 62px;
-            height: 62px;
+            width: 55px;
+            height: 55px;
             border-radius: 50%;
-            background-color: #0e2a44;
+            background-color: #112B46;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 24px;
-            box-shadow: 0 8px 20px rgba(14, 42, 68, 0.24);
+            margin-bottom: 20px;
+            box-shadow: 0 6px 18px rgba(17, 43, 70, 0.24);
             transition: transform 0.35s ease, background-color 0.35s ease;
             flex-shrink: 0;
         }
 
         .a2z-abd-sector-card:hover .a2z-abd-sector-card__icon-wrap {
             transform: scale(1.08);
-            background-color: #123454;
+            background-color: #112B46;
         }
 
         .a2z-abd-sector-card__icon {
-            width: 28px;
-            height: 28px;
+            width: 26px;
+            height: 26px;
             stroke: #ffffff;
             fill: none;
             stroke-width: 1.8;
@@ -552,23 +561,32 @@
             stroke-linejoin: round;
         }
 
+        .a2z-abd-sector-card__icon * {
+            stroke: #ffffff;
+        }
+
         /* Card Typography */
         .a2z-abd-sector-card__title {
             font-family: var(--a2z-abd-font-serif);
-            font-size: clamp(1.25rem, 1.45vw, 1.42rem);
+            font-size: 24px;
             font-weight: 700;
-            line-height: 1.28;
-            letter-spacing: -0.01em;
-            color: #0d2840;
-            margin-bottom: 14px;
+            line-height: 1.25;
+            letter-spacing: 0px;
+            text-align: center;
+            vertical-align: middle;
+            color: #121414;
+            margin-bottom: 12px;
         }
 
         .a2z-abd-sector-card__text {
-            font-family: var(--a2z-abd-font-sans);
-            font-size: 14.5px;
-            font-weight: 400;
-            line-height: 1.58;
-            color: #4b5868;
+            font-family: var(--a2z-abd-font-manrope);
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 1.55;
+            letter-spacing: 0px;
+            text-align: justify;
+            vertical-align: bottom;
+            color: #000000;
             margin: 0;
         }
 
@@ -592,7 +610,10 @@
             }
 
             .a2z-abd-sector-card {
-                padding: 40px 28px 36px;
+                max-width: 100%;
+                height: auto;
+                min-height: 290px;
+                padding: 36px 24px 32px;
             }
         }
 
@@ -602,7 +623,8 @@
             }
 
             .a2z-abd-sectors__tag {
-                font-size: 12px;
+                font-size: 15px;
+                letter-spacing: 1.5px;
                 margin-bottom: 12px;
             }
 
@@ -660,7 +682,7 @@
         .a2z-abd-why {
             position: relative;
             width: 100%;
-            background-color: var(--a2z-abd-navy-deep);
+            background: #112B46CC;
             padding: 120px 24px 140px;
             overflow: hidden;
         }
@@ -689,24 +711,20 @@
             position: absolute;
             inset: 0;
             z-index: 2;
-            background: linear-gradient(
-                180deg,
-                rgba(11, 35, 58, 0.88) 0%,
-                rgba(14, 44, 72, 0.84) 45%,
-                rgba(8, 26, 44, 0.94) 100%
-            );
+            background: linear-gradient(180deg,
+                    rgba(11, 35, 58, 0.88) 0%,
+                    rgba(14, 44, 72, 0.84) 45%,
+                    rgba(8, 26, 44, 0.94) 100%);
         }
 
         .a2z-abd-why__ambient {
             position: absolute;
             inset: 0;
             z-index: 3;
-            background: radial-gradient(
-                circle at 50% 30%,
-                rgba(223, 168, 104, 0.08) 0%,
-                rgba(6, 20, 34, 0.4) 75%,
-                rgba(4, 14, 24, 0.8) 100%
-            );
+            background: radial-gradient(circle at 50% 30%,
+                    rgba(223, 168, 104, 0.08) 0%,
+                    rgba(6, 20, 34, 0.4) 75%,
+                    rgba(4, 14, 24, 0.8) 100%);
             pointer-events: none;
         }
 
@@ -727,12 +745,14 @@
 
         .a2z-abd-why__tag {
             display: inline-block;
-            font-family: var(--a2z-abd-font-sans);
-            font-size: 13.5px;
-            font-weight: 800;
-            letter-spacing: 0.14em;
+            font-family: var(--a2z-abd-font-inter);
+            font-size: 20px;
+            font-weight: 700;
+            letter-spacing: 1.2px;
+            text-align: center;
+            vertical-align: middle;
             text-transform: uppercase;
-            color: var(--a2z-abd-gold-main);
+            color: #D4A850;
             margin-bottom: 16px;
         }
 
@@ -774,6 +794,8 @@
             flex-direction: column;
             gap: 28px;
             width: 100%;
+            max-width: 1090px;
+            margin: 0 auto;
         }
 
         /* 2-Column Row (Rows 1 & 3) */
@@ -794,13 +816,19 @@
 
         /* Split-Tone Feature Card */
         .a2z-abd-split-card {
-            border-radius: 16px;
+            width: 100%;
+            max-width: 515px;
+            max-height: 317px;
+            border-radius: 18.91px;
+            opacity: 1;
+            background: #0E3F72;
             overflow: hidden;
             display: flex;
             flex-direction: column;
             box-shadow: 0 20px 45px -10px rgba(3, 12, 22, 0.55), 0 2px 8px rgba(0, 0, 0, 0.25);
             transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
             height: 100%;
+            margin: 0 auto;
         }
 
         .a2z-abd-split-card:hover {
@@ -810,8 +838,8 @@
 
         /* Card Top (Navy Header) */
         .a2z-abd-split-card__header {
-            background-color: #0f3e69;
-            padding: 30px 24px 24px;
+            background-color: #0E3F72;
+            padding: 26px 24px 20px;
             text-align: center;
             display: flex;
             flex-direction: column;
@@ -822,36 +850,41 @@
         }
 
         .a2z-abd-split-card:hover .a2z-abd-split-card__header {
-            background-color: #134879;
+            background-color: #124d8b;
         }
 
         /* Icon Badge */
         .a2z-abd-split-card__icon-badge {
-            width: 46px;
-            height: 46px;
+            width: 60px;
+            height: 60px;
             border-radius: 50%;
             background-color: #ffffff;
+            opacity: 1;
             display: flex;
             align-items: center;
             justify-content: center;
             margin-bottom: 16px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
             transition: transform 0.35s ease;
             flex-shrink: 0;
         }
 
         .a2z-abd-split-card:hover .a2z-abd-split-card__icon-badge {
-            transform: scale(1.1);
+            transform: scale(1.08);
         }
 
         .a2z-abd-split-card__icon {
-            width: 22px;
-            height: 22px;
-            stroke: #0f3e69;
+            width: 28px;
+            height: 28px;
+            stroke: #D4A850;
             fill: none;
             stroke-width: 2;
             stroke-linecap: round;
             stroke-linejoin: round;
+        }
+
+        .a2z-abd-split-card__icon * {
+            stroke: #D4A850;
         }
 
         .a2z-abd-split-card__title {
@@ -915,7 +948,8 @@
             }
 
             .a2z-abd-why__tag {
-                font-size: 12px;
+                font-size: 15px;
+                letter-spacing: 1px;
                 margin-bottom: 12px;
             }
 
@@ -3533,11 +3567,13 @@
         <!-- Background Architecture Graphic & Multi-Stop Overlays -->
         <div class="a2z-abd-hero__bg" aria-hidden="true">
             <!-- Architectural Facade Representation (Union Street Aberdeen office scene) -->
-            <svg class="a2z-abd-hero__bg-svg" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+            <svg class="a2z-abd-hero__bg-svg" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg"
+                preserveAspectRatio="xMidYMid slice">
                 <!-- Sky and background buildings -->
                 <rect width="1600" height="900" fill="#2d4863" />
-                <path d="M0,0 L1600,0 L1600,450 L1200,420 L950,440 L700,410 L450,430 L0,450 Z" fill="#3a5874" opacity="0.5" />
-                
+                <path d="M0,0 L1600,0 L1600,450 L1200,420 L950,440 L700,410 L450,430 L0,450 Z" fill="#3a5874"
+                    opacity="0.5" />
+
                 <!-- Historic Aberdeen Granite Architecture Buildings -->
                 <path d="M1250,150 L1450,130 L1600,160 L1600,900 L1250,900 Z" fill="#203a52" />
                 <!-- Windows and cornices right side -->
@@ -3548,7 +3584,7 @@
                 <rect x="1470" y="380" width="60" height="110" rx="4" fill="#15293d" />
                 <rect x="1270" y="200" width="280" height="15" fill="#4d6f8f" opacity="0.6" />
                 <rect x="1270" y="350" width="280" height="12" fill="#4d6f8f" opacity="0.6" />
-                
+
                 <!-- Central Granite Facade -->
                 <path d="M380,80 L1250,150 L1250,900 L380,900 Z" fill="#294661" />
                 <!-- Architectural Stone Pediments and Columns -->
@@ -3557,13 +3593,13 @@
                 <rect x="820" y="140" width="14" height="760" fill="#446788" opacity="0.35" />
                 <rect x="1020" y="140" width="14" height="760" fill="#446788" opacity="0.35" />
                 <rect x="1220" y="140" width="14" height="760" fill="#446788" opacity="0.35" />
-                
+
                 <!-- Center Storey Windows -->
                 <rect x="460" y="200" width="130" height="180" rx="6" fill="#142b40" />
                 <rect x="660" y="200" width="130" height="180" rx="6" fill="#142b40" />
                 <rect x="860" y="200" width="130" height="180" rx="6" fill="#142b40" />
                 <rect x="1060" y="200" width="130" height="180" rx="6" fill="#142b40" />
-                
+
                 <rect x="460" y="440" width="130" height="190" rx="4" fill="#112437" />
                 <rect x="660" y="440" width="130" height="190" rx="4" fill="#112437" />
                 <rect x="860" y="440" width="130" height="190" rx="4" fill="#112437" />
@@ -3573,19 +3609,25 @@
                 <path d="M0,50 L400,90 L400,900 L0,900 Z" fill="#32506d" />
                 <!-- 3D Signboard -->
                 <g opacity="0.85" transform="translate(180, 260) rotate(-4)">
-                    <rect x="0" y="0" width="280" height="160" rx="6" fill="#f8fafc" opacity="0.92" filter="drop-shadow(0px 15px 25px rgba(0,0,0,0.6))" />
+                    <rect x="0" y="0" width="280" height="160" rx="6" fill="#f8fafc" opacity="0.92"
+                        filter="drop-shadow(0px 15px 25px rgba(0,0,0,0.6))" />
                     <!-- Circle Logo -->
                     <circle cx="140" cy="45" r="22" fill="#0d2e4d" />
-                    <text x="140" y="52" fill="#ffffff" font-family="sans-serif" font-size="14" font-weight="900" text-anchor="middle">A2Z</text>
+                    <text x="140" y="52" fill="#ffffff" font-family="sans-serif" font-size="14" font-weight="900"
+                        text-anchor="middle">A2Z</text>
                     <!-- Accounting Text -->
-                    <text x="140" y="96" fill="#0d2e4d" font-family="'DM Sans', sans-serif" font-size="20" font-weight="900" letter-spacing="2" text-anchor="middle">ACCOUNTING</text>
-                    <text x="140" y="122" fill="#335372" font-family="'DM Sans', sans-serif" font-size="11" font-weight="700" letter-spacing="1" text-anchor="middle">Chartered Accountant</text>
+                    <text x="140" y="96" fill="#0d2e4d" font-family="'DM Sans', sans-serif" font-size="20"
+                        font-weight="900" letter-spacing="2" text-anchor="middle">ACCOUNTING</text>
+                    <text x="140" y="122" fill="#335372" font-family="'DM Sans', sans-serif" font-size="11"
+                        font-weight="700" letter-spacing="1" text-anchor="middle">Chartered Accountant</text>
                 </g>
 
                 <!-- Background Street Shop signs (REED / TESCO subtle silhouettes) -->
                 <g opacity="0.45" transform="translate(720, 680)">
-                    <text x="0" y="0" fill="#527699" font-family="'DM Sans', sans-serif" font-size="34" font-weight="900" letter-spacing="4">REED</text>
-                    <text x="160" y="0" fill="#47698a" font-family="'DM Sans', sans-serif" font-size="26" font-weight="800" letter-spacing="2">TESCO</text>
+                    <text x="0" y="0" fill="#527699" font-family="'DM Sans', sans-serif" font-size="34"
+                        font-weight="900" letter-spacing="4">REED</text>
+                    <text x="160" y="0" fill="#47698a" font-family="'DM Sans', sans-serif" font-size="26"
+                        font-weight="800" letter-spacing="2">TESCO</text>
                 </g>
             </svg>
             <div class="a2z-abd-hero__overlay"></div>
@@ -3649,7 +3691,8 @@
                 </h2>
                 <p class="a2z-abd-sectors__desc">
                     We work every day with the sectors that drive the North-East - so nothing about your numbers,
-                    your margins or your tax is new to us, and the advice you get is grounded in how your industry actually works.
+                    your margins or your tax is new to us, and the advice you get is grounded in how your industry
+                    actually works.
                 </p>
             </div>
 
@@ -3663,12 +3706,13 @@
                             <rect x="4" y="3" width="16" height="18" rx="3" />
                             <line x1="4" y1="8" x2="20" y2="8" />
                             <line x1="4" y1="16" x2="20" y2="16" />
-                            <circle cx="12" cy="12" r="2.2" fill="#dfa868" stroke="none" />
+                            <circle cx="12" cy="12" r="2.2" fill="#ffffff" stroke="none" />
                         </svg>
                     </div>
                     <h3 class="a2z-abd-sector-card__title">Energy and oil-and-gas contractors</h3>
                     <p class="a2z-abd-sector-card__text">
-                        Contractors and service firms across the energy corridor - day rates, IR35 and profit extraction, planned properly.
+                        Contractors and service firms across the energy corridor - day rates, IR35 and profit
+                        extraction, planned properly.
                     </p>
                 </div>
 
@@ -3677,7 +3721,8 @@
                     <div class="a2z-abd-sector-card__icon-wrap">
                         <svg class="a2z-abd-sector-card__icon" viewBox="0 0 24 24">
                             <!-- Crossed Hammer & Wrench / Tools -->
-                            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
+                            <path
+                                d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
                         </svg>
                     </div>
                     <h3 class="a2z-abd-sector-card__title">Trades and construction (CIS)</h3>
@@ -3717,7 +3762,8 @@
                     </div>
                     <h3 class="a2z-abd-sector-card__title">Healthcare, dental and pharmacy</h3>
                     <p class="a2z-abd-sector-card__text">
-                        Practices, pharmacies and associates - NHS and private income, superannuation and profit extraction.
+                        Practices, pharmacies and associates - NHS and private income, superannuation and profit
+                        extraction.
                     </p>
                 </div>
 
@@ -3761,13 +3807,14 @@
     <section class="a2z-abd-why" id="aberdeen-why-choose-us" aria-label="Why People Here Choose Us">
         <!-- Background Architecture Ambiance & Overlays -->
         <div class="a2z-abd-why__bg" aria-hidden="true">
-            <svg class="a2z-abd-why__bg-svg" viewBox="0 0 1600 1000" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+            <svg class="a2z-abd-why__bg-svg" viewBox="0 0 1600 1000" fill="none" xmlns="http://www.w3.org/2000/svg"
+                preserveAspectRatio="xMidYMid slice">
                 <rect width="1600" height="1000" fill="#14324f" />
                 <!-- Aberdeen Union Street Facade Silhouettes -->
                 <path d="M0,100 L300,120 L300,1000 L0,1000 Z" fill="#1b3d5e" opacity="0.6" />
                 <path d="M1300,80 L1600,110 L1600,1000 L1300,1000 Z" fill="#1b3d5e" opacity="0.6" />
                 <path d="M300,150 L1300,180 L1300,1000 L300,1000 Z" fill="#163756" opacity="0.5" />
-                
+
                 <!-- Double Decker Bus Silhouette (Left) -->
                 <g opacity="0.45" transform="translate(40, 680)">
                     <rect x="0" y="0" width="130" height="180" rx="10" fill="#0b243b" />
@@ -3779,11 +3826,15 @@
 
                 <!-- Upper Right A2Z Signboard Perspective -->
                 <g opacity="0.65" transform="translate(1160, 60) rotate(-5)">
-                    <rect x="0" y="0" width="380" height="220" rx="8" fill="#f8fafc" opacity="0.9" filter="drop-shadow(0px 20px 30px rgba(0,0,0,0.7))" />
+                    <rect x="0" y="0" width="380" height="220" rx="8" fill="#f8fafc" opacity="0.9"
+                        filter="drop-shadow(0px 20px 30px rgba(0,0,0,0.7))" />
                     <circle cx="190" cy="65" r="30" fill="#0d2e4d" />
-                    <text x="190" y="74" fill="#ffffff" font-family="sans-serif" font-size="18" font-weight="900" text-anchor="middle">A2Z</text>
-                    <text x="190" y="132" fill="#0d2e4d" font-family="'DM Sans', sans-serif" font-size="28" font-weight="900" letter-spacing="3" text-anchor="middle">ACCOUNTING</text>
-                    <text x="190" y="168" fill="#335372" font-family="'DM Sans', sans-serif" font-size="15" font-weight="700" letter-spacing="1.5" text-anchor="middle">Chartered Accountant</text>
+                    <text x="190" y="74" fill="#ffffff" font-family="sans-serif" font-size="18" font-weight="900"
+                        text-anchor="middle">A2Z</text>
+                    <text x="190" y="132" fill="#0d2e4d" font-family="'DM Sans', sans-serif" font-size="28"
+                        font-weight="900" letter-spacing="3" text-anchor="middle">ACCOUNTING</text>
+                    <text x="190" y="168" fill="#335372" font-family="'DM Sans', sans-serif" font-size="15"
+                        font-weight="700" letter-spacing="1.5" text-anchor="middle">Chartered Accountant</text>
                 </g>
             </svg>
             <div class="a2z-abd-why__overlay"></div>
@@ -3825,7 +3876,8 @@
                         </div>
                         <div class="a2z-abd-split-card__body">
                             <p class="a2z-abd-split-card__text">
-                                We take the time to know you and your business, then look after it with the same care we would our own. Advice built around you, never off a template.
+                                We take the time to know you and your business, then look after it with the same care we
+                                would our own. Advice built around you, never off a template.
                             </p>
                         </div>
                     </div>
@@ -3844,7 +3896,9 @@
                         </div>
                         <div class="a2z-abd-split-card__body">
                             <p class="a2z-abd-split-card__text">
-                                No wrestling with accounting software, no bookkeeping stacking up on your desk. There is a full team behind you, so it is all handled end to end and done right - however much there is - and you get your hours, and your headspace, back.
+                                No wrestling with accounting software, no bookkeeping stacking up on your desk. There is
+                                a full team behind you, so it is all handled end to end and done right - however much
+                                there is - and you get your hours, and your headspace, back.
                             </p>
                         </div>
                     </div>
@@ -3858,14 +3912,16 @@
                             <div class="a2z-abd-split-card__icon-badge">
                                 <svg class="a2z-abd-split-card__icon" viewBox="0 0 24 24">
                                     <!-- Speech Bubble -->
-                                    <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+                                    <path
+                                        d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
                                 </svg>
                             </div>
                             <h3 class="a2z-abd-split-card__title">We actually reply</h3>
                         </div>
                         <div class="a2z-abd-split-card__body">
                             <p class="a2z-abd-split-card__text">
-                                Ask a question and you hear back quickly, from someone who already knows your business. No being passed around, no waiting days for an answer.
+                                Ask a question and you hear back quickly, from someone who already knows your business.
+                                No being passed around, no waiting days for an answer.
                             </p>
                         </div>
                     </div>
@@ -3878,14 +3934,16 @@
                                     <!-- Lightbulb -->
                                     <path d="M9 18h6" />
                                     <path d="M10 22h4" />
-                                    <path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7z" />
+                                    <path
+                                        d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7z" />
                                 </svg>
                             </div>
                             <h3 class="a2z-abd-split-card__title">We make your numbers make sense</h3>
                         </div>
                         <div class="a2z-abd-split-card__body">
                             <p class="a2z-abd-split-card__text">
-                                We tell you what your numbers actually mean and what to do next, without the jargon - clear enough to make confident decisions.
+                                We tell you what your numbers actually mean and what to do next, without the jargon -
+                                clear enough to make confident decisions.
                             </p>
                         </div>
                     </div>
@@ -3912,7 +3970,9 @@
                         </div>
                         <div class="a2z-abd-split-card__body">
                             <p class="a2z-abd-split-card__text">
-                                Not a once-a-year tax return. We keep an eye on your numbers through the year, so there are no nasty surprises and you always know what is coming - which matters more than ever in a tighter market.
+                                Not a once-a-year tax return. We keep an eye on your numbers through the year, so there
+                                are no nasty surprises and you always know what is coming - which matters more than ever
+                                in a tighter market.
                             </p>
                         </div>
                     </div>
@@ -3939,7 +3999,9 @@
                         </div>
                         <div class="a2z-abd-split-card__body">
                             <p class="a2z-abd-split-card__text">
-                                The rigour you would expect from the biggest names, run by people who trained in corporate finance and top-tier audit - and you can still sit across the table on Union Street.
+                                The rigour you would expect from the biggest names, run by people who trained in
+                                corporate finance and top-tier audit - and you can still sit across the table on Union
+                                Street.
                             </p>
                         </div>
                     </div>
@@ -3959,7 +4021,8 @@
                         </div>
                         <div class="a2z-abd-split-card__body">
                             <p class="a2z-abd-split-card__text">
-                                One fair fixed fee, agreed up front. A quick question never lands on your next bill, so you never have to think twice about picking up the phone.
+                                One fair fixed fee, agreed up front. A quick question never lands on your next bill, so
+                                you never have to think twice about picking up the phone.
                             </p>
                         </div>
                     </div>
@@ -3981,7 +4044,10 @@
                     <span class="a2z-abd-diff__title-italic">and what you get with us</span>
                 </h2>
                 <p class="a2z-abd-diff__desc">
-                    You should not have to choose between a big-firm standard and a local team that actually cares. Here you get both - the calibre the biggest names are known for, delivered by people who know your business by name, for one fair fixed fee that is a fraction of what you would expect. More expertise, more care, more included, far less cost.
+                    You should not have to choose between a big-firm standard and a local team that actually cares. Here
+                    you get both - the calibre the biggest names are known for, delivered by people who know your
+                    business by name, for one fair fixed fee that is a fraction of what you would expect. More
+                    expertise, more care, more included, far less cost.
                 </p>
             </div>
 
@@ -4264,7 +4330,8 @@
                     Add anything, at your pace
                 </h2>
                 <p class="a2z-abd-addons__desc">
-                    Every plan flexes around you. Add more whenever it helps, at whatever frequency suits your business - always agreed up front.
+                    Every plan flexes around you. Add more whenever it helps, at whatever frequency suits your business
+                    - always agreed up front.
                 </p>
             </div>
 
@@ -4366,10 +4433,13 @@
                     As you grow, we carry the complexity.
                 </h2>
                 <p class="a2z-abd-grow__p">
-                    More transactions, staff and payroll, VAT, extra entities or a group, tighter reporting - we take it on so you never feel it. Management accounts (monthly or quarterly), cashflow forecasting and advisory are all here when you need them, always agreed up front.
+                    More transactions, staff and payroll, VAT, extra entities or a group, tighter reporting - we take it
+                    on so you never feel it. Management accounts (monthly or quarterly), cashflow forecasting and
+                    advisory are all here when you need them, always agreed up front.
                 </p>
                 <p class="a2z-abd-grow__p">
-                    Every fee is fixed and agreed in writing before we start, so there are no surprises and a quick question never costs extra. Director self-assessment from £120+VAT a year, billed separately.
+                    Every fee is fixed and agreed in writing before we start, so there are no surprises and a quick
+                    question never costs extra. Director self-assessment from £120+VAT a year, billed separately.
                 </p>
             </div>
         </div>
@@ -4388,7 +4458,8 @@
                     <span class="a2z-abd-fit__title-italic">done properly</span>
                 </h2>
                 <p class="a2z-abd-fit__desc">
-                    We do our best work for established, owner-managed businesses that want a proactive accountant, not just a filing service. In fairness to you, here is who we suit - and who we honestly do not.
+                    We do our best work for established, owner-managed businesses that want a proactive accountant, not
+                    just a filing service. In fairness to you, here is who we suit - and who we honestly do not.
                 </p>
             </div>
 
@@ -4526,10 +4597,12 @@
     <section class="a2z-abd-handled" id="aberdeen-services" aria-label="Everything Handled">
         <!-- Ambient Background Scene SVG Graphic -->
         <div class="a2z-abd-handled__bg" aria-hidden="true">
-            <svg class="a2z-abd-handled__bg-svg" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+            <svg class="a2z-abd-handled__bg-svg" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg"
+                preserveAspectRatio="xMidYMid slice">
                 <!-- Aberdeen Office Reception Illustration -->
                 <rect width="1600" height="900" fill="#081b2d" />
-                <path d="M0,0 L1600,0 L1600,900 L0,900 Z" fill="radial-gradient(circle at 50% 50%, #0d2840 0%, #061523 100%)" />
+                <path d="M0,0 L1600,0 L1600,900 L0,900 Z"
+                    fill="radial-gradient(circle at 50% 50%, #0d2840 0%, #061523 100%)" />
                 <!-- Office architectural pillars & panelling -->
                 <rect x="150" y="100" width="300" height="800" rx="10" fill="#0d2944" opacity="0.35" />
                 <rect x="1150" y="100" width="300" height="800" rx="10" fill="#0d2944" opacity="0.35" />
@@ -4546,7 +4619,8 @@
                     Everything, <span class="a2z-abd-handled__title-italic">handled</span>
                 </h2>
                 <p class="a2z-abd-handled__desc">
-                    One firm for the compliance and the thinking behind it - all from people who already know your business.
+                    One firm for the compliance and the thinking behind it - all from people who already know your
+                    business.
                 </p>
             </div>
 
@@ -4674,7 +4748,9 @@
                 <div class="a2z-abd-founder__quote-card">
                     <span class="a2z-abd-founder__quote-icon-top">“</span>
                     <blockquote class="a2z-abd-founder__quote-text">
-                        I oversee the standard on every client engagement myself. When something carries our name, it has to be right – and it has to be useful to you.<span class="a2z-abd-founder__quote-icon-bottom">„</span>
+                        I oversee the standard on every client engagement myself. When something carries our name, it
+                        has to be right – and it has to be useful to you.<span
+                            class="a2z-abd-founder__quote-icon-bottom">„</span>
                     </blockquote>
                 </div>
 
@@ -4682,19 +4758,17 @@
                 <div class="a2z-abd-founder__bio-wrap">
                     <div class="a2z-abd-founder__bio-backdrop" aria-hidden="true"></div>
                     <div class="a2z-abd-founder__bio-card">
-                        <img 
-                            src="https://a2zaccounting.co.uk/wp-content/uploads/2026/04/srahman.png" 
-                            alt="Shabbir Rahman, Founder & CEO of A2Z Accounting Solutions" 
-                            class="a2z-abd-founder__avatar"
-                            width="72"
-                            height="72"
-                            loading="lazy"
-                        >
+                        <img src="https://a2zaccounting.co.uk/wp-content/uploads/2026/04/srahman.png"
+                            alt="Shabbir Rahman, Founder & CEO of A2Z Accounting Solutions"
+                            class="a2z-abd-founder__avatar" width="72" height="72" loading="lazy">
                         <h3 class="a2z-abd-founder__name">Shabbir Rahman</h3>
                         <span class="a2z-abd-founder__role-tag">FOUNDER AND CEO</span>
                         <span class="a2z-abd-founder__role-sub">CHARTERED CERTIFIED ACCOUNTANT</span>
                         <p class="a2z-abd-founder__bio-p">
-                            Shabbir built his early career in corporate finance at a multibillion-pound international group, working to top-tier audit standards, and is an Economics honours graduate of the University of Aberdeen. He founded A2Z to bring that same rigour to the owner-managed businesses the big firms overlook.
+                            Shabbir built his early career in corporate finance at a multibillion-pound international
+                            group, working to top-tier audit standards, and is an Economics honours graduate of the
+                            University of Aberdeen. He founded A2Z to bring that same rigour to the owner-managed
+                            businesses the big firms overlook.
                         </p>
                     </div>
                 </div>
@@ -4706,14 +4780,9 @@
                 <div class="a2z-abd-founder-mobile__profile">
                     <div class="a2z-abd-founder-mobile__bar" aria-hidden="true"></div>
                     <div class="a2z-abd-founder-mobile__header-row">
-                        <img 
-                            src="https://a2zaccounting.co.uk/wp-content/uploads/2026/04/srahman.png" 
-                            alt="Shabbir Rahman, Founder & CEO of A2Z Accounting Solutions" 
-                            class="a2z-abd-founder-mobile__avatar"
-                            width="76"
-                            height="76"
-                            loading="lazy"
-                        >
+                        <img src="https://a2zaccounting.co.uk/wp-content/uploads/2026/04/srahman.png"
+                            alt="Shabbir Rahman, Founder & CEO of A2Z Accounting Solutions"
+                            class="a2z-abd-founder-mobile__avatar" width="76" height="76" loading="lazy">
                         <div class="a2z-abd-founder-mobile__titles">
                             <h3 class="a2z-abd-founder-mobile__name">Shabbir Rahman</h3>
                             <span class="a2z-abd-founder-mobile__role">FOUNDER AND CEO</span>
@@ -4721,7 +4790,10 @@
                         </div>
                     </div>
                     <p class="a2z-abd-founder-mobile__bio">
-                        Shabbir built his early career in corporate finance at a multibillion-pound international group, working to top-tier audit standards, and is an Economics honours graduate of the University of Aberdeen. He founded A2Z to bring that same rigour to the owner-managed businesses the big firms overlook.
+                        Shabbir built his early career in corporate finance at a multibillion-pound international group,
+                        working to top-tier audit standards, and is an Economics honours graduate of the University of
+                        Aberdeen. He founded A2Z to bring that same rigour to the owner-managed businesses the big firms
+                        overlook.
                     </p>
                 </div>
 
@@ -4729,7 +4801,8 @@
                 <div class="a2z-abd-founder-mobile__quote-card">
                     <div class="a2z-abd-founder-mobile__quote-icon">“</div>
                     <blockquote class="a2z-abd-founder-mobile__quote-text">
-                        I oversee the standard on every client engagement myself. When something carries our name, it has to be right - and it has to be useful to you.
+                        I oversee the standard on every client engagement myself. When something carries our name, it
+                        has to be right - and it has to be useful to you.
                     </blockquote>
                     <div class="a2z-abd-founder-mobile__dot" aria-hidden="true"></div>
                 </div>
@@ -4749,15 +4822,18 @@
                     Switching takes <span class="a2z-abd-switch__title-italic">a week</span>
                 </h2>
                 <p class="a2z-abd-switch__desc">
-                    Changing accountant sounds like a chore, so we do the heavy lifting. No gap in your filings, no awkward conversations - most clients are moved across within a week and looked after from day one.
+                    Changing accountant sounds like a chore, so we do the heavy lifting. No gap in your filings, no
+                    awkward conversations - most clients are moved across within a week and looked after from day one.
                 </p>
             </div>
 
             <!-- 1. DESKTOP TIMELINE (Visible >= 769px) -->
             <div class="a2z-abd-switch__timeline-desktop">
                 <!-- SVG Wave Line connecting the 4 circles -->
-                <svg class="a2z-abd-switch__wave-svg" viewBox="0 0 900 120" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-                    <path d="M 50 38 C 160 38, 200 93, 310 93 C 420 93, 460 38, 570 38 C 680 38, 720 93, 850 93" stroke="#cca05b" stroke-width="1.8" stroke-dasharray="none" opacity="0.6" />
+                <svg class="a2z-abd-switch__wave-svg" viewBox="0 0 900 120" fill="none"
+                    xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                    <path d="M 50 38 C 160 38, 200 93, 310 93 C 420 93, 460 38, 570 38 C 680 38, 720 93, 850 93"
+                        stroke="#cca05b" stroke-width="1.8" stroke-dasharray="none" opacity="0.6" />
                 </svg>
 
                 <div class="a2z-abd-switch__nodes-grid">
@@ -4866,7 +4942,10 @@
                     </button>
                     <div class="a2z-abd-faq-item__answer">
                         <p class="a2z-abd-faq-item__a-text">
-                            No, not at all. While our primary office is located right in the heart of Aberdeen on Union Street and we take great pride in supporting local Aberdeenshire businesses, our cloud-native setup (Xero, QuickBooks, digital onboarding) allows us to serve ambitious business owners seamlessly right across Scotland and the entire UK.
+                            No, not at all. While our primary office is located right in the heart of Aberdeen on Union
+                            Street and we take great pride in supporting local Aberdeenshire businesses, our
+                            cloud-native setup (Xero, QuickBooks, digital onboarding) allows us to serve ambitious
+                            business owners seamlessly right across Scotland and the entire UK.
                         </p>
                     </div>
                 </div>
@@ -4879,7 +4958,9 @@
                     </button>
                     <div class="a2z-abd-faq-item__answer">
                         <p class="a2z-abd-faq-item__a-text">
-                            We cover the whole of Aberdeen City and Aberdeenshire — including Westhill, Dyce, Bridge of Don, Kingswells, Stonehaven, Inverurie, Ellon, Peterhead, and Banchory — alongside client engagements throughout Scotland and the rest of the UK.
+                            We cover the whole of Aberdeen City and Aberdeenshire — including Westhill, Dyce, Bridge of
+                            Don, Kingswells, Stonehaven, Inverurie, Ellon, Peterhead, and Banchory — alongside client
+                            engagements throughout Scotland and the rest of the UK.
                         </p>
                     </div>
                 </div>
@@ -4892,7 +4973,9 @@
                     </button>
                     <div class="a2z-abd-faq-item__answer">
                         <p class="a2z-abd-faq-item__a-text">
-                            Yes, absolutely. We welcome face-to-face meetings anytime at our office on Union Street in Aberdeen. If you prefer or are based further afield, we also offer convenient, secure video consultations and direct phone access whenever you need us.
+                            Yes, absolutely. We welcome face-to-face meetings anytime at our office on Union Street in
+                            Aberdeen. If you prefer or are based further afield, we also offer convenient, secure video
+                            consultations and direct phone access whenever you need us.
                         </p>
                     </div>
                 </div>
@@ -4905,7 +4988,10 @@
                     </button>
                     <div class="a2z-abd-faq-item__answer">
                         <p class="a2z-abd-faq-item__a-text">
-                            Our transparent, all-inclusive monthly packages start from £105+VAT/month for company essentials, £125+VAT/month with director payroll, and £245+VAT/month for complete support with quarterly bookkeeping. Every package is agreed in advance in writing with zero surprise bills.
+                            Our transparent, all-inclusive monthly packages start from £105+VAT/month for company
+                            essentials, £125+VAT/month with director payroll, and £245+VAT/month for complete support
+                            with quarterly bookkeeping. Every package is agreed in advance in writing with zero surprise
+                            bills.
                         </p>
                     </div>
                 </div>
@@ -4918,7 +5004,9 @@
                     </button>
                     <div class="a2z-abd-faq-item__answer">
                         <p class="a2z-abd-faq-item__a-text">
-                            We are certified advisor partners in Xero, QuickBooks Online, FreeAgent, Dext, and standard industry tools. We can also handle the complete migration from spreadsheets or older desktop systems at no disruption to your daily operations.
+                            We are certified advisor partners in Xero, QuickBooks Online, FreeAgent, Dext, and standard
+                            industry tools. We can also handle the complete migration from spreadsheets or older desktop
+                            systems at no disruption to your daily operations.
                         </p>
                     </div>
                 </div>
@@ -4941,7 +5029,7 @@
                 const button = item.querySelector('.a2z-abd-faq-item__question');
                 button.addEventListener('click', () => {
                     const isOpen = item.classList.contains('is-open');
-                    
+
                     // Close others (accordion style)
                     faqItems.forEach(other => {
                         if (other !== item) {
@@ -4978,7 +5066,9 @@
                         Expect more<br>from <span class="a2z-abd-cta-final__title-italic">your accountant</span>
                     </h2>
                     <p class="a2z-abd-cta-final__desc">
-                        More expertise, more care, and a team that looks after your business as if it were our own - all for one fair fixed fee. Start with a conversation or an instant fee estimate, and see the difference for yourself.
+                        More expertise, more care, and a team that looks after your business as if it were our own - all
+                        for one fair fixed fee. Start with a conversation or an instant fee estimate, and see the
+                        difference for yourself.
                     </p>
                 </div>
 
@@ -4997,7 +5087,8 @@
                             BOOK A CONSULTATION
                         </a>
                         <p class="a2z-abd-cta-card__note">
-                            Fixed fees, agreed up front. No obligation - and if you would rather talk, call <a href="tel:01224042961" class="a2z-abd-cta-card__phone-link">01224 042961</a>.
+                            Fixed fees, agreed up front. No obligation - and if you would rather talk, call <a
+                                href="tel:01224042961" class="a2z-abd-cta-card__phone-link">01224 042961</a>.
                         </p>
                     </div>
                 </div>
@@ -5012,7 +5103,9 @@
                         Expect more<br>from <span class="a2z-abd-cta-final__title-italic">your accountant</span>
                     </h2>
                     <p class="a2z-abd-cta-final__desc-mobile">
-                        More expertise, more care, and a team that looks after your business as if it were our own - all for one fair fixed fee. Start with a conversation or an instant fee estimate, and see the difference for yourself.
+                        More expertise, more care, and a team that looks after your business as if it were our own - all
+                        for one fair fixed fee. Start with a conversation or an instant fee estimate, and see the
+                        difference for yourself.
                     </p>
                 </div>
 
@@ -5028,7 +5121,8 @@
 
                 <!-- Mobile Phone Note -->
                 <p class="a2z-abd-cta-final__note-mobile">
-                    Fixed fees, agreed up front. No obligation - and if you would rather talk, call <a href="tel:01224042961" class="a2z-abd-cta-card__phone-link">01224 042961</a>.
+                    Fixed fees, agreed up front. No obligation - and if you would rather talk, call <a
+                        href="tel:01224042961" class="a2z-abd-cta-card__phone-link">01224 042961</a>.
                 </p>
             </div>
         </div>
