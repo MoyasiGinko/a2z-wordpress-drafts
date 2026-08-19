@@ -3603,7 +3603,7 @@
         .a2z-abd-cta-final {
             position: relative;
             width: 100%;
-            background-color: #0c2136;
+            background-color: #112B46;
             padding: 130px 24px 150px;
             overflow: hidden;
             border-top: 1px solid rgba(255, 255, 255, 0.08);
@@ -3613,94 +3613,120 @@
             position: relative;
             z-index: 10;
             width: 100%;
-            max-width: 1140px;
+            max-width: 1200px;
             margin: 0 auto;
+            padding: 0 24px;
+            box-sizing: border-box;
         }
 
         /* 1. DESKTOP VIEW (Visible >= 860px) */
         .a2z-abd-cta-final__desktop-grid {
             display: grid;
-            grid-template-columns: 62% 38%;
+            grid-template-columns: 760px 368px;
+            justify-content: center;
             gap: 24px;
             align-items: stretch;
         }
 
         /* Left Message Card */
         .a2z-abd-cta-final__message-card {
-            background-color: rgba(255, 255, 255, 0.04);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            width: 760px;
+            max-width: 100%;
+            height: 361.75px;
+            min-height: 361.75px;
+            box-sizing: border-box;
+            background: rgba(248, 249, 255, 0.051);
+            border: 1px solid rgba(118, 119, 125, 0.2);
             border-radius: 16px;
-            padding: 56px 50px;
+            padding: 49px;
             display: flex;
             flex-direction: column;
             justify-content: center;
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
-            box-shadow: 0 16px 40px -8px rgba(0, 0, 0, 0.35);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            box-shadow: 0px 25px 50px -12px rgba(0, 0, 0, 0.25);
         }
 
         .a2z-abd-cta-final__tag {
-            font-family: var(--a2z-abd-font-sans);
-            font-size: 13px;
+            font-family: 'Manrope', sans-serif;
+            font-size: 14px;
             font-weight: 800;
-            letter-spacing: 0.14em;
+            font-style: normal;
+            letter-spacing: 1.2px;
             text-transform: uppercase;
-            color: var(--a2z-abd-gold-main);
+            color: #D4A850;
             margin-bottom: 20px;
         }
 
         .a2z-abd-cta-final__title {
-            font-family: var(--a2z-abd-font-serif);
-            font-size: clamp(2.35rem, 3.8vw, 3.45rem);
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 48px;
             font-weight: 700;
+            font-style: normal;
             line-height: 1.15;
-            letter-spacing: -0.015em;
+            letter-spacing: -0.96px;
             color: #ffffff;
             margin: 0 0 24px;
-            text-shadow: 0 2px 20px rgba(0, 0, 0, 0.6);
         }
 
         .a2z-abd-cta-final__title-italic {
-            font-family: var(--a2z-abd-font-serif);
-            font-weight: 500;
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 48px;
+            font-weight: 700;
             font-style: italic;
-            color: var(--a2z-abd-gold-main);
-            letter-spacing: -0.008em;
+            letter-spacing: -0.96px;
+            color: #D4A850;
         }
 
         .a2z-abd-cta-final__desc {
-            font-family: var(--a2z-abd-font-sans);
-            font-size: 16px;
-            font-weight: 400;
+            font-family: 'Manrope', sans-serif;
+            font-size: 18px;
+            font-weight: 600;
+            font-style: normal;
             line-height: 1.62;
-            color: #d1dced;
-            max-width: 520px;
+            letter-spacing: 0px;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 626px;
             margin: 0;
-            text-shadow: 0 1px 8px rgba(0, 0, 0, 0.4);
         }
 
         /* Right Actions Column */
         .a2z-abd-cta-final__actions-col {
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 24px;
+            width: 368px;
+            max-width: 100%;
         }
 
         .a2z-abd-cta-card {
-            background-color: rgba(255, 255, 255, 0.04);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            width: 368px;
+            max-width: 100%;
+            height: 188px;
+            box-sizing: border-box;
+            background: rgba(248, 249, 255, 0.051);
+            border: 1px solid rgba(118, 119, 125, 0.2);
             border-radius: 16px;
-            padding: 34px 28px;
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
-            box-shadow: 0 16px 40px -8px rgba(0, 0, 0, 0.35);
+            padding: 28px 28px;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
             display: flex;
             flex-direction: column;
             justify-content: center;
         }
 
         .a2z-abd-cta-card--estimate {
-            padding: 38px 28px;
+            width: 368px;
+            max-width: 100%;
+            height: 149.75px;
+            box-sizing: border-box;
+            background: rgba(248, 249, 255, 0.102);
+            border: 1px solid rgba(118, 119, 125, 0.2);
+            border-radius: 16px;
+            box-shadow: 0px 25px 50px -12px rgba(0, 0, 0, 0.25);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            padding: 24px 28px;
         }
 
         .a2z-abd-btn-estimate {
