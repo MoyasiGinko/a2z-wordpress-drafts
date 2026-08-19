@@ -2739,29 +2739,35 @@
             position: relative;
             z-index: 10;
             width: 100%;
-            max-width: 1100px;
+            max-width: 1205px;
             margin: 0 auto;
         }
 
         /* 1. DESKTOP VIEW (Visible >= 900px) */
         .a2z-abd-founder__desktop-wrap {
             display: flex;
-            align-items: stretch;
+            align-items: center;
             position: relative;
         }
 
         /* Left Navy Quote Box */
         .a2z-abd-founder__quote-card {
-            background-color: #0c253d;
-            border-radius: 12px 0 0 12px;
+            background-color: #112B46;
+            border-top-left-radius: 8px;
+            border-bottom-left-radius: 8px;
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
             padding: 60px 52px;
-            flex: 1 1 58%;
+            width: 766px;
+            height: 431px;
+            max-width: 100%;
             display: flex;
             flex-direction: column;
             justify-content: center;
             position: relative;
             z-index: 2;
-            box-shadow: 0 20px 50px -10px rgba(12, 37, 61, 0.3);
+            flex-shrink: 0;
+            opacity: 1;
         }
 
         .a2z-abd-founder__quote-icon-top {
@@ -2793,35 +2799,57 @@
             user-select: none;
         }
 
-        /* Right Gold Bio Box with Offset Backing */
+        /* Right Gold Bio Box — 3-layer stacked card */
         .a2z-abd-founder__bio-wrap {
-            flex: 1 1 42%;
             position: relative;
-            z-index: 3;
+            /* No z-index here — lets each child compete directly in the parent stacking context */
             margin-left: -10px;
+            width: 444px;
+            height: 512px;
+            flex-shrink: 0;
         }
 
+        /* Stack layer 1 (bottom shadow) — #EFBF6C, offset +16px top/left */
         .a2z-abd-founder__bio-backdrop {
             position: absolute;
-            top: 14px;
-            left: 14px;
-            width: 100%;
-            height: 100%;
-            background-color: #dfa868;
-            border-radius: 12px;
+            top: 16px;
+            left: 16px;
+            width: 444px;
+            height: 512px;
+            background-color: #EFBF6C;
+            border-radius: 8px;
             z-index: 1;
+            opacity: 1;
         }
 
+        /* Stack layer 2 (mid shadow) — #D4A850, offset -8px left, behind quote card */
+        .a2z-abd-founder__bio-mid {
+            position: absolute;
+            top: 0;
+            left: -8px;
+            width: 444px;
+            height: 512px;
+            background-color: #D4A850;
+            border-radius: 8px;
+            z-index: 1;  /* below quote-card (z-index: 2) */
+            opacity: 1;
+        }
+
+        /* Stack layer 3 (top / content card) — #D4A850, 1px border, above quote card */
         .a2z-abd-founder__bio-card {
-            position: relative;
-            z-index: 2;
-            background-color: #cca05b;
-            border-radius: 12px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 3;  /* above quote-card (z-index: 2) */
+            background-color: #D4A850;
+            border-radius: 8px;
+            border: 1px solid rgba(198, 198, 205, 0.102);
+            width: 444px;
+            height: 512px;
             padding: 42px 36px 46px;
-            height: 100%;
             display: flex;
             flex-direction: column;
-            box-shadow: 0 16px 40px -8px rgba(204, 160, 91, 0.4);
+            box-sizing: border-box;
         }
 
         .a2z-abd-founder__avatar {
@@ -4848,6 +4876,7 @@
                 <!-- Right Card: Warm Gold Founder Bio Card with Offset Backing -->
                 <div class="a2z-abd-founder__bio-wrap">
                     <div class="a2z-abd-founder__bio-backdrop" aria-hidden="true"></div>
+                    <div class="a2z-abd-founder__bio-mid" aria-hidden="true"></div>
                     <div class="a2z-abd-founder__bio-card">
                         <img src="https://a2zaccounting.co.uk/wp-content/uploads/2026/04/srahman.png"
                             alt="Shabbir Rahman, Founder & CEO of A2Z Accounting Solutions"
