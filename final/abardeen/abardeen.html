@@ -2757,7 +2757,6 @@
             border-bottom-left-radius: 8px;
             border-top-right-radius: 0;
             border-bottom-right-radius: 0;
-            padding: 60px 52px;
             width: 766px;
             height: 431px;
             max-width: 100%;
@@ -2768,6 +2767,7 @@
             z-index: 2;
             flex-shrink: 0;
             opacity: 1;
+            padding: 56px 81px 56px 88px;
         }
 
         .a2z-abd-founder__quote-icon-top {
@@ -2777,11 +2777,15 @@
             font-style: normal;
             letter-spacing: 0px;
             color: #D4A850;
-            display: block;
+            position: absolute;
+            top: -20px;
+            /* sits above the first text line */
+            left: -35px;
             line-height: 1;
-            height: 52px;          /* clips bottom whitespace — only the curly marks show */
+            height: 56px;
+            /* clips em-box whitespace below the curly mark */
             overflow: hidden;
-            margin-bottom: -8px;   /* pulls quote text tight under the icon */
+            display: block;
             user-select: none;
         }
 
@@ -2794,6 +2798,8 @@
             letter-spacing: 0px;
             color: #ffffff;
             margin: 0;
+            position: relative;
+            /* makes it the positioning parent for __quote-icon-top */
         }
 
         .a2z-abd-founder__quote-icon-bottom {
@@ -2804,8 +2810,10 @@
             letter-spacing: 0px;
             color: #FECD79;
             display: inline-block;
-            line-height: 0;        /* collapses block height so no gap below text line */
-            vertical-align: -0.18em; /* drops to sit just at the text baseline */
+            line-height: 0;
+            /* collapses block height so no gap below text line */
+            vertical-align: -0.18em;
+            /* drops to sit just at the text baseline */
             margin-left: 4px;
             user-select: none;
         }
@@ -2842,7 +2850,8 @@
             height: 512px;
             background-color: #D4A850;
             border-radius: 8px;
-            z-index: 1;  /* below quote-card (z-index: 2) */
+            z-index: 1;
+            /* below quote-card (z-index: 2) */
             opacity: 1;
         }
 
@@ -2851,7 +2860,8 @@
             position: absolute;
             top: 0;
             left: 0;
-            z-index: 3;  /* above quote-card (z-index: 2) */
+            z-index: 3;
+            /* above quote-card (z-index: 2) */
             background-color: #D4A850;
             border-radius: 8px;
             border: 1px solid rgba(198, 198, 205, 0.102);
@@ -4876,8 +4886,8 @@
             <div class="a2z-abd-founder__desktop-wrap">
                 <!-- Left Card: Deep Navy Quote Box -->
                 <div class="a2z-abd-founder__quote-card">
-                    <span class="a2z-abd-founder__quote-icon-top">“</span>
                     <blockquote class="a2z-abd-founder__quote-text">
+                        <span class="a2z-abd-founder__quote-icon-top">“</span>
                         I oversee the standard on every client engagement myself. When something carries our name, it
                         has to be right – and it has to be useful to you.<span
                             class="a2z-abd-founder__quote-icon-bottom">„</span>
