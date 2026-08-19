@@ -2771,31 +2771,42 @@
         }
 
         .a2z-abd-founder__quote-icon-top {
-            font-family: var(--a2z-abd-font-serif);
-            font-size: 48px;
-            line-height: 0.8;
-            color: var(--a2z-abd-gold-main);
-            margin-bottom: 8px;
+            font-family: 'Liberation Serif', 'Times New Roman', Georgia, serif;
+            font-size: 81.72px;
+            font-weight: 400;
+            font-style: normal;
+            letter-spacing: 0px;
+            color: #D4A850;
+            display: block;
+            line-height: 1;
+            height: 52px;          /* clips bottom whitespace — only the curly marks show */
+            overflow: hidden;
+            margin-bottom: -8px;   /* pulls quote text tight under the icon */
             user-select: none;
         }
 
         .a2z-abd-founder__quote-text {
-            font-family: var(--a2z-abd-font-serif);
-            font-size: clamp(1.85rem, 2.3vw, 2.25rem);
-            font-weight: 700;
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 40.86px;
+            font-weight: 500;
+            font-style: normal;
             line-height: 1.32;
-            letter-spacing: -0.015em;
+            letter-spacing: 0px;
             color: #ffffff;
             margin: 0;
         }
 
         .a2z-abd-founder__quote-icon-bottom {
-            font-family: var(--a2z-abd-font-serif);
-            font-size: 48px;
-            line-height: 0.8;
-            color: var(--a2z-abd-gold-main);
+            font-family: 'Liberation Serif', 'Times New Roman', Georgia, serif;
+            font-size: 81.72px;
+            font-weight: 400;
+            font-style: normal;
+            letter-spacing: 0px;
+            color: #FECD79;
             display: inline-block;
-            margin-left: 6px;
+            line-height: 0;        /* collapses block height so no gap below text line */
+            vertical-align: -0.18em; /* drops to sit just at the text baseline */
+            margin-left: 4px;
             user-select: none;
         }
 
