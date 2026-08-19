@@ -2872,15 +2872,25 @@
             box-sizing: border-box;
         }
 
-        .a2z-abd-founder__avatar {
+        .a2z-abd-founder__avatar-wrap {
             width: 96px;
             height: 96px;
             border-radius: 12px;
-            object-fit: cover;
+            overflow: hidden;
             border: 4px solid #F8F9FF;
             background: #FFFFFF;
-            background-blend-mode: saturation;
             margin-bottom: 24px;
+            flex-shrink: 0;
+        }
+
+        .a2z-abd-founder__avatar {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: right 25%;
+            transform: scale(1.08);
+            transform-origin: 90% 30%;
+            display: block;
         }
 
         .a2z-abd-founder__name {
@@ -4914,9 +4924,11 @@
                     <div class="a2z-abd-founder__bio-backdrop" aria-hidden="true"></div>
                     <div class="a2z-abd-founder__bio-mid" aria-hidden="true"></div>
                     <div class="a2z-abd-founder__bio-card">
-                        <img src="https://a2zaccounting.co.uk/wp-content/uploads/2026/04/srahman.png"
-                            alt="Shabbir Rahman, Founder & CEO of A2Z Accounting Solutions"
-                            class="a2z-abd-founder__avatar" width="96" height="96" loading="lazy">
+                        <div class="a2z-abd-founder__avatar-wrap">
+                            <img src="https://a2zaccounting.co.uk/wp-content/uploads/2026/04/srahman.png"
+                                alt="Shabbir Rahman, Founder & CEO of A2Z Accounting Solutions"
+                                class="a2z-abd-founder__avatar" width="96" height="96" loading="lazy">
+                        </div>
                         <h3 class="a2z-abd-founder__name">Shabbir Rahman</h3>
                         <span class="a2z-abd-founder__role-tag">FOUNDER AND CEO</span>
                         <span class="a2z-abd-founder__role-sub">CHARTERED CERTIFIED ACCOUNTANT</span>
