@@ -2154,6 +2154,10 @@
             margin-bottom: 20px;
         }
 
+        .a2z-abd-addons__br-mobile {
+            display: none;
+        }
+
         .a2z-abd-addons__desc {
             font-family: var(--a2z-abd-font-manrope);
             font-size: 18px;
@@ -2256,7 +2260,23 @@
 
         @media (max-width: 640px) {
             .a2z-abd-addons {
-                padding: 70px 16px 80px;
+                padding: 31px 24px 38px 24px;
+            }
+
+            .a2z-abd-addons__container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                gap: 28px;
+                width: 100%;
+            }
+
+            .a2z-abd-addons__col-info {
+                width: 100%;
+                max-width: 100%;
+                align-items: center;
+                text-align: center;
             }
 
             .a2z-abd-addons__tag {
@@ -2281,27 +2301,73 @@
                 margin-bottom: 14px;
             }
 
+            .a2z-abd-addons__br-mobile {
+                display: block;
+            }
+
             .a2z-abd-addons__desc {
-                font-size: 14.5px;
+                font-family: 'Manrope', var(--a2z-abd-font-manrope);
+                font-weight: 500;
+                font-size: 16px;
                 line-height: 1.55;
+                letter-spacing: 0px;
+                text-align: justify;
+                vertical-align: middle;
+                color: #ffffff;
+                max-width: 320px;
+                margin: 0 auto;
             }
 
             .a2z-abd-addons__col-grid {
+                display: flex;
+                flex-direction: column;
                 gap: 12px;
+                width: 100%;
+                max-width: 320px;
+                margin: 0 auto;
+                justify-content: center;
             }
 
             .a2z-abd-addon-pill {
-                padding: 16px 18px;
-                border-radius: 8px;
+                width: 100%;
+                max-width: 100%;
+                min-height: 58px;
+                background-color: transparent;
+                border: 1px solid #FFFFFF33;
+                border-radius: 12px;
+                padding: 14px 18px;
+                display: flex;
+                align-items: center;
+                gap: 16px;
+                box-sizing: border-box;
             }
 
             .a2z-abd-addon-pill__icon {
+                width: 20px;
+                height: 20px;
+                min-width: 20px;
+                font-family: var(--a2z-abd-font-sans);
                 font-size: 20px;
+                font-weight: 500;
+                color: #D4A850;
+                line-height: 20px;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                flex-shrink: 0;
+                opacity: 1;
             }
 
             .a2z-abd-addon-pill__label {
-                font-size: 14px;
+                font-family: 'Manrope', var(--a2z-abd-font-manrope);
+                font-weight: 500;
+                font-size: 16px;
+                line-height: 25.6px;
+                letter-spacing: 0px;
+                vertical-align: middle;
+                color: #ffffff;
                 text-align: left;
+                margin: 0;
             }
         }
 
@@ -4973,7 +5039,7 @@
             <div class="a2z-abd-addons__col-info">
                 <span class="a2z-abd-addons__tag">MORE SUPPORT, WHEN YOU NEED IT</span>
                 <h2 class="a2z-abd-addons__title">
-                    Add anything, at your pace
+                    Add anything, <br class="a2z-abd-addons__br-mobile">at your pace
                 </h2>
                 <p class="a2z-abd-addons__desc">
                     Every plan flexes around you. Add more whenever it helps, at whatever frequency suits your business
