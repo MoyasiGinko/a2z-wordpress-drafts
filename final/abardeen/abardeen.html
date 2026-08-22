@@ -4149,13 +4149,15 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-family: 'Manrope', sans-serif;
-            font-size: 30px;
-            font-weight: 400;
-            line-height: 1;
             color: #D4A850;
             flex-shrink: 0;
             transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+
+        .a2z-abd-faq-item__icon svg {
+            width: 18px;
+            height: 18px;
+            display: block;
         }
 
         /* Answer */
@@ -4221,7 +4223,7 @@
         /* Responsive Breakpoints */
         @media (max-width: 768px) {
             .a2z-abd-faq {
-                padding: 70px 16px 80px;
+                padding: 37px 26px 29px 26px;
             }
 
             .a2z-abd-faq__header {
@@ -4231,7 +4233,17 @@
             .a2z-abd-faq__title {
                 font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
                 font-weight: 600;
-                font-size: 36px;
+                font-size: 32px;
+                letter-spacing: 0px;
+                text-align: center;
+                vertical-align: middle;
+            }
+
+            .a2z-abd-faq__title-italic {
+                font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+                font-weight: 600;
+                font-style: italic;
+                font-size: 32px;
                 letter-spacing: 0px;
                 text-align: center;
                 vertical-align: middle;
@@ -4247,11 +4259,22 @@
             }
 
             .a2z-abd-faq-item__q-text {
-                font-size: 15px;
+                font-family: 'Manrope', var(--a2z-abd-font-manrope);
+                font-size: 18px;
+                font-weight: 500;
+                letter-spacing: 0px;
+                vertical-align: middle;
+                color: #001E40;
             }
 
             .a2z-abd-faq-item__icon {
-                font-size: 22px;
+                width: 14px;
+                height: 14px;
+            }
+
+            .a2z-abd-faq-item__icon svg {
+                width: 14px;
+                height: 14px;
             }
 
             .a2z-abd-faq-item__answer {
@@ -4259,11 +4282,16 @@
             }
 
             .a2z-abd-faq-item__a-text {
-                font-size: 14px;
+                font-size: 16px;
+                line-height: 1.55;
             }
 
             .a2z-abd-faq__btn {
-                padding: 13px 30px;
+                width: 135px;
+                height: 35px;
+                border-radius: 7px;
+                padding: 3px 35px;
+                box-sizing: border-box;
                 font-size: 13px;
             }
         }
@@ -4500,7 +4528,11 @@
 
         @media (max-width: 859px) {
             .a2z-abd-cta-final {
-                padding: 70px 16px 85px;
+                padding: 0;
+            }
+
+            .a2z-abd-cta-final__container {
+                padding: 56px 26px;
             }
 
             .a2z-abd-cta-final__desktop-grid {
@@ -4525,45 +4557,76 @@
             }
 
             .a2z-abd-cta-final__tag-mobile {
+                display: inline-block;
                 font-family: 'Manrope', var(--a2z-abd-font-manrope);
                 font-weight: 700;
-                font-size: 14px;
-                letter-spacing: 0.7px;
+                font-size: 12px;
+                letter-spacing: 1.2px;
                 text-align: center;
                 vertical-align: middle;
                 text-transform: uppercase;
                 color: #D4A850;
-                margin-bottom: 14px;
+                margin-bottom: 24px;
             }
 
             .a2z-abd-cta-final__title-mobile {
                 font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
-                font-weight: 600;
-                font-size: 36px;
+                font-weight: 700;
+                font-size: 32px;
                 line-height: 1.2;
                 letter-spacing: 0px;
-                text-align: center;
+                text-align: left;
                 vertical-align: middle;
                 color: #ffffff;
                 margin: 0 0 16px;
             }
 
+            .a2z-abd-cta-final__title-mobile .a2z-abd-cta-final__title-italic {
+                display: inline;
+                font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+                font-weight: 700;
+                font-style: italic;
+                font-size: 32px;
+                line-height: inherit;
+                letter-spacing: 0px;
+                vertical-align: baseline;
+                color: #D4A850;
+            }
+
             .a2z-abd-cta-final__desc-mobile {
-                font-family: var(--a2z-abd-font-sans);
-                font-size: 14.5px;
-                font-weight: 400;
+                font-family: 'Manrope', var(--a2z-abd-font-manrope);
+                font-weight: 500;
+                font-size: 18px;
                 line-height: 1.58;
+                letter-spacing: 0px;
+                text-align: justify;
+                vertical-align: middle;
                 color: #cbd5e1;
                 margin: 0;
             }
 
             .a2z-abd-cta-final__note-mobile {
-                font-family: var(--a2z-abd-font-sans);
-                font-size: 13px;
+                font-family: 'Manrope', var(--a2z-abd-font-manrope);
+                font-weight: 500;
+                font-size: 14px;
                 line-height: 1.5;
-                color: #94a3b8;
+                letter-spacing: 0px;
                 text-align: center;
+                vertical-align: middle;
+                color: #ffffff;
                 margin-top: 18px;
+            }
+
+            .a2z-abd-btn-estimate,
+            .a2z-abd-btn-consult {
+                width: 100%;
+                max-width: 100%;
+                font-family: 'Inter', var(--a2z-abd-font-inter);
+                font-weight: 700;
+                font-size: 14px;
+                letter-spacing: 1.4px;
+                vertical-align: middle;
+                text-transform: uppercase;
             }
         }
     </style>
@@ -5885,7 +5948,11 @@
                 <div class="a2z-abd-faq-item">
                     <button type="button" class="a2z-abd-faq-item__question" aria-expanded="false">
                         <span class="a2z-abd-faq-item__q-text">Do I have to be in Aberdeen to work with you?</span>
-                        <span class="a2z-abd-faq-item__icon">+</span>
+                        <span class="a2z-abd-faq-item__icon" aria-hidden="true">
+                            <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7 1V13M1 7H13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </span>
                     </button>
                     <div class="a2z-abd-faq-item__answer">
                         <p class="a2z-abd-faq-item__a-text">
@@ -5901,7 +5968,11 @@
                 <div class="a2z-abd-faq-item">
                     <button type="button" class="a2z-abd-faq-item__question" aria-expanded="false">
                         <span class="a2z-abd-faq-item__q-text">Which areas do you cover?</span>
-                        <span class="a2z-abd-faq-item__icon">+</span>
+                        <span class="a2z-abd-faq-item__icon" aria-hidden="true">
+                            <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7 1V13M1 7H13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </span>
                     </button>
                     <div class="a2z-abd-faq-item__answer">
                         <p class="a2z-abd-faq-item__a-text">
@@ -5916,7 +5987,11 @@
                 <div class="a2z-abd-faq-item">
                     <button type="button" class="a2z-abd-faq-item__question" aria-expanded="false">
                         <span class="a2z-abd-faq-item__q-text">Do you offer face-to-face meetings?</span>
-                        <span class="a2z-abd-faq-item__icon">+</span>
+                        <span class="a2z-abd-faq-item__icon" aria-hidden="true">
+                            <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7 1V13M1 7H13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </span>
                     </button>
                     <div class="a2z-abd-faq-item__answer">
                         <p class="a2z-abd-faq-item__a-text">
@@ -5931,7 +6006,11 @@
                 <div class="a2z-abd-faq-item">
                     <button type="button" class="a2z-abd-faq-item__question" aria-expanded="false">
                         <span class="a2z-abd-faq-item__q-text">How much does an accountant in Aberdeen cost?</span>
-                        <span class="a2z-abd-faq-item__icon">+</span>
+                        <span class="a2z-abd-faq-item__icon" aria-hidden="true">
+                            <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7 1V13M1 7H13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </span>
                     </button>
                     <div class="a2z-abd-faq-item__answer">
                         <p class="a2z-abd-faq-item__a-text">
@@ -5947,7 +6026,11 @@
                 <div class="a2z-abd-faq-item">
                     <button type="button" class="a2z-abd-faq-item__question" aria-expanded="false">
                         <span class="a2z-abd-faq-item__q-text">Which accounting software do you work with?</span>
-                        <span class="a2z-abd-faq-item__icon">+</span>
+                        <span class="a2z-abd-faq-item__icon" aria-hidden="true">
+                            <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7 1V13M1 7H13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </span>
                     </button>
                     <div class="a2z-abd-faq-item__answer">
                         <p class="a2z-abd-faq-item__a-text">
