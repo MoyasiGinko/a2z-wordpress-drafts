@@ -1952,16 +1952,30 @@
             }
 
             .a2z-abd-pricing__grid {
+                display: grid;
                 grid-template-columns: 1fr;
                 justify-items: center;
+                align-items: center;
+                width: 100%;
+                margin: 0 auto;
                 gap: 28px;
             }
 
             .a2z-abd-price-card {
                 width: 100%;
                 max-width: 286px;
+                box-sizing: border-box;
                 margin: 0 auto;
                 padding: 26px 20px 28px;
+            }
+
+            .a2z-abd-price-card__badge {
+                font-family: 'Hanken Grotesk', var(--a2z-abd-font-hanken);
+                font-weight: 700;
+                font-size: 12.46px;
+                letter-spacing: 0.62px;
+                vertical-align: middle;
+                text-transform: uppercase;
             }
 
             .a2z-abd-price-card__pill {
@@ -2020,11 +2034,66 @@
                 margin: 0 -14px;
             }
 
+            .a2z-abd-pricing__cta {
+                margin-top: 34px;
+            }
+
             .a2z-abd-pricing__btn {
                 width: 100%;
-                max-width: 320px;
-                padding: 15px 20px;
-                font-size: 13px;
+                max-width: 321px;
+                min-height: 52px;
+                height: auto;
+                border-radius: 7px;
+                padding: 16px 28px;
+                font-family: 'Inter', var(--a2z-abd-font-inter);
+                font-weight: 700;
+                font-size: clamp(12px, 3.5vw, 14px);
+                letter-spacing: 1px;
+                text-align: center;
+                vertical-align: middle;
+                text-transform: uppercase;
+                color: #151515;
+                box-sizing: border-box;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 340px) {
+            .a2z-abd-pricing {
+                padding-left: 12px;
+                padding-right: 12px;
+            }
+
+            .a2z-abd-pricing__title {
+                font-size: 28px;
+            }
+
+            .a2z-abd-price-card {
+                width: 100%;
+                max-width: 100%;
+                padding: 22px 14px 24px;
+            }
+
+            .a2z-abd-price-card__pill {
+                font-size: 17px;
+                height: auto;
+                min-height: 56px;
+            }
+
+            .a2z-abd-price-card__amount {
+                font-size: 30px;
+            }
+
+            .a2z-abd-price-card__feature-item {
+                font-size: 14px;
+            }
+
+            .a2z-abd-pricing__btn {
+                padding: 14px 16px;
+                font-size: 11.5px;
+                letter-spacing: 0.8px;
             }
         }
 
@@ -2191,10 +2260,10 @@
             }
 
             .a2z-abd-addons__tag {
-                font-family: 'Manrope', var(--a2z-abd-font-manrope);
+                font-family: 'Inter', var(--a2z-abd-font-inter);
                 font-weight: 700;
-                font-size: 14px;
-                letter-spacing: 0.7px;
+                font-size: 10px;
+                letter-spacing: 0.6px;
                 text-align: center;
                 vertical-align: middle;
                 text-transform: uppercase;
@@ -2205,7 +2274,7 @@
             .a2z-abd-addons__title {
                 font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
                 font-weight: 600;
-                font-size: 36px;
+                font-size: 32px;
                 letter-spacing: 0px;
                 text-align: center;
                 vertical-align: middle;
