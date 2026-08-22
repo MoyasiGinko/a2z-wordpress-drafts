@@ -2373,7 +2373,7 @@
         .a2z-abd-grow {
             position: relative;
             width: 100%;
-            background: #F5F3F3;
+            background: #ffffff;
             padding: 100px 32px 110px;
             overflow: hidden;
             border-top: 1px solid #e8ecf2;
@@ -2512,21 +2512,58 @@
 
         @media (max-width: 640px) {
             .a2z-abd-grow {
-                padding: 65px 16px 70px;
+                background: #ffffff;
+                padding: 26px 26px;
+            }
+
+            .a2z-abd-grow__container {
+                padding-left: 0;
+                padding-right: 0;
             }
 
             .a2z-abd-grow__title {
-                font-size: 2.05rem;
-                line-height: 1.22;
+                font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+                font-weight: 700;
+                font-size: 32px;
+                line-height: 1.2;
+                letter-spacing: 0px;
+                vertical-align: middle;
             }
 
             .a2z-abd-grow__p {
-                font-size: 14.5px;
-                line-height: 1.55;
+                font-family: 'Manrope', var(--a2z-abd-font-manrope);
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 1.6;
+                letter-spacing: 0px;
+                vertical-align: middle;
+            }
+
+            .a2z-abd-grow__included-tag {
+                font-family: 'Manrope', var(--a2z-abd-font-manrope);
+                font-weight: 700;
+                font-size: 12px;
+                letter-spacing: 1.2px;
+                vertical-align: middle;
+                text-transform: uppercase;
+                color: #001E40;
+            }
+
+            .a2z-abd-grow__included-item {
+                align-items: flex-start;
+            }
+
+            .a2z-abd-grow__check {
+                margin-top: 5px;
             }
 
             .a2z-abd-grow__included-text {
-                font-size: 14.5px;
+                font-family: 'Manrope', var(--a2z-abd-font-manrope);
+                font-weight: 400;
+                font-size: 16px;
+                letter-spacing: 0px;
+                vertical-align: middle;
+                color: #000000;
             }
         }
 
