@@ -1234,7 +1234,7 @@
             border-radius: 16px;
             overflow: hidden;
             background-image: linear-gradient(to right, #edf0f3 50%, #0e263d 50%);
-            box-shadow: 0 20px 50px -12px rgba(12, 37, 61, 0.18), 0 4px 16px rgba(0, 0, 0, 0.04);
+            box-shadow: none;
         }
 
         /* Top Header with VS Badge */
@@ -1412,6 +1412,7 @@
         @media (max-width: 768px) {
             .a2z-abd-diff {
                 padding: 34.5px 22.25px;
+                background-color: #ffffff;
             }
 
             .a2z-abd-diff__header {
@@ -1909,7 +1910,8 @@
 
         @media (max-width: 680px) {
             .a2z-abd-pricing {
-                padding: 70px 16px 80px;
+                padding: 18px 41px 46px;
+                background-color: #ffffff;
             }
 
             .a2z-abd-pricing__header {
@@ -1917,10 +1919,10 @@
             }
 
             .a2z-abd-pricing__tag {
-                font-family: 'Manrope', var(--a2z-abd-font-manrope);
+                font-family: 'Inter', var(--a2z-abd-font-inter);
                 font-weight: 700;
-                font-size: 14px;
-                letter-spacing: 0.7px;
+                font-size: 10px;
+                letter-spacing: 0.6px;
                 text-align: center;
                 vertical-align: middle;
                 text-transform: uppercase;
@@ -1931,7 +1933,8 @@
             .a2z-abd-pricing__title {
                 font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
                 font-weight: 600;
-                font-size: 36px;
+                font-size: 32px;
+                line-height: 1;
                 letter-spacing: 0px;
                 text-align: center;
                 vertical-align: middle;
@@ -1939,17 +1942,82 @@
             }
 
             .a2z-abd-pricing__desc {
-                font-size: 14.5px;
+                font-family: 'Manrope', var(--a2z-abd-font-manrope);
+                font-weight: 500;
+                font-size: 16px;
+                letter-spacing: 0px;
+                text-align: justify;
+                vertical-align: middle;
                 line-height: 1.55;
             }
 
             .a2z-abd-pricing__grid {
                 grid-template-columns: 1fr;
+                justify-items: center;
                 gap: 28px;
             }
 
             .a2z-abd-price-card {
+                width: 100%;
+                max-width: 286px;
+                margin: 0 auto;
                 padding: 26px 20px 28px;
+            }
+
+            .a2z-abd-price-card__pill {
+                font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+                font-weight: 600;
+                font-size: 20px;
+                letter-spacing: 0px;
+                vertical-align: middle;
+            }
+
+            .a2z-abd-price-card__from {
+                font-family: 'Libre Caslon Text', Georgia, serif;
+                font-weight: 500;
+                font-size: 14px;
+                letter-spacing: 0px;
+                vertical-align: middle;
+            }
+
+            .a2z-abd-price-card__amount {
+                font-family: 'Libre Caslon Text', Georgia, serif;
+                font-weight: 600;
+                font-size: 36px;
+                letter-spacing: 0px;
+                vertical-align: middle;
+            }
+
+            .a2z-abd-price-card__suffix {
+                font-family: 'Hanken Grotesk', var(--a2z-abd-font-hanken);
+                font-weight: 700;
+                font-size: 14px;
+                letter-spacing: 1.2px;
+                vertical-align: middle;
+                text-transform: lowercase;
+            }
+
+            .a2z-abd-price-card__sub {
+                font-family: 'Manrope', var(--a2z-abd-font-manrope);
+                font-weight: 600;
+                font-size: 14px;
+                letter-spacing: 0px;
+                vertical-align: middle;
+            }
+
+            .a2z-abd-price-card__feature-item {
+                font-family: 'Manrope', var(--a2z-abd-font-manrope);
+                font-weight: 700;
+                font-size: 16px;
+                letter-spacing: 0px;
+                text-align: justify;
+                vertical-align: middle;
+            }
+
+            .a2z-abd-price-card__divider {
+                height: 1px;
+                width: calc(100% + 28px);
+                margin: 0 -14px;
             }
 
             .a2z-abd-pricing__btn {
