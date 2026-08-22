@@ -2873,14 +2873,28 @@
 
         @media (max-width: 640px) {
             .a2z-abd-fit {
-                padding: 70px 16px 80px;
+                padding: 24px 24px;
+            }
+
+            .a2z-abd-fit__header {
+                margin-bottom: 36px;
+            }
+
+            .a2z-abd-fit-card {
+                max-height: 510px;
+                box-sizing: border-box;
+            }
+
+            .a2z-abd-fit-card--strong {
+                margin-top: 0;
+                max-height: 510px;
             }
 
             .a2z-abd-fit__tag {
-                font-family: 'Manrope', var(--a2z-abd-font-manrope);
+                font-family: 'Inter', var(--a2z-abd-font-inter);
                 font-weight: 700;
-                font-size: 14px;
-                letter-spacing: 0.7px;
+                font-size: 10px;
+                letter-spacing: 0.6px;
                 text-align: center;
                 vertical-align: middle;
                 text-transform: uppercase;
@@ -2891,7 +2905,7 @@
             .a2z-abd-fit__title {
                 font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
                 font-weight: 600;
-                font-size: 36px;
+                font-size: 32px;
                 letter-spacing: 0px;
                 text-align: center;
                 vertical-align: middle;
@@ -2899,12 +2913,25 @@
             }
 
             .a2z-abd-fit__desc {
-                font-size: 14.5px;
+                font-family: 'Manrope', var(--a2z-abd-font-manrope);
+                font-weight: 500;
+                font-size: 16px;
                 line-height: 1.55;
+                letter-spacing: 0px;
+                text-align: justify;
+                vertical-align: middle;
+                padding-left: 25px;
+                padding-right: 25px;
+                box-sizing: border-box;
             }
 
             .a2z-abd-fit-card__pill {
-                font-size: 17px;
+                font-family: 'Manrope', var(--a2z-abd-font-manrope);
+                font-weight: 500;
+                font-size: 24px;
+                letter-spacing: 0px;
+                vertical-align: middle;
+                color: #000307;
                 padding: 12px 18px;
                 margin-bottom: 26px;
             }
@@ -2913,8 +2940,12 @@
                 gap: 18px;
             }
 
-            .a2z-abd-fit-card__text {
-                font-size: 14.5px;
+            .a2z-abd-fit-card--strong .a2z-abd-fit-card__text {
+                font-family: 'Manrope', var(--a2z-abd-font-manrope);
+                font-weight: 500;
+                font-size: 16px;
+                letter-spacing: 0px;
+                vertical-align: middle;
             }
 
             .a2z-abd-fit-card__note {
