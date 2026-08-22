@@ -44,11 +44,11 @@
             -webkit-font-smoothing: antialiased;
             overflow-x: hidden;
         }
-
-        .a2z-fx .a2z-modal__title,
-        .a2z-fx .a2z-modal__price .pr-v {
-            font-weight: 500 !important;
-        }
+		
+		.a2z-fx .a2z-modal__title,
+		.a2z-fx .a2z-modal__price .pr-v {
+		font-weight: 500 !important;
+		}
 
         .a2z-ec * {
             box-sizing: border-box;
@@ -859,7 +859,7 @@
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
-                object-position: top center;
+                object-position: center 15%;
                 opacity: 0.1 !important;
                 transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.3s ease;
             }
@@ -1145,10 +1145,10 @@
                 </h2>
 
                 <div class="case-study-card"
-                    onclick="this.querySelector('.case-study-inner').innerHTML='<iframe src=\'https://www.loom.com/embed/8761cb23b0a34e558b8867204c69e68f?autoplay=1\' allow=\'autoplay; fullscreen\' allowfullscreen style=\'position:absolute;inset:0;width:100%;height:100%;border:0;z-index:10\'></iframe>';">
+                    onclick="this.querySelector('.case-study-inner').innerHTML='<video autoplay controls playsinline style=\'position:absolute;inset:0;width:100%;height:100%;border:0;z-index:10;object-fit:cover;\'><source src=\'https://a2zaccounting.co.uk/wp-content/uploads/2026/08/E-commerce-single-video.mp4\' type=\'video/mp4\'>Your browser does not support the video tag.</video>';">
                     <div class="case-study-inner">
                         <img class="case-study-card-bg"
-                            src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=1200&auto=format&fit=crop"
+                            src="https://a2zaccounting.co.uk/wp-content/uploads/2026/08/e-com-single-vid-cover.jpg"
                             alt="Client Case Study">
                         <div class="case-study-overlay"></div>
 
