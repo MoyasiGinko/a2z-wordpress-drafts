@@ -2156,6 +2156,10 @@
             margin-bottom: 20px;
         }
 
+        .a2z-abd-addons__title-highlight {
+            color: inherit;
+        }
+
         .a2z-abd-addons__br-mobile {
             display: none;
         }
@@ -2301,6 +2305,10 @@
                 text-align: center;
                 vertical-align: middle;
                 margin-bottom: 14px;
+            }
+
+            .a2z-abd-addons__title-highlight {
+                color: #D4A850;
             }
 
             .a2z-abd-addons__br-mobile {
@@ -2859,6 +2867,7 @@
 
             .a2z-abd-fit__grid {
                 grid-template-columns: 1fr;
+                justify-items: center;
                 gap: 28px;
                 max-width: 540px;
                 margin: 0 auto;
@@ -2870,6 +2879,11 @@
 
             .a2z-abd-fit-card {
                 padding: 32px 24px 36px;
+            }
+
+            .a2z-abd-fit-card--strong,
+            .a2z-abd-fit-card--not {
+                margin: 0 auto;
             }
         }
 
@@ -2883,7 +2897,10 @@
             }
 
             .a2z-abd-fit__grid {
+                grid-template-columns: 1fr;
+                justify-items: center;
                 gap: 30px;
+                margin: 0 auto;
             }
 
             .a2z-abd-fit-card,
@@ -2893,16 +2910,7 @@
                 max-height: 516px;
                 padding: 27px 20px;
                 box-sizing: border-box;
-            }
-
-            .a2z-abd-fit-card--strong {
-                margin-top: 0;
-                margin-bottom: 0;
-            }
-
-            .a2z-abd-fit-card--not {
-                margin-top: 0;
-                margin-bottom: 0;
+                margin: 0 auto;
             }
 
             .a2z-abd-fit__tag {
@@ -3178,48 +3186,80 @@
 
         @media (max-width: 768px) {
             .a2z-abd-handled {
-                padding: 75px 16px 85px;
+                background: #112B46;
+                padding: 35px 26px;
             }
 
             .a2z-abd-handled__header {
-                margin-bottom: 45px;
+                margin-bottom: 24px;
             }
 
             .a2z-abd-handled__pill-tag {
-                font-size: 11px;
-                padding: 5px 16px;
+                font-family: 'Inter', var(--a2z-abd-font-inter);
+                font-weight: 700;
+                font-size: 10px;
+                letter-spacing: 0.6px;
+                text-align: center;
+                vertical-align: middle;
+                text-transform: uppercase;
+                width: 163px;
+                height: 22px;
+                border-radius: 3px;
+                padding: 0;
                 margin-bottom: 16px;
             }
 
             .a2z-abd-handled__title {
                 font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
                 font-weight: 600;
-                font-size: 36px;
-                line-height: 44px;
+                font-size: 32px;
+                line-height: 1.2;
                 letter-spacing: 0px;
                 text-align: center;
                 vertical-align: middle;
                 margin-bottom: 16px;
             }
 
+            .a2z-abd-handled__title-italic {
+                display: inline;
+                font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+                font-weight: 600;
+                font-style: italic;
+                font-size: 32px;
+                line-height: inherit;
+                letter-spacing: 0px;
+                vertical-align: baseline;
+            }
+
             .a2z-abd-handled__desc {
-                font-size: 14.5px;
+                font-family: 'Manrope', var(--a2z-abd-font-manrope);
+                font-weight: 500;
+                font-size: 16px;
                 line-height: 1.55;
+                letter-spacing: 0px;
+                text-align: justify;
+                vertical-align: middle;
+                max-width: 272px;
+                margin: 0 auto;
             }
 
             /* Mobile Card Transformation matching Mobile Image */
             .a2z-abd-handled__grid {
                 grid-template-columns: 1fr;
-                gap: 16px;
+                justify-items: center;
+                gap: 24px;
                 max-width: 520px;
                 margin: 0 auto;
             }
 
             .a2z-abd-handled-item {
+                width: 100%;
+                max-height: 218px;
+                box-sizing: border-box;
                 background: rgba(255, 255, 255, 0.04);
                 border: 1px solid rgba(255, 255, 255, 0.1);
-                border-radius: 12px;
-                padding: 24px 20px;
+                border-radius: 8px;
+                padding: 20px 32px;
                 backdrop-filter: blur(8px);
                 -webkit-backdrop-filter: blur(8px);
                 box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
@@ -5132,7 +5172,7 @@
             <div class="a2z-abd-addons__col-info">
                 <span class="a2z-abd-addons__tag">MORE SUPPORT, WHEN YOU NEED IT</span>
                 <h2 class="a2z-abd-addons__title">
-                    Add anything, <br class="a2z-abd-addons__br-mobile">at your pace
+                    Add anything, <br class="a2z-abd-addons__br-mobile"><span class="a2z-abd-addons__title-highlight">at your pace</span>
                 </h2>
                 <p class="a2z-abd-addons__desc">
                     Every plan flexes around you. Add more whenever it helps, at whatever frequency suits your business
