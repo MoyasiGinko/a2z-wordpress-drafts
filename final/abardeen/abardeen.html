@@ -2880,14 +2880,27 @@
                 margin-bottom: 36px;
             }
 
-            .a2z-abd-fit-card {
-                max-height: 510px;
+            .a2z-abd-fit__grid {
+                gap: 30px;
+            }
+
+            .a2z-abd-fit-card,
+            .a2z-abd-fit-card--strong,
+            .a2z-abd-fit-card--not {
+                min-height: 0;
+                max-height: 516px;
+                padding: 27px 20px;
                 box-sizing: border-box;
             }
 
             .a2z-abd-fit-card--strong {
                 margin-top: 0;
-                max-height: 510px;
+                margin-bottom: 0;
+            }
+
+            .a2z-abd-fit-card--not {
+                margin-top: 0;
+                margin-bottom: 0;
             }
 
             .a2z-abd-fit__tag {
@@ -2926,21 +2939,23 @@
             }
 
             .a2z-abd-fit-card__pill {
-                font-family: 'Manrope', var(--a2z-abd-font-manrope);
-                font-weight: 500;
+                font-family: 'Libre Caslon Text', Georgia, serif;
+                font-weight: 400;
                 font-size: 24px;
                 letter-spacing: 0px;
                 vertical-align: middle;
                 color: #000307;
                 padding: 12px 18px;
-                margin-bottom: 26px;
+                margin-bottom: 30px;
             }
 
             .a2z-abd-fit-card__list {
                 gap: 18px;
             }
 
-            .a2z-abd-fit-card--strong .a2z-abd-fit-card__text {
+            .a2z-abd-fit-card__text,
+            .a2z-abd-fit-card--strong .a2z-abd-fit-card__text,
+            .a2z-abd-fit-card--not .a2z-abd-fit-card__text {
                 font-family: 'Manrope', var(--a2z-abd-font-manrope);
                 font-weight: 500;
                 font-size: 16px;
@@ -2949,8 +2964,22 @@
             }
 
             .a2z-abd-fit-card__note {
+                font-family: 'Manrope', var(--a2z-abd-font-manrope);
+                font-weight: 500;
+                font-size: 12px;
+                letter-spacing: 0px;
+                text-align: center;
+                vertical-align: middle;
+                color: #44474C;
                 margin-top: 28px;
-                font-size: 13px;
+                width: 100%;
+                max-width: 256px;
+                max-height: 54px;
+                border-radius: 10px;
+                border-left-width: 2px;
+                box-sizing: border-box;
+                margin-left: auto;
+                margin-right: auto;
             }
         }
 
