@@ -2264,7 +2264,7 @@
             }
         }
 
-        @media (max-width: 640px) {
+        @media (max-width: 680px) {
             .a2z-abd-addons {
                 padding: 31px 24px 38px 24px;
             }
@@ -2333,7 +2333,6 @@
                 flex-direction: column;
                 gap: 12px;
                 width: 100%;
-                max-width: 320px;
                 margin: 0 auto;
                 justify-content: center;
             }
@@ -2372,6 +2371,25 @@
                 color: #ffffff;
                 text-align: left;
                 margin: 0;
+            }
+        }
+
+        @media (max-width: 340px) {
+            .a2z-abd-addons {
+                padding-left: 12px;
+                padding-right: 12px;
+            }
+
+            .a2z-abd-addons__title {
+                font-size: 28px;
+            }
+
+            .a2z-abd-addon-pill {
+                padding: 12px 14px;
+            }
+
+            .a2z-abd-addon-pill__label {
+                font-size: 14px;
             }
         }
 
@@ -3532,7 +3550,7 @@
 
         @media (max-width: 899px) {
             .a2z-abd-founder {
-                padding: 70px 16px 80px;
+                padding: 43px 14px 38px 14px;
             }
 
             .a2z-abd-founder__desktop-wrap {
@@ -3548,9 +3566,16 @@
             }
 
             /* Mobile Profile Section */
+            .a2z-abd-founder-mobile__profile-wrap {
+                width: 100%;
+                padding-left: 13px;
+                padding-right: 13px;
+                box-sizing: border-box;
+            }
+
             .a2z-abd-founder-mobile__profile {
                 position: relative;
-                padding-left: 20px;
+                padding: 16px 0 16px 32px;
             }
 
             .a2z-abd-founder-mobile__bar {
@@ -3558,24 +3583,24 @@
                 top: 0;
                 bottom: 0;
                 left: 0;
-                width: 5px;
-                background-color: #cca05b;
-                border-radius: 4px;
+                width: 8px;
+                background-color: #D4B068;
+                border-radius: 0;
             }
 
             .a2z-abd-founder-mobile__header-row {
                 display: flex;
                 align-items: center;
-                gap: 18px;
-                margin-bottom: 20px;
+                gap: 24px;
+                margin-bottom: 30px;
             }
 
             .a2z-abd-founder-mobile__avatar {
-                width: 76px;
-                height: 76px;
+                width: 100px;
+                height: 100px;
                 border-radius: 12px;
                 object-fit: cover;
-                border: 2px solid #ffffff;
+                border: 4px solid #ffffff;
                 box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
                 flex-shrink: 0;
                 background-color: #e2e8f0;
@@ -3587,73 +3612,96 @@
             }
 
             .a2z-abd-founder-mobile__name {
-                font-family: var(--a2z-abd-font-sans);
-                font-size: 21px;
-                font-weight: 800;
-                color: #0c253d;
+                font-family: 'Manrope', var(--a2z-abd-font-manrope);
+                font-size: 22px;
+                font-weight: 700;
+                letter-spacing: 0px;
+                vertical-align: middle;
+                color: #001E40;
                 margin: 0 0 4px;
             }
 
             .a2z-abd-founder-mobile__role {
-                font-family: var(--a2z-abd-font-sans);
-                font-size: 11.5px;
-                font-weight: 800;
-                letter-spacing: 0.08em;
+                font-family: 'Manrope', var(--a2z-abd-font-manrope);
+                font-size: 12px;
+                font-weight: 700;
+                letter-spacing: 0.96px;
+                vertical-align: middle;
                 text-transform: uppercase;
-                color: #0c253d;
-                margin-bottom: 2px;
+                color: #001E40CC;
+                margin-bottom: 4px;
             }
 
             .a2z-abd-founder-mobile__sub {
-                font-family: var(--a2z-abd-font-sans);
-                font-size: 11px;
+                font-family: 'Manrope', var(--a2z-abd-font-manrope);
+                font-size: 12px;
                 font-weight: 700;
-                letter-spacing: 0.08em;
+                letter-spacing: 0.96px;
+                vertical-align: middle;
                 text-transform: uppercase;
-                color: #0c253d;
+                color: #001E40CC;
             }
 
             .a2z-abd-founder-mobile__bio {
-                font-family: var(--a2z-abd-font-sans);
-                font-size: 14.5px;
+                font-family: 'Manrope', var(--a2z-abd-font-manrope);
                 font-weight: 500;
+                font-size: 14px;
                 line-height: 1.58;
-                color: #2b3847;
+                letter-spacing: 0px;
+                text-align: justify;
+                vertical-align: middle;
+                color: #001E40;
                 margin: 0;
             }
 
             /* Mobile Quote Card */
             .a2z-abd-founder-mobile__quote-card {
-                background-color: #cca05b;
+                background-color: #D4A850;
                 border-radius: 18px;
                 padding: 36px 26px 44px;
                 position: relative;
-                box-shadow: 0 16px 40px -8px rgba(204, 160, 91, 0.4);
-            }
-
-            .a2z-abd-founder-mobile__quote-icon {
-                font-family: var(--a2z-abd-font-serif);
-                font-size: 42px;
-                line-height: 0.8;
-                color: #ffffff;
-                margin-bottom: 12px;
+                box-shadow: 0 16px 40px -8px rgba(212, 168, 80, 0.4);
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
             }
 
             .a2z-abd-founder-mobile__quote-text {
-                font-family: var(--a2z-abd-font-serif);
-                font-size: 22px;
+                position: relative;
+                font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
                 font-weight: 700;
-                line-height: 1.35;
-                color: #0c253d;
-                margin: 0;
+                font-size: 21px;
+                line-height: 40px;
+                letter-spacing: 0px;
+                color: #000000;
+                width: 100%;
+                max-width: 256px;
+                margin: 0 auto;
+                text-align: left;
+                vertical-align: middle;
+            }
+
+            .a2z-abd-founder-mobile__quote-icon {
+                position: absolute;
+                top: 28px;
+                left: 20px;
+                font-family: 'Abhaya Libre Medium', 'Abhaya Libre', Georgia, serif;
+                font-weight: 500;
+                font-size: 60px;
+                line-height: 1;
+                color: #ffffff;
+                user-select: none;
+                pointer-events: none;
             }
 
             .a2z-abd-founder-mobile__dot {
                 position: absolute;
                 bottom: 20px;
                 right: 22px;
-                width: 18px;
-                height: 18px;
+                width: 21px;
+                height: 21px;
                 background-color: #ffffff;
                 border-radius: 50%;
                 box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
@@ -3841,7 +3889,7 @@
 
         @media (max-width: 768px) {
             .a2z-abd-switch {
-                padding: 75px 16px 85px;
+                padding: 45px 26px 37px 26px;
             }
 
             .a2z-abd-switch__header {
@@ -3849,10 +3897,10 @@
             }
 
             .a2z-abd-switch__tag {
-                font-family: 'Manrope', var(--a2z-abd-font-manrope);
+                font-family: 'Inter', var(--a2z-abd-font-inter);
                 font-weight: 700;
-                font-size: 14px;
-                letter-spacing: 0.7px;
+                font-size: 10px;
+                letter-spacing: 0.6px;
                 text-align: center;
                 vertical-align: middle;
                 text-transform: uppercase;
@@ -3863,16 +3911,36 @@
             .a2z-abd-switch__title {
                 font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
                 font-weight: 600;
-                font-size: 36px;
+                font-size: 32px;
+                line-height: 37px;
                 letter-spacing: 0px;
                 text-align: center;
                 vertical-align: middle;
                 margin-bottom: 16px;
             }
 
+            .a2z-abd-switch__title-italic {
+                display: inline;
+                font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+                font-weight: 600;
+                font-style: italic;
+                font-size: 32px;
+                line-height: inherit;
+                letter-spacing: 0px;
+                vertical-align: baseline;
+            }
+
             .a2z-abd-switch__desc {
-                font-size: 14.5px;
+                font-family: 'Manrope', var(--a2z-abd-font-manrope);
+                font-weight: 500;
+                font-size: 16px;
                 line-height: 1.55;
+                letter-spacing: 0px;
+                text-align: justify;
+                vertical-align: middle;
+                padding-left: 20px;
+                padding-right: 20px;
+                box-sizing: border-box;
             }
 
             .a2z-abd-switch__timeline-desktop {
@@ -3902,10 +3970,10 @@
             /* Alternating Step Rows */
             .a2z-abd-switch-mobile__row {
                 display: grid;
-                grid-template-columns: 1fr 76px 1fr;
+                grid-template-columns: 1fr 64px 1fr;
                 align-items: center;
                 gap: 16px;
-                margin-bottom: 42px;
+                margin-bottom: 60px;
                 position: relative;
                 z-index: 2;
             }
@@ -3915,10 +3983,10 @@
             }
 
             .a2z-abd-switch-mobile__circle {
-                width: 76px;
-                height: 76px;
+                width: 64px;
+                height: 64px;
                 background-color: #ffffff;
-                border: 2.5px solid #cca05b;
+                border: 2.5px solid #D4A850;
                 border-radius: 50%;
                 display: flex;
                 align-items: center;
@@ -3929,18 +3997,23 @@
             }
 
             .a2z-abd-switch-mobile__num {
-                font-family: var(--a2z-abd-font-sans);
+                font-family: 'Manrope', var(--a2z-abd-font-manrope);
                 font-size: 24px;
-                font-weight: 800;
-                color: #cca05b;
+                font-weight: 700;
+                color: #D4A850;
+                letter-spacing: 0px;
+                text-align: center;
+                vertical-align: middle;
                 line-height: 1;
             }
 
             .a2z-abd-switch-mobile__text {
-                font-family: var(--a2z-abd-font-sans);
-                font-size: 16px;
-                font-weight: 600;
+                font-family: 'Manrope', var(--a2z-abd-font-manrope);
+                font-size: 18px;
+                font-weight: 500;
                 line-height: 1.35;
+                letter-spacing: 0px;
+                vertical-align: middle;
                 color: #ffffff;
                 margin: 0;
             }
@@ -3948,6 +4021,11 @@
             .a2z-abd-switch-mobile__text--left {
                 grid-column: 1;
                 text-align: right;
+                font-family: 'Manrope', var(--a2z-abd-font-manrope);
+                font-weight: 500;
+                font-size: 18px;
+                letter-spacing: 0px;
+                vertical-align: middle;
             }
 
             .a2z-abd-switch-mobile__text--right {
@@ -5644,29 +5722,31 @@
             <!-- 2. MOBILE VIEW: Stacked Profile & Gold Quote Card (<= 899px) -->
             <div class="a2z-abd-founder__mobile-wrap">
                 <!-- Mobile Top: Profile Section with Gold Accent Bar -->
-                <div class="a2z-abd-founder-mobile__profile">
-                    <div class="a2z-abd-founder-mobile__bar" aria-hidden="true"></div>
-                    <div class="a2z-abd-founder-mobile__header-row">
-                        <img src="https://a2zaccounting.co.uk/wp-content/uploads/2026/04/srahman.png"
-                            alt="Shabbir Rahman, Founder & CEO of A2Z Accounting Solutions"
-                            class="a2z-abd-founder-mobile__avatar" width="76" height="76" loading="lazy">
-                        <div class="a2z-abd-founder-mobile__titles">
-                            <h3 class="a2z-abd-founder-mobile__name">Shabbir Rahman</h3>
-                            <span class="a2z-abd-founder-mobile__role">FOUNDER AND CEO</span>
-                            <span class="a2z-abd-founder-mobile__sub">CHARTERED CERTIFIED ACCOUNTANT</span>
+                <div class="a2z-abd-founder-mobile__profile-wrap">
+                    <div class="a2z-abd-founder-mobile__profile">
+                        <div class="a2z-abd-founder-mobile__bar" aria-hidden="true"></div>
+                        <div class="a2z-abd-founder-mobile__header-row">
+                            <img src="https://a2zaccounting.co.uk/wp-content/uploads/2026/04/srahman.png"
+                                alt="Shabbir Rahman, Founder & CEO of A2Z Accounting Solutions"
+                                class="a2z-abd-founder-mobile__avatar" width="100" height="100" loading="lazy">
+                            <div class="a2z-abd-founder-mobile__titles">
+                                <h3 class="a2z-abd-founder-mobile__name">Shabbir Rahman</h3>
+                                <span class="a2z-abd-founder-mobile__role">FOUNDER AND CEO</span>
+                                <span class="a2z-abd-founder-mobile__sub">CHARTERED CERTIFIED ACCOUNTANT</span>
+                            </div>
                         </div>
+                        <p class="a2z-abd-founder-mobile__bio">
+                            Shabbir built his early career in corporate finance at a multibillion-pound international group,
+                            working to top-tier audit standards, and is an Economics honours graduate of the University of
+                            Aberdeen. He founded A2Z to bring that same rigour to the owner-managed businesses the big firms
+                            overlook.
+                        </p>
                     </div>
-                    <p class="a2z-abd-founder-mobile__bio">
-                        Shabbir built his early career in corporate finance at a multibillion-pound international group,
-                        working to top-tier audit standards, and is an Economics honours graduate of the University of
-                        Aberdeen. He founded A2Z to bring that same rigour to the owner-managed businesses the big firms
-                        overlook.
-                    </p>
                 </div>
 
                 <!-- Mobile Bottom: Warm Gold Quote Card -->
                 <div class="a2z-abd-founder-mobile__quote-card">
-                    <div class="a2z-abd-founder-mobile__quote-icon">“</div>
+                    <div class="a2z-abd-founder-mobile__quote-icon" aria-hidden="true">“</div>
                     <blockquote class="a2z-abd-founder-mobile__quote-text">
                         I oversee the standard on every client engagement myself. When something carries our name, it
                         has to be right - and it has to be useful to you.
