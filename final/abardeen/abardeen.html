@@ -1025,7 +1025,7 @@
         }
 
         /* Responsive Breakpoints for Why Choose Us Section */
-        @media (max-width: 991px) {
+        @media (min-width: 681px) and (max-width: 991px) {
             .a2z-abd-why {
                 padding: 90px 20px 100px;
             }
@@ -1034,10 +1034,17 @@
                 margin-bottom: 50px;
             }
 
-            .a2z-abd-why__row-2col,
-            .a2z-abd-why__row-3col {
+            .a2z-abd-why__grid {
+                display: grid;
                 grid-template-columns: repeat(2, 1fr);
                 gap: 22px;
+                max-width: 800px;
+                margin: 0 auto;
+            }
+
+            .a2z-abd-why__row-2col,
+            .a2z-abd-why__row-3col {
+                display: contents;
             }
 
             .a2z-abd-split-card__header {
