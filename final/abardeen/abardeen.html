@@ -2914,9 +2914,9 @@
         }
 
         /* Responsive Breakpoints */
-        @media (max-width: 860px) {
+        @media (max-width: 991px) {
             .a2z-abd-fit {
-                padding: 85px 20px 95px;
+                padding: 80px 24px 90px;
             }
 
             .a2z-abd-fit__header {
@@ -2927,7 +2927,7 @@
                 grid-template-columns: 1fr;
                 justify-items: center;
                 gap: 28px;
-                max-width: 540px;
+                max-width: 480px;
                 margin: 0 auto;
             }
 
@@ -2937,15 +2937,19 @@
 
             .a2z-abd-fit-card {
                 padding: 32px 24px 36px;
+                min-height: auto;
             }
 
             .a2z-abd-fit-card--strong,
             .a2z-abd-fit-card--not {
                 margin: 0 auto;
+                width: 100%;
+                max-width: 480px;
+                min-height: auto;
             }
         }
 
-        @media (max-width: 640px) {
+        @media (max-width: 680px) {
             .a2z-abd-fit {
                 padding: 24px 24px;
             }
@@ -2958,6 +2962,7 @@
                 grid-template-columns: 1fr;
                 justify-items: center;
                 gap: 30px;
+                max-width: 100%;
                 margin: 0 auto;
             }
 
@@ -2965,10 +2970,12 @@
             .a2z-abd-fit-card--strong,
             .a2z-abd-fit-card--not {
                 min-height: 0;
-                max-height: 516px;
+                max-height: none;
                 padding: 27px 20px;
                 box-sizing: border-box;
                 margin: 0 auto;
+                width: 100%;
+                max-width: 416px;
             }
 
             .a2z-abd-fit__tag {
