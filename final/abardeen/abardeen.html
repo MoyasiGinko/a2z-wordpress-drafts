@@ -3385,7 +3385,7 @@
         /* 3-Column Grid */
         .a2z-abd-handled__grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(3, minmax(0, 1fr));
             gap: 46px 40px;
             max-width: 1360px;
             margin: 0 auto;
@@ -3396,8 +3396,8 @@
             position: relative;
             display: flex;
             flex-direction: column;
-            width: 418px;
-            max-width: 100%;
+            width: 100%;
+            max-width: 418px;
             padding-top: 35px;
             border-top: 1.12px solid rgba(255, 255, 255, 0.12);
         }
@@ -3459,6 +3459,7 @@
 
             .a2z-abd-handled__title,
             .a2z-abd-handled__title-italic {
+                font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
                 font-size: 44px;
                 line-height: 1.2;
             }
@@ -3473,7 +3474,7 @@
             }
 
             .a2z-abd-handled__grid {
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns: repeat(2, minmax(0, 1fr));
                 gap: 36px 30px;
                 max-width: 860px;
                 margin: 0 auto;
@@ -3481,10 +3482,11 @@
 
             .a2z-abd-handled-item {
                 width: 100%;
+                max-width: 100%;
             }
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 680px) {
             .a2z-abd-handled {
                 background: #112B46;
                 padding: 35px 26px;
@@ -3598,6 +3600,12 @@
                 font-size: 14px;
                 line-height: 1.5;
                 color: #94a3b8;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .a2z-abd-handled-item {
+                padding: 18px 20px;
             }
         }
 
@@ -4884,6 +4892,36 @@
             text-decoration: underline;
         }
 
+        /* Responsive Breakpoints for Final CTA Section */
+        @media (min-width: 992px) and (max-width: 1199px) {
+            .a2z-abd-cta-final {
+                padding: 90px 24px 100px;
+            }
+
+            .a2z-abd-cta-final__desktop-grid {
+                grid-template-columns: minmax(0, 1.8fr) minmax(0, 1fr);
+                gap: 20px;
+                max-width: 1060px;
+                margin: 0 auto;
+            }
+
+            .a2z-abd-cta-final__message-card {
+                width: 100%;
+                height: auto;
+                min-height: 360px;
+                padding: 38px;
+            }
+
+            .a2z-abd-cta-final__actions-col {
+                width: 100%;
+            }
+
+            .a2z-abd-cta-card,
+            .a2z-abd-cta-card--estimate {
+                width: 100%;
+            }
+        }
+
         /* 2. MOBILE & TABLET VIEW (Visible <= 991px) */
         .a2z-abd-cta-final__mobile-wrap {
             display: none;
@@ -4891,11 +4929,11 @@
 
         @media (max-width: 991px) {
             .a2z-abd-cta-final {
-                padding: 0;
+                padding: 85px 24px 95px;
             }
 
             .a2z-abd-cta-final__container {
-                padding: 56px 26px;
+                padding: 0;
             }
 
             .a2z-abd-cta-final__desktop-grid {
@@ -4905,8 +4943,8 @@
             .a2z-abd-cta-final__mobile-wrap {
                 display: flex;
                 flex-direction: column;
-                gap: 16px;
-                max-width: 480px;
+                gap: 20px;
+                max-width: 580px;
                 margin: 0 auto;
             }
 
@@ -4914,34 +4952,32 @@
                 background-color: rgba(255, 255, 255, 0.04);
                 border: 1px solid rgba(255, 255, 255, 0.1);
                 border-radius: 16px;
-                padding: 34px 24px;
-                margin-bottom: 12px;
+                padding: 40px 32px;
+                margin-bottom: 8px;
                 box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
             }
 
             .a2z-abd-cta-final__tag-mobile {
                 display: inline-block;
-                font-family: 'Manrope', var(--a2z-abd-font-manrope);
+                font-family: 'Inter', var(--a2z-abd-font-inter);
                 font-weight: 700;
-                font-size: 12px;
-                letter-spacing: 1.2px;
-                text-align: center;
-                vertical-align: middle;
+                font-size: 14px;
+                letter-spacing: 1px;
                 text-transform: uppercase;
                 color: #D4A850;
-                margin-bottom: 24px;
+                margin-bottom: 18px;
             }
 
             .a2z-abd-cta-final__title-mobile {
                 font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
                 font-weight: 700;
-                font-size: 32px;
+                font-size: 44px;
                 line-height: 1.2;
                 letter-spacing: 0px;
                 text-align: left;
                 vertical-align: middle;
                 color: #ffffff;
-                margin: 0 0 16px;
+                margin: 0 0 18px;
             }
 
             .a2z-abd-cta-final__title-mobile .a2z-abd-cta-final__title-italic {
@@ -4949,7 +4985,7 @@
                 font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
                 font-weight: 700;
                 font-style: italic;
-                font-size: 32px;
+                font-size: 44px;
                 line-height: inherit;
                 letter-spacing: 0px;
                 vertical-align: baseline;
@@ -4990,6 +5026,42 @@
                 letter-spacing: 1.4px;
                 vertical-align: middle;
                 text-transform: uppercase;
+            }
+        }
+
+        @media (max-width: 680px) {
+            .a2z-abd-cta-final {
+                padding: 0;
+            }
+
+            .a2z-abd-cta-final__container {
+                padding: 56px 26px;
+            }
+
+            .a2z-abd-cta-final__mobile-wrap {
+                gap: 16px;
+                max-width: 480px;
+            }
+
+            .a2z-abd-cta-final__message-card-mobile {
+                padding: 34px 24px;
+                margin-bottom: 12px;
+            }
+
+            .a2z-abd-cta-final__tag-mobile {
+                font-family: 'Manrope', var(--a2z-abd-font-manrope);
+                font-size: 12px;
+                letter-spacing: 1.2px;
+                margin-bottom: 24px;
+            }
+
+            .a2z-abd-cta-final__title-mobile {
+                font-size: 32px;
+                margin: 0 0 16px;
+            }
+
+            .a2z-abd-cta-final__title-mobile .a2z-abd-cta-final__title-italic {
+                font-size: 32px;
             }
         }
     </style>
