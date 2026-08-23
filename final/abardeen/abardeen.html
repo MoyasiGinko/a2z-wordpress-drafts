@@ -2445,7 +2445,7 @@
             padding-right: 32px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: 48% 52%;
+            grid-template-columns: minmax(0, 1fr) minmax(0, 1.08fr);
             gap: 60px;
             align-items: flex-start;
         }
@@ -2476,7 +2476,7 @@
 
         .a2z-abd-grow__included-item {
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             gap: 12px;
         }
 
@@ -2487,7 +2487,7 @@
             stroke-width: 2.5;
             fill: none;
             flex-shrink: 0;
-            margin-top: 0;
+            margin-top: 5px;
         }
 
         .a2z-abd-grow__included-text {
@@ -2533,14 +2533,17 @@
         }
 
         /* Responsive Breakpoints */
-        @media (max-width: 991px) {
+        @media (max-width: 1024px) {
             .a2z-abd-grow {
-                padding: 80px 20px 85px;
+                padding: 70px 24px 80px;
             }
 
             .a2z-abd-grow__container {
                 grid-template-columns: 1fr;
-                gap: 45px;
+                gap: 40px;
+                max-width: 760px;
+                padding-left: 12px;
+                padding-right: 12px;
             }
 
             /* Responsive Re-ordering: Story at Top, Included at Bottom */
@@ -2550,16 +2553,17 @@
 
             .a2z-abd-grow__col-included {
                 order: 2;
+                align-self: stretch;
             }
 
             .a2z-abd-grow__title {
-                font-size: 2.35rem;
+                font-size: 32px;
                 margin-bottom: 18px;
             }
 
             .a2z-abd-grow__included-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px 24px;
             }
 
             .a2z-abd-grow__included-tag {
@@ -2567,7 +2571,7 @@
             }
         }
 
-        @media (max-width: 640px) {
+        @media (max-width: 680px) {
             .a2z-abd-grow {
                 background: #ffffff;
                 padding: 26px 26px;
@@ -2576,6 +2580,7 @@
             .a2z-abd-grow__container {
                 padding-left: 0;
                 padding-right: 0;
+                gap: 28px;
             }
 
             .a2z-abd-grow__title {
@@ -2604,6 +2609,12 @@
                 vertical-align: middle;
                 text-transform: uppercase;
                 color: #001E40;
+                margin-bottom: 16px;
+            }
+
+            .a2z-abd-grow__included-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
             }
 
             .a2z-abd-grow__included-item {
