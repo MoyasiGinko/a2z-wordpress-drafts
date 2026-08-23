@@ -3240,12 +3240,24 @@
         /* Responsive Breakpoints */
         @media (max-width: 1024px) {
             .a2z-abd-handled {
-                padding: 95px 20px 110px;
+                padding: 85px 24px 95px;
+            }
+
+            .a2z-abd-handled__title,
+            .a2z-abd-handled__title-italic {
+                font-size: 48px;
+                line-height: 1.2;
             }
 
             .a2z-abd-handled__grid {
                 grid-template-columns: repeat(2, 1fr);
                 gap: 36px 30px;
+                max-width: 860px;
+                margin: 0 auto;
+            }
+
+            .a2z-abd-handled-item {
+                width: 100%;
             }
         }
 
@@ -3319,7 +3331,8 @@
 
             .a2z-abd-handled-item {
                 width: 100%;
-                max-height: 218px;
+                min-height: 0;
+                max-height: none;
                 box-sizing: border-box;
                 background: rgba(255, 255, 255, 0.04);
                 border: 1px solid rgba(255, 255, 255, 0.1);
