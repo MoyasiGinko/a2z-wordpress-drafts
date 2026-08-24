@@ -2249,7 +2249,7 @@
             .a2z-abd-price-card__divider {
                 height: 1px;
                 width: 100%;
-                margin: 0;
+                margin: 0 0 15px;
             }
 
             .a2z-abd-pricing__cta {
@@ -2719,6 +2719,7 @@
             font-weight: 500;
             line-height: 1.5;
             letter-spacing: 0px;
+            text-align: left !important;
             color: #1B1C1C !important;
             margin: 0;
         }
@@ -2868,6 +2869,7 @@
                 font-weight: 400;
                 font-size: 16px;
                 letter-spacing: 0px;
+                text-align: left !important;
                 vertical-align: middle;
                 color: #000000 !important;
             }
@@ -3102,6 +3104,7 @@
             font-family: var(--a2z-abd-font-sans);
             font-size: 15px;
             line-height: 1.5;
+            text-align: left !important;
             margin: 0;
         }
 
@@ -3111,6 +3114,7 @@
             font-weight: 500;
             line-height: 1.5;
             letter-spacing: 0px;
+            text-align: left !important;
             color: #000000 !important;
         }
 
@@ -3120,6 +3124,7 @@
             font-weight: 500;
             line-height: 1.5;
             letter-spacing: 0px;
+            text-align: left !important;
             color: #ffffff !important;
         }
 
@@ -5192,6 +5197,14 @@
         .abtSec1 .client_story,
         section.faq-section {
             display: none !important;
+        }
+
+        /* Neutralize theme's .text-justify rule from bleeding into .a2z-abd */
+        .text-justify .why_a2z .a2z-abd p,
+        .text-justify .industry-leaders-inner-bx .a2z-abd p,
+        .text-justify .a2z-abd p,
+        .a2z-abd.text-justify p {
+            text-align: inherit;
         }
 
         .a2z-abd {
