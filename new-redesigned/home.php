@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 /**
 * Template Name: Home - CSTM
 *
@@ -308,7 +308,7 @@ $switch_steps = [
            ========================================== */
         .hero {
             position: relative;
-            background: linear-gradient(135deg, rgba(3, 8, 15, 0.85) 0%, rgba(17, 43, 69, 0.85) 100%), url('https://www.communitytax.com/wp-content/uploads/2023/09/File-or-Pay-Taxes.webp');
+            background: linear-gradient(135deg, rgba(3, 8, 15, 0.85) 0%, rgba(17, 43, 69, 0.85) 100%), url('https://res.cloudinary.com/dvvcwzp4n/image/upload/v1785446210/home-hero_txoncy.webp');
             background-size: cover;
             background-position: center;
             color: var(--color-white);
@@ -1536,6 +1536,8 @@ $switch_steps = [
             display: flex;
             align-items: flex-end;
             padding: clamp(20px, 3vw, 30px);
+            text-decoration: none !important;
+            cursor: pointer;
             transition: var(--transition-smooth);
         }
 
@@ -1595,11 +1597,13 @@ $switch_steps = [
             text-transform: uppercase;
             display: inline-flex;
             align-items: center;
+            gap: 6px;
             opacity: 1;
             transition: color 0.3s ease;
         }
-        .sector-link:hover {
-            color: var(--color-gold);
+
+        .sector-link svg {
+            transition: transform 0.3s ease;
         }
 
         .sector-card:hover::before {
@@ -1618,6 +1622,14 @@ $switch_steps = [
             max-height: 120px;
             opacity: 1;
             margin-bottom: 16px;
+        }
+
+        .sector-card:hover .sector-link {
+            color: var(--color-gold);
+        }
+
+        .sector-card:hover .sector-link svg {
+            transform: translateX(4px);
         }
 
         @media (max-width: 992px) {
@@ -2157,8 +2169,20 @@ $switch_steps = [
             text-transform: uppercase;
         }
 
+        /* Reserve space for the Trustindex widget BEFORE its script injects content.
+           The widget is deferred, so without a reserved height the page paints with a
+           zero-height gap here and everything below jumps down when it lands.
+           Over-reserving is safe (widget fills into existing space, no shift);
+           under-reserving still shifts. Tune to the widget's real rendered height. */
         .trustindex-placeholder {
             width: 100%;
+            min-height: 420px;
+        }
+
+        @media (max-width: 768px) {
+            .trustindex-placeholder {
+                min-height: 520px;
+            }
         }
 
         #blogs {
@@ -3260,14 +3284,14 @@ $switch_steps = [
             
             <div class="sectors-grid">
                 <?php foreach ($sectors_default as $sector): ?>
-                <div class="sector-card">
+                <a href="<?php echo esc_url($sector[2]); ?>" class="sector-card">
                     <img src="<?php echo esc_url($sector[3]); ?>" alt="<?php echo esc_attr($sector[0]); ?>" class="sector-img" width="800" height="600" loading="lazy" decoding="async">
                     <div class="sector-content">
                         <h3 class="sector-title"><?php echo esc_html($sector[0]); ?></h3>
                         <p class="sector-desc"><?php echo esc_html($sector[1]); ?></p>
-                        <a href="<?php echo esc_url($sector[2]); ?>" class="sector-link">VIEW DETAILS <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+                        <span class="sector-link">VIEW DETAILS <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span>
                     </div>
-                </div>
+                </a>
                 <?php endforeach; ?>
             </div>
         </div>
