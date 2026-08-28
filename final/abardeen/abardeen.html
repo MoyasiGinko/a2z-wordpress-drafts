@@ -6,68 +6,7 @@
     rel="stylesheet">
 
 <style>
-    /* ==========================================================================
-   WORDPRESS THEME & HEADER / NAVBAR ISOLATION & PROTECTION LAYER
-   Ensures WordPress header, navbar, dropdowns, afterheader & footer are
-   never overridden, hidden, or visually displaced by WPCode shortcode.
-   ========================================================================== */
-
-    /* 1. Header & Navigation Stacking & Visibility Protection */
-    header.hm_header,
-    .hm_header {
-        position: relative !important;
-        z-index: 99999 !important;
-        display: block !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-        pointer-events: auto !important;
-    }
-
-    .hm_header .top_header,
-    .hm_header .middle_header,
-    .hm_header .d_flex_ajdjust,
-    .hm_header .logo-sec,
-    .hm_header nav.menu,
-    .hm_header .menu__wrap,
-    .hm_header .hm-menu,
-    .hm_header .menu-icon {
-        visibility: visible !important;
-        opacity: 1 !important;
-    }
-
-    .hm_header nav.menu {
-        z-index: 99999 !important;
-    }
-
-    .hm_header nav.menu .menu__wrap {
-        z-index: 99999 !important;
-    }
-
-    .hm_header nav.menu .sub-menu,
-    .hm_header nav.menu .submenu {
-        z-index: 100000 !important;
-    }
-
-    /* 2. Afterheader Rating Bar Protection */
-    .afterheader {
-        position: relative !important;
-        z-index: 99990 !important;
-        display: block !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-    }
-
-    /* 3. Footer Stacking Protection */
-    footer#footer_div,
-    #footer_div {
-        position: relative !important;
-        z-index: 99980 !important;
-        display: block !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-    }
-
-    /* 4. WordPress Host Column Neutralisation (Scoping to Aberdeen page content) */
+    /* WordPress Host Column Neutralisation (Scoping to Aberdeen page content) */
     .abtSec1 {
         padding: 0 !important;
     }
