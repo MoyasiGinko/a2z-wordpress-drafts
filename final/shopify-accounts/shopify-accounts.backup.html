@@ -1,0 +1,3318 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopify Accountants UK | A2Z Accounting</title>
+    <!-- Google Fonts Preconnect & Stylesheets -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..800;1,9..40,400..800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700&family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <style>
+        /* ==========================================================================
+       WORDPRESS HOST COLUMN NEUTRALISATION (Scoping to E-Commerce page content)
+       ========================================================================== */
+        .abtSec1 {
+            padding: 0 !important;
+        }
+
+        .abtSec1 .container {
+            max-width: none !important;
+            width: 100% !important;
+            padding: 0 !important;
+            margin: 0 !important;
+        }
+
+        .abtSec1 .row {
+            display: block !important;
+            margin: 0 !important;
+        }
+
+        .abtSec1 .row>.col-md-6:has(.a2z-ec) {
+            width: 100% !important;
+            max-width: 100% !important;
+            flex: 0 0 100% !important;
+            padding: 0 !important;
+            margin: 0 !important;
+        }
+
+        .abtSec1 .row>.col-md-6:not(:has(.a2z-ec)),
+        .abtSec1 .client_story,
+        section.faq-section {
+            display: none !important;
+        }
+
+        @media (min-width: 761px) {
+
+            .abtSec1,
+            .abtSec1>.container {
+                padding-top: 0 !important;
+                margin-top: 0 !important;
+            }
+        }
+
+        /* ==========================================================================
+       A2Z MASTER STYLES - SHOPIFY ACCOUNTANTS
+       ========================================================================== */
+        :root {
+            --a2z-navy-dark: #081423;
+            --a2z-navy-card: #0D2238;
+            --a2z-navy-light: #122B48;
+            --a2z-gold: #C4905A;
+            --a2z-gold-hover: #D5A36E;
+            --a2z-cream: #FEF3C7;
+            --a2z-cream-card: #FFF8E7;
+            --a2z-blue-accent: #1D4ED8;
+            --a2z-font-sans: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --a2z-font-serif: 'Playfair Display', Georgia, serif;
+        }
+
+        .a2z-ec {
+            font-family: var(--a2z-font-sans);
+            color: #1E293B;
+            background-color: #ffffff;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .a2z-ec * {
+            box-sizing: border-box;
+        }
+
+        .a2z-ec a {
+            text-decoration: none;
+            transition: all 0.25s ease;
+        }
+
+        /* Common Eyebrow */
+        .a2z-ec .section-eyebrow {
+            display: block;
+            color: var(--a2z-gold);
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            margin-bottom: 14px;
+            text-align: center;
+        }
+
+        /* Common Headings */
+        .a2z-ec .section-heading-dark {
+            font-family: var(--a2z-font-sans);
+            font-size: clamp(30px, 4.2vw, 48px);
+            font-weight: 700;
+            color: #ffffff;
+            line-height: 1.18;
+            text-align: center;
+            margin: 0 auto 20px;
+            max-width: 860px;
+        }
+
+        .a2z-ec .section-heading-dark em {
+            font-family: var(--a2z-font-serif);
+            font-style: italic;
+            color: var(--a2z-gold);
+            font-weight: 400;
+        }
+
+        .a2z-ec .section-heading-light {
+            font-family: var(--a2z-font-sans);
+            font-size: clamp(30px, 4.2vw, 48px);
+            font-weight: 700;
+            color: var(--a2z-navy-dark);
+            line-height: 1.18;
+            text-align: center;
+            margin: 0 auto 20px;
+            max-width: 860px;
+        }
+
+        .a2z-ec .section-heading-light em {
+            font-family: var(--a2z-font-serif);
+            font-style: italic;
+            color: var(--a2z-gold);
+            font-weight: 400;
+        }
+
+        .a2z-ec .section-subtext-dark {
+            color: #94A3B8;
+            font-size: clamp(15px, 1.3vw, 17px);
+            text-align: center;
+            max-width: 740px;
+            margin: 0 auto 44px;
+            line-height: 1.65;
+        }
+
+        .a2z-ec .section-subtext-light {
+            color: #64748B;
+            font-size: clamp(15px, 1.3vw, 17px);
+            text-align: center;
+            max-width: 740px;
+            margin: 0 auto 44px;
+            line-height: 1.65;
+        }
+
+        /* Common Buttons */
+        .a2z-ec .btn-gold-solid {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--a2z-gold);
+            color: #081423 !important;
+            font-weight: 700;
+            font-size: 14px;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+            padding: 16px 32px;
+            border-radius: 8px;
+            border: 2px solid var(--a2z-gold);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .a2z-ec .btn-gold-solid:hover {
+            background: var(--a2z-gold-hover);
+            border-color: var(--a2z-gold-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(196, 144, 90, 0.3);
+        }
+
+        .a2z-ec .btn-gold-outline {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: transparent;
+            color: var(--a2z-gold) !important;
+            font-weight: 700;
+            font-size: 14px;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+            padding: 16px 32px;
+            border-radius: 8px;
+            border: 2px solid var(--a2z-gold);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .a2z-ec .btn-gold-outline:hover {
+            background: rgba(196, 144, 90, 0.1);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(196, 144, 90, 0.2);
+        }
+
+        /* ==========================================================================
+       SECTION 1: HERO
+       ========================================================================== */
+        .a2z-ec .new-hero-exact {
+            position: relative;
+            background-color: #081423;
+            background-image: linear-gradient(180deg, rgba(8, 20, 35, 0.90) 0%, rgba(8, 20, 35, 0.96) 100%), url('https://a2zaccounting.co.uk/wp-content/uploads/2026/06/a2z-photo-3-band.jpg');
+            background-size: cover;
+            background-position: center top;
+            padding: clamp(60px, 8vw, 100px) 20px clamp(50px, 6vw, 80px);
+            text-align: center;
+            color: #ffffff;
+        }
+
+        .a2z-ec .hero-wrap {
+            max-width: 980px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .a2z-ec .hero-top-pill {
+            display: inline-block;
+            background: #ffffff;
+            color: #081423;
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 8px 20px;
+            border-radius: 50px;
+            margin-bottom: 28px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .a2z-ec .hero-main-title {
+            font-family: var(--a2z-font-sans);
+            font-size: clamp(34px, 5.2vw, 64px);
+            font-weight: 700;
+            line-height: 1.15;
+            color: #ffffff;
+            margin: 0 0 24px;
+        }
+
+        .a2z-ec .hero-main-title em {
+            font-family: var(--a2z-font-serif);
+            font-style: italic;
+            color: var(--a2z-gold);
+            font-weight: 400;
+        }
+
+        .a2z-ec .hero-lead-text {
+            font-size: clamp(16px, 1.4vw, 18px);
+            color: #CBD5E1;
+            line-height: 1.65;
+            max-width: 820px;
+            margin: 0 auto 36px;
+        }
+
+        .a2z-ec .hero-cta-row {
+            display: flex;
+            gap: 18px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 36px;
+        }
+
+        .a2z-ec .hero-chartered-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(13, 34, 56, 0.7);
+            border: 1px solid rgba(196, 144, 90, 0.4);
+            border-radius: 8px;
+            padding: 10px 22px;
+            color: var(--a2z-gold);
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 40px;
+        }
+
+        .a2z-ec .hero-bottom-badges {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+            max-width: 900px;
+        }
+
+        .a2z-ec .hero-feature-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 8px;
+            padding: 10px 20px;
+            color: #ffffff;
+            font-size: 14px;
+            font-weight: 500;
+            backdrop-filter: blur(8px);
+        }
+
+        .a2z-ec .hero-feature-badge svg {
+            flex-shrink: 0;
+        }
+
+        /* ==========================================================================
+       SECTION 2: PROFIT CALCULATOR
+       ========================================================================== */
+        .a2z-ec .profit-calc-section {
+            background-color: #ffffff;
+            padding: clamp(60px, 8vw, 100px) 20px;
+        }
+
+        .a2z-ec .calc-container {
+            max-width: 1160px;
+            margin: 0 auto;
+        }
+
+        .a2z-ec .calc-card-outer {
+            background: var(--a2z-navy-dark);
+            border-radius: 24px;
+            padding: clamp(28px, 4vw, 52px);
+            box-shadow: 0 24px 60px rgba(8, 20, 35, 0.18);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .a2z-ec .calc-grid-inner {
+            display: grid;
+            grid-template-columns: 1fr 1.15fr;
+            gap: clamp(28px, 4vw, 56px);
+            align-items: center;
+        }
+
+        .a2z-ec .calc-ledger-box {
+            background: var(--a2z-navy-card);
+            border-radius: 18px;
+            padding: clamp(24px, 3vw, 36px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .a2z-ec .calc-ledger-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+            font-size: 15px;
+            color: #E2E8F0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .a2z-ec .calc-ledger-row.highlight-row {
+            font-size: 16px;
+            font-weight: 700;
+            color: #ffffff;
+            background: rgba(255, 255, 255, 0.03);
+            padding: 14px 12px;
+            margin: 6px -12px;
+            border-radius: 8px;
+            border-bottom: none;
+        }
+
+        .a2z-ec .calc-ledger-row .calc-neg {
+            color: #F87171;
+        }
+
+        .a2z-ec .calc-ledger-divider {
+            height: 1px;
+            background: rgba(196, 144, 90, 0.3);
+            margin: 18px 0;
+        }
+
+        .a2z-ec .calc-ledger-final {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            padding-top: 8px;
+        }
+
+        .a2z-ec .calc-final-label {
+            font-size: 22px;
+            font-weight: 700;
+            color: #ffffff;
+            line-height: 1.2;
+        }
+
+        .a2z-ec .calc-final-sub {
+            font-size: 13px;
+            color: #94A3B8;
+            display: block;
+            margin-top: 4px;
+            font-weight: 400;
+        }
+
+        .a2z-ec .calc-final-val {
+            font-size: clamp(28px, 3.2vw, 42px);
+            font-weight: 800;
+            color: var(--a2z-gold);
+            line-height: 1;
+        }
+
+        .a2z-ec .calc-controls-col {
+            display: flex;
+            flex-direction: column;
+            gap: 22px;
+        }
+
+        .a2z-ec .calc-slider-item {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .a2z-ec .calc-slider-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 15px;
+            font-weight: 500;
+            color: #F1F5F9;
+        }
+
+        .a2z-ec .calc-slider-top .calc-val-badge {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--a2z-gold);
+        }
+
+        .a2z-ec .calc-range-input {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 100%;
+            height: 6px;
+            border-radius: 6px;
+            background: #1E3A5F;
+            outline: none;
+            cursor: pointer;
+        }
+
+        .a2z-ec .calc-range-input::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            background: var(--a2z-gold);
+            cursor: pointer;
+            border: 3px solid #081423;
+            box-shadow: 0 0 10px rgba(196, 144, 90, 0.6);
+            transition: transform 0.15s ease;
+        }
+
+        .a2z-ec .calc-range-input::-webkit-slider-thumb:hover {
+            transform: scale(1.15);
+        }
+
+        .a2z-ec .calc-disclaimer-text {
+            color: #94A3B8;
+            font-size: 13px;
+            text-align: center;
+            margin-top: 24px;
+            line-height: 1.5;
+        }
+
+        /* ==========================================================================
+       SECTION 3: PAYOUT ANATOMY
+       ========================================================================== */
+        .a2z-ec .anatomy-new-section {
+            background-color: var(--a2z-navy-dark);
+            padding: clamp(60px, 8vw, 100px) 20px;
+            color: #ffffff;
+        }
+
+        .a2z-ec .anatomy-container {
+            max-width: 1160px;
+            margin: 0 auto;
+        }
+
+        .a2z-ec .anatomy-progress-wrap {
+            margin: 40px auto 48px;
+            max-width: 800px;
+            text-align: center;
+        }
+
+        .a2z-ec .anatomy-progress-label {
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: var(--a2z-gold);
+            text-transform: uppercase;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .a2z-ec .anatomy-progress-bar {
+            height: 10px;
+            border-radius: 10px;
+            background: #122B48;
+            display: flex;
+            overflow: hidden;
+        }
+
+        .a2z-ec .anatomy-bar-inflow {
+            width: 58%;
+            background: var(--a2z-gold);
+        }
+
+        .a2z-ec .anatomy-bar-outflow {
+            width: 28%;
+            background: #F4EBE1;
+        }
+
+        .a2z-ec .anatomy-bar-adj {
+            width: 14%;
+            background: var(--a2z-blue-accent);
+        }
+
+        .a2z-ec .anatomy-col-headers {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-bottom: 16px;
+        }
+
+        .a2z-ec .anatomy-col-title {
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            color: #94A3B8;
+            text-transform: uppercase;
+        }
+
+        .a2z-ec .anatomy-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .a2z-ec .anatomy-card {
+            background: var(--a2z-navy-card);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            transition: transform 0.25s ease, border-color 0.25s ease;
+        }
+
+        .a2z-ec .anatomy-card:hover {
+            transform: translateY(-3px);
+            border-color: rgba(196, 144, 90, 0.4);
+        }
+
+        .a2z-ec .anatomy-card-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .a2z-ec .anatomy-card-top svg {
+            color: var(--a2z-gold);
+        }
+
+        .a2z-ec .anatomy-badge {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            padding: 4px 10px;
+            border-radius: 50px;
+            text-transform: uppercase;
+            background: rgba(255, 255, 255, 0.08);
+            color: #E2E8F0;
+        }
+
+        .a2z-ec .anatomy-card-h {
+            font-size: 18px;
+            font-weight: 700;
+            color: #ffffff;
+            margin: 0;
+        }
+
+        .a2z-ec .anatomy-card-desc {
+            font-size: 14px;
+            color: #94A3B8;
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        /* ==========================================================================
+       SECTION 4: WHERE MARGIN QUIETLY LEAKS (DUAL BLUE/CREAM CARDS)
+       ========================================================================== */
+        .a2z-ec .real-problems-section {
+            background-color: #0B1C2F;
+            padding: clamp(60px, 8vw, 100px) 20px;
+            color: #ffffff;
+        }
+
+        .a2z-ec .hides-container {
+            max-width: 1160px;
+            margin: 0 auto;
+        }
+
+        .a2z-ec .hides-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 28px;
+            margin-top: 48px;
+        }
+
+        .a2z-ec .hides-card {
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .a2z-ec .hides-top-blue {
+            background: #183B7A;
+            padding: 26px 28px;
+            color: #ffffff;
+            flex: 1;
+        }
+
+        .a2z-ec .hides-top-blue .hides-title {
+            font-size: 20px;
+            font-weight: 700;
+            margin: 0 0 12px;
+            color: #ffffff;
+        }
+
+        .a2z-ec .hides-tag-issue {
+            display: block;
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            color: #93C5FD;
+            text-transform: uppercase;
+            margin-bottom: 6px;
+        }
+
+        .a2z-ec .hides-top-blue p {
+            font-size: 14px;
+            line-height: 1.55;
+            color: #DBEAFE;
+            margin: 0;
+        }
+
+        .a2z-ec .hides-bot-cream {
+            background: #FEF3C7;
+            padding: 24px 28px;
+            color: #1E293B;
+        }
+
+        .a2z-ec .hides-tag-fix {
+            display: block;
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            color: #92400E;
+            text-transform: uppercase;
+            margin-bottom: 6px;
+        }
+
+        .a2z-ec .hides-bot-cream p {
+            font-size: 14px;
+            line-height: 1.55;
+            color: #334155;
+            margin: 0;
+        }
+
+        /* ==========================================================================
+       SECTION 5: PLATFORMS WE KNOW
+       ========================================================================== */
+        .a2z-ec .platforms-new-section {
+            background-color: #ffffff;
+            padding: clamp(60px, 8vw, 100px) 20px;
+        }
+
+        .a2z-ec .platforms-container {
+            max-width: 1160px;
+            margin: 0 auto;
+        }
+
+        .a2z-ec .platforms-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            margin-top: 48px;
+        }
+
+        .a2z-ec .platform-card {
+            background: #ffffff;
+            border-radius: 20px;
+            border: 1px solid #E2E8F0;
+            overflow: hidden;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .a2z-ec .platform-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 18px 45px rgba(0, 0, 0, 0.08);
+        }
+
+        .a2z-ec .platform-card-arch {
+            background: var(--a2z-navy-dark);
+            padding: 28px 20px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            border-bottom: 3px solid var(--a2z-gold);
+        }
+
+        .a2z-ec .platform-card-arch svg {
+            color: #ffffff;
+        }
+
+        .a2z-ec .platform-card-body {
+            padding: 24px 20px 28px;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        .a2z-ec .platform-card-title {
+            font-size: 19px;
+            font-weight: 700;
+            color: var(--a2z-navy-dark);
+            margin: 0 0 12px;
+        }
+
+        .a2z-ec .platform-card-desc {
+            font-size: 14px;
+            color: #64748B;
+            margin: 0;
+            line-height: 1.55;
+        }
+
+        /* ==========================================================================
+       SECTION 6: TRUSTED SPOTLIGHT REVIEW
+       ========================================================================== */
+        .a2z-ec .trusted-review-section {
+            background-color: var(--a2z-navy-dark);
+            padding: clamp(60px, 8vw, 100px) 20px;
+            color: #ffffff;
+        }
+
+        .a2z-ec .trusted-container {
+            max-width: 1160px;
+            margin: 0 auto;
+        }
+
+        .a2z-ec .trusted-card {
+            background: var(--a2z-navy-card);
+            border: 1px solid rgba(196, 144, 90, 0.3);
+            border-radius: 24px;
+            padding: clamp(32px, 4vw, 56px);
+            display: grid;
+            grid-template-columns: 1.15fr 1fr;
+            gap: clamp(28px, 4vw, 56px);
+            align-items: center;
+            box-shadow: 0 24px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .a2z-ec .trusted-quote-title {
+            font-family: var(--a2z-font-sans);
+            font-size: clamp(24px, 2.8vw, 36px);
+            font-weight: 700;
+            color: #ffffff;
+            line-height: 1.25;
+            margin: 0 0 28px;
+        }
+
+        .a2z-ec .trusted-quote-title em {
+            font-family: var(--a2z-font-serif);
+            font-style: italic;
+            color: var(--a2z-gold);
+        }
+
+        .a2z-ec .trusted-author-wrap {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .a2z-ec .trusted-avatar {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            background: rgba(196, 144, 90, 0.2);
+            border: 2px solid var(--a2z-gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--a2z-gold);
+        }
+
+        .a2z-ec .trusted-name {
+            font-size: 17px;
+            font-weight: 700;
+            color: #ffffff;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .a2z-ec .trusted-verified {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--a2z-gold);
+            background: rgba(196, 144, 90, 0.15);
+            padding: 3px 10px;
+            border-radius: 50px;
+        }
+
+        .a2z-ec .trusted-right {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .a2z-ec .trusted-quote-text {
+            font-size: 16px;
+            line-height: 1.65;
+            color: #CBD5E1;
+            margin: 0;
+        }
+
+        .a2z-ec .google-badge-box {
+            background: var(--a2z-navy-dark);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 14px;
+            padding: 16px 22px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .a2z-ec .google-badge-left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .a2z-ec .google-score-num {
+            font-size: 20px;
+            font-weight: 800;
+            color: #ffffff;
+            margin-right: 6px;
+        }
+
+        .a2z-ec .google-stars {
+            color: #FBBF24;
+            font-size: 16px;
+        }
+
+        /* ==========================================================================
+       SECTION 7: WHY SPECIALIST (IMAGE + 2X2 GRID)
+       ========================================================================== */
+        .a2z-ec .why-specialist-new-section {
+            background-color: #ffffff;
+            padding: clamp(60px, 8vw, 100px) 20px;
+        }
+
+        .a2z-ec .why-specialist-container {
+            max-width: 1160px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            border-radius: 24px;
+            overflow: hidden;
+            border: 1px solid #E2E8F0;
+            box-shadow: 0 16px 45px rgba(0, 0, 0, 0.06);
+        }
+
+        .a2z-ec .why-left-col {
+            background: var(--a2z-navy-dark);
+            padding: clamp(32px, 4vw, 52px);
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .a2z-ec .why-left-col .why-eyebrow {
+            color: var(--a2z-gold);
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .a2z-ec .why-left-col .why-heading {
+            font-size: clamp(24px, 2.8vw, 34px);
+            font-weight: 700;
+            line-height: 1.25;
+            color: #ffffff;
+            margin: 0 0 18px;
+        }
+
+        .a2z-ec .why-left-col .why-desc {
+            color: #94A3B8;
+            font-size: 15px;
+            line-height: 1.6;
+            margin-bottom: 28px;
+        }
+
+        .a2z-ec .why-team-img {
+            width: 100%;
+            border-radius: 16px;
+            object-fit: cover;
+            aspect-ratio: 16/10;
+        }
+
+        .a2z-ec .why-right-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+        }
+
+        .a2z-ec .why-grid-card {
+            padding: clamp(24px, 3vw, 36px);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .a2z-ec .why-grid-card.bg-white {
+            background: #ffffff;
+        }
+
+        .a2z-ec .why-grid-card.bg-cream {
+            background: var(--a2z-cream-card);
+        }
+
+        .a2z-ec .why-icon-box {
+            width: 44px;
+            height: 44px;
+            border-radius: 10px;
+            background: var(--a2z-navy-dark);
+            color: var(--a2z-gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .a2z-ec .why-card-h {
+            font-size: 17px;
+            font-weight: 700;
+            color: var(--a2z-navy-dark);
+            margin: 0;
+        }
+
+        .a2z-ec .why-card-p {
+            font-size: 13.5px;
+            color: #64748B;
+            line-height: 1.55;
+            margin: 0;
+        }
+
+        /* ==========================================================================
+       SECTION 8: WHAT WE HANDLE (01-06)
+       ========================================================================== */
+        .a2z-ec .handle-new-section {
+            background-color: var(--a2z-navy-dark);
+            padding: clamp(60px, 8vw, 100px) 20px;
+            color: #ffffff;
+        }
+
+        .a2z-ec .handle-container {
+            max-width: 1160px;
+            margin: 0 auto;
+        }
+
+        .a2z-ec .handle-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 48px;
+        }
+
+        .a2z-ec .handle-card {
+            background: var(--a2z-navy-card);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 32px 28px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.25s ease, border-color 0.25s ease;
+        }
+
+        .a2z-ec .handle-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(196, 144, 90, 0.4);
+        }
+
+        .a2z-ec .handle-card-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .a2z-ec .handle-icon-circle {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: rgba(196, 144, 90, 0.15);
+            color: var(--a2z-gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .a2z-ec .handle-num {
+            font-size: 28px;
+            font-weight: 800;
+            color: rgba(196, 144, 90, 0.35);
+        }
+
+        .a2z-ec .handle-card-title {
+            font-size: 19px;
+            font-weight: 700;
+            color: #ffffff;
+            margin: 0 0 12px;
+        }
+
+        .a2z-ec .handle-card-desc {
+            font-size: 14px;
+            color: #94A3B8;
+            line-height: 1.55;
+            margin: 0;
+        }
+
+        /* ==========================================================================
+       SECTION 9: FINANCE FUNCTION (CIRCULAR PHOTO CARD)
+       ========================================================================== */
+        .a2z-ec .finance-function-section {
+            background-color: #ffffff;
+            padding: clamp(60px, 8vw, 100px) 20px;
+        }
+
+        .a2z-ec .ff-container {
+            max-width: 1160px;
+            margin: 0 auto;
+        }
+
+        .a2z-ec .ff-card {
+            background: var(--a2z-navy-dark);
+            border-radius: 24px;
+            padding: clamp(36px, 5vw, 64px);
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: clamp(32px, 4vw, 56px);
+            align-items: center;
+            box-shadow: 0 20px 50px rgba(8, 20, 35, 0.12);
+            position: relative;
+        }
+
+        .a2z-ec .ff-eyebrow {
+            color: var(--a2z-gold);
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 14px;
+            display: block;
+        }
+
+        .a2z-ec .ff-heading {
+            font-family: var(--a2z-font-sans);
+            font-size: clamp(26px, 3.2vw, 40px);
+            font-weight: 700;
+            color: #ffffff;
+            line-height: 1.2;
+            margin: 0 0 20px;
+        }
+
+        .a2z-ec .ff-heading em {
+            font-family: var(--a2z-font-serif);
+            font-style: italic;
+            color: var(--a2z-gold);
+        }
+
+        .a2z-ec .ff-desc {
+            color: #CBD5E1;
+            font-size: 15.5px;
+            line-height: 1.65;
+            margin-bottom: 32px;
+        }
+
+        .a2z-ec .ff-photo-circle-wrap {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .a2z-ec .ff-photo-circle {
+            width: clamp(220px, 25vw, 340px);
+            height: clamp(220px, 25vw, 340px);
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--a2z-gold);
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        /* ==========================================================================
+       SECTION 10: PROCESS (5 WORKING DAYS)
+       ========================================================================== */
+        .a2z-ec .process-new-section {
+            background-color: var(--a2z-navy-dark);
+            padding: clamp(60px, 8vw, 100px) 20px;
+            color: #ffffff;
+        }
+
+        .a2z-ec .proc-container {
+            max-width: 960px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .a2z-ec .timeline-wrapper {
+            position: relative;
+            margin: 48px auto;
+            padding-left: 180px;
+            text-align: left;
+        }
+
+        .a2z-ec .timeline-wrapper::before {
+            content: '';
+            position: absolute;
+            left: 140px;
+            top: 24px;
+            bottom: 24px;
+            width: 2px;
+            background: var(--a2z-gold);
+        }
+
+        .a2z-ec .timeline-step-row {
+            position: relative;
+            margin-bottom: 28px;
+        }
+
+        .a2z-ec .timeline-step-name {
+            position: absolute;
+            left: -180px;
+            top: 18px;
+            width: 120px;
+            text-align: right;
+            font-size: 20px;
+            font-weight: 700;
+            color: #ffffff;
+        }
+
+        .a2z-ec .timeline-node {
+            position: absolute;
+            left: -46px;
+            top: 22px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--a2z-gold);
+            border: 3px solid var(--a2z-navy-dark);
+        }
+
+        .a2z-ec .timeline-card {
+            background: #ffffff;
+            border-radius: 14px;
+            padding: 22px 28px;
+            color: #1E293B;
+            font-size: 15px;
+            line-height: 1.55;
+            font-weight: 500;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .a2z-ec .timeline-card span.tick {
+            color: #10B981;
+            font-weight: 800;
+            margin-right: 8px;
+        }
+
+        /* ==========================================================================
+       SECTION 11: WHO WE WORK BEST WITH (LEFT GOLD ACCENT TABS)
+       ========================================================================== */
+        .a2z-ec .who-work-best-section {
+            background-color: #ffffff;
+            padding: clamp(60px, 8vw, 100px) 20px;
+        }
+
+        .a2z-ec .who-container {
+            max-width: 1160px;
+            margin: 0 auto;
+        }
+
+        .a2z-ec .who-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 48px;
+        }
+
+        .a2z-ec .who-card {
+            background: var(--a2z-navy-dark);
+            border-radius: 16px;
+            overflow: hidden;
+            display: flex;
+            min-height: 180px;
+            box-shadow: 0 12px 35px rgba(8, 20, 35, 0.08);
+            transition: transform 0.25s ease;
+        }
+
+        .a2z-ec .who-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .a2z-ec .who-card-tab {
+            width: 36px;
+            background: var(--a2z-gold);
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            padding-top: 20px;
+            color: #081423;
+            flex-shrink: 0;
+        }
+
+        .a2z-ec .who-card-body {
+            padding: 22px 24px 20px;
+            flex: 1;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .a2z-ec .who-card-ghost-num {
+            position: absolute;
+            right: 14px;
+            bottom: 6px;
+            font-size: 52px;
+            font-weight: 800;
+            color: rgba(255, 255, 255, 0.05);
+            line-height: 1;
+            pointer-events: none;
+        }
+
+        .a2z-ec .who-card-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #ffffff;
+            margin: 0 0 8px;
+        }
+
+        .a2z-ec .who-card-desc {
+            font-size: 13.5px;
+            color: #94A3B8;
+            line-height: 1.55;
+            margin: 0;
+        }
+
+        /* ==========================================================================
+       SECTION 12: IMAGE BAND
+       ========================================================================== */
+        .a2z-ec .imgband-new-section {
+            position: relative;
+            padding: clamp(70px, 9vw, 110px) 20px;
+            background-color: var(--a2z-navy-dark);
+            background-image: linear-gradient(180deg, rgba(8, 20, 35, 0.85) 0%, rgba(8, 20, 35, 0.90) 100%), url('https://a2zaccounting.co.uk/wp-content/uploads/2026/06/a2z-photo-3-band.jpg');
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+            color: #ffffff;
+        }
+
+        .a2z-ec .imgband-content {
+            max-width: 840px;
+            margin: 0 auto;
+        }
+
+        /* ==========================================================================
+       SECTION 13: FREE TOOLS
+       ========================================================================== */
+        .a2z-ec .tools-new-section {
+            background-color: #F8FAFC;
+            padding: clamp(60px, 8vw, 100px) 20px;
+        }
+
+        .a2z-ec .tools-container {
+            max-width: 960px;
+            margin: 0 auto;
+        }
+
+        .a2z-ec .tools-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 28px;
+            margin-top: 44px;
+        }
+
+        .a2z-ec .tool-card {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 36px 32px;
+            border: 1px solid #E2E8F0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .a2z-ec .tool-badge {
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            color: var(--a2z-gold);
+            text-transform: uppercase;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .a2z-ec .tool-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--a2z-navy-dark);
+            margin: 0 0 12px;
+        }
+
+        .a2z-ec .tool-desc {
+            font-size: 14.5px;
+            color: #64748B;
+            line-height: 1.6;
+            margin-bottom: 24px;
+        }
+
+        /* ==========================================================================
+       SECTION 14: GUIDES (6 CARDS)
+       ========================================================================== */
+        .a2z-ec .guides-new-section {
+            background-color: var(--a2z-navy-dark);
+            padding: clamp(60px, 8vw, 100px) 20px;
+            color: #ffffff;
+        }
+
+        .a2z-ec .guides-container {
+            max-width: 1160px;
+            margin: 0 auto;
+        }
+
+        .a2z-ec .guides-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            margin-top: 48px;
+        }
+
+        .a2z-ec .guide-card {
+            background: var(--a2z-navy-card);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 18px;
+            overflow: hidden;
+            display: flex;
+            transition: transform 0.25s ease, border-color 0.25s ease;
+        }
+
+        .a2z-ec .guide-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(196, 144, 90, 0.4);
+        }
+
+        .a2z-ec .guide-img-wrap {
+            width: 160px;
+            background: #122B48;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .a2z-ec .guide-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .a2z-ec .guide-body {
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .a2z-ec .guide-tag {
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            color: var(--a2z-gold);
+            text-transform: uppercase;
+            margin-bottom: 6px;
+            display: block;
+        }
+
+        .a2z-ec .guide-title {
+            font-size: 17px;
+            font-weight: 700;
+            color: #ffffff;
+            margin: 0 0 12px;
+            line-height: 1.35;
+        }
+
+        .a2z-ec .guide-link {
+            font-size: 13.5px;
+            font-weight: 600;
+            color: var(--a2z-gold);
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* ==========================================================================
+       SECTION 15: FAQ ACCORDIONS
+       ========================================================================== */
+        .a2z-ec .faq-new-section {
+            background-color: #ffffff;
+            padding: clamp(60px, 8vw, 100px) 20px;
+        }
+
+        .a2z-ec .faq-container {
+            max-width: 860px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .a2z-ec .faq-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin: 44px 0;
+            text-align: left;
+        }
+
+        .a2z-ec .faq-item {
+            border: 1px solid #E2E8F0;
+            border-radius: 14px;
+            overflow: hidden;
+            background: #ffffff;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+            transition: border-color 0.2s ease;
+        }
+
+        .a2z-ec .faq-item[open] {
+            border-color: var(--a2z-gold);
+        }
+
+        .a2z-ec .faq-question {
+            padding: 20px 24px;
+            font-size: 17px;
+            font-weight: 600;
+            color: var(--a2z-navy-dark);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            list-style: none;
+        }
+
+        .a2z-ec .faq-question::-webkit-details-marker {
+            display: none;
+        }
+
+        .a2z-ec .faq-icon {
+            font-size: 20px;
+            font-weight: 400;
+            color: var(--a2z-gold);
+            transition: transform 0.25s ease;
+        }
+
+        .a2z-ec .faq-item[open] .faq-icon {
+            transform: rotate(45deg);
+        }
+
+        .a2z-ec .faq-answer {
+            padding: 0 24px 22px;
+            font-size: 15px;
+            color: #475569;
+            line-height: 1.6;
+        }
+
+        /* ==========================================================================
+       SECTION 16: BOTTOM CTA BANNER
+       ========================================================================== */
+        .a2z-ec .cta-new-section {
+            background-color: var(--a2z-navy-dark);
+            padding: clamp(60px, 8vw, 90px) 20px;
+        }
+
+        .a2z-ec .cta-container {
+            max-width: 1080px;
+            margin: 0 auto;
+        }
+
+        .a2z-ec .cta-card-box {
+            background: linear-gradient(135deg, #0D2238 0%, #081423 100%);
+            border: 1px solid rgba(196, 144, 90, 0.4);
+            border-radius: 24px;
+            padding: clamp(36px, 5vw, 64px) 24px;
+            text-align: center;
+            box-shadow: 0 24px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .a2z-ec .cta-heading {
+            font-family: var(--a2z-font-sans);
+            font-size: clamp(28px, 3.8vw, 46px);
+            font-weight: 700;
+            color: #ffffff;
+            line-height: 1.2;
+            margin: 0 0 16px;
+        }
+
+        .a2z-ec .cta-heading em {
+            font-family: var(--a2z-font-serif);
+            font-style: italic;
+            color: var(--a2z-gold);
+        }
+
+        .a2z-ec .cta-subtext {
+            font-size: 16px;
+            color: #CBD5E1;
+            max-width: 680px;
+            margin: 0 auto 32px;
+        }
+
+        .a2z-ec .cta-buttons-row {
+            display: flex;
+            gap: 18px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* ==========================================================================
+       SECTION 17: VIDEO REVIEWS CAROUSEL (VIDTEST)
+       ========================================================================== */
+        .a2z-ec .vidtest {
+            background-color: #ffffff;
+            padding: clamp(60px, 8vw, 100px) 0;
+            overflow: hidden;
+        }
+
+        .a2z-ec .a2zv {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+
+        .a2z-ec .a2zv-h {
+            font-family: var(--a2z-font-sans);
+            font-size: clamp(30px, 4.2vw, 48px);
+            font-weight: 700;
+            color: var(--a2z-navy-dark);
+            margin: 0 0 12px;
+        }
+
+        .a2z-ec .a2zv-sub {
+            font-size: 16px;
+            color: #64748B;
+            max-width: 650px;
+            margin: 0 auto 44px;
+        }
+
+        .a2z-ec .a2zv-vp {
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+        }
+
+        .a2z-ec .a2zv-track {
+            display: flex;
+            gap: 24px;
+            width: max-content;
+            animation: a2zv-marquee 35s linear infinite;
+        }
+
+        .a2z-ec .a2zv-track:hover {
+            animation-play-state: paused;
+        }
+
+        @keyframes a2zv-marquee {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .a2z-ec .a2zv-card {
+            width: 280px;
+            height: 380px;
+            border-radius: 18px;
+            overflow: hidden;
+            position: relative;
+            background: #081423;
+            flex-shrink: 0;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+            cursor: pointer;
+        }
+
+        .a2z-ec .a2zv-card video,
+        .a2z-ec .a2zv-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .a2z-ec .a2zv-card-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.1) 40%, rgba(8, 20, 35, 0.92) 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 20px;
+            color: #ffffff;
+        }
+
+        .a2z-ec .a2zv-play-btn {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: rgba(196, 144, 90, 0.85);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: auto;
+            color: #081423;
+            transition: transform 0.2s ease, background 0.2s ease;
+        }
+
+        .a2z-ec .a2zv-card:hover .a2zv-play-btn {
+            transform: scale(1.15);
+            background: var(--a2z-gold);
+        }
+
+        .a2z-ec .a2zv-client-info {
+            text-align: left;
+        }
+
+        .a2z-ec .a2zv-client-name {
+            font-size: 16px;
+            font-weight: 700;
+            margin: 0;
+            color: #ffffff;
+        }
+
+        .a2z-ec .a2zv-client-biz {
+            font-size: 13px;
+            color: var(--a2z-gold);
+            margin: 2px 0 0;
+        }
+
+        /* ==========================================================================
+       RESPONSIVE BREAKPOINTS
+       ========================================================================== */
+        @media (max-width: 1024px) {
+            .a2z-ec .calc-grid-inner {
+                grid-template-columns: 1fr;
+            }
+
+            .a2z-ec .anatomy-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .a2z-ec .anatomy-col-headers {
+                display: none;
+            }
+
+            .a2z-ec .platforms-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .a2z-ec .why-specialist-container {
+                grid-template-columns: 1fr;
+            }
+
+            .a2z-ec .handle-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .a2z-ec .ff-card {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .a2z-ec .who-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .a2z-ec .hides-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .a2z-ec .trusted-card {
+                grid-template-columns: 1fr;
+            }
+
+            .a2z-ec .why-right-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .a2z-ec .handle-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .a2z-ec .timeline-wrapper {
+                padding-left: 0;
+            }
+
+            .a2z-ec .timeline-wrapper::before {
+                display: none;
+            }
+
+            .a2z-ec .timeline-step-name {
+                position: static;
+                text-align: left;
+                margin-bottom: 8px;
+            }
+
+            .a2z-ec .timeline-node {
+                display: none;
+            }
+
+            .a2z-ec .who-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .a2z-ec .tools-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .a2z-ec .guides-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .a2z-ec .hero-cta-row,
+            .a2z-ec .cta-buttons-row {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .a2z-ec .btn-gold-solid,
+            .a2z-ec .btn-gold-outline {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .a2z-ec .anatomy-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .a2z-ec .platforms-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .a2z-ec .hero-feature-badge {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .a2z-ec .guide-card {
+                flex-direction: column;
+            }
+
+            .a2z-ec .guide-img-wrap {
+                width: 100%;
+                height: 140px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main class="a2z-ec">
+
+        <!-- ==========================================================================
+             01. HERO SECTION
+             ========================================================================== -->
+        <section class="new-hero-exact" id="hero-section">
+            <div class="hero-wrap">
+                <div class="hero-top-pill">SHOPIFY ACCOUNTANTS - UK-WIDE</div>
+                <h1 class="hero-main-title">Shopify Accountants Who<br>Show Your <em>Real Profit</em></h1>
+                <p class="hero-lead-text">Your Shopify payout is not your profit. Sales, payout and what you keep are
+                    three different numbers, and most sellers only ever see the first. We are specialist Shopify
+                    accountants for UK stores who reconcile your settlements, get your VAT right at home and across
+                    borders, and show your true profit every month.</p>
+
+                <div class="hero-cta-row">
+                    <a href="#a2z-enquire" class="btn-gold-solid">Book A Consultation</a>
+                    <a href="#a2z-feequote" class="btn-gold-outline">Get An Instant Fee Estimate</a>
+                </div>
+
+                <div class="hero-chartered-badge">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                        <polygon
+                            points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                        </polygon>
+                    </svg>
+                    <span>Chartered Certified</span>
+                </div>
+
+                <div class="hero-bottom-badges">
+                    <div class="hero-feature-badge">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C4905A" stroke-width="2">
+                            <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z">
+                            </path>
+                        </svg>
+                        <span>Remote Document Tools</span>
+                    </div>
+                    <div class="hero-feature-badge">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="#00B4D8">
+                            <circle cx="12" cy="12" r="10"></circle><text x="8" y="16" fill="#fff" font-size="12"
+                                font-weight="bold">X</text>
+                        </svg>
+                        <span>Xero</span>
+                    </div>
+                    <div class="hero-feature-badge">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                        </svg>
+                        <span>100% Paperless</span>
+                    </div>
+                    <div class="hero-feature-badge">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="#2CA01C">
+                            <circle cx="12" cy="12" r="10"></circle><text x="6" y="16" fill="#fff" font-size="10"
+                                font-weight="bold">qb</text>
+                        </svg>
+                        <span>QuickBooks</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================================================
+             02. PROFIT CALCULATOR SECTION
+             ========================================================================== -->
+        <section class="profit-calc-section" id="shopify-calc">
+            <div class="calc-container">
+                <span class="section-eyebrow">TRY IT YOURSELF</span>
+                <h2 class="section-heading-light">See what your Shopify<br>store <em>actually</em> keeps</h2>
+                <p class="section-subtext-light">Slide your monthly sales, then adjust the realities every Shopify
+                    seller lives with. The numbers move live, and this is exactly the gap we close each month.</p>
+
+                <div class="calc-card-outer">
+                    <div class="calc-grid-inner">
+                        <!-- Left Ledger -->
+                        <div class="calc-ledger-box">
+                            <div class="calc-ledger-row">
+                                <span>Gross sales</span>
+                                <span id="calcGross">£38,500</span>
+                            </div>
+                            <div class="calc-ledger-row">
+                                <span>Transaction & gateway fees</span>
+                                <span class="calc-neg" id="calcFees">-£847</span>
+                            </div>
+                            <div class="calc-ledger-row">
+                                <span>Refunds & returns</span>
+                                <span class="calc-neg" id="calcRefunds">-£1,925</span>
+                            </div>
+                            <div class="calc-ledger-row highlight-row">
+                                <span>Payout to your bank</span>
+                                <span id="calcPayout">£35,728</span>
+                            </div>
+                            <div class="calc-ledger-row">
+                                <span>Cost of goods</span>
+                                <span class="calc-neg" id="calcCogs">-£14,630</span>
+                            </div>
+                            <div class="calc-ledger-row">
+                                <span>Ad spend</span>
+                                <span class="calc-neg" id="calcAds">-£8,470</span>
+                            </div>
+
+                            <div class="calc-ledger-divider"></div>
+
+                            <div class="calc-ledger-final">
+                                <div>
+                                    <span class="calc-final-label">What you keep</span>
+                                    <span class="calc-final-sub" id="calcMarginLabel">33% margin - before owner pay and
+                                        tax</span>
+                                </div>
+                                <span class="calc-final-val" id="calcKeep">£12,628</span>
+                            </div>
+                        </div>
+
+                        <!-- Right Sliders -->
+                        <div class="calc-controls-col">
+                            <div class="calc-slider-item">
+                                <div class="calc-slider-top">
+                                    <span>Monthly Shopify sales</span>
+                                    <span class="calc-val-badge" id="salesVal">£38,500</span>
+                                </div>
+                                <input type="range" class="calc-range-input" id="salesSlider" min="5000" max="250000"
+                                    step="500" value="38500">
+                            </div>
+
+                            <div class="calc-slider-item">
+                                <div class="calc-slider-top">
+                                    <span>Transaction & gateway fees</span>
+                                    <span class="calc-val-badge" id="feesVal">2.2%</span>
+                                </div>
+                                <input type="range" class="calc-range-input" id="feesSlider" min="1.0" max="6.0"
+                                    step="0.1" value="2.2">
+                            </div>
+
+                            <div class="calc-slider-item">
+                                <div class="calc-slider-top">
+                                    <span>Refunds & returns</span>
+                                    <span class="calc-val-badge" id="refundsVal">5.0%</span>
+                                </div>
+                                <input type="range" class="calc-range-input" id="refundsSlider" min="0" max="20"
+                                    step="0.5" value="5.0">
+                            </div>
+
+                            <div class="calc-slider-item">
+                                <div class="calc-slider-top">
+                                    <span>Cost of goods</span>
+                                    <span class="calc-val-badge" id="cogsVal">38%</span>
+                                </div>
+                                <input type="range" class="calc-range-input" id="cogsSlider" min="10" max="75" step="1"
+                                    value="38">
+                            </div>
+
+                            <div class="calc-slider-item">
+                                <div class="calc-slider-top">
+                                    <span>Ad spend</span>
+                                    <span class="calc-val-badge" id="adsVal">22%</span>
+                                </div>
+                                <input type="range" class="calc-range-input" id="adsSlider" min="0" max="60" step="1"
+                                    value="22">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="calc-disclaimer-text">Illustrative, Using Your Own Assumptions. We Build The Exact Version
+                    From Your Real Shopify Settlements, Fees And VAT, Every Month.</p>
+            </div>
+        </section>
+
+        <!-- ==========================================================================
+             03. PAYOUT ANATOMY SECTION
+             ========================================================================== -->
+        <section class="anatomy-new-section" id="payout-anatomy">
+            <div class="anatomy-container">
+                <span class="section-eyebrow">THE ANATOMY OF A SHOPIFY PAYOUT</span>
+                <h2 class="section-heading-dark">What is actually inside a<br><em>Shopify payout</em></h2>
+
+                <p class="section-subtext-dark">A Shopify payout that lands in your bank is never simply sales. A single
+                    payout bundles several things together at once, and booked as one lump figure, every one of them
+                    distorts your VAT and your profit.<br><br>We reconcile each payout back to the underlying orders,
+                    usually with a specialist Shopify integration such as A2X or Link My Books feeding Xero or
+                    QuickBooks, so your accounts reflect what you actually earned, not just what hit the bank.</p>
+
+                <div class="anatomy-progress-wrap">
+                    <span class="anatomy-progress-label">WHAT ONE PAYOUT CONTAINS</span>
+                    <div class="anatomy-progress-bar">
+                        <div class="anatomy-bar-inflow"></div>
+                        <div class="anatomy-bar-outflow"></div>
+                        <div class="anatomy-bar-adj"></div>
+                    </div>
+                </div>
+
+                <div class="anatomy-col-headers">
+                    <div class="anatomy-col-title">INFLOW</div>
+                    <div class="anatomy-col-title">OUTFLOW</div>
+                    <div class="anatomy-col-title">ADJUSTMENTS & HELD</div>
+                </div>
+
+                <div class="anatomy-grid">
+                    <!-- 1 -->
+                    <div class="anatomy-card">
+                        <div class="anatomy-card-top">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <circle cx="9" cy="21" r="1"></circle>
+                                <circle cx="20" cy="21" r="1"></circle>
+                                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                            </svg>
+                            <span class="anatomy-badge">IN</span>
+                        </div>
+                        <h3 class="anatomy-card-h">Gross sales</h3>
+                        <p class="anatomy-card-desc">All orders across the period</p>
+                    </div>
+
+                    <!-- 2 -->
+                    <div class="anatomy-card">
+                        <div class="anatomy-card-top">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <line x1="19" y1="5" x2="5" y2="19"></line>
+                                <circle cx="6.5" cy="6.5" r="2.5"></circle>
+                                <circle cx="17.5" cy="17.5" r="2.5"></circle>
+                            </svg>
+                            <span class="anatomy-badge">OUT</span>
+                        </div>
+                        <h3 class="anatomy-card-h">Platform & gateway fees</h3>
+                        <p class="anatomy-card-desc">Shopify, Stripe, PayPal</p>
+                    </div>
+
+                    <!-- 3 -->
+                    <div class="anatomy-card">
+                        <div class="anatomy-card-top">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <polyline points="20 12 20 22 4 22 4 12"></polyline>
+                                <rect x="2" y="7" width="20" height="5"></rect>
+                                <line x1="12" y1="22" x2="12" y2="7"></line>
+                                <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"></path>
+                                <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"></path>
+                            </svg>
+                            <span class="anatomy-badge">ADJ</span>
+                        </div>
+                        <h3 class="anatomy-card-h">Gift cards & discounts</h3>
+                        <p class="anatomy-card-desc">Adjust the order totals</p>
+                    </div>
+
+                    <!-- 4 -->
+                    <div class="anatomy-card">
+                        <div class="anatomy-card-top">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <rect x="1" y="3" width="15" height="13"></rect>
+                                <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+                                <circle cx="5.5" cy="18.5" r="2.5"></circle>
+                                <circle cx="18.5" cy="18.5" r="2.5"></circle>
+                            </svg>
+                            <span class="anatomy-badge">IN</span>
+                        </div>
+                        <h3 class="anatomy-card-h">Shipping collected</h3>
+                        <p class="anatomy-card-desc">Charged on to customers</p>
+                    </div>
+
+                    <!-- 5 -->
+                    <div class="anatomy-card">
+                        <div class="anatomy-card-top">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <polyline points="1 4 1 10 7 10"></polyline>
+                                <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path>
+                            </svg>
+                            <span class="anatomy-badge">OUT</span>
+                        </div>
+                        <h3 class="anatomy-card-h">Refunds & chargebacks</h3>
+                        <p class="anatomy-card-desc">Netted off the payout</p>
+                    </div>
+
+                    <!-- 6 -->
+                    <div class="anatomy-card">
+                        <div class="anatomy-card-top">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                <polyline points="14 2 14 8 20 8"></polyline>
+                                <line x1="16" y1="13" x2="8" y2="13"></line>
+                                <line x1="16" y1="17" x2="8" y2="17"></line>
+                                <polyline points="10 9 9 9 8 9"></polyline>
+                            </svg>
+                            <span class="anatomy-badge">HELD</span>
+                        </div>
+                        <h3 class="anatomy-card-h">VAT collected</h3>
+                        <p class="anatomy-card-desc">Held for HMRC</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================================================
+             04. MARGIN LEAKS SECTION (DUAL BLUE/CREAM CARDS)
+             ========================================================================== -->
+        <section class="real-problems-section" id="margin-leaks">
+            <div class="hides-container">
+                <span class="section-eyebrow">WHERE SHOPIFY MONEY HIDES</span>
+                <h2 class="section-heading-dark">Where your margin quietly<br><em>leaks</em>, and how we stop it</h2>
+
+                <div class="hides-grid">
+                    <!-- Card 1 -->
+                    <div class="hides-card">
+                        <div class="hides-top-blue">
+                            <h3 class="hides-title">Fees buried in payouts</h3>
+                            <span class="hides-tag-issue">The Issue</span>
+                            <p>Shopify Payments and gateway fees come out before the money lands, so your bank deposit
+                                never matches your sales.</p>
+                        </div>
+                        <div class="hides-bot-cream">
+                            <span class="hides-tag-fix">How We Fix It</span>
+                            <p>We split every Shopify Payments, Stripe, PayPal and Klarna fee line by line, so your
+                                accounts and VAT reflect the genuine cost, not a net deposit.</p>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="hides-card">
+                        <div class="hides-top-blue">
+                            <h3 class="hides-title">The settlement delay</h3>
+                            <span class="hides-tag-issue">The Issue</span>
+                            <p>Payouts arrive on a delay and span several order dates, so sales and cash never line up
+                                without proper reconciliation.</p>
+                        </div>
+                        <div class="hides-bot-cream">
+                            <span class="hides-tag-fix">How We Fix It</span>
+                            <p>We reconcile each payout back to the orders it covers, with A2X or Link My Books feeding
+                                Xero or QuickBooks, so cash and sales finally agree.</p>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="hides-card">
+                        <div class="hides-top-blue">
+                            <h3 class="hides-title">Refunds and chargebacks</h3>
+                            <span class="hides-tag-issue">The Issue</span>
+                            <p>Netted off future payouts rather than shown cleanly, they quietly erode the margin you
+                                think you are making.</p>
+                        </div>
+                        <div class="hides-bot-cream">
+                            <span class="hides-tag-fix">How We Fix It</span>
+                            <p>We record refunds and chargebacks against the original sale, so revenue, VAT and margin
+                                stay accurate rather than overstated.</p>
+                        </div>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div class="hides-card">
+                        <div class="hides-top-blue">
+                            <h3 class="hides-title">Multi-currency and FX</h3>
+                            <span class="hides-tag-issue">The Issue</span>
+                            <p>Overseas sales and fees convert at different rates. Recorded wrong, they distort both
+                                your VAT position and your profit.</p>
+                        </div>
+                        <div class="hides-bot-cream">
+                            <span class="hides-tag-fix">How We Fix It</span>
+                            <p>We convert foreign-currency sales and fees consistently and book the FX correctly, so
+                                your numbers hold up across every market.</p>
+                        </div>
+                    </div>
+
+                    <!-- Card 5 -->
+                    <div class="hides-card">
+                        <div class="hides-top-blue">
+                            <h3 class="hides-title">VAT across borders</h3>
+                            <span class="hides-tag-issue">The Issue</span>
+                            <p>UK VAT plus EU and cross-border rules. Getting place of supply wrong is the single most
+                                expensive Shopify mistake.</p>
+                        </div>
+                        <div class="hides-bot-cream">
+                            <span class="hides-tag-fix">How We Fix It</span>
+                            <p>We set place of supply, OSS and IOSS, import VAT and registrations correctly, and
+                                document the treatment for HMRC, so you never overpay or get caught out.</p>
+                        </div>
+                    </div>
+
+                    <!-- Card 6 -->
+                    <div class="hides-card">
+                        <div class="hides-top-blue">
+                            <h3 class="hides-title">Ad spend versus real margin</h3>
+                            <span class="hides-tag-issue">The Issue</span>
+                            <p>Meta, Google and TikTok spend is rarely mapped to true contribution, so growth can
+                                quietly be unprofitable.</p>
+                        </div>
+                        <div class="hides-bot-cream">
+                            <span class="hides-tag-fix">How We Fix It</span>
+                            <p>We link advertising spend to margin by channel and product, so you scale what genuinely
+                                makes money rather than what only looks busy.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================================================
+             05. PLATFORMS WE KNOW
+             ========================================================================== -->
+        <section class="platforms-new-section" id="ecommerce-platforms">
+            <div class="platforms-container">
+                <span class="section-eyebrow">PLATFORMS WE KNOW INSIDE OUT</span>
+                <h2 class="section-heading-light">Specialist support for <em>every</em> channel<br>you sell on</h2>
+                <p class="section-subtext-light">Selling beyond Shopify too? Each platform reports money differently. We
+                    know exactly how, so your accounts reflect what you actually earned.</p>
+
+                <div class="platforms-grid">
+                    <!-- Amazon FBA -->
+                    <div class="platform-card">
+                        <div class="platform-card-arch">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path
+                                    d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z">
+                                </path>
+                                <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                                <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                            </svg>
+                        </div>
+                        <div class="platform-card-body">
+                            <h3 class="platform-card-title">Amazon FBA</h3>
+                            <p class="platform-card-desc">FBA fees, storage, referral and advertising untangled from
+                                your settlement statements.</p>
+                        </div>
+                    </div>
+
+                    <!-- WooCommerce -->
+                    <div class="platform-card">
+                        <div class="platform-card-arch">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <circle cx="9" cy="21" r="1"></circle>
+                                <circle cx="20" cy="21" r="1"></circle>
+                                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                            </svg>
+                        </div>
+                        <div class="platform-card-body">
+                            <h3 class="platform-card-title">WooCommerce</h3>
+                            <p class="platform-card-desc">Gateway fees, plugins and multi-currency sales mapped to
+                                clean, accurate records.</p>
+                        </div>
+                    </div>
+
+                    <!-- Dropshipping -->
+                    <div class="platform-card">
+                        <div class="platform-card-arch">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <rect x="1" y="3" width="15" height="13"></rect>
+                                <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+                                <circle cx="5.5" cy="18.5" r="2.5"></circle>
+                                <circle cx="18.5" cy="18.5" r="2.5"></circle>
+                            </svg>
+                        </div>
+                        <div class="platform-card-body">
+                            <h3 class="platform-card-title">Dropshipping</h3>
+                            <p class="platform-card-desc">Supplier costs, import VAT and thin margins tracked, so profit
+                                is real, not assumed.</p>
+                        </div>
+                    </div>
+
+                    <!-- E-commerce and retail -->
+                    <div class="platform-card">
+                        <div class="platform-card-arch">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                                <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                            </svg>
+                        </div>
+                        <div class="platform-card-body">
+                            <h3 class="platform-card-title">E-commerce and retail</h3>
+                            <p class="platform-card-desc">Our full online-seller specialism, for multi-channel and
+                                high-volume stores.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================================================
+             06. SPOTLIGHT CLIENT REVIEW
+             ========================================================================== -->
+        <section class="trusted-review-section" id="trusted-review">
+            <div class="trusted-container">
+                <span class="section-eyebrow">TRUSTED ACROSS THE UK</span>
+
+                <div class="trusted-card">
+                    <!-- Left Side -->
+                    <div class="trusted-left">
+                        <h3 class="trusted-quote-title">"Thoroughly impressed with the professionalism and expertise of
+                            <em>A2Z.</em>"
+                        </h3>
+
+                        <div class="trusted-author-wrap">
+                            <div class="trusted-avatar">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="12" cy="7" r="4"></circle>
+                                </svg>
+                            </div>
+                            <div>
+                                <span class="trusted-name">Andrew Clarkson</span>
+                                <span class="trusted-verified">✓ Verified Client</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Side -->
+                    <div class="trusted-right">
+                        <p class="trusted-quote-text">Their team is detail-oriented, friendly and always responsive, and
+                            they go above and beyond to ensure everything is accurate and transparent.</p>
+
+                        <div class="google-badge-box">
+                            <div class="google-badge-left">
+                                <svg width="28" height="28" viewBox="0 0 24 24">
+                                    <path fill="#4285F4"
+                                        d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" />
+                                    <path fill="#34A853"
+                                        d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" />
+                                    <path fill="#FBBC05"
+                                        d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z" />
+                                    <path fill="#EA4335"
+                                        d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z" />
+                                </svg>
+                                <div>
+                                    <span style="font-size: 13px; font-weight: 700; color: #fff; display: block;">Google
+                                        Reviews</span>
+                                    <span style="font-size: 11px; color: #94A3B8;">BASED ON 150+ REVIEWS</span>
+                                </div>
+                            </div>
+                            <div style="display: flex; align-items: center;">
+                                <span class="google-score-num">5.0</span>
+                                <span class="google-stars">★★★★★</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================================================
+             07. WHY SPECIALIST SECTION
+             ========================================================================== -->
+        <section class="why-specialist-new-section" id="why-specialist">
+            <div class="why-specialist-container">
+                <!-- Left Column -->
+                <div class="why-left-col">
+                    <div>
+                        <span class="why-eyebrow">WHY A SPECIALIST?</span>
+                        <h2 class="why-heading">Specialists in Shopify, not generalists who also do it</h2>
+                        <p class="why-desc">Payouts, settlements, gateway fees, multi-currency and cross-border VAT all
+                            sit between a Shopify sale and real profit. Most accountants can file your accounts; far
+                            fewer speak fluently about what decides whether a Shopify store is profitable.</p>
+                    </div>
+                    <img class="why-team-img"
+                        src="https://a2zaccounting.co.uk/wp-content/uploads/2026/06/a2z-photo-1-team-desk.jpg"
+                        alt="A2Z Accounting consultation">
+                </div>
+
+                <!-- Right 2x2 Grid -->
+                <div class="why-right-grid">
+                    <!-- Card 1 -->
+                    <div class="why-grid-card bg-white">
+                        <div class="why-icon-box">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <circle cx="12" cy="12" r="3"></circle>
+                                <path
+                                    d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z">
+                                </path>
+                            </svg>
+                        </div>
+                        <h3 class="why-card-h">We live in this every day</h3>
+                        <p class="why-card-p">The VAT margin scheme, OSS and IOSS, distance selling and marketplace fee
+                            splits are routine for us, not something we look up after you ask.</p>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="why-grid-card bg-cream">
+                        <div class="why-icon-box">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <line x1="18" y1="20" x2="18" y2="10"></line>
+                                <line x1="12" y1="20" x2="12" y2="4"></line>
+                                <line x1="6" y1="20" x2="6" y2="14"></line>
+                            </svg>
+                        </div>
+                        <h3 class="why-card-h">We measure real profit</h3>
+                        <p class="why-card-p">Stripe and Amazon payouts are not accounting records. We turn them into
+                            accurate margin per channel and per product, so you know what truly makes money.</p>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="why-grid-card bg-cream">
+                        <div class="why-icon-box">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="why-card-h">We keep your VAT defensible</h3>
+                        <p class="why-card-p">Cross-border, distance-selling, import VAT and digital-product rules,
+                            handled and documented for HMRC, so you neither overpay nor get caught out.</p>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div class="why-grid-card bg-white">
+                        <div class="why-icon-box">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                                <polyline points="2 17 12 22 22 17"></polyline>
+                                <polyline points="2 12 12 17 22 12"></polyline>
+                            </svg>
+                        </div>
+                        <h3 class="why-card-h">We work as your finance function</h3>
+                        <p class="why-card-p">Year-end and VAT as standard, with management accounts and cash-flow
+                            forecasting when you need to steer, not just report.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================================================
+             08. WHAT WE HANDLE (01-06)
+             ========================================================================== -->
+        <section class="handle-new-section" id="what-we-handle">
+            <div class="handle-container">
+                <span class="section-eyebrow">WHAT WE HANDLE</span>
+                <h2 class="section-heading-dark">The work behind a <em>profitable</em><br>Shopify store</h2>
+
+                <div class="handle-grid">
+                    <!-- 01 -->
+                    <div class="handle-card">
+                        <div class="handle-card-top">
+                            <div class="handle-icon-circle">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <line x1="4" y1="21" x2="4" y2="14"></line>
+                                    <line x1="4" y1="10" x2="4" y2="3"></line>
+                                    <line x1="12" y1="21" x2="12" y2="12"></line>
+                                    <line x1="12" y1="8" x2="12" y2="3"></line>
+                                    <line x1="20" y1="21" x2="20" y2="16"></line>
+                                    <line x1="20" y1="12" x2="20" y2="3"></line>
+                                    <line x1="1" y1="14" x2="7" y2="14"></line>
+                                    <line x1="9" y1="8" x2="15" y2="8"></line>
+                                    <line x1="17" y1="16" x2="23" y2="16"></line>
+                                </svg>
+                            </div>
+                            <span class="handle-num">01</span>
+                        </div>
+                        <h3 class="handle-card-title">Payout and settlement reconciliation</h3>
+                        <p class="handle-card-desc">Shopify Payments, Stripe, PayPal and Klarna, with fees, refunds and
+                            payouts split correctly and matched to real orders, never booked as a single net deposit.
+                        </p>
+                    </div>
+
+                    <!-- 02 -->
+                    <div class="handle-card">
+                        <div class="handle-card-top">
+                            <div class="handle-icon-circle">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <line x1="2" y1="12" x2="22" y2="12"></line>
+                                    <path
+                                        d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <span class="handle-num">02</span>
+                        </div>
+                        <h3 class="handle-card-title">VAT, UK and EU</h3>
+                        <p class="handle-card-desc">Registration at the right time as you near the £90,000 threshold,
+                            then returns, OSS and IOSS, import VAT and the scheme that suits you, run cleanly each
+                            quarter under Making Tax Digital.</p>
+                    </div>
+
+                    <!-- 03 -->
+                    <div class="handle-card">
+                        <div class="handle-card-top">
+                            <div class="handle-icon-circle">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+                                    <polyline points="17 6 23 6 23 12"></polyline>
+                                </svg>
+                            </div>
+                            <span class="handle-num">03</span>
+                        </div>
+                        <h3 class="handle-card-title">Real profit reporting</h3>
+                        <p class="handle-card-desc">Margin per product and per channel, so pricing and ad spend are
+                            decisions made on facts rather than on the bank balance.</p>
+                    </div>
+
+                    <!-- 04 -->
+                    <div class="handle-card">
+                        <div class="handle-card-top">
+                            <div class="handle-icon-circle">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                    <polyline points="14 2 14 8 20 8"></polyline>
+                                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                                    <polyline points="10 9 9 9 8 9"></polyline>
+                                </svg>
+                            </div>
+                            <span class="handle-num">04</span>
+                        </div>
+                        <h3 class="handle-card-title">Corporation tax and structure</h3>
+                        <p class="handle-card-desc">Corporation tax and profit-extraction planning, capital allowances
+                            on stock and equipment, and the right structure as you grow.</p>
+                    </div>
+
+                    <!-- 05 -->
+                    <div class="handle-card">
+                        <div class="handle-card-top">
+                            <div class="handle-icon-circle">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                                    <line x1="2" y1="10" x2="22" y2="10"></line>
+                                </svg>
+                            </div>
+                            <span class="handle-num">05</span>
+                        </div>
+                        <h3 class="handle-card-title">Cash flow and ad spend</h3>
+                        <p class="handle-card-desc">Forecasting that links stock and advertising to cash, so growth does
+                            not quietly leave you short when it is time to reorder.</p>
+                    </div>
+
+                    <!-- 06 -->
+                    <div class="handle-card">
+                        <div class="handle-card-top">
+                            <div class="handle-icon-circle">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                                </svg>
+                            </div>
+                            <span class="handle-num">06</span>
+                        </div>
+                        <h3 class="handle-card-title">Year-end and compliance</h3>
+                        <p class="handle-card-desc">Accounts and Companies House and HMRC returns prepared and filed on
+                            time, with deadlines tracked so nothing arrives as a surprise.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================================================
+             09. FINANCE FUNCTION SECTION
+             ========================================================================== -->
+        <section class="finance-function-section" id="finance-function">
+            <div class="ff-container">
+                <div class="ff-card">
+                    <div>
+                        <span class="ff-eyebrow">A FINANCE FUNCTION, NOT JUST FILING</span>
+                        <h2 class="ff-heading">Most accountants tell you what <em>happened</em>. We help you decide what
+                            to do <em>next.</em></h2>
+                        <p class="ff-desc">Compliance keeps HMRC happy. It does not help you price a product, plan a
+                            reorder or decide which channel deserves your ad budget. We pair accurate year-end and VAT
+                            with the management information online sellers actually run on, so every decision is backed
+                            by numbers you can trust.</p>
+                        <a href="#a2z-enquire" class="btn-gold-solid">Explore Management Accounts</a>
+                    </div>
+                    <div class="ff-photo-circle-wrap">
+                        <img class="ff-photo-circle"
+                            src="https://a2zaccounting.co.uk/wp-content/uploads/2026/06/a2z-photo-2-office.jpg"
+                            alt="A2Z Accounting team member">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================================================
+             10. PROCESS SECTION
+             ========================================================================== -->
+        <section class="process-new-section" id="process-timeline">
+            <div class="proc-container">
+                <span class="section-eyebrow">HOW WE START</span>
+                <h2 class="section-heading-dark">Live in five working days,<br><em>without</em> the disruption</h2>
+
+                <div class="timeline-wrapper">
+                    <!-- Step 1 -->
+                    <div class="timeline-step-row">
+                        <div class="timeline-step-name">Review</div>
+                        <div class="timeline-node"></div>
+                        <div class="timeline-card">
+                            <span class="tick">✓</span> We look at your channels, VAT position and current records, and
+                            show you where profit and tax are leaking.
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="timeline-step-row">
+                        <div class="timeline-step-name">Set up</div>
+                        <div class="timeline-node"></div>
+                        <div class="timeline-card">
+                            <span class="tick">✓</span> We connect your platforms and bank feeds, fix the chart of
+                            accounts, and get VAT and reconciliation running cleanly in Xero or QuickBooks.
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="timeline-step-row">
+                        <div class="timeline-step-name">Report</div>
+                        <div class="timeline-node"></div>
+                        <div class="timeline-card">
+                            <span class="tick">✓</span> You start seeing real margin by channel and product, with VAT
+                            and deadlines handled in the background.
+                        </div>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="timeline-step-row">
+                        <div class="timeline-step-name">Advise</div>
+                        <div class="timeline-node"></div>
+                        <div class="timeline-card">
+                            <span class="tick">✓</span> We meet to plan tax, structure and cash flow, so each decision
+                            is made on numbers you can trust.
+                        </div>
+                    </div>
+                </div>
+
+                <div style="margin-top: 40px;">
+                    <a href="#a2z-enquire" class="btn-gold-solid">Book A Consultation</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================================================
+             11. WHO WE WORK BEST WITH (LEFT GOLD TABS)
+             ========================================================================== -->
+        <section class="who-work-best-section" id="who-we-work-with">
+            <div class="who-container">
+                <span class="section-eyebrow">WHO WE WORK BEST WITH</span>
+                <h2 class="section-heading-light">Built for established and growing<br><em>online sellers</em></h2>
+
+                <div class="who-grid">
+                    <!-- 01 -->
+                    <div class="who-card">
+                        <div class="who-card-tab">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5">
+                                <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                                <line x1="3" y1="6" x2="21" y2="6"></line>
+                                <path d="M16 10a4 4 0 0 1-8 0"></path>
+                            </svg>
+                        </div>
+                        <div class="who-card-body">
+                            <span class="who-card-ghost-num">01</span>
+                            <h3 class="who-card-title">Established Shopify stores</h3>
+                            <p class="who-card-desc">Stores past the start-up stage, where payouts and VAT have outgrown
+                                a generalist bookkeeper.</p>
+                        </div>
+                    </div>
+
+                    <!-- 02 -->
+                    <div class="who-card">
+                        <div class="who-card-tab">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5">
+                                <circle cx="18" cy="5" r="3"></circle>
+                                <circle cx="6" cy="12" r="3"></circle>
+                                <circle cx="18" cy="19" r="3"></circle>
+                                <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+                                <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+                            </svg>
+                        </div>
+                        <div class="who-card-body">
+                            <span class="who-card-ghost-num">02</span>
+                            <h3 class="who-card-title">DTC and Shopify Plus brands</h3>
+                            <p class="who-card-desc">Direct-to-consumer brands scaling on ad spend, margin and repeat
+                                orders.</p>
+                        </div>
+                    </div>
+
+                    <!-- 03 -->
+                    <div class="who-card">
+                        <div class="who-card-tab">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5">
+                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                                <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                            </svg>
+                        </div>
+                        <div class="who-card-body">
+                            <span class="who-card-ghost-num">03</span>
+                            <h3 class="who-card-title">Multi-channel sellers</h3>
+                            <p class="who-card-desc">Selling across Shopify and Amazon, eBay or your own marketplace,
+                                with one clear set of numbers.</p>
+                        </div>
+                    </div>
+
+                    <!-- 04 -->
+                    <div class="who-card">
+                        <div class="who-card-tab">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5">
+                                <polyline points="23 4 23 10 17 10"></polyline>
+                                <polyline points="1 20 1 14 7 14"></polyline>
+                                <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path>
+                            </svg>
+                        </div>
+                        <div class="who-card-body">
+                            <span class="who-card-ghost-num">04</span>
+                            <h3 class="who-card-title">Subscription and digital</h3>
+                            <p class="who-card-desc">Recurring revenue and digital products, with cross-border VAT
+                                treated correctly.</p>
+                        </div>
+                    </div>
+
+                    <!-- 05 -->
+                    <div class="who-card">
+                        <div class="who-card-tab">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line x1="2" y1="12" x2="22" y2="12"></line>
+                                <path
+                                    d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+                                </path>
+                            </svg>
+                        </div>
+                        <div class="who-card-body">
+                            <span class="who-card-ghost-num">05</span>
+                            <h3 class="who-card-title">International and EU sellers</h3>
+                            <p class="who-card-desc">Stores shipping overseas, where OSS, IOSS and place of supply
+                                decide the VAT.</p>
+                        </div>
+                    </div>
+
+                    <!-- 06 -->
+                    <div class="who-card">
+                        <div class="who-card-tab">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5">
+                                <line x1="4" y1="21" x2="4" y2="14"></line>
+                                <line x1="4" y1="10" x2="4" y2="3"></line>
+                                <line x1="12" y1="21" x2="12" y2="12"></line>
+                                <line x1="12" y1="8" x2="12" y2="3"></line>
+                                <line x1="20" y1="21" x2="20" y2="16"></line>
+                                <line x1="20" y1="12" x2="20" y2="3"></line>
+                                <line x1="1" y1="14" x2="7" y2="14"></line>
+                                <line x1="9" y1="8" x2="15" y2="8"></line>
+                                <line x1="17" y1="16" x2="23" y2="16"></line>
+                            </svg>
+                        </div>
+                        <div class="who-card-body">
+                            <span class="who-card-ghost-num">06</span>
+                            <h3 class="who-card-title">Retail with POS and stock</h3>
+                            <p class="who-card-desc">Shops running Shopify POS alongside the online store, managing real
+                                inventory and margin.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================================================
+             12. IMAGE BAND SECTION
+             ========================================================================== -->
+        <section class="imgband-new-section" id="shopify-team-band">
+            <div class="imgband-content">
+                <span class="section-eyebrow" style="color: var(--a2z-gold);">A REAL PRACTICE BEHIND EVERY LOGIN</span>
+                <h2 class="section-heading-dark" style="margin-bottom: 0;">Cloud-based service.<br><em>A real team
+                        behind it.</em></h2>
+            </div>
+        </section>
+
+        <!-- ==========================================================================
+             13. FREE TOOLS SECTION
+             ========================================================================== -->
+        <section class="tools-new-section" id="free-tools">
+            <div class="tools-container">
+                <span class="section-eyebrow">FREE TOOLS</span>
+                <h2 class="section-heading-light">Run the numbers before<br>you <em>talk to us</em></h2>
+
+                <div class="tools-grid">
+                    <!-- Tool 1 -->
+                    <div class="tool-card">
+                        <div>
+                            <span class="tool-badge">Free Calculator</span>
+                            <h3 class="tool-title">Sole Trader vs Limited Company</h3>
+                            <p class="tool-desc">See which structure keeps more of your money, with the difference shown
+                                in pounds.</p>
+                        </div>
+                        <a href="https://a2zaccounting.co.uk/sole-trader-vs-limited-company-calculator/"
+                            class="btn-gold-solid">Open The Calculator</a>
+                    </div>
+
+                    <!-- Tool 2 -->
+                    <div class="tool-card">
+                        <div>
+                            <span class="tool-badge">Free Tool</span>
+                            <h3 class="tool-title">Business Budget and Profit Estimator</h3>
+                            <p class="tool-desc">Enter your income and costs to see your profit for the year, with cost
+                                lines built for your sector.</p>
+                        </div>
+                        <a href="https://a2zaccounting.co.uk/budget-profit-estimator/" class="btn-gold-solid">Open The
+                            Estimator</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================================================
+             14. GUIDES SECTION
+             ========================================================================== -->
+        <section class="guides-new-section" id="ecommerce-guides">
+            <div class="guides-container">
+                <span class="section-eyebrow">GO DEEPER</span>
+                <h2 class="section-heading-dark">Guides for<br><em>online sellers</em></h2>
+
+                <div class="guides-grid">
+                    <!-- Guide 1 -->
+                    <div class="guide-card">
+                        <div class="guide-img-wrap">
+                            <img src="https://a2zaccounting.co.uk/wp-content/uploads/2026/06/a2z-guide-vat.jpg"
+                                alt="VAT Guide">
+                        </div>
+                        <div class="guide-body">
+                            <div>
+                                <span class="guide-tag">VAT</span>
+                                <h3 class="guide-title">E-Commerce VAT Explained for UK Online Sellers</h3>
+                            </div>
+                            <a href="https://a2zaccounting.co.uk/resources/ecommerce-vat-guide/" class="guide-link">Read
+                                Guide →</a>
+                        </div>
+                    </div>
+
+                    <!-- Guide 2 -->
+                    <div class="guide-card">
+                        <div class="guide-img-wrap">
+                            <img src="https://a2zaccounting.co.uk/wp-content/uploads/2026/06/a2z-guide-profit.jpg"
+                                alt="Profit Guide">
+                        </div>
+                        <div class="guide-body">
+                            <div>
+                                <span class="guide-tag">PROFIT</span>
+                                <h3 class="guide-title">How Management Accounts Improve E-Commerce Profitability</h3>
+                            </div>
+                            <a href="https://a2zaccounting.co.uk/resources/management-accounts-ecommerce/"
+                                class="guide-link">Read Guide →</a>
+                        </div>
+                    </div>
+
+                    <!-- Guide 3 -->
+                    <div class="guide-card">
+                        <div class="guide-img-wrap">
+                            <img src="https://a2zaccounting.co.uk/wp-content/uploads/2026/06/a2z-guide-multichannel.jpg"
+                                alt="Multi-Channel Guide">
+                        </div>
+                        <div class="guide-body">
+                            <div>
+                                <span class="guide-tag">GUIDE</span>
+                                <h3 class="guide-title">Accounting &amp; VAT Guide for Shopify, Amazon FBA &amp;
+                                    Dropshipping</h3>
+                            </div>
+                            <a href="https://a2zaccounting.co.uk/resources/shopify-amazon-dropshipping-guide/"
+                                class="guide-link">Read Guide →</a>
+                        </div>
+                    </div>
+
+                    <!-- Guide 4 -->
+                    <div class="guide-card">
+                        <div class="guide-img-wrap">
+                            <img src="https://a2zaccounting.co.uk/wp-content/uploads/2026/06/a2z-guide-amazon.jpg"
+                                alt="Amazon Guide">
+                        </div>
+                        <div class="guide-body">
+                            <div>
+                                <span class="guide-tag">AMAZON</span>
+                                <h3 class="guide-title">The VAT Mistake Most Amazon Sellers Miss Until Year Two</h3>
+                            </div>
+                            <a href="https://a2zaccounting.co.uk/resources/amazon-vat-mistake/" class="guide-link">Read
+                                Guide →</a>
+                        </div>
+                    </div>
+
+                    <!-- Guide 5 -->
+                    <div class="guide-card">
+                        <div class="guide-img-wrap">
+                            <img src="https://a2zaccounting.co.uk/wp-content/uploads/2026/06/a2z-guide-hiring.jpg"
+                                alt="Hiring Guide">
+                        </div>
+                        <div class="guide-body">
+                            <div>
+                                <span class="guide-tag">CHOOSING</span>
+                                <h3 class="guide-title">Hiring an Amazon Accountant: Three Questions to Ask First</h3>
+                            </div>
+                            <a href="https://a2zaccounting.co.uk/resources/hiring-amazon-accountant/"
+                                class="guide-link">Read Guide →</a>
+                        </div>
+                    </div>
+
+                    <!-- Guide 6 -->
+                    <div class="guide-card">
+                        <div class="guide-img-wrap">
+                            <img src="https://a2zaccounting.co.uk/wp-content/uploads/2026/06/a2z-guide-overview.jpg"
+                                alt="Overview Guide">
+                        </div>
+                        <div class="guide-body">
+                            <div>
+                                <span class="guide-tag">OVERVIEW</span>
+                                <h3 class="guide-title">E-Commerce Accounting: Profit, VAT and Finance-Function Support
+                                </h3>
+                            </div>
+                            <a href="https://a2zaccounting.co.uk/resources/ecommerce-accounting-guide/"
+                                class="guide-link">Read Guide →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================================================
+             15. FAQ SECTION
+             ========================================================================== -->
+        <section class="faq-new-section" id="shopify-faq">
+            <div class="faq-container">
+                <span class="section-eyebrow">QUESTIONS WE ARE ASKED EVERY DAY</span>
+                <h2 class="section-heading-light">E-commerce accounting,<br><em>Answered plainly</em></h2>
+
+                <div class="faq-list">
+                    <!-- FAQ 1 -->
+                    <details class="faq-item" name="shopify-faq">
+                        <summary class="faq-question">
+                            <span>What does a Shopify accountant do?</span>
+                            <span class="faq-icon">+</span>
+                        </summary>
+                        <div class="faq-answer">
+                            A specialist Shopify accountant reconciles gross sales, gateway fees, refunds, and
+                            chargebacks from your settlement payouts back to individual orders. We ensure cross-border
+                            and UK VAT are calculated properly, connect inventory and sales feeds into Xero or
+                            QuickBooks, and produce management accounts that show true profit rather than just bank
+                            deposits.
+                        </div>
+                    </details>
+
+                    <!-- FAQ 2 -->
+                    <details class="faq-item" name="shopify-faq">
+                        <summary class="faq-question">
+                            <span>Do I need to register for VAT as a Shopify seller?</span>
+                            <span class="faq-icon">+</span>
+                        </summary>
+                        <div class="faq-answer">
+                            In the UK, you must register for VAT once your rolling 12-month taxable turnover passes
+                            £90,000 (or if you expect it to within 30 days). If you sell to EU consumers, you may also
+                            need to utilize the One-Stop Shop (OSS) or Import One-Stop Shop (IOSS) schemes. We track
+                            your threshold in real-time and handle all UK and cross-border registrations.
+                        </div>
+                    </details>
+
+                    <!-- FAQ 3 -->
+                    <details class="faq-item" name="shopify-faq">
+                        <summary class="faq-question">
+                            <span>Do I need a Shopify accountant if I already use Xero or QuickBooks?</span>
+                            <span class="faq-icon">+</span>
+                        </summary>
+                        <div class="faq-answer">
+                            Yes. Xero and QuickBooks are bookkeeping platforms, but raw Shopify payouts hit the bank as
+                            net lump sums. Without specialist middleware (like A2X or Link My Books) and e-commerce tax
+                            mapping, your accounts will misstate revenue, overpay or underpay VAT, and fail to account
+                            for merchant gateway fees.
+                        </div>
+                    </details>
+
+                    <!-- FAQ 4 -->
+                    <details class="faq-item" name="shopify-faq">
+                        <summary class="faq-question">
+                            <span>Which accounting software is best for a Shopify store?</span>
+                            <span class="faq-icon">+</span>
+                        </summary>
+                        <div class="faq-answer">
+                            We recommend Xero or QuickBooks Online paired with e-commerce settlement bridge software
+                            like A2X or Link My Books. This stack automatically splits fees, refunds, sales tax, and
+                            payouts into accurate daily or payout-based journal entries.
+                        </div>
+                    </details>
+
+                    <!-- FAQ 5 -->
+                    <details class="faq-item" name="shopify-faq">
+                        <summary class="faq-question">
+                            <span>How do you record Shopify payouts correctly?</span>
+                            <span class="faq-icon">+</span>
+                        </summary>
+                        <div class="faq-answer">
+                            Instead of coding the net bank deposit as a single sales line, we map gross sales, shipping
+                            collected, discounts, refunds, and gateway processing fees to their respective chart of
+                            accounts. The net settlement matches the exact deposit in your bank feed perfectly to the
+                            penny.
+                        </div>
+                    </details>
+                </div>
+
+                <a href="#a2z-enquire" class="btn-gold-solid">See All</a>
+            </div>
+        </section>
+
+        <!-- ==========================================================================
+             16. BOTTOM CTA BANNER
+             ========================================================================== -->
+        <section class="cta-new-section" id="bottom-cta">
+            <div class="cta-container">
+                <div class="cta-card-box">
+                    <h2 class="cta-heading">Ready for accounting that fits<br><em>How you actually sell?</em></h2>
+                    <p class="cta-subtext">Tell us about your channels, your stock and your VAT, and we will show you
+                        the clearest path to real, defensible profit.</p>
+                    <div class="cta-buttons-row">
+                        <a href="#a2z-enquire" class="btn-gold-solid">Book A Consultation</a>
+                        <a href="#a2z-feequote" class="btn-gold-outline">Get An Instant Fee Estimate</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================================================
+             17. CLIENT VIDEO REVIEWS CAROUSEL (VIDTEST)
+             ========================================================================== -->
+        <section class="vidtest" id="shopify-video-carousel">
+            <div class="a2zv">
+                <h2 class="a2zv-h">What our clients say</h2>
+                <p class="a2zv-sub">Real UK business owners on what changed when they moved to A2Z. Hover to pause, tap
+                    to play.</p>
+
+                <div class="a2zv-vp">
+                    <div class="a2zv-track">
+                        <!-- Card 1 -->
+                        <div class="a2zv-card">
+                            <video src="https://a2zaccounting.co.uk/wp-content/uploads/2026/06/Nazer.mp4"
+                                poster="https://a2zaccounting.co.uk/wp-content/uploads/2026/06/Nazer-thumb.jpg"
+                                playsinline preload="none"></video>
+                            <div class="a2zv-card-overlay">
+                                <div></div>
+                                <div class="a2zv-play-btn">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                        <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                                    </svg>
+                                </div>
+                                <div class="a2zv-client-info">
+                                    <h4 class="a2zv-client-name">Nazer</h4>
+                                    <p class="a2zv-client-biz">E-Commerce Founder</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 2 -->
+                        <div class="a2zv-card">
+                            <video src="https://a2zaccounting.co.uk/wp-content/uploads/2026/06/Ashlyn-Johnson.mp4"
+                                poster="https://a2zaccounting.co.uk/wp-content/uploads/2026/06/Ashlyn-Johnson-thumb.jpg"
+                                playsinline preload="none"></video>
+                            <div class="a2zv-card-overlay">
+                                <div></div>
+                                <div class="a2zv-play-btn">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                        <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                                    </svg>
+                                </div>
+                                <div class="a2zv-client-info">
+                                    <h4 class="a2zv-client-name">Ashlyn Johnson</h4>
+                                    <p class="a2zv-client-biz">Online Retailer</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 3 -->
+                        <div class="a2zv-card">
+                            <video src="https://a2zaccounting.co.uk/wp-content/uploads/2026/06/Nathan-Davies.mp4"
+                                poster="https://a2zaccounting.co.uk/wp-content/uploads/2026/06/Nathan-Davies-thumb.jpg"
+                                playsinline preload="none"></video>
+                            <div class="a2zv-card-overlay">
+                                <div></div>
+                                <div class="a2zv-play-btn">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                        <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                                    </svg>
+                                </div>
+                                <div class="a2zv-client-info">
+                                    <h4 class="a2zv-client-name">Nathan Davies</h4>
+                                    <p class="a2zv-client-biz">Shopify Merchant</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 4 -->
+                        <div class="a2zv-card">
+                            <video src="https://a2zaccounting.co.uk/wp-content/uploads/2026/06/Kevin-Smith.mp4"
+                                poster="https://a2zaccounting.co.uk/wp-content/uploads/2026/06/Kevin-Smith-thumb.jpg"
+                                playsinline preload="none"></video>
+                            <div class="a2zv-card-overlay">
+                                <div></div>
+                                <div class="a2zv-play-btn">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                        <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                                    </svg>
+                                </div>
+                                <div class="a2zv-client-info">
+                                    <h4 class="a2zv-client-name">Kevin Smith</h4>
+                                    <p class="a2zv-client-biz">Brand Director</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Cloned set for smooth infinite loop -->
+                        <!-- Card 1 Clone -->
+                        <div class="a2zv-card">
+                            <video src="https://a2zaccounting.co.uk/wp-content/uploads/2026/06/Nazer.mp4"
+                                poster="https://a2zaccounting.co.uk/wp-content/uploads/2026/06/Nazer-thumb.jpg"
+                                playsinline preload="none"></video>
+                            <div class="a2zv-card-overlay">
+                                <div></div>
+                                <div class="a2zv-play-btn">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                        <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                                    </svg>
+                                </div>
+                                <div class="a2zv-client-info">
+                                    <h4 class="a2zv-client-name">Nazer</h4>
+                                    <p class="a2zv-client-biz">E-Commerce Founder</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 2 Clone -->
+                        <div class="a2zv-card">
+                            <video src="https://a2zaccounting.co.uk/wp-content/uploads/2026/06/Ashlyn-Johnson.mp4"
+                                poster="https://a2zaccounting.co.uk/wp-content/uploads/2026/06/Ashlyn-Johnson-thumb.jpg"
+                                playsinline preload="none"></video>
+                            <div class="a2zv-card-overlay">
+                                <div></div>
+                                <div class="a2zv-play-btn">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                        <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                                    </svg>
+                                </div>
+                                <div class="a2zv-client-info">
+                                    <h4 class="a2zv-client-name">Ashlyn Johnson</h4>
+                                    <p class="a2zv-client-biz">Online Retailer</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 3 Clone -->
+                        <div class="a2zv-card">
+                            <video src="https://a2zaccounting.co.uk/wp-content/uploads/2026/06/Nathan-Davies.mp4"
+                                poster="https://a2zaccounting.co.uk/wp-content/uploads/2026/06/Nathan-Davies-thumb.jpg"
+                                playsinline preload="none"></video>
+                            <div class="a2zv-card-overlay">
+                                <div></div>
+                                <div class="a2zv-play-btn">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                        <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                                    </svg>
+                                </div>
+                                <div class="a2zv-client-info">
+                                    <h4 class="a2zv-client-name">Nathan Davies</h4>
+                                    <p class="a2zv-client-biz">Shopify Merchant</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 4 Clone -->
+                        <div class="a2zv-card">
+                            <video src="https://a2zaccounting.co.uk/wp-content/uploads/2026/06/Kevin-Smith.mp4"
+                                poster="https://a2zaccounting.co.uk/wp-content/uploads/2026/06/Kevin-Smith-thumb.jpg"
+                                playsinline preload="none"></video>
+                            <div class="a2zv-card-overlay">
+                                <div></div>
+                                <div class="a2zv-play-btn">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                        <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                                    </svg>
+                                </div>
+                                <div class="a2zv-client-info">
+                                    <h4 class="a2zv-client-name">Kevin Smith</h4>
+                                    <p class="a2zv-client-biz">Brand Director</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ==========================================================================
+         INTERACTIVE SCRIPTS
+         ========================================================================== -->
+    <script>
+        (function () {
+            // Profit Calculator Live Computation
+            const salesSlider = document.getElementById('salesSlider');
+            const feesSlider = document.getElementById('feesSlider');
+            const refundsSlider = document.getElementById('refundsSlider');
+            const cogsSlider = document.getElementById('cogsSlider');
+            const adsSlider = document.getElementById('adsSlider');
+
+            const salesVal = document.getElementById('salesVal');
+            const feesVal = document.getElementById('feesVal');
+            const refundsVal = document.getElementById('refundsVal');
+            const cogsVal = document.getElementById('cogsVal');
+            const adsVal = document.getElementById('adsVal');
+
+            const calcGross = document.getElementById('calcGross');
+            const calcFees = document.getElementById('calcFees');
+            const calcRefunds = document.getElementById('calcRefunds');
+            const calcPayout = document.getElementById('calcPayout');
+            const calcCogs = document.getElementById('calcCogs');
+            const calcAds = document.getElementById('calcAds');
+            const calcKeep = document.getElementById('calcKeep');
+            const calcMarginLabel = document.getElementById('calcMarginLabel');
+
+            function formatGBP(num) {
+                return '£' + Math.round(num).toLocaleString('en-GB');
+            }
+
+            function updateCalculator() {
+                if (!salesSlider) return;
+                const sales = parseFloat(salesSlider.value) || 38500;
+                const feesPct = parseFloat(feesSlider.value) || 2.2;
+                const refundsPct = parseFloat(refundsSlider.value) || 5.0;
+                const cogsPct = parseFloat(cogsSlider.value) || 38.0;
+                const adsPct = parseFloat(adsSlider.value) || 22.0;
+
+                salesVal.textContent = formatGBP(sales);
+                feesVal.textContent = feesPct.toFixed(1) + '%';
+                refundsVal.textContent = refundsPct.toFixed(1) + '%';
+                cogsVal.textContent = cogsPct.toFixed(0) + '%';
+                adsVal.textContent = adsPct.toFixed(0) + '%';
+
+                const feesAmount = sales * (feesPct / 100);
+                const refundsAmount = sales * (refundsPct / 100);
+                const payoutAmount = sales - feesAmount - refundsAmount;
+                const cogsAmount = sales * (cogsPct / 100);
+                const adsAmount = sales * (adsPct / 100);
+                const keepAmount = payoutAmount - cogsAmount - adsAmount;
+                const marginPct = (keepAmount / sales) * 100;
+
+                calcGross.textContent = formatGBP(sales);
+                calcFees.textContent = '-' + formatGBP(feesAmount);
+                calcRefunds.textContent = '-' + formatGBP(refundsAmount);
+                calcPayout.textContent = formatGBP(payoutAmount);
+                calcCogs.textContent = '-' + formatGBP(cogsAmount);
+                calcAds.textContent = '-' + formatGBP(adsAmount);
+                calcKeep.textContent = formatGBP(keepAmount);
+                calcMarginLabel.textContent = Math.round(marginPct) + '% margin - before owner pay and tax';
+            }
+
+            [salesSlider, feesSlider, refundsSlider, cogsSlider, adsSlider].forEach(slider => {
+                if (slider) {
+                    slider.addEventListener('input', updateCalculator);
+                }
+            });
+
+            updateCalculator();
+
+            // Video Carousel click-to-play handler
+            const cards = document.querySelectorAll('.a2zv-card');
+            cards.forEach(card => {
+                const video = card.querySelector('video');
+                const playBtn = card.querySelector('.a2zv-play-btn');
+                if (video && playBtn) {
+                    card.addEventListener('click', () => {
+                        if (video.paused) {
+                            // Pause all other videos
+                            document.querySelectorAll('.a2zv-card video').forEach(v => {
+                                if (v !== video) v.pause();
+                            });
+                            video.play();
+                            playBtn.style.opacity = '0';
+                        } else {
+                            video.pause();
+                            playBtn.style.opacity = '1';
+                        }
+                    });
+                }
+            });
+        })();
+    </script>
+
+    <!-- Structured Data Schemas -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "AccountingService",
+        "name": "A2Z Accounting - Shopify Accountants",
+        "image": "https://a2zaccounting.co.uk/wp-content/uploads/2026/06/a2z-photo-3-band.jpg",
+        "url": "https://a2zaccounting.co.uk/shopify-accountants/",
+        "telephone": "+442030000000",
+        "priceRange": "££",
+        "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "GB"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5.0",
+            "reviewCount": "150"
+        }
+    }
+    </script>
+</body>
+
+</html>
