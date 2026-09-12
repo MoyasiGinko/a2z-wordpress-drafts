@@ -2438,20 +2438,23 @@
         <!-- ============ TRUSTED ACROSS UK (EXACT DESIGN MATCH) ============ -->
         <style id="trusted-across-uk-design">
             .a2z-ec .trusted-uk-section {
-                padding: clamp(56px, 7vw, 96px) 0;
-                background-color: #0d1b2a;
-                color: #ffffff;
-                text-align: center;
-                position: relative;
+                padding: clamp(56px, 7vw, 96px) 0 !important;
+                background: linear-gradient(0deg, #112B46, #112B46) !important;
+                background-color: #112B46 !important;
+                color: #ffffff !important;
+                text-align: center !important;
+                position: relative !important;
             }
 
             .a2z-ec .trusted-uk-eyebrow {
                 font-family: 'Inter', system-ui, -apple-system, sans-serif !important;
-                font-size: 14px !important;
+                font-size: 20px !important;
                 font-weight: 700 !important;
-                letter-spacing: 1.5px !important;
+                font-style: normal !important;
+                letter-spacing: 1.2px !important;
                 text-transform: uppercase !important;
-                color: #D4A850 !important;
+                vertical-align: middle !important;
+                color: #D4A84F !important;
                 margin-bottom: clamp(28px, 3.5vw, 44px);
                 display: block;
                 text-align: center;
@@ -2461,7 +2464,7 @@
                 max-width: 1120px;
                 margin: 0 auto;
                 background: #081423;
-                border: 1px solid rgba(255, 255, 255, 0.08);
+                border: 1px solid #E9C17633 !important;
                 border-radius: 20px;
                 overflow: hidden;
                 display: grid;
@@ -2478,17 +2481,19 @@
                 flex-direction: column;
                 justify-content: space-between;
                 gap: 36px;
-                border-right: 1px solid rgba(255, 255, 255, 0.06);
             }
 
             .a2z-ec .trusted-uk-quote-title {
                 font-family: 'Playfair Display', Georgia, serif !important;
-                font-size: clamp(28px, 3.4vw, 42px) !important;
+                font-size: clamp(28px, 3.8vw, 48px) !important;
                 font-weight: 600 !important;
+                font-style: normal !important;
                 color: #FFFFFF !important;
                 line-height: 1.2 !important;
+                letter-spacing: 0px !important;
+                vertical-align: middle !important;
+                max-width: 415px !important;
                 margin: 0 !important;
-                letter-spacing: -0.01em !important;
             }
 
             .a2z-ec .trusted-uk-quote-title .gold-italic {
@@ -2497,74 +2502,91 @@
                 font-weight: 600 !important;
                 color: #D4A850 !important;
                 -webkit-text-fill-color: #D4A850 !important;
+                letter-spacing: 0px !important;
+                vertical-align: middle !important;
                 display: inline !important;
             }
 
             .a2z-ec .trusted-uk-author {
-                display: flex;
-                align-items: center;
-                gap: 16px;
+                display: flex !important;
+                align-items: center !important;
+                gap: 0 !important;
             }
 
             .a2z-ec .trusted-uk-avatar {
-                width: 48px;
-                height: 48px;
-                border-radius: 50%;
-                border: 1.5px solid #D4A850;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                color: #D4A850;
-                background: rgba(212, 168, 80, 0.08);
-                flex-shrink: 0;
+                width: 64px !important;
+                height: 64px !important;
+                border-radius: 9999px !important;
+                background: #1C2A41 !important;
+                border: 2px solid #D4A84F !important;
+                box-shadow: 0px 0px 15px 0px #C5A0594D !important;
+                display: flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+                color: #D4A84F !important;
+                flex-shrink: 0 !important;
             }
 
             .a2z-ec .trusted-uk-avatar svg {
-                width: 24px;
-                height: 24px;
-                stroke: #D4A850;
+                width: 30px !important;
+                height: 30px !important;
+                stroke: #D4A84F !important;
             }
 
             .a2z-ec .trusted-uk-author-info {
-                display: flex;
-                flex-direction: column;
-                gap: 4px;
+                display: flex !important;
+                flex-direction: column !important;
+                margin-left: 24px !important;
             }
 
             .a2z-ec .trusted-uk-name {
-                font-family: 'DM Sans', system-ui, sans-serif !important;
-                font-size: 17px !important;
+                font-family: 'Manrope', system-ui, sans-serif !important;
+                font-size: 24px !important;
                 font-weight: 700 !important;
+                font-style: normal !important;
                 color: #FFFFFF !important;
                 line-height: 1.2 !important;
+                letter-spacing: -0.6px !important;
+                vertical-align: middle !important;
+                margin-bottom: 10px !important;
             }
 
             .a2z-ec .trusted-uk-badge {
-                display: inline-flex;
-                align-items: center;
-                gap: 5px;
-                padding: 3px 10px;
-                border-radius: 20px;
-                background: rgba(212, 168, 80, 0.12);
-                border: 1px solid rgba(212, 168, 80, 0.35);
-                color: #D4A850;
+                display: inline-flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+                gap: 8px !important;
+                width: 142px !important;
+                height: 25px !important;
+                border-width: 1px !important;
+                padding-top: 4px !important;
+                padding-right: 12px !important;
+                padding-bottom: 4px !important;
+                padding-left: 12px !important;
+                border-radius: 9999px !important;
+                background: #E9C1761A !important;
+                border: 1px solid #D4A84F !important;
+                color: #D4A84F !important;
                 font-family: 'Inter', system-ui, sans-serif !important;
                 font-size: 10.5px !important;
                 font-weight: 700 !important;
                 letter-spacing: 0.6px !important;
                 text-transform: uppercase !important;
-                width: fit-content;
+                white-space: nowrap !important;
+                line-height: 1 !important;
+                box-sizing: border-box !important;
             }
 
             .a2z-ec .trusted-uk-badge svg {
-                width: 11px;
-                height: 11px;
-                fill: #D4A850;
+                width: 12px !important;
+                height: 12px !important;
+                fill: #D4A84F !important;
             }
 
             /* Right Side */
             .a2z-ec .trusted-uk-right {
                 background: #081423;
+                border-left: 1px solid #E9C17633 !important;
                 padding: clamp(32px, 4.5vw, 56px);
                 display: flex;
                 flex-direction: column;
@@ -2574,28 +2596,37 @@
             }
 
             .a2z-ec .trusted-uk-watermark {
-                position: absolute;
-                top: 24px;
-                right: 32px;
-                font-family: Georgia, serif;
-                font-size: 88px;
-                line-height: 1;
-                color: #FFFFFF;
-                opacity: 0.08;
-                pointer-events: none;
-                user-select: none;
+                position: absolute !important;
+                top: -20px !important;
+                right: 24px !important;
+                font-family: 'Liberation Serif', 'Times New Roman', Georgia, serif !important;
+                font-weight: 400 !important;
+                font-style: normal !important;
+                font-size: 300px !important;
+                line-height: 300px !important;
+                letter-spacing: 0px !important;
+                vertical-align: middle !important;
+                color: #D4A84F !important;
+                opacity: 0.08 !important;
+                pointer-events: none !important;
+                user-select: none !important;
+                z-index: 0 !important;
             }
 
             .a2z-ec .trusted-uk-desc {
-                font-family: 'DM Sans', system-ui, sans-serif !important;
-                font-size: clamp(16px, 1.3vw, 18px) !important;
-                font-weight: 400 !important;
-                color: #CBD5E1 !important;
-                line-height: 1.65 !important;
+                font-family: 'Manrope', system-ui, sans-serif !important;
+                font-size: 22px !important;
+                font-weight: 600 !important;
+                font-style: normal !important;
+                color: #FFFFFF !important;
+                line-height: 1.5 !important;
+                letter-spacing: 0px !important;
+                text-align: justify !important;
+                vertical-align: middle !important;
                 margin: 0 !important;
-                position: relative;
-                z-index: 1;
-                max-width: 440px;
+                position: relative !important;
+                z-index: 1 !important;
+                max-width: 440px !important;
             }
 
             .a2z-ec .trusted-uk-google-card {
@@ -2673,11 +2704,13 @@
 
                 .a2z-ec .trusted-uk-left {
                     border-right: none;
-                    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+                    border-bottom: none;
                     padding: 28px 20px;
                 }
 
                 .a2z-ec .trusted-uk-right {
+                    border-left: none !important;
+                    border-top: 1px solid #E9C17633 !important;
                     padding: 28px 20px;
                 }
 
