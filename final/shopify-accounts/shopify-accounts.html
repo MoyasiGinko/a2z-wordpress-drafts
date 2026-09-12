@@ -660,16 +660,16 @@
                 width: 842.76px !important;
                 height: 372.66px !important;
                 top: -12% !important;
-                left: -22% !important;
-                transform: rotate(-45deg) !important;
+                left: -25% !important;
+                transform: rotate(-40deg) !important;
             }
 
             .a2z-ec .calc-bg-shape-br {
                 width: 842.76px !important;
                 height: 372.66px !important;
-                top: 60% !important;
-                left: 62% !important;
-                transform: rotate(-45deg) !important;
+                top: 70% !important;
+                left: 60% !important;
+                transform: rotate(-50deg) !important;
             }
 
             .a2z-ec .calc-grid {
@@ -813,113 +813,140 @@
 
             /* Right Column: Sliders */
             .a2z-ec .calc-sliders-container {
-                display: flex;
-                flex-direction: column;
-                gap: 22px;
-                justify-content: center;
-                height: 100%;
+                display: flex !important;
+                flex-direction: column !important;
+                justify-content: space-between !important;
+                height: 656px !important;
+                max-height: 100% !important;
+                padding: 30px 10px 30px 20px !important;
+                box-sizing: border-box !important;
             }
 
             .a2z-ec .calc-slider-group {
-                display: flex;
-                flex-direction: column;
-                gap: 8px;
+                display: flex !important;
+                flex-direction: column !important;
+                gap: 0 !important;
+                width: 100% !important;
             }
 
             .a2z-ec .calc-slider-top {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
+                display: flex !important;
+                justify-content: space-between !important;
+                align-items: center !important;
+                width: 100% !important;
+                margin-bottom: 24px !important;
             }
 
             .a2z-ec .calc-slider-label {
-                font-family: 'DM Sans', system-ui, sans-serif !important;
-                font-size: 15px !important;
-                font-weight: 500 !important;
-                color: #FFFFFF !important;
+                font-family: 'Manrope', system-ui, sans-serif !important;
+                font-size: 18.68px !important;
+                font-weight: 600 !important;
+                color: #D6E3FF !important;
+                letter-spacing: 0px !important;
+                vertical-align: middle !important;
+                line-height: 1.3 !important;
             }
 
             .a2z-ec .calc-slider-val {
-                font-family: 'DM Sans', system-ui, sans-serif !important;
-                font-size: 16px !important;
-                font-weight: 700 !important;
-                color: #D4A850 !important;
-                font-variant-numeric: tabular-nums;
+                font-family: 'Manrope', system-ui, sans-serif !important;
+                font-size: 21.02px !important;
+                font-weight: 600 !important;
+                color: #E9C176 !important;
+                letter-spacing: 0px !important;
+                vertical-align: middle !important;
+                line-height: 1.3 !important;
+                font-variant-numeric: tabular-nums !important;
+                text-align: right !important;
             }
 
             .a2z-ec .calc-range-input {
-                -webkit-appearance: none;
-                -moz-appearance: none;
-                appearance: none;
-                width: 100%;
-                height: 6px;
-                border-radius: 3px;
-                background: rgba(255, 255, 255, 0.15);
-                outline: none;
-                cursor: pointer;
+                -webkit-appearance: none !important;
+                -moz-appearance: none !important;
+                appearance: none !important;
+                width: 100% !important;
+                height: 9.3px !important;
+                border-radius: 9999px !important;
+                background: #253347 !important;
+                outline: none !important;
+                cursor: pointer !important;
                 padding: 0 !important;
                 margin: 0 !important;
                 border: none !important;
             }
 
             .a2z-ec .calc-range-input::-webkit-slider-runnable-track {
-                -webkit-appearance: none;
-                height: 6px;
-                border-radius: 3px;
-                background: transparent;
-                border: none;
+                -webkit-appearance: none !important;
+                height: 9.3px !important;
+                border-radius: 9999px !important;
+                background: #253347 !important;
+                border: none !important;
             }
 
             .a2z-ec .calc-range-input::-webkit-slider-thumb {
-                -webkit-appearance: none;
-                appearance: none;
-                width: 20px;
-                height: 20px;
-                margin-top: -7px;
-                border-radius: 50%;
-                background: #D4A850;
-                border: 2px solid #0B1726;
-                box-shadow: 0 0 10px rgba(212, 168, 80, 0.6), 0 2px 5px rgba(0, 0, 0, 0.4);
-                cursor: grab;
-                box-sizing: border-box;
-                transition: transform 0.15s ease, box-shadow 0.15s ease;
+                -webkit-appearance: none !important;
+                appearance: none !important;
+                width: 20px !important;
+                height: 20px !important;
+                margin-top: -5.35px !important;
+                border-radius: 50% !important;
+                background: #E5B869 !important;
+                border: none !important;
+                box-shadow: 0 0 14px 4px rgba(229, 184, 105, 0.5), 0 0 24px 6px rgba(229, 184, 105, 0.25) !important;
+                cursor: grab !important;
+                box-sizing: border-box !important;
+                transition: transform 0.15s ease, box-shadow 0.15s ease !important;
             }
 
+            .a2z-ec .calc-range-input:active::-webkit-slider-thumb,
             .a2z-ec .calc-range-input::-webkit-slider-thumb:hover {
-                transform: scale(1.15);
-                box-shadow: 0 0 14px rgba(212, 168, 80, 0.85);
+                transform: scale(1.15) !important;
+                box-shadow: 0 0 18px 6px rgba(229, 184, 105, 0.7), 0 0 28px 8px rgba(229, 184, 105, 0.35) !important;
+                cursor: grabbing !important;
             }
 
             .a2z-ec .calc-range-input::-moz-range-track {
-                height: 6px;
-                border-radius: 3px;
-                background: transparent;
-                border: none;
+                height: 9.3px !important;
+                border-radius: 9999px !important;
+                background: #253347 !important;
+                border: none !important;
             }
 
             .a2z-ec .calc-range-input::-moz-range-thumb {
-                width: 20px;
-                height: 20px;
-                border-radius: 50%;
-                background: #D4A850;
-                border: 2px solid #0B1726;
-                box-shadow: 0 0 10px rgba(212, 168, 80, 0.6), 0 2px 5px rgba(0, 0, 0, 0.4);
-                cursor: grab;
-                box-sizing: border-box;
+                width: 20px !important;
+                height: 20px !important;
+                border-radius: 50% !important;
+                background: #E5B869 !important;
+                border: none !important;
+                box-shadow: 0 0 14px 4px rgba(229, 184, 105, 0.5), 0 0 24px 6px rgba(229, 184, 105, 0.25) !important;
+                cursor: grab !important;
+                box-sizing: border-box !important;
+                transition: transform 0.15s ease, box-shadow 0.15s ease !important;
+            }
+
+            .a2z-ec .calc-range-input:active::-moz-range-thumb,
+            .a2z-ec .calc-range-input::-moz-range-thumb:hover {
+                transform: scale(1.15) !important;
+                box-shadow: 0 0 18px 6px rgba(229, 184, 105, 0.7), 0 0 28px 8px rgba(229, 184, 105, 0.35) !important;
+                cursor: grabbing !important;
             }
 
             .a2z-ec .calc-bottom-note {
                 position: relative !important;
                 z-index: 1 !important;
-                font-family: 'DM Sans', system-ui, sans-serif !important;
-                font-size: 13.5px !important;
-                font-weight: 400 !important;
+                font-family: 'Manrope', system-ui, sans-serif !important;
+                font-size: 18px !important;
+                font-weight: 600 !important;
                 text-align: center !important;
-                color: #94A3B8 !important;
+                vertical-align: middle !important;
+                color: #FFFFFF !important;
+                letter-spacing: 1.4px !important;
+                text-transform: capitalize !important;
                 line-height: 1.55 !important;
-                margin-top: 36px !important;
-                padding-top: 24px !important;
-                border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+                max-width: 926px !important;
+                margin: 36px auto 0 auto !important;
+                padding-top: 0 !important;
+                border: none !important;
+                border-top: none !important;
             }
 
             /* Responsive */
@@ -935,6 +962,9 @@
 
                 .a2z-ec .calc-sliders-container {
                     order: 1;
+                    height: auto !important;
+                    gap: 24px !important;
+                    padding: 0 !important;
                 }
 
                 .a2z-ec .calc-ledger-card {
@@ -1085,11 +1115,7 @@
                 }
 
                 function updateSliderTrack(input) {
-                    var min = parseFloat(input.min) || 0;
-                    var max = parseFloat(input.max) || 100;
-                    var val = parseFloat(input.value) || 0;
-                    var pct = ((val - min) / (max - min)) * 100;
-                    input.style.background = 'linear-gradient(90deg, #D4A850 0%, #D4A850 ' + pct + '%, rgba(255, 255, 255, 0.15) ' + pct + '%)';
+                    input.style.background = '#253347';
                 }
 
                 function recalculate() {
