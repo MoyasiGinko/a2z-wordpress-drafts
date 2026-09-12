@@ -190,6 +190,49 @@
 
     <main class="a2z-ec">
 
+        <!-- ============ MASTER EYEBROW SYNCHRONIZATION ============ -->
+        <style id="master-eyebrow-sync">
+            /* Synchronize all section eyebrows in size & styling across desktop and mobile
+               (Excludes section.finance-function-section .ff-eyebrow and .a2z-ec .why-eyebrow per design spec) */
+            .a2z-ec .calc-eyebrow,
+            .a2z-ec .anatomy-eyebrow,
+            .a2z-ec .prob-eyebrow,
+            .a2z-ec .plat-eyebrow,
+            .a2z-ec .trusted-uk-eyebrow,
+            .a2z-ec .handle-eyebrow,
+            .a2z-ec .proc-eyebrow,
+            .a2z-ec .who-best-v2-eyebrow,
+            .a2z-ec .guides-eyebrow,
+            .a2z-ec .faq-eyebrow {
+                font-family: 'Inter', system-ui, -apple-system, sans-serif !important;
+                font-size: 20px !important;
+                font-weight: 700 !important;
+                font-style: normal !important;
+                letter-spacing: 1.2px !important;
+                vertical-align: middle !important;
+                text-transform: uppercase !important;
+                color: #D4A84F !important;
+                text-align: center !important;
+                display: block !important;
+            }
+
+            @media (max-width: 860px) {
+                .a2z-ec .calc-eyebrow,
+                .a2z-ec .anatomy-eyebrow,
+                .a2z-ec .prob-eyebrow,
+                .a2z-ec .plat-eyebrow,
+                .a2z-ec .trusted-uk-eyebrow,
+                .a2z-ec .handle-eyebrow,
+                .a2z-ec .proc-eyebrow,
+                .a2z-ec .who-best-v2-eyebrow,
+                .a2z-ec .guides-eyebrow,
+                .a2z-ec .faq-eyebrow {
+                    font-size: clamp(13px, 3.5vw, 16px) !important;
+                    letter-spacing: 1.2px !important;
+                }
+            }
+        </style>
+
         <!-- ============ HERO (EXACT DESIGN MATCH) ============ -->
         <style id="exact-hero-design">
             .a2z-ec .new-hero-exact {
@@ -1078,7 +1121,8 @@
                 }
 
                 .a2z-ec .calc-eyebrow {
-                    font-size: clamp(12px, 3.2vw, 15px) !important;
+                    font-size: clamp(13px, 3.5vw, 16px) !important;
+                    letter-spacing: 1.2px !important;
                     margin-bottom: 10px !important;
                 }
 
@@ -1535,7 +1579,7 @@
             }
 
             .a2z-ec .anatomy-eyebrow {
-                font-family: 'Manrope', system-ui, sans-serif !important;
+                font-family: 'Inter', system-ui, -apple-system, sans-serif !important;
                 font-size: 20px !important;
                 font-weight: 700 !important;
                 font-style: normal !important;
@@ -1836,7 +1880,8 @@
                 }
 
                 .a2z-ec .anatomy-eyebrow {
-                    font-size: clamp(12px, 3.2vw, 16px) !important;
+                    font-size: clamp(13px, 3.5vw, 16px) !important;
+                    letter-spacing: 1.2px !important;
                     margin-bottom: 10px !important;
                 }
 
@@ -2282,6 +2327,7 @@
             @media (max-width: 992px) {
                 .a2z-ec .prob-eyebrow {
                     font-size: clamp(13px, 3.5vw, 16px) !important;
+                    letter-spacing: 1.2px !important;
                     margin-bottom: 10px !important;
                 }
 
@@ -2406,104 +2452,88 @@
 
         <section class="real-problems-section">
             <div class="wrap">
-                <span class="prob-eyebrow">THE REAL PROBLEMS</span>
+                <span class="prob-eyebrow">WHERE SHOPIFY MONEY HIDES</span>
                 <h2 class="prob-heading">
-                    Where online sellers<br>
-                    lose money, and<br>
-                    <em>How we stop it</em>
+                    Where your margin quietly<br>
+                    leaks, and how we stop it
                 </h2>
 
                 <div class="prob-grid">
                     <!-- Card Pair 1 -->
                     <div class="prob-card-pair">
                         <div class="prob-blue-card">
-                            <h3 class="prob-card-title">Profit hidden in fees and refunds</h3>
+                            <h3 class="prob-card-title">Fees buried in payouts</h3>
                             <span class="prob-issue-tag">THE ISSUE</span>
-                            <p class="prob-issue-desc">Marketplaces bundle commission, FBA charges, advertising and
-                                refunds into one payout. Booked as a single deposit, your real costs disappear.</p>
+                            <p class="prob-issue-desc">Shopify Payments and gateway fees come out before the money lands, so your bank deposit never matches your sales.</p>
                         </div>
                         <div class="prob-fix-card">
                             <span class="prob-fix-tag">HOW WE FIX IT</span>
-                            <p class="prob-fix-desc">We split every fee, refund and chargeback line by line, so your
-                                accounts and VAT return reflect only the genuine costs you incurred.</p>
+                            <p class="prob-fix-desc">We split every Shopify Payments, Stripe, PayPal and Klarna fee line by line, so your accounts and VAT reflect the genuine cost, not a net deposit.</p>
                         </div>
                     </div>
 
                     <!-- Card Pair 2 -->
                     <div class="prob-card-pair">
                         <div class="prob-blue-card">
-                            <h3 class="prob-card-title">VAT that varies by border</h3>
+                            <h3 class="prob-card-title">The settlement delay</h3>
                             <span class="prob-issue-tag">THE ISSUE</span>
-                            <p class="prob-issue-desc">Distance-selling thresholds, OSS and IOSS, import VAT and customs
-                                duties differ by country, product and shipping method, and the rules keep moving.</p>
+                            <p class="prob-issue-desc">Payouts arrive on a delay and span several order dates, so sales and cash never line up without proper reconciliation.</p>
                         </div>
                         <div class="prob-fix-card">
                             <span class="prob-fix-tag">HOW WE FIX IT</span>
-                            <p class="prob-fix-desc">We register and file correctly across the UK and EU, and document
-                                the treatment for HMRC, so you neither overpay nor get caught out later.</p>
+                            <p class="prob-fix-desc">We reconcile each payout back to the orders it covers, with A2X or Link My Books feeding Xero or QuickBooks, so cash and sales finally agree.</p>
                         </div>
                     </div>
 
                     <!-- Card Pair 3 -->
                     <div class="prob-card-pair">
                         <div class="prob-blue-card">
-                            <h3 class="prob-card-title">Cash trapped in stock</h3>
+                            <h3 class="prob-card-title">Refunds and chargebacks</h3>
                             <span class="prob-issue-tag">THE ISSUE</span>
-                            <p class="prob-issue-desc">Overstock ties up cash, understock loses sales, and a healthy
-                                profit on paper can still leave you short when it is time to reorder.</p>
+                            <p class="prob-issue-desc">Netted off future payouts rather than shown cleanly, they quietly erode the margin you think you are making.</p>
                         </div>
                         <div class="prob-fix-card">
                             <span class="prob-fix-tag">HOW WE FIX IT</span>
-                            <p class="prob-fix-desc">Cash-flow forecasting that links stock to cash, so you grow and
-                                reorder with confidence rather than crossing your fingers.</p>
+                            <p class="prob-fix-desc">We record refunds and chargebacks against the original sale, so revenue, VAT and margin stay accurate rather than overstated.</p>
                         </div>
                     </div>
 
                     <!-- Card Pair 4 -->
                     <div class="prob-card-pair">
                         <div class="prob-blue-card">
-                            <h3 class="prob-card-title">Selling well, but somehow broke</h3>
+                            <h3 class="prob-card-title">Multi-currency and FX</h3>
                             <span class="prob-issue-tag">THE ISSUE</span>
-                            <p class="prob-issue-desc">High turnover does not mean high profit. Without margin by
-                                product and channel, it is easy to scale the very things that quietly lose money.</p>
+                            <p class="prob-issue-desc">Overseas sales and fees convert at different rates. Recorded wrong, they distort both your VAT position and your profit.</p>
                         </div>
                         <div class="prob-fix-card">
                             <span class="prob-fix-tag">HOW WE FIX IT</span>
-                            <p class="prob-fix-desc">Clear margin per product and per channel, so you cut what loses,
-                                back what works, and scale on evidence.</p>
+                            <p class="prob-fix-desc">We convert foreign-currency sales and fees consistently and book the FX correctly, so your numbers hold up across every market.</p>
                         </div>
                     </div>
 
                     <!-- Card Pair 5 -->
                     <div class="prob-card-pair">
                         <div class="prob-blue-card">
-                            <h3 class="prob-card-title">Foreign exchange & currency swings</h3>
+                            <h3 class="prob-card-title">VAT across borders</h3>
                             <span class="prob-issue-tag">THE ISSUE</span>
-                            <p class="prob-issue-desc">Selling across borders in USD or EUR while paying UK suppliers in
-                                GBP creates FX conversion gaps. Without accurate revaluation, currency swings quietly
-                                erode margins.</p>
+                            <p class="prob-issue-desc">UK VAT plus EU and cross-border rules. Getting place of supply wrong is the single most expensive Shopify mistake.</p>
                         </div>
                         <div class="prob-fix-card">
                             <span class="prob-fix-tag">HOW WE FIX IT</span>
-                            <p class="prob-fix-desc">Automated multi-currency ledger reconciliation tracking live
-                                exchange rates and FX gains/losses, giving you absolute clarity on true sterling profit.
-                            </p>
+                            <p class="prob-fix-desc">We set place of supply, OSS and IOSS, import VAT and registrations correctly, and document the treatment for HMRC, so you never overpay or get caught out.</p>
                         </div>
                     </div>
 
                     <!-- Card Pair 6 -->
                     <div class="prob-card-pair">
                         <div class="prob-blue-card">
-                            <h3 class="prob-card-title">Ad spend disconnected from true margins</h3>
+                            <h3 class="prob-card-title">Ad spend versus real margin</h3>
                             <span class="prob-issue-tag">THE ISSUE</span>
-                            <p class="prob-issue-desc">Meta and TikTok ad spend isolated in platform dashboards fails to
-                                reflect true blended ROAS, payment processing fees, and real-time product cost of goods.
-                            </p>
+                            <p class="prob-issue-desc">Meta, Google and TikTok spend is rarely mapped to true contribution, so growth can quietly be unprofitable.</p>
                         </div>
                         <div class="prob-fix-card">
                             <span class="prob-fix-tag">HOW WE FIX IT</span>
-                            <p class="prob-fix-desc">We tie your marketing spend and customer acquisition costs directly
-                                into your management accounts, so you only scale genuinely profitable campaigns.</p>
+                            <p class="prob-fix-desc">We link advertising spend to margin by channel and product, so you scale what genuinely makes money rather than what only looks busy.</p>
                         </div>
                     </div>
                 </div>
@@ -2526,7 +2556,7 @@
                 font-style: normal !important;
                 letter-spacing: 1.2px !important;
                 text-transform: uppercase !important;
-                color: #D4A850 !important;
+                color: #D4A84F !important;
                 text-align: center !important;
                 vertical-align: middle;
                 margin-bottom: 12px;
@@ -2752,6 +2782,7 @@
 
                 .a2z-ec .plat-eyebrow {
                     font-size: clamp(13px, 3.5vw, 16px) !important;
+                    letter-spacing: 1.2px !important;
                     margin-bottom: 10px !important;
                 }
 
@@ -2887,35 +2918,10 @@
                         on</span>
                 </h2>
                 <p class="plat-subtext">
-                    Each platform reports money differently. We know exactly how, so your accounts reflect what you
-                    actually earned.
+                    Selling beyond Shopify too? Each platform reports money differently. We know exactly how, so your accounts reflect what you actually earned.
                 </p>
 
                 <div class="plat-cards-grid">
-                    <!-- Shopify -->
-                    <a href="/shopify-accountants-uk/" class="plat-card">
-                        <div class="plat-card-header">
-                            <div class="plat-icon-box">
-                                <svg viewBox="0 0 24 24" aria-hidden="true">
-                                    <path d="M3 9l1-5h16l1 5v11a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9z" fill="none"
-                                        stroke="#FFFFFF" stroke-width="2" stroke-linejoin="round"></path>
-                                    <path d="M3 9h18" stroke="#FFFFFF" stroke-width="2"></path>
-                                    <path d="M9 13h6v8H9z" fill="none" stroke="#FFFFFF" stroke-width="2"></path>
-                                </svg>
-                            </div>
-                            <svg class="plat-header-curve" viewBox="0 0 300 70" preserveAspectRatio="none"
-                                aria-hidden="true">
-                                <path d="M 0 0 C 50 70, 250 70, 300 0 L 300 70 L 0 70 Z" fill="#FFFFFF" />
-                                <path d="M 0 0 C 50 70, 250 70, 300 0" fill="none" stroke="#D4A850" stroke-width="7" />
-                            </svg>
-                        </div>
-                        <div class="plat-card-body">
-                            <h3 class="plat-card-title">Shopify</h3>
-                            <p class="plat-card-desc">Payouts, fees and app subscriptions reconciled, with true store
-                                margin and VAT handled.</p>
-                        </div>
-                    </a>
-
                     <!-- Amazon FBA -->
                     <a href="/amazon-fba-accountant/" class="plat-card">
                         <div class="plat-card-header">
@@ -2936,8 +2942,7 @@
                         </div>
                         <div class="plat-card-body">
                             <h3 class="plat-card-title">Amazon FBA</h3>
-                            <p class="plat-card-desc">FBA fees, storage, referral and advertising untangled from your
-                                settlement statements.</p>
+                            <p class="plat-card-desc">FBA fees, storage, referral and advertising untangled from your settlement statements.</p>
                         </div>
                     </a>
 
@@ -2959,8 +2964,7 @@
                         </div>
                         <div class="plat-card-body">
                             <h3 class="plat-card-title">WooCommerce</h3>
-                            <p class="plat-card-desc">Gateway fees, plugins and multi-currency sales mapped to clean,
-                                accurate records.</p>
+                            <p class="plat-card-desc">Gateway fees, plugins and multi-currency sales mapped to clean, accurate records.</p>
                         </div>
                     </a>
 
@@ -2983,8 +2987,30 @@
                         </div>
                         <div class="plat-card-body">
                             <h3 class="plat-card-title">Dropshipping</h3>
-                            <p class="plat-card-desc">Supplier costs, import VAT and thin margins tracked, so profit is
-                                real, not assumed.</p>
+                            <p class="plat-card-desc">Supplier costs, import VAT and thin margins tracked, so profit is real, not assumed.</p>
+                        </div>
+                    </a>
+
+                    <!-- E-commerce and retail -->
+                    <a href="/ecommerce-accountants/" class="plat-card">
+                        <div class="plat-card-header">
+                            <div class="plat-icon-box">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <path d="M3 9l1-5h16l1 5"></path>
+                                    <path d="M3 9c0 1.5 1 2.5 2 2.5s2-1 2-2.5c0 1.5 1 2.5 2 2.5s2-1 2-2.5c0 1.5 1 2.5 2 2.5s2-1 2-2.5c0 1.5 1 2.5 2 2.5s2-1 2-2.5"></path>
+                                    <path d="M4 11.5V20a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-8.5"></path>
+                                    <path d="M9 21v-7h6v7"></path>
+                                </svg>
+                            </div>
+                            <svg class="plat-header-curve" viewBox="0 0 300 70" preserveAspectRatio="none"
+                                aria-hidden="true">
+                                <path d="M 0 0 C 50 70, 250 70, 300 0 L 300 70 L 0 70 Z" fill="#FFFFFF" />
+                                <path d="M 0 0 C 50 70, 250 70, 300 0" fill="none" stroke="#D4A850" stroke-width="7" />
+                            </svg>
+                        </div>
+                        <div class="plat-card-body">
+                            <h3 class="plat-card-title">E-commerce<br>and retail</h3>
+                            <p class="plat-card-desc">Our full online-seller specialism, for multi-channel and high-volume stores.</p>
                         </div>
                     </a>
                 </div>
@@ -3327,7 +3353,8 @@
                 }
 
                 .a2z-ec .trusted-uk-eyebrow {
-                    font-size: clamp(13px, 3.2vw, 16px) !important;
+                    font-size: clamp(13px, 3.5vw, 16px) !important;
+                    letter-spacing: 1.2px !important;
                     margin-bottom: 20px !important;
                 }
 
@@ -3936,12 +3963,10 @@
                     <div class="why-left-col">
                         <span class="why-eyebrow">WHY A SPECIALIST?</span>
                         <h2 class="why-heading">
-                            Specialists in online business, not generalists who also do it.
+                            Specialists in Shopify, not generalists who also do it
                         </h2>
                         <p class="why-subtext">
-                            Marketplace fees, refunds, multi-country VAT, foreign exchange and stock all sit between
-                            turnover and real profit. Most accountants can file your accounts; far fewer speak fluently
-                            about what decides whether an online business is profitable.
+                            Payouts, settlements, gateway fees, multi-currency and cross-border VAT all sit between a Shopify sale and real profit. Most accountants can file your accounts; far fewer speak fluently about what decides whether a Shopify store is profitable.
                         </p>
 
                         <div class="why-photo-box">
@@ -4058,11 +4083,13 @@
 
             .a2z-ec .handle-eyebrow {
                 font-family: 'Inter', system-ui, -apple-system, sans-serif !important;
-                font-size: 13.5px !important;
                 font-weight: 700 !important;
-                letter-spacing: 1.8px !important;
+                font-style: normal !important;
+                font-size: 20px !important;
+                letter-spacing: 1.2px !important;
+                vertical-align: middle !important;
                 text-transform: uppercase !important;
-                color: #D4A850 !important;
+                color: #D4A84F !important;
                 margin-bottom: 14px !important;
                 display: block !important;
                 text-align: center !important;
@@ -4206,7 +4233,8 @@
                 }
 
                 .a2z-ec .handle-eyebrow {
-                    font-size: clamp(12px, 3.2vw, 14px) !important;
+                    font-size: clamp(13px, 3.5vw, 16px) !important;
+                    letter-spacing: 1.2px !important;
                     margin-bottom: 10px !important;
                 }
 
@@ -5086,7 +5114,8 @@
                 }
 
                 section.process-new-section .proc-eyebrow {
-                    font-size: clamp(12px, 3.2vw, 16px) !important;
+                    font-size: clamp(13px, 3.5vw, 16px) !important;
+                    letter-spacing: 1.2px !important;
                     margin-bottom: 10px !important;
                 }
 
@@ -5349,11 +5378,13 @@
 
             .a2z-ec .who-best-v2-eyebrow {
                 font-family: 'Inter', system-ui, -apple-system, sans-serif !important;
-                font-size: 13.5px !important;
                 font-weight: 700 !important;
-                letter-spacing: 2px !important;
+                font-style: normal !important;
+                font-size: 20px !important;
+                letter-spacing: 1.2px !important;
+                vertical-align: middle !important;
                 text-transform: uppercase !important;
-                color: #D4A850 !important;
+                color: #D4A84F !important;
                 margin-bottom: 16px !important;
                 display: block !important;
                 text-align: center !important;
@@ -5521,7 +5552,8 @@
                 }
 
                 .a2z-ec .who-best-v2-eyebrow {
-                    font-size: clamp(12px, 3.2vw, 14px) !important;
+                    font-size: clamp(13px, 3.5vw, 16px) !important;
+                    letter-spacing: 1.2px !important;
                     margin-bottom: 10px !important;
                 }
 
@@ -5789,11 +5821,11 @@
             }
 
             section.imgband-new-section .imgband-eyebrow {
-                font-family: 'Manrope', system-ui, sans-serif !important;
-                font-weight: 600 !important;
+                font-family: 'Inter', system-ui, -apple-system, sans-serif !important;
+                font-weight: 700 !important;
                 font-style: normal !important;
-                font-size: clamp(18px, 2.2vw, 32px) !important;
-                letter-spacing: 0px !important;
+                font-size: 20px !important;
+                letter-spacing: 1.2px !important;
                 vertical-align: middle;
                 text-transform: uppercase !important;
                 color: #FFFFFF !important;
@@ -5861,8 +5893,8 @@
                 }
 
                 section.imgband-new-section .imgband-eyebrow {
-                    font-size: clamp(12px, 3.2vw, 16px) !important;
-                    letter-spacing: 0.5px !important;
+                    font-size: clamp(13px, 3.5vw, 16px) !important;
+                    letter-spacing: 1.2px !important;
                 }
 
                 section.imgband-new-section .imgband-heading,
@@ -6582,7 +6614,8 @@
                 }
 
                 section.guides-new-section .guides-eyebrow {
-                    font-size: clamp(12px, 3.2vw, 16px) !important;
+                    font-size: clamp(13px, 3.5vw, 16px) !important;
+                    letter-spacing: 1.2px !important;
                     margin-bottom: 10px !important;
                 }
 
@@ -7028,7 +7061,8 @@
                 }
 
                 section.faq-new-section .faq-eyebrow {
-                    font-size: clamp(12px, 3.2vw, 14px) !important;
+                    font-size: clamp(13px, 3.5vw, 16px) !important;
+                    letter-spacing: 1.2px !important;
                     margin-bottom: 8px !important;
                 }
 
