@@ -1437,6 +1437,8 @@
             </div>
         </section>
 
+
+
         <!-- ============ THE REAL PROBLEMS SECTION (EXACT DESIGN MATCH) ============ -->
         <style id="real-problems-design">
             .a2z-ec .real-problems-section {
@@ -2429,6 +2431,320 @@
                                 real, not assumed.</p>
                         </div>
                     </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ TRUSTED ACROSS UK (EXACT DESIGN MATCH) ============ -->
+        <style id="trusted-across-uk-design">
+            .a2z-ec .trusted-uk-section {
+                padding: clamp(56px, 7vw, 96px) 0;
+                background-color: #0d1b2a;
+                color: #ffffff;
+                text-align: center;
+                position: relative;
+            }
+
+            .a2z-ec .trusted-uk-eyebrow {
+                font-family: 'Inter', system-ui, -apple-system, sans-serif !important;
+                font-size: 14px !important;
+                font-weight: 700 !important;
+                letter-spacing: 1.5px !important;
+                text-transform: uppercase !important;
+                color: #D4A850 !important;
+                margin-bottom: clamp(28px, 3.5vw, 44px);
+                display: block;
+                text-align: center;
+            }
+
+            .a2z-ec .trusted-uk-card {
+                max-width: 1120px;
+                margin: 0 auto;
+                background: #081423;
+                border: 1px solid rgba(255, 255, 255, 0.08);
+                border-radius: 20px;
+                overflow: hidden;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.5);
+                text-align: left;
+            }
+
+            /* Left Side */
+            .a2z-ec .trusted-uk-left {
+                background: #0A192C;
+                padding: clamp(32px, 4.5vw, 56px);
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                gap: 36px;
+                border-right: 1px solid rgba(255, 255, 255, 0.06);
+            }
+
+            .a2z-ec .trusted-uk-quote-title {
+                font-family: 'Playfair Display', Georgia, serif !important;
+                font-size: clamp(28px, 3.4vw, 42px) !important;
+                font-weight: 600 !important;
+                color: #FFFFFF !important;
+                line-height: 1.2 !important;
+                margin: 0 !important;
+                letter-spacing: -0.01em !important;
+            }
+
+            .a2z-ec .trusted-uk-quote-title .gold-italic {
+                font-family: 'Playfair Display', Georgia, serif !important;
+                font-style: italic !important;
+                font-weight: 600 !important;
+                color: #D4A850 !important;
+                -webkit-text-fill-color: #D4A850 !important;
+                display: inline !important;
+            }
+
+            .a2z-ec .trusted-uk-author {
+                display: flex;
+                align-items: center;
+                gap: 16px;
+            }
+
+            .a2z-ec .trusted-uk-avatar {
+                width: 48px;
+                height: 48px;
+                border-radius: 50%;
+                border: 1.5px solid #D4A850;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: #D4A850;
+                background: rgba(212, 168, 80, 0.08);
+                flex-shrink: 0;
+            }
+
+            .a2z-ec .trusted-uk-avatar svg {
+                width: 24px;
+                height: 24px;
+                stroke: #D4A850;
+            }
+
+            .a2z-ec .trusted-uk-author-info {
+                display: flex;
+                flex-direction: column;
+                gap: 4px;
+            }
+
+            .a2z-ec .trusted-uk-name {
+                font-family: 'DM Sans', system-ui, sans-serif !important;
+                font-size: 17px !important;
+                font-weight: 700 !important;
+                color: #FFFFFF !important;
+                line-height: 1.2 !important;
+            }
+
+            .a2z-ec .trusted-uk-badge {
+                display: inline-flex;
+                align-items: center;
+                gap: 5px;
+                padding: 3px 10px;
+                border-radius: 20px;
+                background: rgba(212, 168, 80, 0.12);
+                border: 1px solid rgba(212, 168, 80, 0.35);
+                color: #D4A850;
+                font-family: 'Inter', system-ui, sans-serif !important;
+                font-size: 10.5px !important;
+                font-weight: 700 !important;
+                letter-spacing: 0.6px !important;
+                text-transform: uppercase !important;
+                width: fit-content;
+            }
+
+            .a2z-ec .trusted-uk-badge svg {
+                width: 11px;
+                height: 11px;
+                fill: #D4A850;
+            }
+
+            /* Right Side */
+            .a2z-ec .trusted-uk-right {
+                background: #081423;
+                padding: clamp(32px, 4.5vw, 56px);
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                gap: 36px;
+                position: relative;
+            }
+
+            .a2z-ec .trusted-uk-watermark {
+                position: absolute;
+                top: 24px;
+                right: 32px;
+                font-family: Georgia, serif;
+                font-size: 88px;
+                line-height: 1;
+                color: #FFFFFF;
+                opacity: 0.08;
+                pointer-events: none;
+                user-select: none;
+            }
+
+            .a2z-ec .trusted-uk-desc {
+                font-family: 'DM Sans', system-ui, sans-serif !important;
+                font-size: clamp(16px, 1.3vw, 18px) !important;
+                font-weight: 400 !important;
+                color: #CBD5E1 !important;
+                line-height: 1.65 !important;
+                margin: 0 !important;
+                position: relative;
+                z-index: 1;
+                max-width: 440px;
+            }
+
+            .a2z-ec .trusted-uk-google-card {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                background: rgba(255, 255, 255, 0.03);
+                border: 1px solid rgba(255, 255, 255, 0.08);
+                border-radius: 12px;
+                padding: 16px 20px;
+                max-width: 380px;
+                gap: 16px;
+            }
+
+            .a2z-ec .trusted-uk-google-left {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+            }
+
+            .a2z-ec .trusted-uk-google-icon {
+                width: 26px;
+                height: 26px;
+                flex-shrink: 0;
+            }
+
+            .a2z-ec .trusted-uk-google-text {
+                display: flex;
+                flex-direction: column;
+                gap: 2px;
+            }
+
+            .a2z-ec .trusted-uk-google-title {
+                font-family: 'DM Sans', system-ui, sans-serif !important;
+                font-size: 13.5px !important;
+                font-weight: 700 !important;
+                color: #FFFFFF !important;
+                line-height: 1.2 !important;
+            }
+
+            .a2z-ec .trusted-uk-google-sub {
+                font-family: 'Inter', system-ui, sans-serif !important;
+                font-size: 10px !important;
+                font-weight: 700 !important;
+                letter-spacing: 0.5px !important;
+                text-transform: uppercase !important;
+                color: #D4A850 !important;
+            }
+
+            .a2z-ec .trusted-uk-google-rating {
+                display: flex;
+                align-items: center;
+                gap: 6px;
+                flex-shrink: 0;
+            }
+
+            .a2z-ec .trusted-uk-rating-num {
+                font-family: 'DM Sans', system-ui, sans-serif !important;
+                font-size: 17px !important;
+                font-weight: 700 !important;
+                color: #FFFFFF !important;
+            }
+
+            .a2z-ec .trusted-uk-stars {
+                color: #D4A850;
+                font-size: 13px;
+                letter-spacing: 1px;
+            }
+
+            /* Responsive */
+            @media (max-width: 860px) {
+                .a2z-ec .trusted-uk-card {
+                    grid-template-columns: 1fr;
+                }
+
+                .a2z-ec .trusted-uk-left {
+                    border-right: none;
+                    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+                    padding: 28px 20px;
+                }
+
+                .a2z-ec .trusted-uk-right {
+                    padding: 28px 20px;
+                }
+
+                .a2z-ec .trusted-uk-desc {
+                    max-width: 100%;
+                }
+
+                .a2z-ec .trusted-uk-google-card {
+                    max-width: 100%;
+                }
+            }
+        </style>
+
+        <section class="trusted-uk-section">
+            <div class="wrap">
+                <span class="trusted-uk-eyebrow">TRUSTED ACROSS THE UK</span>
+
+                <div class="trusted-uk-card">
+                    <!-- Left Side -->
+                    <div class="trusted-uk-left">
+                        <h3 class="trusted-uk-quote-title">
+                            &ldquo;Thoroughly impressed with the professionalism and expertise of <span class="gold-italic">A2Z.&rdquo;</span>
+                        </h3>
+                        <div class="trusted-uk-author">
+                            <div class="trusted-uk-avatar">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="12" cy="7" r="4"></circle>
+                                </svg>
+                            </div>
+                            <div class="trusted-uk-author-info">
+                                <span class="trusted-uk-name">Andrew Clarkson</span>
+                                <span class="trusted-uk-badge">
+                                    <svg viewBox="0 0 24 24">
+                                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                                    </svg>
+                                    VERIFIED CLIENT
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Side -->
+                    <div class="trusted-uk-right">
+                        <div class="trusted-uk-watermark">&rdquo;</div>
+                        <p class="trusted-uk-desc">
+                            Their team is detail-oriented, friendly and always responsive, and they go above and beyond to ensure everything is accurate and transparent.
+                        </p>
+                        <div class="trusted-uk-google-card">
+                            <div class="trusted-uk-google-left">
+                                <svg class="trusted-uk-google-icon" viewBox="0 0 24 24">
+                                    <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.665-5.17 3.665-9.17z"/>
+                                    <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.33 24 12 24z"/>
+                                    <path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.25C.45 8.18 0 9.98 0 12s.45 3.82 1.25 5.42l4.03-3.15z"/>
+                                    <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.33 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z"/>
+                                </svg>
+                                <div class="trusted-uk-google-text">
+                                    <span class="trusted-uk-google-title">Google Reviews</span>
+                                    <span class="trusted-uk-google-sub">BASED ON 150+ REVIEWS</span>
+                                </div>
+                            </div>
+                            <div class="trusted-uk-google-rating">
+                                <span class="trusted-uk-rating-num">5.0</span>
+                                <span class="trusted-uk-stars">★★★★★</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
