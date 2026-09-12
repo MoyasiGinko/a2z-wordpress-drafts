@@ -3109,259 +3109,188 @@
 
         <!-- ============ WHAT WE HANDLE SECTION (EXACT DESIGN MATCH) ============ -->
         <style id="what-we-handle-design">
-            section.handle-new-section {
-                padding: clamp(44px, 7.5vw, 104px) 0 !important;
-                background: #112B46 !important;
-                background-color: #112B46 !important;
+            .a2z-ec .handle-new-section {
+                padding: clamp(64px, 8vw, 104px) 0 !important;
+                background-color: #081423 !important;
                 color: #ffffff !important;
                 text-align: center !important;
                 position: relative !important;
+                overflow: hidden !important;
                 border: none !important;
             }
 
-            section.handle-new-section .handle-wrap {
-                max-width: 1040px !important;
+            .a2z-ec .handle-bg-arcs {
+                position: absolute;
+                top: 20%;
+                left: -260px;
+                transform: translateY(-50%);
+                width: 780px;
+                height: 780px;
+                pointer-events: none;
+                z-index: 0;
+            }
+
+            .a2z-ec .handle-wrap {
+                max-width: 1180px !important;
                 margin: 0 auto !important;
-                padding: 0 24px !important;
-                background: transparent !important;
-                border: none !important;
-                box-shadow: none !important;
-                border-radius: 0 !important;
+                padding: 0 clamp(16px, 3vw, 24px) !important;
+                position: relative !important;
+                z-index: 1 !important;
             }
 
-            section.handle-new-section .handle-eyebrow {
-                font-family: 'Inter', system-ui, sans-serif !important;
-                font-size: 20px !important;
+            .a2z-ec .handle-eyebrow {
+                font-family: 'Inter', system-ui, -apple-system, sans-serif !important;
+                font-size: 13.5px !important;
                 font-weight: 700 !important;
-                font-style: normal !important;
-                letter-spacing: 1.2px !important;
+                letter-spacing: 1.8px !important;
                 text-transform: uppercase !important;
-                vertical-align: middle;
-                color: #D4A84F !important;
+                color: #D4A850 !important;
                 margin-bottom: 14px !important;
                 display: block !important;
                 text-align: center !important;
             }
 
-            section.handle-new-section .handle-heading {
+            .a2z-ec .handle-heading {
                 font-family: 'Playfair Display', Georgia, serif !important;
-                font-size: clamp(36px, 5vw, 64px) !important;
-                font-weight: 700 !important;
-                font-style: normal !important;
+                font-size: clamp(34px, 4.2vw, 54px) !important;
+                font-weight: 600 !important;
                 color: #FFFFFF !important;
-                line-height: 1.15 !important;
-                margin: 0 0 clamp(44px, 5.5vw, 64px) 0 !important;
-                letter-spacing: 0px !important;
+                line-height: 1.18 !important;
+                margin: 0 0 clamp(44px, 5vw, 64px) 0 !important;
+                letter-spacing: -0.01em !important;
                 text-align: center !important;
-                vertical-align: middle;
             }
 
-            section.handle-new-section .handle-heading em {
+            .a2z-ec .handle-heading .gold-italic {
                 font-family: 'Playfair Display', Georgia, serif !important;
                 font-style: italic !important;
-                font-weight: 700 !important;
-                font-size: 1em !important;
-                letter-spacing: 0px !important;
-                text-align: center !important;
-                vertical-align: baseline !important;
+                font-weight: 600 !important;
                 color: #D4A850 !important;
-                background: none !important;
-                -webkit-background-clip: unset !important;
                 -webkit-text-fill-color: #D4A850 !important;
                 display: inline !important;
             }
 
-            section.handle-new-section .handle-grid-container {
-                max-width: 980px !important;
-                margin: 0 auto !important;
+            .a2z-ec .handle-grid-container {
                 display: grid !important;
-                grid-template-columns: 1fr 1fr !important;
+                grid-template-columns: repeat(3, 1fr) !important;
+                gap: clamp(16px, 2vw, 24px) !important;
                 text-align: left !important;
-                background: transparent !important;
-                border: none !important;
             }
 
-            section.handle-new-section .handle-cell {
-                padding: clamp(32px, 3.8vw, 44px) clamp(28px, 3.5vw, 44px) !important;
-                border-bottom: 1px solid #FFFFFF !important;
-                background: transparent !important;
-                background-color: transparent !important;
-                box-shadow: none !important;
-                border-radius: 0 !important;
-                margin: 0 !important;
+            .a2z-ec .handle-card {
+                background: #0A192C !important;
+                border: 1px solid rgba(255, 255, 255, 0.08) !important;
+                border-radius: 16px !important;
+                padding: clamp(24px, 2.5vw, 32px) !important;
+                display: flex !important;
+                flex-direction: column !important;
+                justify-content: flex-start !important;
+                transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease !important;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25) !important;
+                position: relative !important;
             }
 
-            /* Vertical border right on left column items */
-            section.handle-new-section .handle-cell:nth-child(odd) {
-                border-right: 1px solid #FFFFFF !important;
+            .a2z-ec .handle-card:hover {
+                transform: translateY(-4px) !important;
+                border-color: rgba(212, 168, 80, 0.35) !important;
+                box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45) !important;
             }
 
-            /* Remove bottom border from last row items */
-            section.handle-new-section .handle-cell:nth-last-child(1),
-            section.handle-new-section .handle-cell:nth-last-child(2) {
-                border-bottom: none !important;
-            }
-
-            section.handle-new-section .handle-cell-header {
+            .a2z-ec .handle-card-top {
                 display: flex !important;
                 align-items: center !important;
-                gap: 14px !important;
-                margin-bottom: 35px !important;
+                justify-content: space-between !important;
+                margin-bottom: 24px !important;
             }
 
-            section.handle-new-section .handle-icon-box {
-                width: 47px !important;
-                height: 47px !important;
-                background: #D4A850 !important;
-                background-color: #D4A850 !important;
-                border-radius: 3.92px !important;
-                opacity: 1 !important;
+            .a2z-ec .handle-icon-box {
+                width: 44px !important;
+                height: 44px !important;
+                border-radius: 10px !important;
+                background: rgba(255, 255, 255, 0.04) !important;
+                border: 1px solid rgba(212, 168, 80, 0.28) !important;
                 display: flex !important;
                 align-items: center !important;
                 justify-content: center !important;
                 flex-shrink: 0 !important;
-                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25) !important;
             }
 
-            section.handle-new-section .handle-icon-box svg {
+            .a2z-ec .handle-icon-box svg {
                 width: 20px !important;
                 height: 20px !important;
-                stroke: #0D1C2E !important;
-                stroke-width: 2 !important;
+                stroke: #D4A850 !important;
+                stroke-width: 1.8 !important;
                 fill: none !important;
             }
 
-            section.handle-new-section .handle-cell-title {
-                font-family: 'Playfair Display', Georgia, serif !important;
-                font-size: 25.51px !important;
-                font-weight: 600 !important;
-                font-style: normal !important;
-                letter-spacing: 0px !important;
-                vertical-align: middle;
-                color: #FFFFFF !important;
-                margin: 0 !important;
-                line-height: 1.25 !important;
+            .a2z-ec .handle-card-num {
+                font-family: 'DM Sans', system-ui, sans-serif !important;
+                font-size: 26px !important;
+                font-weight: 700 !important;
+                color: #1E3A5F !important;
+                line-height: 1 !important;
+                letter-spacing: -0.02em !important;
             }
 
-            section.handle-new-section .handle-cell-desc {
-                font-family: 'Manrope', system-ui, sans-serif !important;
-                font-size: 15.7px !important;
-                font-weight: 500 !important;
-                font-style: normal !important;
-                letter-spacing: 0px !important;
-                text-align: justify !important;
-                vertical-align: middle;
-                color: #ffffff !important;
+            .a2z-ec .handle-card-title {
+                font-family: 'DM Sans', system-ui, sans-serif !important;
+                font-size: 19px !important;
+                font-weight: 700 !important;
+                color: #FFFFFF !important;
+                line-height: 1.3 !important;
+                margin: 0 0 14px 0 !important;
+            }
+
+            .a2z-ec .handle-card-desc {
+                font-family: 'DM Sans', system-ui, sans-serif !important;
+                font-size: 14.5px !important;
+                font-weight: 400 !important;
+                color: #94A3B8 !important;
                 line-height: 1.62 !important;
                 margin: 0 !important;
             }
 
-            section.handle-new-section .handle-cell-desc span {
-                color: #D49C47 !important;
-                font-weight: 500 !important;
+            @media (max-width: 1024px) {
+                .a2z-ec .handle-grid-container {
+                    grid-template-columns: repeat(2, 1fr) !important;
+                }
             }
 
-            @media (max-width: 992px) {
-                section.handle-new-section .handle-eyebrow {
-                    font-size: clamp(13px, 3.5vw, 16px) !important;
-                    margin-bottom: 10px !important;
-                }
-
-                section.handle-new-section .handle-heading {
-                    font-size: clamp(32px, 8vw, 46px) !important;
-                    font-weight: 700 !important;
-                    line-height: 1.15 !important;
-                    margin-bottom: 36px !important;
-                }
-
-                section.handle-new-section .handle-grid-container {
+            @media (max-width: 680px) {
+                .a2z-ec .handle-grid-container {
                     grid-template-columns: 1fr !important;
-                    gap: 36px !important;
-                    padding-top: 20px !important;
+                    gap: 16px !important;
                 }
 
-                section.handle-new-section .handle-cell {
-                    background: #112B46 !important;
-                    background-color: #112B46 !important;
-                    border: 1px solid #D4A850 !important;
-                    border-radius: 20px !important;
-                    padding: 32px 24px 24px 24px !important;
-                    position: relative !important;
-                    margin: 0 !important;
-                    box-shadow: none !important;
-                }
-
-                section.handle-new-section .handle-cell:nth-child(odd) {
-                    border-right: 1px solid #D4A850 !important;
-                }
-
-                section.handle-new-section .handle-cell:nth-last-child(1),
-                section.handle-new-section .handle-cell:nth-last-child(2) {
-                    border-bottom: 1px solid #D4A850 !important;
-                }
-
-                section.handle-new-section .handle-icon-box {
-                    position: absolute !important;
-                    top: -24px !important;
-                    left: 24px !important;
-                    width: 48px !important;
-                    height: 48px !important;
-                    background: #F9C041 !important;
-                    background-color: #F9C041 !important;
-                    border-radius: 10px !important;
-                    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
-                    z-index: 5 !important;
-                }
-
-                section.handle-new-section .handle-icon-box svg {
-                    width: 22px !important;
-                    height: 22px !important;
-                    stroke: #112B46 !important;
-                    stroke-width: 2 !important;
-                }
-
-                section.handle-new-section .handle-cell-header {
-                    display: block !important;
-                    margin-top: 8px !important;
-                    margin-bottom: 16px !important;
-                }
-
-                section.handle-new-section .handle-cell-title {
-                    font-family: 'Manrope', 'Inter', system-ui, sans-serif !important;
-                    font-size: clamp(20px, 5vw, 24px) !important;
-                    font-weight: 600 !important;
-                    color: #D4A850 !important;
-                    line-height: 1.3 !important;
-                    margin: 0 !important;
-                    text-align: left !important;
-                }
-
-                section.handle-new-section .handle-cell-desc {
-                    font-family: 'Manrope', system-ui, sans-serif !important;
-                    font-size: 15.5px !important;
-                    font-weight: 400 !important;
-                    color: #FFFFFF !important;
-                    line-height: 1.65 !important;
-                    text-align: left !important;
-                    margin: 0 !important;
+                .a2z-ec .handle-card {
+                    padding: 24px 20px !important;
                 }
             }
         </style>
 
         <section class="handle-new-section">
+            <!-- Concentric background arcs from left -->
+            <svg class="handle-bg-arcs" viewBox="0 0 600 600" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <circle cx="0" cy="300" r="140" stroke="rgba(255,255,255,0.14)" stroke-width="1" />
+                <circle cx="0" cy="300" r="220" stroke="rgba(255,255,255,0.11)" stroke-width="1" />
+                <circle cx="0" cy="300" r="300" stroke="rgba(255,255,255,0.08)" stroke-width="1" />
+                <circle cx="0" cy="300" r="380" stroke="rgba(255,255,255,0.06)" stroke-width="1" />
+                <circle cx="0" cy="300" r="460" stroke="rgba(255,255,255,0.04)" stroke-width="1" />
+                <circle cx="0" cy="300" r="540" stroke="rgba(255,255,255,0.02)" stroke-width="1" />
+            </svg>
+
             <div class="handle-wrap">
                 <span class="handle-eyebrow">WHAT WE HANDLE</span>
                 <h2 class="handle-heading">
-                    The work behind a <em>profitable</em><br>online business
+                    The work behind a <span class="gold-italic">profitable</span><br>Shopify store
                 </h2>
 
                 <div class="handle-grid-container">
-                    <!-- Cell 1: Multi-channel reconciliation -->
-                    <div class="handle-cell">
-                        <div class="handle-cell-header">
+                    <!-- Card 01 -->
+                    <div class="handle-card">
+                        <div class="handle-card-top">
                             <div class="handle-icon-box">
-                                <!-- Reconcile Sliders Icon -->
-                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
                                     <line x1="4" y1="21" x2="4" y2="14"></line>
                                     <line x1="4" y1="10" x2="4" y2="3"></line>
                                     <line x1="12" y1="21" x2="12" y2="12"></line>
@@ -3373,99 +3302,92 @@
                                     <line x1="17" y1="16" x2="23" y2="16"></line>
                                 </svg>
                             </div>
-                            <h3 class="handle-cell-title">Multi-channel reconciliation</h3>
+                            <span class="handle-card-num">01</span>
                         </div>
-                        <p class="handle-cell-desc">
-                            Amazon, Shopify, eBay, Etsy, WooCommerce, Stripe, PayPal and Klarna, reconciled through
-                            specialist tools such as A2X and Link My Books, so fees, refunds and payouts are split
-                            correctly, never booked as a single net deposit.
+                        <h3 class="handle-card-title">Payout and settlement reconciliation</h3>
+                        <p class="handle-card-desc">
+                            Shopify Payments, Stripe, PayPal and Klarna, with fees, refunds and payouts split correctly and matched to real orders, never booked as a single net deposit.
                         </p>
                     </div>
 
-                    <!-- Cell 2: VAT, UK and EU -->
-                    <div class="handle-cell">
-                        <div class="handle-cell-header">
+                    <!-- Card 02 -->
+                    <div class="handle-card">
+                        <div class="handle-card-top">
                             <div class="handle-icon-box">
-                                <!-- Globe Icon -->
-                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
                                     <circle cx="12" cy="12" r="10"></circle>
                                     <line x1="2" y1="12" x2="22" y2="12"></line>
-                                    <path
-                                        d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
-                                    </path>
+                                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
                                 </svg>
                             </div>
-                            <h3 class="handle-cell-title">VAT, UK and EU</h3>
+                            <span class="handle-card-num">02</span>
                         </div>
-                        <p class="handle-cell-desc">
-                            Registration, returns, OSS and IOSS, EORI and import VAT, distance selling and the
-                            second-hand margin scheme, set up to run cleanly each quarter under Making Tax Digital.
+                        <h3 class="handle-card-title">VAT, UK and EU</h3>
+                        <p class="handle-card-desc">
+                            Registration at the right time as you near the &pound;90,000 threshold, then returns, OSS and IOSS, import VAT and the scheme that suits you, run cleanly each quarter under Making Tax Digital.
                         </p>
                     </div>
 
-                    <!-- Cell 3: Real profit reporting -->
-                    <div class="handle-cell">
-                        <div class="handle-cell-header">
+                    <!-- Card 03 -->
+                    <div class="handle-card">
+                        <div class="handle-card-top">
                             <div class="handle-icon-box">
-                                <!-- Trend Line Icon -->
-                                <svg viewBox="0 0 24 24" aria-hidden="true">
-                                    <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
-                                    <polyline points="17 6 23 6 23 12"></polyline>
+                                <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline>
+                                    <polyline points="16 7 22 7 22 13"></polyline>
                                 </svg>
                             </div>
-                            <h3 class="handle-cell-title">Real profit reporting</h3>
+                            <span class="handle-card-num">03</span>
                         </div>
-                        <p class="handle-cell-desc">
-                            Margin per SKU and per channel, so pricing and ad spend are decisions made on facts rather
-                            than on the bank balance.
+                        <h3 class="handle-card-title">Real profit reporting</h3>
+                        <p class="handle-card-desc">
+                            Margin per product and per channel, so pricing and ad spend are decisions made on facts rather than on the bank balance.
                         </p>
                     </div>
 
-                    <!-- Cell 4: Corporation tax and structure -->
-                    <div class="handle-cell">
-                        <div class="handle-cell-header">
+                    <!-- Card 04 -->
+                    <div class="handle-card">
+                        <div class="handle-card-top">
                             <div class="handle-icon-box">
-                                <!-- Document Tax Icon -->
-                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
                                     <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
                                     <polyline points="14 2 14 8 20 8"></polyline>
                                     <line x1="16" y1="13" x2="8" y2="13"></line>
                                     <line x1="16" y1="17" x2="8" y2="17"></line>
+                                    <polyline points="10 9 9 9 8 9"></polyline>
                                 </svg>
                             </div>
-                            <h3 class="handle-cell-title">Corporation tax and structure</h3>
+                            <span class="handle-card-num">04</span>
                         </div>
-                        <p class="handle-cell-desc">
-                            Corporation tax and profit-extraction planning, capital allowances on stock and equipment,
-                            and the right
-                            structure as you grow.
+                        <h3 class="handle-card-title">Corporation tax and structure</h3>
+                        <p class="handle-card-desc">
+                            Corporation tax and profit-extraction planning, capital allowances on stock and equipment, and the right structure as you grow.
                         </p>
                     </div>
 
-                    <!-- Cell 5: Cash flow and stock -->
-                    <div class="handle-cell">
-                        <div class="handle-cell-header">
+                    <!-- Card 05 -->
+                    <div class="handle-card">
+                        <div class="handle-card-top">
                             <div class="handle-icon-box">
-                                <!-- Loop / Refresh Stock Icon -->
-                                <svg viewBox="0 0 24 24" aria-hidden="true">
-                                    <polyline points="23 4 23 10 17 10"></polyline>
-                                    <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path>
+                                <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="2" y="5" width="20" height="14" rx="2"></rect>
+                                    <line x1="2" y1="10" x2="22" y2="10"></line>
+                                    <circle cx="17" cy="15" r="1"></circle>
                                 </svg>
                             </div>
-                            <h3 class="handle-cell-title">Cash flow and stock</h3>
+                            <span class="handle-card-num">05</span>
                         </div>
-                        <p class="handle-cell-desc">
-                            Forecasting that links stock to cash, so growth does not quietly leave you short when it is
-                            time to reorder.
+                        <h3 class="handle-card-title">Cash flow and ad spend</h3>
+                        <p class="handle-card-desc">
+                            Forecasting that links stock and advertising to cash, so growth does not quietly leave you short when it is time to reorder.
                         </p>
                     </div>
 
-                    <!-- Cell 6: Year-end and compliance -->
-                    <div class="handle-cell">
-                        <div class="handle-cell-header">
+                    <!-- Card 06 -->
+                    <div class="handle-card">
+                        <div class="handle-card-top">
                             <div class="handle-icon-box">
-                                <!-- Calendar Check Icon -->
-                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
                                     <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
                                     <line x1="16" y1="2" x2="16" y2="6"></line>
                                     <line x1="8" y1="2" x2="8" y2="6"></line>
@@ -3473,11 +3395,11 @@
                                     <polyline points="9 16 11 18 15 14"></polyline>
                                 </svg>
                             </div>
-                            <h3 class="handle-cell-title">Year-end and compliance</h3>
+                            <span class="handle-card-num">06</span>
                         </div>
-                        <p class="handle-cell-desc">
-                            Accounts and Companies House and HMRC returns prepared and filed on time, with deadlines
-                            tracked so nothing arrives as a surprise.
+                        <h3 class="handle-card-title">Year-end and compliance</h3>
+                        <p class="handle-card-desc">
+                            Accounts and Companies House and HMRC returns prepared and filed on time, with deadlines tracked so nothing arrives as a surprise.
                         </p>
                     </div>
                 </div>
