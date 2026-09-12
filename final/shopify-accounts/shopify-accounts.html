@@ -657,18 +657,18 @@
             }
 
             .a2z-ec .calc-bg-shape-tl {
-                width: 842.7643448877219px !important;
-                height: 372.6552741564894px !important;
-                top: -100px !important;
-                left: -270px !important;
+                width: 842.76px !important;
+                height: 372.66px !important;
+                top: -12% !important;
+                left: -22% !important;
                 transform: rotate(-45deg) !important;
             }
 
             .a2z-ec .calc-bg-shape-br {
-                width: 842.764333109037px !important;
-                height: 372.6552689481663px !important;
-                top: 500px !important;
-                left: 770px !important;
+                width: 842.76px !important;
+                height: 372.66px !important;
+                top: 60% !important;
+                left: 62% !important;
                 transform: rotate(-45deg) !important;
             }
 
@@ -747,6 +747,7 @@
             }
 
             .a2z-ec .calc-ledger-highlight {
+                position: relative !important;
                 display: flex !important;
                 justify-content: space-between !important;
                 align-items: flex-start !important;
@@ -755,7 +756,23 @@
                 width: 100% !important;
             }
 
+            .a2z-ec .calc-ledger-highlight::before {
+                content: '' !important;
+                position: absolute !important;
+                top: 50% !important;
+                left: 50% !important;
+                transform: translate(-50%, -50%) !important;
+                width: 110% !important;
+                height: 140% !important;
+                background: radial-gradient(ellipse at center, rgba(212, 168, 80, 0.38) 0%, rgba(212, 168, 80, 0.16) 50%, rgba(212, 168, 80, 0) 75%) !important;
+                filter: blur(24px) !important;
+                pointer-events: none !important;
+                z-index: 0 !important;
+            }
+
             .a2z-ec .calc-highlight-left {
+                position: relative !important;
+                z-index: 1 !important;
                 font-family: 'Manrope', system-ui, sans-serif !important;
                 font-size: 28px !important;
                 font-weight: 600 !important;
@@ -764,6 +781,8 @@
             }
 
             .a2z-ec .calc-highlight-right {
+                position: relative !important;
+                z-index: 1 !important;
                 display: flex !important;
                 flex-direction: column !important;
                 align-items: flex-end !important;
