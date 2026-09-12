@@ -1057,56 +1057,110 @@
             /* Mobile & Tablet Portrait (<= 860px) */
             @media (max-width: 860px) {
                 .a2z-ec .profit-calc-section {
-                    padding: clamp(40px, 6vw, 64px) 0 !important;
+                    padding: clamp(36px, 6vw, 60px) 0 !important;
                 }
 
                 .a2z-ec .calc-eyebrow {
-                    font-size: clamp(12px, 3.2vw, 16px) !important;
+                    font-size: clamp(12px, 3.2vw, 15px) !important;
                     margin-bottom: 10px !important;
                 }
 
                 .a2z-ec .calc-heading {
-                    font-size: clamp(28px, 6.8vw, 42px) !important;
+                    font-size: clamp(26px, 6.5vw, 40px) !important;
                     line-height: 1.2 !important;
-                    margin-bottom: 14px !important;
+                    margin-bottom: 12px !important;
                 }
 
                 .a2z-ec .calc-subheading {
-                    font-size: clamp(14px, 3.6vw, 16.5px) !important;
+                    font-size: clamp(13.5px, 3.5vw, 16px) !important;
                     line-height: 1.55 !important;
-                    text-align: left !important;
-                    margin-bottom: 28px !important;
+                    text-align: center !important;
+                    margin: 0 auto 28px auto !important;
+                    max-width: 100% !important;
                 }
 
                 .a2z-ec .calc-card {
                     height: auto !important;
                     max-height: none !important;
-                    padding: clamp(20px, 4vw, 32px) 16px !important;
-                    border-radius: 14px !important;
+                    padding: clamp(20px, 4.2vw, 32px) clamp(14px, 3.5vw, 24px) !important;
+                    border-radius: 16px !important;
+                    overflow: hidden !important;
+                    box-sizing: border-box !important;
+                    width: 100% !important;
+                }
+
+                .a2z-ec .calc-bg-shape {
+                    display: none !important;
                 }
 
                 .a2z-ec .calc-grid {
-                    grid-template-columns: 1fr !important;
-                    gap: 28px !important;
+                    display: flex !important;
+                    flex-direction: column !important;
+                    gap: 22px !important;
+                    width: 100% !important;
                 }
 
                 .a2z-ec .calc-sliders-container {
                     order: 1 !important;
                     height: auto !important;
-                    gap: 20px !important;
+                    max-height: none !important;
                     padding: 0 !important;
+                    display: flex !important;
+                    flex-direction: column !important;
+                    gap: 16px !important;
+                    width: 100% !important;
+                }
+
+                .a2z-ec .calc-slider-group {
+                    display: flex !important;
+                    flex-direction: column !important;
+                    gap: 8px !important;
+                    width: 100% !important;
                 }
 
                 .a2z-ec .calc-slider-top {
-                    margin-bottom: 12px !important;
+                    display: flex !important;
+                    justify-content: space-between !important;
+                    align-items: baseline !important;
+                    width: 100% !important;
+                    margin-bottom: 0 !important;
+                    gap: 8px !important;
                 }
 
                 .a2z-ec .calc-slider-label {
-                    font-size: clamp(14px, 3.8vw, 16px) !important;
+                    font-size: clamp(13px, 3.4vw, 15.5px) !important;
+                    font-weight: 600 !important;
+                    color: #D6E3FF !important;
+                    line-height: 1.3 !important;
+                    min-width: 0 !important;
+                    flex: 1 !important;
                 }
 
                 .a2z-ec .calc-slider-val {
-                    font-size: clamp(15px, 4vw, 18px) !important;
+                    font-size: clamp(14px, 3.8vw, 17.5px) !important;
+                    font-weight: 600 !important;
+                    color: #E9C176 !important;
+                    line-height: 1.3 !important;
+                    text-align: right !important;
+                    flex-shrink: 0 !important;
+                }
+
+                .a2z-ec .calc-range-input {
+                    width: 100% !important;
+                    height: 8px !important;
+                    border-radius: 9999px !important;
+                    touch-action: pan-y !important;
+                }
+
+                .a2z-ec .calc-range-input::-webkit-slider-thumb {
+                    width: 22px !important;
+                    height: 22px !important;
+                    margin-top: -7px !important;
+                }
+
+                .a2z-ec .calc-range-input::-moz-range-thumb {
+                    width: 22px !important;
+                    height: 22px !important;
                 }
 
                 .a2z-ec .calc-ledger-card {
@@ -1115,9 +1169,11 @@
                     max-width: 100% !important;
                     box-sizing: border-box !important;
                     height: auto !important;
-                    padding: 22px 18px !important;
-                    border-radius: 12px !important;
-                    gap: 14px !important;
+                    padding: clamp(16px, 3.8vw, 24px) clamp(14px, 3.2vw, 20px) !important;
+                    border-radius: 14px !important;
+                    display: flex !important;
+                    flex-direction: column !important;
+                    gap: 11px !important;
                     overflow: hidden !important;
                 }
 
@@ -1130,91 +1186,131 @@
                 }
 
                 .a2z-ec .calc-ledger-label {
-                    font-size: clamp(13px, 3.5vw, 15px) !important;
+                    font-size: clamp(12.5px, 3.2vw, 15px) !important;
                     flex: 1 !important;
                     min-width: 0 !important;
+                    line-height: 1.3 !important;
                 }
 
                 .a2z-ec .calc-ledger-val {
-                    font-size: clamp(13px, 3.5vw, 15px) !important;
+                    font-size: clamp(13px, 3.3vw, 15px) !important;
                     flex-shrink: 0 !important;
                     text-align: right !important;
+                    line-height: 1.3 !important;
                 }
 
                 .a2z-ec .calc-ledger-row.row-payout .calc-ledger-label,
                 .a2z-ec .calc-ledger-val.val-payout {
-                    font-size: clamp(15px, 4vw, 17px) !important;
+                    font-size: clamp(14px, 3.6vw, 16.5px) !important;
+                    font-weight: 700 !important;
+                }
+
+                .a2z-ec .calc-ledger-divider {
+                    height: 1px !important;
+                    background: #E9C17633 !important;
+                    border: none !important;
+                    margin: 2px 0 !important;
+                    width: 100% !important;
                 }
 
                 .a2z-ec .calc-ledger-highlight {
-                    margin-top: 8px !important;
+                    margin-top: 6px !important;
+                    display: flex !important;
                     flex-direction: row !important;
                     justify-content: space-between !important;
                     align-items: center !important;
-                    gap: 12px !important;
+                    gap: 8px !important;
                     width: 100% !important;
                     box-sizing: border-box !important;
+                    position: relative !important;
+                }
+
+                .a2z-ec .calc-ledger-highlight::before {
+                    width: 100% !important;
+                    height: 100% !important;
+                    border-radius: 12px !important;
+                    top: 50% !important;
+                    left: 50% !important;
+                    transform: translate(-50%, -50%) !important;
                 }
 
                 .a2z-ec .calc-highlight-left {
-                    font-size: clamp(18px, 4.5vw, 22px) !important;
+                    font-size: clamp(16px, 4vw, 20px) !important;
+                    line-height: 1.15 !important;
                     flex: 1 !important;
                     min-width: 0 !important;
+                    color: #FFFFFF !important;
+                    font-weight: 600 !important;
                 }
 
                 .a2z-ec .calc-highlight-right {
+                    display: flex !important;
+                    flex-direction: column !important;
+                    align-items: flex-end !important;
+                    text-align: right !important;
                     flex-shrink: 0 !important;
                     min-width: 0 !important;
+                    gap: 3px !important;
                 }
 
                 .a2z-ec .calc-highlight-val {
-                    font-size: clamp(26px, 6.5vw, 34px) !important;
+                    font-size: clamp(22px, 5.5vw, 30px) !important;
+                    line-height: 1 !important;
+                    font-weight: 700 !important;
+                    color: #D4A850 !important;
                 }
 
                 .a2z-ec .calc-highlight-sub {
-                    font-size: 11px !important;
-                    letter-spacing: 0.3px !important;
+                    font-size: clamp(9px, 2.4vw, 10.5px) !important;
+                    letter-spacing: 0.2px !important;
+                    line-height: 1.25 !important;
+                    text-align: right !important;
+                    max-width: 160px !important;
                 }
 
                 .a2z-ec .calc-bottom-note {
-                    font-size: clamp(12px, 3.2vw, 14.5px) !important;
-                    letter-spacing: 0.5px !important;
-                    line-height: 1.5 !important;
-                    margin-top: 24px !important;
+                    font-size: clamp(11.5px, 2.8vw, 13.5px) !important;
+                    letter-spacing: 0.4px !important;
+                    line-height: 1.55 !important;
+                    margin-top: 20px !important;
                     text-align: center !important;
-                    padding: 0 8px !important;
+                    padding: 0 4px !important;
                     max-width: 100% !important;
                 }
+            }
 
-            /* Extra Small Screens (≤ 380px) */
-            @media (max-width: 380px) {
+            /* Extra Small Screens (≤ 360px) */
+            @media (max-width: 360px) {
                 .a2z-ec .calc-card {
                     padding: 16px 12px !important;
                     border-radius: 12px !important;
                 }
 
                 .a2z-ec .calc-ledger-card {
-                    padding: 18px 14px !important;
-                }
-
-                .a2z-ec .calc-slider-top {
-                    flex-direction: column !important;
-                    align-items: flex-start !important;
-                    gap: 4px !important;
-                    margin-bottom: 10px !important;
+                    padding: 14px 10px !important;
+                    border-radius: 10px !important;
+                    gap: 9px !important;
                 }
 
                 .a2z-ec .calc-slider-label {
-                    font-size: 13px !important;
+                    font-size: 12px !important;
                 }
 
                 .a2z-ec .calc-slider-val {
-                    font-size: 14px !important;
-                    text-align: left !important;
+                    font-size: 13.5px !important;
+                }
+
+                .a2z-ec .calc-highlight-left {
+                    font-size: 14.5px !important;
                 }
 
                 .a2z-ec .calc-highlight-val {
-                    font-size: clamp(22px, 6vw, 28px) !important;
+                    font-size: 20px !important;
+                }
+
+                .a2z-ec .calc-highlight-sub {
+                    font-size: 8.5px !important;
+                    max-width: 135px !important;
                 }
             }
         </style>
@@ -3210,122 +3306,58 @@
             /* Mobile Responsive (<= 860px) */
             @media (max-width: 860px) {
                 .a2z-ec .trusted-uk-section {
-                    padding: clamp(44px, 6vw, 68px) 0 !important;
+                    padding: clamp(40px, 6vw, 64px) 0 !important;
                 }
 
                 .a2z-ec .trusted-uk-eyebrow {
-                    font-size: clamp(12px, 3.2vw, 16px) !important;
+                    font-size: clamp(13px, 3.2vw, 16px) !important;
                     margin-bottom: 20px !important;
                 }
 
                 .a2z-ec .trusted-uk-card {
-                    grid-template-columns: 1fr !important;
+                    display: flex !important;
+                    flex-direction: column !important;
+                    width: 100% !important;
+                    max-width: 100% !important;
+                    margin: 0 auto !important;
                     border-radius: 16px !important;
-                    margin: 0 12px !important;
-                    width: calc(100% - 24px) !important;
-                    box-sizing: border-box !important;
                     overflow: hidden !important;
+                    box-sizing: border-box !important;
                 }
 
                 .a2z-ec .trusted-uk-left {
+                    width: 100% !important;
+                    max-width: 100% !important;
+                    box-sizing: border-box !important;
+                    padding: clamp(22px, 4.5vw, 36px) clamp(16px, 4vw, 26px) !important;
+                    display: flex !important;
+                    flex-direction: column !important;
+                    gap: 20px !important;
                     border-right: none !important;
                     border-bottom: none !important;
-                    padding: 28px 20px !important;
-                    gap: 24px !important;
-                    width: 100% !important;
-                    max-width: 100% !important;
-                    box-sizing: border-box !important;
-                    overflow: hidden !important;
-                }
-
-                .a2z-ec .trusted-uk-right {
-                    border-left: none !important;
-                    border-top: 1px solid #E9C17633 !important;
-                    padding: 28px 20px !important;
-                    gap: 24px !important;
-                    width: 100% !important;
-                    max-width: 100% !important;
-                    box-sizing: border-box !important;
-                    overflow: hidden !important;
                 }
 
                 .a2z-ec .trusted-uk-quote-title {
-                    font-size: clamp(22px, 5.5vw, 28px) !important;
+                    font-size: clamp(20px, 5.2vw, 28px) !important;
                     line-height: 1.25 !important;
                     max-width: 100% !important;
+                    margin: 0 !important;
                     overflow-wrap: break-word !important;
-                    word-break: break-word !important;
                 }
 
                 .a2z-ec .trusted-uk-author {
-                    flex-wrap: wrap !important;
-                    gap: 12px !important;
-                }
-
-                .a2z-ec .trusted-uk-author-info {
-                    max-width: calc(100% - 80px) !important;
-                    overflow: hidden !important;
-                    min-width: 0 !important;
-                }
-
-                .a2z-ec .trusted-uk-name {
-                    overflow-wrap: break-word !important;
-                    word-break: break-word !important;
-                }
-
-                .a2z-ec .trusted-uk-desc {
-                    font-size: clamp(14px, 3.8vw, 16.5px) !important;
-                    line-height: 1.55 !important;
-                    max-width: 100% !important;
-                    text-align: left !important;
-                    margin-bottom: 0 !important;
-                    overflow-wrap: break-word !important;
-                }
-
-                .a2z-ec .trusted-uk-watermark {
-                    font-size: 130px !important;
-                    line-height: 130px !important;
-                    top: 10px !important;
-                    right: 10px !important;
-                }
-
-                .a2z-ec .trusted-uk-google-card {
-                    width: 100% !important;
-                    max-width: 100% !important;
-                    height: auto !important;
-                    min-height: auto !important;
-                    padding: 16px !important;
-                    flex-direction: row !important;
-                    justify-content: space-between !important;
+                    display: flex !important;
                     align-items: center !important;
-                    flex-wrap: wrap !important;
-                    gap: 12px !important;
-                    box-sizing: border-box !important;
-                }
-
-                .a2z-ec .trusted-uk-google-rating {
-                    flex-shrink: 0 !important;
-                }
-            }
-
-            @media (max-width: 480px) {
-                .a2z-ec .trusted-uk-card {
-                    margin: 0 8px !important;
-                    width: calc(100% - 16px) !important;
-                }
-
-                .a2z-ec .trusted-uk-left,
-                .a2z-ec .trusted-uk-right {
-                    padding: 24px 16px !important;
-                }
-
-                .a2z-ec .trusted-uk-quote-title {
-                    font-size: clamp(20px, 5.5vw, 24px) !important;
+                    flex-wrap: nowrap !important;
+                    gap: 14px !important;
+                    width: 100% !important;
+                    margin: 0 !important;
                 }
 
                 .a2z-ec .trusted-uk-avatar {
-                    width: 50px !important;
-                    height: 50px !important;
+                    width: clamp(48px, 12vw, 56px) !important;
+                    height: clamp(48px, 12vw, 56px) !important;
+                    border-radius: 50% !important;
                     flex-shrink: 0 !important;
                 }
 
@@ -3335,40 +3367,197 @@
                 }
 
                 .a2z-ec .trusted-uk-author-info {
-                    margin-left: 14px !important;
-                    max-width: calc(100% - 64px) !important;
+                    display: flex !important;
+                    flex-direction: column !important;
+                    align-items: flex-start !important;
+                    margin-left: 0 !important;
                     min-width: 0 !important;
                     flex: 1 !important;
+                    gap: 5px !important;
                 }
 
                 .a2z-ec .trusted-uk-name {
-                    font-size: 18px !important;
-                    margin-bottom: 6px !important;
-                    overflow-wrap: break-word !important;
+                    font-size: clamp(17px, 4.2vw, 21px) !important;
+                    font-weight: 700 !important;
+                    line-height: 1.2 !important;
+                    margin: 0 !important;
+                    white-space: nowrap !important;
+                    text-overflow: ellipsis !important;
+                    overflow: hidden !important;
+                    max-width: 100% !important;
                 }
 
                 .a2z-ec .trusted-uk-badge {
-                    font-size: 9.5px !important;
-                    width: auto !important;
+                    display: inline-flex !important;
+                    align-items: center !important;
+                    justify-content: center !important;
+                    gap: 6px !important;
+                    width: fit-content !important;
                     max-width: 100% !important;
-                    height: 22px !important;
-                    padding: 2px 8px !important;
+                    align-self: flex-start !important;
+                    height: auto !important;
+                    padding: 4px 10px !important;
+                    border-radius: 9999px !important;
+                    font-size: 10px !important;
+                    font-weight: 700 !important;
+                    letter-spacing: 0.5px !important;
                     white-space: nowrap !important;
+                    line-height: 1 !important;
+                    box-sizing: border-box !important;
+                }
+
+                .a2z-ec .trusted-uk-right {
+                    width: 100% !important;
+                    max-width: 100% !important;
+                    box-sizing: border-box !important;
+                    border-top: 1px solid #E9C17633 !important;
+                    border-left: none !important;
+                    padding: clamp(22px, 4.5vw, 36px) clamp(16px, 4vw, 26px) !important;
+                    display: flex !important;
+                    flex-direction: column !important;
+                    gap: 20px !important;
+                    position: relative !important;
                     overflow: hidden !important;
-                    text-overflow: ellipsis !important;
+                }
+
+                .a2z-ec .trusted-uk-watermark {
+                    font-size: clamp(80px, 18vw, 120px) !important;
+                    line-height: 1 !important;
+                    top: 6px !important;
+                    right: 12px !important;
+                    opacity: 0.07 !important;
+                    pointer-events: none !important;
+                }
+
+                .a2z-ec .trusted-uk-desc {
+                    font-size: clamp(14px, 3.6vw, 16.5px) !important;
+                    line-height: 1.6 !important;
+                    color: #FFFFFF !important;
+                    margin: 0 !important;
+                    max-width: 100% !important;
+                    z-index: 1 !important;
+                    position: relative !important;
+                    overflow-wrap: break-word !important;
                 }
 
                 .a2z-ec .trusted-uk-google-card {
+                    width: 100% !important;
+                    max-width: 100% !important;
+                    height: auto !important;
+                    min-height: auto !important;
+                    border-radius: 14px !important;
+                    padding: clamp(12px, 3vw, 16px) clamp(12px, 3vw, 18px) !important;
+                    display: flex !important;
+                    justify-content: space-between !important;
+                    align-items: center !important;
+                    flex-wrap: wrap !important;
+                    gap: 12px !important;
+                    box-sizing: border-box !important;
+                    z-index: 1 !important;
+                    position: relative !important;
+                }
+
+                .a2z-ec .trusted-uk-google-left {
+                    display: flex !important;
+                    align-items: center !important;
+                    gap: 10px !important;
+                    min-width: 0 !important;
+                    flex: 1 1 auto !important;
+                }
+
+                .a2z-ec .trusted-uk-google-icon {
+                    width: 26px !important;
+                    height: 26px !important;
+                    flex-shrink: 0 !important;
+                }
+
+                .a2z-ec .trusted-uk-google-text {
+                    display: flex !important;
+                    flex-direction: column !important;
+                    gap: 2px !important;
+                }
+
+                .a2z-ec .trusted-uk-google-title {
+                    font-size: clamp(13.5px, 3.4vw, 15px) !important;
+                    font-weight: 700 !important;
+                    line-height: 1.2 !important;
+                }
+
+                .a2z-ec .trusted-uk-google-sub {
+                    font-size: clamp(10px, 2.5vw, 11.5px) !important;
+                    font-weight: 600 !important;
+                    line-height: 1.2 !important;
+                    letter-spacing: 0.3px !important;
+                    color: #D4A84F !important;
+                }
+
+                .a2z-ec .trusted-uk-google-rating {
+                    display: inline-flex !important;
+                    align-items: center !important;
+                    justify-content: center !important;
+                    width: auto !important;
+                    min-width: 120px !important;
+                    height: 38px !important;
+                    padding: 4px 12px !important;
+                    border-radius: 9999px !important;
+                    gap: 6px !important;
+                    flex-shrink: 0 !important;
+                    background: #041329 !important;
+                    border: 1px solid #E9C1761A !important;
+                }
+
+                .a2z-ec .trusted-uk-rating-num {
+                    font-size: clamp(16px, 3.8vw, 18px) !important;
+                    font-weight: 700 !important;
+                }
+
+                .a2z-ec .trusted-uk-stars {
+                    display: flex !important;
+                    align-items: center !important;
+                    gap: 2px !important;
+                }
+
+                .a2z-ec .trusted-uk-stars svg {
+                    width: clamp(12px, 3vw, 14px) !important;
+                    height: clamp(12px, 3vw, 14px) !important;
+                    fill: #F5A623 !important;
+                }
+            }
+
+            /* Extra Small Screens (≤ 360px) */
+            @media (max-width: 360px) {
+                .a2z-ec .trusted-uk-left,
+                .a2z-ec .trusted-uk-right {
+                    padding: 18px 14px !important;
+                }
+
+                .a2z-ec .trusted-uk-quote-title {
+                    font-size: 19px !important;
+                }
+
+                .a2z-ec .trusted-uk-avatar {
+                    width: 44px !important;
+                    height: 44px !important;
+                }
+
+                .a2z-ec .trusted-uk-name {
+                    font-size: 16px !important;
+                }
+
+                .a2z-ec .trusted-uk-badge {
+                    font-size: 9px !important;
+                    padding: 3px 8px !important;
+                }
+
+                .a2z-ec .trusted-uk-google-card {
+                    padding: 12px 10px !important;
                     flex-direction: column !important;
                     align-items: flex-start !important;
+                    gap: 10px !important;
                 }
 
                 .a2z-ec .trusted-uk-google-rating {
                     align-self: flex-start !important;
-                }
-
-                .a2z-ec .trusted-uk-desc {
-                    font-size: clamp(13px, 3.8vw, 15px) !important;
                 }
             }
         </style>
