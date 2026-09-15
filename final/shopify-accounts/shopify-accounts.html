@@ -1103,6 +1103,33 @@
                 border-top: none !important;
             }
 
+            .a2z-ec .calc-tax-note {
+                position: relative !important;
+                z-index: 1 !important;
+                font-family: 'Inter', 'Manrope', system-ui, -apple-system, sans-serif !important;
+                font-size: clamp(15px, 1.3vw, 18px) !important;
+                font-weight: 600 !important;
+                text-align: center !important;
+                color: #081423 !important;
+                line-height: 1.6 !important;
+                letter-spacing: 0.1px !important;
+                margin: clamp(28px, 3.5vw, 44px) auto 0 auto !important;
+                max-width: 1100px !important;
+                padding: 0 15px !important;
+            }
+
+            .a2z-ec .calc-tax-link {
+                color: #D4A850 !important;
+                text-decoration: none !important;
+                font-weight: 600 !important;
+                transition: color 0.2s ease, text-decoration 0.2s ease !important;
+            }
+
+            .a2z-ec .calc-tax-link:hover {
+                color: #B07D3C !important;
+                text-decoration: underline !important;
+            }
+
             /* Tablet & Intermediate Screens (861px - 1180px) */
             @media (min-width: 861px) and (max-width: 1180px) {
                 .a2z-ec .calc-card {
@@ -1623,6 +1650,10 @@
                         Illustrative, Using Your Own Assumptions. We Build The Exact Version From Your Real Shopify
                         Settlements, Fees And VAT, Every Month.
                     </div>
+                </div>
+
+                <div class="calc-tax-note">
+                    Planning The Tax Side Too? Try Our <a href="/sole-trader-vs-limited-company-calculator/" class="calc-tax-link">Sole Trader Vs Limited Company Calculator</a> And <a href="/business-budget-profit-estimator/" class="calc-tax-link">Business Budget &amp; Profit Estimator.</a>
                 </div>
             </div>
         </section>
