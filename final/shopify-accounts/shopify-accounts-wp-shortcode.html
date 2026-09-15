@@ -884,17 +884,7 @@
         }
 
         .a2z-ec .calc-ledger-highlight::before {
-            content: '' !important;
-            position: absolute !important;
-            top: 50% !important;
-            left: 50% !important;
-            transform: translate(-50%, -50%) !important;
-            width: 110% !important;
-            height: 140% !important;
-            background: radial-gradient(ellipse at center, rgba(212, 168, 80, 0.38) 0%, rgba(212, 168, 80, 0.16) 50%, rgba(212, 168, 80, 0) 75%) !important;
-            filter: blur(24px) !important;
-            pointer-events: none !important;
-            z-index: 0 !important;
+            display: none !important;
         }
 
         .a2z-ec .calc-highlight-left {
@@ -927,6 +917,24 @@
             color: #D4A850 !important;
             line-height: 1 !important;
             font-variant-numeric: tabular-nums;
+            position: relative !important;
+            z-index: 1 !important;
+        }
+
+        .a2z-ec .calc-highlight-val::before {
+            content: '' !important;
+            position: absolute !important;
+            top: 50% !important;
+            left: 50% !important;
+            transform: translate(-50%, -50%) !important;
+            width: 140% !important;
+            height: 170% !important;
+            min-width: 140px !important;
+            min-height: 60px !important;
+            background: radial-gradient(ellipse at center, rgba(212, 168, 80, 0.22) 0%, rgba(212, 168, 80, 0.08) 50%, rgba(212, 168, 80, 0) 75%) !important;
+            filter: blur(18px) !important;
+            pointer-events: none !important;
+            z-index: -1 !important;
         }
 
         .a2z-ec .calc-highlight-sub {
@@ -1394,12 +1402,7 @@
             }
 
             .a2z-ec .calc-ledger-highlight::before {
-                width: 100% !important;
-                height: 100% !important;
-                border-radius: 12px !important;
-                top: 50% !important;
-                left: 50% !important;
-                transform: translate(-50%, -50%) !important;
+                display: none !important;
             }
 
             .a2z-ec .calc-highlight-left {
@@ -2215,7 +2218,6 @@
                     </div>
                 </div>
             </div>
-        </div>
         </div>
     </section>
 
