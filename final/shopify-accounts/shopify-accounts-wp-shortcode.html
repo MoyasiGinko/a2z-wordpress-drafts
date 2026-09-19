@@ -5931,147 +5931,300 @@
         </div>
     </section>
 
-    <!-- ============ IMAGE TRUST BAND SECTION (EXACT DESIGN MATCH) ============ -->
+    <!-- ============ IMAGE TRUST BAND SECTION (MINIMALIST EXECUTIVE EDITORIAL) ============ -->
     <style id="imgband-new-design">
+        .a2z-ec section.imgband-new-section,
         section.imgband-new-section {
-            padding: 0 !important;
+            padding: clamp(48px, 5.2vw, 76px) 0 !important;
             position: relative !important;
-            background-color: #0D2034 !important;
-            min-height: clamp(360px, 36vw, 520px) !important;
-            height: clamp(360px, 36vw, 520px) !important;
+            background-color: #081423 !important;
+            min-height: auto !important;
+            height: auto !important;
             display: flex !important;
             align-items: center !important;
             overflow: hidden !important;
+            box-sizing: border-box !important;
+            width: 100% !important;
         }
 
-        /* Background Image with Dark Blue Duotone Overlay */
+        /* Background Image with Ambient Duotone Overlay */
+        .a2z-ec section.imgband-new-section .imgband-bg,
         section.imgband-new-section .imgband-bg {
             position: absolute !important;
             inset: 0 !important;
             width: 100% !important;
             height: 100% !important;
             object-fit: cover !important;
-            object-position: center !important;
+            object-position: center 40% !important;
             z-index: 1 !important;
-            filter: brightness(0.6) contrast(1.1) !important;
+            filter: brightness(0.36) contrast(1.2) !important;
+            pointer-events: none !important;
         }
 
+        .a2z-ec section.imgband-new-section .imgband-overlay,
         section.imgband-new-section .imgband-overlay {
             position: absolute !important;
             inset: 0 !important;
-            background: linear-gradient(90deg, rgba(13, 32, 52, 0.92) 0%, rgba(13, 32, 52, 0.78) 60%, rgba(13, 32, 52, 0.65) 100%) !important;
+            background: linear-gradient(135deg, rgba(8, 20, 35, 0.95) 0%, rgba(13, 32, 52, 0.88) 52%, rgba(8, 20, 35, 0.94) 100%) !important;
             z-index: 2 !important;
+            pointer-events: none !important;
         }
 
+        /* Subtle radial glow */
+        .a2z-ec section.imgband-new-section .imgband-glow,
+        section.imgband-new-section .imgband-glow {
+            position: absolute !important;
+            right: 10% !important;
+            top: 20% !important;
+            width: 440px !important;
+            height: 440px !important;
+            background: radial-gradient(circle, rgba(212, 168, 80, 0.12) 0%, rgba(212, 168, 80, 0) 70%) !important;
+            z-index: 2 !important;
+            pointer-events: none !important;
+        }
+
+        .a2z-ec section.imgband-new-section .imgband-container,
         section.imgband-new-section .imgband-container {
-            max-width: 1440px !important;
+            max-width: 1260px !important;
             margin: 0 auto !important;
-            padding: clamp(24px, 3.8vw, 48px) clamp(20px, 3.5vw, 51px) clamp(28px, 4.2vw, 54px) clamp(20px, 3.5vw, 51px) !important;
+            padding: 0 clamp(20px, 3.5vw, 44px) !important;
             position: relative !important;
             z-index: 3 !important;
             width: 100% !important;
-            height: 100% !important;
-            display: flex !important;
-            align-items: flex-end !important;
-            justify-content: flex-start !important;
             box-sizing: border-box !important;
         }
 
+        .a2z-ec section.imgband-new-section .imgband-grid,
+        section.imgband-new-section .imgband-grid {
+            display: grid !important;
+            grid-template-columns: 1.05fr 0.95fr !important;
+            gap: clamp(32px, 4.5vw, 60px) !important;
+            align-items: center !important;
+            width: 100% !important;
+        }
+
+        /* Left Editorial Column */
+        .a2z-ec section.imgband-new-section .imgband-content,
         section.imgband-new-section .imgband-content {
-            max-width: 900px !important;
+            max-width: 560px !important;
             margin: 0 !important;
         }
 
-        section.imgband-new-section .imgband-eyebrow-wrap {
-            display: inline-block !important;
-            border-bottom: 1.5px solid #D4A850 !important;
-            padding-bottom: clamp(4px, 0.6vw, 8px) !important;
-            margin-bottom: clamp(12px, 1.8vw, 24px) !important;
+        .a2z-ec section.imgband-new-section .imgband-badge,
+        section.imgband-new-section .imgband-badge {
+            display: inline-flex !important;
+            align-items: center !important;
+            background: #FFFFFF !important;
+            border: 1px solid #FFFFFF !important;
+            border-radius: 8px !important;
+            padding: 6px 14px !important;
+            margin-bottom: clamp(14px, 1.8vw, 20px) !important;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.16) !important;
         }
 
-        section.imgband-new-section .imgband-eyebrow {
+        .a2z-ec section.imgband-new-section .imgband-badge-text,
+        section.imgband-new-section .imgband-badge-text {
             font-family: 'Inter', system-ui, -apple-system, sans-serif !important;
+            font-size: clamp(11.5px, 1vw, 12.5px) !important;
             font-weight: 700 !important;
-            font-style: normal !important;
-            font-size: 20px !important;
             letter-spacing: 1.2px !important;
-            vertical-align: middle;
             text-transform: uppercase !important;
-            color: #FFFFFF !important;
+            color: #081423 !important;
+            line-height: 1 !important;
             margin: 0 !important;
-            display: block !important;
         }
 
+        .a2z-ec section.imgband-new-section .imgband-heading,
         section.imgband-new-section .imgband-heading {
             font-family: 'Playfair Display', Georgia, serif !important;
             font-weight: 700 !important;
             font-style: normal !important;
-            font-size: clamp(32px, 4vw, 56px) !important;
-            letter-spacing: -1.12px !important;
-            vertical-align: middle;
+            font-size: clamp(28px, 3.4vw, 44px) !important;
+            letter-spacing: -0.6px !important;
             color: #FFFFFF !important;
-            line-height: 1.15 !important;
-            margin: 0 !important;
+            line-height: 1.2 !important;
+            margin: 0 0 clamp(12px, 1.5vw, 16px) 0 !important;
         }
 
-        section.imgband-new-section .imgband-heading em,
-        section.imgband-new-section .imgband-heading span {
+        .a2z-ec section.imgband-new-section .imgband-heading em,
+        section.imgband-new-section .imgband-heading em {
             font-family: 'Playfair Display', Georgia, serif !important;
             font-weight: 700 !important;
             font-style: italic !important;
-            font-size: clamp(32px, 4vw, 56px) !important;
-            letter-spacing: -1.12px !important;
-            vertical-align: middle;
             color: #D4A850 !important;
-            background: none !important;
-            -webkit-background-clip: unset !important;
-            -webkit-text-fill-color: #D4A850 !important;
             display: inline !important;
-            margin-top: 0 !important;
+        }
+
+        .a2z-ec section.imgband-new-section .imgband-desc,
+        section.imgband-new-section .imgband-desc {
+            font-family: 'DM Sans', system-ui, -apple-system, sans-serif !important;
+            font-size: clamp(14.5px, 1.1vw, 16px) !important;
+            line-height: 1.6 !important;
+            color: rgba(255, 255, 255, 0.8) !important;
+            margin: 0 !important;
+            max-width: 500px !important;
+        }
+
+        /* Right Column: 3 Minimalist Proof Cards */
+        .a2z-ec section.imgband-new-section .imgband-cards,
+        section.imgband-new-section .imgband-cards {
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 12px !important;
+            width: 100% !important;
+        }
+
+        .a2z-ec section.imgband-new-section .imgband-card,
+        section.imgband-new-section .imgband-card {
+            display: flex !important;
+            align-items: center !important;
+            gap: 16px !important;
+            padding: clamp(12px, 1.2vw, 16px) clamp(16px, 1.6vw, 20px) !important;
+            background: rgba(13, 32, 52, 0.7) !important;
+            backdrop-filter: blur(14px) !important;
+            -webkit-backdrop-filter: blur(14px) !important;
+            border: 1px solid rgba(212, 168, 80, 0.22) !important;
+            border-radius: 12px !important;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25) !important;
+            transition: transform 0.2s ease, border-color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease !important;
+            box-sizing: border-box !important;
+        }
+
+        .a2z-ec section.imgband-new-section .imgband-card:hover,
+        section.imgband-new-section .imgband-card:hover {
+            transform: translateY(-2px) !important;
+            background: rgba(13, 32, 52, 0.85) !important;
+            border-color: rgba(212, 168, 80, 0.45) !important;
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35), 0 0 16px rgba(212, 168, 80, 0.12) !important;
+        }
+
+        .a2z-ec section.imgband-new-section .imgband-card-icon,
+        section.imgband-new-section .imgband-card-icon {
+            flex-shrink: 0 !important;
+            width: 38px !important;
+            height: 38px !important;
+            border-radius: 9px !important;
+            background: rgba(212, 168, 80, 0.14) !important;
+            border: 1px solid rgba(212, 168, 80, 0.3) !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            color: #D4A850 !important;
+        }
+
+        .a2z-ec section.imgband-new-section .imgband-card-icon svg,
+        section.imgband-new-section .imgband-card-icon svg {
+            width: 19px !important;
+            height: 19px !important;
+            stroke-width: 2 !important;
+        }
+
+        .a2z-ec section.imgband-new-section .imgband-card-content,
+        section.imgband-new-section .imgband-card-content {
+            flex: 1 !important;
+        }
+
+        .a2z-ec section.imgband-new-section .imgband-card-title,
+        section.imgband-new-section .imgband-card-title {
+            font-family: 'DM Sans', system-ui, -apple-system, sans-serif !important;
+            font-size: clamp(15px, 1.1vw, 16px) !important;
+            font-weight: 700 !important;
+            color: #FFFFFF !important;
+            margin: 0 0 2px 0 !important;
+            line-height: 1.25 !important;
+            letter-spacing: -0.2px !important;
+        }
+
+        .a2z-ec section.imgband-new-section .imgband-card-desc,
+        section.imgband-new-section .imgband-card-desc {
+            font-family: 'DM Sans', system-ui, -apple-system, sans-serif !important;
+            font-size: clamp(12.5px, 0.95vw, 13.5px) !important;
+            line-height: 1.45 !important;
+            color: rgba(255, 255, 255, 0.74) !important;
+            margin: 0 !important;
         }
 
         @media (max-width: 992px) {
+            .a2z-ec section.imgband-new-section,
             section.imgband-new-section {
-                min-height: 280px !important;
-                height: auto !important;
-                padding: 0 !important;
-                display: flex !important;
-                align-items: flex-end !important;
-                justify-content: flex-start !important;
+                padding: clamp(40px, 5vw, 56px) 0 !important;
             }
 
-            section.imgband-new-section .imgband-container {
-                padding: 40px 20px 20px 20px !important;
-                margin: 0 !important;
-                width: 100% !important;
-                height: 100% !important;
-                display: flex !important;
-                align-items: flex-end !important;
-                justify-content: flex-start !important;
-                box-sizing: border-box !important;
+            .a2z-ec section.imgband-new-section .imgband-grid,
+            section.imgband-new-section .imgband-grid {
+                grid-template-columns: 1fr !important;
+                gap: 28px !important;
             }
 
+            .a2z-ec section.imgband-new-section .imgband-content,
             section.imgband-new-section .imgband-content {
-                margin: 0 !important;
-                text-align: left !important;
+                max-width: 100% !important;
             }
 
-            section.imgband-new-section .imgband-eyebrow-wrap {
-                padding-bottom: 6px !important;
-                margin-bottom: clamp(14px, 3vw, 20px) !important;
+            .a2z-ec section.imgband-new-section .imgband-desc,
+            section.imgband-new-section .imgband-desc {
+                max-width: 100% !important;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .a2z-ec section.imgband-new-section,
+            section.imgband-new-section {
+                padding: 34px 0 !important;
             }
 
-            section.imgband-new-section .imgband-eyebrow {
-                font-size: clamp(13px, 3.5vw, 16px) !important;
-                letter-spacing: 1.2px !important;
+            .a2z-ec section.imgband-new-section .imgband-container,
+            section.imgband-new-section .imgband-container {
+                padding: 0 16px !important;
             }
 
-            section.imgband-new-section .imgband-heading,
-            section.imgband-new-section .imgband-heading em,
-            section.imgband-new-section .imgband-heading span {
-                font-size: clamp(26px, 6.5vw, 38px) !important;
+            .a2z-ec section.imgband-new-section .imgband-heading,
+            section.imgband-new-section .imgband-heading {
+                font-size: 26px !important;
                 line-height: 1.2 !important;
-                letter-spacing: -0.5px !important;
+                margin-bottom: 10px !important;
+            }
+
+            .a2z-ec section.imgband-new-section .imgband-desc,
+            section.imgband-new-section .imgband-desc {
+                font-size: 14px !important;
+                line-height: 1.5 !important;
+            }
+
+            .a2z-ec section.imgband-new-section .imgband-cards,
+            section.imgband-new-section .imgband-cards {
+                gap: 10px !important;
+            }
+
+            .a2z-ec section.imgband-new-section .imgband-card,
+            section.imgband-new-section .imgband-card {
+                padding: 12px 14px !important;
+                gap: 12px !important;
+                border-radius: 10px !important;
+            }
+
+            .a2z-ec section.imgband-new-section .imgband-card-icon,
+            section.imgband-new-section .imgband-card-icon {
+                width: 32px !important;
+                height: 32px !important;
+                border-radius: 7px !important;
+            }
+
+            .a2z-ec section.imgband-new-section .imgband-card-icon svg,
+            section.imgband-new-section .imgband-card-icon svg {
+                width: 16px !important;
+                height: 16px !important;
+            }
+
+            .a2z-ec section.imgband-new-section .imgband-card-title,
+            section.imgband-new-section .imgband-card-title {
+                font-size: 14px !important;
+            }
+
+            .a2z-ec section.imgband-new-section .imgband-card-desc,
+            section.imgband-new-section .imgband-card-desc {
+                font-size: 12px !important;
+                line-height: 1.38 !important;
             }
         }
     </style>
@@ -6080,16 +6233,64 @@
         <img class="imgband-bg" src="https://a2zaccounting.co.uk/wp-content/uploads/2026/06/a2z-photo-3-band.jpg"
             alt="A2Z Accounting office executive desk">
         <div class="imgband-overlay"></div>
+        <div class="imgband-glow"></div>
 
         <div class="imgband-container">
-            <div class="imgband-content">
-                <div class="imgband-eyebrow-wrap">
-                    <span class="imgband-eyebrow">A REAL PRACTICE BEHIND EVERY LOGIN</span>
+            <div class="imgband-grid">
+                <!-- Left Editorial Column -->
+                <div class="imgband-content">
+                    <div class="imgband-badge">
+                        <span class="imgband-badge-text">Dedicated UK Practice &bull; Real Accountants</span>
+                    </div>
+                    <h2 class="imgband-heading">
+                        Cloud convenience.<br>
+                        <em>A real team behind&nbsp;it.</em>
+                    </h2>
+                    <p class="imgband-desc">
+                        Automated software syncs your store data. Our dedicated UK ecommerce accountants verify your payouts, handle your VAT, and answer your calls directly.
+                    </p>
                 </div>
-                <h2 class="imgband-heading">
-                    Cloud-based service.<br>
-                    <em>A real team behind it.</em>
-                </h2>
+
+                <!-- Right Proof Column (3 Minimalist Cards) -->
+                <div class="imgband-cards">
+                    <div class="imgband-card">
+                        <div class="imgband-card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                            </svg>
+                        </div>
+                        <div class="imgband-card-content">
+                            <h4 class="imgband-card-title">Direct Phone &amp; Email</h4>
+                            <p class="imgband-card-desc">Talk directly to your named UK accountant. No bots or ticket queues.</p>
+                        </div>
+                    </div>
+
+                    <div class="imgband-card">
+                        <div class="imgband-card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                                <polyline points="9 12 11 14 15 10"></polyline>
+                            </svg>
+                        </div>
+                        <div class="imgband-card-content">
+                            <h4 class="imgband-card-title">Audited Payouts &amp; VAT</h4>
+                            <p class="imgband-card-desc">Line-by-line reconciliation of settlements, gateway fees, and tax.</p>
+                        </div>
+                    </div>
+
+                    <div class="imgband-card">
+                        <div class="imgband-card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                            </svg>
+                        </div>
+                        <div class="imgband-card-content">
+                            <h4 class="imgband-card-title">Regulated UK Practice</h4>
+                            <p class="imgband-card-desc">Physical Aberdeen offices with certified ICAEW/ACCA accountants.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
